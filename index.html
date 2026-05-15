@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daily Stock Trend Watch</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+@font-face{font-family:'SOK500';src:local('SamsungOneKorean500'),local('SamsungOneKorean 500');font-weight:500;font-style:normal;font-display:swap}
+:root{--bg:#FFFFFF;--card:#FFFFFF;--card2:#F7F9FC;--hdr:#2F2F2F;--hdrText:#FFFFFF;--t1:#111827;--t2:#475569;--t3:#64748B;--bd:#D8DFE9;--ac:#2563EB;--acL:#DBEAFE;--link:#0563C1;--tbg:rgba(255,255,255,.94);--r:12px;--shadow:0 4px 18px rgba(15,23,42,.08)}
+*,*::before,*::after{box-sizing:border-box}body{margin:0;font-family:'SOK500','Noto Sans KR',system-ui,sans-serif;background:var(--bg);color:var(--t1);line-height:1.65}button{font:inherit}a{color:var(--link);font-weight:700;text-decoration:none}.topbar{position:sticky;top:0;z-index:50;background:var(--tbg);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:.35rem .9rem;display:flex;gap:.25rem;overflow-x:auto}.tab-btn{border:1px solid var(--bd);background:var(--card);color:var(--t2);border-radius:999px;padding:.28rem .65rem;font-size:.68rem;font-weight:800;white-space:nowrap;cursor:pointer}.tab-btn.on{background:var(--ac);border-color:var(--ac);color:#fff}main{width:min(1580px,calc(100% - 1.5rem));margin:0 auto;padding:.9rem 0 2rem}.hero{background:linear-gradient(135deg,#0F172A,#1E3A8A);color:#fff;border-radius:var(--r);padding:1.1rem 1.4rem;box-shadow:var(--shadow);margin-bottom:.85rem}.chip{font-size:.64rem;font-weight:800;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.18);padding:.1rem .45rem;border-radius:999px;color:rgba(255,255,255,.86)}h1{font-size:1.25rem;margin:.35rem 0 .25rem;font-weight:900;letter-spacing:0}.hero p{margin:0;color:rgba(255,255,255,.74);font-size:.78rem}.panel{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}.panel.on{display:block}.panel-head{padding:.7rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}.panel-head h2{font-size:.95rem;margin:0;font-weight:900}.empty{padding:1.1rem;color:var(--t3);font-size:.78rem}table{width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem}th{background:var(--hdr);color:var(--hdrText);padding:.46rem .45rem;text-align:left;font-weight:900;white-space:nowrap}td{padding:.42rem .45rem;border-bottom:1px solid var(--bd)}
+</style>
+</head>
+<body>
+<div class="topbar" role="tablist" aria-label="리포트 섹션">
+  <button class="tab-btn on" data-tab="priority_top">우선순위_TOP</button>
+  <button class="tab-btn" data-tab="leading_candidates">선행매매_후보</button>
+  <button class="tab-btn" data-tab="long_term_candidates">장기투자_후보</button>
+  <button class="tab-btn" data-tab="theme_summary">테마_요약</button>
+  <button class="tab-btn" data-tab="foreign_flow">외국인_수급</button>
+  <button class="tab-btn" data-tab="institution_flow_summary">기관수급_요약</button>
+  <button class="tab-btn" data-tab="us_52w_highs">신고가_미국</button>
+  <button class="tab-btn" data-tab="kr_52w_highs">신고가_한국</button>
+  <button class="tab-btn" data-tab="us_volume_surges">거래량_급증_미국</button>
+  <button class="tab-btn" data-tab="kr_volume_surges">거래량_급증_한국</button>
+  <button class="tab-btn" data-tab="famous_13f_changes">유명기관_13F증감</button>
+  <button class="tab-btn" data-tab="daily_tracking">일별_트래킹</button>
+</div>
+<main>
+  <section class="hero">
+    <span class="chip">GitHub Actions daily 07:00 KST</span>
+    <h1>Daily Stock Trend Watch</h1>
+    <p>첫 GitHub Actions 실행 후 최신 데이터와 리포트가 자동으로 채워집니다.</p>
+  </section>
+  <section class="panel on" id="panel-priority_top"><div class="panel-head"><h2>우선순위_TOP</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-leading_candidates"><div class="panel-head"><h2>선행매매_후보</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-long_term_candidates"><div class="panel-head"><h2>장기투자_후보</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-theme_summary"><div class="panel-head"><h2>테마_요약</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-foreign_flow"><div class="panel-head"><h2>외국인_수급</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-institution_flow_summary"><div class="panel-head"><h2>기관수급_요약</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-us_52w_highs"><div class="panel-head"><h2>신고가_미국</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-kr_52w_highs"><div class="panel-head"><h2>신고가_한국</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-us_volume_surges"><div class="panel-head"><h2>거래량_급증_미국</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-kr_volume_surges"><div class="panel-head"><h2>거래량_급증_한국</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-famous_13f_changes"><div class="panel-head"><h2>유명기관_13F증감</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+  <section class="panel" id="panel-daily_tracking"><div class="panel-head"><h2>일별_트래킹</h2></div><div class="empty">아직 자동 실행 데이터가 없습니다.</div></section>
+</main>
+<script>
+const tabs=[...document.querySelectorAll('.tab-btn')];
+const panels=[...document.querySelectorAll('.panel')];
+tabs.forEach(btn=>btn.addEventListener('click',()=>{
+  tabs.forEach(item=>item.classList.toggle('on',item===btn));
+  panels.forEach(panel=>panel.classList.toggle('on',panel.id==='panel-'+btn.dataset.tab));
+}));
+</script>
+</body>
+</html>
