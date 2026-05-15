@@ -43,6 +43,8 @@
   - `https://data.sec.gov/submissions/CIK{CIK}.json`
   - XML information table
   - 발행사명과 SEC `company_tickers_exchange.json`를 대조해 확인 가능한 티커만 표시합니다.
+  - 기관별 13F 포트폴리오 총액 대비 종목 비중을 계산해 직전 분기보다 비중이 늘어난 종목을 우선 표시합니다.
+  - Pershing Square/Bill Ackman, Berkshire Hathaway/Warren Buffett, Duquesne/Stanley Druckenmiller 등 설정된 대가의 비중 증가에는 별도 가중치를 줍니다.
 
 ## 필터
 

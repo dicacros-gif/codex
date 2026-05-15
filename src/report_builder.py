@@ -291,6 +291,11 @@ F13_COLUMNS = [
     ("ticker", "티커"),
     ("new_institution_count", "신규기관수"),
     ("increased_institution_count", "증가기관수"),
+    ("position_weight_increased_count", "비중증가기관수"),
+    ("max_position_weight_change_pct", "최대비중증가"),
+    ("average_position_weight_change_pct", "평균비중증감"),
+    ("guru_position_score", "대가비중점수"),
+    ("top_position_weight_changes", "비중증가대가"),
     ("decreased_institution_count", "감소기관수"),
     ("exited_institution_count", "청산기관수"),
     ("total_share_change", "총증감주식"),
@@ -372,6 +377,9 @@ NUMERIC_FIELDS = {
     "net_supply_20d",
     "new_institution_count",
     "increased_institution_count",
+    "position_weight_increased_count",
+    "position_weight_decreased_count",
+    "guru_position_score",
     "decreased_institution_count",
     "exited_institution_count",
     "total_share_change",
@@ -415,6 +423,11 @@ PERCENT_FIELDS = {
     "foreign_ownership_rate",
     "foreign_ownership_change_20d",
     "average_change_pct",
+    "max_position_weight_change_pct",
+    "average_position_weight_change_pct",
+    "current_position_weight_pct",
+    "previous_position_weight_pct",
+    "position_weight_change_pct",
 }
 HIDDEN_DISPLAY_FIELDS = {"report_link", "source_url"}
 
@@ -626,7 +639,7 @@ def _format_cell(field: str, value: Any, row: dict[str, Any]) -> str:
     if field == "recent_report_title":
         link = _fallback_report_link(row)
         return _link(link, str(value)) if link else html.escape(str(value))
-    if field == "core_basis":
+    if field in {"core_basis", "top_position_weight_changes"}:
         return _format_bullets(str(value))
     if field in {"source_url", "report_link"}:
         return _link(str(value), "열기")
@@ -902,8 +915,15 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         elif number < 0:
             tokens.append("neg")
 
-    if field in {"new_institution_count", "increased_institution_count"} and number is not None and number > 0:
+    if field in {"new_institution_count", "increased_institution_count", "position_weight_increased_count"} and number is not None and number > 0:
         tokens.append("pos-buy")
+    if field in {"guru_position_score", "max_position_weight_change_pct"} and number is not None and number > 0:
+        tokens.append("pos-strong")
+    if field == "average_position_weight_change_pct" and number is not None:
+        if number > 0:
+            tokens.append("pos-buy")
+        elif number < 0:
+            tokens.append("neg")
     if field == "decreased_institution_count" and number is not None and number > 0:
         tokens.append("warn")
     if field == "exited_institution_count" and number is not None and number > 0:
@@ -1182,7 +1202,7 @@ def _format_export_cell(field: str, value: Any, row: dict[str, Any]) -> str:
         return _short_datetime(value)
     if isinstance(value, list):
         return ", ".join(str(item) for item in value if item not in (None, ""))
-    if field == "core_basis":
+    if field in {"core_basis", "top_position_weight_changes"}:
         return "\n".join(f"- {part}" for part in _basis_parts(str(value)))
     if field in {"relative_volume", "avg_relative_volume"}:
         number = _number(value)

@@ -37,7 +37,9 @@ def collect_13f(
         cik = _normalize_cik(institution.get("cik"))
         if not name or not cik:
             continue
-        changes = _collect_institution(name, cik, raw_dir, quarters)
+        manager = str(institution.get("manager") or name)
+        guru_weight = to_float(institution.get("guru_weight")) or 1.0
+        changes = _collect_institution(name, cik, raw_dir, quarters, manager, guru_weight)
         all_changes.extend(changes)
         time.sleep(0.5)
     ticker_map = _load_sec_ticker_map(raw_dir)
@@ -47,7 +49,14 @@ def collect_13f(
     return aggregate
 
 
-def _collect_institution(name: str, cik: str, raw_dir: Path, quarters: int) -> list[dict[str, Any]]:
+def _collect_institution(
+    name: str,
+    cik: str,
+    raw_dir: Path,
+    quarters: int,
+    manager: str,
+    guru_weight: float,
+) -> list[dict[str, Any]]:
     submissions = _get_json(SEC_SUBMISSIONS_URL.format(cik=cik))
     write_json(raw_dir / f"sec_submissions_{cik}.json", submissions or {})
     filings = _recent_13f_filings(submissions or {}, quarters)
@@ -67,6 +76,8 @@ def _collect_institution(name: str, cik: str, raw_dir: Path, quarters: int) -> l
         holdings_by_period.append(
             {
                 "institution": name,
+                "manager": manager,
+                "guru_weight": guru_weight,
                 "cik": cik,
                 "period": filing["period"],
                 "holdings": _parse_info_table(xml_text),
@@ -135,12 +146,19 @@ def _compare_periods(current: dict[str, Any], previous: dict[str, Any]) -> list[
     changes = []
     current_holdings = current["holdings"]
     previous_holdings = previous["holdings"]
+    current_total_value = _portfolio_total_value(current_holdings)
+    previous_total_value = _portfolio_total_value(previous_holdings)
     keys = sorted(set(current_holdings) | set(previous_holdings))
     for key in keys:
         cur = current_holdings.get(key)
         prev = previous_holdings.get(key)
         cur_shares = to_int(cur.get("sshPrnamt")) if cur else 0
         prev_shares = to_int(prev.get("sshPrnamt")) if prev else 0
+        cur_value = to_float(cur.get("value")) if cur else 0
+        prev_value = to_float(prev.get("value")) if prev else 0
+        current_weight = _position_weight_pct(cur_value, current_total_value)
+        previous_weight = _position_weight_pct(prev_value, previous_total_value)
+        weight_change = round(current_weight - previous_weight, 4)
         change = cur_shares - prev_shares
         if cur and not prev:
             status = "신규"
@@ -150,6 +168,8 @@ def _compare_periods(current: dict[str, Any], previous: dict[str, Any]) -> list[
             status = "증가"
         elif change < 0:
             status = "감소"
+        elif weight_change > 0:
+            status = "비중증가"
         else:
             status = "변동없음"
         if status == "변동없음":
@@ -159,21 +179,37 @@ def _compare_periods(current: dict[str, Any], previous: dict[str, Any]) -> list[
         changes.append(
             {
                 "institution": current["institution"],
+                "manager": current.get("manager"),
+                "guru_weight": current.get("guru_weight") or 1.0,
                 "cik": current["cik"],
                 "current_period": current["period"],
                 "previous_period": previous["period"],
                 "nameOfIssuer": base.get("nameOfIssuer"),
                 "titleOfClass": base.get("titleOfClass"),
                 "cusip": base.get("cusip"),
-                "value": base.get("value"),
+                "value": cur_value,
+                "previous_value": prev_value,
                 "current_shares": cur_shares,
                 "previous_shares": prev_shares,
                 "share_change": change,
                 "change_pct": pct,
+                "current_position_weight_pct": current_weight,
+                "previous_position_weight_pct": previous_weight,
+                "position_weight_change_pct": weight_change,
                 "change_type": status,
             }
         )
     return changes
+
+
+def _portfolio_total_value(holdings: dict[str, dict[str, Any]]) -> float:
+    return float(sum(to_float(item.get("value")) or 0 for item in holdings.values()))
+
+
+def _position_weight_pct(value: float | None, total_value: float | None) -> float:
+    if not value or not total_value:
+        return 0.0
+    return round(float(value) / float(total_value) * 100, 4)
 
 
 def _aggregate_changes(
@@ -194,13 +230,24 @@ def _aggregate_changes(
         increased_count = sum(1 for item in items if item.get("change_type") == "증가")
         decreased_count = sum(1 for item in items if item.get("change_type") == "감소")
         exited_count = sum(1 for item in items if item.get("change_type") == "청산")
+        weight_increased_items = [item for item in items if (item.get("position_weight_change_pct") or 0) > 0]
+        weight_decreased_items = [item for item in items if (item.get("position_weight_change_pct") or 0) < 0]
+        weight_delta_values = [
+            item.get("position_weight_change_pct")
+            for item in items
+            if item.get("position_weight_change_pct") is not None
+        ]
         total_change = sum(item.get("share_change") or 0 for item in items)
         total_current = sum(item.get("current_shares") or 0 for item in items)
         pct_values = [item.get("change_pct") for item in items if item.get("change_pct") is not None]
+        guru_position_score = _guru_position_score(weight_increased_items)
         score = new_count * 15 + increased_count * 10 - decreased_count * 6 - exited_count * 18
         if new_count + increased_count >= 2:
             score += (new_count + increased_count) * 4
         score += min(max(total_change, 0) / 1_000_000, 15)
+        score += guru_position_score
+        if len(weight_increased_items) >= 2:
+            score += len(weight_increased_items) * 5
         base = items[0]
         issuer = base.get("nameOfIssuer")
         ticker = ticker_map.get(_normalize_issuer_name(issuer))
@@ -216,13 +263,28 @@ def _aggregate_changes(
                 "increased_institution_count": increased_count,
                 "decreased_institution_count": decreased_count,
                 "exited_institution_count": exited_count,
+                "position_weight_increased_count": len(weight_increased_items),
+                "position_weight_decreased_count": len(weight_decreased_items),
+                "max_position_weight_change_pct": _max_positive_weight_change(weight_increased_items),
+                "average_position_weight_change_pct": (
+                    round(sum(weight_delta_values) / len(weight_delta_values), 2) if weight_delta_values else None
+                ),
+                "guru_position_score": round(guru_position_score, 2),
+                "top_position_weight_changes": _top_position_weight_changes(weight_increased_items),
                 "total_share_change": total_change,
                 "average_change_pct": round(sum(pct_values) / len(pct_values), 2) if pct_values else None,
                 "total_current_shares": total_current,
                 "famous_13f_score": round(score, 2),
                 "investment_priority_score": round(score, 2),
                 "institutions": sorted({str(item.get("institution")) for item in items if item.get("institution")}),
-                "core_basis": _basis(new_count, increased_count, decreased_count, exited_count),
+                "core_basis": _basis(
+                    new_count,
+                    increased_count,
+                    decreased_count,
+                    exited_count,
+                    len(weight_increased_items),
+                    _top_position_weight_changes(weight_increased_items),
+                ),
                 "signals": ["13F 보유 증감"],
                 "source": "SEC 13F",
                 "source_url": "https://www.sec.gov/edgar/search/",
@@ -230,6 +292,50 @@ def _aggregate_changes(
         )
     records.sort(key=lambda item: item.get("famous_13f_score") or 0, reverse=True)
     return records
+
+
+def _guru_position_score(items: list[dict[str, Any]]) -> float:
+    score = 0.0
+    for item in items:
+        delta = max(to_float(item.get("position_weight_change_pct")) or 0, 0)
+        guru_weight = to_float(item.get("guru_weight")) or 1.0
+        score += min(delta, 8) * guru_weight * 3
+        if str(item.get("manager") or "").lower() == "bill ackman":
+            score += 25
+    return score
+
+
+def _max_positive_weight_change(items: list[dict[str, Any]]) -> float | None:
+    values = [to_float(item.get("position_weight_change_pct")) for item in items]
+    values = [value for value in values if value is not None and value > 0]
+    return round(max(values), 2) if values else None
+
+
+def _top_position_weight_changes(items: list[dict[str, Any]], limit: int = 5) -> str | None:
+    ranked = sorted(items, key=lambda item: item.get("position_weight_change_pct") or 0, reverse=True)
+    parts = []
+    for item in ranked[:limit]:
+        delta = to_float(item.get("position_weight_change_pct"))
+        current = to_float(item.get("current_position_weight_pct"))
+        if delta is None or delta <= 0:
+            continue
+        manager = item.get("manager") or item.get("institution")
+        institution = item.get("institution")
+        label = str(manager)
+        if institution and institution != manager:
+            label = f"{label}/{institution}"
+        current_text = f", 현재 {_pct_label(current, '%')}" if current is not None else ""
+        parts.append(f"{label} +{_pct_label(delta, '%p')}{current_text}")
+    return " / ".join(parts) if parts else None
+
+
+def _pct_label(value: float | None, suffix: str) -> str:
+    if value is None:
+        return ""
+    absolute = abs(value)
+    if 0 < absolute < 0.5:
+        return f"<1{suffix}"
+    return f"{int(round(value))}{suffix}"
 
 
 def _load_sec_ticker_map(raw_dir: Path) -> dict[str, str]:
@@ -262,12 +368,23 @@ def _normalize_issuer_name(value: Any) -> str:
     return text
 
 
-def _basis(new_count: int, increased_count: int, decreased_count: int, exited_count: int) -> str:
+def _basis(
+    new_count: int,
+    increased_count: int,
+    decreased_count: int,
+    exited_count: int,
+    weight_increased_count: int,
+    top_position_weight_changes: str | None,
+) -> str:
     parts = []
     if new_count:
         parts.append(f"신규 {new_count}개 기관")
     if increased_count:
         parts.append(f"증가 {increased_count}개 기관")
+    if weight_increased_count:
+        parts.append(f"포지션 비중 증가 {weight_increased_count}개 대가/기관")
+    if top_position_weight_changes:
+        parts.append(top_position_weight_changes)
     if decreased_count:
         parts.append(f"감소 {decreased_count}개 기관")
     if exited_count:
