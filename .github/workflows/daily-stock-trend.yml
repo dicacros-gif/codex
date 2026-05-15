@@ -15,11 +15,12 @@ permissions:
 
 concurrency:
   group: daily-stock-trend
-  cancel-in-progress: false
+  cancel-in-progress: true
 
 jobs:
   collect-and-publish:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
@@ -41,7 +42,7 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT || vars.SEC_USER_AGENT || 'daily-stock-trend contact@example.com' }}
           TRADINGVIEW_LIMIT: "300"
-          MAX_KR_ENRICH: "80"
+          MAX_KR_ENRICH: "60"
           SEC_13F_QUARTERS: "5"
         run: python -m src.main --root .
 

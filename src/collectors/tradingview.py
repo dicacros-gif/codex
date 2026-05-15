@@ -139,10 +139,10 @@ def _scan(
     if filters:
         payload["filter"] = filters
     try:
-        response = requests.post(url, json=payload, timeout=35)
+        response = requests.post(url, json=payload, timeout=20)
         if response.status_code >= 400 and filters:
             payload.pop("filter", None)
-            response = requests.post(url, json=payload, timeout=35)
+            response = requests.post(url, json=payload, timeout=20)
         response.raise_for_status()
         return response.json()
     except requests.RequestException as exc:
@@ -215,4 +215,3 @@ def _dedupe(rows: list[dict[str, Any]], key: str) -> list[dict[str, Any]]:
             old_signals.update(row.get("signals") or [])
             old["signals"] = sorted(old_signals)
     return list(seen.values())
-

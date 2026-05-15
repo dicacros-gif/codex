@@ -52,7 +52,7 @@ def _get_text(url: str, encoding: str) -> str | None:
         "Accept": "text/html,*/*;q=0.8",
     }
     try:
-        response = requests.get(url, headers=headers, timeout=30)
+        response = requests.get(url, headers=headers, timeout=12)
         response.raise_for_status()
         response.encoding = encoding
         return response.text
@@ -152,4 +152,3 @@ def _kr_code(value: Any) -> str | None:
 def _write_raw(path: Path, text: str) -> None:
     ensure_dir(path.parent)
     path.write_text(text, encoding="utf-8", errors="ignore")
-
