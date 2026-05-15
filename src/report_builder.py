@@ -241,9 +241,8 @@ main{{width:min(1680px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}
   </div>
 </div>
 <main>
-  <div class="statusbar"><span class="chip">{html.escape(str(generated))} KST</span><span class="chip">매일 07:00 자동 실행</span><span class="chip">원천 확인값만 표시</span></div>
+  <div class="statusbar"><span class="chip">{html.escape(str(generated))} KST</span><span class="chip">매일 07:00 자동 실행</span></div>
   {panels}
-  <footer>투자 추천이 아니라 후보 발굴 도구입니다.</footer>
 </main>
 <script>
 const tabs=[...document.querySelectorAll('.tab-btn')];
@@ -278,7 +277,7 @@ def _render_panel(key: str, title: str, rows: list[dict[str, Any]], active: bool
 
 def _render_table(section_key: str, rows: list[dict[str, Any]]) -> str:
     if not rows:
-        return "<div class='empty'>표시할 원천 확인 데이터가 없습니다.</div>"
+        return "<div class='empty'>표시할 데이터가 없습니다.</div>"
     columns = SECTION_COLUMNS.get(section_key, STOCK_COLUMNS)
     head = "".join(f"<th>{html.escape(label)}</th>" for _, label in columns)
     body = "\n".join(_render_row(row, columns) for row in rows)
@@ -445,4 +444,3 @@ def _dedupe_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         seen.add(key)
         unique.append(row)
     return unique
-
