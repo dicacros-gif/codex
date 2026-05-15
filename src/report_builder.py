@@ -27,12 +27,13 @@ SECTION_TITLES = [
     ("us_volume_surges", "거래량_급증_미국"),
     ("kr_volume_surges", "거래량_급증_한국"),
     ("famous_13f_changes", "유명기관_13F증감"),
-    ("daily_tracking", "일별_트래킹"),
+    ("daily_tracking", "일 트래킹"),
 ]
 SECTION_TITLE_BY_KEY = dict(SECTION_TITLES)
 LEGACY_SECTION_TITLES = {
     "외국인_수급": SECTION_TITLE_BY_KEY["foreign_flow"],
     "기관수급_요약": SECTION_TITLE_BY_KEY["institution_flow_summary"],
+    "일별_트래킹": SECTION_TITLE_BY_KEY["daily_tracking"],
 }
 
 STOCK_COLUMNS = [
@@ -578,12 +579,12 @@ def _tab_title(key: str, title: str, generated_label: str) -> str:
 
 
 def _format_generated_label(value: str) -> str:
-    match = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})\s+(\d{2}:\d{2}:\d{2})", value.strip())
+    match = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})\s+(\d{2}:\d{2})(?::\d{2})?", value.strip())
     if not match:
         return ""
     month = int(match.group(2))
     day = int(match.group(3))
-    return f"{month}/{day} {match.group(4)} KST 기준"
+    return f"{month}/{day} {match.group(4)} 기준"
 
 
 def _render_panel(key: str, title: str, rows: list[dict[str, Any]], active: bool) -> str:
