@@ -153,6 +153,7 @@ PERCENT_FIELDS = {
     "foreign_ownership_rate",
     "average_change_pct",
 }
+HIDDEN_DISPLAY_FIELDS = {"report_link", "source_url"}
 
 
 def write_outputs(
@@ -300,10 +301,14 @@ def _render_panel(key: str, title: str, rows: list[dict[str, Any]], active: bool
 def _render_table(section_key: str, rows: list[dict[str, Any]]) -> str:
     if not rows:
         return "<div class='empty'>표시할 데이터가 없습니다.</div>"
-    columns = SECTION_COLUMNS.get(section_key, STOCK_COLUMNS)
+    columns = _display_columns(SECTION_COLUMNS.get(section_key, STOCK_COLUMNS))
     head = "".join(f"<th>{html.escape(label)}</th>" for _, label in columns)
     body = "\n".join(_render_row(row, columns) for row in rows)
     return f"<div class='table-wrap'><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>"
+
+
+def _display_columns(columns: list[tuple[str, str]]) -> list[tuple[str, str]]:
+    return [(field, label) for field, label in columns if field not in HIDDEN_DISPLAY_FIELDS]
 
 
 def _render_row(row: dict[str, Any], columns: list[tuple[str, str]]) -> str:
@@ -602,7 +607,7 @@ def _write_xlsx(path: Path, sections: dict[str, list[dict[str, Any]]]) -> None:
     try:
         with pd.ExcelWriter(path, engine="openpyxl") as writer:
             for key, title in SECTION_TITLES:
-                columns = SECTION_COLUMNS.get(key, STOCK_COLUMNS)
+                columns = _display_columns(SECTION_COLUMNS.get(key, STOCK_COLUMNS))
                 raw_rows = sections.get(key, [])
                 rows = [_export_row(row, columns) for row in raw_rows]
                 frame = pd.DataFrame(rows, columns=[label for _, label in columns])
