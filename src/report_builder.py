@@ -329,6 +329,10 @@ def _format_cell(field: str, value: Any, row: dict[str, Any]) -> str:
         return _link(link, str(value)) if link else html.escape(str(value))
     if field in {"source_url", "report_link"}:
         return _link(str(value), "열기")
+    if field == "date":
+        return html.escape(_short_date(value))
+    if field == "generated_at_kst":
+        return html.escape(_short_datetime(value))
     if isinstance(value, list):
         return "".join(f"<span class='tag'>{html.escape(str(item))}</span>" for item in value if item not in (None, ""))
     if field == "relative_volume":
@@ -366,6 +370,22 @@ def _clean_display_text(value: str) -> str:
         return f"{int(round(number)):,}"
 
     return re.sub(r"-?\d[\d,]*\.\d+", repl, value)
+
+
+def _short_date(value: Any) -> str:
+    text = str(value or "").strip()
+    match = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})$", text)
+    if not match:
+        return text
+    return f"{int(match.group(2))}/{int(match.group(3))}"
+
+
+def _short_datetime(value: Any) -> str:
+    text = str(value or "").strip()
+    match = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})(\s+\d{2}:\d{2}:\d{2})", text)
+    if not match:
+        return _short_date(text)
+    return f"{int(match.group(2))}/{int(match.group(3))}{match.group(4)}"
 
 
 def _fallback_report_broker(row: dict[str, Any]) -> str | None:
@@ -714,6 +734,10 @@ def _format_export_cell(field: str, value: Any, row: dict[str, Any]) -> str:
         if field == "recent_report_title":
             return _fallback_report_title(row) or ""
         return ""
+    if field == "date":
+        return _short_date(value)
+    if field == "generated_at_kst":
+        return _short_datetime(value)
     if isinstance(value, list):
         return ", ".join(str(item) for item in value if item not in (None, ""))
     if field == "relative_volume":
