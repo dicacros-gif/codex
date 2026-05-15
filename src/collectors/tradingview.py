@@ -31,8 +31,8 @@ TV_COLUMNS = [
     "sector",
     "industry",
     "exchange",
-    "High.52W",
-    "Low.52W",
+    "price_52_week_high",
+    "price_52_week_low",
     "change",
     "Recommend.All",
     "price_earnings_ttm",
@@ -57,7 +57,7 @@ def _collect_52w(country: str, raw_dir: Path, run_date: date, limit: int) -> lis
         raw_dir=raw_dir,
         run_date=run_date,
         label="52w_high",
-        sort_fields=["change", "market_cap_basic", "High.52W", "volume"],
+        sort_fields=["change", "market_cap_basic", "price_52_week_high", "volume"],
         limit=limit,
         filters=[{"left": "close", "operation": "greater", "right": MIN_CLOSE[country]}],
     )
@@ -65,7 +65,7 @@ def _collect_52w(country: str, raw_dir: Path, run_date: date, limit: int) -> lis
     near_candidates = []
     for row in rows:
         close = to_float(row.get("close"))
-        high_52w = to_float(row.get("High.52W"))
+        high_52w = to_float(row.get("price_52_week_high"))
         if close is None or high_52w is None or high_52w <= 0:
             continue
         if close < MIN_CLOSE[country]:
