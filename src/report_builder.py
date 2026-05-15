@@ -529,14 +529,11 @@ def render_html(payload: dict[str, Any]) -> str:
 <style>
 @font-face{{font-family:'SOK500';src:local('SamsungOneKorean500'),local('SamsungOneKorean 500');font-weight:500;font-style:normal;font-display:swap}}
 :root{{--bg:#F5F7FA;--card:#FFFFFF;--card2:#F0FDF4;--hdr:#1A3A2A;--hdrText:#FFFFFF;--row2:#F2F6FC;--t1:#111827;--t2:#475569;--t3:#64748B;--bd:#BBF7D0;--grid:#DDE7F3;--ac:#16A34A;--acL:#DCFCE7;--acT:#15803D;--hoverBg:#DCFCE7;--hoverFg:#1A3A2A;--okB:#C6EFCE;--okT:#006100;--buyB:#E2F0D9;--buyT:#375623;--warnB:#FFE8A3;--warnT:#7C4A00;--negB:#F8D7DA;--negT:#842029;--link:#0563C1;--tbg:rgba(255,255,255,.92);--r:12px;--shadow:0 4px 18px rgba(15,23,42,.08);--scroll:#86EFAC;--scrollTrack:#ECFDF5}}
-[data-p=ocean]{{--ac:#0D9488;--acL:#CCFBF1;--acT:#0F766E;--bd:#99F6E4;--hdr:#164E63;--scroll:#5EEAD4;--scrollTrack:#ECFEFF}}
-[data-p=sunset]{{--ac:#EA580C;--acL:#FFEDD5;--acT:#C2410C;--bd:#FDBA74;--hdr:#7C2D12;--scroll:#FB923C;--scrollTrack:#FFF7ED}}
-[data-p=violet]{{--ac:#7C3AED;--acL:#EDE9FE;--acT:#6D28D9;--bd:#DDD6FE;--hdr:#3B0764;--scroll:#A78BFA;--scrollTrack:#F5F3FF}}
 [data-t=dark]{{--bg:#071510;--card:#0D1F15;--card2:#122B1C;--row2:#0F1824;--t1:#E2E8F0;--t2:#CBD5E1;--t3:#94A3B8;--bd:#1A3A2A;--grid:#243044;--hdr:#122B1C;--tbg:rgba(7,21,16,.92);--hoverBg:#1A3A2A;--hoverFg:#D4F5DC;--scroll:#4ADE80;--scrollTrack:#0B1C13;--shadow:0 8px 26px rgba(0,0,0,.35)}}
 *,*::before,*::after{{box-sizing:border-box}}html{{scroll-behavior:smooth;font-size:14px}}body{{margin:0;font-family:'Noto Sans KR','SOK500','Malgun Gothic',system-ui,sans-serif;background:var(--bg);color:var(--t1);line-height:1.55;font-size:1rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}}button,input{{font:inherit}}a{{color:var(--link);font-weight:800;text-decoration:none}}a:hover{{text-decoration:underline}}
 .topbar{{position:sticky;top:0;z-index:50;background:var(--tbg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:.35rem .9rem;display:flex;align-items:center;gap:.55rem;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--scroll) transparent}}
 .tabs{{display:flex;gap:.2rem;overflow-x:auto;flex:1;min-width:0;scrollbar-width:thin;scrollbar-color:var(--scroll) transparent}}.tab-btn{{border:1px solid var(--bd);background:var(--card);color:var(--t2);border-radius:999px;padding:.28rem .65rem;font-size:.68rem;font-weight:900;white-space:nowrap;cursor:pointer;transition:background .18s,border-color .18s,color .18s,box-shadow .18s}}.tab-btn:hover{{background:var(--acL);border-color:var(--ac);color:var(--acT)}}.tab-btn.on{{background:var(--ac);border-color:var(--ac);color:#fff;box-shadow:0 2px 10px rgba(22,163,74,.20)}}
-.tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.pb{{width:18px;height:18px;border-radius:50%;border:2px solid transparent;cursor:pointer}}.pb.on{{border-color:var(--t1);box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--t3)}}.pb[data-c=default]{{background:linear-gradient(135deg,#2563eb,#60a5fa)}}.pb[data-c=ocean]{{background:linear-gradient(135deg,#0d9488,#2dd4bf)}}.pb[data-c=sunset]{{background:linear-gradient(135deg,#ea580c,#fb923c)}}.pb[data-c=violet]{{background:linear-gradient(135deg,#7c3aed,#a78bfa)}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
+.tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
 main{{width:min(1760px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.62rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.9rem;margin:0;font-weight:900}}.panel-head p{{margin:.05rem 0 0;font-size:.7rem;color:var(--t3);font-weight:800}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.68rem;border:1px solid var(--bd);border-radius:6px;padding:.18rem .48rem;background:var(--card);color:var(--acT)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 132px);scrollbar-gutter:stable both-edges;scrollbar-width:thin;scrollbar-color:var(--scroll) var(--scrollTrack)}}.table-wrap::-webkit-scrollbar,.tabs::-webkit-scrollbar,.topbar::-webkit-scrollbar{{width:8px;height:8px}}.table-wrap::-webkit-scrollbar-track,.tabs::-webkit-scrollbar-track,.topbar::-webkit-scrollbar-track{{background:var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb,.tabs::-webkit-scrollbar-thumb,.topbar::-webkit-scrollbar-thumb{{background:var(--scroll);border-radius:999px;border:2px solid var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb:hover,.tabs::-webkit-scrollbar-thumb:hover,.topbar::-webkit-scrollbar-thumb:hover{{background:var(--ac)}}
 table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.74rem;line-height:1.42}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.42rem .48rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}td{{padding:.38rem .48rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:700}}.pos-strong{{background:var(--okB)!important;color:var(--okT)!important;font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT)!important;font-weight:900;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT)!important;font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT)!important;font-weight:900;border-radius:4px}}.basis{{min-width:340px;max-width:680px}}.bullets{{display:grid;gap:.12rem;line-height:1.42}}.bullets span{{display:block;padding-left:.8rem;position:relative}}.bullets span::before{{content:'-';position:absolute;left:0;color:var(--ac);font-weight:900}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.06rem .38rem;margin:.05rem;font-size:.66rem;font-weight:900;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
@@ -544,16 +541,12 @@ table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
 </head>
-<body data-t="light" data-p="default">
+<body data-t="light">
 <div class="topbar">
   <div class="tabs" role="tablist" aria-label="리포트 섹션">
     {tab_buttons}
   </div>
   <div class="tools">
-    <button class="pb on" type="button" data-c="default" title="기본 색상"></button>
-    <button class="pb" type="button" data-c="ocean" title="오션"></button>
-    <button class="pb" type="button" data-c="sunset" title="선셋"></button>
-    <button class="pb" type="button" data-c="violet" title="바이올렛"></button>
     <button class="mode" type="button" id="modeToggle">Dark</button>
   </div>
 </div>
@@ -567,10 +560,6 @@ tabs.forEach(btn=>btn.addEventListener('click',()=>{{
   tabs.forEach(item=>item.classList.toggle('on',item===btn));
   panels.forEach(panel=>panel.classList.toggle('on',panel.id==='panel-'+btn.dataset.tab));
   window.scrollTo({{top:0,behavior:'smooth'}});
-}}));
-document.querySelectorAll('.pb').forEach(btn=>btn.addEventListener('click',()=>{{
-  document.body.setAttribute('data-p',btn.dataset.c);
-  document.querySelectorAll('.pb').forEach(item=>item.classList.toggle('on',item===btn));
 }}));
 document.getElementById('modeToggle').addEventListener('click',()=>{{
   const next=document.body.getAttribute('data-t')==='dark'?'light':'dark';
