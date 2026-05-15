@@ -52,7 +52,7 @@ def _get_text(url: str, encoding: str = "utf-8") -> str | None:
         "Accept": "text/html,application/json;q=0.9,*/*;q=0.8",
     }
     try:
-        response = requests.get(url, headers=headers, timeout=12)
+        response = requests.get(url, headers=headers, timeout=6)
         response.raise_for_status()
         response.encoding = encoding
         return response.text

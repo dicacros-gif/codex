@@ -37,8 +37,8 @@ jobs:
         env:
           SEC_USER_AGENT: ${{ secrets.SEC_USER_AGENT || vars.SEC_USER_AGENT || 'daily-stock-trend contact@example.com' }}
           TRADINGVIEW_LIMIT: "300"
-          MAX_KR_ENRICH: "60"
-          SEC_13F_QUARTERS: "5"
+          MAX_KR_ENRICH: "35"
+          SEC_13F_QUARTERS: "4"
         run: python -m src.main --root .
 
       - name: Commit generated data and reports

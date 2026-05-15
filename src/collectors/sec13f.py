@@ -252,7 +252,7 @@ def _get_text(url: str) -> str | None:
         "Host": "data.sec.gov" if "data.sec.gov" in url else "www.sec.gov",
     }
     try:
-        response = requests.get(url, headers=headers, timeout=12)
+        response = requests.get(url, headers=headers, timeout=8)
         response.raise_for_status()
         return response.text
     except requests.RequestException:
