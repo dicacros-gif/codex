@@ -19,6 +19,24 @@
 
 	<meta name="author" content="">
 	<meta name="description" content="">
+	<!-- Google Analytics Tracking Code -->
+	<script>
+		var pCID = ''
+
+		if(pCID.length < 1 || pCID == "AA") {
+			var script = document.createElement('script');
+			script.src = "https://www.googletagmanager.com/gtag/js?id=G-WPK34FTZYG";
+			script.async = true;
+			document.head.appendChild(script);
+
+			script.onload = function(){
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-WPK34FTZYG', { 'content_group1': pCID });
+			};
+		}
+	</script>
 	<title>KODEX&nbsp;레버리지(A122630) | ETF Snapshot | ETF/ETN 정보 | Company Guide</title>
     <script type="text/javascript" src="https://cdn.fnguide.com/SVO2/js/lib/fnlib.js?v=1.0.4"></script>
 	<script type="text/javascript" src="/SVO2/js/etf_Snapshot.js?v=1.0.4"></script>
@@ -45,7 +63,7 @@ var giname = 'KODEX&nbsp;레버리지';
 var strUCD = '06';
 
 var stk_nm = 'KODEX&nbsp;레버리지';var risk_nm = '1등급';var grade = '3';var p_peer_nm = '국내주식형/인덱스주식기타';var t_nm = 'ETF(국내주식),레버리지';var bm_nm = 'KOSPI200';
-        var etf1PriceDate = '2026.05.14';
+        var etf1PriceDate = '2026.05.15';
         var etf1PriceHeader = [
              {"name":"","field":"val01","align":"left","isHeader":true}
             ,{"name":"","field":"val02","align":"right"}
@@ -53,7 +71,7 @@ var stk_nm = 'KODEX&nbsp;레버리지';var risk_nm = '1등급';var grade = '3';v
     var etf1PriceData = [
     {
         "val01": "전일종가/전일대비(원)",
-        "val02": "177,100/<span class='tcr'>+5,200</span>(3.03%)"
+        "val02": "155,000/<span class='tcb'>-22,100</span>(-12.48%)"
     },
     {
         "val01": "52주 최고가(원)",
@@ -65,27 +83,27 @@ var stk_nm = 'KODEX&nbsp;레버리지';var risk_nm = '1등급';var grade = '3';v
     },
     {
         "val01": "수익률(1M/3M/6M/1Y)(%)",
-        "val02": "<span class='tcr'>+88.03</span>/<span class='tcr'>+109.30</span>/<span class='tcr'>+324.55</span>/<span class='tcr'>+957.31</span>"
+        "val02": "<span class='tcr'>+56.51</span>/<span class='tcr'>+83.18</span>/<span class='tcr'>+271.57</span>/<span class='tcr'>+837.12</span>"
     },
     {
         "val01": "시가총액",
-        "val02": "91,472"
+        "val02": "83,468"
     },
     {
         "val01": "발행주식수",
-        "val02": "51,650,000"
+        "val02": "53,850,000"
     },
     {
         "val01": "외국인보유율",
-        "val02": "0.32"
+        "val02": "0.48"
     },
     {
         "val01": "거래량(20일 평균,주)",
-        "val02": "18,395,657"
+        "val02": "18,748,909"
     },
     {
         "val01": "거래대금(20일 평균,원)",
-        "val02": "2,401,762,825,985"
+        "val02": "2,519,340,668,692"
     }
 ];
 
@@ -101,7 +119,7 @@ var stk_nm = 'KODEX&nbsp;레버리지';var risk_nm = '1등급';var grade = '3';v
         "val01": "운용사",
         "val02": "삼성자산운용",
         "val03": "기준가<span class='csize'>(원)</span>",
-        "val04": "171763.44"
+        "val04": "178204.14"
     },
     {
         "val01": "매니저",
@@ -123,13 +141,13 @@ var stk_nm = 'KODEX&nbsp;레버리지';var risk_nm = '1등급';var grade = '3';v
     },
     {
         "val01": "존속기간",
-        "val02": "16년2개월",
+        "val02": "16년3개월",
         "val03": "수탁보수",
         "val04": "0.02"
     },
     {
         "val01": "설정액/순자산",
-        "val02": "5,165/88,716",
+        "val02": "5,385/95,963",
         "val03": "일반사무보수",
         "val04": "0.02"
     }
@@ -147,7 +165,7 @@ var stk_nm = 'KODEX&nbsp;레버리지';var risk_nm = '1등급';var grade = '3';v
         "val01": "운용사",
         "val02": "삼성자산운용",
         "val03": "기준가<span class='csize'>(원)</span>",
-        "val04": "171763.44"
+        "val04": "178204.14"
     },
     {
         "val01": "매니저",
@@ -169,13 +187,13 @@ var stk_nm = 'KODEX&nbsp;레버리지';var risk_nm = '1등급';var grade = '3';v
     },
     {
         "val01": "존속기간",
-        "val02": "16년2개월",
+        "val02": "16년3개월",
         "val03": "수탁보수",
         "val04": "0.02"
     },
     {
         "val01": "설정액/순자산",
-        "val02": "5,165/88,716",
+        "val02": "5,385/95,963",
         "val03": "일반사무보수",
         "val04": "0.02"
     }
@@ -467,7 +485,7 @@ var style_info_bond_top10rt = '88.97';
         "val04": "",
         "val05": ""
     }
-];var DataTop10 = {"01":[{"RANK":"1","ITEM_NM":"설정현금액","FUND_RT":"100","SHARES":"0"},{"RANK":"2","ITEM_NM":"2026-06 코스피200지수선물","FUND_RT":"","SHARES":"30"},{"RANK":"3","ITEM_NM":"KODEX 200","FUND_RT":"25.87","SHARES":"17792"},{"RANK":"4","ITEM_NM":"삼성전자","FUND_RT":"19.64","SHARES":"5698"},{"RANK":"5","ITEM_NM":"SK하이닉스","FUND_RT":"15.53","SHARES":"677"},{"RANK":"6","ITEM_NM":"KODEX 200TR","FUND_RT":"8.34","SHARES":"15873"},{"RANK":"7","ITEM_NM":"PLUS 200","FUND_RT":"1.55","SHARES":"1058"},{"RANK":"8","ITEM_NM":"SK스퀘어","FUND_RT":"1.54","SHARES":"113"},{"RANK":"9","ITEM_NM":"현대차","FUND_RT":"1.38","SHARES":"166"},{"RANK":"10","ITEM_NM":"삼성전기","FUND_RT":"0.81","SHARES":"68"}],"02":[{"TRD_DT":"20260514"}]}; <!-- GRID JSON Data-->
+];var DataTop10 = {"01":[{"RANK":"1","ITEM_NM":"설정현금액","FUND_RT":"100","SHARES":"0"},{"RANK":"2","ITEM_NM":"2026-06 코스피200지수선물","FUND_RT":"","SHARES":"29"},{"RANK":"3","ITEM_NM":"KODEX 200","FUND_RT":"24.70","SHARES":"18777"},{"RANK":"4","ITEM_NM":"삼성전자","FUND_RT":"18.14","SHARES":"5976"},{"RANK":"5","ITEM_NM":"SK하이닉스","FUND_RT":"14.49","SHARES":"710"},{"RANK":"6","ITEM_NM":"KODEX 200TR","FUND_RT":"7.90","SHARES":"16646"},{"RANK":"7","ITEM_NM":"PLUS 200","FUND_RT":"1.48","SHARES":"1110"},{"RANK":"8","ITEM_NM":"SK스퀘어","FUND_RT":"1.45","SHARES":"118"},{"RANK":"9","ITEM_NM":"현대차","FUND_RT":"1.37","SHARES":"174"},{"RANK":"10","ITEM_NM":"삼성전기","FUND_RT":"0.80","SHARES":"71"}],"02":[{"TRD_DT":"20260515"}]}; <!-- GRID JSON Data-->
 	</script>
 </head>
 <body class="">

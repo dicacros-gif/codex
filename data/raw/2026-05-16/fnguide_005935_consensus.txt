@@ -30,16 +30,16 @@
     <meta name="dtyp" content="D" />
     <meta name="sno" content="2" />
     
-    <link href="https://wcompcdn.fnguide.com/bundles/jquery/css?v=202605151657" rel="stylesheet"/>
+    <link href="https://wcompcdn.fnguide.com/bundles/jquery/css?v=202605160012" rel="stylesheet"/>
 
-    <link href="https://wcompcdn.fnguide.com/bundles/css?v=202605151657" rel="stylesheet"/>
+    <link href="https://wcompcdn.fnguide.com/bundles/css?v=202605160012" rel="stylesheet"/>
 
-    <script src="https://wcompcdn.fnguide.com/bundles/jquery/core?v=202605151657"></script>
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery/core?v=202605160012"></script>
 <script>(window.jQuery)||document.write('<script src="/bundles/jquery/core"><\/script>');</script>
 
-    <script src="https://wcompcdn.fnguide.com/bundles/jquery?v=202605151657"></script>
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery?v=202605160012"></script>
 
-    <script src="https://wcompcdn.fnguide.com/bundles/jsfile?v=202605151657"></script>
+    <script src="https://wcompcdn.fnguide.com/bundles/jsfile?v=202605160012"></script>
     
 </head>
 <body class="">
@@ -235,7 +235,7 @@
                     </dl>
                     <button type="button" class="tip_in" id="h_per">PER</button>
                 </li>
-                <li>45.10 </li>
+                <li>41.21 </li>
             </ul>
             <ul>
                 <li>
@@ -245,7 +245,7 @@
                     </dl>
                     <button type="button" class="tip_in" id="h_12m">PER(Fwd.12M)</button>
                 </li>
-                <li> 6.39 </li>
+                <li> 5.81 </li>
             </ul>
             <ul>
                 <li>
@@ -255,7 +255,7 @@
                     </dl>
                     <button type="button" class="tip_in" id="h_u_per"><span class="ko">업종</span> PER</button>
                 </li>
-                <li> 37.39 </li>
+                <li> 34.32 </li>
             </ul>
             <ul>
                 <li>
@@ -265,7 +265,7 @@
                     </dl>
                     <button type="button" class="tip_in" id="h_pbr">PBR</button>
                 </li>
-                <li>4.63 </li>
+                <li>4.23 </li>
             </ul>
             <ul>
                 <li>
@@ -275,7 +275,7 @@
                     </dl>
                     <button type="button" class="tip_in" id="h_rate"><span class="ko">현금배당수익률</span></button>
                 </li>
-                <li>0.56 % </li>
+                <li>0.62 % </li>
             </ul>
         </div>
     </div>
@@ -469,10 +469,30 @@
                             <tr class="tbody_tit2 ">
                                 <td class="l">Consensus</td>
                                 <td class="c"></td>
-                                <td class="r">334,800</td>
-                                <td class="r">293,600</td>
-                                <td class="r  ">14.03</td>
+                                <td class="r">342,400</td>
+                                <td class="r">294,800</td>
+                                <td class="r  ">16.15</td>
                                 <td class="r">4.04</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">KB증권</td>
+                                <td class="c">2026/05/15</td>
+                                <td class="r">450,000</td>
+                                <td class="r">360,000</td>
+                                <td class="r  ">25.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">하나증권</td>
+                                <td class="c">2026/05/15</td>
+                                <td class="r">430,000</td>
+                                <td class="r">330,000</td>
+                                <td class="r  ">30.30</td>
+                                <td class="r">4.00</td>
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
@@ -497,16 +517,6 @@
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
                             <tr class=" ">
-                                <td class="l">KB증권</td>
-                                <td class="c">2026/05/11</td>
-                                <td class="r">360,000</td>
-                                <td class="r">360,000</td>
-                                <td class="r  ">0.00</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
                                 <td class="l">미래에셋증권</td>
                                 <td class="c">2026/05/11</td>
                                 <td class="r">400,000</td>
@@ -516,7 +526,7 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
+                            <tr class="zigbg_in ">
                                 <td class="l">대신증권</td>
                                 <td class="c">2026/05/11</td>
                                 <td class="r">450,000</td>
@@ -526,7 +536,7 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
+                            <tr class=" ">
                                 <td class="l">LS증권</td>
                                 <td class="c">2026/05/11</td>
                                 <td class="r">320,000</td>
@@ -536,7 +546,7 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
+                            <tr class="zigbg_in ">
                                 <td class="l">SK증권</td>
                                 <td class="c">2026/05/07</td>
                                 <td class="r">500,000</td>
@@ -546,7 +556,7 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
+                            <tr class=" ">
                                 <td class="l">교보증권</td>
                                 <td class="c">2026/05/06</td>
                                 <td class="r">330,000</td>
@@ -556,7 +566,7 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
+                            <tr class="zigbg_in ">
                                 <td class="l">한화투자증권</td>
                                 <td class="c">2026/05/04</td>
                                 <td class="r">330,000</td>
@@ -566,7 +576,7 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
+                            <tr class=" ">
                                 <td class="l">DB증권</td>
                                 <td class="c">2026/05/04</td>
                                 <td class="r">280,000</td>
@@ -576,7 +586,7 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
+                            <tr class="zigbg_in ">
                                 <td class="l">삼성증권</td>
                                 <td class="c">2026/05/04</td>
                                 <td class="r">300,000</td>
@@ -586,7 +596,7 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
+                            <tr class=" ">
                                 <td class="l">신한투자증권</td>
                                 <td class="c">2026/05/04</td>
                                 <td class="r">300,000</td>
@@ -596,22 +606,12 @@
                                 <td class="cle r">4.00</td>
                             </tr>
 <!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
+                            <tr class="zigbg_in ">
                                 <td class="l">한국투자증권</td>
                                 <td class="c">2026/05/04</td>
                                 <td class="r">370,000</td>
                                 <td class="r">330,000</td>
                                 <td class="r  ">12.12</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">하나증권</td>
-                                <td class="c">2026/05/04</td>
-                                <td class="r">330,000</td>
-                                <td class="r">300,000</td>
-                                <td class="r  ">10.00</td>
                                 <td class="r">4.00</td>
                                 <td class="cle r">4.00</td>
                             </tr>
@@ -1090,11 +1090,11 @@
                  consol_typ:'C',
                  lang: 'KR',
                  trendYYMM: [{"YYMM":"202612","YYMM_F":"2026/12"},{"YYMM":"202712","YYMM_F":"2027/12"},{"YYMM":"202812","YYMM_F":"2028/12"}],
-                 perforTrend: {"data":[{"NAME":"매출액","AC_CODE":"121000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"2589354.94","VAL2":"3008709.03","VAL3":"3336059.38","VAL4":"6724543.04","VAL5":"8015193.64","VAL6":"8123968.71"},{"NAME":"    전년동기대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-14.33","VAL2":"16.20","VAL3":"10.88","VAL4":"101.57","VAL5":"19.19","VAL6":"1.36"},{"NAME":"    컨센서스대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-1.00","VAL2":"-0.56","VAL3":"0.74","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"영업이익","AC_CODE":"121450","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"65669.76","VAL2":"327259.61","VAL3":"436010.51","VAL4":"3438534.60","VAL5":"4355683.12","VAL6":"4120328.76"},{"NAME":"    전년동기대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-84.86","VAL2":"398.34","VAL3":"33.23","VAL4":"688.64","VAL5":"26.67","VAL6":"-5.40"},{"NAME":"    컨센서스대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-11.95","VAL2":"-4.48","VAL3":"3.72","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익","AC_CODE":"122700","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"154871.00","VAL2":"344513.51","VAL3":"452068.05","VAL4":"2814031.72","VAL5":"3504640.40","VAL6":"3509827.59"},{"NAME":"    전년동기대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-72.17","VAL2":"122.45","VAL3":"31.22","VAL4":"522.48","VAL5":"24.54","VAL6":"0.15"},{"NAME":"    컨센서스대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"25.31","VAL2":"2.11","VAL3":"8.63","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익(지배)","AC_CODE":"122710","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"144734.01","VAL2":"336213.63","VAL3":"442609.56","VAL4":"2802998.25","VAL5":"3490969.96","VAL6":"3456489.65"},{"NAME":"당기순이익(비지배)","AC_CODE":"122720","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"10136.99","VAL2":"8299.88","VAL3":"9458.49","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"자산총계","AC_CODE":"111000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"4559059.80","VAL2":"5145319.48","VAL3":"5669421.10","VAL4":"8529096.21","VAL5":"11816960.00","VAL6":"14832254.76"},{"NAME":"부채총계","AC_CODE":"113000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"922281.15","VAL2":"1123398.78","VAL3":"1306217.73","VAL4":"1815815.08","VAL5":"1956726.42","VAL6":"2051721.12"},{"NAME":"자본총계","AC_CODE":"115000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"3636778.65","VAL2":"4021920.70","VAL3":"4363203.37","VAL4":"7027411.46","VAL5":"10237567.54","VAL6":"13402109.06"},{"NAME":"  자본총계(지배)","AC_CODE":"115020","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"3532337.75","VAL2":"3916876.03","VAL3":"4243132.55","VAL4":"6863059.00","VAL5":"10049734.57","VAL6":"13369028.53"},{"NAME":"  자본총계(비지배)","AC_CODE":"115850","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"104440.90","VAL2":"105044.67","VAL3":"120070.82","VAL4":"164352.46","VAL5":"187832.97","VAL6":"33080.53"},{"NAME":"자본금","AC_CODE":"115100","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"8975.14","VAL2":"8975.14","VAL3":"8975.14","VAL4":"8971.67","VAL5":"8971.67","VAL6":"8968.53"},{"NAME":"EPS","AC_CODE":"312000","P_AC_CODE":null,"FORMULA":"EPS||||당기순이익(지배) / 수정평균발행주식수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"2130.74","VAL2":"4949.65","VAL3":"6563.57","VAL4":"42021.88","VAL5":"52506.45","VAL6":"51987.84"},{"NAME":"BPS","AC_CODE":"314000","P_AC_CODE":null,"FORMULA":"BPS||||자본총계(지배) / 수정기말발행주식수(자사주차감)","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"52002.20","VAL2":"57980.81","VAL3":"63997.24","VAL4":"104515.24","VAL5":"153044.06","VAL6":"203592.48"},{"NAME":"현금DPS","AC_CODE":"423400","P_AC_CODE":null,"FORMULA":"DPS||||DPS(보통주,현금) * 무상조정수정계수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"1444.00","VAL2":"1446.00","VAL3":"1668.00","VAL4":"3825.21","VAL5":"2629.04","VAL6":"2997.24"},{"NAME":"PER","AC_CODE":"382100","P_AC_CODE":null,"FORMULA":"PER||||수정주가(보통주,기말) / 수정EPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"36.84","VAL2":"10.75","VAL3":"18.27","VAL4":"7.04","VAL5":"5.64","VAL6":"5.69"},{"NAME":"PBR","AC_CODE":"382500","P_AC_CODE":null,"FORMULA":"PBR||||수정주가(보통주,기말) / 수정BPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"1.51","VAL2":"0.92","VAL3":"1.87","VAL4":"2.83","VAL5":"1.93","VAL6":"1.45"}],"header":[{"YYMM":"2023/12","EP_CHK":" ","CD":"VAL1"},{"YYMM":"2024/12","EP_CHK":" ","CD":"VAL2"},{"YYMM":"2025/12","EP_CHK":" ","CD":"VAL3"},{"YYMM":"2026/12","EP_CHK":"E","CD":"VAL4"},{"YYMM":"2027/12","EP_CHK":"E","CD":"VAL5"},{"YYMM":"2028/12","EP_CHK":"E","CD":"VAL6"}]},
-                 perforTrendChart: {"data":[{"YYMM":"2023","FS_YEAR":"2023","ACT_VAL":65669.76,"CNS_VAL":74581.13},{"YYMM":"2024","FS_YEAR":"2024","ACT_VAL":327259.61,"CNS_VAL":342607.36},{"YYMM":"2025","FS_YEAR":"2025","ACT_VAL":436010.51,"CNS_VAL":420354.54},{"YYMM":"2026","FS_YEAR":"2026","ACT_VAL":null,"CNS_VAL":3438534.6},{"YYMM":"2027","FS_YEAR":"2027","ACT_VAL":null,"CNS_VAL":4355683.12},{"YYMM":"2028","FS_YEAR":"2028","ACT_VAL":null,"CNS_VAL":4120328.76}],"header":[{"ID":"FS_YEAR","NM":"일자","DIGIT":-1},{"ID":"ACT_VAL","NM":"영업이익(실적)","DIGIT":2},{"ID":"CNS_VAL","NM":"영업이익(추정)","DIGIT":2}]},
+                 perforTrend: {"data":[{"NAME":"매출액","AC_CODE":"121000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"2589354.94","VAL2":"3008709.03","VAL3":"3336059.38","VAL4":"6747795.52","VAL5":"8062436.40","VAL6":"8123968.71"},{"NAME":"    전년동기대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-14.33","VAL2":"16.20","VAL3":"10.88","VAL4":"102.27","VAL5":"19.48","VAL6":"0.76"},{"NAME":"    컨센서스대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-1.00","VAL2":"-0.56","VAL3":"0.74","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"영업이익","AC_CODE":"121450","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"65669.76","VAL2":"327259.61","VAL3":"436010.51","VAL4":"3454416.00","VAL5":"4372882.12","VAL6":"4120328.76"},{"NAME":"    전년동기대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-84.86","VAL2":"398.34","VAL3":"33.23","VAL4":"692.28","VAL5":"26.59","VAL6":"-5.78"},{"NAME":"    컨센서스대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-11.95","VAL2":"-4.48","VAL3":"3.72","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익","AC_CODE":"122700","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"154871.00","VAL2":"344513.51","VAL3":"452068.05","VAL4":"2826630.52","VAL5":"3518329.20","VAL6":"3509827.59"},{"NAME":"    전년동기대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-72.17","VAL2":"122.45","VAL3":"31.22","VAL4":"525.27","VAL5":"24.47","VAL6":"-0.24"},{"NAME":"    컨센서스대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"25.31","VAL2":"2.11","VAL3":"8.63","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익(지배)","AC_CODE":"122710","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"144734.01","VAL2":"336213.63","VAL3":"442609.56","VAL4":"2815965.46","VAL5":"3504975.29","VAL6":"3456489.65"},{"NAME":"당기순이익(비지배)","AC_CODE":"122720","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"10136.99","VAL2":"8299.88","VAL3":"9458.49","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"자산총계","AC_CODE":"111000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"4559059.80","VAL2":"5145319.48","VAL3":"5669421.10","VAL4":"8549913.33","VAL5":"11857309.46","VAL6":"14832254.76"},{"NAME":"부채총계","AC_CODE":"113000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"922281.15","VAL2":"1123398.78","VAL3":"1306217.73","VAL4":"1823496.33","VAL5":"1969657.17","VAL6":"2051721.12"},{"NAME":"자본총계","AC_CODE":"115000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"3636778.65","VAL2":"4021920.70","VAL3":"4363203.37","VAL4":"7040547.33","VAL5":"10264986.25","VAL6":"13402109.06"},{"NAME":"  자본총계(지배)","AC_CODE":"115020","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"3532337.75","VAL2":"3916876.03","VAL3":"4243132.55","VAL4":"6877892.52","VAL5":"10080601.24","VAL6":"13369028.53"},{"NAME":"  자본총계(비지배)","AC_CODE":"115850","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"104440.90","VAL2":"105044.67","VAL3":"120070.82","VAL4":"162654.81","VAL5":"184385.01","VAL6":"33080.53"},{"NAME":"자본금","AC_CODE":"115100","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"8975.14","VAL2":"8975.14","VAL3":"8975.14","VAL4":"8971.67","VAL5":"8971.67","VAL6":"8968.53"},{"NAME":"EPS","AC_CODE":"312000","P_AC_CODE":null,"FORMULA":"EPS||||당기순이익(지배) / 수정평균발행주식수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"2130.74","VAL2":"4949.65","VAL3":"6563.57","VAL4":"42216.28","VAL5":"52717.10","VAL6":"51987.84"},{"NAME":"BPS","AC_CODE":"314000","P_AC_CODE":null,"FORMULA":"BPS||||자본총계(지배) / 수정기말발행주식수(자사주차감)","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"52002.20","VAL2":"57980.81","VAL3":"63997.24","VAL4":"104741.13","VAL5":"153514.11","VAL6":"203592.48"},{"NAME":"현금DPS","AC_CODE":"423400","P_AC_CODE":null,"FORMULA":"DPS||||DPS(보통주,현금) * 무상조정수정계수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"1444.00","VAL2":"1446.00","VAL3":"1668.00","VAL4":"3825.21","VAL5":"2629.04","VAL6":"2997.24"},{"NAME":"PER","AC_CODE":"382100","P_AC_CODE":null,"FORMULA":"PER||||수정주가(보통주,기말) / 수정EPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"36.84","VAL2":"10.75","VAL3":"18.27","VAL4":"6.41","VAL5":"5.13","VAL6":"5.20"},{"NAME":"PBR","AC_CODE":"382500","P_AC_CODE":null,"FORMULA":"PBR||||수정주가(보통주,기말) / 수정BPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"1.51","VAL2":"0.92","VAL3":"1.87","VAL4":"2.58","VAL5":"1.76","VAL6":"1.33"}],"header":[{"YYMM":"2023/12","EP_CHK":" ","CD":"VAL1"},{"YYMM":"2024/12","EP_CHK":" ","CD":"VAL2"},{"YYMM":"2025/12","EP_CHK":" ","CD":"VAL3"},{"YYMM":"2026/12","EP_CHK":"E","CD":"VAL4"},{"YYMM":"2027/12","EP_CHK":"E","CD":"VAL5"},{"YYMM":"2028/12","EP_CHK":"E","CD":"VAL6"}]},
+                 perforTrendChart: {"data":[{"YYMM":"2023","FS_YEAR":"2023","ACT_VAL":65669.76,"CNS_VAL":74581.13},{"YYMM":"2024","FS_YEAR":"2024","ACT_VAL":327259.61,"CNS_VAL":342607.36},{"YYMM":"2025","FS_YEAR":"2025","ACT_VAL":436010.51,"CNS_VAL":420354.54},{"YYMM":"2026","FS_YEAR":"2026","ACT_VAL":null,"CNS_VAL":3454416.0},{"YYMM":"2027","FS_YEAR":"2027","ACT_VAL":null,"CNS_VAL":4372882.12},{"YYMM":"2028","FS_YEAR":"2028","ACT_VAL":null,"CNS_VAL":4120328.76}],"header":[{"ID":"FS_YEAR","NM":"일자","DIGIT":-1},{"ID":"ACT_VAL","NM":"영업이익(실적)","DIGIT":2},{"ID":"CNS_VAL","NM":"영업이익(추정)","DIGIT":2}]},
                  reports: [{"DT":"2026/05/15","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1097924,"RPT_TITLE":"메모리 1위 업체가 파운드리 경쟁력도 회복한다","COMMENT":"▶ 여전히 예상보다 높은 메모리 가격\r\n▶ 파운드리 경쟁력 회복에도 주목\r\n▶ 글로벌 반도체 업체들 실적 발표 이후에 멀티플 레벨업\r\n▶ 동일 업종대비 여전히 저평가. 파운드리 경쟁력 제고도 필요","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"하나증권","ANL_NM_KOR":"김록호","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"430,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/15","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1097776,"RPT_TITLE":"AI 투자는 천장이 없다","COMMENT":"▶ 2027년 메모리 공급은 더 부족 \r\n▶ 메모리, 희소 전략 자산으로 재평가","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"김동원","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"450,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":1},{"DT":"2026/05/13","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1097069,"RPT_TITLE":"수요의 본질 변화로 Valuation Tool도 변화가 필요한 시점","COMMENT":"▶ 올해 반도체 매출액은 NVIDIA 매출액에 육박할 정도로 큰 호황을 누릴 것으로 보이며 이와 같은 호황은 향후 몇 년간은 지속될 것으로 예상\r\n▶ Physical AI가 DRAM 신규 성장 동력이라는 점에서 동사의 Foundry 경쟁력 상승은 산업 수급 관점에서 상당히 중요할 것으로 예상","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"현대차증권","ANL_NM_KOR":"노근창","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"340,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/11","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1096240,"RPT_TITLE":"Strong medium/long-term visibility","COMMENT":"▶ High profitability to be sustained\r\n▶ Sharp rise in long-term order commitments across the AI value chain","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김영건","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"400,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/11","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1096172,"RPT_TITLE":"중장기 사업 가시성 확보","COMMENT":"▶ 높아진 수익성을 안정적으로 유지\r\n▶ AI 가치사슬 장기수주 규모 가파르게 증가","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김영건","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"400,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/11","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1095969,"RPT_TITLE":"2Q26 영업이익 100조원 예상","COMMENT":"▶ 2Q26 영업이익 100조원 예상, 전망치 상향 \r\n▶ 3Q26 영업이익 108조원 전망, 메모리 가격 상승률 둔화 \r\n▶ 목표주가 33만원으로 상향, 업종 top pick 유지","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"키움증권","ANL_NM_KOR":"박유악","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"330,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/11","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1095852,"RPT_TITLE":"지금이 가장 싸다","COMMENT":"▶ 목표주가 360,000원, 메모리 공급 제로의 시대 \r\n▶ 2분기 영업이익 84조원, 전년대비 +18배 급증 \r\n▶ 메모리·파운드리·로봇 3대 성장 엔진 동시 점화","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"김동원","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"360,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":1},{"DT":"2026/05/11","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1095805,"RPT_TITLE":"시간이 매수자들의 편인 것은 맞지만","COMMENT":"▶ Risk Lover들이 얼마나 사줄 것인가\r\n▶ 삼성전자 실적 전망\r\n▶ 삼성전자 메모리 사업부 주요 가정","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"LS증권","ANL_NM_KOR":"정우성","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"320,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/07","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1094980,"RPT_TITLE":"Removing the valuation discount","COMMENT":"▶ Valuation discount factors fading","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김영건","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"400,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/07","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1094859,"RPT_TITLE":"밸류에이션 할인 종식을 고함","COMMENT":"▶ 실적 전망에 대한 기조는 직전과 유지하나, 투자자군의 변화가 감지되어 그간의 밸류에이션 할인요인을 제거\r\n▶ 동사 파운드리의 엔비디아향 4nm Groq LPU 수주가 올해 하반기, 테슬라향 2nm AI 칩 수주(약 23조원 규모)의 양산도 내년 하반기로 예상\r\n▶ 동사는 최근 콜에서 다수의 대형 고객사와 2nm 수주를 논의 중이며, 금명간 성과가 기대된다고 밝힘","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김영건","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"400,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/06","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1094327,"RPT_TITLE":"호황의 강도와 지속성 모두 확인","COMMENT":"▶ 1Q26 Review 호황의 강도와 지속성 모두 확인\r\n▶ 투자의견 BUY, 목표주가 330,000원 상향","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"교보증권","ANL_NM_KOR":"최보영","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"330,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093638,"RPT_TITLE":"3Q26 영업이익 100조원 전망","COMMENT":"▶ 1Q26 범용 메모리 가격, 당사 추정치 상회\r\n▶ 2Q26 영업이익 90조원, 시장 기대치 상회 전망\r\n▶ 반도체 업종 top pick 유지","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"키움증권","ANL_NM_KOR":"박유악","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1094112,"RPT_TITLE":"A clear supercycle","COMMENT":"▶ Excess demand drives memory market tightness through 2027\r\n▶ Semiconductor OP set to surge 1,335.1% on memory price gains\r\n▶ Valuation & risk: Shareholder return highlighted amid strong memory market conditions","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"김형태","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"300,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1094084,"RPT_TITLE":"Supply constraints tighten ","COMMENT":"▶ Investment strategy?Focus shifting from earnings sustainability to scale\r\n▶ 1Q results highlight the unrelenting strength of the memory cycle\r\n▶ Memory cycle shows no signs of abating","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"삼성증권","ANL_NM_KOR":"이종욱","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"300,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1094021,"RPT_TITLE":"Profitability concerns likely to be temporary","COMMENT":"▶ Increased demand visibility and limited valuation burden","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김영건","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"320,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093957,"RPT_TITLE":"수익성 약화 우려는 일시적","COMMENT":"▶ 최근 N사향 4nm LPU, T사향 2nm Al 칩 수주, HBM4 베이스다이의 성과 등을 고려하면 사실상 기업가치에 반영이 배제되었다고 봐도 과언이 아니다\r\n▶ DRAM/NAND ASP 상승률은 각각 +23%, +30%로, B/G는 +7%, +3%로 예상\r\n▶ 27년에도 Capex 투자가 확대될 전망","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김영건","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"320,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093920,"RPT_TITLE":"HBM 시장 입지 확대 전망","COMMENT":"▶ 1Q26 Review: 메모리가 이끈 호실적\r\n▶ HBM 시장 입지 확대 전망\r\n▶ 투자의견 Buy 유지, 목표주가 28만원으로 상향","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"DB증권","ANL_NM_KOR":"서승연","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"280,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093909,"RPT_TITLE":"단기 부담을 이겨 낼 구조적 변화","COMMENT":"▶ 1Q26 호실적(영업이익 57.2조원)을 이끈 주요 요인은 예상보다 높은 메모리 가격 강세\r\n▶ 삼성전자의 2026년, 2027년 영업이익은 334조원(+663%YoY), 522조원(+56%YoY)으로 전망","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"유진투자증권","ANL_NM_KOR":"손인준","RECOMM_ACTION_TYP":1,"RECOMM_NM":"STRONG BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"360,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093823,"RPT_TITLE":"Foundry는 실적보다는 Total Solution 관점에서 재평가 필요","COMMENT":"▶ 삼성전자에 대해 6개월 목표주가 270,000원 (2026년 예상 BPS에 Target P/B 2.5배 적용)에 투자의견 매수 유지\r\n▶ 동사의 1분기 확정 매출액과 영업이익은 QoQ로 각각 42.7%, 185.0% 증가한 134조원과 57.2조원을 기록\r\n▶ 사업부별 영업이익은 DS 53.7조원, SDC 0.4조원, MX/NW 2.8조원, VD/가전 0.2조원, Harman 0.2조원을 기록","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"현대차증권","ANL_NM_KOR":"노근창","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"270,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093762,"RPT_TITLE":"공급의 문은 오히려 좁아진다","COMMENT":"▶ 이익의 규모보다 지속성이 중요해지는 국면. LTA와 HBM 확대가 공급의 문을 좁히는 동시에 이익의 안정성을 높이는 요인\r\n▶ 2Q OP 81.2조원, 26년 OP 341조원 추정. 목표주가 30만원으로 상향","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"삼성증권","ANL_NM_KOR":"이종욱","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"300,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093711,"RPT_TITLE":"메모리 천하의 주인공","COMMENT":"▶ 26년 1분기, 압도적 메모리 실적\r\n▶ 26년 2분기, 가격 상승 지속 효과\r\n▶ 투자의견 매수, 목표주가 350,000원 유지","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"IBK투자증권","ANL_NM_KOR":"김운호","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"350,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093704,"RPT_TITLE":"매분기가 최대실적","COMMENT":"▶ 실적대비 주가는 여전히 저평가\r\n▶ 반도체가 이끄는 새로운 역사","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"NH투자증권","ANL_NM_KOR":"류영호","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"310,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093685,"RPT_TITLE":"1Q26 Review: 2027년은 더 심한 숏티지 구간","COMMENT":"▶ 1Q26: 다시 한번 분기 최고 실적 경신 \r\n▶ 2Q26: 해결되지 않는 숏티지, 또 상승하는 메모리 가격 ","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"한화투자증권","ANL_NM_KOR":"박준영","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"330,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093672,"RPT_TITLE":"의심할 여지 없는 초호황","COMMENT":"▶ 메모리 수급 불균형 장기화, 2027년까지 초과 수요 지속\r\n▶ 메모리 가격 상승 지속 → 반도체(DS) 영업이익 1,335.1% 성장 전망\r\n▶ Valuation & Risk: 메모리 업황 강세 속 주주환원정책에 관심 집중","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"김형태","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"300,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093597,"RPT_TITLE":"1Q26 Review: 좋은 얘기가 많아서 지면이 모자랍니다","COMMENT":"▶ 1분기 실적은 컨센서스를 상회\r\n▶ 영업이익 상승세 계속될 것\r\n▶ 목표 주가 상향, 비중 확대와 매수 의견 유지","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"한국투자증권","ANL_NM_KOR":"채민숙","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"370,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093588,"RPT_TITLE":"경쟁력 회복이 일조한 1Q26 Memory 실적","COMMENT":"▶ 최소 P/B 3.1배 적용 가능\r\n▶ 경쟁사들을 상회한 1Q26 Memory 실적\r\n▶ 2Q26 영업이익을 82.9조원으로 전망","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"iM증권","ANL_NM_KOR":"송명섭","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"300,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093576,"RPT_TITLE":"협상의 달인","COMMENT":"▶ 그간의 1등 DNA가 다시금 발현되며 가장 경쟁력 있는 범용 메모리 판가 확보 중\r\n▶ 단기적으로 파업 및 임직원 보상 규모 미정 등 주가의 불확실성 요인 존재\r\n▶ 아직 끝나지 않은 ASP 상승 및 이익 추정치 상향  & 강한 업황/실적 대비 눌려있는 주가 수준이라는 점에서 오히려 적극 비중확대 기회로 활용할 구간","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"다올투자증권","ANL_NM_KOR":"고영민","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"390,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093517,"RPT_TITLE":"메모리 공급 제로의 시대","COMMENT":"▶ 2026년 영업이익 360조원으로 상향 \r\n▶ 2027년 메모리 공급이 2026년보다 더 타이트 \r\n▶ 레인보우로보틱스 협력, 휴머노이드 상용화 임박","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"김동원","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"360,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":1},{"DT":"2026/05/04","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093260,"RPT_TITLE":"갈 길이 멀다","COMMENT":"▶ 1Q26 Review: 메모리가 견인한 호실적\r\n▶ 2Q26 Preview: 전사 실적에 준하는 메모리 영업이익\r\n▶ 불확실성 해소가 관건","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"하나증권","ANL_NM_KOR":"김록호","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"330,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093139,"RPT_TITLE":"2026.1Q Financial Results","COMMENT":"▶ 2026년 1분기 경영실적 및 Q&A","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"해당기업","ANL_NM_KOR":"IR팀","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093138,"RPT_TITLE":"2026년 1분기 경영실적","COMMENT":"▶ 2026년 1분기 경영실적 및 Q&A","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"해당기업","ANL_NM_KOR":"IR팀","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093198,"RPT_TITLE":"[AI 실적속복] 1분기 실적 컨콜 요약","COMMENT":"▶ 2026년 1분기 실적은 매출액 133.9조원 (+43% QoQ, +69% YoY), 영업이익 57.2조원 (+185% QoQ, +756% YoY)을 기록\r\n▶ 주요 부문별 영업이익은 DS부문 53.7조원 (+37% QoQ, +53%YoY), DX부문 3.0조원 (+2% QoQ, -2% YoY), SDC 0.4조원 (+2% QoQ, flat YoY) 기록\r\n▶ 1분기 DRAM B/G +10% 초반 QoQ 상승, DRAM ASP +90% 초반 QoQ 상승","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"김동원","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"270,500","BEST_ANALYST_YN":1},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093115,"RPT_TITLE":"1Q26 Conference call","COMMENT":"▶ 하반기 AI 서버 뿐 아니라 일반 서버 향 메모리 수요 예상보다 강할 것\r\n▶ 하반기 HBM4 본격화. 27 년 DRAM 대비 HBM 수익성 열위 크게 축소 전망\r\n▶ 수요 충족률 역대 최저. 현재 접수된 물량 감안 시 27 년 공급 부족 더욱 심화","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"SK증권","ANL_NM_KOR":"한동희","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1094026,"RPT_TITLE":"2Q26E OP W86.8tn: price momentum maximizing","COMMENT":"▶ 2Q26 OP estimated at W86.8tn\r\n▶ Maintain BUY; revise target price to W340,000","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"유안타증권","ANL_NM_KOR":"백길현","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"340,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093385,"RPT_TITLE":"실적과 주주환원이 이끄는 재평가","COMMENT":"▶ 1Q26 영업이익 57.2조원, 전인미답의 길로 이어진다\r\n▶ Mid-cycle에도 못 미친 메모리 업황. 개선세는 지속된다","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"메리츠증권","ANL_NM_KOR":"김선우","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"290,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093371,"RPT_TITLE":"2Q26 예상 영업이익 86.8조원, 가격 모멘텀 극대화 구간","COMMENT":"▶ 2Q26 예상 영업이익 86.8조원 \r\n▶ 투자의견 BUY 유지, 목표주가 34만원으로 상향 조정","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"유안타증권","ANL_NM_KOR":"백길현","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"340,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093363,"RPT_TITLE":"바겐세일","COMMENT":"▶ 훌륭한 실적에도, 주가는 상대적으로 부진. 현저한 저평가 국면.\r\n▶ 메모리반도체 외에도 긍정적 변화는 다량 존재. 해당 가치에 주목.\r\n▶ 목표주가와 매수의견 유지. 적극적 매수 접근이 필요한 시점.","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"대신증권","ANL_NM_KOR":"류형근","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"330,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1093221,"RPT_TITLE":"메모리와 파운드리 모두 순항 중","COMMENT":"▶ 1Q26 영업이익 57.2조원 발표\r\n▶ 2Q26 Pre: 영업이익 79.1조원 전망\r\n▶ 메모리와 파운드리 모두 순항 중","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"DS투자증권","ANL_NM_KOR":"이수림","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"300,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1092378,"RPT_TITLE":"진검승부를 시작할 시간","COMMENT":"▶ 이제부터는 Capa싸움이다\r\n▶ 제대로 통한 HBM4 승부수\r\n▶ 섹터 내 Top pick 유지","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"한국투자증권","ANL_NM_KOR":"채민숙","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"330,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1092205,"RPT_TITLE":"AI 추론 시대의 최종 승자","COMMENT":"▶ 2분기 공급 절벽 가시화, 수요 충족률 50% \r\n▶ CPU패권전환,CPU성능의승부처는메모리 \r\n▶ 2030년까지메모리장기강세,AI는천장이없다","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"김동원","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"360,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":1},{"DT":"2026/04/27","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1091422,"RPT_TITLE":"차세대 AI 서버 모델에서 점유율 상승, 실적 차별화","COMMENT":"▶ 2Q26 영업이익 82조원 예상, 메모리 주도 역할 지속 \r\n▶ 하반기 AI 노출도 확대, 에이젠틱 AI 진화 수혜 \r\n▶ 목표주가 28만원으로 상향조정, 투자의견 ‘매수’ 유지","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"BNK투자증권","ANL_NM_KOR":"이민희","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"280,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/23","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1090229,"RPT_TITLE":"파업, 가격 상승 압력의 증폭 요인","COMMENT":"▶ 삼성전자 DS 노조: 4/23 (평택 결의 대회), 5/21~6/7 (파업 예정) \r\n▶ 2년 전 파업과 다른 상황: 2024년 (5,000명) vs. 2026년 (30,000~40,000명) \r\n▶ 불붙은 시장에 기름을 붓는 격: 공급부족 심화 및 가격 상승 압력의 증폭 요인","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"김동원","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"270,500","BEST_ANALYST_YN":1},{"DT":"2026/04/21","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1089788,"RPT_TITLE":"Earnings expectations raised once again","COMMENT":"▶ Profit growth stronger than expected amid prolonged excess memory demand\r\n▶ Semiconductor OP forecast to jump 1,340% on continued memory price increases\r\n▶ Valuation & risk: Re-emerging expectations for additional shareholder return amid strong market conditions","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"김형태","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"300,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0},{"DT":"2026/04/21","PRE_DT":null,"CMP_CD":"005930","RPT_ID":1089547,"RPT_TITLE":"실적 눈높이 재차 상향","COMMENT":"▶ 메모리 초과 수요 환경 장기화 → 기대 이상의 이익 성장\r\n▶ 메모리 가격 상승 지속 → 반도체(DS) 영업이익 1,340% 성장 전망\r\n▶ Valuation & Risk: 업황 강세 속 추가 주주환원정책 기대감도 재부각","CMP_NM_KOR":"삼성전자","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"김형태","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"300,000","CLOSE_PRC":"270,500","BEST_ANALYST_YN":0}],
-                 cnsTrendChart: {"data":[{"TRD_DT":"25/06/30","VAL_MAX":623170.00,"VAL_MIN":166230.00,"VAL_AVG":391165.56},{"TRD_DT":"25/07/31","VAL_MAX":592140.00,"VAL_MIN":193550.00,"VAL_AVG":387748.80},{"TRD_DT":"25/08/29","VAL_MAX":475663.00,"VAL_MIN":193550.00,"VAL_AVG":387967.88},{"TRD_DT":"25/09/30","VAL_MAX":552320.00,"VAL_MIN":193550.00,"VAL_AVG":462062.80},{"TRD_DT":"25/10/31","VAL_MAX":949880.00,"VAL_MIN":476154.00,"VAL_AVG":743112.62},{"TRD_DT":"25/11/28","VAL_MAX":1004190.00,"VAL_MIN":476154.00,"VAL_AVG":800113.88},{"TRD_DT":"25/12/30","VAL_MAX":1128194.00,"VAL_MIN":476154.00,"VAL_AVG":854386.92},{"TRD_DT":"26/01/30","VAL_MAX":2112250.00,"VAL_MIN":619439.00,"VAL_AVG":1580002.62},{"TRD_DT":"26/02/27","VAL_MAX":2265590.00,"VAL_MIN":1401325.00,"VAL_AVG":1831146.68},{"TRD_DT":"26/03/31","VAL_MAX":2510150.00,"VAL_MIN":1401325.00,"VAL_AVG":1979996.92},{"TRD_DT":"26/04/30","VAL_MAX":3697019.00,"VAL_MIN":1553651.00,"VAL_AVG":3202904.67},{"TRD_DT":"26/05/14","VAL_MAX":3978890.00,"VAL_MIN":2725276.00,"VAL_AVG":3438534.60}],"header":[{"ID":"TRD_DT","NM":"일자","DIGIT":-1},{"ID":"VAL_MAX","NM":"컨센서스(최고)","DIGIT":0},{"ID":"VAL_MIN","NM":"컨센서스(최저)","DIGIT":0},{"ID":"VAL_AVG","NM":"컨센서스","DIGIT":2}]},
-                 cnsTrend: {"data":[{"ACC_NM":"매출액","UNIT":"","DIGIT":0,"VAL1":"6724543.04","VAL2":"6169200.12","VAL3":"4879576.67","VAL4":"3793501.50","VAL5":"3373443.56"},{"ACC_NM":"영업이익","UNIT":"","DIGIT":0,"VAL1":"3438534.60","VAL2":"2975477.96","VAL3":"1675616.88","VAL4":"765287.35","VAL5":"406928.60"},{"ACC_NM":"당기순이익","UNIT":"","DIGIT":0,"VAL1":"2802998.25","VAL2":"2409278.40","VAL3":"1384969.54","VAL4":"657242.77","VAL5":"381492.56"},{"ACC_NM":"EPS","UNIT":"(원)","DIGIT":0,"VAL1":"42021.88","VAL2":"36119.32","VAL3":"20763.13","VAL4":"9853.23","VAL5":"5719.24"},{"ACC_NM":"PER","UNIT":"","DIGIT":2,"VAL1":"7.04","VAL2":"5.72","VAL3":"8.73","VAL4":"9.86","VAL5":"10.04"},{"ACC_NM":"PER(Fwd. 12M)","UNIT":"","DIGIT":2,"VAL1":"6.39","VAL2":"5.33","VAL3":"8.56","VAL4":"10.35","VAL5":"11.15"},{"ACC_NM":"목표주가","UNIT":"(원)","DIGIT":0,"VAL1":"334800.00","VAL2":"288000.00","VAL3":"216416.67","VAL4":"135653.85","VAL5":"74920.00"},{"ACC_NM":"투자의견(점수)","UNIT":"","DIGIT":2,"VAL1":"4.04","VAL2":"4.00","VAL3":"4.00","VAL4":"4.00","VAL5":"4.00"}],"header":[{"ID":"ACC_NM","NM":"2026/05/14","DIGIT":0},{"ID":"VAL1","NM":"당기순이익","DIGIT":0},{"ID":"VAL2","NM":"1개월전","DIGIT":0},{"ID":"VAL3","NM":"3개월전","DIGIT":0},{"ID":"VAL4","NM":"6개월전","DIGIT":0},{"ID":"VAL5","NM":"1년전","DIGIT":0}]},
+                 cnsTrendChart: {"data":[{"TRD_DT":"25/06/30","VAL_MAX":623170.00,"VAL_MIN":166230.00,"VAL_AVG":391165.56},{"TRD_DT":"25/07/31","VAL_MAX":592140.00,"VAL_MIN":193550.00,"VAL_AVG":387748.80},{"TRD_DT":"25/08/29","VAL_MAX":475663.00,"VAL_MIN":193550.00,"VAL_AVG":387967.88},{"TRD_DT":"25/09/30","VAL_MAX":552320.00,"VAL_MIN":193550.00,"VAL_AVG":462062.80},{"TRD_DT":"25/10/31","VAL_MAX":949880.00,"VAL_MIN":476154.00,"VAL_AVG":743112.62},{"TRD_DT":"25/11/28","VAL_MAX":1004190.00,"VAL_MIN":476154.00,"VAL_AVG":800113.88},{"TRD_DT":"25/12/30","VAL_MAX":1128194.00,"VAL_MIN":476154.00,"VAL_AVG":854386.92},{"TRD_DT":"26/01/30","VAL_MAX":2112250.00,"VAL_MIN":619439.00,"VAL_AVG":1580002.62},{"TRD_DT":"26/02/27","VAL_MAX":2265590.00,"VAL_MIN":1401325.00,"VAL_AVG":1831146.68},{"TRD_DT":"26/03/31","VAL_MAX":2510150.00,"VAL_MIN":1401325.00,"VAL_AVG":1979996.92},{"TRD_DT":"26/04/30","VAL_MAX":3697019.00,"VAL_MIN":1553651.00,"VAL_AVG":3202904.67},{"TRD_DT":"26/05/15","VAL_MAX":3978890.00,"VAL_MIN":2725276.00,"VAL_AVG":3454416.00}],"header":[{"ID":"TRD_DT","NM":"일자","DIGIT":-1},{"ID":"VAL_MAX","NM":"컨센서스(최고)","DIGIT":0},{"ID":"VAL_MIN","NM":"컨센서스(최저)","DIGIT":0},{"ID":"VAL_AVG","NM":"컨센서스","DIGIT":2}]},
+                 cnsTrend: {"data":[{"ACC_NM":"매출액","UNIT":"","DIGIT":0,"VAL1":"6747795.52","VAL2":"6195591.72","VAL3":"4879576.67","VAL4":"3793501.50","VAL5":"3373178.76"},{"ACC_NM":"영업이익","UNIT":"","DIGIT":0,"VAL1":"3454416.00","VAL2":"3002130.76","VAL3":"1675616.88","VAL4":"765287.35","VAL5":"406675.80"},{"ACC_NM":"당기순이익","UNIT":"","DIGIT":0,"VAL1":"2815965.46","VAL2":"2432290.40","VAL3":"1384969.54","VAL4":"657242.77","VAL5":"381462.56"},{"ACC_NM":"EPS","UNIT":"(원)","DIGIT":0,"VAL1":"42216.28","VAL2":"36464.31","VAL3":"20763.13","VAL4":"9853.23","VAL5":"5718.80"},{"ACC_NM":"PER","UNIT":"","DIGIT":2,"VAL1":"6.41","VAL2":"5.79","VAL3":"8.73","VAL4":"9.86","VAL5":"10.02"},{"ACC_NM":"PER(Fwd. 12M)","UNIT":"","DIGIT":2,"VAL1":"5.81","VAL2":"5.39","VAL3":"8.56","VAL4":"10.35","VAL5":"11.13"},{"ACC_NM":"목표주가","UNIT":"(원)","DIGIT":0,"VAL1":"342400.00","VAL2":"288400.00","VAL3":"216416.67","VAL4":"135653.85","VAL5":"74920.00"},{"ACC_NM":"투자의견(점수)","UNIT":"","DIGIT":2,"VAL1":"4.04","VAL2":"4.00","VAL3":"4.00","VAL4":"4.00","VAL5":"4.00"}],"header":[{"ID":"ACC_NM","NM":"2026/05/15","DIGIT":0},{"ID":"VAL1","NM":"당기순이익","DIGIT":0},{"ID":"VAL2","NM":"1개월전","DIGIT":0},{"ID":"VAL3","NM":"3개월전","DIGIT":0},{"ID":"VAL4","NM":"6개월전","DIGIT":0},{"ID":"VAL5","NM":"1년전","DIGIT":0}]},
             });
         });
 </script>

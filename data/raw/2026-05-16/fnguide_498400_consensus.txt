@@ -30,16 +30,16 @@
     <meta name="dtyp" content="R" />
     <meta name="sno" content="2" />
     
-    <link href="https://wcompcdn.fnguide.com/bundles/jquery/css?v=202605150942" rel="stylesheet"/>
+    <link href="https://wcompcdn.fnguide.com/bundles/jquery/css?v=202605160727" rel="stylesheet"/>
 
-    <link href="https://wcompcdn.fnguide.com/bundles/css?v=202605150942" rel="stylesheet"/>
+    <link href="https://wcompcdn.fnguide.com/bundles/css?v=202605160727" rel="stylesheet"/>
 
-    <script src="https://wcompcdn.fnguide.com/bundles/jquery/core?v=202605150942"></script>
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery/core?v=202605160727"></script>
 <script>(window.jQuery)||document.write('<script src="/bundles/jquery/core"><\/script>');</script>
 
-    <script src="https://wcompcdn.fnguide.com/bundles/jquery?v=202605150942"></script>
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery?v=202605160727"></script>
 
-    <script src="https://wcompcdn.fnguide.com/bundles/jsfile?v=202605150942"></script>
+    <script src="https://wcompcdn.fnguide.com/bundles/jsfile?v=202605160727"></script>
     
 </head>
 <body class="">
@@ -228,7 +228,7 @@
                     <div class="topbar_wrap">
                         <div class="topbar_lft">
                             <h2>시세현황</h2>
-                            <span class="date" id="date">[2026/05/14]</span>
+                            <span class="date" id="date">[2026/05/15]</span>
                         </div>
                         <div class="topbar_rgt">
                             <span class="txt1">단위 : 억원, 주, %</span>
@@ -249,11 +249,11 @@
                                         <div>전일종가/전일대비<span class="csize">(원)</span></div>
                                     </th>
                                     <td class="r cle">
-                                        24,515 /
+                                        23,215 /
                                         <span class="tcb">
-                                            -140
+                                            -1,300
                                         </span>
-                                        (-0.57%)
+                                        (-5.30%)
                                     </td>
                                 </tr>
                                 <tr id="" class="">
@@ -277,10 +277,10 @@
                                         <div>수익률<span class="csize">(1M/3M/6M/1Y)</span></div>
                                     </th>
                                     <td class="r cle">
-                                        <span class="tcr">+34.39</span>
-                                        /<span class="tcr">+47.19</span>
-                                        /<span class="tcr">+102.53</span>
-                                        /<span class="tcr">+200.21</span>
+                                        <span class="tcr">+24.84</span>
+                                        /<span class="tcr">+39.38</span>
+                                        /<span class="tcr">+91.79</span>
+                                        /<span class="tcr">+185.62</span>
                                     </td>
                                 </tr>
                                 <tr id="" class="">
@@ -288,7 +288,7 @@
                                         <div>시가총액</div>
                                     </th>
                                     <td class="r cle">
-                                        59,719
+                                        56,552
                                     </td>
                                 </tr>
                                 <tr id="" class="">
@@ -304,7 +304,7 @@
                                         <div>외국인보유율</div>
                                     </th>
                                     <td class="r cle">
-                                        0
+                                        0.14
                                     </td>
                                 </tr>
                                 <tr id="" class="">
@@ -312,7 +312,7 @@
                                         <div>거래량<span class="csize">(20일 평균, 주)</span></div>
                                     </th>
                                     <td class="r cle">
-                                        9,624,419
+                                        9,963,993
                                     </td>
                                 </tr>
                                 <tr id="" class="rwe">
@@ -320,7 +320,7 @@
                                         <div>거래대금<span class="csize">(20일 평균, 원)</span></div>
                                     </th>
                                     <td class="r cle">
-                                        210,870,662,113
+                                        220,709,891,191
                                     </td>
                                 </tr>
                             </tbody>
@@ -391,7 +391,7 @@
                         <th class="l" scope="row">
                             <div>기준가<span class="csize">(원)</span></div>
                         </th>
-                        <td class="r cle">23,812.85</td>
+                        <td class="r cle">24,200.65</td>
                     </tr>
                     <tr id="" class="">
                         <th class="l clf" scope="row">
@@ -437,7 +437,7 @@
                         <th class="l clf" scope="row">
                             <div>설정액/순자산</div>
                         </th>
-                        <td class="r">23,284/56,627</td>
+                        <td class="r">23,852/59,296</td>
                         <th class="l" scope="row">
                             <div>일반사무보수</div>
                         </th>
@@ -481,11 +481,11 @@
                     <tr id="" class="">
                         <th class="l clf" scope="row"><div>연 분배횟수<span class="csize">(회)</span></div></th>
                         <td class="r">
-                            12
+                            13
                         </td>
                         <th class="l" scope="row"><div>배당수익률<span class="csize">(%)</span></div></th>
                         <td class="r cle">
-                            1.06
+                            1.07
                         </td>
                     </tr>
                     <tr id="" class="rwe">
@@ -1246,9 +1246,9 @@
         $(document).ready(function () {
             etfsnapshot.init({
                 cmp_cd: '498400',
-                etfRatioChart : {"data":[{"TRD_DT":"2026/02/13","VAL1":100.0,"VAL2":100.0,"VAL3":16656.0},{"TRD_DT":"2026/02/19","VAL1":102.7,"VAL2":103.09,"VAL3":17106.0},{"TRD_DT":"2026/02/20","VAL1":105.09,"VAL2":105.48,"VAL3":17504.0},{"TRD_DT":"2026/02/23","VAL1":105.81,"VAL2":106.16,"VAL3":17624.0},{"TRD_DT":"2026/02/24","VAL1":108.29,"VAL2":108.4,"VAL3":18036.0},{"TRD_DT":"2026/02/25","VAL1":110.3,"VAL2":110.47,"VAL3":18371.0},{"TRD_DT":"2026/02/26","VAL1":114.73,"VAL2":114.53,"VAL3":19109.0},{"TRD_DT":"2026/02/27","VAL1":113.86,"VAL2":113.39,"VAL3":18965.0},{"TRD_DT":"2026/03/03","VAL1":105.29,"VAL2":105.17,"VAL3":17537.0},{"TRD_DT":"2026/03/04","VAL1":91.88,"VAL2":92.49,"VAL3":15304.0},{"TRD_DT":"2026/03/05","VAL1":101.52,"VAL2":101.4,"VAL3":16910.0},{"TRD_DT":"2026/03/06","VAL1":101.4,"VAL2":101.41,"VAL3":16890.0},{"TRD_DT":"2026/03/09","VAL1":95.02,"VAL2":95.37,"VAL3":15827.0},{"TRD_DT":"2026/03/10","VAL1":100.69,"VAL2":100.46,"VAL3":16771.0},{"TRD_DT":"2026/03/11","VAL1":102.04,"VAL2":101.87,"VAL3":16996.0},{"TRD_DT":"2026/03/12","VAL1":101.05,"VAL2":101.38,"VAL3":16831.0},{"TRD_DT":"2026/03/13","VAL1":99.36,"VAL2":99.64,"VAL3":16549.0},{"TRD_DT":"2026/03/16","VAL1":100.79,"VAL2":100.78,"VAL3":16787.0},{"TRD_DT":"2026/03/17","VAL1":102.42,"VAL2":102.42,"VAL3":17059.0},{"TRD_DT":"2026/03/18","VAL1":107.61,"VAL2":107.59,"VAL3":17924.0},{"TRD_DT":"2026/03/19","VAL1":105.19,"VAL2":104.65,"VAL3":17521.0},{"TRD_DT":"2026/03/20","VAL1":105.25,"VAL2":104.98,"VAL3":17530.0},{"TRD_DT":"2026/03/23","VAL1":98.42,"VAL2":98.16,"VAL3":16393.0},{"TRD_DT":"2026/03/24","VAL1":101.02,"VAL2":100.85,"VAL3":16826.0},{"TRD_DT":"2026/03/25","VAL1":102.28,"VAL2":102.46,"VAL3":17035.0},{"TRD_DT":"2026/03/26","VAL1":99.21,"VAL2":99.15,"VAL3":16524.0},{"TRD_DT":"2026/03/27","VAL1":98.78,"VAL2":98.76,"VAL3":16452.0},{"TRD_DT":"2026/03/30","VAL1":95.86,"VAL2":95.83,"VAL3":15966.0},{"TRD_DT":"2026/03/31","VAL1":91.94,"VAL2":91.75,"VAL3":15314.0},{"TRD_DT":"2026/04/01","VAL1":99.88,"VAL2":99.49,"VAL3":16636.0},{"TRD_DT":"2026/04/02","VAL1":95.39,"VAL2":95.04,"VAL3":15888.0},{"TRD_DT":"2026/04/03","VAL1":98.1,"VAL2":97.64,"VAL3":16340.0},{"TRD_DT":"2026/04/06","VAL1":99.56,"VAL2":98.97,"VAL3":16583.0},{"TRD_DT":"2026/04/07","VAL1":100.49,"VAL2":99.78,"VAL3":16738.0},{"TRD_DT":"2026/04/08","VAL1":107.64,"VAL2":106.63,"VAL3":17929.0},{"TRD_DT":"2026/04/09","VAL1":106.33,"VAL2":104.92,"VAL3":17710.0},{"TRD_DT":"2026/04/10","VAL1":107.55,"VAL2":106.39,"VAL3":17914.0},{"TRD_DT":"2026/04/13","VAL1":107.0,"VAL2":105.48,"VAL3":17822.0},{"TRD_DT":"2026/04/14","VAL1":109.52,"VAL2":108.37,"VAL3":18241.0},{"TRD_DT":"2026/04/15","VAL1":111.65,"VAL2":110.61,"VAL3":18596.0},{"TRD_DT":"2026/04/16","VAL1":113.36,"VAL2":113.06,"VAL3":18882.0},{"TRD_DT":"2026/04/17","VAL1":113.1,"VAL2":112.44,"VAL3":18838.0},{"TRD_DT":"2026/04/20","VAL1":113.84,"VAL2":112.93,"VAL3":18961.0},{"TRD_DT":"2026/04/21","VAL1":116.5,"VAL2":116.01,"VAL3":19405.0},{"TRD_DT":"2026/04/22","VAL1":117.0,"VAL2":116.54,"VAL3":19488.0},{"TRD_DT":"2026/04/23","VAL1":118.4,"VAL2":117.59,"VAL3":19720.0},{"TRD_DT":"2026/04/24","VAL1":118.01,"VAL2":117.59,"VAL3":19656.0},{"TRD_DT":"2026/04/27","VAL1":120.62,"VAL2":120.12,"VAL3":20090.0},{"TRD_DT":"2026/04/28","VAL1":121.09,"VAL2":120.59,"VAL3":20169.0},{"TRD_DT":"2026/04/29","VAL1":122.01,"VAL2":121.5,"VAL3":20322.0},{"TRD_DT":"2026/04/30","VAL1":121.42,"VAL2":119.83,"VAL3":20223.0},{"TRD_DT":"2026/05/04","VAL1":126.92,"VAL2":125.97,"VAL3":21140.0},{"TRD_DT":"2026/05/06","VAL1":135.12,"VAL2":134.09,"VAL3":22506.0},{"TRD_DT":"2026/05/07","VAL1":137.75,"VAL2":136.01,"VAL3":22944.0},{"TRD_DT":"2026/05/08","VAL1":138.26,"VAL2":136.15,"VAL3":23028.0},{"TRD_DT":"2026/05/11","VAL1":144.91,"VAL2":142.04,"VAL3":24137.0},{"TRD_DT":"2026/05/12","VAL1":143.26,"VAL2":138.79,"VAL3":23861.0},{"TRD_DT":"2026/05/13","VAL1":145.95,"VAL2":142.44,"VAL3":24310.0},{"TRD_DT":"2026/05/14","VAL1":147.18,"VAL2":144.93,"VAL3":24515.0}],"header":[{"ID":"TRD_DT","NM":"기준일","DIGIT":-1},{"ID":"VAL1","NM":"KODEX 200타겟위클리커버드콜(좌)","DIGIT":2},{"ID":"VAL2","NM":"KOSPI(좌)","DIGIT":2},{"ID":"VAL3","NM":"주가(우)","DIGIT":0}]},
-                etfDivChart : {"data":[{"VAL1":"주식","VAL2":83.21},{"VAL1":"투자","VAL2":14.86},{"VAL1":"기타","VAL2":1.93}],"header":[{"ID":"VAL1","NM":"자산명","DIGIT":-1},{"ID":"VAL2","NM":"비율","DIGIT":2}]},
-                etfRelTop10 : [{"RN":1,"ITEM_NM":"삼성전자","SHARES":"2,394","FUND_RT":27.60,"TRD_DT":"2026/05/13"},{"RN":2,"ITEM_NM":"SK하이닉스","SHARES":"284","FUND_RT":22.78,"TRD_DT":"2026/05/13"},{"RN":3,"ITEM_NM":"KODEX 200","SHARES":"2,971","FUND_RT":14.79,"TRD_DT":"2026/05/13"},{"RN":4,"ITEM_NM":"SK스퀘어","SHARES":"47","FUND_RT":2.27,"TRD_DT":"2026/05/13"},{"RN":5,"ITEM_NM":"현대차","SHARES":"70","FUND_RT":2.02,"TRD_DT":"2026/05/13"},{"RN":6,"ITEM_NM":"삼성전기","SHARES":"29","FUND_RT":1.21,"TRD_DT":"2026/05/13"},{"RN":7,"ITEM_NM":"두산에너빌리티","SHARES":"222","FUND_RT":1.08,"TRD_DT":"2026/05/13"},{"RN":8,"ITEM_NM":"KB금융","SHARES":"164","FUND_RT":1.01,"TRD_DT":"2026/05/13"},{"RN":9,"ITEM_NM":"기아","SHARES":"125","FUND_RT":0.91,"TRD_DT":"2026/05/13"},{"RN":10,"ITEM_NM":"한화에어로스페이스","SHARES":"17","FUND_RT":0.89,"TRD_DT":"2026/05/13"}]
+                etfRatioChart : {"data":[{"TRD_DT":"2026/02/13","VAL1":100.0,"VAL2":100.0,"VAL3":16656.0},{"TRD_DT":"2026/02/19","VAL1":102.7,"VAL2":103.09,"VAL3":17106.0},{"TRD_DT":"2026/02/20","VAL1":105.09,"VAL2":105.48,"VAL3":17504.0},{"TRD_DT":"2026/02/23","VAL1":105.81,"VAL2":106.16,"VAL3":17624.0},{"TRD_DT":"2026/02/24","VAL1":108.29,"VAL2":108.4,"VAL3":18036.0},{"TRD_DT":"2026/02/25","VAL1":110.3,"VAL2":110.47,"VAL3":18371.0},{"TRD_DT":"2026/02/26","VAL1":114.73,"VAL2":114.53,"VAL3":19109.0},{"TRD_DT":"2026/02/27","VAL1":113.86,"VAL2":113.39,"VAL3":18965.0},{"TRD_DT":"2026/03/03","VAL1":105.29,"VAL2":105.17,"VAL3":17537.0},{"TRD_DT":"2026/03/04","VAL1":91.88,"VAL2":92.49,"VAL3":15304.0},{"TRD_DT":"2026/03/05","VAL1":101.52,"VAL2":101.4,"VAL3":16910.0},{"TRD_DT":"2026/03/06","VAL1":101.4,"VAL2":101.41,"VAL3":16890.0},{"TRD_DT":"2026/03/09","VAL1":95.02,"VAL2":95.37,"VAL3":15827.0},{"TRD_DT":"2026/03/10","VAL1":100.69,"VAL2":100.46,"VAL3":16771.0},{"TRD_DT":"2026/03/11","VAL1":102.04,"VAL2":101.87,"VAL3":16996.0},{"TRD_DT":"2026/03/12","VAL1":101.05,"VAL2":101.38,"VAL3":16831.0},{"TRD_DT":"2026/03/13","VAL1":99.36,"VAL2":99.64,"VAL3":16549.0},{"TRD_DT":"2026/03/16","VAL1":100.79,"VAL2":100.78,"VAL3":16787.0},{"TRD_DT":"2026/03/17","VAL1":102.42,"VAL2":102.42,"VAL3":17059.0},{"TRD_DT":"2026/03/18","VAL1":107.61,"VAL2":107.59,"VAL3":17924.0},{"TRD_DT":"2026/03/19","VAL1":105.19,"VAL2":104.65,"VAL3":17521.0},{"TRD_DT":"2026/03/20","VAL1":105.25,"VAL2":104.98,"VAL3":17530.0},{"TRD_DT":"2026/03/23","VAL1":98.42,"VAL2":98.16,"VAL3":16393.0},{"TRD_DT":"2026/03/24","VAL1":101.02,"VAL2":100.85,"VAL3":16826.0},{"TRD_DT":"2026/03/25","VAL1":102.28,"VAL2":102.46,"VAL3":17035.0},{"TRD_DT":"2026/03/26","VAL1":99.21,"VAL2":99.15,"VAL3":16524.0},{"TRD_DT":"2026/03/27","VAL1":98.78,"VAL2":98.76,"VAL3":16452.0},{"TRD_DT":"2026/03/30","VAL1":95.86,"VAL2":95.83,"VAL3":15966.0},{"TRD_DT":"2026/03/31","VAL1":91.94,"VAL2":91.75,"VAL3":15314.0},{"TRD_DT":"2026/04/01","VAL1":99.88,"VAL2":99.49,"VAL3":16636.0},{"TRD_DT":"2026/04/02","VAL1":95.39,"VAL2":95.04,"VAL3":15888.0},{"TRD_DT":"2026/04/03","VAL1":98.1,"VAL2":97.64,"VAL3":16340.0},{"TRD_DT":"2026/04/06","VAL1":99.56,"VAL2":98.97,"VAL3":16583.0},{"TRD_DT":"2026/04/07","VAL1":100.49,"VAL2":99.78,"VAL3":16738.0},{"TRD_DT":"2026/04/08","VAL1":107.64,"VAL2":106.63,"VAL3":17929.0},{"TRD_DT":"2026/04/09","VAL1":106.33,"VAL2":104.92,"VAL3":17710.0},{"TRD_DT":"2026/04/10","VAL1":107.55,"VAL2":106.39,"VAL3":17914.0},{"TRD_DT":"2026/04/13","VAL1":107.0,"VAL2":105.48,"VAL3":17822.0},{"TRD_DT":"2026/04/14","VAL1":109.52,"VAL2":108.37,"VAL3":18241.0},{"TRD_DT":"2026/04/15","VAL1":111.65,"VAL2":110.61,"VAL3":18596.0},{"TRD_DT":"2026/04/16","VAL1":113.36,"VAL2":113.06,"VAL3":18882.0},{"TRD_DT":"2026/04/17","VAL1":113.1,"VAL2":112.44,"VAL3":18838.0},{"TRD_DT":"2026/04/20","VAL1":113.84,"VAL2":112.93,"VAL3":18961.0},{"TRD_DT":"2026/04/21","VAL1":116.5,"VAL2":116.01,"VAL3":19405.0},{"TRD_DT":"2026/04/22","VAL1":117.0,"VAL2":116.54,"VAL3":19488.0},{"TRD_DT":"2026/04/23","VAL1":118.4,"VAL2":117.59,"VAL3":19720.0},{"TRD_DT":"2026/04/24","VAL1":118.01,"VAL2":117.59,"VAL3":19656.0},{"TRD_DT":"2026/04/27","VAL1":120.62,"VAL2":120.12,"VAL3":20090.0},{"TRD_DT":"2026/04/28","VAL1":121.09,"VAL2":120.59,"VAL3":20169.0},{"TRD_DT":"2026/04/29","VAL1":122.01,"VAL2":121.5,"VAL3":20322.0},{"TRD_DT":"2026/04/30","VAL1":121.42,"VAL2":119.83,"VAL3":20223.0},{"TRD_DT":"2026/05/04","VAL1":126.92,"VAL2":125.97,"VAL3":21140.0},{"TRD_DT":"2026/05/06","VAL1":135.12,"VAL2":134.09,"VAL3":22506.0},{"TRD_DT":"2026/05/07","VAL1":137.75,"VAL2":136.01,"VAL3":22944.0},{"TRD_DT":"2026/05/08","VAL1":138.26,"VAL2":136.15,"VAL3":23028.0},{"TRD_DT":"2026/05/11","VAL1":144.91,"VAL2":142.04,"VAL3":24137.0},{"TRD_DT":"2026/05/12","VAL1":143.26,"VAL2":138.79,"VAL3":23861.0},{"TRD_DT":"2026/05/13","VAL1":145.95,"VAL2":142.44,"VAL3":24310.0},{"TRD_DT":"2026/05/14","VAL1":147.18,"VAL2":144.93,"VAL3":24515.0},{"TRD_DT":"2026/05/15","VAL1":139.38,"VAL2":136.07,"VAL3":23215.0}],"header":[{"ID":"TRD_DT","NM":"기준일","DIGIT":-1},{"ID":"VAL1","NM":"KODEX 200타겟위클리커버드콜(좌)","DIGIT":2},{"ID":"VAL2","NM":"KOSPI(좌)","DIGIT":2},{"ID":"VAL3","NM":"주가(우)","DIGIT":0}]},
+                etfDivChart : {"data":[{"VAL1":"주식","VAL2":84.01},{"VAL1":"투자","VAL2":14.97},{"VAL1":"기타","VAL2":1.02}],"header":[{"ID":"VAL1","NM":"자산명","DIGIT":-1},{"ID":"VAL2","NM":"비율","DIGIT":2}]},
+                etfRelTop10 : [{"RN":1,"ITEM_NM":"삼성전자","SHARES":"2,394","FUND_RT":28.23,"TRD_DT":"2026/05/14"},{"RN":2,"ITEM_NM":"SK하이닉스","SHARES":"284","FUND_RT":22.29,"TRD_DT":"2026/05/14"},{"RN":3,"ITEM_NM":"KODEX 200","SHARES":"2,971","FUND_RT":14.78,"TRD_DT":"2026/05/14"},{"RN":4,"ITEM_NM":"SK스퀘어","SHARES":"47","FUND_RT":2.19,"TRD_DT":"2026/05/14"},{"RN":5,"ITEM_NM":"현대차","SHARES":"70","FUND_RT":1.99,"TRD_DT":"2026/05/14"},{"RN":6,"ITEM_NM":"삼성전기","SHARES":"29","FUND_RT":1.18,"TRD_DT":"2026/05/14"},{"RN":7,"ITEM_NM":"두산에너빌리티","SHARES":"222","FUND_RT":1.04,"TRD_DT":"2026/05/14"},{"RN":8,"ITEM_NM":"KB금융","SHARES":"164","FUND_RT":1.02,"TRD_DT":"2026/05/14"},{"RN":9,"ITEM_NM":"기아","SHARES":"125","FUND_RT":0.89,"TRD_DT":"2026/05/14"},{"RN":10,"ITEM_NM":"삼성물산","SHARES":"50","FUND_RT":0.88,"TRD_DT":"2026/05/14"}]
             });
         });
     </script>
