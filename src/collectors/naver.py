@@ -19,6 +19,7 @@ FRGN_URL = "https://finance.naver.com/item/frgn.naver?code={code}&page=1&trader_
 MAIN_URL = "https://finance.naver.com/item/main.naver?code={code}"
 RESEARCH_URL = "https://finance.naver.com/research/company_list.naver?searchType=itemCode&itemCode={code}"
 HANKYUNG_URL = "https://markets.hankyung.com/consensus?searchWord={company}"
+NAVER_MAIN_ENCODING = "utf-8"
 NAVER_ENCODING = "euc-kr"
 
 
@@ -27,10 +28,19 @@ def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
     if not code:
         return row
 
-    main_html = _get_text(MAIN_URL.format(code=code), encoding=NAVER_ENCODING)
+    main_html = _get_text(MAIN_URL.format(code=code), encoding=NAVER_MAIN_ENCODING)
     if main_html:
         _write_raw(raw_dir / f"naver_main_{code}.html", main_html)
-        row.update({key: value for key, value in _parse_main(main_html).items() if value is not None and row.get(key) in (None, "", [])})
+        main_data = _parse_main(main_html)
+        if main_data.get("naver_title"):
+            main_data["company_name"] = main_data["naver_title"]
+        for key, value in main_data.items():
+            if value is None:
+                continue
+            if key in {"company_name", "naver_title"}:
+                row[key] = value
+            elif row.get(key) in (None, "", []):
+                row[key] = value
 
     frgn_html = _get_text(FRGN_URL.format(code=code), encoding=NAVER_ENCODING)
     if frgn_html:
@@ -49,6 +59,27 @@ def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
 
     time.sleep(0.25)
     return row
+
+
+def enrich_name_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
+    code = _kr_code(row.get("ticker"))
+    if not code or has_hangul(row.get("company_name")):
+        return row
+
+    main_html = _get_text(MAIN_URL.format(code=code), encoding=NAVER_MAIN_ENCODING)
+    if not main_html:
+        return row
+    _write_raw(raw_dir / f"naver_main_{code}.html", main_html)
+    title = _parse_main(main_html).get("naver_title")
+    if title:
+        row["naver_title"] = title
+        row["company_name"] = title
+    time.sleep(0.08)
+    return row
+
+
+def has_hangul(value: Any) -> bool:
+    return any("\uac00" <= char <= "\ud7a3" for char in str(value or ""))
 
 
 def _get_text(url: str, encoding: str) -> str | None:
@@ -124,6 +155,7 @@ def _parse_main(html: str) -> dict[str, Any]:
     title = soup.find("title")
     if title and title.text:
         naver_title = re.sub(r"\s*:\s*네이버.*$", "", title.text).strip()
+        naver_title = re.sub(r"\s*:\s*Npay\s*증권.*$", "", naver_title).strip()
         if "\ufffd" not in naver_title:
             parsed["naver_title"] = naver_title
     close = _number_after(text, "현재가")
@@ -140,43 +172,75 @@ def _parse_research(html: str, code: str) -> dict[str, Any] | None:
     link = soup.find("a", href=re.compile(r"company_read\.naver"))
     if not link:
         return None
-    href = urljoin("https://finance.naver.com", link.get("href", ""))
-    if not _is_valid_naver_report_link(href, code):
+    href = urljoin("https://finance.naver.com/research/", link.get("href", ""))
+    if not _is_valid_naver_report_url(href, code):
+        return None
+    detail = _parse_report_detail(href)
+    if not detail:
         return None
     row = link.find_parent("tr")
     cells = [cell.get_text(" ", strip=True) for cell in row.find_all("td")] if row else []
-    title = link.get_text(" ", strip=True) or None
-    broker = None
+    title = detail.get("recent_report_title") or link.get_text(" ", strip=True) or None
+    broker = detail.get("recent_report_broker")
     for cell in cells:
+        if broker:
+            break
         if cell and cell != title and not re.search(r"\d{2}\.\d{2}\.\d{2}", cell):
             broker = cell
             break
-    return {
+    output = {
         "recent_report_broker": broker,
         "recent_report_title": title,
         "report_link": href,
         "report_source": "Naver Finance Research",
     }
+    for key in ("target_price", "analyst_opinion"):
+        if detail.get(key) is not None:
+            output[key] = detail[key]
+    return output
 
 
-def _is_valid_naver_report_link(url: str, code: str) -> bool:
+def _is_valid_naver_report_url(url: str, code: str) -> bool:
     parsed = urlparse(url)
-    if parsed.netloc != "finance.naver.com" or parsed.path != "/company_read.naver":
+    if parsed.netloc != "finance.naver.com" or parsed.path != "/research/company_read.naver":
         return False
     query_code = (parse_qs(parsed.query).get("itemCode") or [""])[0]
-    if _kr_code(query_code) != code:
-        return False
+    return _kr_code(query_code) == code
+
+
+def _parse_report_detail(url: str) -> dict[str, Any] | None:
     body = _get_text(url, encoding=NAVER_ENCODING)
     if not body:
-        return False
+        return None
     soup = BeautifulSoup(body, "lxml")
     if soup.select_one(".error_content"):
-        return False
+        return None
     title = soup.find("title")
     title_text = title.get_text(" ", strip=True) if title else ""
     if "네이버 :: 세상의 모든 지식" in title_text:
-        return False
-    return bool(soup.get_text(" ", strip=True))
+        return None
+
+    parsed: dict[str, Any] = {}
+    title_match = re.search(r"종목분석\s*-\s*(.*?)\s*:\s*Npay", title_text)
+    if title_match:
+        parsed["recent_report_title"] = title_match.group(1).strip()
+    source = soup.select_one("p.source")
+    if source:
+        source_text = source.get_text(" ", strip=True)
+        broker = source_text.split("|", 1)[0].strip()
+        if broker:
+            parsed["recent_report_broker"] = broker
+    summary_cell = soup.find("td")
+    summary_text = summary_cell.get_text(" ", strip=True) if summary_cell else ""
+    target_match = re.search(r"목표가\s*([\d,]+)", summary_text)
+    if target_match:
+        parsed["target_price"] = to_float(target_match.group(1))
+    opinion_match = re.search(r"투자의견\s*([^|]+)", summary_text)
+    if opinion_match:
+        opinion = opinion_match.group(1).strip()
+        if opinion and "없음" not in opinion:
+            parsed["analyst_opinion"] = opinion
+    return parsed if parsed.get("recent_report_title") or parsed.get("recent_report_broker") else None
 
 
 def _apply_hankyung_fallback(row: dict[str, Any], code: str) -> None:
@@ -262,8 +326,12 @@ def _supply_pattern(foreign: float | None, institution: float | None) -> str | N
 
 
 def _kr_code(value: Any) -> str | None:
-    digits = "".join(ch for ch in str(value or "") if ch.isdigit())
-    return digits.zfill(6) if digits else None
+    text = str(value or "").strip().upper().split(":", 1)[-1]
+    if re.fullmatch(r"[A-Z0-9]{6}", text):
+        return text
+    if re.fullmatch(r"\d{1,6}", text):
+        return text.zfill(6)
+    return None
 
 
 def _write_raw(path: Path, text: str) -> None:

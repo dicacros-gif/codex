@@ -35,12 +35,14 @@
 - Naver Finance
   - 외국인/기관 수급: `https://finance.naver.com/item/frgn.naver?code={종목코드}&page=1&trader_day=20`
   - 외국인/기관 5일·20일 순매수, 합산수급, 외국인지분율과 20일 변화율을 보강합니다.
-  - 리서치 상세 링크: `company_read.naver`
+  - 종목명: `https://finance.naver.com/item/main.naver?code={종목코드}`
+  - 리서치 상세 링크: `https://finance.naver.com/research/company_read.naver`
 - 한국경제 컨센서스 fallback
   - `https://markets.hankyung.com/consensus?searchWord={기업명}`
 - SEC 13F
   - `https://data.sec.gov/submissions/CIK{CIK}.json`
   - XML information table
+  - 발행사명과 SEC `company_tickers_exchange.json`를 대조해 확인 가능한 티커만 표시합니다.
 
 ## 필터
 
@@ -51,6 +53,8 @@
 
 상단 탭을 누르면 아래 내용이 해당 섹션으로 전환됩니다.
 같은 종목이 여러 조건에 동시에 걸리면 한 섹션에만 배치해 탭 간 중복 노출을 줄입니다.
+거래량 급증 탭은 52주 신고가 종목을 제외하고, 최근 거래량이 30일 평균 대비 증가한 종목만 표시합니다.
+값이 없는 정량 컬럼은 빈 셀을 대량 노출하지 않도록 해당 탭에서 숨기며, 큰 숫자는 K/M/B/T 단위로 축약해 표시합니다.
 
 - 우선순위_TOP
 - 선행매매_후보

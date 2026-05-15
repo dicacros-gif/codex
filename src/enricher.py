@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Any
 
 from src.collectors.fnguide import enrich_with_fnguide
-from src.collectors.naver import enrich_with_naver
+from src.collectors.naver import enrich_name_with_naver, enrich_with_naver, has_hangul
 from src.collectors.yahoo import enrich_us_with_yahoo
 from src.utils.text import clean_phrase, to_float
 
@@ -38,10 +38,13 @@ def enrich_records(records: list[dict[str, Any]], raw_dir: Path, max_kr: int = 8
     kr_count = 0
     for record in records:
         item = dict(record)
-        if item.get("country_code") == "KR" and kr_count < max_kr:
-            item = enrich_with_fnguide(item, raw_dir)
-            item = enrich_with_naver(item, raw_dir)
-            kr_count += 1
+        if item.get("country_code") == "KR":
+            if kr_count < max_kr:
+                item = enrich_with_fnguide(item, raw_dir)
+                item = enrich_with_naver(item, raw_dir)
+                kr_count += 1
+            elif not has_hangul(item.get("company_name")):
+                item = enrich_name_with_naver(item, raw_dir)
         enriched.append(clean_record(item))
     enriched = enrich_us_with_yahoo(enriched, raw_dir=raw_dir, detail_limit=50)
     return [clean_record(item) for item in enriched]

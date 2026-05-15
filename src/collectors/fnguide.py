@@ -30,7 +30,10 @@ def enrich_with_fnguide(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
         parsed = _parse_company_guide(guide_html)
         for key, value in parsed.items():
             if value is not None:
-                row.setdefault(key, value)
+                if key == "company_name":
+                    row[key] = value
+                else:
+                    row.setdefault(key, value)
 
     consensus_body = _get_text(CONSENSUS_URL.format(code=code), encoding="utf-8")
     if consensus_body:
@@ -181,8 +184,10 @@ def _clean_company_name(value: str | None) -> str | None:
 
 
 def _kr_code(value: Any) -> str | None:
-    digits = "".join(ch for ch in str(value or "") if ch.isdigit())
-    return digits.zfill(6) if digits else None
+    text = str(value or "").strip().upper().split(":", 1)[-1]
+    if re.fullmatch(r"\d{1,6}", text):
+        return text.zfill(6)
+    return None
 
 
 def _write_raw(path: Path, text: str) -> None:

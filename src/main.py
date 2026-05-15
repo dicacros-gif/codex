@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import os
+import shutil
 from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
@@ -24,7 +25,11 @@ def main() -> None:
     run_date = datetime.strptime(args.date, "%Y-%m-%d").date() if args.date else now_kst.date()
     generated_at_kst = now_kst.strftime("%Y-%m-%d %H:%M:%S")
 
-    raw_dir = ensure_dir(root / "data" / "raw" / run_date.isoformat())
+    raw_root = ensure_dir(root / "data" / "raw")
+    raw_dir = raw_root / run_date.isoformat()
+    if raw_dir.exists():
+        shutil.rmtree(raw_dir)
+    raw_dir = ensure_dir(raw_dir)
     processed_dir = ensure_dir(root / "data" / "processed")
     ensure_dir(root / "reports")
 

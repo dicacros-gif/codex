@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 import time
 from datetime import date
 from pathlib import Path
@@ -176,7 +177,7 @@ def _scan(
     payload: dict[str, Any] = {
         "columns": TV_COLUMNS,
         "ignore_unknown_fields": True,
-        "options": {"lang": "en"},
+        "options": {"lang": "ko" if country == "KR" else "en"},
         "range": [0, limit],
         "sort": {"sortBy": sort_field, "sortOrder": "desc"},
     }
@@ -293,8 +294,12 @@ def _ticker(symbol: Any, name: Any, country: str) -> str | None:
         return None
     value = raw.split(":", 1)[-1]
     if country == "KR":
-        digits = "".join(ch for ch in value if ch.isdigit())
-        return digits.zfill(6) if digits else value
+        normalized = value.strip().upper()
+        if re.fullmatch(r"[A-Z0-9]{6}", normalized):
+            return normalized
+        if re.fullmatch(r"\d{1,6}", normalized):
+            return normalized.zfill(6)
+        return normalized
     return value
 
 

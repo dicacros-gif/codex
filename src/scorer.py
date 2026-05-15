@@ -77,8 +77,32 @@ def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) 
     long_term = _take_unique(sorted(records, key=lambda row: row.get("long_future_score") or -999, reverse=True), used, 50)
     us_highs = _take_unique(_sort_highs([row for row in records if row.get("country_code") == "US" and _has_signal(row, "52주 신고가")]), used, 120)
     kr_highs = _take_unique(_sort_highs([row for row in records if row.get("country_code") == "KR" and _has_signal(row, "52주 신고가")]), used, 120)
-    us_volume = _take_unique(_sort_volume([row for row in records if row.get("country_code") == "US" and "거래량 급증" in (row.get("signals") or [])]), used, 120)
-    kr_volume = _take_unique(_sort_volume([row for row in records if row.get("country_code") == "KR" and "거래량 급증" in (row.get("signals") or [])]), used, 120)
+    us_volume = _take_unique(
+        _sort_volume(
+            [
+                row
+                for row in records
+                if row.get("country_code") == "US"
+                and "거래량 급증" in (row.get("signals") or [])
+                and not _has_signal(row, "52주 신고가")
+            ]
+        ),
+        used,
+        120,
+    )
+    kr_volume = _take_unique(
+        _sort_volume(
+            [
+                row
+                for row in records
+                if row.get("country_code") == "KR"
+                and "거래량 급증" in (row.get("signals") or [])
+                and not _has_signal(row, "52주 신고가")
+            ]
+        ),
+        used,
+        120,
+    )
     return {
         "priority_top": top,
         "leading_candidates": leading,

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import time
 import xml.etree.ElementTree as ET
 from collections import defaultdict
@@ -18,6 +19,7 @@ from src.utils.text import to_float, to_int
 SEC_SUBMISSIONS_URL = "https://data.sec.gov/submissions/CIK{cik}.json"
 SEC_ARCHIVES_INDEX_URL = "https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession}/index.json"
 SEC_ARCHIVES_FILE_URL = "https://www.sec.gov/Archives/edgar/data/{cik_int}/{accession}/{filename}"
+SEC_COMPANY_TICKERS_URL = "https://www.sec.gov/files/company_tickers_exchange.json"
 
 
 def collect_13f(
@@ -38,7 +40,8 @@ def collect_13f(
         changes = _collect_institution(name, cik, raw_dir, quarters)
         all_changes.extend(changes)
         time.sleep(0.5)
-    aggregate = _aggregate_changes(all_changes, run_date)
+    ticker_map = _load_sec_ticker_map(raw_dir)
+    aggregate = _aggregate_changes(all_changes, run_date, ticker_map)
     write_json(raw_dir / "sec13f_changes_by_institution.json", all_changes)
     write_json(raw_dir / "sec13f_aggregate.json", aggregate)
     return aggregate
@@ -173,7 +176,12 @@ def _compare_periods(current: dict[str, Any], previous: dict[str, Any]) -> list[
     return changes
 
 
-def _aggregate_changes(changes: list[dict[str, Any]], run_date: date) -> list[dict[str, Any]]:
+def _aggregate_changes(
+    changes: list[dict[str, Any]],
+    run_date: date,
+    ticker_map: dict[str, str] | None = None,
+) -> list[dict[str, Any]]:
+    ticker_map = ticker_map or {}
     grouped: dict[str, list[dict[str, Any]]] = defaultdict(list)
     for change in changes:
         key = change.get("cusip") or change.get("nameOfIssuer")
@@ -194,12 +202,14 @@ def _aggregate_changes(changes: list[dict[str, Any]], run_date: date) -> list[di
             score += (new_count + increased_count) * 4
         score += min(max(total_change, 0) / 1_000_000, 15)
         base = items[0]
+        issuer = base.get("nameOfIssuer")
+        ticker = ticker_map.get(_normalize_issuer_name(issuer))
         records.append(
             {
                 "date": run_date.isoformat(),
                 "country": "미국",
-                "ticker": None,
-                "company_name": base.get("nameOfIssuer"),
+                "ticker": ticker,
+                "company_name": issuer,
                 "cusip": base.get("cusip"),
                 "title_of_class": base.get("titleOfClass"),
                 "new_institution_count": new_count,
@@ -220,6 +230,36 @@ def _aggregate_changes(changes: list[dict[str, Any]], run_date: date) -> list[di
         )
     records.sort(key=lambda item: item.get("famous_13f_score") or 0, reverse=True)
     return records
+
+
+def _load_sec_ticker_map(raw_dir: Path) -> dict[str, str]:
+    data = _get_json(SEC_COMPANY_TICKERS_URL) or {}
+    write_json(raw_dir / "sec_company_tickers_exchange.json", data)
+    fields = data.get("fields") or []
+    rows = data.get("data") or []
+    try:
+        name_index = fields.index("name")
+        ticker_index = fields.index("ticker")
+    except ValueError:
+        return {}
+    output: dict[str, str] = {}
+    for row in rows:
+        if not isinstance(row, list) or len(row) <= max(name_index, ticker_index):
+            continue
+        name = _normalize_issuer_name(row[name_index])
+        ticker = str(row[ticker_index] or "").strip().upper()
+        if name and ticker:
+            output.setdefault(name, ticker)
+    return output
+
+
+def _normalize_issuer_name(value: Any) -> str:
+    text = str(value or "").upper()
+    text = text.replace("&", " AND ")
+    text = re.sub(r"[^A-Z0-9 ]+", " ", text)
+    text = re.sub(r"\b(CL|CLASS|COM|COMMON|SHS|SHARES|STOCK|ORD|NEW|THE)\b", " ", text)
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
 
 
 def _basis(new_count: int, increased_count: int, decreased_count: int, exited_count: int) -> str:
