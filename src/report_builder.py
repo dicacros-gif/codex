@@ -12,6 +12,7 @@ from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 
 from src.utils.io import ensure_dir, strip_empty, write_csv
+from src.utils.korean_names import koreanize_kr_company_name
 
 
 SECTION_TITLES = [
@@ -669,6 +670,8 @@ def _format_cell(field: str, value: Any, row: dict[str, Any]) -> str:
             title = _fallback_report_title(row)
             return _link(link, title) if link and title else ""
         return ""
+    if field == "company_name":
+        return html.escape(_display_company_name(value, row))
     if field == "recent_report_title":
         link = _fallback_report_link(row)
         return _link(link, str(value)) if link else html.escape(str(value))
@@ -691,6 +694,13 @@ def _format_cell(field: str, value: Any, row: dict[str, Any]) -> str:
     if field in NUMERIC_FIELDS or isinstance(value, (int, float)):
         return html.escape(_compact_number(value))
     return html.escape(_clean_display_text(str(value)))
+
+
+def _display_company_name(value: Any, row: dict[str, Any]) -> str:
+    text = _clean_display_text(str(value))
+    if row.get("country_code") == "KR" or row.get("country") == "한국":
+        return koreanize_kr_company_name(text) or text
+    return text
 
 
 def _link(url: str, label: str) -> str:
@@ -1249,6 +1259,8 @@ def _format_export_cell(field: str, value: Any, row: dict[str, Any]) -> str:
         return _short_date(value)
     if field == "generated_at_kst":
         return _short_datetime(value)
+    if field == "company_name":
+        return _display_company_name(value, row)
     if isinstance(value, list):
         return ", ".join(str(item) for item in value if item not in (None, ""))
     if field in {"core_basis", "top_position_weight_changes"}:

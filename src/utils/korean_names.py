@@ -5,6 +5,13 @@ from typing import Any
 
 
 PHRASE_REPLACEMENTS = (
+    (r"\bCO\.?\s*,?\s*LTD\.?", ""),
+    (r"\bCORPORATION\b", ""),
+    (r"\bCORP\.?", ""),
+    (r"\bLIMITED\b", ""),
+    (r"\bLTD\.?", ""),
+    (r"\bINC\.?", ""),
+    (r"\bCO\.?", ""),
     (r"\bMIRAE\s+ASSET\b", "미래에셋"),
     (r"\bNH[-\s]?AMUNDI\b", "엔에이치아문디"),
     (r"\bS\s*&\s*P\s*500\b", "에스앤피500"),
@@ -34,6 +41,10 @@ TOKEN_REPLACEMENTS = {
     "CD": "양도성예금증서",
     "DAILY": "데일리",
     "DEFENSE": "방산",
+    "DISPLAY": "디스플레이",
+    "DOOSAN": "두산",
+    "ENT": "엔터",
+    "ENTERTAINMENT": "엔터테인먼트",
     "EQUITY": "주식",
     "ETF": "상장지수펀드",
     "EUROPE": "유럽",
@@ -45,6 +56,7 @@ TOKEN_REPLACEMENTS = {
     "HANWHA": "한화",
     "HEDGED": "헤지",
     "HUMANOID": "휴머노이드",
+    "HYUNDAI": "현대",
     "IBK": "아이비케이",
     "INVERSE": "인버스",
     "K": "케이",
@@ -52,6 +64,7 @@ TOKEN_REPLACEMENTS = {
     "KIWOOM": "키움",
     "KODEX": "코덱스",
     "KOREA": "코리아",
+    "KOSDAQ": "코스닥",
     "KOSEF": "코세프",
     "KRX": "케이알엑스",
     "KTOP": "케이탑",
@@ -59,8 +72,13 @@ TOKEN_REPLACEMENTS = {
     "KTB": "국채",
     "LARGECAP": "대형주",
     "MID": "중형",
+    "LEVERAGE": "레버리지",
+    "LG": "엘지",
     "MONTHLY": "월배당",
+    "MOTOR": "자동차",
+    "MOTORS": "자동차",
     "NASDAQ": "나스닥",
+    "NAVER": "네이버",
     "NVIDIA": "엔비디아",
     "PLUS": "플러스",
     "PROTECTIVE": "프로텍티브",
@@ -68,6 +86,8 @@ TOKEN_REPLACEMENTS = {
     "RISE": "라이즈",
     "ROBOT": "로봇",
     "SAMSUNG": "삼성",
+    "SDI": "에스디아이",
+    "SEMICONDUCTOR": "반도체",
     "SHINHAN": "신한",
     "SMALL": "소형",
     "SOL": "쏠",
@@ -137,8 +157,9 @@ def koreanize_kr_company_name(value: Any) -> str | None:
         text = re.sub(pattern, replacement, text, flags=re.IGNORECASE)
     text = re.sub(r"[A-Za-z]+", _replace_ascii_token, text)
     text = re.sub(r"\s+", " ", text).strip()
+    text = re.sub(r"\s*[.,]\s*", " ", text).strip()
     text = re.sub(r"\b(아이비케이|삼성|미래에셋|엔에이치아문디|케이비|신한|한화|키움)\s+\1\b", r"\1", text)
-    text = re.sub(r"(티알에프|케이알엑스|케이탑|케이에스|톱|테크|에스앤피|나스닥|국채선물)\s+(\d)", r"\1\2", text)
+    text = re.sub(r"(티알에프|케이알엑스|케이탑|케이에스|톱|테크|에스앤피|나스닥|코스닥|국채선물)\s+(\d)", r"\1\2", text)
     text = re.sub(r"\s+([,)])", r"\1", text)
     text = re.sub(r"([(])\s+", r"\1", text)
     return text or None
