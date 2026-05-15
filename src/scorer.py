@@ -66,12 +66,13 @@ def score_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
     used: set[str] = set()
-    foreign = _take_unique(_sort_foreign_flow(records, dominant_only=True), used, 50)
-    institution = _take_unique(_sort_institution_flow(records, dominant_only=True), used, 50)
+    non_high_records = [row for row in records if not _has_signal(row, "52주 신고가")]
+    foreign = _take_unique(_sort_foreign_flow(non_high_records, dominant_only=True), used, 50)
+    institution = _take_unique(_sort_institution_flow(non_high_records, dominant_only=True), used, 50)
     if len(foreign) < 15:
-        foreign.extend(_take_unique(_sort_foreign_flow(records, dominant_only=False), used, 15 - len(foreign)))
+        foreign.extend(_take_unique(_sort_foreign_flow(non_high_records, dominant_only=False), used, 15 - len(foreign)))
     if len(institution) < 15:
-        institution.extend(_take_unique(_sort_institution_flow(records, dominant_only=False), used, 15 - len(institution)))
+        institution.extend(_take_unique(_sort_institution_flow(non_high_records, dominant_only=False), used, 15 - len(institution)))
     top = _take_unique(sorted(records, key=lambda row: row.get("investment_priority_score") or -999, reverse=True), used, 50)
     leading = _take_unique(sorted(records, key=lambda row: row.get("leading_supply_score") or -999, reverse=True), used, 50)
     long_term = _take_unique(sorted(records, key=lambda row: row.get("long_future_score") or -999, reverse=True), used, 50)
