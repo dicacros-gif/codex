@@ -196,9 +196,10 @@ def write_outputs(
 
 def render_html(payload: dict[str, Any]) -> str:
     generated = payload.get("generated_at_kst") or ""
+    generated_label = _format_generated_label(str(generated))
     sections = payload.get("sections") or {}
     tab_buttons = "\n".join(
-        f"<button class='tab-btn{' on' if index == 0 else ''}' type='button' data-tab='{key}'>{html.escape(title)}</button>"
+        f"<button class='tab-btn{' on' if index == 0 else ''}' type='button' data-tab='{key}'>{html.escape(_tab_title(key, title, generated_label))}</button>"
         for index, (key, title) in enumerate(SECTION_TITLES)
     )
     panels = "\n".join(
@@ -223,7 +224,7 @@ def render_html(payload: dict[str, Any]) -> str:
 .topbar{{position:sticky;top:0;z-index:50;background:var(--tbg);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:.35rem .9rem;display:flex;align-items:center;gap:.55rem}}
 .tabs{{display:flex;gap:.25rem;overflow-x:auto;flex:1;min-width:0}}.tab-btn{{border:1px solid var(--bd);background:var(--card);color:var(--t2);border-radius:999px;padding:.28rem .65rem;font-size:.68rem;font-weight:800;white-space:nowrap;cursor:pointer}}.tab-btn:hover,.tab-btn.on{{background:var(--ac);border-color:var(--ac);color:#fff}}
 .tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.pb{{width:18px;height:18px;border-radius:50%;border:2px solid transparent;cursor:pointer}}.pb.on{{border-color:var(--t1);box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--t3)}}.pb[data-c=default]{{background:linear-gradient(135deg,#2563eb,#60a5fa)}}.pb[data-c=ocean]{{background:linear-gradient(135deg,#0d9488,#2dd4bf)}}.pb[data-c=sunset]{{background:linear-gradient(135deg,#ea580c,#fb923c)}}.pb[data-c=violet]{{background:linear-gradient(135deg,#7c3aed,#a78bfa)}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
-main{{width:min(1680px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.statusbar{{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin-bottom:.7rem}}.chip{{font-size:.66rem;font-weight:800;background:var(--card2);border:1px solid var(--bd);padding:.14rem .5rem;border-radius:999px;color:var(--t2)}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.7rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.95rem;margin:0;font-weight:900}}.panel-head p{{margin:.1rem 0 0;font-size:.68rem;color:var(--t3)}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.66rem;border:1px solid var(--bd);border-radius:6px;padding:.16rem .45rem;background:var(--card)}}
+main{{width:min(1680px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.7rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.95rem;margin:0;font-weight:900}}.panel-head p{{margin:.1rem 0 0;font-size:.68rem;color:var(--t3)}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.66rem;border:1px solid var(--bd);border-radius:6px;padding:.16rem .45rem;background:var(--card)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 170px)}}table{{width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem}}th{{position:sticky;top:0;z-index:2;background:var(--hdr);color:var(--hdrText);padding:.46rem .45rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid var(--bd)}}td{{padding:.42rem .45rem;border-bottom:1px solid var(--bd);vertical-align:top;background:var(--card)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--acL)}}.empty{{padding:1.1rem;color:var(--t3);font-size:.78rem}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap}}.pos-strong{{background:var(--okB)!important;color:var(--okT);font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT);font-weight:900;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT);font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT);font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:520px}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.05rem .35rem;margin:.05rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
@@ -242,7 +243,6 @@ main{{width:min(1680px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}
   </div>
 </div>
 <main>
-  <div class="statusbar"><span class="chip">{html.escape(str(generated))} KST</span><span class="chip">매일 07:00 자동 실행</span></div>
   {panels}
 </main>
 <script>
@@ -265,6 +265,21 @@ document.getElementById('modeToggle').addEventListener('click',()=>{{
 </script>
 </body>
 </html>"""
+
+
+def _tab_title(key: str, title: str, generated_label: str) -> str:
+    if key == "daily_tracking" and generated_label:
+        return f"{title} {generated_label}"
+    return title
+
+
+def _format_generated_label(value: str) -> str:
+    match = re.match(r"^(\d{4})-(\d{1,2})-(\d{1,2})\s+(\d{2}:\d{2}:\d{2})", value.strip())
+    if not match:
+        return ""
+    month = int(match.group(2))
+    day = int(match.group(3))
+    return f"{month}/{day} {match.group(4)} KST 기준"
 
 
 def _render_panel(key: str, title: str, rows: list[dict[str, Any]], active: bool) -> str:
