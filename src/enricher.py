@@ -6,6 +6,7 @@ from typing import Any
 from src.collectors.fnguide import enrich_with_fnguide
 from src.collectors.naver import enrich_name_with_naver, enrich_with_naver, has_hangul
 from src.collectors.yahoo import enrich_us_with_yahoo
+from src.utils.korean_names import koreanize_kr_company_name
 from src.utils.text import clean_phrase, to_float
 
 
@@ -61,6 +62,12 @@ def clean_record(record: dict[str, Any]) -> dict[str, Any]:
             cleaned[key] = value
     if not cleaned.get("future_industry_theme"):
         cleaned["future_industry_theme"] = clean_phrase(cleaned.get("industry") or cleaned.get("sector"))
+    if cleaned.get("country_code") == "KR" and cleaned.get("company_name"):
+        original_name = str(cleaned.get("company_name") or "")
+        localized_name = koreanize_kr_company_name(original_name)
+        if localized_name and localized_name != original_name:
+            cleaned.setdefault("official_company_name", original_name)
+            cleaned["company_name"] = localized_name
     if cleaned.get("target_price") is not None and cleaned.get("close"):
         try:
             cleaned["target_upside_pct"] = round((float(cleaned["target_price"]) / float(cleaned["close"]) - 1) * 100, 2)
