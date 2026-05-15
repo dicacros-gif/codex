@@ -19,6 +19,24 @@
 
 	<meta name="author" content="">
 	<meta name="description" content="">
+	<!-- Google Analytics Tracking Code -->
+	<script>
+		var pCID = ''
+
+		if(pCID.length < 1 || pCID == "AA") {
+			var script = document.createElement('script');
+			script.src = "https://www.googletagmanager.com/gtag/js?id=G-WPK34FTZYG";
+			script.async = true;
+			document.head.appendChild(script);
+
+			script.onload = function(){
+				window.dataLayer = window.dataLayer || [];
+				function gtag(){dataLayer.push(arguments);}
+				gtag('js', new Date());
+				gtag('config', 'G-WPK34FTZYG', { 'content_group1': pCID });
+			};
+		}
+	</script>
 	<title>ACE&nbsp;미국500데일리타겟커버드콜(합성)(A480030) | ETF Snapshot | ETF/ETN 정보 | Company Guide</title>
     <script type="text/javascript" src="https://cdn.fnguide.com/SVO2/js/lib/fnlib.js?v=1.0.4"></script>
 	<script type="text/javascript" src="/SVO2/js/etf_Snapshot.js?v=1.0.4"></script>
