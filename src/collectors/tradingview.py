@@ -62,6 +62,7 @@ def _collect_52w(country: str, raw_dir: Path, run_date: date, limit: int) -> lis
         filters=[{"left": "close", "operation": "greater", "right": MIN_CLOSE[country]}],
     )
     candidates = []
+    near_candidates = []
     for row in rows:
         close = to_float(row.get("close"))
         high_52w = to_float(row.get("High.52W"))
@@ -69,11 +70,20 @@ def _collect_52w(country: str, raw_dir: Path, run_date: date, limit: int) -> lis
             continue
         if close < MIN_CLOSE[country]:
             continue
+        distance = round((close / high_52w - 1) * 100, 3)
         if close >= high_52w * 0.995:
             item = _standardize(row, country, run_date, "52주 신고가")
             item["high_52w"] = high_52w
-            item["distance_to_52w_high_pct"] = round((close / high_52w - 1) * 100, 3)
+            item["distance_to_52w_high_pct"] = distance
             candidates.append(item)
+        elif close >= high_52w * 0.97:
+            item = _standardize(row, country, run_date, "52주 신고가 근접")
+            item["high_52w"] = high_52w
+            item["distance_to_52w_high_pct"] = distance
+            near_candidates.append(item)
+    if len(candidates) < 30:
+        near_candidates.sort(key=lambda item: item.get("distance_to_52w_high_pct") or -999, reverse=True)
+        candidates.extend(near_candidates[: 80 - len(candidates)])
     return _dedupe(candidates, "ticker")
 
 

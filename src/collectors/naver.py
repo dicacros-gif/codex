@@ -16,6 +16,7 @@ from src.utils.text import to_float
 
 
 FRGN_URL = "https://finance.naver.com/item/frgn.naver?code={code}&page=1&trader_day=20"
+MAIN_URL = "https://finance.naver.com/item/main.naver?code={code}"
 RESEARCH_URL = "https://finance.naver.com/research/company_list.naver?searchType=itemCode&itemCode={code}"
 HANKYUNG_URL = "https://markets.hankyung.com/consensus?searchWord={company}"
 
@@ -24,6 +25,11 @@ def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
     code = _kr_code(row.get("ticker"))
     if not code:
         return row
+
+    main_html = _get_text(MAIN_URL.format(code=code), encoding="euc-kr")
+    if main_html:
+        _write_raw(raw_dir / f"naver_main_{code}.html", main_html)
+        row.update({key: value for key, value in _parse_main(main_html).items() if value is not None and row.get(key) in (None, "", [])})
 
     frgn_html = _get_text(FRGN_URL.format(code=code), encoding="euc-kr")
     if frgn_html:
@@ -41,6 +47,8 @@ def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
         company = row.get("company_name") or code
         row["report_link"] = HANKYUNG_URL.format(company=quote(str(company)))
         row["report_source"] = "한국경제 컨센서스 검색"
+        row.setdefault("recent_report_broker", "한국경제")
+        row.setdefault("recent_report_title", "컨센서스 검색")
 
     time.sleep(0.25)
     return row
@@ -94,6 +102,31 @@ def _parse_frgn(html: str) -> dict[str, Any]:
     return parsed
 
 
+def _parse_main(html: str) -> dict[str, Any]:
+    soup = BeautifulSoup(html, "lxml")
+    text = soup.get_text(" ", strip=True)
+    parsed = {
+        "market_cap": _naver_market_cap(text),
+        "trailing_per": _number_after(text, "PER"),
+        "forward_per": _number_after(text, "추정PER"),
+        "pbr": _number_after(text, "PBR"),
+        "eps_ttm": _number_after(text, "EPS"),
+        "forward_eps": _number_after(text, "추정EPS"),
+        "dividend_yield": _number_after(text, "배당수익률"),
+        "foreign_ownership_rate": _number_after(text, "외국인소진율"),
+    }
+    title = soup.find("title")
+    if title and title.text:
+        parsed["naver_title"] = re.sub(r"\s*:\s*네이버.*$", "", title.text).strip()
+    close = _number_after(text, "현재가")
+    if close is not None:
+        parsed["close"] = close
+    high = _number_after(text, "52주최고")
+    if high is not None:
+        parsed["high_52w"] = high
+    return parsed
+
+
 def _parse_research(html: str) -> dict[str, Any] | None:
     soup = BeautifulSoup(html, "lxml")
     link = soup.find("a", href=re.compile(r"company_read\.naver"))
@@ -114,6 +147,22 @@ def _parse_research(html: str) -> dict[str, Any] | None:
         "report_link": href,
         "report_source": "Naver Finance Research",
     }
+
+
+def _naver_market_cap(text: str) -> float | None:
+    match = re.search(r"시가총액\s*([\d,]+)\s*억원", text)
+    if not match:
+        return None
+    number = to_float(match.group(1))
+    return number * 100_000_000 if number is not None else None
+
+
+def _number_after(text: str, label: str) -> float | None:
+    pattern = re.compile(rf"{re.escape(label)}\s*[:：]?\s*(-?\d[\d,]*(?:\.\d+)?)\s*%?")
+    match = pattern.search(text)
+    if not match:
+        return None
+    return to_float(match.group(1))
 
 
 def _sum_tail(series: pd.Series, periods: int = 20) -> float | None:

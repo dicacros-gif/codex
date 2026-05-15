@@ -11,7 +11,7 @@ from src.collectors.tradingview import collect_tradingview
 from src.enricher import enrich_records, merge_signal_rows
 from src.report_builder import write_outputs
 from src.scorer import build_sections, score_records
-from src.utils.io import ensure_dir, write_json
+from src.utils.io import ensure_dir, strip_empty, write_json
 
 
 KST = ZoneInfo("Asia/Seoul")
@@ -34,7 +34,7 @@ def main() -> None:
     merged = merge_signal_rows(tradingview)
     enriched = enrich_records(merged, raw_dir=raw_dir, max_kr=args.max_kr_enrich)
     scored = score_records(enriched)
-    write_json(processed_dir / "scored_records.json", scored)
+    write_json(processed_dir / "scored_records.json", strip_empty(scored))
 
     sec13f = collect_13f(
         institutions_path=root / "config" / "institutions_13f.json",
@@ -64,4 +64,3 @@ def parse_args() -> argparse.Namespace:
 
 if __name__ == "__main__":
     main()
-

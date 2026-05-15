@@ -3,7 +3,7 @@ from __future__ import annotations
 import csv
 import json
 from pathlib import Path
-from typing import Iterable, Mapping, Sequence
+from typing import Any, Iterable, Mapping, Sequence
 
 
 def ensure_dir(path: Path) -> Path:
@@ -23,6 +23,20 @@ def read_json(path: Path, default: object) -> object:
     if not path.exists():
         return default
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def strip_empty(value: Any) -> Any:
+    if isinstance(value, dict):
+        cleaned = {}
+        for key, item in value.items():
+            stripped = strip_empty(item)
+            if stripped in (None, "", []):
+                continue
+            cleaned[key] = stripped
+        return cleaned
+    if isinstance(value, list):
+        return [item for item in (strip_empty(item) for item in value) if item not in (None, "", [])]
+    return value
 
 
 def write_csv(path: Path, records: Iterable[Mapping[str, object]], fields: Sequence[str]) -> None:
@@ -51,4 +65,3 @@ def _csv_value(value: object) -> object:
     if isinstance(value, dict):
         return json.dumps(value, ensure_ascii=False, default=str)
     return "" if value is None else value
-

@@ -85,8 +85,8 @@ def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) 
         "theme_summary": _theme_summary(records),
         "foreign_flow": foreign,
         "institution_flow_summary": institution,
-        "us_52w_highs": [row for row in records if row.get("country_code") == "US" and "52주 신고가" in (row.get("signals") or [])],
-        "kr_52w_highs": [row for row in records if row.get("country_code") == "KR" and "52주 신고가" in (row.get("signals") or [])],
+        "us_52w_highs": [row for row in records if row.get("country_code") == "US" and _has_signal(row, "52주 신고가")],
+        "kr_52w_highs": [row for row in records if row.get("country_code") == "KR" and _has_signal(row, "52주 신고가")],
         "us_volume_surges": [row for row in records if row.get("country_code") == "US" and "거래량 급증" in (row.get("signals") or [])],
         "kr_volume_surges": [row for row in records if row.get("country_code") == "KR" and "거래량 급증" in (row.get("signals") or [])],
         "famous_13f_changes": sec13f,
@@ -146,7 +146,7 @@ def _flow(value: Any) -> float:
 
 def _leading_flow(row: dict[str, Any]) -> float:
     score = 0
-    if "52주 신고가" in (row.get("signals") or []):
+    if _has_signal(row, "52주 신고가"):
         score += 5
     if "거래량 급증" in (row.get("signals") or []):
         score += 5
@@ -206,12 +206,16 @@ def _core_basis(row: dict[str, Any]) -> str | None:
     parts.extend(row.get("signals") or [])
     rel = to_float(row.get("relative_volume"))
     if rel is not None:
-        parts.append(f"거래량 {rel:.2f}배")
+        parts.append(f"거래량 {int(round(rel))}배")
     if row.get("supply_pattern"):
         parts.append(row["supply_pattern"])
     if row.get("recent_report_title"):
         parts.append(str(row["recent_report_title"]))
     return compact_join(parts)
+
+
+def _has_signal(row: dict[str, Any], prefix: str) -> bool:
+    return any(str(signal).startswith(prefix) for signal in (row.get("signals") or []))
 
 
 def _theme_summary(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -245,4 +249,3 @@ def _theme_summary(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         output.append(bucket)
     output.sort(key=lambda row: row.get("investment_priority_score") or 0, reverse=True)
     return output[:40]
-
