@@ -24,7 +24,7 @@
 - TradingView Scanner
   - 미국: `https://scanner.tradingview.com/america/scan`
   - 한국: `https://scanner.tradingview.com/korea/scan`
-  - 추가 정량 컬럼: 52주 고저가/위치, 베타, 50일·200일 이동평균 괴리, PSR, P/FCF, 매출액, 매출성장률, EPS성장률, 매출총이익률, 영업이익률, 순이익률, ROA/ROE, 부채비율, 유동비율, 당좌비율, FCF, 유통주식수, 발행주식수, 직원수
+  - 추가 정량 컬럼: 52주 고저가/위치, 베타, 50일·200일 이동평균 괴리, RSI, ADX, ATR, 일변동성, 1주/1개월/3개월/6개월/YTD/1년 성과, PSR, P/FCF, 매출액, 매출성장률, EPS성장률, 매출총이익률, 영업이익률, 순이익률, ROA/ROE, 부채비율, 유동비율, 당좌비율, FCF, 유통주식수, 발행주식수, 직원수
 - Yahoo Finance
   - Quote: `https://query1.finance.yahoo.com/v7/finance/quote?symbols={티커}`
   - QuoteSummary: `https://query1.finance.yahoo.com/v10/finance/quoteSummary/{티커}`
@@ -34,6 +34,7 @@
   - Consensus: `https://wcomp.fnguide.com/CompanyInfo/Consensus?cmp_cd={종목코드}`
 - Naver Finance
   - 외국인/기관 수급: `https://finance.naver.com/item/frgn.naver?code={종목코드}&page=1&trader_day=20`
+  - 외국인/기관 5일·20일 순매수, 합산수급, 외국인지분율과 20일 변화율을 보강합니다.
   - 리서치 상세 링크: `company_read.naver`
 - 한국경제 컨센서스 fallback
   - `https://markets.hankyung.com/consensus?searchWord={기업명}`
@@ -49,6 +50,7 @@
 ## 화면 구성
 
 상단 탭을 누르면 아래 내용이 해당 섹션으로 전환됩니다.
+같은 종목이 여러 조건에 동시에 걸리면 한 섹션에만 배치해 탭 간 중복 노출을 줄입니다.
 
 - 우선순위_TOP
 - 선행매매_후보

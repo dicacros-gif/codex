@@ -19,6 +19,7 @@ FRGN_URL = "https://finance.naver.com/item/frgn.naver?code={code}&page=1&trader_
 MAIN_URL = "https://finance.naver.com/item/main.naver?code={code}"
 RESEARCH_URL = "https://finance.naver.com/research/company_list.naver?searchType=itemCode&itemCode={code}"
 HANKYUNG_URL = "https://markets.hankyung.com/consensus?searchWord={company}"
+NAVER_ENCODING = "euc-kr"
 
 
 def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
@@ -26,17 +27,17 @@ def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
     if not code:
         return row
 
-    main_html = _get_text(MAIN_URL.format(code=code), encoding="utf-8")
+    main_html = _get_text(MAIN_URL.format(code=code), encoding=NAVER_ENCODING)
     if main_html:
         _write_raw(raw_dir / f"naver_main_{code}.html", main_html)
         row.update({key: value for key, value in _parse_main(main_html).items() if value is not None and row.get(key) in (None, "", [])})
 
-    frgn_html = _get_text(FRGN_URL.format(code=code), encoding="utf-8")
+    frgn_html = _get_text(FRGN_URL.format(code=code), encoding=NAVER_ENCODING)
     if frgn_html:
         _write_raw(raw_dir / f"naver_frgn_{code}.html", frgn_html)
         row.update({key: value for key, value in _parse_frgn(frgn_html).items() if value is not None})
 
-    research_html = _get_text(RESEARCH_URL.format(code=code), encoding="utf-8")
+    research_html = _get_text(RESEARCH_URL.format(code=code), encoding=NAVER_ENCODING)
     if research_html:
         _write_raw(raw_dir / f"naver_research_{code}.html", research_html)
         report = _parse_research(research_html, code)
@@ -84,14 +85,23 @@ def _parse_frgn(html: str) -> dict[str, Any]:
 
         foreign_cols = [col for col in numeric.columns if "외국인" in str(col) and "비율" not in str(col) and "지분" not in str(col)]
         institution_cols = [col for col in numeric.columns if "기관" in str(col)]
-        rate_cols = [col for col in numeric.columns if "비율" in str(col) or "지분" in str(col)]
+        rate_cols = [col for col in numeric.columns if "비율" in str(col) or "지분" in str(col) or "보유율" in str(col) or "소진율" in str(col)]
 
         if foreign_cols:
-            parsed["foreign_net_buy"] = _sum_tail(numeric[foreign_cols[0]])
+            parsed["foreign_net_buy_5d"] = _sum_recent(numeric[foreign_cols[0]], 5)
+            parsed["foreign_net_buy_20d"] = _sum_recent(numeric[foreign_cols[0]], 20)
+            parsed["foreign_net_buy"] = parsed["foreign_net_buy_20d"]
         if institution_cols:
-            parsed["institution_net_buy"] = _sum_tail(numeric[institution_cols[0]])
+            parsed["institution_net_buy_5d"] = _sum_recent(numeric[institution_cols[0]], 5)
+            parsed["institution_net_buy_20d"] = _sum_recent(numeric[institution_cols[0]], 20)
+            parsed["institution_net_buy"] = parsed["institution_net_buy_20d"]
+        if parsed.get("foreign_net_buy_5d") is not None or parsed.get("institution_net_buy_5d") is not None:
+            parsed["net_supply_5d"] = (parsed.get("foreign_net_buy_5d") or 0) + (parsed.get("institution_net_buy_5d") or 0)
+        if parsed.get("foreign_net_buy_20d") is not None or parsed.get("institution_net_buy_20d") is not None:
+            parsed["net_supply_20d"] = (parsed.get("foreign_net_buy_20d") or 0) + (parsed.get("institution_net_buy_20d") or 0)
         if rate_cols:
-            parsed["foreign_ownership_rate"] = _last_number(numeric[rate_cols[0]])
+            parsed["foreign_ownership_rate"] = _first_number(numeric[rate_cols[0]])
+            parsed["foreign_ownership_change_20d"] = _change_recent(numeric[rate_cols[0]], 20)
         if parsed:
             parsed["supply_pattern"] = _supply_pattern(parsed.get("foreign_net_buy"), parsed.get("institution_net_buy"))
             break
@@ -156,7 +166,7 @@ def _is_valid_naver_report_link(url: str, code: str) -> bool:
     query_code = (parse_qs(parsed.query).get("itemCode") or [""])[0]
     if _kr_code(query_code) != code:
         return False
-    body = _get_text(url, encoding="utf-8")
+    body = _get_text(url, encoding=NAVER_ENCODING)
     if not body:
         return False
     soup = BeautifulSoup(body, "lxml")
@@ -205,18 +215,36 @@ def _number_after(text: str, label: str) -> float | None:
     return to_float(match.group(1))
 
 
-def _sum_tail(series: pd.Series, periods: int = 20) -> float | None:
-    values = [value for value in series.tail(periods).tolist() if value is not None and pd.notna(value)]
+def _sum_recent(series: pd.Series, periods: int = 20) -> float | None:
+    values = _recent_numbers(series, periods)
     if not values:
         return None
     return float(sum(values))
 
 
-def _last_number(series: pd.Series) -> float | None:
-    values = [value for value in series.tolist() if value is not None and pd.notna(value)]
+def _first_number(series: pd.Series) -> float | None:
+    values = _recent_numbers(series, 1)
     if not values:
         return None
-    return float(values[-1])
+    return float(values[0])
+
+
+def _change_recent(series: pd.Series, periods: int = 20) -> float | None:
+    values = _recent_numbers(series, periods)
+    if len(values) < 2:
+        return None
+    return round(float(values[0] - values[-1]), 2)
+
+
+def _recent_numbers(series: pd.Series, periods: int) -> list[float]:
+    values = []
+    for value in series.tolist():
+        if value is None or pd.isna(value):
+            continue
+        number = to_float(value)
+        if number is not None:
+            values.append(float(number))
+    return values[:periods]
 
 
 def _supply_pattern(foreign: float | None, institution: float | None) -> str | None:

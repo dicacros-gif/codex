@@ -65,19 +65,20 @@ def score_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
 
 
 def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
-    top = sorted(records, key=lambda row: row.get("investment_priority_score") or -999, reverse=True)[:50]
-    leading = sorted(records, key=lambda row: row.get("leading_supply_score") or -999, reverse=True)[:50]
-    long_term = sorted(records, key=lambda row: row.get("long_future_score") or -999, reverse=True)[:50]
-    foreign = sorted(
-        [row for row in records if row.get("foreign_net_buy") is not None],
-        key=lambda row: row.get("foreign_flow_investment_score") or -999,
-        reverse=True,
-    )[:80]
-    institution = sorted(
-        [row for row in records if row.get("institution_net_buy") is not None],
-        key=lambda row: row.get("institution_flow_score") or -999,
-        reverse=True,
-    )[:80]
+    used: set[str] = set()
+    foreign = _take_unique(_sort_foreign_flow(records, dominant_only=True), used, 50)
+    institution = _take_unique(_sort_institution_flow(records, dominant_only=True), used, 50)
+    if len(foreign) < 15:
+        foreign.extend(_take_unique(_sort_foreign_flow(records, dominant_only=False), used, 15 - len(foreign)))
+    if len(institution) < 15:
+        institution.extend(_take_unique(_sort_institution_flow(records, dominant_only=False), used, 15 - len(institution)))
+    top = _take_unique(sorted(records, key=lambda row: row.get("investment_priority_score") or -999, reverse=True), used, 50)
+    leading = _take_unique(sorted(records, key=lambda row: row.get("leading_supply_score") or -999, reverse=True), used, 50)
+    long_term = _take_unique(sorted(records, key=lambda row: row.get("long_future_score") or -999, reverse=True), used, 50)
+    us_highs = _take_unique(_sort_highs([row for row in records if row.get("country_code") == "US" and _has_signal(row, "52주 신고가")]), used, 120)
+    kr_highs = _take_unique(_sort_highs([row for row in records if row.get("country_code") == "KR" and _has_signal(row, "52주 신고가")]), used, 120)
+    us_volume = _take_unique(_sort_volume([row for row in records if row.get("country_code") == "US" and "거래량 급증" in (row.get("signals") or [])]), used, 120)
+    kr_volume = _take_unique(_sort_volume([row for row in records if row.get("country_code") == "KR" and "거래량 급증" in (row.get("signals") or [])]), used, 120)
     return {
         "priority_top": top,
         "leading_candidates": leading,
@@ -85,13 +86,100 @@ def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) 
         "theme_summary": _theme_summary(records),
         "foreign_flow": foreign,
         "institution_flow_summary": institution,
-        "us_52w_highs": [row for row in records if row.get("country_code") == "US" and _has_signal(row, "52주 신고가")],
-        "kr_52w_highs": [row for row in records if row.get("country_code") == "KR" and _has_signal(row, "52주 신고가")],
-        "us_volume_surges": [row for row in records if row.get("country_code") == "US" and "거래량 급증" in (row.get("signals") or [])],
-        "kr_volume_surges": [row for row in records if row.get("country_code") == "KR" and "거래량 급증" in (row.get("signals") or [])],
+        "us_52w_highs": us_highs,
+        "kr_52w_highs": kr_highs,
+        "us_volume_surges": us_volume,
+        "kr_volume_surges": kr_volume,
         "famous_13f_changes": sec13f,
         "daily_tracking": [],
     }
+
+
+def _take_unique(rows: list[dict[str, Any]], used: set[str], limit: int) -> list[dict[str, Any]]:
+    output = []
+    for row in rows:
+        key = _security_key(row)
+        if not key or key in used:
+            continue
+        used.add(key)
+        output.append(row)
+        if len(output) >= limit:
+            break
+    return output
+
+
+def _security_key(row: dict[str, Any]) -> str | None:
+    country = str(row.get("country_code") or row.get("country") or "").upper()
+    ticker = str(row.get("ticker") or "").upper()
+    if country and ticker:
+        return f"{country}:{ticker}"
+    return None
+
+
+def _sort_highs(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return sorted(
+        rows,
+        key=lambda row: (
+            row.get("distance_to_52w_high_pct") if row.get("distance_to_52w_high_pct") is not None else -999,
+            row.get("investment_priority_score") or -999,
+            row.get("market_cap") or 0,
+        ),
+        reverse=True,
+    )
+
+
+def _sort_volume(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    return sorted(
+        rows,
+        key=lambda row: (
+            row.get("relative_volume") or -999,
+            row.get("change_pct") or -999,
+            row.get("market_cap") or 0,
+        ),
+        reverse=True,
+    )
+
+
+def _sort_foreign_flow(records: list[dict[str, Any]], dominant_only: bool) -> list[dict[str, Any]]:
+    rows = []
+    for row in records:
+        foreign = to_float(row.get("foreign_net_buy_20d") or row.get("foreign_net_buy"))
+        if foreign is None:
+            continue
+        institution = to_float(row.get("institution_net_buy_20d") or row.get("institution_net_buy")) or 0
+        if dominant_only and foreign <= institution:
+            continue
+        rows.append(row)
+    return sorted(
+        rows,
+        key=lambda row: (
+            row.get("foreign_flow_investment_score") or -999,
+            row.get("foreign_net_buy_20d") or row.get("foreign_net_buy") or -999,
+            row.get("foreign_net_buy_5d") or -999,
+        ),
+        reverse=True,
+    )
+
+
+def _sort_institution_flow(records: list[dict[str, Any]], dominant_only: bool) -> list[dict[str, Any]]:
+    rows = []
+    for row in records:
+        institution = to_float(row.get("institution_net_buy_20d") or row.get("institution_net_buy"))
+        if institution is None:
+            continue
+        foreign = to_float(row.get("foreign_net_buy_20d") or row.get("foreign_net_buy")) or 0
+        if dominant_only and institution <= foreign:
+            continue
+        rows.append(row)
+    return sorted(
+        rows,
+        key=lambda row: (
+            row.get("institution_flow_score") or -999,
+            row.get("institution_net_buy_20d") or row.get("institution_net_buy") or -999,
+            row.get("institution_net_buy_5d") or -999,
+        ),
+        reverse=True,
+    )
 
 
 def _valuation(row: dict[str, Any]) -> float:
@@ -183,16 +271,27 @@ def _long_term(row: dict[str, Any]) -> float:
 
 def _momentum(row: dict[str, Any]) -> float:
     change = to_float(row.get("change_pct"))
+    performance_1w = to_float(row.get("performance_1w"))
+    performance_1m = to_float(row.get("performance_1m"))
+    performance_ytd = to_float(row.get("performance_ytd"))
     position = to_float(row.get("position_52w_pct"))
     sma50_gap = to_float(row.get("sma50_gap_pct"))
     sma200_gap = to_float(row.get("sma200_gap_pct"))
-    if change is None and position is None and sma50_gap is None and sma200_gap is None:
+    rsi = to_float(row.get("rsi_14"))
+    adx = to_float(row.get("adx_14"))
+    short_values = [value for value in [change, performance_1w, performance_1m] if value is not None]
+    best_short = max(short_values) if short_values else None
+    if best_short is None and performance_ytd is None and position is None and sma50_gap is None and sma200_gap is None:
         return 0
-    score = 10 if change is not None and change >= 8 else 8 if change is not None and change >= 4 else 5 if change is not None and change > 0 else 0
+    score = 10 if best_short is not None and best_short >= 12 else 8 if best_short is not None and best_short >= 6 else 5 if best_short is not None and best_short > 0 else 0
     if position is not None and position >= 80:
         score += 2
     if (sma50_gap or 0) > 0 and (sma200_gap or 0) > 0:
         score += 2
+    if performance_ytd is not None and performance_ytd > 0:
+        score += 1
+    if rsi is not None and 50 <= rsi <= 70 and adx is not None and adx >= 25:
+        score += 1
     return min(score, 10)
 
 
@@ -251,6 +350,13 @@ def _core_basis(row: dict[str, Any]) -> str | None:
     position = to_float(row.get("position_52w_pct"))
     if position is not None:
         parts.append(f"52주 위치 {int(round(position))}%")
+    performance_1m = to_float(row.get("performance_1m"))
+    if performance_1m is not None:
+        parts.append(f"1개월 성과 {int(round(performance_1m))}%")
+    rsi = to_float(row.get("rsi_14"))
+    adx = to_float(row.get("adx_14"))
+    if rsi is not None and adx is not None:
+        parts.append(f"RSI {int(round(rsi))} / ADX {int(round(adx))}")
     fcf_margin = to_float(row.get("fcf_margin"))
     if fcf_margin is not None:
         parts.append(f"FCF마진 {int(round(fcf_margin))}%")
@@ -281,19 +387,50 @@ def _theme_summary(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
                 "company_name": str(theme),
                 "future_industry_theme": str(theme),
                 "core_basis": "",
-                "investment_priority_score": 0,
-                "long_future_score": 0,
-                "leading_supply_score": 0,
+                "stock_count": 0,
             },
         )
-        bucket["investment_priority_score"] += 1
+        bucket["stock_count"] += 1
         tickers = bucket.setdefault("_tickers", [])
         if row.get("ticker"):
             tickers.append(row["ticker"])
+        for source, target in [
+            ("investment_priority_score", "_investment_scores"),
+            ("long_future_score", "_long_scores"),
+            ("leading_supply_score", "_leading_scores"),
+            ("relative_volume", "_relative_volumes"),
+        ]:
+            value = to_float(row.get(source))
+            if value is not None:
+                bucket.setdefault(target, []).append(value)
     output = []
     for bucket in counts.values():
-        tickers = bucket.pop("_tickers", [])
+        tickers = _unique_values(bucket.pop("_tickers", []))
+        bucket["top_tickers"] = ", ".join(tickers[:12])
         bucket["core_basis"] = f"포착 종목 {len(tickers)}개: {', '.join(tickers[:8])}"
+        bucket["avg_investment_priority_score"] = _avg(bucket.pop("_investment_scores", []))
+        bucket["avg_long_future_score"] = _avg(bucket.pop("_long_scores", []))
+        bucket["avg_leading_supply_score"] = _avg(bucket.pop("_leading_scores", []))
+        bucket["avg_relative_volume"] = _avg(bucket.pop("_relative_volumes", []))
         output.append(bucket)
-    output.sort(key=lambda row: row.get("investment_priority_score") or 0, reverse=True)
+    output.sort(key=lambda row: (row.get("stock_count") or 0, row.get("avg_investment_priority_score") or 0), reverse=True)
     return output[:40]
+
+
+def _avg(values: list[float]) -> float | None:
+    if not values:
+        return None
+    return round(sum(values) / len(values), 2)
+
+
+def _unique_values(values: list[Any]) -> list[str]:
+    output = []
+    seen = set()
+    for value in values:
+        text = str(value)
+        key = text.upper()
+        if key in seen:
+            continue
+        seen.add(key)
+        output.append(text)
+    return output

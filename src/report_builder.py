@@ -44,9 +44,22 @@ STOCK_COLUMNS = [
     ("low_52w", "52주저가"),
     ("distance_to_52w_high_pct", "고가괴리"),
     ("position_52w_pct", "52주위치"),
+    ("change_pct", "등락률"),
+    ("change_from_open_pct", "시가대비"),
+    ("gap_pct", "갭"),
     ("beta", "베타"),
     ("sma50_gap_pct", "50일선괴리"),
     ("sma200_gap_pct", "200일선괴리"),
+    ("rsi_14", "RSI"),
+    ("adx_14", "ADX"),
+    ("atr_14", "ATR"),
+    ("volatility_d", "일변동성"),
+    ("performance_1w", "1주성과"),
+    ("performance_1m", "1개월성과"),
+    ("performance_3m", "3개월성과"),
+    ("performance_6m", "6개월성과"),
+    ("performance_ytd", "YTD성과"),
+    ("performance_1y", "1년성과"),
     ("investment_priority_score", "투자우선점수"),
     ("long_future_score", "장기/미래점수"),
     ("leading_supply_score", "선행수급점수"),
@@ -91,18 +104,182 @@ STOCK_COLUMNS = [
     ("recent_report_broker", "최근리포트증권사"),
     ("recent_report_title", "최근리포트제목"),
     ("supply_pattern", "수급패턴"),
+    ("foreign_net_buy_5d", "외국인 5일"),
+    ("foreign_net_buy_20d", "외국인 20일"),
     ("foreign_net_buy", "외국인순매수"),
+    ("institution_net_buy_5d", "기관 5일"),
+    ("institution_net_buy_20d", "기관 20일"),
     ("institution_net_buy", "기관순매수"),
+    ("net_supply_5d", "합산수급 5일"),
+    ("net_supply_20d", "합산수급 20일"),
     ("foreign_ownership_rate", "외국인지분율"),
+    ("foreign_ownership_change_20d", "외국인지분율 변화"),
     ("exchange", "거래소"),
     ("sector", "섹터"),
     ("industry", "산업"),
 ]
 
+PRIORITY_COLUMNS = [
+    ("date", "날짜"),
+    ("country", "국가"),
+    ("ticker", "티커"),
+    ("company_name", "기업명"),
+    ("close", "종가"),
+    ("market_cap", "시가총액"),
+    ("investment_priority_score", "투자우선점수"),
+    ("future_industry_theme", "미래산업테마"),
+    ("core_basis", "핵심근거"),
+    ("forward_per", "Forward PER"),
+    ("forward_peg", "Forward PEG"),
+    ("price_to_sales", "PSR"),
+    ("price_to_fcf", "P/FCF"),
+    ("revenue_growth_yoy", "매출성장률 YoY"),
+    ("eps_growth_yoy", "EPS성장률 YoY"),
+    ("fcf_margin", "FCF마진"),
+    ("roic", "ROIC"),
+    ("target_upside_pct", "목표가상승여력"),
+    ("recent_report_broker", "최근리포트증권사"),
+    ("recent_report_title", "최근리포트제목"),
+]
+
+LEADING_COLUMNS = [
+    ("date", "날짜"),
+    ("country", "국가"),
+    ("ticker", "티커"),
+    ("company_name", "기업명"),
+    ("signals", "포착신호"),
+    ("close", "종가"),
+    ("leading_supply_score", "선행수급점수"),
+    ("relative_volume", "상대거래량"),
+    ("change_pct", "등락률"),
+    ("gap_pct", "갭"),
+    ("performance_1w", "1주성과"),
+    ("performance_1m", "1개월성과"),
+    ("rsi_14", "RSI"),
+    ("adx_14", "ADX"),
+    ("foreign_net_buy_5d", "외국인 5일"),
+    ("institution_net_buy_5d", "기관 5일"),
+    ("net_supply_5d", "합산수급 5일"),
+    ("supply_pattern", "수급패턴"),
+    ("core_basis", "핵심근거"),
+]
+
+LONG_TERM_COLUMNS = [
+    ("date", "날짜"),
+    ("country", "국가"),
+    ("ticker", "티커"),
+    ("company_name", "기업명"),
+    ("close", "종가"),
+    ("market_cap", "시가총액"),
+    ("long_future_score", "장기/미래점수"),
+    ("future_industry_theme", "미래산업테마"),
+    ("total_revenue", "매출액"),
+    ("revenue_growth_yoy", "매출성장률 YoY"),
+    ("expected_revenue_growth", "예상매출성장률"),
+    ("eps_growth_yoy", "EPS성장률 YoY"),
+    ("expected_eps_growth", "예상EPS성장률"),
+    ("gross_margin", "매출총이익률"),
+    ("operating_margin", "영업이익률"),
+    ("profit_margin", "순이익률"),
+    ("fcf_margin", "FCF마진"),
+    ("free_cash_flow", "FCF"),
+    ("roe", "ROE"),
+    ("roa", "ROA"),
+    ("roic", "ROIC"),
+    ("debt_to_equity", "부채비율"),
+    ("current_ratio", "유동비율"),
+    ("quick_ratio", "당좌비율"),
+    ("beta", "베타"),
+    ("dividend_yield", "배당수익률"),
+]
+
+FOREIGN_COLUMNS = [
+    ("date", "날짜"),
+    ("country", "국가"),
+    ("ticker", "티커"),
+    ("company_name", "기업명"),
+    ("close", "종가"),
+    ("foreign_flow_investment_score", "외국인수급점수"),
+    ("foreign_net_buy_5d", "외국인 5일"),
+    ("foreign_net_buy_20d", "외국인 20일"),
+    ("foreign_ownership_rate", "외국인지분율"),
+    ("foreign_ownership_change_20d", "지분율 20일 변화"),
+    ("volume", "거래량"),
+    ("relative_volume", "상대거래량"),
+    ("supply_pattern", "수급패턴"),
+    ("recent_report_title", "최근리포트제목"),
+]
+
+INSTITUTION_COLUMNS = [
+    ("date", "날짜"),
+    ("country", "국가"),
+    ("ticker", "티커"),
+    ("company_name", "기업명"),
+    ("close", "종가"),
+    ("institution_flow_score", "기관수급점수"),
+    ("institution_net_buy_5d", "기관 5일"),
+    ("institution_net_buy_20d", "기관 20일"),
+    ("net_supply_5d", "합산수급 5일"),
+    ("net_supply_20d", "합산수급 20일"),
+    ("volume", "거래량"),
+    ("relative_volume", "상대거래량"),
+    ("supply_pattern", "수급패턴"),
+    ("recent_report_title", "최근리포트제목"),
+]
+
+HIGH_COLUMNS = [
+    ("date", "날짜"),
+    ("country", "국가"),
+    ("ticker", "티커"),
+    ("company_name", "기업명"),
+    ("close", "종가"),
+    ("high_52w", "52주고가"),
+    ("distance_to_52w_high_pct", "고가괴리"),
+    ("position_52w_pct", "52주위치"),
+    ("market_cap", "시가총액"),
+    ("beta", "베타"),
+    ("sma50_gap_pct", "50일선괴리"),
+    ("sma200_gap_pct", "200일선괴리"),
+    ("performance_1m", "1개월성과"),
+    ("performance_3m", "3개월성과"),
+    ("performance_ytd", "YTD성과"),
+    ("volume", "거래량"),
+    ("relative_volume", "상대거래량"),
+    ("core_basis", "핵심근거"),
+]
+
+VOLUME_COLUMNS = [
+    ("date", "날짜"),
+    ("country", "국가"),
+    ("ticker", "티커"),
+    ("company_name", "기업명"),
+    ("close", "종가"),
+    ("volume", "거래량"),
+    ("average_volume_30d", "평균거래량"),
+    ("relative_volume", "상대거래량"),
+    ("change_pct", "등락률"),
+    ("change_from_open_pct", "시가대비"),
+    ("gap_pct", "갭"),
+    ("rsi_14", "RSI"),
+    ("adx_14", "ADX"),
+    ("atr_14", "ATR"),
+    ("volatility_d", "일변동성"),
+    ("performance_1w", "1주성과"),
+    ("performance_1m", "1개월성과"),
+    ("short_percent_float", "공매도비율"),
+    ("float_shares", "유통주식수"),
+    ("core_basis", "핵심근거"),
+]
+
 THEME_COLUMNS = [
     ("date", "날짜"),
     ("future_industry_theme", "테마"),
-    ("investment_priority_score", "포착수"),
+    ("stock_count", "포착종목수"),
+    ("avg_investment_priority_score", "평균 투자우선점수"),
+    ("avg_long_future_score", "평균 장기/미래점수"),
+    ("avg_leading_supply_score", "평균 선행수급점수"),
+    ("avg_relative_volume", "평균 상대거래량"),
+    ("top_tickers", "대표 티커"),
     ("core_basis", "포착 종목"),
 ]
 
@@ -131,7 +308,16 @@ TRACKING_COLUMNS = [
 ]
 
 SECTION_COLUMNS = {
+    "priority_top": PRIORITY_COLUMNS,
+    "leading_candidates": LEADING_COLUMNS,
+    "long_term_candidates": LONG_TERM_COLUMNS,
     "theme_summary": THEME_COLUMNS,
+    "foreign_flow": FOREIGN_COLUMNS,
+    "institution_flow_summary": INSTITUTION_COLUMNS,
+    "us_52w_highs": HIGH_COLUMNS,
+    "kr_52w_highs": HIGH_COLUMNS,
+    "us_volume_surges": VOLUME_COLUMNS,
+    "kr_volume_surges": VOLUME_COLUMNS,
     "famous_13f_changes": F13_COLUMNS,
     "daily_tracking": TRACKING_COLUMNS,
 }
@@ -147,8 +333,17 @@ NUMERIC_FIELDS = {
     "investment_priority_score",
     "long_future_score",
     "leading_supply_score",
+    "institution_flow_score",
     "foreign_flow_investment_score",
+    "stock_count",
+    "avg_investment_priority_score",
+    "avg_long_future_score",
+    "avg_leading_supply_score",
+    "avg_relative_volume",
     "beta",
+    "rsi_14",
+    "adx_14",
+    "atr_14",
     "forward_per",
     "forward_peg",
     "trailing_per",
@@ -166,8 +361,14 @@ NUMERIC_FIELDS = {
     "shares_outstanding",
     "employees",
     "short_ratio",
+    "foreign_net_buy_5d",
+    "foreign_net_buy_20d",
     "foreign_net_buy",
+    "institution_net_buy_5d",
+    "institution_net_buy_20d",
     "institution_net_buy",
+    "net_supply_5d",
+    "net_supply_20d",
     "new_institution_count",
     "increased_institution_count",
     "decreased_institution_count",
@@ -178,10 +379,20 @@ NUMERIC_FIELDS = {
     "row_count",
 }
 PERCENT_FIELDS = {
+    "change_pct",
+    "change_from_open_pct",
+    "gap_pct",
     "distance_to_52w_high_pct",
     "position_52w_pct",
     "sma50_gap_pct",
     "sma200_gap_pct",
+    "volatility_d",
+    "performance_1w",
+    "performance_1m",
+    "performance_3m",
+    "performance_6m",
+    "performance_ytd",
+    "performance_1y",
     "dividend_yield",
     "revenue_growth_yoy",
     "revenue_growth_qoq",
@@ -201,6 +412,7 @@ PERCENT_FIELDS = {
     "short_percent_float",
     "target_upside_pct",
     "foreign_ownership_rate",
+    "foreign_ownership_change_20d",
     "average_change_pct",
 }
 HIDDEN_DISPLAY_FIELDS = {"report_link", "source_url"}
@@ -390,7 +602,7 @@ def _format_cell(field: str, value: Any, row: dict[str, Any]) -> str:
         return html.escape(_short_datetime(value))
     if isinstance(value, list):
         return "".join(f"<span class='tag'>{html.escape(str(item))}</span>" for item in value if item not in (None, ""))
-    if field == "relative_volume":
+    if field in {"relative_volume", "avg_relative_volume"}:
         number = _number(value)
         return "" if number is None else html.escape(f"{int(round(number))}x")
     if field in PERCENT_FIELDS:
@@ -526,8 +738,12 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         "investment_priority_score",
         "long_future_score",
         "leading_supply_score",
+        "institution_flow_score",
         "foreign_flow_investment_score",
         "famous_13f_score",
+        "avg_investment_priority_score",
+        "avg_long_future_score",
+        "avg_leading_supply_score",
     }
     if field in score_fields and number is not None:
         if number >= 8:
@@ -537,7 +753,7 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         elif number > 0:
             tokens.append("metric-soft")
 
-    if field == "relative_volume" and number is not None:
+    if field in {"relative_volume", "avg_relative_volume"} and number is not None:
         if number >= 5:
             tokens.append("volume-hot")
         elif number >= 3:
@@ -560,7 +776,7 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         elif number <= 25:
             tokens.append("warn")
 
-    if field in {"sma50_gap_pct", "sma200_gap_pct", "change_from_open_pct", "gap_pct"} and number is not None:
+    if field in {"sma50_gap_pct", "sma200_gap_pct", "change_pct", "change_from_open_pct", "gap_pct"} and number is not None:
         if number >= 10:
             tokens.append("volume-hot")
         elif number > 0:
@@ -568,7 +784,36 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         elif number <= -10:
             tokens.append("neg")
 
-    if field in {"target_upside_pct", "average_change_pct"} and number is not None:
+    if field in {"performance_1w", "performance_1m", "performance_3m", "performance_6m", "performance_ytd", "performance_1y"} and number is not None:
+        if number >= 25:
+            tokens.append("pos-strong")
+        elif number >= 10:
+            tokens.append("pos-buy")
+        elif number > 0:
+            tokens.append("metric-soft")
+        elif number < 0:
+            tokens.append("neg")
+    if field == "volatility_d" and number is not None:
+        if number >= 12:
+            tokens.append("warn")
+        elif number >= 5:
+            tokens.append("metric-soft")
+    if field == "rsi_14" and number is not None:
+        if number >= 75:
+            tokens.append("warn")
+        elif number >= 55:
+            tokens.append("pos-buy")
+        elif number <= 30:
+            tokens.append("metric-cyan")
+    if field == "adx_14" and number is not None:
+        if number >= 35:
+            tokens.append("pos-strong")
+        elif number >= 25:
+            tokens.append("pos-buy")
+    if field == "atr_14" and number is not None and number > 0:
+        tokens.append("metric-soft")
+
+    if field in {"target_upside_pct", "average_change_pct", "foreign_ownership_change_20d"} and number is not None:
         if number >= 20:
             tokens.append("pos-strong")
         elif number > 0:
@@ -576,7 +821,18 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         elif number < 0:
             tokens.append("neg")
 
-    flow_fields = {"foreign_net_buy", "institution_net_buy", "total_share_change", "total_current_shares"}
+    flow_fields = {
+        "foreign_net_buy",
+        "foreign_net_buy_5d",
+        "foreign_net_buy_20d",
+        "institution_net_buy",
+        "institution_net_buy_5d",
+        "institution_net_buy_20d",
+        "net_supply_5d",
+        "net_supply_20d",
+        "total_share_change",
+        "total_current_shares",
+    }
     if field in flow_fields and number is not None:
         if number > 0:
             tokens.append("flow-pos")
@@ -660,7 +916,7 @@ def _style_tokens(field: str, value: Any) -> list[str]:
 
 def _classes(field: str, value: Any) -> str:
     classes = []
-    if field in NUMERIC_FIELDS or field in PERCENT_FIELDS or field == "relative_volume":
+    if field in NUMERIC_FIELDS or field in PERCENT_FIELDS or field in {"relative_volume", "avg_relative_volume"}:
         classes.append("num")
     if field == "core_basis":
         classes.append("basis")
@@ -741,7 +997,7 @@ def _style_xlsx_sheet(sheet: Any, columns: list[tuple[str, str]], raw_rows: list
                 if link:
                     cell.hyperlink = link
                     cell.font = Font(color="0563C1", bold=True, underline="single")
-            if field in NUMERIC_FIELDS or field in PERCENT_FIELDS or field == "relative_volume":
+            if field in NUMERIC_FIELDS or field in PERCENT_FIELDS or field in {"relative_volume", "avg_relative_volume"}:
                 cell.alignment = Alignment(horizontal="right", vertical="top")
             else:
                 cell.alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
@@ -757,8 +1013,20 @@ def _xlsx_width(field: str, label: str) -> int:
         "signals": 20,
         "core_basis": 42,
         "future_industry_theme": 20,
+        "top_tickers": 34,
+        "stock_count": 12,
+        "avg_investment_priority_score": 16,
+        "avg_long_future_score": 16,
+        "avg_leading_supply_score": 16,
+        "avg_relative_volume": 14,
         "total_revenue": 16,
         "free_cash_flow": 16,
+        "foreign_net_buy_5d": 16,
+        "foreign_net_buy_20d": 16,
+        "institution_net_buy_5d": 16,
+        "institution_net_buy_20d": 16,
+        "net_supply_5d": 16,
+        "net_supply_20d": 16,
         "float_shares": 16,
         "shares_outstanding": 16,
         "institutional_ownership_pct": 14,
@@ -779,7 +1047,7 @@ def _apply_xlsx_cell_style(cell: Any, tokens: list[str], field: str) -> None:
         fill, font_color, bold = style
         cell.fill = PatternFill("solid", fgColor=fill)
         cell.font = Font(color=font_color, bold=bold)
-    elif field in {"ticker", "company_name", "future_industry_theme", "core_basis"}:
+    elif field in {"ticker", "company_name", "future_industry_theme", "core_basis", "top_tickers"}:
         cell.font = Font(color="111827", bold=True)
 
 
@@ -851,7 +1119,7 @@ def _format_export_cell(field: str, value: Any, row: dict[str, Any]) -> str:
         return _short_datetime(value)
     if isinstance(value, list):
         return ", ".join(str(item) for item in value if item not in (None, ""))
-    if field == "relative_volume":
+    if field in {"relative_volume", "avg_relative_volume"}:
         number = _number(value)
         return "" if number is None else f"{int(round(number))}x"
     if field in PERCENT_FIELDS:
