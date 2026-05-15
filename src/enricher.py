@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
+from urllib.parse import quote
 
 from src.collectors.fnguide import enrich_with_fnguide
 from src.collectors.naver import enrich_name_with_naver, enrich_with_naver, has_hangul
@@ -68,6 +69,9 @@ def clean_record(record: dict[str, Any]) -> dict[str, Any]:
         if localized_name and localized_name != original_name:
             cleaned.setdefault("official_company_name", original_name)
             cleaned["company_name"] = localized_name
+        report_link = str(cleaned.get("report_link") or "")
+        if "markets.hankyung.com/consensus?searchWord=" in report_link:
+            cleaned["report_link"] = f"https://markets.hankyung.com/consensus?searchWord={quote(str(cleaned['company_name']))}"
     if cleaned.get("target_price") is not None and cleaned.get("close"):
         try:
             cleaned["target_upside_pct"] = round((float(cleaned["target_price"]) / float(cleaned["close"]) - 1) * 100, 2)

@@ -749,7 +749,7 @@ def _fallback_report_link(row: dict[str, Any]) -> str | None:
 
 
 def _report_company_query(row: dict[str, Any]) -> str | None:
-    for key in ("naver_title", "company_name", "ticker"):
+    for key in ("company_name", "naver_title", "ticker"):
         value = row.get(key)
         if value in (None, ""):
             continue
