@@ -169,7 +169,7 @@ def _sort_foreign_flow(records: list[dict[str, Any]], dominant_only: bool) -> li
     rows = []
     for row in records:
         foreign = to_float(row.get("foreign_net_buy_20d") or row.get("foreign_net_buy"))
-        if foreign is None:
+        if foreign is None or foreign <= 0:
             continue
         institution = to_float(row.get("institution_net_buy_20d") or row.get("institution_net_buy")) or 0
         if dominant_only and foreign <= institution:
@@ -179,6 +179,7 @@ def _sort_foreign_flow(records: list[dict[str, Any]], dominant_only: bool) -> li
         rows,
         key=lambda row: (
             row.get("foreign_flow_investment_score") or -999,
+            row.get("foreign_net_buy_amount_mil_krw") or -999,
             row.get("foreign_net_buy_20d") or row.get("foreign_net_buy") or -999,
             row.get("foreign_net_buy_5d") or -999,
         ),
@@ -190,7 +191,7 @@ def _sort_institution_flow(records: list[dict[str, Any]], dominant_only: bool) -
     rows = []
     for row in records:
         institution = to_float(row.get("institution_net_buy_20d") or row.get("institution_net_buy"))
-        if institution is None:
+        if institution is None or institution <= 0:
             continue
         foreign = to_float(row.get("foreign_net_buy_20d") or row.get("foreign_net_buy")) or 0
         if dominant_only and institution <= foreign:
@@ -200,6 +201,7 @@ def _sort_institution_flow(records: list[dict[str, Any]], dominant_only: bool) -
         rows,
         key=lambda row: (
             row.get("institution_flow_score") or -999,
+            row.get("institution_net_buy_amount_mil_krw") or -999,
             row.get("institution_net_buy_20d") or row.get("institution_net_buy") or -999,
             row.get("institution_net_buy_5d") or -999,
         ),

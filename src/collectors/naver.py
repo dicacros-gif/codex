@@ -142,15 +142,18 @@ def _parse_frgn(html: str) -> dict[str, Any]:
 def _parse_main(html: str) -> dict[str, Any]:
     soup = BeautifulSoup(html, "lxml")
     text = soup.get_text(" ", strip=True)
+    market_cap_100m = _table_number(soup, ["시가총액"])
+    trailing_pair = _per_eps_pair(soup, "PER")
+    forward_pair = _per_eps_pair(soup, "추정PER")
     parsed = {
-        "market_cap": _naver_market_cap(text),
-        "trailing_per": _number_after(text, "PER"),
-        "forward_per": _number_after(text, "추정PER"),
-        "pbr": _number_after(text, "PBR"),
-        "eps_ttm": _number_after(text, "EPS"),
-        "forward_eps": _number_after(text, "추정EPS"),
-        "dividend_yield": _number_after(text, "배당수익률"),
-        "foreign_ownership_rate": _number_after(text, "외국인소진율"),
+        "market_cap": market_cap_100m * 100_000_000 if market_cap_100m is not None else _naver_market_cap(text),
+        "trailing_per": trailing_pair[0] or _table_number(soup, ["PER"]) or _number_after(text, "PER"),
+        "forward_per": forward_pair[0] or _number_after(text, "추정PER"),
+        "pbr": _table_number(soup, ["PBR"]) or _number_after(text, "PBR"),
+        "eps_ttm": trailing_pair[1] or _table_number(soup, ["EPS"]) or _number_after(text, "EPS"),
+        "forward_eps": forward_pair[1] or _number_after(text, "추정EPS"),
+        "dividend_yield": _table_number(soup, ["배당수익률"]) or _number_after(text, "배당수익률"),
+        "foreign_ownership_rate": _table_number(soup, ["외국인소진율"]) or _number_after(text, "외국인소진율"),
     }
     title = soup.find("title")
     if title and title.text:
@@ -269,6 +272,40 @@ def _naver_market_cap(text: str) -> float | None:
         return None
     number = to_float(match.group(1))
     return number * 100_000_000 if number is not None else None
+
+
+def _table_number(soup: BeautifulSoup, labels: list[str]) -> float | None:
+    for header in soup.find_all(["th", "dt"]):
+        header_text = header.get_text(" ", strip=True)
+        if not any(label in header_text for label in labels):
+            continue
+        parent = header.find_parent("tr") or header.find_parent("dl")
+        cells = parent.find_all(["td", "dd"]) if parent else []
+        for cell in cells:
+            number = to_float(cell.get_text(" ", strip=True))
+            if number is not None:
+                return number
+    return None
+
+
+def _per_eps_pair(soup: BeautifulSoup, label: str) -> tuple[float | None, float | None]:
+    for header in soup.find_all("th"):
+        header_text = header.get_text(" ", strip=True)
+        if label not in header_text or "EPS" not in header_text:
+            continue
+        if label == "PER" and "추정PER" in header_text:
+            continue
+        parent = header.find_parent("tr")
+        if not parent:
+            continue
+        value_text = " ".join(cell.get_text(" ", strip=True) for cell in parent.find_all("td"))
+        values = [to_float(match) for match in re.findall(r"-?\d[\d,]*(?:\.\d+)?", value_text)]
+        values = [value for value in values if value is not None]
+        if values:
+            if "N/A" in value_text:
+                return None, values[0]
+            return values[0], values[1] if len(values) > 1 else None
+    return None, None
 
 
 def _number_after(text: str, label: str) -> float | None:

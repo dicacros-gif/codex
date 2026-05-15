@@ -19,8 +19,8 @@ SECTION_TITLES = [
     ("leading_candidates", "선행매매_후보"),
     ("long_term_candidates", "장기투자_후보"),
     ("theme_summary", "테마_요약"),
-    ("foreign_flow", "외국인_수급"),
-    ("institution_flow_summary", "기관수급_요약"),
+    ("foreign_flow", "외국인 수급"),
+    ("institution_flow_summary", "기관 수급"),
     ("us_52w_highs", "신고가_미국"),
     ("kr_52w_highs", "신고가_한국"),
     ("us_volume_surges", "거래량_급증_미국"),
@@ -201,13 +201,25 @@ FOREIGN_COLUMNS = [
     ("ticker", "티커"),
     ("company_name", "기업명"),
     ("close", "종가"),
+    ("market_cap", "시가총액"),
     ("foreign_flow_investment_score", "외국인수급점수"),
+    ("foreign_net_buy", "외국인순매수"),
+    ("foreign_net_buy_amount_mil_krw", "외국인금액(백만)"),
     ("foreign_net_buy_5d", "외국인 5일"),
     ("foreign_net_buy_20d", "외국인 20일"),
     ("foreign_ownership_rate", "외국인지분율"),
     ("foreign_ownership_change_20d", "지분율 20일 변화"),
+    ("trailing_per", "PER"),
+    ("forward_per", "Forward PER"),
+    ("forward_peg", "Forward PEG"),
+    ("pbr", "PBR"),
+    ("dividend_yield", "배당수익률"),
+    ("roic", "ROIC"),
+    ("roe", "ROE"),
     ("volume", "거래량"),
+    ("foreign_rank_volume", "랭킹거래량"),
     ("relative_volume", "상대거래량"),
+    ("supply_source", "수급출처"),
     ("supply_pattern", "수급패턴"),
     ("recent_report_title", "최근리포트제목"),
 ]
@@ -218,13 +230,25 @@ INSTITUTION_COLUMNS = [
     ("ticker", "티커"),
     ("company_name", "기업명"),
     ("close", "종가"),
+    ("market_cap", "시가총액"),
     ("institution_flow_score", "기관수급점수"),
+    ("institution_net_buy", "기관순매수"),
+    ("institution_net_buy_amount_mil_krw", "기관금액(백만)"),
     ("institution_net_buy_5d", "기관 5일"),
     ("institution_net_buy_20d", "기관 20일"),
     ("net_supply_5d", "합산수급 5일"),
     ("net_supply_20d", "합산수급 20일"),
+    ("trailing_per", "PER"),
+    ("forward_per", "Forward PER"),
+    ("forward_peg", "Forward PEG"),
+    ("pbr", "PBR"),
+    ("dividend_yield", "배당수익률"),
+    ("roic", "ROIC"),
+    ("roe", "ROE"),
     ("volume", "거래량"),
+    ("institution_rank_volume", "랭킹거래량"),
     ("relative_volume", "상대거래량"),
+    ("supply_source", "수급출처"),
     ("supply_pattern", "수급패턴"),
     ("recent_report_title", "최근리포트제목"),
 ]
@@ -370,9 +394,13 @@ NUMERIC_FIELDS = {
     "foreign_net_buy_5d",
     "foreign_net_buy_20d",
     "foreign_net_buy",
+    "foreign_net_buy_amount_mil_krw",
+    "foreign_rank_volume",
     "institution_net_buy_5d",
     "institution_net_buy_20d",
     "institution_net_buy",
+    "institution_net_buy_amount_mil_krw",
+    "institution_rank_volume",
     "net_supply_5d",
     "net_supply_20d",
     "new_institution_count",
@@ -567,7 +595,7 @@ def _render_panel(key: str, title: str, rows: list[dict[str, Any]], active: bool
     table = _render_table(key, rows)
     return f"""<section class="panel{' on' if active else ''}" id="panel-{html.escape(key)}">
   <div class="panel-head">
-    <div><h2>{html.escape(title)}</h2><p>{len(rows)}개 유니크 항목</p></div>
+    <div><p>{len(rows)}개 유니크 항목</p></div>
     <div class="downloads"><a href="reports/latest.xlsx">latest.xlsx</a></div>
   </div>
   {table}
@@ -828,7 +856,7 @@ def _style_tokens(field: str, value: Any) -> list[str]:
             tokens.append("metric-blue")
         elif number > 0:
             tokens.append("metric-soft")
-    if field in {"volume", "average_volume_30d", "float_shares", "shares_outstanding"} and number is not None and number > 0:
+    if field in {"volume", "average_volume_30d", "float_shares", "shares_outstanding", "foreign_rank_volume", "institution_rank_volume"} and number is not None and number > 0:
         tokens.append("metric-soft")
     if field == "analyst_opinion" and value not in (None, "", []):
         text = str(value)
@@ -901,9 +929,11 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         "foreign_net_buy",
         "foreign_net_buy_5d",
         "foreign_net_buy_20d",
+        "foreign_net_buy_amount_mil_krw",
         "institution_net_buy",
         "institution_net_buy_5d",
         "institution_net_buy_20d",
+        "institution_net_buy_amount_mil_krw",
         "net_supply_5d",
         "net_supply_20d",
         "total_share_change",
@@ -1106,8 +1136,15 @@ def _xlsx_width(field: str, label: str) -> int:
         "free_cash_flow": 16,
         "foreign_net_buy_5d": 16,
         "foreign_net_buy_20d": 16,
+        "foreign_net_buy": 16,
+        "foreign_net_buy_amount_mil_krw": 18,
+        "foreign_rank_volume": 16,
         "institution_net_buy_5d": 16,
         "institution_net_buy_20d": 16,
+        "institution_net_buy": 16,
+        "institution_net_buy_amount_mil_krw": 18,
+        "institution_rank_volume": 16,
+        "supply_source": 22,
         "net_supply_5d": 16,
         "net_supply_20d": 16,
         "float_shares": 16,

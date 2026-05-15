@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
+from src.collectors.naver_supply import collect_kr_supply_candidates
 from src.collectors.sec13f import collect_13f
 from src.collectors.tradingview import collect_tradingview
 from src.enricher import enrich_records, merge_signal_rows
@@ -34,6 +35,7 @@ def main() -> None:
     ensure_dir(root / "reports")
 
     tradingview = collect_tradingview(raw_dir=raw_dir, run_date=run_date, limit=args.limit)
+    tradingview.update(collect_kr_supply_candidates(raw_dir=raw_dir, run_date=run_date, limit_per_group=args.supply_limit))
     write_json(raw_dir / "tradingview_sections.json", tradingview)
 
     merged = merge_signal_rows(tradingview)
@@ -64,6 +66,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--limit", type=int, default=int(os.getenv("TRADINGVIEW_LIMIT", "250")))
     parser.add_argument("--max-kr-enrich", type=int, default=int(os.getenv("MAX_KR_ENRICH", "80")))
     parser.add_argument("--sec-quarters", type=int, default=int(os.getenv("SEC_13F_QUARTERS", "5")))
+    parser.add_argument("--supply-limit", type=int, default=int(os.getenv("NAVER_SUPPLY_LIMIT", "30")))
     return parser.parse_args()
 
 

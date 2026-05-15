@@ -8,7 +8,7 @@ from src.collectors.fnguide import enrich_with_fnguide
 from src.collectors.naver import enrich_name_with_naver, enrich_with_naver, has_hangul
 from src.collectors.yahoo import enrich_us_with_yahoo
 from src.utils.korean_names import koreanize_kr_company_name
-from src.utils.text import clean_phrase, to_float
+from src.utils.text import clean_phrase, compact_join, to_float
 
 
 def merge_signal_rows(sections: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
@@ -30,7 +30,10 @@ def merge_signal_rows(sections: dict[str, list[dict[str, Any]]]) -> list[dict[st
                 signals.update(row.get("signals") or [])
                 current["signals"] = sorted(signals)
                 for field, value in row.items():
-                    if current.get(field) in (None, "", []):
+                    if field == "supply_source" and value not in (None, "", []):
+                        existing = str(current.get(field) or "")
+                        current[field] = existing if str(value) in existing.split(" / ") else compact_join([existing, value])
+                    elif current.get(field) in (None, "", []):
                         current[field] = value
     return [clean_record(record) for record in merged.values()]
 
@@ -55,10 +58,14 @@ def _select_full_kr_enrichment_keys(records: list[dict[str, Any]], max_kr: int) 
     if max_kr <= 0:
         return set()
     kr_records = [record for record in records if record.get("country_code") == "KR" and _record_key(record)]
-    non_high = [record for record in kr_records if not _has_52w_high_signal(record)]
+    supply = [record for record in kr_records if not _has_52w_high_signal(record) and _has_supply_signal(record)]
+    supply_keys = {_record_key(record) for record in supply}
+    non_high = [record for record in kr_records if not _has_52w_high_signal(record) and _record_key(record) not in supply_keys]
     highs = [record for record in kr_records if _has_52w_high_signal(record)]
-    non_high_quota = min(len(non_high), max_kr, max(15, max_kr // 2))
-    selected = non_high[:non_high_quota]
+    supply_quota = min(len(supply), max_kr)
+    selected = supply[:supply_quota]
+    non_high_quota = min(len(non_high), max_kr - len(selected), max(10, max_kr // 3))
+    selected.extend(non_high[:non_high_quota])
     selected.extend(highs[: max_kr - len(selected)])
     if len(selected) < max_kr:
         selected.extend(non_high[non_high_quota : max_kr - len(selected) + non_high_quota])
@@ -75,6 +82,10 @@ def _record_key(record: dict[str, Any]) -> str | None:
 
 def _has_52w_high_signal(record: dict[str, Any]) -> bool:
     return any(str(signal).startswith("52주 신고가") for signal in (record.get("signals") or []))
+
+
+def _has_supply_signal(record: dict[str, Any]) -> bool:
+    return any("순매수" in str(signal) for signal in (record.get("signals") or []))
 
 
 def clean_record(record: dict[str, Any]) -> dict[str, Any]:
