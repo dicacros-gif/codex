@@ -28,6 +28,11 @@ SECTION_TITLES = [
     ("famous_13f_changes", "유명기관_13F증감"),
     ("daily_tracking", "일별_트래킹"),
 ]
+SECTION_TITLE_BY_KEY = dict(SECTION_TITLES)
+LEGACY_SECTION_TITLES = {
+    "외국인_수급": SECTION_TITLE_BY_KEY["foreign_flow"],
+    "기관수급_요약": SECTION_TITLE_BY_KEY["institution_flow_summary"],
+}
 
 STOCK_COLUMNS = [
     ("date", "날짜"),
@@ -1044,7 +1049,7 @@ def _merge_daily_tracking(path: Path, summary_rows: list[dict[str, Any]]) -> lis
             existing = pd.read_csv(path).to_dict("records")
         except Exception:
             existing = []
-    combined = summary_rows + existing
+    combined = [_normalize_tracking_row(row) for row in summary_rows + existing]
     seen = set()
     unique = []
     for row in combined:
@@ -1055,6 +1060,13 @@ def _merge_daily_tracking(path: Path, summary_rows: list[dict[str, Any]]) -> lis
         unique.append(row)
     unique.sort(key=lambda row: str(row.get("date") or ""), reverse=True)
     return unique[:500]
+
+
+def _normalize_tracking_row(row: dict[str, Any]) -> dict[str, Any]:
+    normalized = dict(row)
+    section = str(normalized.get("section") or "")
+    normalized["section"] = LEGACY_SECTION_TITLES.get(section, section)
+    return normalized
 
 
 def _dedupe_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
