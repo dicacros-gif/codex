@@ -16,6 +16,7 @@
 - `data/processed/scored_records.json`: 정제/점수 계산 결과
 - `reports/YYYY-MM-DD/report.html`: 날짜별 HTML 리포트
 - `reports/report.html`: 최신 HTML 리포트
+- `reports/latest.xlsx`: 웹 다운로드용 Excel 파일
 - `index.html`: GitHub Pages 루트 리포트
 
 ## 데이터 출처

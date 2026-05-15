@@ -186,6 +186,7 @@ def write_outputs(
 
     write_csv(processed_dir / "daily_summary.csv", sections["daily_tracking"], SUMMARY_FIELDS)
     write_csv(reports_dir / "daily_summary.csv", sections["daily_tracking"], SUMMARY_FIELDS)
+    _write_xlsx(reports_dir / "latest.xlsx", sections)
 
     html_text = render_html(payload)
     (root / "index.html").write_text(html_text, encoding="utf-8")
@@ -222,7 +223,7 @@ def render_html(payload: dict[str, Any]) -> str:
 .topbar{{position:sticky;top:0;z-index:50;background:var(--tbg);backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:.35rem .9rem;display:flex;align-items:center;gap:.55rem}}
 .tabs{{display:flex;gap:.25rem;overflow-x:auto;flex:1;min-width:0}}.tab-btn{{border:1px solid var(--bd);background:var(--card);color:var(--t2);border-radius:999px;padding:.28rem .65rem;font-size:.68rem;font-weight:800;white-space:nowrap;cursor:pointer}}.tab-btn:hover,.tab-btn.on{{background:var(--ac);border-color:var(--ac);color:#fff}}
 .tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.pb{{width:18px;height:18px;border-radius:50%;border:2px solid transparent;cursor:pointer}}.pb.on{{border-color:var(--t1);box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--t3)}}.pb[data-c=default]{{background:linear-gradient(135deg,#2563eb,#60a5fa)}}.pb[data-c=ocean]{{background:linear-gradient(135deg,#0d9488,#2dd4bf)}}.pb[data-c=sunset]{{background:linear-gradient(135deg,#ea580c,#fb923c)}}.pb[data-c=violet]{{background:linear-gradient(135deg,#7c3aed,#a78bfa)}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
-main{{width:min(1680px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.statusbar{{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin-bottom:.7rem}}.chip{{font-size:.66rem;font-weight:800;background:var(--card2);border:1px solid var(--bd);padding:.14rem .5rem;border-radius:999px;color:var(--t2)}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{padding:.7rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.95rem;margin:0;font-weight:900}}.panel-head p{{margin:.1rem 0 0;font-size:.68rem;color:var(--t3)}}
+main{{width:min(1680px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.statusbar{{display:flex;flex-wrap:wrap;gap:.35rem;align-items:center;margin-bottom:.7rem}}.chip{{font-size:.66rem;font-weight:800;background:var(--card2);border:1px solid var(--bd);padding:.14rem .5rem;border-radius:999px;color:var(--t2)}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.7rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.95rem;margin:0;font-weight:900}}.panel-head p{{margin:.1rem 0 0;font-size:.68rem;color:var(--t3)}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.66rem;border:1px solid var(--bd);border-radius:6px;padding:.16rem .45rem;background:var(--card)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 170px)}}table{{width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem}}th{{position:sticky;top:0;z-index:2;background:var(--hdr);color:var(--hdrText);padding:.46rem .45rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid var(--bd)}}td{{padding:.42rem .45rem;border-bottom:1px solid var(--bd);vertical-align:top;background:var(--card)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--acL)}}.empty{{padding:1.1rem;color:var(--t3);font-size:.78rem}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap}}.pos-strong{{background:var(--okB)!important;color:var(--okT);font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT);font-weight:900;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT);font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT);font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:520px}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.05rem .35rem;margin:.05rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
@@ -270,7 +271,10 @@ def _render_panel(key: str, title: str, rows: list[dict[str, Any]], active: bool
     rows = _dedupe_rows(rows)
     table = _render_table(key, rows)
     return f"""<section class="panel{' on' if active else ''}" id="panel-{html.escape(key)}">
-  <div class="panel-head"><h2>{html.escape(title)}</h2><p>{len(rows)}개 유니크 항목</p></div>
+  <div class="panel-head">
+    <div><h2>{html.escape(title)}</h2><p>{len(rows)}개 유니크 항목</p></div>
+    <div class="downloads"><a href="reports/latest.xlsx">latest.xlsx</a></div>
+  </div>
   {table}
 </section>"""
 
@@ -444,3 +448,40 @@ def _dedupe_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         seen.add(key)
         unique.append(row)
     return unique
+
+
+def _write_xlsx(path: Path, sections: dict[str, list[dict[str, Any]]]) -> None:
+    ensure_dir(path.parent)
+    try:
+        with pd.ExcelWriter(path, engine="openpyxl") as writer:
+            for key, title in SECTION_TITLES:
+                columns = SECTION_COLUMNS.get(key, STOCK_COLUMNS)
+                rows = [_export_row(row, columns) for row in sections.get(key, [])]
+                frame = pd.DataFrame(rows, columns=[label for _, label in columns])
+                frame.to_excel(writer, sheet_name=title[:31], index=False)
+    except Exception:
+        return
+
+
+def _export_row(row: dict[str, Any], columns: list[tuple[str, str]]) -> dict[str, str]:
+    return {label: _format_export_cell(field, row.get(field), row) for field, label in columns}
+
+
+def _format_export_cell(field: str, value: Any, row: dict[str, Any]) -> str:
+    if value in (None, "", []):
+        if field == "recent_report_broker":
+            return _fallback_report_broker(row) or ""
+        if field == "recent_report_title":
+            return _fallback_report_title(row) or ""
+        return ""
+    if isinstance(value, list):
+        return ", ".join(str(item) for item in value if item not in (None, ""))
+    if field == "relative_volume":
+        number = _number(value)
+        return "" if number is None else f"{int(round(number))}x"
+    if field in PERCENT_FIELDS:
+        number = _number(value)
+        return "" if number is None else f"{int(round(number))}%"
+    if field in NUMERIC_FIELDS or isinstance(value, (int, float)):
+        return _compact_number(value)
+    return _clean_display_text(str(value))
