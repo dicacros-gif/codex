@@ -8,6 +8,8 @@ from pathlib import Path
 from typing import Any
 
 import pandas as pd
+from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
+from openpyxl.utils import get_column_letter
 
 from src.utils.io import ensure_dir, strip_empty, write_csv
 
@@ -226,6 +228,7 @@ def render_html(payload: dict[str, Any]) -> str:
 .tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.pb{{width:18px;height:18px;border-radius:50%;border:2px solid transparent;cursor:pointer}}.pb.on{{border-color:var(--t1);box-shadow:0 0 0 2px var(--bg),0 0 0 4px var(--t3)}}.pb[data-c=default]{{background:linear-gradient(135deg,#2563eb,#60a5fa)}}.pb[data-c=ocean]{{background:linear-gradient(135deg,#0d9488,#2dd4bf)}}.pb[data-c=sunset]{{background:linear-gradient(135deg,#ea580c,#fb923c)}}.pb[data-c=violet]{{background:linear-gradient(135deg,#7c3aed,#a78bfa)}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
 main{{width:min(1680px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.7rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.95rem;margin:0;font-weight:900}}.panel-head p{{margin:.1rem 0 0;font-size:.68rem;color:var(--t3)}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.66rem;border:1px solid var(--bd);border-radius:6px;padding:.16rem .45rem;background:var(--card)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 170px)}}table{{width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem}}th{{position:sticky;top:0;z-index:2;background:var(--hdr);color:var(--hdrText);padding:.46rem .45rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid var(--bd)}}td{{padding:.42rem .45rem;border-bottom:1px solid var(--bd);vertical-align:top;background:var(--card)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--acL)}}.empty{{padding:1.1rem;color:var(--t3);font-size:.78rem}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap}}.pos-strong{{background:var(--okB)!important;color:var(--okT);font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT);font-weight:900;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT);font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT);font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:520px}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.05rem .35rem;margin:.05rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
+.key-cell{{background:#EAF2FF!important;color:#1D4ED8;font-weight:900}}.company-cell{{color:var(--t1);font-weight:900}}.country-us{{background:#E0F2FE!important;color:#075985;font-weight:900}}.country-kr{{background:#F0FDF4!important;color:#166534;font-weight:900}}.signal-cell{{background:#F8FAFC!important}}.theme-cell{{background:#EDE9FE!important;color:#5B21B6;font-weight:900}}.basis-cell{{background:#F8FAFC!important;color:#334155;font-weight:800}}.report-cell{{background:#EFF6FF!important;color:#0563C1;font-weight:900}}.volume-hot{{background:#FDE68A!important;color:#92400E;font-weight:900}}.volume-watch{{background:#FEF3C7!important;color:#92400E;font-weight:900}}.flow-pos{{background:#DCFCE7!important;color:#166534;font-weight:900}}.metric-blue{{background:#DBEAFE!important;color:#1E40AF;font-weight:900}}.metric-cyan{{background:#CCFBF1!important;color:#0F766E;font-weight:900}}.metric-purple{{background:#F3E8FF!important;color:#6B21A8;font-weight:900}}.metric-soft{{background:#F1F5F9!important;color:#334155;font-weight:800}}.section-cell{{background:#ECFDF5!important;color:#047857;font-weight:900}}
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
 </head>
@@ -407,29 +410,138 @@ def _number(value: Any) -> float | None:
     return number
 
 
+def _style_tokens(field: str, value: Any) -> list[str]:
+    tokens: list[str] = []
+    number = _number(value)
+
+    if field in {"ticker", "cusip"}:
+        tokens.append("key-cell")
+    if field == "company_name":
+        tokens.append("company-cell")
+    if field == "section":
+        tokens.append("section-cell")
+    if field == "country":
+        label = str(value or "")
+        if "미국" in label or label.upper() == "US":
+            tokens.append("country-us")
+        elif "한국" in label or label.upper() == "KR":
+            tokens.append("country-kr")
+    if field == "signals":
+        tokens.append("signal-cell")
+    if field == "future_industry_theme":
+        tokens.append("theme-cell")
+    if field == "core_basis":
+        tokens.append("basis-cell")
+    if field in {"recent_report_title", "report_link", "source_url"}:
+        tokens.append("report-cell")
+
+    score_fields = {
+        "investment_priority_score",
+        "long_future_score",
+        "leading_supply_score",
+        "foreign_flow_investment_score",
+        "famous_13f_score",
+    }
+    if field in score_fields and number is not None:
+        if number >= 8:
+            tokens.append("pos-strong")
+        elif number >= 5:
+            tokens.append("pos-buy")
+        elif number > 0:
+            tokens.append("metric-soft")
+
+    if field == "relative_volume" and number is not None:
+        if number >= 5:
+            tokens.append("volume-hot")
+        elif number >= 3:
+            tokens.append("volume-watch")
+        elif number >= 2:
+            tokens.append("warn")
+
+    if field == "distance_to_52w_high_pct" and number is not None:
+        if number >= -1:
+            tokens.append("pos-strong")
+        elif number >= -3:
+            tokens.append("pos-buy")
+        elif number <= -10:
+            tokens.append("warn")
+
+    if field in {"target_upside_pct", "average_change_pct"} and number is not None:
+        if number >= 20:
+            tokens.append("pos-strong")
+        elif number > 0:
+            tokens.append("pos-buy")
+        elif number < 0:
+            tokens.append("neg")
+
+    flow_fields = {"foreign_net_buy", "institution_net_buy", "total_share_change", "total_current_shares"}
+    if field in flow_fields and number is not None:
+        if number > 0:
+            tokens.append("flow-pos")
+        elif number < 0:
+            tokens.append("neg")
+
+    if field in {"new_institution_count", "increased_institution_count"} and number is not None and number > 0:
+        tokens.append("pos-buy")
+    if field == "decreased_institution_count" and number is not None and number > 0:
+        tokens.append("warn")
+    if field == "exited_institution_count" and number is not None and number > 0:
+        tokens.append("neg")
+
+    if field in {"forward_per", "trailing_per"} and number is not None:
+        if 0 < number <= 15:
+            tokens.append("metric-blue")
+        elif 0 < number <= 25:
+            tokens.append("metric-soft")
+    if field == "forward_peg" and number is not None:
+        if 0 < number <= 1:
+            tokens.append("metric-purple")
+        elif 0 < number <= 2:
+            tokens.append("pos-buy")
+    if field == "pbr" and number is not None and 0 < number <= 2:
+        tokens.append("metric-blue")
+
+    growth_fields = {
+        "revenue_growth_yoy",
+        "revenue_growth_qoq",
+        "eps_growth_yoy",
+        "eps_growth_qoq",
+        "expected_revenue_growth",
+        "expected_eps_growth",
+    }
+    if field in growth_fields and number is not None:
+        if number >= 25:
+            tokens.append("pos-strong")
+        elif number >= 10:
+            tokens.append("pos-buy")
+        elif number > 0:
+            tokens.append("metric-soft")
+        elif number < 0:
+            tokens.append("neg")
+
+    if field in {"fcf_margin", "roic", "roe"} and number is not None:
+        if number >= 15:
+            tokens.append("pos-strong")
+        elif number >= 8:
+            tokens.append("metric-cyan")
+        elif number > 0:
+            tokens.append("metric-soft")
+        elif number < 0:
+            tokens.append("neg")
+    if field in {"dividend_yield", "foreign_ownership_rate"} and number is not None and number > 0:
+        tokens.append("metric-soft")
+
+    return tokens
+
+
 def _classes(field: str, value: Any) -> str:
     classes = []
     if field in NUMERIC_FIELDS or field in PERCENT_FIELDS or field == "relative_volume":
         classes.append("num")
     if field == "core_basis":
         classes.append("basis")
-    if field in {"investment_priority_score", "long_future_score", "leading_supply_score", "foreign_flow_investment_score", "famous_13f_score"}:
-        number = _number(value)
-        if number is not None:
-            if number >= 8:
-                classes.append("pos-strong")
-            elif number >= 5:
-                classes.append("pos-buy")
-    if field in {"target_upside_pct", "distance_to_52w_high_pct", "average_change_pct"}:
-        number = _number(value)
-        if number is not None:
-            if number >= 20:
-                classes.append("pos-strong")
-            elif number > 0:
-                classes.append("pos-buy")
-            elif number < 0:
-                classes.append("neg")
-    return " ".join(classes)
+    classes.extend(_style_tokens(field, value))
+    return " ".join(dict.fromkeys(classes))
 
 
 def _merge_daily_tracking(path: Path, summary_rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
@@ -471,11 +583,124 @@ def _write_xlsx(path: Path, sections: dict[str, list[dict[str, Any]]]) -> None:
         with pd.ExcelWriter(path, engine="openpyxl") as writer:
             for key, title in SECTION_TITLES:
                 columns = SECTION_COLUMNS.get(key, STOCK_COLUMNS)
-                rows = [_export_row(row, columns) for row in sections.get(key, [])]
+                raw_rows = sections.get(key, [])
+                rows = [_export_row(row, columns) for row in raw_rows]
                 frame = pd.DataFrame(rows, columns=[label for _, label in columns])
                 frame.to_excel(writer, sheet_name=title[:31], index=False)
+                _style_xlsx_sheet(writer.sheets[title[:31]], columns, raw_rows)
     except Exception:
         return
+
+
+def _style_xlsx_sheet(sheet: Any, columns: list[tuple[str, str]], raw_rows: list[dict[str, Any]]) -> None:
+    border = Border(bottom=Side(style="thin", color="D8DFE9"))
+    header_fill = PatternFill("solid", fgColor="2F2F2F")
+    header_font = Font(color="FFFFFF", bold=True)
+    for cell in sheet[1]:
+        cell.fill = header_fill
+        cell.font = header_font
+        cell.border = border
+        cell.alignment = Alignment(horizontal="center", vertical="center")
+
+    sheet.freeze_panes = "A2"
+    sheet.auto_filter.ref = sheet.dimensions
+
+    for column_index, (field, label) in enumerate(columns, start=1):
+        letter = get_column_letter(column_index)
+        sheet.column_dimensions[letter].width = _xlsx_width(field, label)
+        for row_index, raw in enumerate(raw_rows, start=2):
+            cell = sheet.cell(row=row_index, column=column_index)
+            tokens = _style_tokens(field, raw.get(field))
+            _apply_xlsx_cell_style(cell, tokens, field)
+            if field == "recent_report_title":
+                link = _fallback_report_link(raw)
+                if link:
+                    cell.hyperlink = link
+                    cell.font = Font(color="0563C1", bold=True, underline="single")
+            if field in NUMERIC_FIELDS or field in PERCENT_FIELDS or field == "relative_volume":
+                cell.alignment = Alignment(horizontal="right", vertical="top")
+            else:
+                cell.alignment = Alignment(horizontal="left", vertical="top", wrap_text=True)
+            cell.border = border
+
+
+def _xlsx_width(field: str, label: str) -> int:
+    widths = {
+        "date": 12,
+        "country": 10,
+        "ticker": 13,
+        "company_name": 28,
+        "signals": 20,
+        "core_basis": 42,
+        "future_industry_theme": 20,
+        "recent_report_title": 34,
+        "recent_report_broker": 18,
+        "institutions": 28,
+        "section": 22,
+        "generated_at_kst": 20,
+    }
+    return widths.get(field, min(max(len(label) + 4, 12), 20))
+
+
+def _apply_xlsx_cell_style(cell: Any, tokens: list[str], field: str) -> None:
+    style = _xlsx_style(tokens)
+    if style:
+        fill, font_color, bold = style
+        cell.fill = PatternFill("solid", fgColor=fill)
+        cell.font = Font(color=font_color, bold=bold)
+    elif field in {"ticker", "company_name", "future_industry_theme", "core_basis"}:
+        cell.font = Font(color="111827", bold=True)
+
+
+def _xlsx_style(tokens: list[str]) -> tuple[str, str, bool] | None:
+    palette = {
+        "pos-strong": ("C6EFCE", "006100", True),
+        "pos-buy": ("E2F0D9", "375623", True),
+        "warn": ("FFC000", "111827", True),
+        "neg": ("FFC7CE", "9C0006", True),
+        "volume-hot": ("FDE68A", "92400E", True),
+        "volume-watch": ("FEF3C7", "92400E", True),
+        "flow-pos": ("DCFCE7", "166534", True),
+        "metric-blue": ("DBEAFE", "1E40AF", True),
+        "metric-cyan": ("CCFBF1", "0F766E", True),
+        "metric-purple": ("F3E8FF", "6B21A8", True),
+        "metric-soft": ("F1F5F9", "334155", True),
+        "key-cell": ("EAF2FF", "1D4ED8", True),
+        "company-cell": ("FFFFFF", "111827", True),
+        "country-us": ("E0F2FE", "075985", True),
+        "country-kr": ("F0FDF4", "166534", True),
+        "signal-cell": ("F8FAFC", "475569", True),
+        "theme-cell": ("EDE9FE", "5B21B6", True),
+        "basis-cell": ("F8FAFC", "334155", True),
+        "report-cell": ("EFF6FF", "0563C1", True),
+        "section-cell": ("ECFDF5", "047857", True),
+    }
+    priority = [
+        "neg",
+        "warn",
+        "pos-strong",
+        "volume-hot",
+        "pos-buy",
+        "volume-watch",
+        "flow-pos",
+        "metric-purple",
+        "metric-blue",
+        "metric-cyan",
+        "metric-soft",
+        "key-cell",
+        "country-us",
+        "country-kr",
+        "theme-cell",
+        "report-cell",
+        "section-cell",
+        "basis-cell",
+        "signal-cell",
+        "company-cell",
+    ]
+    for token in priority:
+        if token in tokens:
+            return palette[token]
+    return None
 
 
 def _export_row(row: dict[str, Any], columns: list[tuple[str, str]]) -> dict[str, str]:
