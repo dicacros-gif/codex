@@ -10,7 +10,7 @@
 
 
 	
-		<title>誘몃�������� 誘멸뎅 ������&諛����泥� TOP3 ETN : Npay 利�沅�</title>
+		<title>미래에셋 미국 테크&반도체 TOP3 ETN : Npay 증권</title>
 	
 	
 
@@ -21,7 +21,7 @@
 
 <meta http-equiv="Content-Script-Type" content="text/javascript">
 <meta http-equiv="Content-Style-Type" content="text/css">
-<meta name="apple-mobile-web-app-title" content="Npay 利�沅�" />
+<meta name="apple-mobile-web-app-title" content="Npay 증권" />
 
 
 
@@ -33,12 +33,12 @@
         
 			
 		    
-		    	<meta property="og:title" content="誘몃�������� 誘멸뎅 ������&諛����泥� TOP3 ETN - Npay 利�沅� : Npay 利�沅�"/>
+		    	<meta property="og:title" content="미래에셋 미국 테크&반도체 TOP3 ETN - Npay 증권 : Npay 증권"/>
 		     
 		
 		
 			
-			   <meta property="og:description" content="愿���ъ��紐⑹�� ��ㅼ��媛� 二쇨��瑜� 媛���� 鍮�瑜닿�� �����명����� 怨�"/>
+			   <meta property="og:description" content="관심종목의 실시간 주가를 가장 빠르게 확인하는 곳"/>
 		    
 		    
 		
@@ -52,7 +52,7 @@
 
 <meta property="og:type" content="article"/>
 <meta property="og:article:thumbnailUrl" content=""/>
-<meta property="og:article:author" content="Npay 利�沅�"/>
+<meta property="og:article:author" content="Npay 증권"/>
 <meta property="og:article:author:url" content="http://FINANCE.NAVER.COM"/>
 
 
@@ -102,7 +102,7 @@
       })();
 </script>
 	
-	<!-- smart channel 愿�怨� -->
+	<!-- smart channel 광고 -->
 	<script async src="https://ssl.pstatic.net/tveta/libs/glad/prod/gfp-core.js">
 		</script>
 	<script type="text/javascript">
@@ -137,7 +137,7 @@
 							//console.log(gladsdk.event.AD_IMPRESSED);
 						});
 						gladsdk.addEventListener(gladsdk.event.ERROR, function(ad, error) {
-							//TODO: ��ㅻ�� 濡�源�泥�由�
+							//TODO: 오류 로깅처리
 							//console.log(gladsdk.event.ERROR);
 						});
 					});
@@ -169,7 +169,7 @@
 						//console.log(gladsdk.event.AD_IMPRESSED);
 					});
 					gladsdk.addEventListener(gladsdk.event.ERROR, function(ad, error) {
-						//TODO: ��ㅻ�� 濡�源�泥�由�
+						//TODO: 오류 로깅처리
 						//console.log(gladsdk.event.ERROR);
 					});
 				});
@@ -226,9 +226,9 @@ var ccsrv="cc.naver.com";
 	
 
 
-var gnb_logout=document.URL; //GNB������ 濡�洹몄����� ��� redirect ��� URL
-var gnb_searchbox='off'; //誘몃�� 寃����李쎌�� on ���吏� off ���吏�. default��� off
-var gnb_shortnick='off'; //�����ㅼ�� 留�以����(10���)��� on���吏� off ���吏�. default��� off.
+var gnb_logout=document.URL; //GNB에서 로그아웃 후 redirect 될 URL
+var gnb_searchbox='off'; //미니 검색창을 on 할지 off 할지. default는 off
+var gnb_shortnick='off'; //닉네임 말줄임(10자)을 on할지 off 할지. default는 off.
 
 
 var gnb_naverme_layer_open_callback = function(){
@@ -247,10 +247,10 @@ var gnb_naverme_layer_close_callback = function(){
 
 
 <div id="u_skip">
-	<a href="#menu" tabindex="1"><span>硫���� 硫���대�� 諛�濡�媛�湲�</span></a>
+	<a href="#menu" tabindex="1"><span>메인 메뉴로 바로가기</span></a>
 
 	
-		<a href="#middle" tabindex="2"><span>蹂몃Ц��쇰�� 諛�濡�媛�湲�</span></a>
+		<a href="#middle" tabindex="2"><span>본문으로 바로가기</span></a>
 	
 	
 
@@ -266,20 +266,20 @@ var gnb_naverme_layer_close_callback = function(){
 						<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M22 11C22 13.1756 21.3549 15.3023 20.1462 17.1113C18.9375 18.9202 17.2195 20.3301 15.2095 21.1627C13.1995 21.9952 10.9878 22.2131 8.85401 21.7886C6.72022 21.3642 4.76021 20.3166 3.22183 18.7782C1.68345 17.2398 0.635805 15.2798 0.211368 13.146C-0.213069 11.0122 0.00476298 8.80047 0.837327 6.79048C1.66989 4.78049 3.07979 3.06253 4.88873 1.85383C6.69768 0.645137 8.82441 0 11 0C13.9174 0 16.7153 1.15893 18.7782 3.22183C20.8411 5.28473 22 8.08262 22 11ZM12.8398 5.83V11.3602L8.98976 5.83H5.83V16.1838H9.1575V10.637L13.0075 16.17H16.1783V5.83H12.8398Z" fill="#000"/>
 						</svg>
-						<span class="blind">��ㅼ�대��</span>
+						<span class="blind">네이버</span>
 					</a>
 					<a href="https://new-m.pay.naver.com/" class="logo_link" onClick="clickcr(this, 'STA.pay', '', '', event);">
 						<svg width="37" height="22" viewBox="0 0 37 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M34.4319 5.21944L31.3913 12.1478L27.9518 5.21944H25.3072L30.1783 14.8317L28.1703 19.3358H30.7384L37 5.2331L34.4319 5.21944ZM23.6171 15.9331H21.1037V14.9328C20.1894 15.7342 19.0108 16.1685 17.7953 16.1518C14.7901 16.1518 12.4379 13.692 12.4379 10.5763C12.4379 7.46057 14.7874 5.00079 17.7953 5.00079C19.0104 4.9833 20.189 5.41657 21.1037 6.21701V5.21944H23.6171V15.9331ZM21.3987 10.5899C21.3987 8.57019 19.9891 7.03694 18.1204 7.03694C16.2517 7.03694 14.842 8.57019 14.842 10.5899C14.842 12.6097 16.249 14.1429 18.1204 14.1429C19.9918 14.1429 21.3987 12.596 21.3987 10.5899ZM0.00819554 19.3358H2.63088V15.023C3.52823 15.7695 4.66309 16.1699 5.83001 16.1518C8.83516 16.1518 11.1901 13.692 11.1901 10.5763C11.1901 7.46057 8.83789 5.00079 5.83001 5.00079C4.61166 4.9789 3.42899 5.4126 2.51341 6.21701V5.21944H0L0.00819554 19.3358ZM5.51856 7.03694C7.38722 7.03694 8.79691 8.57019 8.79691 10.5899C8.79691 12.6097 7.38722 14.1429 5.51856 14.1429C3.6499 14.1429 2.24021 12.6097 2.24021 10.5899C2.24021 8.57019 3.63351 7.03694 5.51856 7.03694Z" fill="#000"/>
 						</svg>
-						<span class="blind">������</span>
+						<span class="blind">페이</span>
 					</a>
 					<a href="/" class="logo_link" onClick="clickcr(this, 'STA.finance', '', '', event);">
 						<svg width="34" height="22" viewBox="0 0 34 22" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path d="M2.43006 8.88998L1.85406 6.99998C5.29206 6.31598 7.00206 5.34398 7.45206 4.31798H2.71806V2.35598H14.3641V4.31798H9.75606C9.70206 4.65998 9.61206 4.98398 9.46806 5.28998L15.2101 6.98198L14.4901 8.88998L8.02806 6.92798C6.84006 7.75598 5.00406 8.40398 2.43006 8.88998ZM0.612061 11.5V9.53798H16.4521V11.5H0.612061ZM6.53406 12.796H10.5301C13.2301 12.796 14.7961 14.128 14.7961 15.91C14.7961 17.71 13.2301 19.024 10.5301 19.024H6.53406C3.85206 19.024 2.28606 17.71 2.28606 15.91C2.28606 14.128 3.85206 12.796 6.53406 12.796ZM6.96606 17.044H10.1161C11.7901 17.044 12.4921 16.594 12.4921 15.892C12.4921 15.19 11.7901 14.776 10.1161 14.776H6.96606C5.29206 14.776 4.57206 15.19 4.57206 15.892C4.57206 16.594 5.29206 17.044 6.96606 17.044Z" fill="#000"/>
 							<path d="M25.1904 13.354V11.536H29.4564V2.03198H31.7604V15.334H29.4564V13.354H25.1904ZM21.3384 10.564C20.9244 10.582 20.5464 10.582 20.1684 10.582H17.4504L17.3604 8.61998H20.3844C21.5004 8.61998 22.9584 8.56598 24.4884 8.45798C24.7224 6.99998 24.8484 5.63198 24.8664 4.62398H18.4404V2.66198H27.0984V3.56198C27.0984 5.16398 26.9724 6.76598 26.7564 8.25998L28.2684 8.09798L28.5024 10.006C26.9724 10.222 25.2264 10.384 23.5704 10.474C23.4984 11.5 23.3904 12.562 23.2644 13.714L21.0684 13.588C21.1764 12.508 21.2664 11.536 21.3384 10.564ZM22.4724 14.254V16.756H32.3724V18.844H20.1684V14.254H22.4724Z" fill="#000"/>
 						</svg>
-						<span class="blind">利�沅�</span>
+						<span class="blind">증권</span>
 					</a>
 				</h1>
 			</div>
@@ -287,8 +287,8 @@ var gnb_naverme_layer_close_callback = function(){
 			<div class="right_area">
 				<div class="search_area">
 					<form name="search" action="/search/search.naver"  method="get" onsubmit="return delayed_submit(this)" style="margin:0; padding:0;">
-					<label for="stock_items" class="blind">利�沅� 醫�紐⑸��쨌吏����紐� 寃����</label>
-					<input type="text" id="stock_items" name="query" title="醫�紐⑸��쨌吏����紐� 寃����" class="search_input" placeholder="醫�紐⑸��&middot;吏����紐� ������" accesskey="s" autocomplete="off">
+					<label for="stock_items" class="blind">증권 종목명·지수명 검색</label>
+					<input type="text" id="stock_items" name="query" title="종목명·지수명 검색" class="search_input" placeholder="종목명&middot;지수명 입력" accesskey="s" autocomplete="off">
 					<input type="hidden" id="_endUrl" name="endUrl" value="" />
 					<input type="hidden" id="_encoding" name="encoding" value="UTF-8" />
 						
@@ -297,10 +297,10 @@ var gnb_naverme_layer_close_callback = function(){
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M6.9999 2.59996C4.56985 2.59996 2.5999 4.56991 2.5999 6.99996C2.5999 9.43002 4.56985 11.4 6.9999 11.4C9.42996 11.4 11.3999 9.43002 11.3999 6.99996C11.3999 4.56991 9.42996 2.59996 6.9999 2.59996ZM1.3999 6.99996C1.3999 3.90717 3.90711 1.39996 6.9999 1.39996C10.0927 1.39996 12.5999 3.90717 12.5999 6.99996C12.5999 10.0928 10.0927 12.6 6.9999 12.6C3.90711 12.6 1.3999 10.0928 1.3999 6.99996Z" fill="#404048"></path>
 							<path fill-rule="evenodd" clip-rule="evenodd" d="M10.2421 10.2424C10.4765 10.0081 10.8564 10.0081 11.0907 10.2424L14.424 13.5758C14.6583 13.8101 14.6583 14.19 14.424 14.4243C14.1897 14.6586 13.8098 14.6586 13.5755 14.4243L10.2421 11.091C10.0078 10.8567 10.0078 10.4768 10.2421 10.2424Z" fill="#404048"></path>
 						</svg>
-						<span class="blind">寃����</span>
+						<span class="blind">검색</span>
 					</button>
 					<div class="auto_area">
-						<span class="blind">������������</span>
+						<span class="blind">자동완성</span>
 						<div id="autoFrame" style="display: none;">
 							<div class="wrap" id="atcmp" style="display:none;">
 								<div class="wrap_in">
@@ -321,28 +321,28 @@ var gnb_naverme_layer_close_callback = function(){
 										</ul>
 										<div class="search_notice">
 											<p class="text">
-												怨듬え二쇱�� ��댁�� 醫�紐⑹�� 紐⑤����� �����댁��濡� ��대����⑸�����.
+												공모주와 해외 종목은 모바일 페이지로 이동합니다.
 											</p>
 										</div>
 									</div>
 								</div>
-								<!-- ������ ������������ 湲곕�μ�� ��ъ�⑺��怨� 怨���������� -->
+								<!-- 현재 자동완성 기능을 사용하고 계십니다 -->
 								<div class="wrap" id="atcmpIng" style="display:none;">
 									<div class="wrap_in">
 										<div class="words">
 											<p class="msg">
-												������ ������������ 湲곕�μ�� ��ъ�⑺��怨� 怨����������.
+												현재 자동완성 기능을 사용하고 계십니다.
 											</p>
 										</div>
 									</div>
 								</div>
-								<!--// ������ ������������ 湲곕�μ�� ��ъ�⑺��怨� 怨���������� -->
-								<!-- ������������ 湲곕�μ�� �����깊�� -->
+								<!--// 현재 자동완성 기능을 사용하고 계십니다 -->
+								<!-- 자동완성 기능이 활성화 -->
 								<div class="wrap" id="atcmpStart" style="display:none;">
 									<div class="wrap_in">
 										<div class="words">
 											<p class="msg">
-												������������ 湲곕�μ�� �����깊����������듬�����.
+												자동완성 기능이 활성화되었습니다.
 											</p>
 										</div>
 									</div>
@@ -372,29 +372,29 @@ var gnb_naverme_layer_close_callback = function(){
 		<div class="lnb_inner">
 			<div id="menu">
 				<ul class="menu">
-					<li class="m1 first "><a href="/" onClick="clickcr(this, 'LNB.home', '', '', event);"><span class="tx">利�沅� ���</span></a></li>
-					<li class="m2 on"><a href="/sise/" onClick="clickcr(this, 'LNB.sise', '', '', event);"><span class="tx">援���댁�����</span><span class="blind">���������</span></a></li>
-					<li class="m3 "><a href="/world/" onClick="clickcr(this, 'LNB.world', '', '', event);"><span class="tx">��댁�몄�����</span></a></li>
-					<li class="m4 "><a href="/marketindex/" onClick="clickcr(this, 'LNB.market', '', '', event);"><span class="tx">�����μ�����</span></a></li>
-					<li class="m6 "><a href="/research/" onClick="clickcr(this, 'LNB.research', '', '', event);"><span class="tx">由ъ��移�</span></a></li>
-					<li class="m7 "><a href="/news/"><span class="tx">��댁��</span></a></li>
+					<li class="m1 first "><a href="/" onClick="clickcr(this, 'LNB.home', '', '', event);"><span class="tx">증권 홈</span></a></li>
+					<li class="m2 on"><a href="/sise/" onClick="clickcr(this, 'LNB.sise', '', '', event);"><span class="tx">국내증시</span><span class="blind">선택됨</span></a></li>
+					<li class="m3 "><a href="/world/" onClick="clickcr(this, 'LNB.world', '', '', event);"><span class="tx">해외증시</span></a></li>
+					<li class="m4 "><a href="/marketindex/" onClick="clickcr(this, 'LNB.market', '', '', event);"><span class="tx">시장지표</span></a></li>
+					<li class="m6 "><a href="/research/" onClick="clickcr(this, 'LNB.research', '', '', event);"><span class="tx">리서치</span></a></li>
+					<li class="m7 "><a href="/news/"><span class="tx">뉴스</span></a></li>
 					<li class="m8 "><a href="/mystock/" onClick="clickcr(this, 'LNB.mystock', '', '', event);"><span class="tx">MY</span></a></li>
 				</ul>
-				<!-- ���濡���� 利�沅�蹂닿린 踰���� -->
+				<!-- 새로운 증권보기 버튼 -->
 				<div class="area_stock_button">
 					<a href="https://stock.naver.com" class="link_new">
 						<span class="icon_refresh"></span>
-						���濡���� 利�沅� 蹂닿린
+						새로운 증권 보기
 						<span class="icon_new">
 							<span class="blind">NEW</span>
 						</span>
 					</a>
 					<span class="tooltip">
-						��� ��몃━��댁�� 利�沅���� 留����蹂댁�몄��
+						더 편리해진 증권을 만나보세요
 						<span class="icon_arrow"></span>
 					</span>
 				</div>
-				<!-- //���濡���� 利�沅�蹂닿린 踰���� -->
+				<!-- //새로운 증권보기 버튼 -->
 			</div>
 		</div>
 	</div>
@@ -405,7 +405,7 @@ var gnb_naverme_layer_close_callback = function(){
 
 	
 	<script type="text/JavaScript">
-		/* lcs 吏�怨� */
+		/* lcs 집계 */
         ;(function(){
             var eventType = "onpageshow" in window ? "pageshow" : "load";
             jindo.$Fn(function(){
@@ -413,8 +413,8 @@ var gnb_naverme_layer_close_callback = function(){
             }).attach(window, eventType);
         })();
 
-		/* 寃���� ������������ [ ��몄��1 : 寃����input��� ID, ��몄��2 : iframe ���洹� ID ]   */
-		// AutoComplete ������
+		/* 검색 자동완성 [ 인자1 : 검색input의 ID, 인자2 : iframe 태그 ID ]   */
+		// AutoComplete 생성
 		var acDomain = "ac.stock.naver.com";
 		if (location.hostname.indexOf("staging-") > -1) {
 			acDomain = "staging-" + acDomain;
@@ -427,11 +427,11 @@ var gnb_naverme_layer_close_callback = function(){
         var acUrl = "https://" + acDomain + "/ac";
 
 		smartSearch = new nhn.Autocomplete(
-			// InputManager ������
+			// InputManager 생성
 			new nhn.AcInputManager(jindo.$("stock_items")),
-			// DataManager ������
+			// DataManager 생성
 			new nhn.AcDataManager(acUrl, "xhr", "get", {}),
-			// ViewManager ������
+			// ViewManager 생성
 			new nhn.AcStockViewManager(jindo.$("autoFrame"), jindo.$("nautocomplete"), {
                                         strMax: 200,
                                         listMax: [7, 2, 2],
@@ -453,14 +453,14 @@ var gnb_naverme_layer_close_callback = function(){
 	            }
 	        });
 
-		/* ��듯�⑷�����  start ----->  */
-		var sSearchHintText = '醫�紐⑸��쨌吏����紐�쨌�����⑤��쨌��������щ�� ������';
+		/* 통합검색  start ----->  */
+		var sSearchHintText = '종목명·지수명·환율명·원자재명 입력';
 		function itegrationSearch() {
 			var query = jindo.$('stock_items').value;
 
 			if ( query == ''  || encodeURIComponent(query) == encodeURIComponent(sSearchHintText))
 			{
-				alert ( '寃������대�� �����ν�� 二쇱�몄��.' );
+				alert ( '검색어를 입력해 주세요.' );
 				return;
 			}
 
@@ -483,7 +483,7 @@ var gnb_naverme_layer_close_callback = function(){
 			// endUrl check
 			if (object.endUrl.value) {
 				if (object.endUrl.value.startsWith("https://m.stock.naver.com")) {
-					// 寃�������蹂� 珥�湲고��
+					// 검색정보 초기화
 					var _endUrl = object.endUrl.value;
 					object.query.value = "";
 					object.endUrl.value = "";
@@ -502,14 +502,14 @@ var gnb_naverme_layer_close_callback = function(){
 
 			if ( query == '' || query == sSearchHintText.replace(/^\s*/,'').replace(/\s*$/,''))
 			{
-				alert ( '寃������대�� �����ν�� 二쇱�몄��.' );
+				alert ( '검색어를 입력해 주세요.' );
 				return;
 			}
 			else {
 				object.submit();
 			}
 		}
-		/* <---------- ��듯�⑷�����  end */
+		/* <---------- 통합검색  end */
 
 		function popup()
 		{
@@ -518,7 +518,7 @@ var gnb_naverme_layer_close_callback = function(){
 		}
 	</script>
 
-	<iframe id="me_layers" name="test" title="��ㅼ�대��誘� ������" width="0" height="0" scrolling="no" frameborder="0" style="display:block;top: 22px; right: 209px; position: absolute; z-index: 15;"></iframe>
+	<iframe id="me_layers" name="test" title="네이버미 영역" width="0" height="0" scrolling="no" frameborder="0" style="display:block;top: 22px; right: 209px; position: absolute; z-index: 15;"></iframe>
 </div>
 <div id="wrap"  >
 	
@@ -553,10 +553,10 @@ var gnb_naverme_layer_close_callback = function(){
 <script type="text/javascript">
 	function financialInfoCommentToggle() {
 		if(jindo.$Element(jindo.$$.getSingle("div.ly_moreifrs")).visible()) {
-			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).html("���紐⑸�� �����멸린以� 蹂닿린");
+			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).html("항목별 상세기준 보기");
 			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).removeClass("fd");
 		} else {
-			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).html("���紐⑸�� �����멸린以� ��リ린");
+			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).html("항목별 상세기준 닫기");
 			jindo.$Element(jindo.$$.getSingle("a.more_ifrs")).addClass("fd");
 		}
 		jindo.$Element(jindo.$$.getSingle("div.ly_moreifrs")).toggle();
@@ -607,54 +607,54 @@ var gnb_naverme_layer_close_callback = function(){
     
     
     <dl class="blind">
-        <dt>醫�紐� ������ ���蹂�</dt>
-        <dd>2026��� 05���
-        15��� 16���
-        10遺� 湲곗�� ��λ��媛�</dd>
-        <dd>醫�紐⑸�� 誘몃�������� 誘멸뎅 ������&諛����泥� TOP3 ETN</dd>
-        <dd>醫�紐⑹����� 520080 肄���ㅽ��</dd>
-        <dd>�����ш�� 24,065 �����쇰��鍮� ������ 595
-            �����ъ��
-            2.54 ��쇱�쇳��
+        <dt>종목 시세 정보</dt>
+        <dd>2026년 05월
+        15일 16시
+        10분 기준 장마감</dd>
+        <dd>종목명 미래에셋 미국 테크&반도체 TOP3 ETN</dd>
+        <dd>종목코드 520080 코스피</dd>
+        <dd>현재가 24,065 전일대비 상승 595
+            플러스
+            2.54 퍼센트
         </dd>
-        <dd>�����쇨�� 23,470</dd>
-        <dd>���媛� 23,475</dd>
-        <dd>怨�媛� 24,170</dd>
-        <dd>������媛� 30,510</dd>
-        <dd>���媛� 23,475</dd>
-        <dd>������媛� 16,430</dd>
-        <dd>嫄곕����� 40</dd>
-        <dd>嫄곕�����湲� 0諛깅��</dd>
+        <dd>전일가 23,470</dd>
+        <dd>시가 23,475</dd>
+        <dd>고가 24,170</dd>
+        <dd>상한가 30,510</dd>
+        <dd>저가 23,475</dd>
+        <dd>하한가 16,430</dd>
+        <dd>거래량 40</dd>
+        <dd>거래대금 0백만</dd>
     </dl>
     
 
     <div class="h_company">
         <div class="wrap_company">
             <h2><a href="#"
-                   onClick="clickcr(this, 'sop.title', '', '', event);window.location.reload();">誘몃�������� 誘멸뎅 ������&諛����泥� TOP3 ETN</a>
+                   onClick="clickcr(this, 'sop.title', '', '', event);window.location.reload();">미래에셋 미국 테크&반도체 TOP3 ETN</a>
             </h2>
 
             <div class="description">
                 <span class="code">520080</span>
                 
                     <img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_kospi.gif" width="33" height="16"
-                         alt="肄���ㅽ��" class="kospi">
+                         alt="코스피" class="kospi">
                 
                 
                 
-                <span class="blind">���吏�</span>
+                <span class="blind">날짜</span>
                 <span id="time">
 					
                         
                         
                         
-                            <em class="date">2026.05.15 <span>湲곗��(KRX ��λ��媛�)</span></em>
+                            <em class="date">2026.05.15 <span>기준(KRX 장마감)</span></em>
                         
                     
 					</span>
 
                 <em class="realtime">
-                    <span class="blind">��ㅼ��媛�</span>
+                    <span class="blind">실시간</span>
                 </em>
                 
                 
@@ -666,7 +666,7 @@ var gnb_naverme_layer_close_callback = function(){
 
         <div class="quick">
             <p>
-                <a href="#" class="snb_top1" onClick="clickcr(this,'sop.2','','',event);"><span class="blind">MY STOCK 異�媛�</span></a>
+                <a href="#" class="snb_top1" onClick="clickcr(this,'sop.2','','',event);"><span class="blind">MY STOCK 추가</span></a>
             </p>
             
             <div class="ly_lstmove blind NE=a:sop*m">
@@ -676,17 +676,17 @@ var gnb_naverme_layer_close_callback = function(){
                         <ul></ul>
                     </div>
                     <div class="bx_sel _ly_group_blank" style="display:none;">
-                        <p class="txt_inner type7">異�媛���� 洹몃９��� �����듬�����.<br>洹몃９��� 異�媛���댁＜��몄��.</p>
+                        <p class="txt_inner type7">추가할 그룹이 없습니다.<br>그룹을 추가해주세요.</p>
                     </div>
                     <p class="rgt">
-                        <button type="button" class="btn_spr btn_groupadd2 NPI=a:add"><span class="blind">洹몃９異�媛�</span>
+                        <button type="button" class="btn_spr btn_groupadd2 NPI=a:add"><span class="blind">그룹추가</span>
                         </button>
                     </p>
                     <p>
                         <button type="button" class="btn_spr btn_cfm2 _btn_ok NPI=a:confirm"><span
-                                class="blind">������</span></button>
+                                class="blind">확인</span></button>
                         <button type="button" class="btn_spr btn_clse2 _btn_cancel NPI=a:close"><span
-                                class="blind">��リ린</span></button>
+                                class="blind">닫기</span></button>
                     </p>
                 </div>
                 <div class="txt _ly_message" style="display:none;">
@@ -697,12 +697,12 @@ var gnb_naverme_layer_close_callback = function(){
             
             <div class="layer_quick_order" id="quickOrderArea" style="display:none">
                 <div class="content">
-                    <h5>��ㅼ�대�� 二쇱��嫄곕����곌껐<br>鍮�瑜� 二쇰Ц��� ���������由쎈�����!</h5>
+                    <h5>네이버 주식거래연결<br>빠른 주문을 도와드립니다!</h5>
                     <ul>
-                        <li>蹂� ���鍮���ㅻ�� 怨�媛������� 鍮�瑜� 二쇰Ц��� ���湲� ������<br><span>利�沅���ъ�� 濡�洹몄�몄�� ��곌껐</span>��대��由ш�� �����듬�����.</li>
-                        <li>怨�媛������� 蹂댁�����怨� 怨���� 利�沅���щ�� ��대┃��� ���<br><span>利�沅���ъ�� �����대��, 鍮�諛�踰����, 怨듭�몄�몄�����濡� 二쇰Ц</span>���<br>������ ��� �����듬�����.</li>
-                        <li>利�沅���� 濡�洹몄�� ��댄�� �����ㅽ�� 臾몄��媛� 諛�������硫�,<br><span>利�沅���� 怨�媛���쇳�곕�� 吏���� 臾몄��</span> ������湲� 諛����������.</li>
-                        <li>��ㅼ�대����� 利�沅���� ���鍮���ㅼ�� �����ㅽ�� ��μ����� ��곕Ⅸ<br>踰���� 梨������� 吏�吏� �����듬�����.</li>
+                        <li>본 서비스는 고객님의 빠른 주문을 돕기 위해<br><span>증권사의 로그인을 연결</span>해드리고 있습니다.</li>
+                        <li>고객님이 보유하고 계신 증권사를 클릭한 후<br><span>증권사의 아이디, 비밀번호, 공인인증서로 주문</span>을<br>하실 수 있습니다.</li>
+                        <li>증권사 로그인 이후 시스템 문제가 발생하면,<br><span>증권사 고객센터로 직접 문의</span> 하시기 바랍니다.</li>
+                        <li>네이버는 증권사 서비스의 시스템 장애에 따른<br>법적 책임을 지지 않습니다.</li>
                     </ul>
                     
                     <div class="ci_area">
@@ -712,10 +712,10 @@ var gnb_naverme_layer_close_callback = function(){
                         <div id="quickOrderCiBanner3"></div>
                     </div>
                     <div class="btn_area_btm"><a href="javascript:quickorder('off')"><img
-                            src="https://ssl.pstatic.net/imgstock/item_renewal/btn_close.gif" alt="��リ린" width="38"
+                            src="https://ssl.pstatic.net/imgstock/item_renewal/btn_close.gif" alt="닫기" width="38"
                             height="20"></a></div>
                     <div class="btn_area_top"><a href="javascript:quickorder('off')"><img
-                            src="https://ssl.pstatic.net/imgstock/item_renewal/btn_close_x.gif" alt="��リ린" width="19"
+                            src="https://ssl.pstatic.net/imgstock/item_renewal/btn_close_x.gif" alt="닫기" width="19"
                             height="19"></a></div>
                 </div>
             </div>
@@ -727,8 +727,8 @@ var gnb_naverme_layer_close_callback = function(){
 
     <div class="content_wrap">
         <div id="content">
-            <!-- chart媛� ��щ�쇱�����  <div class="spot spot_short">-->
-            <!-- KRX, NXT 嫄곕�� 誘몃����� ��� ��� <div class="default spot spot_short"> -->
+            <!-- chart가 사라질때  <div class="spot spot_short">-->
+            <!-- KRX, NXT 거래 미대상 일 때 <div class="default spot spot_short"> -->
             
             
             
@@ -738,10 +738,10 @@ var gnb_naverme_layer_close_callback = function(){
                     <div class="rate_info" id="rate_info_krx"  style="display: block;">
                         
                         <dl class="blind">
-                            <dt><strong>誘몃�������� 誘멸뎅 ������&諛����泥� TOP3 ETN</strong></dt>
-                            <dd>��ㅻ����������� 24,065 ��ъ�명��</dd>
-                            <dd>595 ��ъ�명�� ������</dd>
-                            <dd>2.54% �����ъ��</dd>
+                            <dt><strong>미래에셋 미국 테크&반도체 TOP3 ETN</strong></dt>
+                            <dd>오늘의시세 24,065 포인트</dd>
+                            <dd>595 포인트 상승</dd>
+                            <dd>2.54% 플러스</dd>
                         </dl>
                         
 
@@ -759,12 +759,12 @@ var gnb_naverme_layer_close_callback = function(){
                                         </em>
                             </p>
                             <p class="no_exday">
-                                <span class="sptxt sp_txt1">�����쇰��鍮�</span>
+                                <span class="sptxt sp_txt1">전일대비</span>
                                 
                                 
                                     
                                     <em class="no_up">
-                                        <span class="ico up">������</span>
+                                        <span class="ico up">상승</span>
                                         
                                         
                                             
@@ -788,8 +788,8 @@ var gnb_naverme_layer_close_callback = function(){
                                                         </em>
                             </p>
                         </div>
-                        <table summary="二쇱�� ������(�����쇱��媛�, ���怨����媛�, 嫄곕�����, 嫄곕�����湲�)��� ���怨듯�⑸�����." class="no_info">
-                            <caption>二쇱�� ������</caption>
+                        <table summary="주요 시세(전일종가, 시고저가, 거래량, 거래대금)을 제공합니다." class="no_info">
+                            <caption>주요 시세</caption>
                             <colgroup>
                                 <col>
                                 <col width="214">
@@ -797,14 +797,14 @@ var gnb_naverme_layer_close_callback = function(){
                             </colgroup>
                             <tr>
                                 <td class="first">
-                                    <span class="sptxt sp_txt2">������</span>
+                                    <span class="sptxt sp_txt2">전일</span>
                                     <em>
                                         <span class="blind">23,470</span>
                                         <span class="no2">2</span><span class="no3">3</span><span class="shim">,</span><span class="no4">4</span><span class="no7">7</span><span class="no0">0</span>
                                     </em>
                                 </td>
                                 <td>
-                                    <span class="sptxt sp_txt4">怨�媛�</span>
+                                    <span class="sptxt sp_txt4">고가</span>
                                     
                                     
                                     
@@ -821,7 +821,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                         <span class="blind">24,170</span><span class="no2">2</span><span class="no4">4</span><span class="shim">,</span><span class="no1">1</span><span class="no7">7</span><span class="no0">0</span>
                                                     
                                                 </em>
-                                                <span class="sptxt sp_txt6">(������媛�</span>
+                                                <span class="sptxt sp_txt6">(상한가</span>
                                                 <em class="no_cha">
                                                     
                                                         
@@ -831,7 +831,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                 <span class="sptxt sp_txt8">)</span>
                                 </td>
                                 <td>
-                                    <span class="sptxt sp_txt9">嫄곕�����</span>
+                                    <span class="sptxt sp_txt9">거래량</span>
                                     <em>
                                         <span class="blind">40</span>
                                         <span class="no4">4</span><span class="no0">0</span>
@@ -840,7 +840,7 @@ var gnb_naverme_layer_close_callback = function(){
                             </tr>
                             <tr>
                                 <td class="first">
-                                    <span class="sptxt sp_txt3">���媛�</span>
+                                    <span class="sptxt sp_txt3">시가</span>
                                     
                                     
                                     
@@ -859,7 +859,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                 </em>
                                 </td>
                                 <td>
-                                    <span class="sptxt sp_txt5">���媛�</span>
+                                    <span class="sptxt sp_txt5">저가</span>
                                     
                                     
                                     
@@ -876,7 +876,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                         <span class="blind">23,475</span><span class="no2">2</span><span class="no3">3</span><span class="shim">,</span><span class="no4">4</span><span class="no7">7</span><span class="no5">5</span>
                                                     
                                                 </em>
-                                                <span class="sptxt sp_txt7">(������媛�</span>
+                                                <span class="sptxt sp_txt7">(하한가</span>
                                                 <em class="no_cha">
                                                     
                                                         
@@ -886,7 +886,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                 <span class="sptxt sp_txt8">)</span>
                                 </td>
                                 <td>
-                                    <span class="sptxt sp_txt10">嫄곕�����湲�</span>
+                                    <span class="sptxt sp_txt10">거래대금</span>
                                     <em>
                                         
                                             
@@ -896,7 +896,7 @@ var gnb_naverme_layer_close_callback = function(){
                                             
                                         
                                     </em>
-                                    <span class="sptxt sp_txt11">諛깅��</span>
+                                    <span class="sptxt sp_txt11">백만</span>
                                 </td>
                             </tr>
                         </table>
@@ -905,38 +905,38 @@ var gnb_naverme_layer_close_callback = function(){
                 
 
                     <div class="chart">
-                        <p class="blind">醫�紐� ������ 李⑦��</p>
+                        <p class="blind">종목 시세 차트</p>
                         <div class="chart_control_area">
                             <dl class="line">
-                                <dt>���李⑦��</dt>
+                                <dt>선차트</dt>
                                 <dd>
                                     <ul>
-                                        <li class="day"><a href="#" class="on" onclick="showChart('day')">1���</a></li>
-                                        <li class="week"><a href="#" onclick="showChart('week')">1二쇱��</a></li>
-                                        <li class="month3"><a href="#" onclick="showChart('month3');">3媛����</a></li>
-                                        <li class="year"><a href="#" onclick="showChart('year');">1���</a></li>
-                                        <li class="year3"><a href="#" onclick="showChart('year3');">3���</a></li>
-                                        <li class="year5"><a href="#" onclick="showChart('year5');">5���</a></li>
-                                        <li class="year10"><a href="#" onclick="showChart('year10');">10���</a></li>
+                                        <li class="day"><a href="#" class="on" onclick="showChart('day')">1일</a></li>
+                                        <li class="week"><a href="#" onclick="showChart('week')">1주일</a></li>
+                                        <li class="month3"><a href="#" onclick="showChart('month3');">3개월</a></li>
+                                        <li class="year"><a href="#" onclick="showChart('year');">1년</a></li>
+                                        <li class="year3"><a href="#" onclick="showChart('year3');">3년</a></li>
+                                        <li class="year5"><a href="#" onclick="showChart('year5');">5년</a></li>
+                                        <li class="year10"><a href="#" onclick="showChart('year10');">10년</a></li>
                                     </ul>
                                 </dd>
                             </dl>
                             <dl class="bar">
-                                <dt>遊�李⑦��</dt>
+                                <dt>봉차트</dt>
                                 <dd>
                                     <ul>
-                                        <li class="day"><a href="#" onclick="showBarChart('day');">��쇰��</a></li>
-                                        <li class="week"><a href="#" onclick="showBarChart('week');">二쇰��</a></li>
-                                        <li class="month"><a href="#" onclick="showBarChart('month');">���遊�</a></li>
+                                        <li class="day"><a href="#" onclick="showBarChart('day');">일봉</a></li>
+                                        <li class="week"><a href="#" onclick="showBarChart('week');">주봉</a></li>
+                                        <li class="month"><a href="#" onclick="showBarChart('month');">월봉</a></li>
                                     </ul>
                                 </dd>
                             </dl>
                         </div>
-                        <p class="source">���援�嫄곕�����(KRX)</p>
-                        <h5 class="blind">��대�몄�� 李⑦��</h5>
+                        <p class="source">한국거래소(KRX)</p>
+                        <h5 class="blind">이미지 차트</h5>
                         <img id="img_chart_area"
-                             src="https://ssl.pstatic.net/imgfinance/chart/item/area/day/520080.png?sidcode=1778858503849"
-                             width="700" height="289" alt="��대�몄�� 李⑦��"
+                             src="https://ssl.pstatic.net/imgfinance/chart/item/area/day/520080.png?sidcode=1778859589323"
+                             width="700" height="289" alt="이미지 차트"
                              onerror="this.src='https://ssl.pstatic.net/imgstock/chart3/world2008/error_700x289.png'">
                     </div>
                     <a href="javascript:fchartStatus.showChartArea('520080', '%B9%CC%B7%A1%BF%A1%BC%C2+%B9%CC%B1%B9+%C5%D7%C5%A9%26%B9%DD%B5%B5%C3%BC+TOP3+ETN', 'false',false)"
@@ -944,7 +944,7 @@ var gnb_naverme_layer_close_callback = function(){
                         <div id="btn_close">
                             
                                 <img
-                                        src="https://ssl.pstatic.net/imgstock/item_renewal/btn_lay_close.gif" alt="李⑦�몃�リ린"
+                                        src="https://ssl.pstatic.net/imgstock/item_renewal/btn_lay_close.gif" alt="차트닫기"
                                         width="45" height="11">
                                 
                             
@@ -965,22 +965,22 @@ var gnb_naverme_layer_close_callback = function(){
                                     </em>
                         </p>
                         <p class="no_exday">
-                            <span class="sptxt sp_txt1">�����쇰��鍮�</span>
+                            <span class="sptxt sp_txt1">전일대비</span>
                             {if rf == 1}
                             <em class="no_up">
-                                <span class="ico up_price">������媛�</span>
+                                <span class="ico up_price">상한가</span>
                                 {elseif rf == 2}
                                 <em class="no_up">
-                                    <span class="ico up">������</span>
+                                    <span class="ico up">상승</span>
                                     {elseif rf == 4}
                                     <em class="no_down">
-                                        <span class="ico down_price">������媛�</span>
+                                        <span class="ico down_price">하한가</span>
                                         {elseif rf == 5}
                                         <em class="no_down">
-                                            <span class="ico down">������</span>
+                                            <span class="ico down">하락</span>
                                             {else}
                                             <em class="X">
-                                                <span class="ico sam">蹂댄��</span>
+                                                <span class="ico sam">보합</span>
                                                 {/if}
                                                 {js numberFont(changeNumberFormat(=cv))}
                                             </em>
@@ -1002,8 +1002,8 @@ var gnb_naverme_layer_close_callback = function(){
                                                     </em>
                         </p>
                     </div>
-                    <table summary="二쇱�� ������(�����쇱��媛�, ���怨����媛�, 嫄곕�����, 嫄곕�����湲�)��� ���怨듯�⑸�����." class="no_info">
-                        <caption>二쇱�� ������</caption>
+                    <table summary="주요 시세(전일종가, 시고저가, 거래량, 거래대금)을 제공합니다." class="no_info">
+                        <caption>주요 시세</caption>
                         <colgroup>
                             <col>
                             <col width="214">
@@ -1011,7 +1011,7 @@ var gnb_naverme_layer_close_callback = function(){
                         </colgroup>
                         <tr>
                             <td class="first">
-                                <span class="sptxt sp_txt2">������</span>
+                                <span class="sptxt sp_txt2">전일</span>
                                 <em>
                                     {if sv == 0}
                                     {js numberFont(changeNumberFormat(=pcv))}
@@ -1021,7 +1021,7 @@ var gnb_naverme_layer_close_callback = function(){
                                 </em>
                             </td>
                             <td>
-                                <span class="sptxt sp_txt4">怨�媛�</span>
+                                <span class="sptxt sp_txt4">고가</span>
                                 {if tyn == "Y"}
                                 <em>
                                     {else}
@@ -1041,7 +1041,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                     {js numberFont(changeNumberFormat(=hv))}
                                                     {/if}
                                                 </em>
-                                                <span class="sptxt sp_txt6">(������媛�</span>
+                                                <span class="sptxt sp_txt6">(상한가</span>
                                                 <em class="no_cha">
                                                     {if ms == "PREOPEN"}
                                                     {js numberFont(0)}
@@ -1052,7 +1052,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                 <span class="sptxt sp_txt8">)</span>
                             </td>
                             <td>
-                                <span class="sptxt sp_txt9">嫄곕�����</span>
+                                <span class="sptxt sp_txt9">거래량</span>
                                 <em>
                                     {js numberFont(changeNumberFormat(=aq))}
                                 </em>
@@ -1060,7 +1060,7 @@ var gnb_naverme_layer_close_callback = function(){
                         </tr>
                         <tr>
                             <td class="first">
-                                <span class="sptxt sp_txt3">���媛�</span>
+                                <span class="sptxt sp_txt3">시가</span>
                                 {if tyn == "Y"}
                                 <em>
                                     {else}
@@ -1082,7 +1082,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                 </em>
                             </td>
                             <td>
-                                <span class="sptxt sp_txt5">���媛�</span>
+                                <span class="sptxt sp_txt5">저가</span>
                                 {if tyn == "Y"}
                                 <em>
                                     {else}
@@ -1102,7 +1102,7 @@ var gnb_naverme_layer_close_callback = function(){
                                                     {js numberFont(changeNumberFormat(=lv))}
                                                     {/if}
                                                 </em>
-                                                <span class="sptxt sp_txt7">(������媛�</span>
+                                                <span class="sptxt sp_txt7">(하한가</span>
                                                 <em class="no_cha">
                                                     {if ms == "PREOPEN"}
                                                     {js numberFont(0)}
@@ -1113,11 +1113,11 @@ var gnb_naverme_layer_close_callback = function(){
                                                 <span class="sptxt sp_txt8">)</span>
                             </td>
                             <td>
-                                <span class="sptxt sp_txt10">嫄곕�����湲�</span>
+                                <span class="sptxt sp_txt10">거래대금</span>
                                 <em>
                                     {js numberFont(changeNumberFormat((=aa/1000000).toFixed(0)))}
                                 </em>
-                                <span class="sptxt sp_txt11">諛깅��</span>
+                                <span class="sptxt sp_txt11">백만</span>
                             </td>
                         </tr>
                     </table>
@@ -1181,19 +1181,19 @@ var gnb_naverme_layer_close_callback = function(){
 
                     if (ms == "PREOPEN") {
                       closeDate = oDate.format('Y.m.d')
-                      result = '<em class="date">' + oDate.format('Y.m.d') + ' <span>湲곗��(KRX 媛���μ��)</span></em> ';
+                      result = '<em class="date">' + oDate.format('Y.m.d') + ' <span>기준(KRX 개장전)</span></em> ';
                     } else if (ms == "CLOSE") {
-                      result = '<em class="date">' + closeDate + ' <span>湲곗��(KRX ��λ��媛�)</span></em> ';
+                      result = '<em class="date">' + closeDate + ' <span>기준(KRX 장마감)</span></em> ';
                     } else {
                       closeDate = oDate.format('Y.m.d')
-                      result = '<em class="date">' + oDate.format('Y.m.d H:i') + ' <span>湲곗��(KRX ��μ��)</span></em> ';
+                      result = '<em class="date">' + oDate.format('Y.m.d H:i') + ' <span>기준(KRX 장중)</span></em> ';
                     }
 
                     return result;
                   }
 
                   /**
-                   * ��곗륫������ ��ъ�����蹂� ������ 以�, NAV 媛� 媛깆��
+                   * 우측상단 투자정보 영역 중, NAV 값 갱신
                    */
                   function refreshEtfNav (etfNav) {
                     var elEtfNav = jindo.$Element(jindo.$$.getSingle("#on_board_last_nav"));
@@ -1216,9 +1216,9 @@ var gnb_naverme_layer_close_callback = function(){
                     var holdingShares = 0;
 
                     var elEvaluationProfitAmount = jindo.$Element(jindo.$$.getSingle("#evaluation_profit_amount"));
-                    // ���媛������� = (nv - ���洹�留ㅼ��媛�) * 蹂댁��������
+                    // 평가손익 = (nv - 평균매입가) * 보유수량
                     var evaluationProfitAmount = (nv - 0) * 0;
-                    // ���媛������듬�� = ���媛������� / (���洹�留ㅼ��媛� * 蹂댁��������) * 100
+                    // 평가수익률 = 평가손익 / (평균매입가 * 보유수량) * 100
                     var evaluationProfitRate = evaluationProfitAmount / (0 *
                     0) *
                     100;
@@ -1236,7 +1236,7 @@ var gnb_naverme_layer_close_callback = function(){
                     var evaluationProfitAmoutText = ""
                     if (evaluationProfitAmount > 10000000000) {
                       var evaluationProfitAmountDivideBillion = evaluationProfitAmount / 100000000;
-                      evaluationProfitAmountText = "<em>" + sSign + changeNumberFormat(evaluationProfitAmountDivideBillion.toFixed(0)) + "���</em>";
+                      evaluationProfitAmountText = "<em>" + sSign + changeNumberFormat(evaluationProfitAmountDivideBillion.toFixed(0)) + "억</em>";
                     } else {
                       evaluationProfitAmountText = "<em>" + sSign + changeNumberFormat(evaluationProfitAmount) + "</em>";
                     }
@@ -1381,7 +1381,7 @@ var gnb_naverme_layer_close_callback = function(){
                     return parseFloat(nNumber).toFixed(nDecimalLength || 0);
                   }
 
-                  // 1遺�留���� ���蹂� �����곗�댄��
+                  // 1분마다 정보 업데이트
                   var updateInformationInterval = 60000;
                   var informationTimer = null;
                   var oUpdateAjax = null;
@@ -1462,15 +1462,15 @@ var gnb_naverme_layer_close_callback = function(){
                             var sDiffToDisplay = sDiff.replace("-", "");
 
                             if (json.risefall == 1) {
-                              sFormat = "<em class=\"bu_p bu_pup2\" style=\"margin:0 4px 0 0\"><span class=\"blind\">������</span></em><span class=\"tah p11 red01\">%s</span>";
+                              sFormat = "<em class=\"bu_p bu_pup2\" style=\"margin:0 4px 0 0\"><span class=\"blind\">상한</span></em><span class=\"tah p11 red01\">%s</span>";
                             } else if (json.risefall == 2) {
-                              sFormat = "<em class=\"bu_p bu_pup\" style=\"margin:0 4px 0 0\"><span class=\"blind\">������</span></em><span class=\"tah p11 red01\">%s</span>";
+                              sFormat = "<em class=\"bu_p bu_pup\" style=\"margin:0 4px 0 0\"><span class=\"blind\">상승</span></em><span class=\"tah p11 red01\">%s</span>";
                             } else if (json.risefall == 3) {
                               sFormat = "<span class=\"tah p11\">%s</span>";
                             } else if (json.risefall == 4) {
-                              sFormat = "<em class=\"bu_p bu_pdn2\" style=\"margin:0 4px 0 0\"><span class=\"blind\">������</span></em><span class=\"tah p11 nv01\">%s</span>";
+                              sFormat = "<em class=\"bu_p bu_pdn2\" style=\"margin:0 4px 0 0\"><span class=\"blind\">하한</span></em><span class=\"tah p11 nv01\">%s</span>";
                             } else {
-                              sFormat = "<em class=\"bu_p bu_pdn\" style=\"margin:0 4px 0 0\"><span class=\"blind\">������</span></em><span class=\"tah p11 nv01\">%s</span>";
+                              sFormat = "<em class=\"bu_p bu_pdn\" style=\"margin:0 4px 0 0\"><span class=\"blind\">하락</span></em><span class=\"tah p11 nv01\">%s</span>";
                             }
 
                             var sHtml = jindo.$S(sFormat).format(sDiffToDisplay);
@@ -1526,16 +1526,16 @@ var gnb_naverme_layer_close_callback = function(){
                   var closeDate = dateTime.substring(0, 4) + "." + dateTime.substring(4, 6) + "." + dateTime.substring(6, 8);
 
                   /**
-                   * ��������� ������(1���, ��쇱＜���, 3媛����, 1���, 3���, 5��� , 10���)��� ��곕�� ��대�몄�� 李⑦�� 蹂�寃�
+                   * 선택한 타입(1일, 일주일, 3개월, 1년, 3년, 5년 , 10년)에 따라 이미지 차트 변경
                    *
-                   * @param chartType 李⑦�몄��瑜�(1���, ��쇱＜���, 3媛����, 1���, 3���, 5���, 10���)
+                   * @param chartType 차트종류(1일, 일주일, 3개월, 1년, 3년, 5년, 10년)
                    */
-// ��� 李⑦�� ��몄��
+// 선 차트 노출
                   function showChart (target) {
                     jindo.$A(jindo.$$("dl.line dd ul li")).forEach(function (v) {
                       if (jindo.$Element(v).className() == target) {
                         jindo.$Element(v).child()[0].addClass("on");
-                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/area/" + target + "/520080.png?sidcode=1778858503849");
+                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/area/" + target + "/520080.png?sidcode=1778859589323");
                       } else {
                         jindo.$Element(v).child()[0].removeClass("on");
                       }
@@ -1548,16 +1548,16 @@ var gnb_naverme_layer_close_callback = function(){
                   }
 
                   /**
-                   * ��������� ������(��쇰��, 二쇰��, ���遊�)��� ��곕�� ��대�몄�� 李⑦�� 蹂�寃�
+                   * 선택한 타입(일봉, 주봉, 월봉)에 따라 이미지 차트 변경
                    *
-                   * @param chartType 李⑦�몄��瑜�(��쇰��, 二쇰��, ���遊�)
+                   * @param chartType 차트종류(일봉, 주봉, 월봉)
                    */
-// 遊� 李⑦�� ��몄��
+// 봉 차트 노출
                   function showBarChart (target) {
                     jindo.$A(jindo.$$("dl.bar dd ul li")).forEach(function (v) {
                       if (jindo.$Element(v).className() == target) {
                         jindo.$Element(v).child()[0].addClass("on");
-                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/candle/" + target + "/520080.png?sidcode=1778858503849");
+                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/candle/" + target + "/520080.png?sidcode=1778859589323");
                       } else {
                         jindo.$Element(v).child()[0].removeClass("on");
                       }
@@ -1569,7 +1569,7 @@ var gnb_naverme_layer_close_callback = function(){
                   }
 
                   /**
-                   * ��������� 吏������щ�� ������
+                   * 플래시 지원여부 확인
                    */
                   function isInstalledFlash () {
                     var aFlash = jindo.$Agent().flash();
@@ -1583,7 +1583,7 @@ var gnb_naverme_layer_close_callback = function(){
                   }
 
                   /**
-                   * ��������� 吏������щ����� ��곕�� 李⑦�� ��몄��
+                   * 플래시 지원여부에 따라 차트 노출
                    */
                   function initChartArea (flashAreaClassName, htmlAreaClassName) {
                     var eFlashChartArea = jindo.$Element(jindo.$$.getSingle("." + flashAreaClassName));
@@ -1619,11 +1619,11 @@ var gnb_naverme_layer_close_callback = function(){
                     
                   }, this).attach(document, 'domready');
 
-                  // ���洹� �����뱀��吏� ���泥�
+                  // 신규 랭킹수집 요청
                   ;(function () {
                     var eventType = "onpageshow" in window ? "pageshow" : "load";
                     jindo.$Fn(function () {
-                      // TODO: ���濡�怨�移⑥�������� �����〓��吏� ������濡� ������ ������
+                      // TODO: 새로고침에서는 전송되지 않도록 수정 필요
                       const currentURL = window.location.href;
                       const oldURL = window.sessionStorage.getItem("LOCATION_HREF");
 
@@ -1684,17 +1684,17 @@ var gnb_naverme_layer_close_callback = function(){
 
 
 <div class="area_information">
-	���援�嫄곕�����(KRX) ���怨�
+	한국거래소(KRX) 제공
 	<button type="button" class="buttton_tooltip">
 								<span class="icon"
-								><span class="blind">������留�</span></span
+								><span class="blind">도움말</span></span
 								>
 	</button>
 	<div class="area_tooltip">
 		<p>
-			<strong>���援�嫄곕�����(KRX) ���怨�</strong>
-			醫���⑹��蹂� ��곗�댄�곕�� ���援�嫄곕�����(KRX)������
-			���怨듯�⑸�����.
+			<strong>한국거래소(KRX) 제공</strong>
+			종합정보 데이터는 한국거래소(KRX)에서
+			제공합니다.
 		</p>
 		<span class="arrow"></span>
 	</div>
@@ -1728,14 +1728,14 @@ var gnb_naverme_layer_close_callback = function(){
 			
 			
 				<ul class="tabs_submenu tab_total_submenu2">
-                   <li class="tab_on"><a href="/item/main.naver?code=520080" class="tab1" onClick="clickcr(this,'sop.4','','',event);"><span>醫���⑹��蹂�</span></a></li>
-		           <li class=""><a href="/item/sise.naver?code=520080" class="tab2" onClick="clickcr(this,'sop.5','','',event);"><span>������</span></a></li>
-		           <li class=""><a href="/item/fchart.naver?code=520080" class="tab3" onClick="clickcr(this,'sop.6','','',event);"><span>李⑦��</span></a></li>
-		           <li class=""><a href="/item/frgn.naver?code=520080" class="tab4" onClick="clickcr(this,'sop.10','','',event);"><span>��ъ�����蹂� 留ㅻℓ������</span></a></li>
- 				   <li class=""><a href="/item/news.naver?code=520080" class="tab6" onClick="clickcr(this,'sop.7','','',event);"><span>��댁��</span></a></li>
-		           <li class=""><a href="/item/coinfo.naver?code=520080" class="tab5" onClick="clickcr(this,'sop.22','','',event);"><span>ETN遺����</span></a></li>
-		           <li class=""><a href="/item/board.naver?code=520080" class="tab7" onClick="clickcr(this,'sop.11','','',event);"><span>醫�紐⑺��濡�</span></a></li>
-		           <li class=""><a href="/item/short_trade.naver?code=520080" class="tab8" onClick="clickcr(this,'sop.13','','',event);"><span>怨듬ℓ���������</span></a></li>
+                   <li class="tab_on"><a href="/item/main.naver?code=520080" class="tab1" onClick="clickcr(this,'sop.4','','',event);"><span>종합정보</span></a></li>
+		           <li class=""><a href="/item/sise.naver?code=520080" class="tab2" onClick="clickcr(this,'sop.5','','',event);"><span>시세</span></a></li>
+		           <li class=""><a href="/item/fchart.naver?code=520080" class="tab3" onClick="clickcr(this,'sop.6','','',event);"><span>차트</span></a></li>
+		           <li class=""><a href="/item/frgn.naver?code=520080" class="tab4" onClick="clickcr(this,'sop.10','','',event);"><span>투자자별 매매동향</span></a></li>
+ 				   <li class=""><a href="/item/news.naver?code=520080" class="tab6" onClick="clickcr(this,'sop.7','','',event);"><span>뉴스</span></a></li>
+		           <li class=""><a href="/item/coinfo.naver?code=520080" class="tab5" onClick="clickcr(this,'sop.22','','',event);"><span>ETN분석</span></a></li>
+		           <li class=""><a href="/item/board.naver?code=520080" class="tab7" onClick="clickcr(this,'sop.11','','',event);"><span>종목토론</span></a></li>
+		           <li class=""><a href="/item/short_trade.naver?code=520080" class="tab8" onClick="clickcr(this,'sop.13','','',event);"><span>공매도현황</span></a></li>
 				</ul>
 			
 			
@@ -1749,26 +1749,26 @@ var gnb_naverme_layer_close_callback = function(){
 	
 	
 		<hr>
-		<h3 class="blind">醫���⑹��蹂�</h3>
+		<h3 class="blind">종합정보</h3>
 		
 		<div class="section invest_trend">
-			<h4 class="h_sub sub_tit2"><span>��ъ�����蹂� 留ㅻℓ������</span><em style="position:relative;left:100px;font-style:normal;font-weight:normal;font-size:11px;color:#666;">嫄곕����� ���蹂� : ��쇰�� ������ 5��� 嫄곕�������� ������ ���蹂� 湲곗�� (20遺� 吏����)</em></h4>
+			<h4 class="h_sub sub_tit2"><span>투자자별 매매동향</span><em style="position:relative;left:100px;font-style:normal;font-weight:normal;font-size:11px;color:#666;">거래원 정보 : 일별 상위 5위 거래원의 누적 정보 기준 (20분 지연)</em></h4>
 			<div class="sub_section">
-				<h5 class="h_th th_di"><span>嫄곕����� ���蹂�</span></h5>
-				<table summary="��ъ�����蹂� 留ㅻℓ������ �����몄��蹂댁�� ������ ��� 以� 嫄곕����� ���蹂�(留ㅻ��������, 留ㅼ��������, 嫄곕�����)瑜� ���怨듯�⑸�����." class="tb_type1">
-					<caption>嫄곕����� ���蹂�</caption>
+				<h5 class="h_th th_di"><span>거래원 정보</span></h5>
+				<table summary="투자자별 매매동향 시세정보에 대한 표 중 거래원 정보(매도상위, 매수상위, 거래량)를 제공합니다." class="tb_type1">
+					<caption>거래원 정보</caption>
 					<colgroup><col><col width="80"><col width="90"><col width="80"></colgroup>
 					<thead>
 					<tr>
-						<th scope="col" class="h_th th_sale_top"><span>留ㅻ��������</span></th>
-						<th scope="col" class="h_th th_deal_amount"><span>嫄곕�����</span></th>
-						<th scope="col" class="h_th th_buy_top"><span>留ㅼ��������</span></th>
-						<th scope="col" class="h_th th_deal_amount"><span>嫄곌�����</span></th>
+						<th scope="col" class="h_th th_sale_top"><span>매도상위</span></th>
+						<th scope="col" class="h_th th_deal_amount"><span>거래량</span></th>
+						<th scope="col" class="h_th th_buy_top"><span>매수상위</span></th>
+						<th scope="col" class="h_th th_deal_amount"><span>거개량</span></th>
 					</tr>
 					</thead>
 					<tfoot>
 					<tr>
-						<td class="left"><strong>��멸뎅怨�異�������</strong></td>
+						<td class="left"><strong>외국계추정합</strong></td>
 						<td>
 							
 						</td>
@@ -1786,11 +1786,11 @@ var gnb_naverme_layer_close_callback = function(){
 						<tr>
 							
 							
-						<td class="left">誘몃��������利�沅�</td>
+						<td class="left">미래에셋증권</td>
 						<td><em>22</em></td>
 			
 							
-						<td class="left">��������ъ��利�沅�</td>
+						<td class="left">신한투자증권</td>
 						<td><em>20</em></td>
 			
 						</tr>
@@ -1798,11 +1798,11 @@ var gnb_naverme_layer_close_callback = function(){
 						<tr>
 							
 							
-						<td class="left">������利�沅�</td>
+						<td class="left">하나증권</td>
 						<td><em>16</em></td>
 			
 							
-						<td class="left">誘몃��������利�沅�</td>
+						<td class="left">미래에셋증권</td>
 						<td><em>18</em></td>
 			
 						</tr>
@@ -1810,11 +1810,11 @@ var gnb_naverme_layer_close_callback = function(){
 						<tr>
 							
 							
-						<td class="left">KB利�沅�</td>
+						<td class="left">KB증권</td>
 						<td><em>2</em></td>
 			
 							
-						<td class="left">移댁뭅��ㅽ����댁��沅�</td>
+						<td class="left">카카오페이증권</td>
 						<td><em>1</em></td>
 			
 						</tr>
@@ -1822,11 +1822,11 @@ var gnb_naverme_layer_close_callback = function(){
 						<tr>
 							
 							
-						<td class="left">移댁뭅��ㅽ����댁��沅�</td>
+						<td class="left">카카오페이증권</td>
 						<td><em>0</em></td>
 			
 							
-						<td class="left">NH��ъ��利�沅�</td>
+						<td class="left">NH투자증권</td>
 						<td><em>1</em></td>
 			
 						</tr>
@@ -1834,11 +1834,11 @@ var gnb_naverme_layer_close_callback = function(){
 						<tr>
 							
 							
-						<td class="left">NH��ъ��利�沅�</td>
+						<td class="left">NH투자증권</td>
 						<td><em>0</em></td>
 			
 							
-						<td class="left">������利�沅�</td>
+						<td class="left">하나증권</td>
 						<td><em>0</em></td>
 			
 						</tr>
@@ -1848,17 +1848,17 @@ var gnb_naverme_layer_close_callback = function(){
 			</div>
 
 			<div class="sub_section right">
-				<h5 class="h_th th_fo"><span>��멸뎅��� 湲곌��</span></h5>
-				<table summary="��ъ�����蹂� 留ㅻℓ������ �����몄��蹂댁�� ������ ��� 以� ��멸뎅��� 湲곌�� ���蹂�(���吏�, 醫�媛�, �����쇰��, ��멸뎅���, 湲곌��)瑜� ���怨듯�⑸�����." class="tb_type1">
-					<caption>��멸뎅��� 湲곌��</caption>
+				<h5 class="h_th th_fo"><span>외국인 기관</span></h5>
+				<table summary="투자자별 매매동향 시세정보에 대한 표 중 외국인 기관 정보(날짜, 종가, 전일비, 외국인, 기관)를 제공합니다." class="tb_type1">
+					<caption>외국인 기관</caption>
 					<colgroup><col width="50"><col width="65"><col width="70"><col width="70"><col></colgroup>
 					<thead>
 					<tr>
-						<th class="h_th th_date"><span>���吏�</span></th>
-						<th scope="col" class="h_th th_pass_price"><span>醫�媛�</span></th>
-						<th scope="col" class="h_th th_pass_day"><span>�����쇰��</span></th>
-						<th scope="col" class="h_th th_foreigner"><span>��멸뎅���</span></th>
-						<th scope="col" class="h_th th_organ"><span>湲곌��</span></th>
+						<th class="h_th th_date"><span>날짜</span></th>
+						<th scope="col" class="h_th th_pass_price"><span>종가</span></th>
+						<th scope="col" class="h_th th_pass_day"><span>전일비</span></th>
+						<th scope="col" class="h_th th_foreigner"><span>외국인</span></th>
+						<th scope="col" class="h_th th_organ"><span>기관</span></th>
 					</tr>
 					</thead>
 					<tbody>
@@ -1869,7 +1869,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<td><em>24,065</em></td>
 							<td>
 								
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				595
 				</em>
 			
@@ -1893,7 +1893,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<td><em>23,470</em></td>
 							<td>
 								
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				270
 				</em>
 			
@@ -1917,7 +1917,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<td><em>23,200</em></td>
 							<td>
 								
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				280
 				</em>
 			
@@ -1941,7 +1941,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<td><em>22,920</em></td>
 							<td>
 								
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				235
 				</em>
 			
@@ -1965,7 +1965,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<td><em>22,685</em></td>
 							<td>
 								
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				590
 				</em>
 			
@@ -1989,7 +1989,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<td><em>22,095</em></td>
 							<td>
 								
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				255
 				</em>
 			
@@ -2014,27 +2014,27 @@ var gnb_naverme_layer_close_callback = function(){
 				</table>
 			</div>
 			<div class="dummy"></div>
-			<a href="/item/frgn.naver?code=520080" class="more" onClick="clickcr(this, 'dle.7', '', '', event);">���蹂닿린</a>
+			<a href="/item/frgn.naver?code=520080" class="more" onClick="clickcr(this, 'dle.7', '', '', event);">더보기</a>
 		</div>
 		
 		<hr>
 		
 		<div class="section new_bbs">
 			<div class="sub_section news_section">
-				<h4 class="h_sub sub_tit3"><span>��댁�ㅺ났���</span></h4>
+				<h4 class="h_sub sub_tit3"><span>뉴스공시</span></h4>
 				
 					
 
 					
 						<div class="no_result">
-							<img src="https://ssl.pstatic.net/imgstock/item_renewal/no_result_news_1year.png" width="192" height="13" border="0" alt="理�洹� 1��� ��� 寃������� 愿���⑤�댁�ㅺ�� �����듬�����.">
+							<img src="https://ssl.pstatic.net/imgstock/item_renewal/no_result_news_1year.png" width="192" height="13" border="0" alt="최근 1년 내 검색된 관련뉴스가 없습니다.">
 						</div>
 					
 				
-				<a href="/item/news.naver?code=520080" class="more" onClick="clickcr(this, 'dle.2', '', '', event);">���蹂닿린</a>
+				<a href="/item/news.naver?code=520080" class="more" onClick="clickcr(this, 'dle.2', '', '', event);">더보기</a>
 			</div>
 			<div class="sub_section right">
-				<h4 class="h_sub sub_tit4"><span>醫�紐⑺��濡�</span><a href="/item/board_write_edit.naver?code=520080&mode=write" onClick="clickcr(this, 'dle.16', '', '', event);" style="position:relative;left:50px"><img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_write_n.gif" alt="湲���곌린" width="42" height="18"></a></h4>
+				<h4 class="h_sub sub_tit4"><span>종목토론</span><a href="/item/board_write_edit.naver?code=520080&mode=write" onClick="clickcr(this, 'dle.16', '', '', event);" style="position:relative;left:50px"><img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_write_n.gif" alt="글쓰기" width="42" height="18"></a></h4>
 				
 					
 						<ul>
@@ -2043,7 +2043,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<li>
 								<span class="txt txt_link">
 									<a href="/item/board_read.naver?code=520080&nid=412390584" onClick="clickcr(this, 'dle.3', '', '1', event);"
-										>5% ��댁�� �����뱁����댁�� ����</a>
+										>5% 이상 상승했어요 🎉</a>
 								</span>
 								<em>02/09 12:04</em>
 							</li>
@@ -2053,7 +2053,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<li>
 								<span class="txt txt_link">
 									<a href="/item/board_read.naver?code=520080&nid=407245632" onClick="clickcr(this, 'dle.3', '', '2', event);"
-										>5% ��댁�� �����뱁����댁�� ����</a>
+										>5% 이상 상승했어요 🎉</a>
 								</span>
 								<em>11/20 09:24</em>
 							</li>
@@ -2063,7 +2063,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<li>
 								<span class="txt txt_link">
 									<a href="/item/board_read.naver?code=520080&nid=289748753" onClick="clickcr(this, 'dle.3', '', '3', event);"
-										>諛곕�뱀＜��� 諛곕�밴����� 以�������吏�留�</a>
+										>배당주는 배당금도 중요하지만</a>
 								</span>
 								<em>10/14 11:26</em>
 							</li>
@@ -2073,7 +2073,7 @@ var gnb_naverme_layer_close_callback = function(){
 					
 					
 				
-				<a href="/item/board.naver?code=520080" class="more" onClick="clickcr(this, 'dle.4', '', '', event);">���蹂닿린</a>
+				<a href="/item/board.naver?code=520080" class="more" onClick="clickcr(this, 'dle.4', '', '', event);">더보기</a>
 			</div>
 		</div>
 		
@@ -2091,8 +2091,8 @@ var gnb_naverme_layer_close_callback = function(){
 	<div class="bg_line"></div>
 	<div class="aside_invest_info">
 		<div id="tab_invest" class="tab tab_invest1">
-			<a href="javascript:showArea('tab_invest', 'tab tab_invest1', 'tab_con1', 'tab_con2')" onClick="clickcr(this, 'sop.18', '', '2', event)"><span>��ъ�����蹂�</span></a>
-			<a href="javascript:showArea('tab_invest', 'tab tab_invest2', 'tab_con2', 'tab_con1')" onClick="clickcr(this, 'sop.20', '', '2', event)"><span>��멸��10��④��</span></a>
+			<a href="javascript:showArea('tab_invest', 'tab tab_invest1', 'tab_con1', 'tab_con2')" onClick="clickcr(this, 'sop.18', '', '2', event)"><span>투자정보</span></a>
+			<a href="javascript:showArea('tab_invest', 'tab tab_invest2', 'tab_con2', 'tab_con1')" onClick="clickcr(this, 'sop.20', '', '2', event)"><span>호가10단계</span></a>
 		</div>
 
 		
@@ -2103,10 +2103,10 @@ var gnb_naverme_layer_close_callback = function(){
 				
 					
 					
-						<h3 class="blind">��ъ�����蹂�</h3>
+						<h3 class="blind">투자정보</h3>
 						<div class="first">
-						<table summary="���媛�珥���� ���蹂�">
-						<caption>���媛�珥����</caption>
+						<table summary="시가총액 정보">
+						<caption>시가총액</caption>
 						
 							
 								
@@ -2114,7 +2114,7 @@ var gnb_naverme_layer_close_callback = function(){
 							
 						
 						<tr class="strong">
-							<th scope="row">���媛�珥����</th>
+							<th scope="row">시가총액</th>
 							<td><em id="_market_sum">
 								
 								
@@ -2122,11 +2122,11 @@ var gnb_naverme_layer_close_callback = function(){
 										722
 									
 									
-								</em>��듭��</td>
+								</em>억원</td>
 						</tr>
 						
 						<tr>
-							<th scope="row">�����μ＜������</th>
+							<th scope="row">상장주식수</th>
 							<td><em>3,000,000</em></td>
 						</tr>
 						
@@ -2137,10 +2137,10 @@ var gnb_naverme_layer_close_callback = function(){
 						
 
 						<div>
-						<table summary="��ъ�����寃� ���蹂�" class="rwidth">
+						<table summary="투자의견 정보" class="rwidth">
 						
 						<tr>
-							<th scope="row">52二쇱��怨�<span class="bar">l</span>理����
+							<th scope="row">52주최고<span class="bar">l</span>최저
 								
 							</th>
 							
@@ -2166,13 +2166,13 @@ var gnb_naverme_layer_close_callback = function(){
 
 		
 		<div id="tab_con2" class="tab_con2" style="display:none">
-			<h3 class="blind">��멸�� 10��④��</h3>
-			<table summary="��멸��10��④�� ���蹂�">
-			<caption>��멸�� 10��④��</caption>
+			<h3 class="blind">호가 10단계</h3>
+			<table summary="호가10단계 정보">
+			<caption>호가 10단계</caption>
 			<tr>
-				<th scope="col">留ㅻ��������</th>
-				<th scope="col">��멸��<span class="txt_color">(20遺�吏����)</span></th>
-				<th scope="col" class="th_r">留ㅼ��������</th>
+				<th scope="col">매도잔량</th>
+				<th scope="col">호가<span class="txt_color">(20분지연)</span></th>
+				<th scope="col" class="th_r">매수잔량</th>
 			</tr>
 			<tr><td colspan="3" class="space"></td></tr>
 			
@@ -2508,7 +2508,7 @@ var gnb_naverme_layer_close_callback = function(){
 						200,000
 					
 				</td>
-				<td>��������⑷��</td>
+				<td>잔량합계</td>
 				<td class="f_up">
 					
 						
@@ -2533,51 +2533,51 @@ var gnb_naverme_layer_close_callback = function(){
 			
 			
 		
-		<a href="javascript:showRecent('tab_search', 'tab tab_search1', '520080', 'recent')" onClick="jindo.$Cookie().set('summary_item_type', 'recent', 30, 'finance.naver.com'); clickcr(this, 'rch.1', '', '', event);"><span>理�洹쇱“���</span></a>
+		<a href="javascript:showRecent('tab_search', 'tab tab_search1', '520080', 'recent')" onClick="jindo.$Cookie().set('summary_item_type', 'recent', 30, 'finance.naver.com'); clickcr(this, 'rch.1', '', '', event);"><span>최근조회</span></a>
 		<a href="javascript:showRecent('tab_search', 'tab tab_search2', '520080', 'mystock')" onClick="jindo.$Cookie().set('summary_item_type', 'mystock', 30, 'finance.naver.com'); clickcr(this, 'rch.3', '', '', event);"><span>MY STOCK</span></a>
-		<!-- [D] �����깊����� ���硫���댁�� ��곕�� blind text 蹂�寃쏀�댁＜��몄�� -->
-		<h2 class="blind" id="blind_text_tab_search">理�洹쇱“���</h2>
+		<!-- [D] 활성화된 탭메뉴에 따라 blind text 변경해주세요 -->
+		<h2 class="blind" id="blind_text_tab_search">최근조회</h2>
 	</div>
 
 	
 	<script type="text/template" id="recent_list_none">
 		<div class="no_result">
-			<img src="https://ssl.pstatic.net/static/nfinance/img/no_result_aside1_v2.gif" width="144" height="13" border="0" alt="理�洹� 議고����� 醫�紐⑹�� �����듬�����." class="noresult_txt1">
+			<img src="https://ssl.pstatic.net/static/nfinance/img/no_result_aside1_v2.gif" width="144" height="13" border="0" alt="최근 조회된 종목이 없습니다." class="noresult_txt1">
 		</div>
 	</script>
 	<script type="text/template" id="mystock_logout">
 		<div class="no_result">
 			<map name="no_result_aside2">
-			<area shape="rect" coords="6,38,107,52" href="javascript:naver_login()" alt="My stock 濡�洹몄��">
+			<area shape="rect" coords="6,38,107,52" href="javascript:naver_login()" alt="My stock 로그인">
 			</map>
-			<img src="https://ssl.pstatic.net/imgstock/item_renewal/no_result_aside2.gif" width="116" height="53" border="0" usemap="#no_result_aside2" title="" alt="濡�洹몄�명�����硫� ��깅�������� 醫�紐⑹�� �����멸�� ���怨듬�⑸�����." class="noresult_txt2">
+			<img src="https://ssl.pstatic.net/imgstock/item_renewal/no_result_aside2.gif" width="116" height="53" border="0" usemap="#no_result_aside2" title="" alt="로그인하시면 등록하신 종목의 시세가 제공됩니다." class="noresult_txt2">
 		</div>
 	</script>
 	<script type="text/template" id="mystock_list_none">
 		<div class="no_result">
 			<map name="no_result_aside3">
-			<area shape="rect" coords="11,38,125,52" href="/mystock/" alt="My stock 諛�濡�媛�湲�">
+			<area shape="rect" coords="11,38,125,52" href="/mystock/" alt="My stock 바로가기">
 			</map>
-			<img src="https://ssl.pstatic.net/imgstock/item_renewal/no_result_aside3.gif" width="137" height="53" border="0" usemap="#no_result_aside3" title="" alt="MY STOCK��� 愿���ъ��紐⑹�� ��깅��������硫� �����멸�� ���怨듬�⑸�����." class="noresult_txt3">
+			<img src="https://ssl.pstatic.net/imgstock/item_renewal/no_result_aside3.gif" width="137" height="53" border="0" usemap="#no_result_aside3" title="" alt="MY STOCK에 관심종목을 등록하시면 시세가 제공됩니다." class="noresult_txt3">
 		</div>
 	</script>
 	<script type="text/template" id="recent_list_exist">
 		{if type == "recent"}
 			{set listNclicksId="rch.2"}
-			<table summary="理�洹쇱“��� 由ъ�ㅽ��" class="con_search1">
-			<caption>理�洹쇱“���</caption>
+			<table summary="최근조회 리스트" class="con_search1">
+			<caption>최근조회</caption>
 				<colgroup><col><col width="50"><col width="72"></colgroup>
 		{else}
 			{set listNclicksId="rch.4"}
-			<table summary="MY STOCK 由ъ�ㅽ��" class="con_search2">
+			<table summary="MY STOCK 리스트" class="con_search2">
 			<caption>MY STOCK</caption>
 				<colgroup><col><col width="60"><col width="60"></colgroup>
 		{/if}
 			<thead>
 			<tr>
-				<th>���泥대��</th>
-				<th scope="col">嫄곕�����</th>
-				<th scope="col">�����쇰��</th>
+				<th>업체명</th>
+				<th scope="col">거래량</th>
+				<th scope="col">전일비</th>
 			</tr>
 			</thead>
 			{for index:itemList in item_list}
@@ -2591,18 +2591,18 @@ var gnb_naverme_layer_close_callback = function(){
 					<td id="nowVal_td_{=index}">{=itemList.now_val}</td>
 					<td>
 						{if itemList.risefall == '1'}
-							<em class="f_up up_arrow" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">������媛�</span>{=itemList.change_val}</em>
+							<em class="f_up up_arrow" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">상한가</span>{=itemList.change_val}</em>
 						{elseif itemList.risefall == '2'}
-							<em class="f_up up" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">������</span>{=itemList.change_val}</em>
+							<em class="f_up up" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">상향</span>{=itemList.change_val}</em>
 						{elseif itemList.risefall == '4'}
-							<em class="f_down down_arrow" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">������媛�</span>{=itemList.change_val}</em>
+							<em class="f_down down_arrow" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">하한가</span>{=itemList.change_val}</em>
 						{elseif itemList.risefall == '5'}
-							<em class="f_down down" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">������</span>{=itemList.change_val}</em>
+							<em class="f_down down" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">하향</span>{=itemList.change_val}</em>
 						{else}
-							<em class="sam" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">蹂댄��</span></em>
+							<em class="sam" id="changeVal_em_{=index}"><span id="changeVal_span_{=index}">보합</span></em>
 						{/if}
 						{if type == "recent"}
-							<a href="javascript:deleteCodeFromRecent('{=itemList.itemcode}', '{=code}', '{=type}', '{=page}')"><img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_delete.gif" alt="������" width="11" height="11"></a>
+							<a href="javascript:deleteCodeFromRecent('{=itemList.itemcode}', '{=code}', '{=type}', '{=page}')"><img src="https://ssl.pstatic.net/imgstock/item_renewal/btn_delete.gif" alt="삭제" width="11" height="11"></a>
 						{/if}
 					</td>
 				</tr>
@@ -2616,19 +2616,19 @@ var gnb_naverme_layer_close_callback = function(){
 		<span>
 			{if prev_page != 0 || next_page != 0}
 			{if prev_page == 0}
-				<a href="#" onClick="clickcr(this, 'rch.5', '', '', event); return false;"><img src="https://ssl.pstatic.net/static/nfinance/btn_prev2.gif" width="17" height="15" alt="��댁��"></a>
+				<a href="#" onClick="clickcr(this, 'rch.5', '', '', event); return false;"><img src="https://ssl.pstatic.net/static/nfinance/btn_prev2.gif" width="17" height="15" alt="이전"></a>
 			{elseif prev_page > 0}
-				<a href="javascript:movePage('{=code}', '{=type}', '{=prev_page}');" onClick="clickcr(this, 'rch.5', '', '', event)"><img src="https://ssl.pstatic.net/static/nfinance/btn_prev2.gif" width="17" height="15" alt="��댁��"></a>
+				<a href="javascript:movePage('{=code}', '{=type}', '{=prev_page}');" onClick="clickcr(this, 'rch.5', '', '', event)"><img src="https://ssl.pstatic.net/static/nfinance/btn_prev2.gif" width="17" height="15" alt="이전"></a>
 			{/if}
 			{if next_page == 0}
-				<a href="#" onClick="clickcr(this, 'rch.6', '', '', event); return false;"><img src="https://ssl.pstatic.net/static/nfinance/btn_next2.gif" width="17" height="15" alt="��ㅼ��"></a>
+				<a href="#" onClick="clickcr(this, 'rch.6', '', '', event); return false;"><img src="https://ssl.pstatic.net/static/nfinance/btn_next2.gif" width="17" height="15" alt="다음"></a>
 			{elseif next_page > 0}
-				<a href="javascript:movePage('{=code}', '{=type}', '{=next_page}');" onClick="clickcr(this, 'rch.6', '', '', event)"><img src="https://ssl.pstatic.net/static/nfinance/btn_next2.gif" width="17" height="15" alt="��ㅼ��"></a>
+				<a href="javascript:movePage('{=code}', '{=type}', '{=next_page}');" onClick="clickcr(this, 'rch.6', '', '', event)"><img src="https://ssl.pstatic.net/static/nfinance/btn_next2.gif" width="17" height="15" alt="다음"></a>
 			{/if}
 			{/if}
 		</span>
 		{if type != 'recent'}
-		<a href="/mystock/" class="more" onClick="clickcr(this, 'rch.7', '', '', event)">���蹂닿린</a>
+		<a href="/mystock/" class="more" onClick="clickcr(this, 'rch.7', '', '', event)">더보기</a>
 		{/if}
 	</script>
 	<div id="recent_button" class="more_info"></div>
@@ -2681,33 +2681,33 @@ var comment_page = "1";
 
 
 <div class="aside_section cop_list">
- 	<h2 class="h_sub sub_tit9"><span>��멸린寃����醫�紐�</span></h2>
+ 	<h2 class="h_sub sub_tit9"><span>인기검색종목</span></h2>
 	<div id="tab_fav" class="tab tab_fav1">
-		<a href="javascript:showArea('tab_fav', 'tab tab_fav1', 'fav_kospi', 'fav_kosdaq')" onClick="clickcr(this, 'pss.1', '', '', event);"><span>肄���ㅽ��</span></a>
-		<a href="javascript:showArea('tab_fav', 'tab tab_fav2', 'fav_kosdaq', 'fav_kospi')" onClick="clickcr(this, 'pss.3', '', '', event);"><span>肄���ㅻ��</span></a>
-		<!-- [D] �����깊����� ���硫���댁�� ��곕�� blind text 蹂�寃쏀�댁＜��몄�� -->
-		<h3 class="blind" id="blind_text_tab_fav">肄���ㅽ��</h3>
+		<a href="javascript:showArea('tab_fav', 'tab tab_fav1', 'fav_kospi', 'fav_kosdaq')" onClick="clickcr(this, 'pss.1', '', '', event);"><span>코스피</span></a>
+		<a href="javascript:showArea('tab_fav', 'tab tab_fav2', 'fav_kosdaq', 'fav_kospi')" onClick="clickcr(this, 'pss.3', '', '', event);"><span>코스닥</span></a>
+		<!-- [D] 활성화된 탭메뉴에 따라 blind text 변경해주세요 -->
+		<h3 class="blind" id="blind_text_tab_fav">코스피</h3>
 	</div>
 
 	<div id="fav_kospi" style="display:block">
-	<table summary="肄���ㅽ�� ��멸린寃����醫�紐� 由ъ�ㅽ��" class="rank">
-	<caption>肄���ㅽ�� ��멸린寃����醫�紐�</caption>
+	<table summary="코스피 인기검색종목 리스트" class="rank">
+	<caption>코스피 인기검색종목</caption>
 	<colgroup><col><col width="60"><col width="86"></colgroup>
 	<thead>
 	<tr>
-		<th>���泥대��</th>
-		<th scope="col">嫄곕�����</th>
-		<th scope="col">�����쇰��</th>
+		<th>업체명</th>
+		<th scope="col">거래량</th>
+		<th scope="col">전일비</th>
 	</tr>
 	</thead>
 	
 		
 		<tr>
-			<th scope="row" class="no1"><a href="/item/main.naver?code=005930" target=_top onClick="clickcr(this, 'pss.2', '', '1', event);">��쇱�깆�����</a></th>
+			<th scope="row" class="no1"><a href="/item/main.naver?code=005930" target=_top onClick="clickcr(this, 'pss.2', '', '1', event);">삼성전자</a></th>
 			<td>270,500</td>
 			<td>
 				
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				25,500
 				</em>
 			
@@ -2716,11 +2716,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no2"><a href="/item/main.naver?code=000660" target=_top onClick="clickcr(this, 'pss.2', '', '2', event);">SK�����대�����</a></th>
+			<th scope="row" class="no2"><a href="/item/main.naver?code=000660" target=_top onClick="clickcr(this, 'pss.2', '', '2', event);">SK하이닉스</a></th>
 			<td>1,819,000</td>
 			<td>
 				
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				151,000
 				</em>
 			
@@ -2729,11 +2729,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no3"><a href="/item/main.naver?code=066570" target=_top onClick="clickcr(this, 'pss.2', '', '3', event);">LG������</a></th>
+			<th scope="row" class="no3"><a href="/item/main.naver?code=066570" target=_top onClick="clickcr(this, 'pss.2', '', '3', event);">LG전자</a></th>
 			<td>240,500</td>
 			<td>
 				
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				23,500
 				</em>
 			
@@ -2742,11 +2742,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no4"><a href="/item/main.naver?code=005380" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">������李�</a></th>
+			<th scope="row" class="no4"><a href="/item/main.naver?code=005380" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">현대차</a></th>
 			<td>700,000</td>
 			<td>
 				
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				12,000
 				</em>
 			
@@ -2755,11 +2755,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no5"><a href="/item/main.naver?code=042700" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">���誘몃�����泥�</a></th>
+			<th scope="row" class="no5"><a href="/item/main.naver?code=042700" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">한미반도체</a></th>
 			<td>369,000</td>
 			<td>
 				
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				40,500
 				</em>
 			
@@ -2770,11 +2770,11 @@ var comment_page = "1";
 			<tr><td colspan="3" class="line"></td></tr>
 		
 		<tr>
-			<th scope="row" class="no6"><a href="/item/main.naver?code=454910" target=_top onClick="clickcr(this, 'pss.2', '', '6', event);">�����곕��蹂댄�깆��</a></th>
+			<th scope="row" class="no6"><a href="/item/main.naver?code=454910" target=_top onClick="clickcr(this, 'pss.2', '', '6', event);">두산로보틱스</a></th>
 			<td>127,400</td>
 			<td>
 				
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				20,600
 				</em>
 			
@@ -2783,11 +2783,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no7"><a href="/item/main.naver?code=034020" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">�����곗�����鍮�由�..</a></th>
+			<th scope="row" class="no7"><a href="/item/main.naver?code=034020" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">두산에너빌리..</a></th>
 			<td>110,800</td>
 			<td>
 				
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				6,300
 				</em>
 			
@@ -2796,11 +2796,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no8"><a href="/item/main.naver?code=009150" target=_top onClick="clickcr(this, 'pss.2', '', '8', event);">��쇱�깆��湲�</a></th>
+			<th scope="row" class="no8"><a href="/item/main.naver?code=009150" target=_top onClick="clickcr(this, 'pss.2', '', '8', event);">삼성전기</a></th>
 			<td>1,010,000</td>
 			<td>
 				
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				14,000
 				</em>
 			
@@ -2809,11 +2809,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no9"><a href="/item/main.naver?code=064400" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">LG��⑥��������</a></th>
+			<th scope="row" class="no9"><a href="/item/main.naver?code=064400" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">LG씨엔에스</a></th>
 			<td>86,600</td>
 			<td>
 				
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				500
 				</em>
 			
@@ -2822,11 +2822,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no10"><a href="/item/main.naver?code=006400" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">��쇱��SDI</a></th>
+			<th scope="row" class="no10"><a href="/item/main.naver?code=006400" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">삼성SDI</a></th>
 			<td>614,000</td>
 			<td>
 				
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				22,000
 				</em>
 			
@@ -2836,23 +2836,23 @@ var comment_page = "1";
 	</table>
 	</div>
 	<div id="fav_kosdaq" style="display:none">
-	<table summary="肄���ㅻ�� ��멸린寃����醫�紐� 由ъ�ㅽ��" class="rank">
-	<caption>肄���ㅽ�� ��멸린寃����醫�紐�</caption>
+	<table summary="코스닥 인기검색종목 리스트" class="rank">
+	<caption>코스피 인기검색종목</caption>
 	<colgroup><col><col width="50"><col width="86"></colgroup>
 	<thead>
 	<tr>
-		<th>���泥대��</th>
-		<th scope="col">嫄곕�����</th>
-		<th scope="col">�����쇰��</th>
+		<th>업체명</th>
+		<th scope="col">거래량</th>
+		<th scope="col">전일비</th>
 	</tr>
 	</thead>
 	
 		
 		<tr>
-			<th scope="row" class="no1"><a href="/item/main.naver?code=010170" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">������愿���듭��</a></th>
+			<th scope="row" class="no1"><a href="/item/main.naver?code=010170" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">대한광통신</a></th>
 			<td>23,000</td>
 			<td>
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				1,750
 				</em>
 			</td>
@@ -2860,10 +2860,10 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no2"><a href="/item/main.naver?code=086520" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">���肄����濡�</a></th>
+			<th scope="row" class="no2"><a href="/item/main.naver?code=086520" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">에코프로</a></th>
 			<td>129,200</td>
 			<td>
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				13,100
 				</em>
 			</td>
@@ -2871,10 +2871,10 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no3"><a href="/item/main.naver?code=080220" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">���二쇰�����泥�</a></th>
+			<th scope="row" class="no3"><a href="/item/main.naver?code=080220" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">제주반도체</a></th>
 			<td>82,300</td>
 			<td>
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				6,700
 				</em>
 			</td>
@@ -2882,10 +2882,10 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no4"><a href="/item/main.naver?code=247540" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">���肄����濡�鍮����</a></th>
+			<th scope="row" class="no4"><a href="/item/main.naver?code=247540" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">에코프로비엠</a></th>
 			<td>190,500</td>
 			<td>
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				18,500
 				</em>
 			</td>
@@ -2893,10 +2893,10 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no5"><a href="/item/main.naver?code=263750" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">�����대�����</a></th>
+			<th scope="row" class="no5"><a href="/item/main.naver?code=263750" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">펄어비스</a></th>
 			<td>47,200</td>
 			<td>
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				3,400
 				</em>
 			</td>
@@ -2906,10 +2906,10 @@ var comment_page = "1";
 			<tr><td colspan="3" class="line"></td></tr>
 		
 		<tr>
-			<th scope="row" class="no6"><a href="/item/main.naver?code=196170" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">��������ㅼ��</a></th>
+			<th scope="row" class="no6"><a href="/item/main.naver?code=196170" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">알테오젠</a></th>
 			<td>369,000</td>
 			<td>
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				16,000
 				</em>
 			</td>
@@ -2917,10 +2917,10 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no7"><a href="/item/main.naver?code=439960" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">肄���ㅻえ濡�蹂댄��..</a></th>
+			<th scope="row" class="no7"><a href="/item/main.naver?code=439960" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">코스모로보틱..</a></th>
 			<td>44,100</td>
 			<td>
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				8,600
 				</em>
 			</td>
@@ -2928,10 +2928,10 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no8"><a href="/item/main.naver?code=000250" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">��쇱����뱀�����</a></th>
+			<th scope="row" class="no8"><a href="/item/main.naver?code=000250" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">삼천당제약</a></th>
 			<td>388,000</td>
 			<td>
-				<em class="f_down down"><span>������</span>
+				<em class="f_down down"><span>하향</span>
 				17,000
 				</em>
 			</td>
@@ -2939,10 +2939,10 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no9"><a href="/item/main.naver?code=090710" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">��대┝濡�遊�</a></th>
+			<th scope="row" class="no9"><a href="/item/main.naver?code=090710" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">휴림로봇</a></th>
 			<td>13,120</td>
 			<td>
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				490
 				</em>
 			</td>
@@ -2950,10 +2950,10 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no10"><a href="/item/main.naver?code=067310" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">������留���댄�щ��</a></th>
+			<th scope="row" class="no10"><a href="/item/main.naver?code=067310" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">하나마이크론</a></th>
 			<td>52,900</td>
 			<td>
-				<em class="f_up up"><span>������</span>
+				<em class="f_up up"><span>상향</span>
 				8,300
 				</em>
 			</td>
@@ -2966,66 +2966,66 @@ var comment_page = "1";
 
 
 <div class="aside_section rate">
-	<h2 class="h_sub sub_tit8"><span>�����몄��蹂대��濡�媛�湲�</span></h2>
-	<h3 class="h3_title">KRX 二쇱��������</h3>
+	<h2 class="h_sub sub_tit8"><span>시세정보바로가기</span></h2>
+	<h3 class="h3_title">KRX 주요시세</h3>
 	<p>
-		<a href="/sise/sise_index.naver?code=KOSPI" onClick="clickcr(this, 'quk.2', '', '', event);">肄���ㅽ��</a>
-		<a href="/sise/sise_index.naver?code=KOSDAQ" onClick="clickcr(this, 'quk.3', '', '', event);">肄���ㅻ��</a>
-		<a href="/sise/sise_index.naver?code=FUT" onClick="clickcr(this, 'quk.4', '', '', event);">���臾�</a>
-		<a href="/sise/konex.naver" class="end" onClick="clickcr(this, 'quk.konex', '', '', event);">肄���μ��</a><br>
-		<a href="/sise/sise_index.naver?code=KPI100" onClick="clickcr(this, 'quk.32', '', '', event);">肄���ㅽ��100</a>
-		<a href="/sise/sise_index.naver?code=KPI200" onClick="clickcr(this, 'quk.30', '', '', event);">肄���ㅽ��200</a>
+		<a href="/sise/sise_index.naver?code=KOSPI" onClick="clickcr(this, 'quk.2', '', '', event);">코스피</a>
+		<a href="/sise/sise_index.naver?code=KOSDAQ" onClick="clickcr(this, 'quk.3', '', '', event);">코스닥</a>
+		<a href="/sise/sise_index.naver?code=FUT" onClick="clickcr(this, 'quk.4', '', '', event);">선물</a>
+		<a href="/sise/konex.naver" class="end" onClick="clickcr(this, 'quk.konex', '', '', event);">코넥스</a><br>
+		<a href="/sise/sise_index.naver?code=KPI100" onClick="clickcr(this, 'quk.32', '', '', event);">코스피100</a>
+		<a href="/sise/sise_index.naver?code=KPI200" onClick="clickcr(this, 'quk.30', '', '', event);">코스피200</a>
 		<a href="/sise/etf.naver" class="end" onClick="clickcr(this, 'quk.31', '', '', event);">ETF</a><br>
-		<a href="/sise/sise_index.naver?code=KVALUE" onClick="clickcr(this, 'quk.33', '', '', event);"><strong>肄�由ъ��諛몃�����</strong></a>
-		<a href="/sise/sise_group.naver?type=upjong" onClick="clickcr(this, 'quk.5', '', '', event);"><strong>���醫�蹂�</strong></a>
-		<a href="/sise/theme.naver" class="end" onClick="clickcr(this, 'quk.6', '', '', event);">���留�蹂�</a><br>
-		<a href="/sise/sise_upper.naver" onClick="clickcr(this, 'quk.7', '', '', event);"><strong>������媛�</strong></a>
-		<a href="/sise/sise_lower.naver" onClick="clickcr(this, 'quk.8', '', '', event);">������媛�</a>
-		<a href="/sise/sise_rise.naver" onClick="clickcr(this, 'quk.9', '', '', event);">������</a>
-		<a href="/sise/sise_steady.naver" onClick="clickcr(this, 'quk.10', '', '', event);">蹂댄��</a>
-		<a href="/sise/sise_fall.naver" class="end" onClick="clickcr(this, 'quk.11', '', '', event);">������</a><br>
-		<a href="/sise/sise_quant.naver" onClick="clickcr(this, 'quk.12', '', '', event);">嫄곕��������</a>
-		<a href="/sise/sise_quant_high.naver" onClick="clickcr(this, 'quk.13', '', '', event);"><strong>湲�利�</strong></a>
-		<a href="/sise/sise_quant_low.naver" class="end" onClick="clickcr(this, 'quk.14', '', '', event);">湲�媛�</a><br>
-		<a href="/sise/sise_high_down.naver" onClick="clickcr(this, 'quk.15', '', '', event);">怨�媛����鍮�湲����</a>
-		<a href="/sise/sise_low_up.naver" class="end" onClick="clickcr(this, 'quk.16', '', '', event);">���媛����鍮�湲����</a>
+		<a href="/sise/sise_index.naver?code=KVALUE" onClick="clickcr(this, 'quk.33', '', '', event);"><strong>코리아밸류업</strong></a>
+		<a href="/sise/sise_group.naver?type=upjong" onClick="clickcr(this, 'quk.5', '', '', event);"><strong>업종별</strong></a>
+		<a href="/sise/theme.naver" class="end" onClick="clickcr(this, 'quk.6', '', '', event);">테마별</a><br>
+		<a href="/sise/sise_upper.naver" onClick="clickcr(this, 'quk.7', '', '', event);"><strong>상한가</strong></a>
+		<a href="/sise/sise_lower.naver" onClick="clickcr(this, 'quk.8', '', '', event);">하한가</a>
+		<a href="/sise/sise_rise.naver" onClick="clickcr(this, 'quk.9', '', '', event);">상승</a>
+		<a href="/sise/sise_steady.naver" onClick="clickcr(this, 'quk.10', '', '', event);">보합</a>
+		<a href="/sise/sise_fall.naver" class="end" onClick="clickcr(this, 'quk.11', '', '', event);">하락</a><br>
+		<a href="/sise/sise_quant.naver" onClick="clickcr(this, 'quk.12', '', '', event);">거래상위</a>
+		<a href="/sise/sise_quant_high.naver" onClick="clickcr(this, 'quk.13', '', '', event);"><strong>급증</strong></a>
+		<a href="/sise/sise_quant_low.naver" class="end" onClick="clickcr(this, 'quk.14', '', '', event);">급감</a><br>
+		<a href="/sise/sise_high_down.naver" onClick="clickcr(this, 'quk.15', '', '', event);">고가대비급락</a>
+		<a href="/sise/sise_low_up.naver" class="end" onClick="clickcr(this, 'quk.16', '', '', event);">저가대비급등</a>
 	</p>
 	<p>
-		<a href="/sise/sise_market_sum.naver" onClick="clickcr(this, 'quk.17', '', '', event);"><strong>���媛�珥���≪�����</strong></a>
-		<a href="/sise/sise_foreign_hold.naver" class="end" onClick="clickcr(this, 'quk.18', '', '', event);">��멸뎅��몃낫���������</a><br>
-		<a href="/sise/sise_deal_rank.naver" onClick="clickcr(this, 'quk.19', '', '', event);">��멸뎅��몃ℓ留�</a>
-		<a href="/sise/sise_deal_rank.naver?investor_gubun=1000" onClick="clickcr(this, 'quk.19-1', '', '', event);">湲곌��留ㅻℓ</a>
-		<a href="/sise/sise_program.naver" class="end" onClick="clickcr(this, 'quk.20', '', '', event);">���濡�洹몃�⑤ℓ留�</a><br>
-		<a href="/sise/management.naver" onClick="clickcr(this, 'quk.21', '', '', event);">愿�由�쨌媛�由ъ��紐�</a>
-		<a href="/sise/sise_new_stock.naver" class="end" onClick="clickcr(this, 'quk.22', '', '', event);">���洹������μ��紐�</a><br>
-		<a href="/sise/sise_deposit.naver" onClick="clickcr(this, 'quk.23', '', '', event);">利�������湲�������</a>
-		<a href="/sise/sise_trans_style.naver" class="end" onClick="clickcr(this, 'quk.24', '', '', event);">��ъ�����蹂�留ㅻℓ������</a>
+		<a href="/sise/sise_market_sum.naver" onClick="clickcr(this, 'quk.17', '', '', event);"><strong>시가총액상위</strong></a>
+		<a href="/sise/sise_foreign_hold.naver" class="end" onClick="clickcr(this, 'quk.18', '', '', event);">외국인보유현황</a><br>
+		<a href="/sise/sise_deal_rank.naver" onClick="clickcr(this, 'quk.19', '', '', event);">외국인매매</a>
+		<a href="/sise/sise_deal_rank.naver?investor_gubun=1000" onClick="clickcr(this, 'quk.19-1', '', '', event);">기관매매</a>
+		<a href="/sise/sise_program.naver" class="end" onClick="clickcr(this, 'quk.20', '', '', event);">프로그램매매</a><br>
+		<a href="/sise/management.naver" onClick="clickcr(this, 'quk.21', '', '', event);">관리·감리종목</a>
+		<a href="/sise/sise_new_stock.naver" class="end" onClick="clickcr(this, 'quk.22', '', '', event);">신규상장종목</a><br>
+		<a href="/sise/sise_deposit.naver" onClick="clickcr(this, 'quk.23', '', '', event);">증시자금동향</a>
+		<a href="/sise/sise_trans_style.naver" class="end" onClick="clickcr(this, 'quk.24', '', '', event);">투자자별매매동향</a>
 	</p>
 	<p>
-		<a href="/sise/item_gap.naver" onClick="clickcr(this, 'quk.25', '', '', event);">媛������� 醫�紐�</a>
-		<a href="/sise/item_gold.naver" class="end" onClick="clickcr(this, 'quk.26', '', '', event);">怨⑤����щ����� 醫�紐�</a><br>
-		<a href="/sise/item_igyuk.naver" onClick="clickcr(this, 'quk.27', '', '', event);">��닿꺽���怨쇱�댁��紐�</a>
-		<a href="/sise/item_overheating_1.naver" class="end" onClick="clickcr(this, 'quk.28', '', '', event);">��ъ����щ━怨쇱�댁��紐�</a><br>
-		<a href="/sise/item_overheating_2.naver" class="end" onClick="clickcr(this, 'quk.29', '', '', event);">������媛����怨쇱�댁��紐�</a>
+		<a href="/sise/item_gap.naver" onClick="clickcr(this, 'quk.25', '', '', event);">갭상승 종목</a>
+		<a href="/sise/item_gold.naver" class="end" onClick="clickcr(this, 'quk.26', '', '', event);">골든크로스 종목</a><br>
+		<a href="/sise/item_igyuk.naver" onClick="clickcr(this, 'quk.27', '', '', event);">이격도과열종목</a>
+		<a href="/sise/item_overheating_1.naver" class="end" onClick="clickcr(this, 'quk.28', '', '', event);">투자심리과열종목</a><br>
+		<a href="/sise/item_overheating_2.naver" class="end" onClick="clickcr(this, 'quk.29', '', '', event);">상대강도과열종목</a>
 	</p>
-	<h3 class="h3_title">NXT 二쇱��������</h3>
+	<h3 class="h3_title">NXT 주요시세</h3>
 	<p class="end">
-		<a href="/sise/nxt_sise_market_sum.naver" onClick="clickcr(this, 'direct.cap_nxt', '', '', event);">���媛�珥����</a>
-		<a href="/sise/nxt_sise_quant.naver" onClick="clickcr(this, 'direct.toplist_nxt', '', '', event);">嫄곕��������</a>
-		<a href="/sise/nxt_sise_rise.naver" onClick="clickcr(this, 'direct.rise_nxt', '', '', event);">������</a>
-		<a href="/sise/nxt_sise_fall.naver" onClick="clickcr(this, 'direct.fall_nxt', '', '', event);" class="end">������</a>
+		<a href="/sise/nxt_sise_market_sum.naver" onClick="clickcr(this, 'direct.cap_nxt', '', '', event);">시가총액</a>
+		<a href="/sise/nxt_sise_quant.naver" onClick="clickcr(this, 'direct.toplist_nxt', '', '', event);">거래상위</a>
+		<a href="/sise/nxt_sise_rise.naver" onClick="clickcr(this, 'direct.rise_nxt', '', '', event);">상승</a>
+		<a href="/sise/nxt_sise_fall.naver" onClick="clickcr(this, 'direct.fall_nxt', '', '', event);" class="end">하락</a>
 	</p>
-	<a href="/sise/" class="more" onClick="clickcr(this, 'quk.1', '', '', event);">���蹂닿린</a>
+	<a href="/sise/" class="more" onClick="clickcr(this, 'quk.1', '', '', event);">더보기</a>
 	<div class="hidden_line"></div>
 </div>
 
 
 
 <div class="aside_section notice">
-	<h2 class="h_sub sub_tit10"><span>怨듭����ы��</span></h2>
+	<h2 class="h_sub sub_tit10"><span>공지사항</span></h2>
 	<ul>
 		
-			<li><a href="https://finance.naver.com/notice.naver?noticeId=28157"  onClick="clickcr(this, 'ice.2', 'https://finance.naver.com/notice.naver?noticeId=28157', '1', event)">���濡���� Npay 利�沅� PC ���鍮����...</a></li>
+			<li><a href="https://finance.naver.com/notice.naver?noticeId=28157"  onClick="clickcr(this, 'ice.2', 'https://finance.naver.com/notice.naver?noticeId=28157', '1', event)">새로운 Npay 증권 PC 서비스...</a></li>
 		
 			<li><a href=""  onClick="clickcr(this, 'ice.2', '', '2', event)"></a></li>
 		
@@ -3036,7 +3036,7 @@ var comment_page = "1";
 			<li><a href=""  onClick="clickcr(this, 'ice.2', '', '5', event)"></a></li>
 		
 	</ul>
-	<a href="/notice.naver" class="more" onClick="clickcr(this, 'ice.1', '', '', event);">���蹂닿린</a>
+	<a href="/notice.naver" class="more" onClick="clickcr(this, 'ice.1', '', '', event);">더보기</a>
 </div>
 
 
@@ -3054,42 +3054,42 @@ var comment_page = "1";
 		
 		<ul>
 			<li class="first">
-				<a href="https://new-m.pay.naver.com/member/terms-policy/naver-financial-service" onClick="clickcr(this, 'fot.service', '', '', event);" target="_blank">��댁�⑹�쎄��</a>
+				<a href="https://new-m.pay.naver.com/member/terms-policy/naver-financial-service" onClick="clickcr(this, 'fot.service', '', '', event);" target="_blank">이용약관</a>
 			</li>
 			<li>
-				<a href="https://new-m.pay.naver.com/member/terms-policy/privacy" onClick="clickcr(this, 'fot.privacy', '', '', event);" target="_blank"><strong>媛���몄��蹂댁��由щ갑移�</strong></a>
+				<a href="https://new-m.pay.naver.com/member/terms-policy/privacy" onClick="clickcr(this, 'fot.privacy', '', '', event);" target="_blank"><strong>개인정보처리방침</strong></a>
 			</li>
 			<li>
-				<a href="/rules.naver" onClick="clickcr(this, 'fot.policy', '', '', event);" target="_blank">寃������� ��댁�����移�</a>
+				<a href="/rules.naver" onClick="clickcr(this, 'fot.policy', '', '', event);" target="_blank">게시판 운영원칙</a>
 			</li>
 			<li>
-				<a href="https://help.pay.naver.com/faq/alias/finance.help" onclick="clickcr(this, 'fot.help', '', '', event);" target="_blank">利�沅� 怨�媛���쇳��</a>
+				<a href="https://help.pay.naver.com/faq/alias/finance.help" onclick="clickcr(this, 'fot.help', '', '', event);" target="_blank">증권 고객센터</a>
 			</li>
 		</ul>
 		<p class="desc">
-			��ㅼ�대�������대�몄��(二�)��� ���怨듯����� 湲���� ���蹂대�� <a href="javascript:;" onclick="togglePanelFooter('footerPanel0');" class="desc_help">肄����痢� ���怨듭��泥�</a>濡�遺���� 諛���� ��ъ�� 李멸����ы����대ŉ, ��ㅻ��媛� 諛�������嫄곕�� 吏���곕�� ��� �����듬�����.<br/>
-			��ㅼ�대�������대�몄��(二�)怨� 肄����痢� ���怨듭��泥대�� ���怨듬�� ���蹂댁�� ������ ��ъ�� 寃곌낵��� 踰������� 梨������� 吏�吏� �����듬�����. 寃������� ���蹂대�� 臾대�⑥�쇰�� 諛고�ы�� ��� �����듬�����.
+			네이버파이낸셜(주)이 제공하는 금융 정보는 <a href="javascript:;" onclick="togglePanelFooter('footerPanel0');" class="desc_help">콘텐츠 제공업체</a>로부터 받는 투자 참고사항이며, 오류가 발생하거나 지연될 수 있습니다.<br/>
+			네이버파이낸셜(주)과 콘텐츠 제공업체는 제공된 정보에 의한 투자 결과에 법적인 책임을 지지 않습니다. 게시된 정보는 무단으로 배포할 수 없습니다.
 		</p>
-		<p class="info">援���� 利���� 湲곕낯 ��곗�댄�곕�� ���援�嫄곕�����(KRX)������ ���怨듯�⑸�����.</p>
+		<p class="info">국내 증시 기본 데이터는 한국거래소(KRX)에서 제공합니다.</p>
 		<address>
 			<a href="https://www.naverfincorp.com/" target="_blank" class="logo" onClick="clickcr(this, 'fot.nhn', '', '', event);"><img src="https://ssl.pstatic.net/static/nfinance/img/logo_financial.png" width="160" height="12" alt="NAVER FINANCIAL"></a>
 		</address>
 		<div id="footerPanel0" class="provider_layer" style="display:none" tabindex="0" onblur="hidePannel('footerPanel0')">
-			<strong class="provider_layer__tit">��ㅼ�대�������대�몄����� 肄����痢� ���怨�</strong>
+			<strong class="provider_layer__tit">네이버파이낸셜에 콘텐츠 제공</strong>
 			<div class="provider_layer__txt">
-				<strong>��������ㅺ����대��</strong> 湲곗�� 諛� ��щТ���蹂�<br>
-				<strong>KG���濡����</strong> ��댁�� ������, �����μ����� ���蹂�<br>
-				<strong>���援�������寃곗�����</strong> 二쇱＜珥�������, ��������ы�� ���蹂�<br>
-				<strong>��명�ъ�ㅽ��</strong> 援���� ���留� ���蹂�
+				<strong>에프앤가이드</strong> 기업 및 재무정보<br>
+				<strong>KG제로인</strong> 해외 시세, 시장지표 정보<br>
+				<strong>한국예탁결제원</strong> 주주총회일, 전자투표 정보<br>
+				<strong>인포스탁</strong> 국내 테마 정보
 			</div>
 			<div class="provider_layer__info">
-				<strong class="provider_layer__tit">��ㅼ�대����� 肄����痢� ���怨�</strong>
+				<strong class="provider_layer__tit">네이버에 콘텐츠 제공</strong>
 				<div class="provider_layer__txt">
-					<strong>肄���ㅼ숴</strong> 援���� ������ ���蹂�
+					<strong>코스콤</strong> 국내 시세 정보
 				</div>
 			</div>
 			<button type="button" class="button_close" onclick="hidePannel('footerPanel0')">
-				<img src="https://ssl.pstatic.net/static/nfinance/2022/footer_close.png" width="20" height="20" alt="��リ린">
+				<img src="https://ssl.pstatic.net/static/nfinance/2022/footer_close.png" width="20" height="20" alt="닫기">
 			</button>
 		</div>
 
@@ -3185,7 +3185,7 @@ function togglePanelFooter(layerId) {
 // add data-useragent
 document.documentElement.setAttribute('data-useragent',navigator.userAgent);
 
-// _replaceNewsLink class ��������� a ���洹� 議고�� ��� redirect
+// _replaceNewsLink class 하위의 a 태그 조회 후 redirect
 jindo.$Fn(function () {
 	jindo.$$("._replaceNewsLink a").forEach(function(ele){
 		var urls = ele.href.split("?");
