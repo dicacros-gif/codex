@@ -34,10 +34,34 @@ TV_COLUMNS = [
     "price_52_week_high",
     "price_52_week_low",
     "change",
+    "change_from_open",
+    "gap",
+    "beta_1_year",
+    "SMA50",
+    "SMA200",
     "Recommend.All",
     "price_earnings_ttm",
+    "price_book_fq",
+    "price_sales_current",
+    "price_free_cash_flow_ttm",
     "earnings_per_share_basic_ttm",
+    "earnings_per_share_diluted_ttm",
+    "earnings_per_share_diluted_yoy_growth_ttm",
+    "total_revenue",
+    "total_revenue_yoy_growth_ttm",
+    "gross_margin",
+    "operating_margin",
+    "net_margin",
+    "return_on_equity",
+    "return_on_assets",
+    "debt_to_equity",
+    "current_ratio",
+    "quick_ratio",
+    "free_cash_flow",
     "dividends_yield_current",
+    "float_shares_outstanding",
+    "total_shares_outstanding",
+    "number_of_employees",
 ]
 
 
@@ -176,28 +200,71 @@ def _rows_from_response(data: dict[str, Any], country: str, run_date: date) -> l
 def _standardize(row: dict[str, Any], country: str, run_date: date, signal: str) -> dict[str, Any]:
     ticker = _ticker(row.get("symbol"), row.get("name"), country)
     market_cap = to_float(row.get("market_cap_basic"))
-    return {
+    close = to_float(row.get("close"))
+    high_52w = to_float(row.get("price_52_week_high"))
+    low_52w = to_float(row.get("price_52_week_low"))
+    sma50 = to_float(row.get("SMA50"))
+    sma200 = to_float(row.get("SMA200"))
+    total_revenue = to_float(row.get("total_revenue"))
+    free_cash_flow = to_float(row.get("free_cash_flow"))
+    item = {
         "date": run_date.isoformat(),
         "country": COUNTRY_LABELS[country],
         "country_code": country,
         "ticker": ticker,
         "company_name": row.get("description") or row.get("name"),
-        "close": to_float(row.get("close")),
+        "close": close,
         "currency": row.get("currency"),
         "volume": to_float(row.get("volume")),
         "average_volume_30d": to_float(row.get("average_volume_30d_calc")),
         "relative_volume": to_float(row.get("relative_volume_10d_calc")),
         "market_cap": market_cap,
+        "high_52w": high_52w,
+        "low_52w": low_52w,
+        "sma_50": sma50,
+        "sma_200": sma200,
+        "beta": to_float(row.get("beta_1_year")),
         "sector": row.get("sector"),
         "industry": row.get("industry"),
         "exchange": row.get("exchange"),
         "change_pct": to_float(row.get("change")),
+        "change_from_open_pct": to_float(row.get("change_from_open")),
+        "gap_pct": to_float(row.get("gap")),
         "recommendation_score": to_float(row.get("Recommend.All")),
         "trailing_per": to_float(row.get("price_earnings_ttm")),
+        "pbr": to_float(row.get("price_book_fq")),
+        "price_to_sales": to_float(row.get("price_sales_current")),
+        "price_to_fcf": to_float(row.get("price_free_cash_flow_ttm")),
+        "eps_ttm": to_float(row.get("earnings_per_share_diluted_ttm")) or to_float(row.get("earnings_per_share_basic_ttm")),
+        "eps_growth_yoy": to_float(row.get("earnings_per_share_diluted_yoy_growth_ttm")),
+        "total_revenue": total_revenue,
+        "revenue_growth_yoy": to_float(row.get("total_revenue_yoy_growth_ttm")),
+        "gross_margin": to_float(row.get("gross_margin")),
+        "operating_margin": to_float(row.get("operating_margin")),
+        "profit_margin": to_float(row.get("net_margin")),
+        "roe": to_float(row.get("return_on_equity")),
+        "roa": to_float(row.get("return_on_assets")),
+        "debt_to_equity": to_float(row.get("debt_to_equity")),
+        "current_ratio": to_float(row.get("current_ratio")),
+        "quick_ratio": to_float(row.get("quick_ratio")),
+        "free_cash_flow": free_cash_flow,
+        "dividend_yield": to_float(row.get("dividends_yield_current")),
+        "float_shares": to_float(row.get("float_shares_outstanding")),
+        "shares_outstanding": to_float(row.get("total_shares_outstanding")),
+        "employees": to_float(row.get("number_of_employees")),
         "source": "TradingView Scanner",
         "source_url": SCANNER_URLS[country],
         "signals": [signal],
     }
+    if close and high_52w and low_52w and high_52w > low_52w:
+        item["position_52w_pct"] = round((close - low_52w) / (high_52w - low_52w) * 100, 2)
+    if close and sma50:
+        item["sma50_gap_pct"] = round((close / sma50 - 1) * 100, 2)
+    if close and sma200:
+        item["sma200_gap_pct"] = round((close / sma200 - 1) * 100, 2)
+    if free_cash_flow is not None and total_revenue:
+        item["fcf_margin"] = round(free_cash_flow / total_revenue * 100, 2)
+    return item
 
 
 def _ticker(symbol: Any, name: Any, country: str) -> str | None:

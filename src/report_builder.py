@@ -41,7 +41,12 @@ STOCK_COLUMNS = [
     ("relative_volume", "상대거래량"),
     ("average_volume_30d", "평균거래량"),
     ("high_52w", "52주고가"),
+    ("low_52w", "52주저가"),
     ("distance_to_52w_high_pct", "고가괴리"),
+    ("position_52w_pct", "52주위치"),
+    ("beta", "베타"),
+    ("sma50_gap_pct", "50일선괴리"),
+    ("sma200_gap_pct", "200일선괴리"),
     ("investment_priority_score", "투자우선점수"),
     ("long_future_score", "장기/미래점수"),
     ("leading_supply_score", "선행수급점수"),
@@ -52,16 +57,36 @@ STOCK_COLUMNS = [
     ("forward_peg", "Forward PEG"),
     ("trailing_per", "PER"),
     ("pbr", "PBR"),
+    ("price_to_sales", "PSR"),
+    ("price_to_fcf", "P/FCF"),
     ("dividend_yield", "배당수익률"),
+    ("eps_ttm", "EPS TTM"),
+    ("forward_eps", "Forward EPS"),
+    ("total_revenue", "매출액"),
     ("revenue_growth_yoy", "매출성장률 YoY"),
     ("revenue_growth_qoq", "매출성장률 QoQ"),
     ("eps_growth_yoy", "EPS성장률 YoY"),
     ("eps_growth_qoq", "EPS성장률 QoQ"),
     ("expected_revenue_growth", "예상매출성장률"),
     ("expected_eps_growth", "예상EPS성장률"),
+    ("gross_margin", "매출총이익률"),
+    ("operating_margin", "영업이익률"),
+    ("profit_margin", "순이익률"),
     ("fcf_margin", "FCF마진"),
+    ("free_cash_flow", "FCF"),
     ("roic", "ROIC"),
     ("roe", "ROE"),
+    ("roa", "ROA"),
+    ("debt_to_equity", "부채비율"),
+    ("current_ratio", "유동비율"),
+    ("quick_ratio", "당좌비율"),
+    ("float_shares", "유통주식수"),
+    ("shares_outstanding", "발행주식수"),
+    ("employees", "직원수"),
+    ("institutional_ownership_pct", "기관보유율"),
+    ("insider_ownership_pct", "내부자보유율"),
+    ("short_percent_float", "공매도비율"),
+    ("short_ratio", "Short Ratio"),
     ("target_upside_pct", "목표가상승여력"),
     ("recent_report_broker", "최근리포트증권사"),
     ("recent_report_title", "최근리포트제목"),
@@ -118,14 +143,29 @@ NUMERIC_FIELDS = {
     "volume",
     "average_volume_30d",
     "high_52w",
+    "low_52w",
     "investment_priority_score",
     "long_future_score",
     "leading_supply_score",
     "foreign_flow_investment_score",
+    "beta",
     "forward_per",
     "forward_peg",
     "trailing_per",
     "pbr",
+    "price_to_sales",
+    "price_to_fcf",
+    "eps_ttm",
+    "forward_eps",
+    "total_revenue",
+    "free_cash_flow",
+    "debt_to_equity",
+    "current_ratio",
+    "quick_ratio",
+    "float_shares",
+    "shares_outstanding",
+    "employees",
+    "short_ratio",
     "foreign_net_buy",
     "institution_net_buy",
     "new_institution_count",
@@ -139,6 +179,9 @@ NUMERIC_FIELDS = {
 }
 PERCENT_FIELDS = {
     "distance_to_52w_high_pct",
+    "position_52w_pct",
+    "sma50_gap_pct",
+    "sma200_gap_pct",
     "dividend_yield",
     "revenue_growth_yoy",
     "revenue_growth_qoq",
@@ -146,9 +189,16 @@ PERCENT_FIELDS = {
     "eps_growth_qoq",
     "expected_revenue_growth",
     "expected_eps_growth",
+    "gross_margin",
+    "operating_margin",
+    "profit_margin",
     "fcf_margin",
     "roic",
     "roe",
+    "roa",
+    "institutional_ownership_pct",
+    "insider_ownership_pct",
+    "short_percent_float",
     "target_upside_pct",
     "foreign_ownership_rate",
     "average_change_pct",
@@ -502,6 +552,21 @@ def _style_tokens(field: str, value: Any) -> list[str]:
             tokens.append("pos-buy")
         elif number <= -10:
             tokens.append("warn")
+    if field == "position_52w_pct" and number is not None:
+        if number >= 90:
+            tokens.append("pos-strong")
+        elif number >= 70:
+            tokens.append("pos-buy")
+        elif number <= 25:
+            tokens.append("warn")
+
+    if field in {"sma50_gap_pct", "sma200_gap_pct", "change_from_open_pct", "gap_pct"} and number is not None:
+        if number >= 10:
+            tokens.append("volume-hot")
+        elif number > 0:
+            tokens.append("pos-buy")
+        elif number <= -10:
+            tokens.append("neg")
 
     if field in {"target_upside_pct", "average_change_pct"} and number is not None:
         if number >= 20:
@@ -525,7 +590,7 @@ def _style_tokens(field: str, value: Any) -> list[str]:
     if field == "exited_institution_count" and number is not None and number > 0:
         tokens.append("neg")
 
-    if field in {"forward_per", "trailing_per"} and number is not None:
+    if field in {"forward_per", "trailing_per", "price_to_sales", "price_to_fcf"} and number is not None:
         if 0 < number <= 15:
             tokens.append("metric-blue")
         elif 0 < number <= 25:
@@ -537,6 +602,11 @@ def _style_tokens(field: str, value: Any) -> list[str]:
             tokens.append("pos-buy")
     if field == "pbr" and number is not None and 0 < number <= 2:
         tokens.append("metric-blue")
+    if field == "beta" and number is not None:
+        if number >= 2:
+            tokens.append("warn")
+        elif 0 < number <= 1:
+            tokens.append("metric-cyan")
 
     growth_fields = {
         "revenue_growth_yoy",
@@ -556,7 +626,7 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         elif number < 0:
             tokens.append("neg")
 
-    if field in {"fcf_margin", "roic", "roe"} and number is not None:
+    if field in {"fcf_margin", "roic", "roe", "roa", "gross_margin", "operating_margin", "profit_margin"} and number is not None:
         if number >= 15:
             tokens.append("pos-strong")
         elif number >= 8:
@@ -565,8 +635,25 @@ def _style_tokens(field: str, value: Any) -> list[str]:
             tokens.append("metric-soft")
         elif number < 0:
             tokens.append("neg")
-    if field in {"dividend_yield", "foreign_ownership_rate"} and number is not None and number > 0:
+    if field == "debt_to_equity" and number is not None:
+        if number >= 200:
+            tokens.append("neg")
+        elif number >= 100:
+            tokens.append("warn")
+        elif number >= 0:
+            tokens.append("metric-cyan")
+    if field in {"current_ratio", "quick_ratio"} and number is not None:
+        if number >= 2:
+            tokens.append("pos-buy")
+        elif number < 1:
+            tokens.append("warn")
+    if field in {"dividend_yield", "foreign_ownership_rate", "institutional_ownership_pct", "insider_ownership_pct"} and number is not None and number > 0:
         tokens.append("metric-soft")
+    if field == "short_percent_float" and number is not None:
+        if number >= 20:
+            tokens.append("neg")
+        elif number >= 10:
+            tokens.append("warn")
 
     return tokens
 
@@ -670,6 +757,13 @@ def _xlsx_width(field: str, label: str) -> int:
         "signals": 20,
         "core_basis": 42,
         "future_industry_theme": 20,
+        "total_revenue": 16,
+        "free_cash_flow": 16,
+        "float_shares": 16,
+        "shares_outstanding": 16,
+        "institutional_ownership_pct": 14,
+        "insider_ownership_pct": 14,
+        "short_percent_float": 14,
         "recent_report_title": 34,
         "recent_report_broker": 18,
         "institutions": 28,

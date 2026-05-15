@@ -6,7 +6,7 @@ from typing import Any
 from src.collectors.fnguide import enrich_with_fnguide
 from src.collectors.naver import enrich_with_naver
 from src.collectors.yahoo import enrich_us_with_yahoo
-from src.utils.text import clean_phrase
+from src.utils.text import clean_phrase, to_float
 
 
 def merge_signal_rows(sections: dict[str, list[dict[str, Any]]]) -> list[dict[str, Any]]:
@@ -79,4 +79,21 @@ def clean_record(record: dict[str, Any]) -> dict[str, Any]:
                 cleaned["relative_volume"] = round(volume / average, 2)
         except (TypeError, ValueError, ZeroDivisionError):
             pass
+    close = to_float(cleaned.get("close"))
+    high_52w = to_float(cleaned.get("high_52w"))
+    low_52w = to_float(cleaned.get("low_52w"))
+    if close and high_52w and low_52w and high_52w > low_52w and cleaned.get("position_52w_pct") in (None, ""):
+        cleaned["position_52w_pct"] = round((close - low_52w) / (high_52w - low_52w) * 100, 2)
+    for source, target in (("sma_50", "sma50_gap_pct"), ("sma_200", "sma200_gap_pct")):
+        average = to_float(cleaned.get(source))
+        if close and average and cleaned.get(target) in (None, ""):
+            cleaned[target] = round((close / average - 1) * 100, 2)
+    free_cash_flow = to_float(cleaned.get("free_cash_flow"))
+    total_revenue = to_float(cleaned.get("total_revenue"))
+    if free_cash_flow is not None and total_revenue and cleaned.get("fcf_margin") in (None, ""):
+        cleaned["fcf_margin"] = round(free_cash_flow / total_revenue * 100, 2)
+    total_cash = to_float(cleaned.get("total_cash"))
+    total_debt = to_float(cleaned.get("total_debt"))
+    if total_cash is not None and total_debt is not None and cleaned.get("net_cash") in (None, ""):
+        cleaned["net_cash"] = round(total_cash - total_debt, 2)
     return cleaned

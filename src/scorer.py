@@ -97,11 +97,17 @@ def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) 
 def _valuation(row: dict[str, Any]) -> float:
     per = to_float(row.get("forward_per")) or to_float(row.get("trailing_per"))
     peg = to_float(row.get("forward_peg"))
+    psr = to_float(row.get("price_to_sales"))
+    pfcf = to_float(row.get("price_to_fcf"))
     score = 0.0
     if per is not None:
         score += 10 if 0 < per <= 15 else 7 if per <= 25 else 4 if per <= 40 else 1
     if peg is not None:
         score += 10 if 0 < peg <= 1 else 7 if peg <= 1.8 else 3 if peg <= 3 else 0
+    if psr is not None:
+        score += 4 if 0 < psr <= 3 else 2 if psr <= 8 else 0
+    if pfcf is not None:
+        score += 4 if 0 < pfcf <= 20 else 2 if pfcf <= 40 else 0
     return min(score, 10)
 
 
@@ -122,18 +128,28 @@ def _growth(row: dict[str, Any]) -> float:
 
 
 def _quality(row: dict[str, Any]) -> float:
-    roic = to_float(row.get("roic"))
-    roe = to_float(row.get("roe"))
-    value = roic if roic is not None else roe
-    if value is None:
+    values = [
+        to_float(row.get("roic")),
+        to_float(row.get("roe")),
+        to_float(row.get("roa")),
+        to_float(row.get("gross_margin")),
+        to_float(row.get("operating_margin")),
+        to_float(row.get("profit_margin")),
+    ]
+    nums = [value for value in values if value is not None]
+    if not nums:
         return 0
+    value = sum(nums) / len(nums)
     return 10 if value >= 20 else 8 if value >= 12 else 5 if value >= 6 else 2 if value > 0 else 0
 
 
 def _cashflow(row: dict[str, Any]) -> float:
     margin = to_float(row.get("fcf_margin"))
-    if margin is None:
+    free_cash_flow = to_float(row.get("free_cash_flow"))
+    if margin is None and free_cash_flow is None:
         return 0
+    if margin is None:
+        return 6 if free_cash_flow and free_cash_flow > 0 else 0
     return 10 if margin >= 15 else 8 if margin >= 8 else 5 if margin >= 3 else 2 if margin > 0 else 0
 
 
@@ -167,9 +183,17 @@ def _long_term(row: dict[str, Any]) -> float:
 
 def _momentum(row: dict[str, Any]) -> float:
     change = to_float(row.get("change_pct"))
-    if change is None:
+    position = to_float(row.get("position_52w_pct"))
+    sma50_gap = to_float(row.get("sma50_gap_pct"))
+    sma200_gap = to_float(row.get("sma200_gap_pct"))
+    if change is None and position is None and sma50_gap is None and sma200_gap is None:
         return 0
-    return 10 if change >= 8 else 8 if change >= 4 else 5 if change > 0 else 0
+    score = 10 if change is not None and change >= 8 else 8 if change is not None and change >= 4 else 5 if change is not None and change > 0 else 0
+    if position is not None and position >= 80:
+        score += 2
+    if (sma50_gap or 0) > 0 and (sma200_gap or 0) > 0:
+        score += 2
+    return min(score, 10)
 
 
 def _analyst(row: dict[str, Any]) -> float:
@@ -198,6 +222,21 @@ def _risk_penalty(row: dict[str, Any]) -> float:
         penalty += 2
     if not row.get("forward_per") and not row.get("trailing_per"):
         penalty += 1
+    beta = to_float(row.get("beta"))
+    debt = to_float(row.get("debt_to_equity"))
+    current_ratio = to_float(row.get("current_ratio"))
+    profit_margin = to_float(row.get("profit_margin"))
+    short_float = to_float(row.get("short_percent_float"))
+    if beta is not None and beta >= 2:
+        penalty += 0.8
+    if debt is not None and debt >= 200:
+        penalty += 1
+    if current_ratio is not None and current_ratio < 1:
+        penalty += 0.8
+    if profit_margin is not None and profit_margin < 0:
+        penalty += 1
+    if short_float is not None and short_float >= 20:
+        penalty += 1
     return penalty
 
 
@@ -209,6 +248,15 @@ def _core_basis(row: dict[str, Any]) -> str | None:
         parts.append(f"거래량 {int(round(rel))}배")
     if row.get("supply_pattern"):
         parts.append(row["supply_pattern"])
+    position = to_float(row.get("position_52w_pct"))
+    if position is not None:
+        parts.append(f"52주 위치 {int(round(position))}%")
+    fcf_margin = to_float(row.get("fcf_margin"))
+    if fcf_margin is not None:
+        parts.append(f"FCF마진 {int(round(fcf_margin))}%")
+    debt = to_float(row.get("debt_to_equity"))
+    if debt is not None:
+        parts.append(f"부채비율 {int(round(debt))}%")
     if row.get("recent_report_title"):
         parts.append(str(row["recent_report_title"]))
     return compact_join(parts)

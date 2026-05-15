@@ -137,10 +137,16 @@ def _merge_summary(row: dict[str, Any], detail: dict[str, Any]) -> None:
         "profitMargins": "profit_margin",
         "ebitdaMargins": "ebitda_margin",
         "freeCashflow": "free_cash_flow",
+        "operatingCashflow": "operating_cash_flow",
+        "totalCash": "total_cash",
+        "totalDebt": "total_debt",
         "totalRevenue": "total_revenue",
+        "revenuePerShare": "revenue_per_share",
         "returnOnEquity": "roe",
         "returnOnAssets": "roa",
         "debtToEquity": "debt_to_equity",
+        "currentRatio": "current_ratio",
+        "quickRatio": "quick_ratio",
         "recommendationMean": "recommendation_mean",
     }
     for source, target in mapping.items():
@@ -149,19 +155,38 @@ def _merge_summary(row: dict[str, Any], detail: dict[str, Any]) -> None:
             row[target] = _percent(value) if source in {"revenueGrowth", "earningsGrowth", "grossMargins", "profitMargins", "ebitdaMargins", "returnOnEquity", "returnOnAssets"} else value
 
     for source, target in {
+        "beta": "beta",
+        "enterpriseValue": "enterprise_value",
         "forwardPE": "forward_per",
         "pegRatio": "forward_peg",
         "priceToBook": "pbr",
+        "priceToSalesTrailing12Months": "price_to_sales",
+        "enterpriseToRevenue": "enterprise_to_revenue",
+        "enterpriseToEbitda": "enterprise_to_ebitda",
         "trailingEps": "eps_ttm",
         "forwardEps": "forward_eps",
+        "floatShares": "float_shares",
+        "sharesOutstanding": "shares_outstanding",
+        "heldPercentInsiders": "insider_ownership_pct",
+        "heldPercentInstitutions": "institutional_ownership_pct",
+        "shortRatio": "short_ratio",
+        "shortPercentOfFloat": "short_percent_float",
+        "sharesShort": "shares_short",
+        "sharesShortPriorMonth": "shares_short_prior_month",
     }.items():
         value = _raw(stats.get(source))
         if value is not None and row.get(target) in (None, ""):
-            row[target] = value
+            row[target] = _percent(value) if source in {"heldPercentInsiders", "heldPercentInstitutions", "shortPercentOfFloat"} else value
 
-    dividend = _raw(summary.get("dividendYield"))
-    if dividend is not None and row.get("dividend_yield") in (None, ""):
-        row["dividend_yield"] = _percent(dividend)
+    for source, target in {
+        "dividendYield": "dividend_yield",
+        "payoutRatio": "payout_ratio",
+        "fiveYearAvgDividendYield": "five_year_avg_dividend_yield",
+        "trailingAnnualDividendYield": "trailing_annual_dividend_yield",
+    }.items():
+        value = _raw(summary.get(source))
+        if value is not None and row.get(target) in (None, ""):
+            row[target] = _percent(value)
 
     for trend in earnings:
         period = trend.get("period")
@@ -218,4 +243,3 @@ def _raw(value: Any) -> float | None:
 
 def _percent(value: float) -> float:
     return round(value * 100, 2) if abs(value) <= 1 else round(value, 2)
-

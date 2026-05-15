@@ -24,6 +24,11 @@
 - TradingView Scanner
   - 미국: `https://scanner.tradingview.com/america/scan`
   - 한국: `https://scanner.tradingview.com/korea/scan`
+  - 추가 정량 컬럼: 52주 고저가/위치, 베타, 50일·200일 이동평균 괴리, PSR, P/FCF, 매출액, 매출성장률, EPS성장률, 매출총이익률, 영업이익률, 순이익률, ROA/ROE, 부채비율, 유동비율, 당좌비율, FCF, 유통주식수, 발행주식수, 직원수
+- Yahoo Finance
+  - Quote: `https://query1.finance.yahoo.com/v7/finance/quote?symbols={티커}`
+  - QuoteSummary: `https://query1.finance.yahoo.com/v10/finance/quoteSummary/{티커}`
+  - 미국 종목 보강: 목표가, EPS, 마진, 현금흐름, 부채, 기관/내부자 보유율, 공매도 비율 등. 응답이 제한되면 빈칸으로 둡니다.
 - FnGuide
   - CompanyGuide: `https://comp.fnguide.com/SVO2/ASP/SVD_Main.asp?pGB=1&gicode=A{종목코드}`
   - Consensus: `https://wcomp.fnguide.com/CompanyInfo/Consensus?cmp_cd={종목코드}`
