@@ -418,10 +418,22 @@ def _fallback_report_link(row: dict[str, Any]) -> str | None:
     if row.get("country_code") == "US" or row.get("country") == "미국":
         return f"https://finance.yahoo.com/quote/{ticker}/analysis/"
     if row.get("country_code") == "KR" or row.get("country") == "한국":
-        company = row.get("company_name") or ticker
+        company = _report_company_query(row) or ticker
         from urllib.parse import quote
 
         return f"https://markets.hankyung.com/consensus?searchWord={quote(str(company))}"
+    return None
+
+
+def _report_company_query(row: dict[str, Any]) -> str | None:
+    for key in ("naver_title", "company_name", "ticker"):
+        value = row.get(key)
+        if value in (None, ""):
+            continue
+        text = re.sub(r"\s*:\s*(?:Npay\s*)?증권.*$", "", str(value)).strip()
+        text = re.sub(r"\s*:\s*네이버.*$", "", text).strip()
+        if text and "\ufffd" not in text:
+            return text
     return None
 
 

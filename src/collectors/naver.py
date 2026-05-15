@@ -5,7 +5,7 @@ import time
 from io import StringIO
 from pathlib import Path
 from typing import Any
-from urllib.parse import urljoin, quote
+from urllib.parse import parse_qs, quote, urljoin, urlparse
 
 import pandas as pd
 import requests
@@ -26,29 +26,25 @@ def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
     if not code:
         return row
 
-    main_html = _get_text(MAIN_URL.format(code=code), encoding="euc-kr")
+    main_html = _get_text(MAIN_URL.format(code=code), encoding="utf-8")
     if main_html:
         _write_raw(raw_dir / f"naver_main_{code}.html", main_html)
         row.update({key: value for key, value in _parse_main(main_html).items() if value is not None and row.get(key) in (None, "", [])})
 
-    frgn_html = _get_text(FRGN_URL.format(code=code), encoding="euc-kr")
+    frgn_html = _get_text(FRGN_URL.format(code=code), encoding="utf-8")
     if frgn_html:
         _write_raw(raw_dir / f"naver_frgn_{code}.html", frgn_html)
         row.update({key: value for key, value in _parse_frgn(frgn_html).items() if value is not None})
 
-    research_html = _get_text(RESEARCH_URL.format(code=code), encoding="euc-kr")
+    research_html = _get_text(RESEARCH_URL.format(code=code), encoding="utf-8")
     if research_html:
         _write_raw(raw_dir / f"naver_research_{code}.html", research_html)
-        report = _parse_research(research_html)
+        report = _parse_research(research_html, code)
         if report:
             row.update(report)
 
     if not row.get("report_link"):
-        company = row.get("company_name") or code
-        row["report_link"] = HANKYUNG_URL.format(company=quote(str(company)))
-        row["report_source"] = "한국경제 컨센서스 검색"
-        row.setdefault("recent_report_broker", "한국경제")
-        row.setdefault("recent_report_title", "컨센서스 검색")
+        _apply_hankyung_fallback(row, code)
 
     time.sleep(0.25)
     return row
@@ -117,7 +113,9 @@ def _parse_main(html: str) -> dict[str, Any]:
     }
     title = soup.find("title")
     if title and title.text:
-        parsed["naver_title"] = re.sub(r"\s*:\s*네이버.*$", "", title.text).strip()
+        naver_title = re.sub(r"\s*:\s*네이버.*$", "", title.text).strip()
+        if "\ufffd" not in naver_title:
+            parsed["naver_title"] = naver_title
     close = _number_after(text, "현재가")
     if close is not None:
         parsed["close"] = close
@@ -127,12 +125,14 @@ def _parse_main(html: str) -> dict[str, Any]:
     return parsed
 
 
-def _parse_research(html: str) -> dict[str, Any] | None:
+def _parse_research(html: str, code: str) -> dict[str, Any] | None:
     soup = BeautifulSoup(html, "lxml")
     link = soup.find("a", href=re.compile(r"company_read\.naver"))
     if not link:
         return None
     href = urljoin("https://finance.naver.com", link.get("href", ""))
+    if not _is_valid_naver_report_link(href, code):
+        return None
     row = link.find_parent("tr")
     cells = [cell.get_text(" ", strip=True) for cell in row.find_all("td")] if row else []
     title = link.get_text(" ", strip=True) or None
@@ -147,6 +147,46 @@ def _parse_research(html: str) -> dict[str, Any] | None:
         "report_link": href,
         "report_source": "Naver Finance Research",
     }
+
+
+def _is_valid_naver_report_link(url: str, code: str) -> bool:
+    parsed = urlparse(url)
+    if parsed.netloc != "finance.naver.com" or parsed.path != "/company_read.naver":
+        return False
+    query_code = (parse_qs(parsed.query).get("itemCode") or [""])[0]
+    if _kr_code(query_code) != code:
+        return False
+    body = _get_text(url, encoding="utf-8")
+    if not body:
+        return False
+    soup = BeautifulSoup(body, "lxml")
+    if soup.select_one(".error_content"):
+        return False
+    title = soup.find("title")
+    title_text = title.get_text(" ", strip=True) if title else ""
+    if "네이버 :: 세상의 모든 지식" in title_text:
+        return False
+    return bool(soup.get_text(" ", strip=True))
+
+
+def _apply_hankyung_fallback(row: dict[str, Any], code: str) -> None:
+    company = _fallback_company_name(row, code)
+    row["report_link"] = HANKYUNG_URL.format(company=quote(str(company)))
+    row["report_source"] = "한국경제 컨센서스 검색"
+    row["recent_report_broker"] = "한국경제"
+    row["recent_report_title"] = "컨센서스 검색"
+
+
+def _fallback_company_name(row: dict[str, Any], code: str) -> str:
+    for key in ("naver_title", "company_name", "ticker"):
+        value = row.get(key)
+        if value in (None, ""):
+            continue
+        text = re.sub(r"\s*:\s*(?:Npay\s*)?증권.*$", "", str(value)).strip()
+        text = re.sub(r"\s*:\s*네이버.*$", "", text).strip()
+        if text and "\ufffd" not in text:
+            return text
+    return code
 
 
 def _naver_market_cap(text: str) -> float | None:
