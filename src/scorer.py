@@ -74,9 +74,9 @@ def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) 
         foreign.extend(_take_unique(_sort_foreign_flow(non_high_records, dominant_only=False), used, 15 - len(foreign)))
     if len(institution) < 15:
         institution.extend(_take_unique(_sort_institution_flow(non_high_records, dominant_only=False), used, 15 - len(institution)))
-    top = _take_unique(sorted(records, key=lambda row: row.get("investment_priority_score") or -999, reverse=True), used, 50)
-    leading = _take_unique(sorted(records, key=lambda row: row.get("leading_supply_score") or -999, reverse=True), used, 50)
-    long_term = _take_unique(sorted(records, key=lambda row: row.get("long_future_score") or -999, reverse=True), used, 50)
+    top = _take_unique(_sort_by_date_and_metric(records, "investment_priority_score"), used, 50)
+    leading = _take_unique(_sort_by_date_and_metric(records, "leading_supply_score"), used, 50)
+    long_term = _take_unique(_sort_by_date_and_metric(records, "long_future_score"), used, 50)
     us_highs = _take_unique(_sort_highs([row for row in records if row.get("country_code") == "US" and _has_signal(row, "52주 신고가")]), used, 120)
     kr_highs = _take_unique(_sort_highs([row for row in records if row.get("country_code") == "KR" and _has_signal(row, "52주 신고가")]), used, 120)
     us_volume = _take_unique(
@@ -135,17 +135,31 @@ def _take_unique(rows: list[dict[str, Any]], used: set[str], limit: int) -> list
 
 
 def _security_key(row: dict[str, Any]) -> str | None:
+    row_date = str(row.get("date") or "")
     country = str(row.get("country_code") or row.get("country") or "").upper()
     ticker = str(row.get("ticker") or "").upper()
     if country and ticker:
-        return f"{country}:{ticker}"
+        return f"{row_date}:{country}:{ticker}"
     return None
+
+
+def _sort_by_date_and_metric(rows: list[dict[str, Any]], metric: str) -> list[dict[str, Any]]:
+    return sorted(
+        rows,
+        key=lambda row: (
+            str(row.get("date") or ""),
+            to_float(row.get(metric)) if to_float(row.get(metric)) is not None else -999,
+            to_float(row.get("market_cap")) or 0,
+        ),
+        reverse=True,
+    )
 
 
 def _sort_highs(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(
         rows,
         key=lambda row: (
+            str(row.get("date") or ""),
             row.get("distance_to_52w_high_pct") if row.get("distance_to_52w_high_pct") is not None else -999,
             row.get("investment_priority_score") or -999,
             row.get("market_cap") or 0,
@@ -158,6 +172,7 @@ def _sort_volume(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return sorted(
         rows,
         key=lambda row: (
+            str(row.get("date") or ""),
             row.get("relative_volume") or -999,
             row.get("change_pct") or -999,
             row.get("market_cap") or 0,
@@ -179,6 +194,7 @@ def _sort_foreign_flow(records: list[dict[str, Any]], dominant_only: bool) -> li
     return sorted(
         rows,
         key=lambda row: (
+            str(row.get("date") or ""),
             row.get("foreign_flow_investment_score") or -999,
             row.get("foreign_net_buy_amount_mil_krw") or -999,
             row.get("foreign_net_buy_20d") or row.get("foreign_net_buy") or -999,
@@ -201,6 +217,7 @@ def _sort_institution_flow(records: list[dict[str, Any]], dominant_only: bool) -
     return sorted(
         rows,
         key=lambda row: (
+            str(row.get("date") or ""),
             row.get("institution_flow_score") or -999,
             row.get("institution_net_buy_amount_mil_krw") or -999,
             row.get("institution_net_buy_20d") or row.get("institution_net_buy") or -999,

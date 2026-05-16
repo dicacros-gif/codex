@@ -61,5 +61,9 @@ jobs:
           path: |
             data/processed/daily_summary.csv
             data/processed/scored_records.json
+            data/processed/scored_records_history.json
+            data/processed/sec13f_history.json
+            data/processed/*/scored_records.json
+            data/processed/*/sec13f_aggregate.json
             reports/report.html
             reports/latest.xlsx

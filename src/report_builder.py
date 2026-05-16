@@ -1213,7 +1213,12 @@ def _dedupe_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
     unique = []
     seen = set()
     for row in rows:
-        key = row.get("ticker") or row.get("cusip") or row.get("company_name") or row.get("future_industry_theme") or tuple(sorted(row.items()))
+        row_date = row.get("date") or ""
+        ticker_key = row.get("ticker") or row.get("cusip")
+        if row_date and ticker_key:
+            key = f"{row_date}:{row.get('country_code') or row.get('country') or ''}:{ticker_key}"
+        else:
+            key = ticker_key or row.get("company_name") or row.get("future_industry_theme") or tuple(sorted(row.items()))
         key = str(key).upper()
         if key in seen:
             continue
