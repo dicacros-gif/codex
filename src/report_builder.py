@@ -536,16 +536,16 @@ def render_html(payload: dict[str, Any]) -> str:
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 @font-face{{font-family:'SOK500';src:local('SamsungOneKorean500'),local('SamsungOneKorean 500');font-weight:500;font-style:normal;font-display:swap}}
-:root{{--bg:#F5F7FA;--card:#FFFFFF;--card2:#F0FDF4;--hdr:#1A3A2A;--hdrText:#FFFFFF;--row2:#F2F6FC;--t1:#111827;--t2:#475569;--t3:#64748B;--bd:#BBF7D0;--grid:#DDE7F3;--ac:#16A34A;--acL:#DCFCE7;--acT:#15803D;--hoverBg:#BBF7D0;--hoverFg:#052E16;--okB:#15803D;--okT:#FFFFFF;--buyB:#DCFCE7;--buyT:#166534;--warnB:#FEE2E2;--warnT:#991B1B;--negB:#FCA5A5;--negT:#7F1D1D;--link:#0563C1;--tbg:rgba(255,255,255,.92);--r:12px;--shadow:0 4px 18px rgba(15,23,42,.08);--scroll:#86EFAC;--scrollTrack:#ECFDF5}}
-[data-t=dark]{{--bg:#071510;--card:#0D1F15;--card2:#122B1C;--row2:#0F1824;--t1:#E2E8F0;--t2:#CBD5E1;--t3:#94A3B8;--bd:#1A3A2A;--grid:#243044;--hdr:#122B1C;--tbg:rgba(7,21,16,.92);--hoverBg:#166534;--hoverFg:#ECFDF5;--scroll:#4ADE80;--scrollTrack:#0B1C13;--shadow:0 8px 26px rgba(0,0,0,.35)}}
+:root{{--bg:#F5F7FA;--card:#FFFFFF;--card2:#F0FDF4;--hdr:#1A3A2A;--hdrText:#FFFFFF;--row2:#F2F6FC;--t1:#111827;--t2:#475569;--t3:#64748B;--bd:#BBF7D0;--grid:#DDE7F3;--ac:#16A34A;--acL:#DCFCE7;--acT:#15803D;--hoverRing:#16A34A;--okB:#15803D;--okT:#FFFFFF;--buyB:#DCFCE7;--buyT:#166534;--warnB:#FEE2E2;--warnT:#991B1B;--negB:#FCA5A5;--negT:#7F1D1D;--link:#0563C1;--tbg:rgba(255,255,255,.92);--r:12px;--shadow:0 4px 18px rgba(15,23,42,.08);--scroll:#86EFAC;--scrollTrack:#ECFDF5}}
+[data-t=dark]{{--bg:#071510;--card:#0D1F15;--card2:#122B1C;--row2:#0F1824;--t1:#E2E8F0;--t2:#CBD5E1;--t3:#94A3B8;--bd:#1A3A2A;--grid:#243044;--hdr:#122B1C;--tbg:rgba(7,21,16,.92);--hoverRing:#4ADE80;--scroll:#4ADE80;--scrollTrack:#0B1C13;--shadow:0 8px 26px rgba(0,0,0,.35)}}
 *,*::before,*::after{{box-sizing:border-box}}html{{scroll-behavior:smooth;font-size:14px}}body{{margin:0;font-family:'Noto Sans KR','SOK500','Malgun Gothic',system-ui,sans-serif;background:var(--bg);color:var(--t1);line-height:1.55;font-size:1rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}}button,input{{font:inherit}}a{{color:var(--link);font-weight:800;text-decoration:none}}a:hover{{text-decoration:underline}}
 .topbar{{position:sticky;top:0;z-index:50;background:var(--tbg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:.35rem .9rem;display:flex;align-items:center;gap:.55rem;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--scroll) transparent}}
 .tabs{{display:flex;gap:.2rem;overflow-x:auto;flex:1;min-width:0;scrollbar-width:thin;scrollbar-color:var(--scroll) transparent}}.tab-btn{{border:1px solid var(--bd);background:var(--card);color:var(--t2);border-radius:999px;padding:.28rem .65rem;font-size:.68rem;font-weight:900;white-space:nowrap;cursor:pointer;transition:background .18s,border-color .18s,color .18s,box-shadow .18s}}.tab-btn:hover{{background:var(--acL);border-color:var(--ac);color:var(--acT)}}.tab-btn.on{{background:var(--ac);border-color:var(--ac);color:#fff;box-shadow:0 2px 10px rgba(22,163,74,.20)}}
 .tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
 main{{width:min(1760px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.62rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.9rem;margin:0;font-weight:900}}.panel-head p{{margin:.05rem 0 0;font-size:.7rem;color:var(--t3);font-weight:800}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.68rem;border:1px solid var(--bd);border-radius:6px;padding:.18rem .48rem;background:var(--card);color:var(--acT)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 132px);scrollbar-gutter:stable both-edges;scrollbar-width:thin;scrollbar-color:var(--scroll) var(--scrollTrack)}}.table-wrap::-webkit-scrollbar,.tabs::-webkit-scrollbar,.topbar::-webkit-scrollbar{{width:8px;height:8px}}.table-wrap::-webkit-scrollbar-track,.tabs::-webkit-scrollbar-track,.topbar::-webkit-scrollbar-track{{background:var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb,.tabs::-webkit-scrollbar-thumb,.topbar::-webkit-scrollbar-thumb{{background:var(--scroll);border-radius:999px;border:2px solid var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb:hover,.tabs::-webkit-scrollbar-thumb:hover,.topbar::-webkit-scrollbar-thumb:hover{{background:var(--ac)}}
-table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.68rem;line-height:1.3}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.30rem .34rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}th.sortable{{cursor:pointer;user-select:none}}th.sortable::after{{content:'↕';font-size:.58rem;margin-left:.22rem;color:#BBF7D0}}th.sortable[data-dir='desc']::after{{content:'↓'}}th.sortable[data-dir='asc']::after{{content:'↑'}}td{{padding:.20rem .30rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important;box-shadow:inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--ac),inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:650}}.score-cell,.valuation-cell,.growth-cell,.quality-cell,.momentum-cell,.liquidity-cell,.size-cell,.ownership-cell{{background:#F8FAFC!important;color:#334155!important;font-weight:700}}.risk-cell{{background:#FEF2F2!important;color:#991B1B!important;font-weight:750}}.pos-strong{{background:#15803D!important;color:#FFFFFF!important;font-weight:900;border-radius:4px}}.pos-buy{{background:#DCFCE7!important;color:#166534!important;font-weight:850;border-radius:4px}}.warn{{background:#FEE2E2!important;color:#991B1B!important;font-weight:900;border-radius:4px}}.neg{{background:#FCA5A5!important;color:#7F1D1D!important;font-weight:900;border-radius:4px}}.basis{{min-width:460px;max-width:760px;white-space:normal}}.bullets{{display:grid;gap:.05rem;line-height:1.24;font-size:.64rem}}.basis-cell .bullets{{max-height:none;overflow:visible}}.bullets span{{display:block;padding:.035rem .16rem .035rem .66rem;position:relative;border-left:2px solid transparent;border-radius:4px;font-weight:400}}.bullets span::before{{content:'-';position:absolute;left:.2rem;color:var(--ac);font-weight:700}}.bullets .b-hot{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-flow{{background:#ECFDF5;border-left-color:#16A34A}}.bullets .b-good{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-tech{{background:#F0FDF4;border-left-color:#22C55E}}.bullets .b-risk{{background:#FEE2E2;border-left-color:#DC2626}}.kw{{font-weight:850}}.kw-hot{{color:#15803D}}.kw-flow{{color:#047857}}.kw-good{{color:#166534}}.kw-tech{{color:#16A34A}}.kw-risk{{color:#DC2626}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
-.key-cell{{background:#F0FDF4!important;color:#14532D!important;font-weight:900}}.company-cell{{background:#FFFFFF!important;color:#111827!important;font-weight:700;font-size:.68rem;max-width:92px;min-width:64px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#F8FAFC!important;color:#334155!important;font-weight:850}}.country-kr{{background:#ECFDF5!important;color:#166534!important;font-weight:850}}.signal-cell{{background:#F8FAFC!important;color:#334155!important;max-width:126px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.theme-cell{{background:#F0FDF4!important;color:#166534!important;font-weight:800;max-width:110px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#FAFAFA!important;color:#334155!important;font-weight:400}}.report-cell{{background:#EFF6FF!important;color:#0563C1!important;font-weight:750;max-width:190px;min-width:108px}}.report-cell a{{display:block;max-width:176px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.volume-hot{{background:#15803D!important;color:#FFFFFF!important;font-weight:900}}.volume-watch{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.flow-pos{{background:#16A34A!important;color:#FFFFFF!important;font-weight:900}}.metric-blue,.metric-cyan,.metric-purple{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.metric-soft{{background:#F0FDF4!important;color:#166534!important;font-weight:700}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:850}}
+table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.68rem;line-height:1.3}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.30rem .34rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}th.sortable{{cursor:pointer;user-select:none}}th.sortable::after{{content:'↕';font-size:.58rem;margin-left:.22rem;color:#BBF7D0}}th.sortable[data-dir='desc']::after{{content:'↓'}}th.sortable[data-dir='asc']::after{{content:'↑'}}td{{padding:.20rem .30rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1);transition:filter .12s,box-shadow .12s}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{filter:saturate(1.08) brightness(.985);box-shadow:inset 0 1px 0 var(--hoverRing),inset 0 -1px 0 var(--hoverRing)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--hoverRing),inset 0 1px 0 var(--hoverRing),inset 0 -1px 0 var(--hoverRing)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:650}}.score-cell,.valuation-cell,.growth-cell,.quality-cell,.momentum-cell,.liquidity-cell,.size-cell,.ownership-cell{{background:#F8FAFC!important;color:#334155!important;font-weight:700}}.risk-cell{{background:#FEF2F2!important;color:#991B1B!important;font-weight:750}}.pos-strong,.volume-hot,.flow-pos{{background:#15803D!important;color:#FFFFFF!important;font-weight:900;border-radius:4px}}.pos-buy,.volume-watch{{background:#DCFCE7!important;color:#166534!important;font-weight:850;border-radius:4px}}.warn{{background:#FECACA!important;color:#991B1B!important;font-weight:850;border-radius:4px}}.neg{{background:#F87171!important;color:#7F1D1D!important;font-weight:900;border-radius:4px}}.basis{{min-width:460px;max-width:760px;white-space:normal}}.bullets{{display:grid;gap:.05rem;line-height:1.24;font-size:.64rem}}.basis-cell .bullets{{max-height:none;overflow:visible}}.bullets span{{display:block;padding:.035rem .16rem .035rem .66rem;position:relative;border-left:2px solid transparent;border-radius:4px;font-weight:400}}.bullets span::before{{content:'-';position:absolute;left:.2rem;color:var(--ac);font-weight:700}}.bullets .b-hot{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-flow{{background:#ECFDF5;border-left-color:#16A34A}}.bullets .b-good{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-tech{{background:#F0FDF4;border-left-color:#22C55E}}.bullets .b-risk{{background:#FEE2E2;border-left-color:#DC2626}}.kw{{font-weight:850}}.kw-hot{{color:#15803D}}.kw-flow{{color:#047857}}.kw-good{{color:#166534}}.kw-tech{{color:#16A34A}}.kw-risk{{color:#DC2626}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
+.key-cell{{background:#F0FDF4!important;color:#14532D!important;font-weight:900}}.company-cell{{background:#FFFFFF!important;color:#111827!important;font-weight:700;font-size:.68rem;max-width:92px;min-width:64px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#F8FAFC!important;color:#334155!important;font-weight:850}}.country-kr{{background:#ECFDF5!important;color:#166534!important;font-weight:850}}.signal-cell{{background:#F8FAFC!important;color:#334155!important;max-width:126px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.theme-cell{{background:#F0FDF4!important;color:#166534!important;font-weight:800;max-width:110px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#FAFAFA!important;color:#334155!important;font-weight:400}}.report-cell{{background:#EFF6FF!important;color:#0563C1!important;font-weight:750;max-width:190px;min-width:108px}}.report-cell a{{display:block;max-width:176px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.metric-blue{{background:#EFF6FF!important;color:#1D4ED8!important;font-weight:800}}.metric-cyan{{background:#ECFEFF!important;color:#0E7490!important;font-weight:800}}.metric-purple{{background:#F5F3FF!important;color:#6D28D9!important;font-weight:800}}.metric-soft{{background:#F8FAFC!important;color:#475569!important;font-weight:700}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:850}}.good-1{{background:#ECFDF5!important;color:#166534!important;font-weight:750}}.good-2{{background:#BBF7D0!important;color:#14532D!important;font-weight:800}}.good-3{{background:#86EFAC!important;color:#064E3B!important;font-weight:850}}.good-4{{background:#15803D!important;color:#FFFFFF!important;font-weight:900}}.good-5{{background:#0F5F2A!important;color:#FFFFFF!important;font-weight:900}}.bad-1{{background:#FEF2F2!important;color:#B91C1C!important;font-weight:750}}.bad-2{{background:#FECACA!important;color:#991B1B!important;font-weight:800}}.bad-3{{background:#F87171!important;color:#7F1D1D!important;font-weight:850}}.bad-4{{background:#B91C1C!important;color:#FFFFFF!important;font-weight:900}}.bad-5{{background:#7F1D1D!important;color:#FFFFFF!important;font-weight:900}}[data-t=dark] .good-1{{background:#0D2218!important;color:#86EFAC!important}}[data-t=dark] .good-2{{background:#14532D!important;color:#BBF7D0!important}}[data-t=dark] .good-3{{background:#166534!important;color:#D1FAE5!important}}[data-t=dark] .good-4{{background:#15803D!important;color:#FFFFFF!important}}[data-t=dark] .good-5{{background:#0F5F2A!important;color:#FFFFFF!important}}[data-t=dark] .bad-1{{background:#3A1515!important;color:#FCA5A5!important}}[data-t=dark] .bad-2{{background:#4C1D1D!important;color:#FECACA!important}}[data-t=dark] .bad-3{{background:#7F1D1D!important;color:#FCA5A5!important}}[data-t=dark] .bad-4{{background:#991B1B!important;color:#FFFFFF!important}}[data-t=dark] .bad-5{{background:#7F1D1D!important;color:#FFFFFF!important}}
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
 </head>
@@ -934,6 +934,290 @@ def _number(value: Any) -> float | None:
     return number
 
 
+def _threshold_level(value: float, thresholds: tuple[float, float, float, float, float]) -> int:
+    return min(5, sum(abs(value) >= threshold for threshold in thresholds))
+
+
+def _append_level(tokens: list[str], prefix: str, level: int) -> None:
+    if level > 0:
+        tokens.append(f"{prefix}-{max(1, min(5, level))}")
+
+
+def _append_good(tokens: list[str], level: int) -> None:
+    _append_level(tokens, "good", level)
+
+
+def _append_bad(tokens: list[str], level: int) -> None:
+    _append_level(tokens, "bad", level)
+
+
+def _append_signed_scale(tokens: list[str], number: float, thresholds: tuple[float, float, float, float, float]) -> None:
+    level = _threshold_level(number, thresholds)
+    if number > 0:
+        _append_good(tokens, level)
+    elif number < 0:
+        _append_bad(tokens, level)
+
+
+def _append_scaled_sentiment(tokens: list[str], field: str, number: float | None, value: Any) -> None:
+    if number is None:
+        return
+
+    score_fields = {
+        "investment_priority_score",
+        "long_future_score",
+        "leading_supply_score",
+        "institution_flow_score",
+        "foreign_flow_investment_score",
+        "famous_13f_score",
+        "avg_investment_priority_score",
+        "avg_long_future_score",
+        "avg_leading_supply_score",
+        "guru_position_score",
+    }
+    if field in score_fields:
+        thresholds = (1, 10, 25, 50, 100) if abs(number) > 10 else (0.1, 2, 4, 6, 8)
+        _append_signed_scale(tokens, number, thresholds)
+        return
+
+    if field in {"relative_volume", "avg_relative_volume"}:
+        _append_good(tokens, _threshold_level(number, (1.2, 2, 3, 5, 10)))
+        return
+
+    if field in {
+        "change_pct",
+        "change_from_open_pct",
+        "gap_pct",
+        "sma50_gap_pct",
+        "sma200_gap_pct",
+        "performance_1w",
+        "performance_1m",
+        "performance_3m",
+        "performance_6m",
+        "performance_ytd",
+        "performance_1y",
+    }:
+        _append_signed_scale(tokens, number, (0.1, 5, 10, 25, 50))
+        return
+
+    if field in {
+        "revenue_growth_yoy",
+        "revenue_growth_qoq",
+        "eps_growth_yoy",
+        "eps_growth_qoq",
+        "expected_revenue_growth",
+        "expected_eps_growth",
+    }:
+        _append_signed_scale(tokens, number, (0.1, 5, 10, 25, 50))
+        return
+
+    if field in {"fcf_margin", "roic", "roe", "roa", "gross_margin", "operating_margin", "profit_margin"}:
+        _append_signed_scale(tokens, number, (0.1, 5, 10, 20, 35))
+        return
+
+    if field in {"target_upside_pct", "average_change_pct"}:
+        _append_signed_scale(tokens, number, (0.1, 10, 25, 50, 100))
+        return
+
+    if field in {"foreign_ownership_change_20d", "max_position_weight_change_pct", "average_position_weight_change_pct"}:
+        _append_signed_scale(tokens, number, (0.1, 0.5, 1, 3, 5))
+        return
+
+    if field in {
+        "foreign_net_buy",
+        "foreign_net_buy_5d",
+        "foreign_net_buy_20d",
+        "institution_net_buy",
+        "institution_net_buy_5d",
+        "institution_net_buy_20d",
+        "net_supply_5d",
+        "net_supply_20d",
+        "total_share_change",
+    }:
+        _append_signed_scale(tokens, number, (1, 50_000, 500_000, 2_000_000, 10_000_000))
+        return
+
+    if field in {"foreign_net_buy_amount_mil_krw", "institution_net_buy_amount_mil_krw"}:
+        _append_signed_scale(tokens, number, (1, 500, 2_000, 10_000, 50_000))
+        return
+
+    if field in {"new_institution_count", "increased_institution_count", "position_weight_increased_count"}:
+        _append_good(tokens, _threshold_level(number, (1, 2, 4, 8, 15)))
+        return
+
+    if field in {"decreased_institution_count", "exited_institution_count"}:
+        _append_bad(tokens, _threshold_level(number, (1, 2, 4, 8, 15)))
+        return
+
+    if field in {"forward_per", "trailing_per", "price_to_sales", "price_to_fcf", "enterprise_to_revenue", "enterprise_to_ebitda"}:
+        if 0 < number <= 10:
+            _append_good(tokens, 4)
+        elif 0 < number <= 15:
+            _append_good(tokens, 3)
+        elif 0 < number <= 25:
+            _append_good(tokens, 2)
+        elif 0 < number <= 40:
+            _append_good(tokens, 1)
+        elif number >= 80:
+            _append_bad(tokens, 4)
+        elif number >= 60:
+            _append_bad(tokens, 3)
+        elif number >= 40:
+            _append_bad(tokens, 2)
+        return
+
+    if field == "forward_peg":
+        if 0 < number <= 0.7:
+            _append_good(tokens, 5)
+        elif 0 < number <= 1:
+            _append_good(tokens, 4)
+        elif 0 < number <= 1.5:
+            _append_good(tokens, 3)
+        elif 0 < number <= 2:
+            _append_good(tokens, 2)
+        elif number >= 5:
+            _append_bad(tokens, 4)
+        elif number >= 3:
+            _append_bad(tokens, 3)
+        elif number > 2:
+            _append_bad(tokens, 2)
+        return
+
+    if field == "pbr":
+        if 0 < number <= 1:
+            _append_good(tokens, 4)
+        elif 0 < number <= 2:
+            _append_good(tokens, 3)
+        elif 0 < number <= 4:
+            _append_good(tokens, 1)
+        elif number >= 10:
+            _append_bad(tokens, 4)
+        elif number >= 6:
+            _append_bad(tokens, 3)
+        elif number >= 4:
+            _append_bad(tokens, 2)
+        return
+
+    if field == "distance_to_52w_high_pct":
+        if number >= -1:
+            _append_good(tokens, 4)
+        elif number >= -3:
+            _append_good(tokens, 3)
+        elif number >= -7:
+            _append_good(tokens, 2)
+        elif number <= -20:
+            _append_bad(tokens, 3)
+        elif number <= -10:
+            _append_bad(tokens, 2)
+        return
+
+    if field == "position_52w_pct":
+        if number >= 95:
+            _append_good(tokens, 5)
+        elif number >= 90:
+            _append_good(tokens, 4)
+        elif number >= 75:
+            _append_good(tokens, 3)
+        elif number >= 50:
+            _append_good(tokens, 1)
+        elif number <= 25:
+            _append_bad(tokens, 2)
+        return
+
+    if field == "rsi_14":
+        if 55 <= number <= 70:
+            _append_good(tokens, 3)
+        elif 45 <= number < 55:
+            _append_good(tokens, 1)
+        elif number >= 85:
+            _append_bad(tokens, 4)
+        elif number >= 75:
+            _append_bad(tokens, 3)
+        elif number <= 25:
+            _append_bad(tokens, 2)
+        return
+
+    if field == "adx_14":
+        if number >= 40:
+            _append_good(tokens, 4)
+        elif number >= 30:
+            _append_good(tokens, 3)
+        elif number >= 20:
+            _append_good(tokens, 1)
+        return
+
+    if field in {"volatility_d", "atr_14"}:
+        if number >= 20:
+            _append_bad(tokens, 5)
+        elif number >= 12:
+            _append_bad(tokens, 4)
+        elif number >= 8:
+            _append_bad(tokens, 3)
+        elif number >= 5:
+            _append_bad(tokens, 2)
+        elif number > 0:
+            _append_bad(tokens, 1)
+        return
+
+    if field == "risk_penalty":
+        if number <= 0:
+            _append_good(tokens, 2)
+        elif number <= 0.5:
+            _append_good(tokens, 1)
+        else:
+            _append_bad(tokens, _threshold_level(number, (0.5, 1, 1.5, 2, 3)))
+        return
+
+    if field == "debt_to_equity":
+        if 0 <= number <= 50:
+            _append_good(tokens, 2)
+        elif number >= 400:
+            _append_bad(tokens, 5)
+        elif number >= 250:
+            _append_bad(tokens, 4)
+        elif number >= 150:
+            _append_bad(tokens, 3)
+        elif number >= 100:
+            _append_bad(tokens, 2)
+        elif number >= 50:
+            _append_bad(tokens, 1)
+        return
+
+    if field in {"current_ratio", "quick_ratio"}:
+        if 1 <= number <= 3:
+            _append_good(tokens, 3 if number >= 2 else 2)
+        elif number < 1:
+            _append_bad(tokens, 2)
+        elif number > 5:
+            _append_bad(tokens, 1)
+        return
+
+    if field == "short_percent_float":
+        _append_bad(tokens, _threshold_level(number, (5, 10, 20, 35, 50)))
+        return
+
+    if field == "beta":
+        if 0 < number <= 1:
+            _append_good(tokens, 2)
+        elif number >= 2.5:
+            _append_bad(tokens, 3)
+        elif number >= 2:
+            _append_bad(tokens, 2)
+        elif number >= 1.5:
+            _append_bad(tokens, 1)
+        return
+
+    if field in {"dividend_yield", "foreign_ownership_rate", "institutional_ownership_pct", "insider_ownership_pct"}:
+        if number > 0:
+            _append_good(tokens, _threshold_level(number, (0.1, 1, 3, 5, 10)))
+        return
+
+    if field == "analyst_opinion" and value not in (None, "", []):
+        text = str(value).lower()
+        if "buy" in text or "매수" in text:
+            _append_good(tokens, 3)
+
+
 def _style_tokens(field: str, value: Any) -> list[str]:
     tokens: list[str] = []
     number = _number(value)
@@ -1208,6 +1492,7 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         elif number >= 10:
             tokens.append("warn")
 
+    _append_scaled_sentiment(tokens, field, number, value)
     return tokens
 
 
@@ -1369,10 +1654,20 @@ def _apply_xlsx_cell_style(cell: Any, tokens: list[str], field: str) -> None:
 
 def _xlsx_style(tokens: list[str]) -> tuple[str, str, bool] | None:
     palette = {
+        "good-1": ("ECFDF5", "166534", True),
+        "good-2": ("BBF7D0", "14532D", True),
+        "good-3": ("86EFAC", "064E3B", True),
+        "good-4": ("15803D", "FFFFFF", True),
+        "good-5": ("0F5F2A", "FFFFFF", True),
+        "bad-1": ("FEF2F2", "B91C1C", True),
+        "bad-2": ("FECACA", "991B1B", True),
+        "bad-3": ("F87171", "7F1D1D", True),
+        "bad-4": ("B91C1C", "FFFFFF", True),
+        "bad-5": ("7F1D1D", "FFFFFF", True),
         "pos-strong": ("15803D", "FFFFFF", True),
         "pos-buy": ("DCFCE7", "166534", True),
-        "warn": ("FEE2E2", "991B1B", True),
-        "neg": ("FCA5A5", "7F1D1D", True),
+        "warn": ("FECACA", "991B1B", True),
+        "neg": ("F87171", "7F1D1D", True),
         "volume-hot": ("15803D", "FFFFFF", True),
         "volume-watch": ("DCFCE7", "166534", True),
         "flow-pos": ("16A34A", "FFFFFF", True),
@@ -1385,10 +1680,10 @@ def _xlsx_style(tokens: list[str]) -> tuple[str, str, bool] | None:
         "liquidity-cell": ("F8FAFC", "334155", True),
         "size-cell": ("F8FAFC", "334155", True),
         "ownership-cell": ("F8FAFC", "334155", True),
-        "metric-blue": ("DCFCE7", "166534", True),
-        "metric-cyan": ("DCFCE7", "166534", True),
-        "metric-purple": ("DCFCE7", "166534", True),
-        "metric-soft": ("F0FDF4", "166534", True),
+        "metric-blue": ("EFF6FF", "1D4ED8", True),
+        "metric-cyan": ("ECFEFF", "0E7490", True),
+        "metric-purple": ("F5F3FF", "6D28D9", True),
+        "metric-soft": ("F8FAFC", "475569", True),
         "key-cell": ("F0FDF4", "14532D", True),
         "company-cell": ("FFFFFF", "111827", True),
         "country-us": ("E0F2FE", "075985", True),
@@ -1400,6 +1695,16 @@ def _xlsx_style(tokens: list[str]) -> tuple[str, str, bool] | None:
         "section-cell": ("ECFDF5", "047857", True),
     }
     priority = [
+        "bad-5",
+        "bad-4",
+        "bad-3",
+        "bad-2",
+        "bad-1",
+        "good-5",
+        "good-4",
+        "good-3",
+        "good-2",
+        "good-1",
         "neg",
         "warn",
         "pos-strong",
