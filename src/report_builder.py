@@ -537,8 +537,8 @@ def render_html(payload: dict[str, Any]) -> str:
 .tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
 main{{width:min(1760px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.62rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.9rem;margin:0;font-weight:900}}.panel-head p{{margin:.05rem 0 0;font-size:.7rem;color:var(--t3);font-weight:800}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.68rem;border:1px solid var(--bd);border-radius:6px;padding:.18rem .48rem;background:var(--card);color:var(--acT)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 132px);scrollbar-gutter:stable both-edges;scrollbar-width:thin;scrollbar-color:var(--scroll) var(--scrollTrack)}}.table-wrap::-webkit-scrollbar,.tabs::-webkit-scrollbar,.topbar::-webkit-scrollbar{{width:8px;height:8px}}.table-wrap::-webkit-scrollbar-track,.tabs::-webkit-scrollbar-track,.topbar::-webkit-scrollbar-track{{background:var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb,.tabs::-webkit-scrollbar-thumb,.topbar::-webkit-scrollbar-thumb{{background:var(--scroll);border-radius:999px;border:2px solid var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb:hover,.tabs::-webkit-scrollbar-thumb:hover,.topbar::-webkit-scrollbar-thumb:hover{{background:var(--ac)}}
-table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem;line-height:1.34}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.34rem .42rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}td{{padding:.24rem .42rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important;box-shadow:inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--ac),inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:700}}.pos-strong{{background:var(--okB)!important;color:var(--okT)!important;font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT)!important;font-weight:900;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT)!important;font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT)!important;font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:430px}}.bullets{{display:grid;gap:.04rem;line-height:1.3;font-size:.71rem}}.basis-cell .bullets{{max-height:3.8rem;overflow:hidden}}.bullets span{{display:block;padding-left:.72rem;position:relative}}.bullets span::before{{content:'-';position:absolute;left:0;color:var(--ac);font-weight:900}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:900;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
-.key-cell{{background:#EAF2FF!important;color:#0D47A1!important;font-weight:900}}.company-cell{{color:var(--t1)!important;font-weight:900;font-size:.73rem;max-width:150px;min-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#E0F2FE!important;color:#075985!important;font-weight:900}}.country-kr{{background:#ECFDF5!important;color:#166534!important;font-weight:900}}.signal-cell{{background:#F8FAFC!important;color:#334155!important;max-width:170px}}.theme-cell{{background:#EDE9FE!important;color:#5B21B6!important;font-weight:900;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#F8FAFC!important;color:#334155!important;font-weight:800}}.report-cell{{background:#EFF6FF!important;color:#0563C1!important;font-weight:900;max-width:280px;min-width:150px}}.report-cell a{{display:block;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.volume-hot{{background:#FDE68A!important;color:#92400E!important;font-weight:900}}.volume-watch{{background:#FEF3C7!important;color:#92400E!important;font-weight:900}}.flow-pos{{background:#DCFCE7!important;color:#166534!important;font-weight:900}}.metric-blue{{background:#DBEAFE!important;color:#1E40AF!important;font-weight:900}}.metric-cyan{{background:#CCFBF1!important;color:#0F766E!important;font-weight:900}}.metric-purple{{background:#F3E8FF!important;color:#6B21A8!important;font-weight:900}}.metric-soft{{background:#F1F5F9!important;color:#334155!important;font-weight:800}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:900}}
+table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem;line-height:1.34}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.34rem .42rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}td{{padding:.24rem .42rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important;box-shadow:inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--ac),inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:650}}.score-cell{{background:#DCFCE7!important;color:#14532D!important;font-weight:800}}.valuation-cell{{background:#FFF7ED!important;color:#9A3412!important;font-weight:750}}.growth-cell{{background:#ECFCCB!important;color:#3F6212!important;font-weight:800}}.quality-cell{{background:#CCFBF1!important;color:#0F766E!important;font-weight:800}}.momentum-cell{{background:#FEF3C7!important;color:#92400E!important;font-weight:800}}.risk-cell{{background:#FFE4E6!important;color:#9F1239!important;font-weight:800}}.liquidity-cell{{background:#FFEDD5!important;color:#C2410C!important;font-weight:800}}.size-cell{{background:#F5F3FF!important;color:#6D28D9!important;font-weight:800}}.ownership-cell{{background:#E0F2FE!important;color:#075985!important;font-weight:800}}.pos-strong{{background:var(--okB)!important;color:var(--okT)!important;font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT)!important;font-weight:850;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT)!important;font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT)!important;font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:430px}}.bullets{{display:grid;gap:.08rem;line-height:1.32;font-size:.71rem}}.basis-cell .bullets{{max-height:3.9rem;overflow:hidden}}.bullets span{{display:block;padding:.05rem .2rem .05rem .72rem;position:relative;border-left:2px solid transparent;border-radius:4px;font-weight:500}}.bullets span::before{{content:'-';position:absolute;left:.2rem;color:var(--ac);font-weight:800}}.bullets .b-hot{{background:#FFF7ED;border-left-color:#F97316}}.bullets .b-flow{{background:#F0FDFA;border-left-color:#14B8A6}}.bullets .b-good{{background:#F0FDF4;border-left-color:#22C55E}}.bullets .b-tech{{background:#EEF2FF;border-left-color:#6366F1}}.bullets .b-risk{{background:#FFF1F2;border-left-color:#E11D48}}.kw{{font-weight:900}}.kw-hot{{color:#C2410C}}.kw-flow{{color:#0F766E}}.kw-good{{color:#15803D}}.kw-tech{{color:#4338CA}}.kw-risk{{color:#BE123C}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
+.key-cell{{background:#EEF2FF!important;color:#3730A3!important;font-weight:900}}.company-cell{{background:#FFFBEB!important;color:#713F12!important;font-weight:700;font-size:.73rem;max-width:150px;min-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#E0F2FE!important;color:#075985!important;font-weight:850}}.country-kr{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.signal-cell{{background:#FDF4FF!important;color:#86198F!important;max-width:170px;font-weight:700}}.theme-cell{{background:#FEF3C7!important;color:#92400E!important;font-weight:800;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#FAFAFA!important;color:#334155!important;font-weight:500}}.report-cell{{background:#DBEAFE!important;color:#1D4ED8!important;font-weight:750;max-width:280px;min-width:150px}}.report-cell a{{display:block;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.volume-hot{{background:#FED7AA!important;color:#C2410C!important;font-weight:900}}.volume-watch{{background:#FEF3C7!important;color:#A16207!important;font-weight:850}}.flow-pos{{background:#BBF7D0!important;color:#166534!important;font-weight:900}}.metric-blue{{background:#E0E7FF!important;color:#3730A3!important;font-weight:800}}.metric-cyan{{background:#CCFBF1!important;color:#0F766E!important;font-weight:800}}.metric-purple{{background:#F3E8FF!important;color:#7E22CE!important;font-weight:800}}.metric-soft{{background:#F8FAFC!important;color:#475569!important;font-weight:650}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:850}}
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
 </head>
@@ -716,9 +716,54 @@ def _link(url: str, label: str) -> str:
 def _format_bullets(value: str) -> str:
     parts = _basis_parts(value)
     if len(parts) <= 1:
-        return html.escape(_clean_display_text(value))
-    items = "".join(f"<span>{html.escape(part)}</span>" for part in parts)
+        return _highlight_keywords(_clean_display_text(value))
+    items = "".join(f"<span class='{_bullet_class(part)}'>{_highlight_keywords(part)}</span>" for part in parts)
     return f"<div class='bullets'>{items}</div>"
+
+
+def _bullet_class(value: str) -> str:
+    text = str(value)
+    if re.search(r"리스크|감소|청산|하락|부채|공매도|-\d", text):
+        return "b-risk"
+    if re.search(r"외국인|기관|순매수|수급|신규|증가|보유", text):
+        return "b-flow"
+    if re.search(r"거래량|신고가|52주|급증|돌파", text):
+        return "b-hot"
+    if re.search(r"RSI|ADX|베타|갭|이동평균|성과", text, re.IGNORECASE):
+        return "b-tech"
+    if re.search(r"FCF|ROIC|ROE|성장|목표가|상승|마진|저평가", text, re.IGNORECASE):
+        return "b-good"
+    return "b-neutral"
+
+
+def _highlight_keywords(value: str) -> str:
+    text = _clean_display_text(str(value))
+    pattern = re.compile(
+        r"(거래량 급증|52주 신고가|상대거래량|거래량|신고가|52주|외국인|기관|순매수|수급|신규|증가|보유|FCF마진|FCF|ROIC|ROE|성장|목표가|상승|마진|성과|RSI|ADX|베타|갭|리스크|감소|청산|하락|부채비율|부채|공매도|-\d+%)",
+        re.IGNORECASE,
+    )
+    output: list[str] = []
+    last = 0
+    for match in pattern.finditer(text):
+        output.append(html.escape(text[last : match.start()]))
+        token = match.group(0)
+        output.append(f"<strong class='kw {_keyword_class(token)}'>{html.escape(token)}</strong>")
+        last = match.end()
+    output.append(html.escape(text[last:]))
+    return "".join(output)
+
+
+def _keyword_class(value: str) -> str:
+    text = value.lower()
+    if re.search(r"리스크|감소|청산|하락|부채|공매도|-", text):
+        return "kw-risk"
+    if re.search(r"외국인|기관|순매수|수급|신규|증가|보유", text):
+        return "kw-flow"
+    if re.search(r"거래량|신고가|52주|급증", text):
+        return "kw-hot"
+    if re.search(r"rsi|adx|베타|갭|성과", text):
+        return "kw-tech"
+    return "kw-good"
 
 
 def _compact_number(value: Any) -> str:
@@ -874,6 +919,34 @@ def _style_tokens(field: str, value: Any) -> list[str]:
         tokens.append("basis-cell")
     if field in {"recent_report_title", "report_link", "source_url"}:
         tokens.append("report-cell")
+    if field in {
+        "investment_priority_score",
+        "long_future_score",
+        "leading_supply_score",
+        "institution_flow_score",
+        "foreign_flow_investment_score",
+        "famous_13f_score",
+        "avg_investment_priority_score",
+        "avg_long_future_score",
+        "avg_leading_supply_score",
+    }:
+        tokens.append("score-cell")
+    if field in {"forward_per", "forward_peg", "trailing_per", "pbr", "price_to_sales", "price_to_fcf", "enterprise_to_revenue", "enterprise_to_ebitda"}:
+        tokens.append("valuation-cell")
+    if field in {"revenue_growth_yoy", "revenue_growth_qoq", "eps_growth_yoy", "eps_growth_qoq", "expected_revenue_growth", "expected_eps_growth"}:
+        tokens.append("growth-cell")
+    if field in {"fcf_margin", "roic", "roe", "roa", "gross_margin", "operating_margin", "profit_margin", "current_ratio", "quick_ratio"}:
+        tokens.append("quality-cell")
+    if field in {"distance_to_52w_high_pct", "position_52w_pct", "sma50_gap_pct", "sma200_gap_pct", "change_pct", "change_from_open_pct", "gap_pct", "performance_1w", "performance_1m", "performance_3m", "performance_6m", "performance_ytd", "performance_1y", "rsi_14", "adx_14", "atr_14", "beta"}:
+        tokens.append("momentum-cell")
+    if field in {"risk_penalty", "debt_to_equity", "short_percent_float", "volatility_d", "decreased_institution_count", "exited_institution_count"}:
+        tokens.append("risk-cell")
+    if field in {"market_cap", "enterprise_value", "total_revenue", "total_cash", "total_debt"}:
+        tokens.append("size-cell")
+    if field in {"volume", "average_volume_30d", "relative_volume", "avg_relative_volume", "float_shares", "shares_outstanding", "foreign_rank_volume", "institution_rank_volume"}:
+        tokens.append("liquidity-cell")
+    if field in {"foreign_ownership_rate", "institutional_ownership_pct", "insider_ownership_pct", "foreign_ownership_change_20d"}:
+        tokens.append("ownership-cell")
 
     score_fields = {
         "investment_priority_score",
@@ -891,8 +964,6 @@ def _style_tokens(field: str, value: Any) -> list[str]:
             tokens.append("pos-strong")
         elif number >= 5:
             tokens.append("pos-buy")
-        elif number > 0:
-            tokens.append("metric-soft")
 
     if field in {"relative_volume", "avg_relative_volume"} and number is not None:
         if number >= 5:
@@ -1239,6 +1310,15 @@ def _xlsx_style(tokens: list[str]) -> tuple[str, str, bool] | None:
         "volume-hot": ("FDE68A", "92400E", True),
         "volume-watch": ("FEF3C7", "92400E", True),
         "flow-pos": ("DCFCE7", "166534", True),
+        "score-cell": ("DCFCE7", "14532D", True),
+        "valuation-cell": ("FFF7ED", "9A3412", True),
+        "growth-cell": ("ECFCCB", "3F6212", True),
+        "quality-cell": ("CCFBF1", "0F766E", True),
+        "momentum-cell": ("FEF3C7", "92400E", True),
+        "risk-cell": ("FFE4E6", "9F1239", True),
+        "liquidity-cell": ("FFEDD5", "C2410C", True),
+        "size-cell": ("F5F3FF", "6D28D9", True),
+        "ownership-cell": ("E0F2FE", "075985", True),
         "metric-blue": ("DBEAFE", "1E40AF", True),
         "metric-cyan": ("CCFBF1", "0F766E", True),
         "metric-purple": ("F3E8FF", "6B21A8", True),
@@ -1261,6 +1341,15 @@ def _xlsx_style(tokens: list[str]) -> tuple[str, str, bool] | None:
         "pos-buy",
         "volume-watch",
         "flow-pos",
+        "score-cell",
+        "risk-cell",
+        "liquidity-cell",
+        "growth-cell",
+        "quality-cell",
+        "momentum-cell",
+        "valuation-cell",
+        "size-cell",
+        "ownership-cell",
         "metric-purple",
         "metric-blue",
         "metric-cyan",
