@@ -250,7 +250,7 @@ def _aggregate_changes(
             score += len(weight_increased_items) * 5
         base = items[0]
         issuer = base.get("nameOfIssuer")
-        ticker = ticker_map.get(_normalize_issuer_name(issuer))
+        ticker = _lookup_ticker(ticker_map, issuer, base.get("cusip"))
         records.append(
             {
                 "date": run_date.isoformat(),
@@ -349,14 +349,65 @@ def _load_sec_ticker_map(raw_dir: Path) -> dict[str, str]:
     except ValueError:
         return {}
     output: dict[str, str] = {}
+    rows = sorted(rows, key=_ticker_row_priority)
     for row in rows:
         if not isinstance(row, list) or len(row) <= max(name_index, ticker_index):
             continue
-        name = _normalize_issuer_name(row[name_index])
         ticker = str(row[ticker_index] or "").strip().upper()
-        if name and ticker:
+        if not ticker:
+            continue
+        for name in _ticker_match_keys(row[name_index]):
             output.setdefault(name, ticker)
+    for name, ticker in SEC_TICKER_ALIASES.items():
+        output.setdefault(name, ticker)
     return output
+
+
+def _ticker_row_priority(row: Any) -> tuple[int, int, str]:
+    if not isinstance(row, list) or len(row) < 4:
+        return (99, 99, "")
+    ticker = str(row[2] or "").strip().upper()
+    exchange = str(row[3] or "").strip().upper()
+    exchange_rank = {"NYSE": 0, "NASDAQ": 1, "NYSE ARCA": 2, "NYSEAMERICAN": 3, "OTC": 8}.get(exchange, 5)
+    class_rank = 3 if "-" in ticker else 0
+    return (exchange_rank, class_rank, ticker)
+
+
+def _lookup_ticker(ticker_map: dict[str, str], issuer: Any, cusip: Any = None) -> str | None:
+    cusip_key = str(cusip or "").strip().upper()
+    if cusip_key in SEC_CUSIP_TICKER_ALIASES:
+        return SEC_CUSIP_TICKER_ALIASES[cusip_key]
+    for key in _ticker_match_keys(issuer):
+        ticker = SEC_TICKER_ALIASES.get(key) or ticker_map.get(key)
+        if ticker:
+            return ticker
+    issuer_key = _issuer_match_key(issuer)
+    if len(issuer_key) < 6:
+        return None
+    matches: list[tuple[int, str]] = []
+    issuer_tokens = issuer_key.split()
+    for name, ticker in ticker_map.items():
+        if len(name) < 6:
+            continue
+        name_tokens = name.split()
+        if not name_tokens or not issuer_tokens or name_tokens[0] != issuer_tokens[0]:
+            continue
+        if name.startswith(issuer_key) or issuer_key.startswith(name):
+            matches.append((abs(len(name) - len(issuer_key)), ticker))
+            continue
+        if len(name_tokens) >= 2 and len(issuer_tokens) >= 2 and name_tokens[:2] == issuer_tokens[:2]:
+            overlap = sum(1 for token in issuer_tokens if token in name_tokens)
+            if overlap >= min(3, len(issuer_tokens)):
+                matches.append((10 + abs(len(name) - len(issuer_key)), ticker))
+    return sorted(matches)[0][1] if matches else None
+
+
+def _ticker_match_keys(value: Any) -> list[str]:
+    keys = []
+    for key in (_normalize_issuer_name(value), _issuer_match_key(value)):
+        if key and key not in keys:
+            keys.append(key)
+    return keys
 
 
 def _normalize_issuer_name(value: Any) -> str:
@@ -366,6 +417,110 @@ def _normalize_issuer_name(value: Any) -> str:
     text = re.sub(r"\b(CL|CLASS|COM|COMMON|SHS|SHARES|STOCK|ORD|NEW|THE)\b", " ", text)
     text = re.sub(r"\s+", " ", text).strip()
     return text
+
+
+def _issuer_match_key(value: Any) -> str:
+    text = _normalize_issuer_name(value)
+    replacements = {
+        "HLDNGS": "HOLDINGS",
+        "HLDGS": "HOLDINGS",
+        "HLDG": "HOLDINGS",
+        "MGMT": "MANAGEMENT",
+        "MANAGMT": "MANAGEMENT",
+        "GEN": "GENERAL",
+        "ELEC": "ELECTRIC",
+        "INDS": "INDUSTRIES",
+        "INDL": "INDUSTRIAL",
+        "INSTRS": "INSTRUMENTS",
+        "MATLS": "MATERIALS",
+        "MANUFAC": "MANUFACTURING",
+        "MFG": "MANUFACTURING",
+        "INTL": "INTERNATIONAL",
+        "TECH": "TECHNOLOGY",
+        "STR": "STREET",
+        "DISC": "DISCOUNT",
+        "FINL": "FINANCIAL",
+        "NATL": "NATIONAL",
+        "NAT": "NATURAL",
+        "PPTY": "PROPERTY",
+        "PPTYS": "PROPERTIES",
+        "CTRS": "CENTERS",
+        "SVCS": "SERVICES",
+        "SVSC": "SERVICES",
+        "SYS": "SYSTEMS",
+        "WKS": "WORKS",
+        "PRODS": "PRODUCTS",
+        "APT": "APARTMENT",
+        "CMNTYS": "COMMUNITIES",
+        "AMER": "AMERICA",
+        "AMERN": "AMERICAN",
+        "WTR": "WATER",
+        "UTILS": "UTILITIES",
+        "SVC": "SERVICE",
+        "MTR": "MOTOR",
+        "MNG": "MINING",
+        "BK": "BANK",
+        "MTNS": "MOUNTAINS",
+        "INS": "INSURANCE",
+        "DEVS": "DEVELOPMENTS",
+        "TRANSN": "TRANSPORTATION",
+        "LABS": "LABORATORIES",
+        "COS": "COMPANIES",
+    }
+    for source, target in replacements.items():
+        text = re.sub(rf"\b{source}\b", target, text)
+    text = re.sub(
+        r"\b(CORP|CORPORATION|INC|INCORPORATED|PLC|LTD|LIMITED|CO|COMPANY|LP|LLC|HOLDINGS|GROUP|NV|N V|SA|S A|AG|DE|DEL|OR|PA|VA|UK|NEW|ETF|TRUST|TR|T)\b",
+        " ",
+        text,
+    )
+    text = re.sub(r"\s+", " ", text).strip()
+    return text
+
+
+SEC_TICKER_ALIASES = {
+    "STATE STREET SPDR S P 500": "SPY",
+    "STATE STREET SPDR S P 500 ETF": "SPY",
+    "STATE STREET SPDR S P 500 ETF T": "SPY",
+    "SPDR S P 500": "SPY",
+    "D R HORTON": "DHI",
+    "MACYS": "M",
+    "CRH": "CRH",
+    "BOBS DISCOUNT FURNITURE": "BOBS",
+    "PETROLEO BRASILEIRO": "PBR",
+    "BANK AMERICA": "BAC",
+    "CADENCE BANK": "CADE",
+    "POTLATCHDELTIC": "PCH",
+    "TELEFONAKTIEBOLAGET LM ERICS": "ERIC",
+    "TELEFONAKTIEBOLAGET LM ERICSSON": "ERIC",
+    "MIDCAP FINANCIAL INVESTMENT": "MFIC",
+    "MIDCAP FINANCIAL INVSTMNT": "MFIC",
+    "MADDEN STEVEN": "SHOO",
+    "FORGE GLOBAL": "FRGE",
+    "AMICUS THERAPEUTICS": "FOLD",
+    "SEMRUSH": "SEMR",
+    "EXACT SCIENCES": "EXAS",
+    "WP CAREY": "WPC",
+    "ONESTREAM": "OS",
+}
+
+
+SEC_CUSIP_TICKER_ALIASES = {
+    "12740C103": "CADE",
+    "737630103": "PCH",
+    "294821608": "ERIC",
+    "03761U502": "MFIC",
+    "81369Y506": "XLE",
+    "81369Y605": "XLF",
+    "78464A888": "XHB",
+    "556269108": "SHOO",
+    "34629L202": "FRGE",
+    "03152W109": "FOLD",
+    "81686C104": "SEMR",
+    "30063P105": "EXAS",
+    "92936U109": "WPC",
+    "68278B107": "OS",
+}
 
 
 def _basis(

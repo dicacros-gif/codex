@@ -67,7 +67,7 @@ STOCK_COLUMNS = [
     ("performance_6m", "6개월성과"),
     ("performance_ytd", "YTD성과"),
     ("performance_1y", "1년성과"),
-    ("investment_priority_score", "투자우선점수"),
+    ("investment_priority_score", "투자점수"),
     ("long_future_score", "장기/미래점수"),
     ("leading_supply_score", "선행수급점수"),
     ("foreign_flow_investment_score", "외국인수급점수"),
@@ -134,7 +134,7 @@ PRIORITY_COLUMNS = [
     ("company_name", "기업명"),
     ("close", "종가"),
     ("market_cap", "시가총액"),
-    ("investment_priority_score", "투자우선점수"),
+    ("investment_priority_score", "투자점수"),
     ("future_industry_theme", "미래산업테마"),
     ("core_basis", "핵심근거"),
     ("forward_per", "Forward PER"),
@@ -158,6 +158,7 @@ LEADING_COLUMNS = [
     ("company_name", "기업명"),
     ("signals", "포착신호"),
     ("close", "종가"),
+    ("investment_priority_score", "투자점수"),
     ("leading_supply_score", "선행수급점수"),
     ("relative_volume", "상대거래량"),
     ("change_pct", "등락률"),
@@ -180,6 +181,7 @@ LONG_TERM_COLUMNS = [
     ("company_name", "기업명"),
     ("close", "종가"),
     ("market_cap", "시가총액"),
+    ("investment_priority_score", "투자점수"),
     ("long_future_score", "장기/미래점수"),
     ("future_industry_theme", "미래산업테마"),
     ("total_revenue", "매출액"),
@@ -209,6 +211,7 @@ FOREIGN_COLUMNS = [
     ("company_name", "기업명"),
     ("close", "종가"),
     ("market_cap", "시가총액"),
+    ("investment_priority_score", "투자점수"),
     ("foreign_flow_investment_score", "외국인수급점수"),
     ("foreign_net_buy", "외국인순매수"),
     ("foreign_net_buy_amount_mil_krw", "외국인금액(백만)"),
@@ -238,6 +241,7 @@ INSTITUTION_COLUMNS = [
     ("company_name", "기업명"),
     ("close", "종가"),
     ("market_cap", "시가총액"),
+    ("investment_priority_score", "투자점수"),
     ("institution_flow_score", "기관수급점수"),
     ("institution_net_buy", "기관순매수"),
     ("institution_net_buy_amount_mil_krw", "기관금액(백만)"),
@@ -270,6 +274,7 @@ HIGH_COLUMNS = [
     ("distance_to_52w_high_pct", "고가괴리"),
     ("position_52w_pct", "52주위치"),
     ("market_cap", "시가총액"),
+    ("investment_priority_score", "투자점수"),
     ("beta", "베타"),
     ("sma50_gap_pct", "50일선괴리"),
     ("sma200_gap_pct", "200일선괴리"),
@@ -287,6 +292,7 @@ VOLUME_COLUMNS = [
     ("ticker", "티커"),
     ("company_name", "기업명"),
     ("close", "종가"),
+    ("investment_priority_score", "투자점수"),
     ("volume", "거래량"),
     ("average_volume_30d", "평균거래량"),
     ("relative_volume", "상대거래량"),
@@ -320,6 +326,7 @@ F13_COLUMNS = [
     ("date", "날짜"),
     ("company_name", "보유종목/발행사"),
     ("ticker", "티커"),
+    ("investment_priority_score", "투자점수"),
     ("new_institution_count", "신규기관수"),
     ("increased_institution_count", "증가기관수"),
     ("position_weight_increased_count", "비중증가기관수"),
@@ -537,8 +544,8 @@ def render_html(payload: dict[str, Any]) -> str:
 .tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
 main{{width:min(1760px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.62rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.9rem;margin:0;font-weight:900}}.panel-head p{{margin:.05rem 0 0;font-size:.7rem;color:var(--t3);font-weight:800}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.68rem;border:1px solid var(--bd);border-radius:6px;padding:.18rem .48rem;background:var(--card);color:var(--acT)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 132px);scrollbar-gutter:stable both-edges;scrollbar-width:thin;scrollbar-color:var(--scroll) var(--scrollTrack)}}.table-wrap::-webkit-scrollbar,.tabs::-webkit-scrollbar,.topbar::-webkit-scrollbar{{width:8px;height:8px}}.table-wrap::-webkit-scrollbar-track,.tabs::-webkit-scrollbar-track,.topbar::-webkit-scrollbar-track{{background:var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb,.tabs::-webkit-scrollbar-thumb,.topbar::-webkit-scrollbar-thumb{{background:var(--scroll);border-radius:999px;border:2px solid var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb:hover,.tabs::-webkit-scrollbar-thumb:hover,.topbar::-webkit-scrollbar-thumb:hover{{background:var(--ac)}}
-table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem;line-height:1.34}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.34rem .42rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}td{{padding:.24rem .42rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important;box-shadow:inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--ac),inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:650}}.score-cell,.valuation-cell,.growth-cell,.quality-cell,.momentum-cell,.liquidity-cell,.size-cell,.ownership-cell{{background:#F8FAFC!important;color:#334155!important;font-weight:700}}.risk-cell{{background:#FEF2F2!important;color:#991B1B!important;font-weight:750}}.pos-strong{{background:#15803D!important;color:#FFFFFF!important;font-weight:900;border-radius:4px}}.pos-buy{{background:#DCFCE7!important;color:#166534!important;font-weight:850;border-radius:4px}}.warn{{background:#FEE2E2!important;color:#991B1B!important;font-weight:900;border-radius:4px}}.neg{{background:#FCA5A5!important;color:#7F1D1D!important;font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:430px}}.bullets{{display:grid;gap:.08rem;line-height:1.32;font-size:.71rem}}.basis-cell .bullets{{max-height:3.9rem;overflow:hidden}}.bullets span{{display:block;padding:.05rem .2rem .05rem .72rem;position:relative;border-left:2px solid transparent;border-radius:4px;font-weight:500}}.bullets span::before{{content:'-';position:absolute;left:.2rem;color:var(--ac);font-weight:800}}.bullets .b-hot{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-flow{{background:#ECFDF5;border-left-color:#16A34A}}.bullets .b-good{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-tech{{background:#F0FDF4;border-left-color:#22C55E}}.bullets .b-risk{{background:#FEE2E2;border-left-color:#DC2626}}.kw{{font-weight:900}}.kw-hot{{color:#15803D}}.kw-flow{{color:#047857}}.kw-good{{color:#166534}}.kw-tech{{color:#16A34A}}.kw-risk{{color:#DC2626}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
-.key-cell{{background:#F0FDF4!important;color:#14532D!important;font-weight:900}}.company-cell{{background:#FFFFFF!important;color:#111827!important;font-weight:700;font-size:.73rem;max-width:150px;min-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#F8FAFC!important;color:#334155!important;font-weight:850}}.country-kr{{background:#ECFDF5!important;color:#166534!important;font-weight:850}}.signal-cell{{background:#F8FAFC!important;color:#334155!important;max-width:170px;font-weight:700}}.theme-cell{{background:#F0FDF4!important;color:#166534!important;font-weight:800;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#FAFAFA!important;color:#334155!important;font-weight:500}}.report-cell{{background:#EFF6FF!important;color:#0563C1!important;font-weight:750;max-width:280px;min-width:150px}}.report-cell a{{display:block;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.volume-hot{{background:#15803D!important;color:#FFFFFF!important;font-weight:900}}.volume-watch{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.flow-pos{{background:#16A34A!important;color:#FFFFFF!important;font-weight:900}}.metric-blue,.metric-cyan,.metric-purple{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.metric-soft{{background:#F0FDF4!important;color:#166534!important;font-weight:700}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:850}}
+table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem;line-height:1.34}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.34rem .42rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}th.sortable{{cursor:pointer;user-select:none}}th.sortable::after{{content:'↕';font-size:.58rem;margin-left:.22rem;color:#BBF7D0}}th.sortable[data-dir='desc']::after{{content:'↓'}}th.sortable[data-dir='asc']::after{{content:'↑'}}td{{padding:.24rem .42rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important;box-shadow:inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--ac),inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:650}}.score-cell,.valuation-cell,.growth-cell,.quality-cell,.momentum-cell,.liquidity-cell,.size-cell,.ownership-cell{{background:#F8FAFC!important;color:#334155!important;font-weight:700}}.risk-cell{{background:#FEF2F2!important;color:#991B1B!important;font-weight:750}}.pos-strong{{background:#15803D!important;color:#FFFFFF!important;font-weight:900;border-radius:4px}}.pos-buy{{background:#DCFCE7!important;color:#166534!important;font-weight:850;border-radius:4px}}.warn{{background:#FEE2E2!important;color:#991B1B!important;font-weight:900;border-radius:4px}}.neg{{background:#FCA5A5!important;color:#7F1D1D!important;font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:430px}}.bullets{{display:grid;gap:.06rem;line-height:1.28;font-size:.66rem}}.basis-cell .bullets{{max-height:3.6rem;overflow:hidden}}.bullets span{{display:block;padding:.04rem .18rem .04rem .68rem;position:relative;border-left:2px solid transparent;border-radius:4px;font-weight:400}}.bullets span::before{{content:'-';position:absolute;left:.2rem;color:var(--ac);font-weight:700}}.bullets .b-hot{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-flow{{background:#ECFDF5;border-left-color:#16A34A}}.bullets .b-good{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-tech{{background:#F0FDF4;border-left-color:#22C55E}}.bullets .b-risk{{background:#FEE2E2;border-left-color:#DC2626}}.kw{{font-weight:850}}.kw-hot{{color:#15803D}}.kw-flow{{color:#047857}}.kw-good{{color:#166534}}.kw-tech{{color:#16A34A}}.kw-risk{{color:#DC2626}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
+.key-cell{{background:#F0FDF4!important;color:#14532D!important;font-weight:900}}.company-cell{{background:#FFFFFF!important;color:#111827!important;font-weight:700;font-size:.73rem;max-width:150px;min-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#F8FAFC!important;color:#334155!important;font-weight:850}}.country-kr{{background:#ECFDF5!important;color:#166534!important;font-weight:850}}.signal-cell{{background:#F8FAFC!important;color:#334155!important;max-width:170px;font-weight:700}}.theme-cell{{background:#F0FDF4!important;color:#166534!important;font-weight:800;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#FAFAFA!important;color:#334155!important;font-weight:400}}.report-cell{{background:#EFF6FF!important;color:#0563C1!important;font-weight:750;max-width:280px;min-width:150px}}.report-cell a{{display:block;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.volume-hot{{background:#15803D!important;color:#FFFFFF!important;font-weight:900}}.volume-watch{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.flow-pos{{background:#16A34A!important;color:#FFFFFF!important;font-weight:900}}.metric-blue,.metric-cyan,.metric-purple{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.metric-soft{{background:#F0FDF4!important;color:#166534!important;font-weight:700}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:850}}
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
 </head>
@@ -561,6 +568,22 @@ tabs.forEach(btn=>btn.addEventListener('click',()=>{{
   tabs.forEach(item=>item.classList.toggle('on',item===btn));
   panels.forEach(panel=>panel.classList.toggle('on',panel.id==='panel-'+btn.dataset.tab));
   window.scrollTo({{top:0,behavior:'smooth'}});
+}}));
+document.querySelectorAll('th.sortable').forEach(th=>th.addEventListener('click',()=>{{
+  const table=th.closest('table');
+  const tbody=table?.querySelector('tbody');
+  if(!tbody) return;
+  const index=[...th.parentElement.children].indexOf(th);
+  const descending=th.dataset.dir!=='desc';
+  const rows=[...tbody.querySelectorAll('tr')];
+  rows.sort((a,b)=>{{
+    const av=parseFloat(a.children[index]?.dataset.sortValue||'-Infinity');
+    const bv=parseFloat(b.children[index]?.dataset.sortValue||'-Infinity');
+    return descending ? bv-av : av-bv;
+  }});
+  th.parentElement.querySelectorAll('th.sortable').forEach(item=>delete item.dataset.dir);
+  th.dataset.dir=descending?'desc':'asc';
+  rows.forEach(row=>tbody.appendChild(row));
 }}));
 document.getElementById('modeToggle').addEventListener('click',()=>{{
   const next=document.body.getAttribute('data-t')==='dark'?'light':'dark';
@@ -603,9 +626,15 @@ def _render_table(section_key: str, rows: list[dict[str, Any]]) -> str:
     if not rows:
         return "<div class='empty'>표시할 데이터가 없습니다.</div>"
     columns = _columns_for_rows(SECTION_COLUMNS.get(section_key, STOCK_COLUMNS), rows)
-    head = "".join(f"<th>{html.escape(label)}</th>" for _, label in columns)
+    head = "".join(_render_header(field, label) for field, label in columns)
     body = "\n".join(_render_row(row, columns) for row in rows)
     return f"<div class='table-wrap'><table><thead><tr>{head}</tr></thead><tbody>{body}</tbody></table></div>"
+
+
+def _render_header(field: str, label: str) -> str:
+    if field == "investment_priority_score":
+        return f"<th class='sortable' data-sort='numeric'>{html.escape(label)}</th>"
+    return f"<th>{html.escape(label)}</th>"
 
 
 def _display_columns(columns: list[tuple[str, str]]) -> list[tuple[str, str]]:
@@ -626,6 +655,7 @@ def _field_has_display(field: str, rows: list[dict[str, Any]]) -> bool:
         "country",
         "ticker",
         "company_name",
+        "investment_priority_score",
         "future_industry_theme",
         "section",
         "row_count",
@@ -650,8 +680,17 @@ def _render_row(row: dict[str, Any], columns: list[tuple[str, str]]) -> str:
         classes = _classes(field, value)
         title = _cell_title(field, value, row)
         title_attr = f" title='{html.escape(title, quote=True)}'" if title else ""
-        cells.append(f"<td class='{classes}'{title_attr}>{_format_cell(field, value, row)}</td>")
+        sort_attr = _sort_value_attr(field, value)
+        cells.append(f"<td class='{classes}'{title_attr}{sort_attr}>{_format_cell(field, value, row)}</td>")
     return "<tr>" + "".join(cells) + "</tr>"
+
+
+def _sort_value_attr(field: str, value: Any) -> str:
+    if field != "investment_priority_score":
+        return ""
+    number = _number(value)
+    sort_value = "" if number is None else str(number)
+    return f" data-sort-value='{html.escape(sort_value, quote=True)}'"
 
 
 def _format_cell(field: str, value: Any, row: dict[str, Any]) -> str:
@@ -739,7 +778,7 @@ def _bullet_class(value: str) -> str:
 def _highlight_keywords(value: str) -> str:
     text = _clean_display_text(str(value))
     pattern = re.compile(
-        r"(거래량 급증|52주 신고가|상대거래량|거래량|신고가|52주|외국인|기관|순매수|수급|신규|증가|보유|FCF마진|FCF|ROIC|ROE|성장|목표가|상승|마진|성과|RSI|ADX|베타|갭|리스크|감소|청산|하락|부채비율|부채|공매도|-\d+%)",
+        r"(거래량 급증|52주 신고가|외국인 순매수|기관 순매수|순매수|신규|증가|감소|청산|FCF마진|ROIC|ROE|부채비율|공매도|리스크|-\d+%)",
         re.IGNORECASE,
     )
     output: list[str] = []
