@@ -90,6 +90,9 @@ def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) 
     records = normalize_score_scales(records)
     sec13f = normalize_score_scales(sec13f)
     used: set[str] = set()
+    top = _take_unique(_sort_by_date_and_metric(records, "investment_priority_score"), used, 50)
+    leading = _take_unique(_sort_by_date_and_metric(records, "leading_supply_score"), used, 50)
+    long_term = _take_unique(_sort_by_date_and_metric(records, "long_future_score"), used, 50)
     non_high_records = [row for row in records if not _has_signal(row, "52주 신고가")]
     foreign = _take_unique(_sort_foreign_flow(non_high_records, dominant_only=True), used, 50)
     institution = _take_unique(_sort_institution_flow(non_high_records, dominant_only=True), used, 50)
@@ -97,9 +100,6 @@ def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) 
         foreign.extend(_take_unique(_sort_foreign_flow(non_high_records, dominant_only=False), used, 15 - len(foreign)))
     if len(institution) < 15:
         institution.extend(_take_unique(_sort_institution_flow(non_high_records, dominant_only=False), used, 15 - len(institution)))
-    top = _take_unique(_sort_by_date_and_metric(records, "investment_priority_score"), used, 50)
-    leading = _take_unique(_sort_by_date_and_metric(records, "leading_supply_score"), used, 50)
-    long_term = _take_unique(_sort_by_date_and_metric(records, "long_future_score"), used, 50)
     us_highs = _take_unique(_sort_highs([row for row in records if row.get("country_code") == "US" and _has_signal(row, "52주 신고가")]), used, 120)
     kr_highs = _take_unique(_sort_highs([row for row in records if row.get("country_code") == "KR" and _has_signal(row, "52주 신고가")]), used, 120)
     us_volume = _take_unique(
@@ -170,8 +170,9 @@ def _sort_by_date_and_metric(rows: list[dict[str, Any]], metric: str) -> list[di
     return sorted(
         rows,
         key=lambda row: (
-            str(row.get("date") or ""),
             to_float(row.get(metric)) if to_float(row.get(metric)) is not None else -999,
+            to_float(row.get("investment_priority_score")) if metric != "investment_priority_score" and to_float(row.get("investment_priority_score")) is not None else -999,
+            str(row.get("date") or ""),
             to_float(row.get("market_cap")) or 0,
         ),
         reverse=True,

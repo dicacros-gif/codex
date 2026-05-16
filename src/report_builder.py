@@ -485,7 +485,7 @@ def write_outputs(
     reports_dir = ensure_dir(root / "reports")
     dated_report_dir = ensure_dir(reports_dir / run_date.isoformat())
 
-    sections = {key: _dedupe_rows(value) for key, value in sections.items()}
+    sections = {key: _sort_section_rows(key, _dedupe_rows(value)) for key, value in sections.items()}
     summary_rows = [
         {
             "date": run_date.isoformat(),
@@ -1549,6 +1549,41 @@ def _dedupe_rows(rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
         seen.add(key)
         unique.append(row)
     return unique
+
+
+def _sort_section_rows(section_key: str, rows: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if section_key == "daily_tracking" or not rows:
+        return rows
+    columns = SECTION_COLUMNS.get(section_key, STOCK_COLUMNS)
+    column_fields = {field for field, _ in columns}
+    if "investment_priority_score" in column_fields:
+        return sorted(rows, key=_investment_sort_key, reverse=True)
+    if "avg_investment_priority_score" in column_fields:
+        return sorted(
+            rows,
+            key=lambda row: (
+                _sort_number(row.get("avg_investment_priority_score")),
+                _sort_number(row.get("stock_count")),
+                str(row.get("date") or ""),
+            ),
+            reverse=True,
+        )
+    return rows
+
+
+def _investment_sort_key(row: dict[str, Any]) -> tuple[float, float, str, float, str]:
+    return (
+        _sort_number(row.get("investment_priority_score")),
+        _sort_number(row.get("famous_13f_score")),
+        str(row.get("date") or ""),
+        _sort_number(row.get("market_cap")),
+        str(row.get("ticker") or row.get("cusip") or row.get("company_name") or ""),
+    )
+
+
+def _sort_number(value: Any) -> float:
+    number = _number(value)
+    return number if number is not None else -999.0
 
 
 def _write_xlsx(path: Path, sections: dict[str, list[dict[str, Any]]]) -> None:
