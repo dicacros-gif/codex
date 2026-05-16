@@ -22,7 +22,15 @@ HANKYUNG_URL = "https://markets.hankyung.com/consensus?searchWord={company}"
 NAVER_NEWS_URL = "https://finance.naver.com/item/news.naver?code={code}"
 NAVER_MAIN_ENCODING = "utf-8"
 NAVER_ENCODING = "euc-kr"
-NON_ANALYST_REPORT_SOURCES = ("NICE평가정보", "한국기업데이터", "KISVALUE", "에프앤가이드", "FnGuide")
+NON_ANALYST_REPORT_SOURCES = (
+    "NICE평가정보",
+    "나이스디앤비",
+    "한국기술신용평가",
+    "한국기업데이터",
+    "KISVALUE",
+    "에프앤가이드",
+    "FnGuide",
+)
 
 
 def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
@@ -174,37 +182,48 @@ def _parse_main(html: str) -> dict[str, Any]:
 
 def _parse_research(html: str, code: str) -> dict[str, Any] | None:
     soup = BeautifulSoup(html, "lxml")
-    link = soup.find("a", href=re.compile(r"company_read\.naver"))
-    if not link:
+    candidates = []
+    for row in soup.find_all("tr"):
+        cells = [cell.get_text(" ", strip=True) for cell in row.find_all("td")]
+        detail_link = row.find("a", href=re.compile(r"company_read\.naver"))
+        if not detail_link or not cells:
+            continue
+        href = urljoin("https://finance.naver.com/research/", detail_link.get("href", ""))
+        if not _is_valid_naver_report_url(href, code):
+            continue
+        pdf_link = row.find("a", href=re.compile(r"stock-research/company/.+\.pdf"))
+        pdf_href = urljoin("https://finance.naver.com", pdf_link.get("href", "")) if pdf_link else None
+        candidates.append((row, cells, detail_link, href, pdf_href))
+
+    if not candidates:
         return None
-    href = urljoin("https://finance.naver.com/research/", link.get("href", ""))
-    if not _is_valid_naver_report_url(href, code):
-        return None
-    detail = _parse_report_detail(href)
-    if not detail:
-        return None
-    row = link.find_parent("tr")
-    cells = [cell.get_text(" ", strip=True) for cell in row.find_all("td")] if row else []
-    title = detail.get("recent_report_title") or link.get_text(" ", strip=True) or None
-    broker = detail.get("recent_report_broker")
-    for cell in cells:
-        if broker:
-            break
-        if cell and cell != title and not re.search(r"\d{2}\.\d{2}\.\d{2}", cell):
-            broker = cell
-            break
-    if _is_company_profile_report(broker, title):
-        return None
-    output = {
-        "recent_report_broker": broker,
-        "recent_report_title": title,
-        "report_link": href,
-        "report_source": "Naver Finance Research",
-    }
-    for key in ("target_price", "analyst_opinion"):
-        if detail.get(key) is not None:
-            output[key] = detail[key]
-    return output
+
+    for row, cells, link, href, pdf_href in candidates:
+        detail = _parse_report_detail(href)
+        if not detail:
+            continue
+        title = detail.get("recent_report_title") or link.get_text(" ", strip=True) or None
+        broker = detail.get("recent_report_broker")
+        for cell in cells:
+            if broker:
+                break
+            if cell and cell != title and not re.search(r"\d{2}\.\d{2}\.\d{2}", cell):
+                broker = cell
+                break
+        if _is_company_profile_report(broker, title):
+            continue
+        output = {
+            "recent_report_broker": broker,
+            "recent_report_title": title,
+            "report_link": pdf_href or href,
+            "report_detail_link": href,
+            "report_source": "Naver Finance Research",
+        }
+        for key in ("target_price", "analyst_opinion"):
+            if detail.get(key) is not None:
+                output[key] = detail[key]
+        return output
+    return None
 
 
 def _is_company_profile_report(broker: Any, title: Any) -> bool:
@@ -212,7 +231,7 @@ def _is_company_profile_report(broker: Any, title: Any) -> bool:
     title_text = str(title or "")
     if any(source in broker_text for source in NON_ANALYST_REPORT_SOURCES):
         return True
-    profile_words = ("기업개요", "기업현황", "기업분석", "사업 현황")
+    profile_words = ("기업개요", "기업현황", "기업분석", "사업 현황", "전문기업", "기술분석보고서")
     return any(word in title_text for word in profile_words) and not re.search(r"목표|투자의견|실적|Review|프리뷰|전망", title_text, re.IGNORECASE)
 
 
@@ -291,14 +310,14 @@ def _parse_hankyung_consensus(html_text: str, code: str, company: str) -> dict[s
             continue
         title_key = _match_key(title)
         name_key = _match_key(business_name or "")
-        is_match = code == _kr_code(business_code) or f"({code})" in title or (company_key and (company_key in title_key or company_key in name_key))
+        is_match = code == _kr_code(business_code) or (company_key and (company_key == name_key or company_key in name_key or name_key in company_key))
         if not is_match:
             continue
         broker = _extract_js_field(item, "OFFICE_NAME", scope) or "한국경제"
         report = {
             "recent_report_broker": broker,
             "recent_report_title": _clean_js_text(title),
-            "report_link": link,
+            "report_link": _absolute_hankyung_link(link),
             "report_source": "한국경제 컨센서스",
         }
         for source, target in (
@@ -316,6 +335,13 @@ def _parse_hankyung_consensus(html_text: str, code: str, company: str) -> dict[s
         if code == _kr_code(business_code) or f"({code})" in title:
             break
     return best
+
+
+def _absolute_hankyung_link(value: str) -> str:
+    link = _clean_js_text(value)
+    if link.startswith("http://") or link.startswith("https://"):
+        return link
+    return urljoin("https://markets.hankyung.com", link)
 
 
 def _nuxt_scope(text: str) -> dict[str, str]:

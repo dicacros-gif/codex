@@ -1,1083 +1,1083 @@
-
-<!DOCTYPE html>
-<html lang="ko">
-<head prefix="og: http://ogp.me/ns#">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta charset="utf-8" />
-    <meta http-equiv="content-language" content="ko" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    
-    <meta name="viewport" content="width=device-width" />
-    <meta name="format-detection" content="telephone=no">
-    <meta name="robots" content="index,follow" />
-    <meta name="googlebot" content="index,follow" />
-    <meta name="NaverBot" content="All" />
-    <meta name="NaverBot" content="index,follow" />
-    <meta name="Yeti" content="All" />
-    <meta name="Yeti" content="index,follow" />
-    <title>삼성SDI(006400) | 컨센서스 | 기업정보 | Company Guide</title>
-    <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" type="image/x-icon" href="/favicon.ico?ver=1">
-    <meta name="description" content="에프앤가이드 상장기업분석" />
-    <meta name="image" content="" />
-    <meta name="keywords" content="에프앤가이드, 에프엔가이드, FnGuide, fn가이드" />
-    <meta name="author" content="에프앤가이드" />
-    <meta name="copyright" content="Copyright© FnGuide Inc. All rights reserved." />
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="에프앤가이드" />
-    <meta property="og:description" content="에프앤가이드 상장기업분석" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta name="dtyp" content="D" />
-    <meta name="sno" content="2" />
-    
-    <link href="https://wcompcdn.fnguide.com/bundles/jquery/css?v=202605151657" rel="stylesheet"/>
-
-    <link href="https://wcompcdn.fnguide.com/bundles/css?v=202605151657" rel="stylesheet"/>
-
-    <script src="https://wcompcdn.fnguide.com/bundles/jquery/core?v=202605151657"></script>
-<script>(window.jQuery)||document.write('<script src="/bundles/jquery/core"><\/script>');</script>
-
-    <script src="https://wcompcdn.fnguide.com/bundles/jquery?v=202605151657"></script>
-
-    <script src="https://wcompcdn.fnguide.com/bundles/jsfile?v=202605151657"></script>
-    
-</head>
-<body class="">
-    <div class="fng_body ">
-        <div class="fng_wrap">
-            <!-- Str : HEADER -->
-            
-
-    <div class="headwrap">
-        <div class="headertop">
-            <h1><a class="menu_link" href="/"><span> 상장기업분석 </span></a></h1>
-                <div class="hdt_center">
-                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-8384bf2c" target="_blank" class="hdt_bnr" style="background-image:url(../../Contents/images/fngc_topBnr_bg_default.png?v260506);">
-                        <strong>
-                            <span class="txt1">
-                                <img src="/Contents/images/fngc_topBnr_txt_default.png" alt="PC+모바일 리포트 무제한">
-                            </span>
-                            <span class="txt2">
-                                <img src="/Contents/images/fngc_topBnr_txt_default_hover.png" alt="월 2만원에 리타민 추가 구독">
-                            </span>
-                        </strong>
-                    </a>
-                </div>
-            <div class="hdt_rgt">
-                <form name="frmMain" method="get">
-                    <div class="input_ty1 lk_in">
-                        <input type="text" id="searchCompany" title="정확한 종목명 또는 종목코드 입력(잘모를 경우 다음 종목찾기 링크 이용)" placeholder="종목명 또는 종목코드 입력" autocomplete="off" />
-                        <button type="button" class="btn_lookup" title="종목검색팝업 새창열기"><span class="htxt">열기</span></button>
-                    </div>
-                    <button type="button" onClick="GoPrint();" class="btn_ty1"><span>인쇄</span></button>
-                </form>
-            </div>
-        </div>
-        <div class="headergnb" id="compGnb">
-            <ul class="gnb_dp1wrap">
-                <!-- [개발] 페이지 이동시 class : gnb_ac 적용 -->
-                <li class="gnb_dp1 gnb_ac">
-                    <a href="/CompanyInfo/Snapshot" class="menu_link">기업정보</a>
-                    <ul class="gnb_dp2wrap gnb_n1">
-                        <li class="gnb_dp2 gnb_dp2_start">
-                            <a href="/CompanyInfo/Snapshot" class="menu_link ">Snapshot</a>
-                            <a href="/CompanyInfo/Information" class="menu_link ">기업개요</a>
-                            <a href="/CompanyInfo/Finance" class="menu_link ">재무제표</a>
-                            <a href="/CompanyInfo/FinanceRatio" class="menu_link ">재무비율</a>
-                            <a href="/CompanyInfo/Invest" class="menu_link ">투자지표</a>
-                            <a href="/CompanyInfo/Consensus" class="menu_link ac">컨센서스</a>
-                        </li>
-                        <li class="gnb_dp2">
-                            <a href="/CompanyInfo/ShareAnalysis" class="menu_link ">지분분석</a>
-                            <a href="/CompanyInfo/SectorAnalysis" class="menu_link ">업종분석</a>
-                            <a href="/CompanyInfo/Comparison" class="menu_link ">경쟁사비교</a>
-                            <a href="/CompanyInfo/Disclosure" class="menu_link ">거래소공시</a>
-                            <a href="/CompanyInfo/Dart" class="menu_link ">금감원공시</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="gnb_dp1  ">
-                    <a href="/Etp/EtfSnapshot" class="menu_link ">ETF/ETN 정보</a>
-                    <ul class="gnb_dp2wrap gnb_n2">
-                        <li class="gnb_dp2 gnb_dp2_start">
-                            <a href="/Etp/EtfSnapshot" class="menu_link ">ETF Snapshot</a>
-                            <a href="/Etp/EtfAnalysis" class="menu_link ">성과 및 위험분석</a>
-                            <a href="/Etp/EtnSnapshot" class="menu_link ">ETN Snapshot</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="gnb_dp1  ">
-                    <a href="/Report/ReportTrend" class="menu_link">리포트</a>
-                    <ul class="gnb_dp2wrap gnb_n3">
-                        <li class="gnb_dp2 gnb_dp2_start">
-                            <a href="/Report/ReportTrend" class="menu_link ">리포트동향</a>
-                            <a href="/Report/ReportSummary" class="menu_link ">요약리포트</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="gnb_dp1 ">
-                    <a href="/CompPerformance/ProResultCorp" class="menu_link">실적속보</a>
-                    <ul class="gnb_dp2wrap gnb_n4">
-                        <li class="gnb_dp2 gnb_dp2_start"></li>
-                    </ul>
-                </li>
-                <li class="gnb_dp1 ">
-                    <a href="/Consensus/TargetPriceGap" class="menu_link">컨센서스 스크리닝</a>
-                    <ul class="gnb_dp2wrap gnb_n5">
-                        <li class="gnb_dp2 gnb_dp2_start">
-                            <a href="/Consensus/TargetPriceGap" class="menu_link ">목표주가 괴리율</a>
-                            <a href="/Consensus/UpDownRatio" class="menu_link ">컨센서스 상/하향 비율</a>
-                            <a href="/Consensus/EarningSurprise" class="menu_link ">어닝서프라이즈</a>
-                            <a href="/Consensus/TurnAround" class="menu_link ">턴어라운드</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="gnb_dp1 ">
-                    <a href="/Ranking/SectorRank" class="menu_link">랭킹 분석</a>
-                    <ul class="gnb_dp2wrap gnb_n6">
-                        <li class="gnb_dp2 gnb_dp2_start">
-                            <a href="/Ranking/SectorRank" class="menu_link ">업종별 순위</a>
-                            <a href="/Ranking/IdxRank" class="menu_link ">지표별 순위</a>
-                            <a href="/Ranking/EtfRank" class="menu_link ">ETF 순위</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="gnb_dp1 ">
-                    <a href="/Calendar/CompCalendar" class="menu_link">캘린더</a>
-                    <ul class="gnb_dp2wrap gnb_n7">
-                        <li class="gnb_dp2 gnb_dp2_start"></li>
-                    </ul>
-                </li>
-                <li class="gnb_dp1 ">
-                    <a href="/SideInfo/CreditScore" class="menu_link">부가정보</a>
-                    <ul class="gnb_dp2wrap gnb_n8">
-                        <li class="gnb_dp2 gnb_dp2_start">
-                            <a href="/SideInfo/CreditScore" class="menu_link ">신용등급</a>
-                            <a href="/SideInfo/CorporationList" class="menu_link ">기업주소록</a>
-                        </li>
-                    </ul>
-                </li>
-                <li class="gnb_dp1 ">
-                    <a href="/Help/Guide" class="menu_link">이용안내</a>
-                    <ul class="gnb_dp2wrap gnb_n9">
-                        <li class="gnb_dp2 gnb_dp2_start"></li>
-                    </ul>
-                </li>
-            </ul>
-        </div>
-
-            <div class="ad_vertical">
-                <div class="ad_left" style="position:fixed;top: 150px;width:300px;height:600px;margin-left:-320px;">
-                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-ddd55871" target="_blank" style="display:block;width:100%;height:100%;">
-                        <img src="/Contents/images/fngc_leftBnr_img_default.png" alt="이제 모바일에서도 리포트를 자유롭게! 지금 확인하기" style="width:100%;height:100%;">
-                    </a>
-                </div>
-                <div class="ad_right" style="position:fixed;top:150px;width:300px;height:600px;margin-left:1028px;">
-                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-ddd55871" target="_blank" style="display:block;width:100%;height:100%;">
-                        <img src="/Contents/images/fngc_rightBnr_img_default.png" alt="와이즈리포트 회원이라면 리타민을 월 22,000원에. 정가 대비 75% 할인!" style="width:100%;height:100%;">
-                    </a>
-                </div>
-            </div>
-        <!-- End : 사이드 배너 -->
-
-    </div>
-
-            <!-- End : HEADER -->
-            <!-- Str : CONTAINER -->
-            <div class="contwrap" id="compBody">
-                
-<!-- STR : 공통기업개요 -->
-
-<input id="cmp_nm" name="cmp_nm" type="hidden" value="삼성SDI" />
-<input id="stk_typ" name="stk_typ" type="hidden" value="1" />
-<input id="master_chk" name="master_chk" type="hidden" value="C" />
-
-
-
-    <div class="section ul_corpinfo">
-        <div class="corp_group1">
-            <h1 id="giName">삼성SDI</h1>
-            <h2>006400</h2><span class="etc1">&#124;</span><h2>12월 결산</h2> <span class="etc1">&#124;</span>
-            <button type="button" onClick="goHompage('www.samsungsdi.co.kr')" id="btn_shome" class="btn_shome">홈페이지</button>
-            <dl style="display:none;" id="dl_btn_shome">
-                <dt>홈페이지</dt>
-                <dd id="dd_btn_shome">www.samsungsdi.co.kr</dd>
-            </dl>
-            <button type="button" id="btn_sphone" class="btn_sphone">전화번호</button>
-            <dl style="display:none;" id="dl_btn_sphone">
-                <dt>전화번호</dt>
-                <dd>031-288-4114 | IR 담당자 031-288-4114</dd>
-            </dl>
-            <button type="button" id="btn_spmap" data-val="경기도 용인시 기흥구 공세로 150-20" data-nm="삼성SDI" class="btn_spmap">주소</button>
-            <dl style="display:none;" id="dl_btn_spmap">
-                <dt>주소</dt>
-                <dd id="dd_btn_spmap">경기도 용인시 기흥구 공세로 150-20</dd>
-            </dl>
-            <p class="stxt_group">
-                <span class="stxt">KOSPI</span>
-                    <span class="etc2">&#124;</span>
-                    <span class="stxt">코스피 전기&#183;전자</span>
-                    <span style="display:none" id="strMarketTxt"> KOSPI 코스피 전기&#183;전자</span>
-                                    <span class="etc2">&#124;</span>
-                    <span class="stxt stxt2">WI26 IT가전</span>
-                                    <span class="etc2">&#124;</span>
-                    <span class="stxt stxt3">K200</span>
-                                    <span class="etc2">&#124;</span>
-                    <span class="stxt">NXT</span>
-            </p>
-        </div>
-        <div class="corp_group2" id="corp_group2">
-            <ul>
-                <li>
-                    <dl style="display:none;">
-                        <dt>PER(Price Earning Ratio)</dt>
-                        <dd>전일자 보통주 수정주가 / 최근 결산 수정EPS(주당순이익) <br>*EPS = 당기순이익(지배) / 수정평균발행주식수<br>*최근결산은 2025/12 (연간) 기준임.</dd>
-                    </dl>
-                    <button type="button" class="tip_in" id="h_per">PER</button>
-                </li>
-                <li>- </li>
-            </ul>
-            <ul>
-                <li>
-                    <dl style="display:none;">
-                        <dt>PER(Fwd.12M)</dt>
-                        <dd>전일자 보통주 수정주가 / EPS(Fwd.12M, 지배)</dd>
-                    </dl>
-                    <button type="button" class="tip_in" id="h_12m">PER(Fwd.12M)</button>
-                </li>
-                <li> 55.53 </li>
-            </ul>
-            <ul>
-                <li>
-                    <dl style="display:none;">
-                        <dt>업종 PER</dt>
-                        <dd>WI26 IT가전∥SUM(구성종목 시가총액)/SUM(구성종목 당기순이익)<br>*전일자 보통주 시가총액 기준<br>*당기순이익은은 최근결산 2025/12 (연간) 기준임.</dd>
-                    </dl>
-                    <button type="button" class="tip_in" id="h_u_per"><span class="ko">업종</span> PER</button>
-                </li>
-                <li> - </li>
-            </ul>
-            <ul>
-                <li>
-                    <dl style="display:none;">
-                        <dt>PBR(Price Book-value Ratio)</dt>
-                        <dd>전일자 보통주 수정주가 / 최근 결산기 BPS(주당순자산)<br>*BPS=자본총계(지배) / 수정기말발행주식수(자사주차감)<br>*최근결산은 2025/12 (연간) 기준임.</dd>
-                    </dl>
-                    <button type="button" class="tip_in" id="h_pbr">PBR</button>
-                </li>
-                <li>2.25 </li>
-            </ul>
-            <ul>
-                <li>
-                    <dl style="display:none;">
-                        <dt>현금배당수익률</dt>
-                        <dd>{최근 결산 보통주 수정DPS(현금,연간) / 전일자 보통주 수정주가} *100<br>*최근결산은 2025/12 (연간) 기준임.</dd>
-                    </dl>
-                    <button type="button" class="tip_in" id="h_rate"><span class="ko">현금배당수익률</span></button>
-                </li>
-                <li>- </li>
-            </ul>
-        </div>
-    </div>
-
-<script src="/Scripts/companyInfo-common?v=uDdgptwFwz57KMh0oOC6JXlxmGs2bcIDl7tl_rTtHUI1"></script>
-
-<!-- END: 공통기업개요 -->
-
-<!-- STR : 공통기업개요 -->
-<!-- END: 공통기업개요 -->
-<div class="section ul_de">
-    <!-- 실적&컨센서스 추이 -->
-
-
-        <div class="ul_col2wrap pd_t25">
-            <div class="um_topbar bmshadow">
-                <div class="topbar_wrap">
-                    <div class="topbar_lft">
-                        <h2>실적&amp;컨센서스 추이</h2>
-                        <span class="stxt rsp_hidden" id="perfor_trend_title">[연결 | 연간 | 영업이익]</span>
-                    </div>
-                    <div class="topbar_rgt pd_r4">
-                        <span class="txt1">단위 : 억원, 배</span>
-                        <div class="um_gbtn grd_ty1 fl" id="perfor_trend_consol_typ">
-                            <button type="button" class="gbtn_f r3  ac " data-val="C">연결</button>
-                            <button type="button" class="gbtn_e r3 " data-val="P">별도</button>
-                        </div>
-                        <div class="um_gbtn grd_ty2 fl" id="perfor_trend_aq_typ">
-                            <button type="button" class="gbtn_f r3 ac" data-val="Y">연간</button>
-                            <button type="button" class="gbtn_e r3" data-val="Q">분기</button>
-                        </div>
-                        <div class="us_select_ty1" style="width:130px;">
-                            <span class="vbox">
-                                <span class="vtxt" id="perfor_trend_acct_title"></span>
-                            </span>
-                            <span class="iarrow"></span>
-                            <select id="perfor_trend_acct" title="계정 선택">
-                                <option value="1">매출액</option>
-                                <option value="2" selected>영업이익</option>
-                                <option value="3">당기순이익</option>
-                            </select>
-                        </div>
-                        <button type="button" id="perfor_trend_submit" class="us_btn_ty1 fl">조회</button>
-                    </div>
-                </div>
-            </div>
-            <div class="um_chart chart_ht1" style="height:255px;">
-                <div class="chart_wrap" id="CNS_01" style="width:733px;margin:0 auto;"></div>
-            </div>
-
-            <div class="ul_co1_c pd_t1">
-                <div class="um_table">
-                    <table class="us_table_ty1 h_fix zigbg_no" id="tbl_cns_perfor_trend_head">
-                        <caption class="cphidden">실적&amp;컨센서스 추이</caption>
-                        <colgroup>
-                            <col style="width: 28%;">
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                            <col>
-                        </colgroup>
-                        <thead id="">
-
-                        </thead>
-                        <tbody></tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-    <!-- End : else -->
-    <!-- 컨센서스 시계열 추이 -->
-    <div class="ul_wrap rwd_in">
-        <div class="um_topbar bmshadow">
-            <div class="topbar_wrap">
-                <div class="topbar_lft">
-                    <h2>컨센서스 시계열 추이</h2>
-                    <span class="stxt rsp_hidden" id="trend_title">[연결 | 연간]</span>
-                </div>
-                <div class="topbar_rgt pd_r4">
-                    <span class="txt1">단위 : 억원, 배</span>
-                    <div class="um_gbtn grd_ty1 fl" id="trend_consol_typ">
-                        <button type="button" class="gbtn_f r3 ac" data-val="C">연결</button>
-                        <button type="button" class="gbtn_e r3 " data-val="P">별도</button>
-                    </div>
-                    <div class="um_gbtn grd_ty2 fl" id="trend_aq_typ">
-                        <button type="button" class="gbtn_f r3 ac" data-val="Y">연간</button>
-                        <button type="button" class="gbtn_e r3" data-val="Q">분기</button>
-                    </div>
-                    <div class="us_select_ty1" style="width:68px;">
-                        <span class="vbox">
-                            <span class="vtxt"></span>
-                        </span>
-                        <span class="iarrow"></span>
-                        <select id="trend_gsym" title="결산년월 선택"></select>
-                    </div>
-                    <button type="button" id="trend_submit" class="us_btn_ty1 fl">조회</button>
-                </div>
-            </div>
-        </div>
-        <div class="um_col2wrap">
-            <div class="um_col2_l">
-                <div class="um_wrap">
-                    <div class="um_table" id="grid2">
-                        <table class="us_table_ty1 h_fix zigbg_no th_topbdno" id="cns_trend_table">
-                            <caption class="cphidden">컨센서스 시계열 추이</caption>
-                            <colgroup>
-                                <col style="width: 28%;">
-                                <col>
-                                <col>
-                                <col>
-                                <col>
-                                <col>
-                            </colgroup>
-                            <thead id="theadcontent2">
-                                <tr>
-                                    <th class="clf tbold" scope="col"></th>
-                                    <th scope="col"></th>
-                                    <th scope="col">1개월전</th>
-                                    <th scope="col">3개월전</th>
-                                    <th scope="col">6개월전</th>
-                                    <th class="cle" scope="col">1년전</th>
-                                </tr>
-                            </thead>
-                            <tbody id="bodycontent2"></tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="um_col2_r">
-                <div class="um_wrap">
-                    <div class="um_consentab" id="trend_acct_tab">
-                        <button type="button" data-val="0">매출액</button>
-                        <button type="button" data-val="1" class="ac">영업이익</button>
-                        <button type="button" data-val="2">당기순이익</button>
-                        <button type="button" data-val="3">EPS</button>
-                        <button type="button" data-val="4">PER</button>
-                        <button type="button" data-val="5" class="end">PER(Fwd.12M)</button>
-                    </div>
-                    <div class="um_chart chart_ht2" style="height:225px;">
-                        <div class="chart_wrap" id="CNS_02">
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- 증권사별 적정주가 & 투자의견 -->
-    <div class="ul_wrap">
-        <div class="um_topbar botbd_n bmshadow">
-            <div class="topbar_wrap">
-                <div class="topbar_lft">
-                    <h2>증권사별 적정주가 &amp; 투자의견</h2>
-                </div>
-                <div class="topbar_rgt">
-                    <span class="txt1">단위 : 원, %</span>
-                </div>
-            </div>
-        </div>
-        <div class="um_table">
-            <table class="us_table_ty1 h_fix">
-                <caption class="cphidden">증권사별 적정주가 &amp; 투자의견</caption>
-                <colgroup>
-                    <col>
-                    <col style="width: 12%;">
-                    <col style="width: 12%;">
-                    <col style="width: 12%;">
-                    <col style="width: 10%;">
-                    <col style="width: 10%;">
-                    <col style="width: 10%;">
-                </colgroup>
-                <thead>
-                    <tr class="th2row_f">
-                        <th rowspan="2" class="clf tbold" scope="col">추정기관</th>
-                        <th rowspan="2" class="tbold" scope="col">추정일자</th>
-                        <th colspan="3" scope="col">적정주가</th>
-                        <th class="cle" colspan="2" scope="col">투자의견</th>
-                    </tr>
-                    <tr>
-                        <th scope="col">적정주가</th>
-                        <th scope="col">직전 적정주가</th>
-                        <th scope="col">증감율</th>
-                        <th scope="col">투자의견</th>
-                        <th scope="col" class="cle">직전 투자의견</th>
-                    </tr>
-                </thead>
-                <tbody>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="tbody_tit2 ">
-                                <td class="l">Consensus</td>
-                                <td class="c"></td>
-                                <td class="r">843,609</td>
-                                <td class="r">587,591</td>
-                                <td class="r  ">43.57</td>
-                                <td class="r">3.96</td>
-                                <td class="cle r">3.95</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">LS증권</td>
-                                <td class="c">2026/05/12</td>
-                                <td class="r">593,000</td>
-                                <td class="r">618,000</td>
-                                <td class="r  tcr">-4.05</td>
-                                <td class="r">3.00</td>
-                                <td class="cle r">3.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">iM증권</td>
-                                <td class="c">2026/05/11</td>
-                                <td class="r">800,000</td>
-                                <td class="r">800,000</td>
-                                <td class="r  ">0.00</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">상상인증권</td>
-                                <td class="c">2026/05/08</td>
-                                <td class="r">1,000,000</td>
-                                <td class="r">850,000</td>
-                                <td class="r  ">17.65</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">대신증권</td>
-                                <td class="c">2026/05/06</td>
-                                <td class="r">920,000</td>
-                                <td class="r"></td>
-                                <td class="r  "></td>
-                                <td class="r">4.00</td>
-                                <td class="cle r"></td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">유안타증권</td>
-                                <td class="c">2026/05/06</td>
-                                <td class="r">913,000</td>
-                                <td class="r">620,000</td>
-                                <td class="r  ">47.26</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">다올투자증권</td>
-                                <td class="c">2026/04/30</td>
-                                <td class="r">900,000</td>
-                                <td class="r">580,000</td>
-                                <td class="r  ">55.17</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">현대차증권</td>
-                                <td class="c">2026/04/30</td>
-                                <td class="r">820,000</td>
-                                <td class="r">600,000</td>
-                                <td class="r  ">36.67</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">신한투자증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">800,000</td>
-                                <td class="r">580,000</td>
-                                <td class="r  ">37.93</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">KB증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">850,000</td>
-                                <td class="r">530,000</td>
-                                <td class="r  ">60.38</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">미래에셋증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">1,000,000</td>
-                                <td class="r">600,000</td>
-                                <td class="r  ">66.67</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">DB증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">840,000</td>
-                                <td class="r">550,000</td>
-                                <td class="r  ">52.73</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">SK증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">810,000</td>
-                                <td class="r">450,000</td>
-                                <td class="r  ">80.00</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">교보증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">880,000</td>
-                                <td class="r">580,000</td>
-                                <td class="r  ">51.72</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">신영증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">830,000</td>
-                                <td class="r">510,000</td>
-                                <td class="r  ">62.75</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">한화투자증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">820,000</td>
-                                <td class="r">520,000</td>
-                                <td class="r  ">57.69</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">NH투자증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">930,000</td>
-                                <td class="r">880,000</td>
-                                <td class="r  ">5.68</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">키움증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">820,000</td>
-                                <td class="r">480,000</td>
-                                <td class="r  ">70.83</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">한국투자증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">760,000</td>
-                                <td class="r">600,000</td>
-                                <td class="r  ">26.67</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">흥국증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">880,000</td>
-                                <td class="r">630,000</td>
-                                <td class="r  ">39.68</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">하나증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">857,000</td>
-                                <td class="r">469,000</td>
-                                <td class="r  ">82.73</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">DS투자증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">840,000</td>
-                                <td class="r">450,000</td>
-                                <td class="r  ">86.67</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class="zigbg_in ">
-                                <td class="l">IBK투자증권</td>
-                                <td class="c">2026/04/29</td>
-                                <td class="r">800,000</td>
-                                <td class="r">500,000</td>
-                                <td class="r  ">60.00</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
-                            <tr class=" ">
-                                <td class="l">삼성증권</td>
-                                <td class="c">2026/04/28</td>
-                                <td class="r">740,000</td>
-                                <td class="r">530,000</td>
-                                <td class="r  ">39.62</td>
-                                <td class="r">4.00</td>
-                                <td class="cle r">4.00</td>
-                            </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <!-- 최신리포트리포트 요약 -->
-    <div class="ul_wrap">
-        <div class="um_topbar bmshadow">
-            <div class="topbar_wrap">
-                <div class="topbar_lft">
-                    <h2>리포트 요약</h2>
-                    <span class="stxt"></span>
-                </div>
-                <div class="topbar_rgt">
-                    <span class="txt1">단위 : 원</span>
-                </div>
-            </div>
-        </div>
-        <div class="um_table">
-            <table class="us_table_ty1 h_pd" id="tbl_rpt_sum_summary">
-                <caption class="cphidden">리포트요약</caption>
-                <colgroup>
-                    <col style="width:8%">
-                    <col>
-                    <col style="width:11%">
-                    <col style="width:10%">
-                    <col style="width:10%">
-                    <col style="width:12%">
-                </colgroup>
-                <thead>
-                    <tr class="th_b">
-                        <th class="clf" scope="col">일자</th>
-                        <th scope="col">종목명 - 리포트 요약</th>
-                        <th scope="col">투자의견</th>
-                        <th scope="col">목표주가</th>
-                        <th scope="col">전일종가</th>
-                        <th scope="col">제공처/작성자</th>
-                    </tr>
-                </thead>
-                <tbody id="bodycontent4"></tbody>
-            </table>
-        </div>
-    </div>
-
-
-</div>
-
-<script type="text/template" id="tmpl_cns_perfor_trend_head">
-    <% if(data.length > 0) { %>
-    <tr>
-        <th scope="col" class="clf tbold"><%= console_nm %></th>
-        <% _.each(data, function(v, i) { %>
-        <% if (v.EP_CHK =='E' ||  v.EP_CHK =='P'  ) { %>
-        <th scope="col">
-            <div>
-                <dl style="display:none;">
-                    <dt>(<%= v.EP_CHK %>) : <%= v.EP_CHK == 'E'? 'Estimate':'Provisional' %></dt>
-                    <dd><%= v.EP_CHK == 'E'? '컨센서스, 추정치':'잠정실적' %> </dd>
-                </dl>
-                <button type="button" class="tip_in">
-                    <span class="txt_acd"><%= v.YYMM %>(<%= v.EP_CHK %>)</span>
-                </button>
-            </div>
-        </th>
-        <% } else { %>
-        <th scope="col"><%= v.YYMM %></th>
-        <% } %>
-        <% }) %>
-    </tr>
-    <% } %>
-</script>
-
-<script type="text/template" id="tmpl_cns_perfor_trend_body">
-    <% if(data.length > 0) { var parent_id = ''  ;  var  p_ac_code =''; %>
-
-    <% _.each(data, function(v, i) { %>
-    <% if(v.LVL == '1'  ) {
-    parent_id = v.AC_CODE+'_'+ i
-    if(i < data.length-1 ){
-    p_ac_code = data[i+1].P_AC_CODE;
-    }
-    %>
-    <!--부모 계정 -->
-    <tr id="p_perfor_<%=parent_id%>" class=" acd_dep_start_open">
-        <th scope="row" class="l <%= i == 0 ? 'clf' : (data.length - 1 == i ? 'cle' : '') %>">
-            <div>
-                <% if(v.FORMULA == null){ %>
-                <span class="txt_acd txt_ell"><%= v.NAME.replace(/ /gi, '\xa0') %></span>
-                <span class="csize"><%= v.UNIT %></span>
-                <%}else{%>
-                <% var formula = v.FORMULA.split('||||'); %>
-                <dl style="display:none;">
-                    <dt><%= formula[0] %></dt>
-                    <dd><%= formula[1] %></dd>
-                </dl>
-                <button class="tip_in txt_ell icons"><%= v.NAME.replace(/ /gi, '\xa0') %></button>
-                <span class="csize"><%= v.UNIT %></span>
-                <%}%>
-
-                <!--자식있다면-->
-                <% if( v.AC_CODE == p_ac_code ){ %>
-                <button type="button" class="btn_acdclose btn_showhide">
-                    <span class="blind" id="span_grid1_0">계산에 참여한 계정 펼치기</span>
-                </button>
-                <% }%>
-
-            </div>
-        </th>
-        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL1,v.DIGIT,'-') %></td>
-        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL2,v.DIGIT,'-') %></td>
-        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL3,v.DIGIT,'-') %></td>
-        <td class="r tdbg_b <%= v.VAL4 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL4,v.DIGIT,'-') %></td>
-        <td class="r tdbg_b <%= v.VAL5 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL5,v.DIGIT,'-') %></td>
-        <td class="r cle tdbg_b <%= v.VAL6 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL6,v.DIGIT,'-') %></td>
-    </tr>
-    <% } else { %>
-    <!--자식 계정 -->
-    <tr class="c_perfor_<%=parent_id %>  acd_dep2_sub">
-        <th scope="row" class="clf">
-            <div>
-                <% if(v.FORMULA == null){ %>
-                <div><%= v.NAME.replace(/ /gi, '\xa0') %><span class="csize"><%=v.UNIT %></span></div>
-                <%}else{%>
-                <% var formula = v.FORMULA.split('||||'); %>
-                <dl style="display:none;">
-                    <dt><%= formula[0] %></dt>
-                    <dd><%= formula[1] %></dd>
-                </dl>
-                <button class="tip_in txt_ell icons"><%= v.NAME.replace(/ /gi, '\xa0') %></button>
-                <span class="csize"><%= v.UNIT %></span>
-                <%}%>
-            </div>
-        </th>
-        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL1,v.DIGIT,'-') %></td>
-        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL2,v.DIGIT,'-') %></td>
-        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL3,v.DIGIT,'-') %></td>
-        <td class="r <%= v.VAL4 < 0 ? 'tcr' : '' %> tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL4,v.DIGIT,'-') %></td>
-        <td class="r <%= v.VAL5 < 0 ? 'tcr' : '' %> tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL5,v.DIGIT,'-') %></td>
-        <td class="r <%= v.VAL6 < 0 ? 'tcr' : '' %> cle tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL6,v.DIGIT,'-') %></td>
-    </tr>
-    <% }%>
-    <% }) }%>
-
-</script>
-
-<script type="text/template" id="tmpl_cns_trend_yymm">
-    <% if(data.length > 0) { %>
-    <% _.each(data, function (v, i) {
-    if( i== 0 ){
-    %>
-    <option selected value="<%= v.YYMM %>"><%= v.YYMM_F %></option>
-    <%}else{%>
-    <option value="<%= v.YYMM %>"><%= v.YYMM_F %></option>
-    <%}%>
-    <%})%>
-    <%} %>
-</script>
-
-<script type="text/template" id="tmpl_cns_trend">
-    <% if(data.length > 0) { %>
-    <% _.each(data, function (v, i) { %>
-    <tr>
-        <th scope="row">
-            <div><%= v.ACC_NM %><span class="csize"><%= v.UNIT %></span></div>
-        </th>
-        <!--per,per,투자의견-->
-
-        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL1, v.DIGIT) %> </td>
-        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL2, v.DIGIT) %></td>
-        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL3, v.DIGIT) %></td>
-        <td class="r <%= v.VAL4 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL4, v.DIGIT) %></td>
-        <td class="cle r <%= v.VAL5 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL5, v.DIGIT) %></td>
-    </tr>
-    <%})%>
-
-    <%}else{%>
-    <tr>
-        <td colspan="6" class="c">데이터가 없습니다.</td>
-    </tr>
-    <%}%>
-</script>
-
-
-
-<script type="text/template" id="tmpl_rpt_smr_summary">
-    <% if(data.length > 0) {  %>
-    <% _.each(data, function (v, i) { %>
-    <tr class="<%= i % 2 == 0 ? 'zigbg_in' : '' %>" data-rpt_id="<%= v.RPT_ID %>" data-cmp_cd="<%= v.CMP_CD %>">
-        <td class="c clf"><%= v.DT %></td>
-        <td class="l nopre">
-            <dl class="um_tdinsm">
-                <dt>
-                    <a href="javascript:;" title="<%= v.CMP_NM_KOR + ' 스냅샷 페이지로 이동' %>" class="snapshotLink"><%= v.CMP_NM_KOR + ' ' + v.CMP_CD %></a>
-                    <span class="txt2"><%= v.RPT_TITLE != null && v.RPT_TITLE != '' ? ' - ' + v.RPT_TITLE : '' %></span>
-                </dt>
-                <%
-                var commentArray = FnGuideUtil.Report.commentToArray(2, v.COMMENT, '▶');
-
-                _.each(commentArray, function (v, i) {
-                if(i < 2) {
-                %>
-                <dd><%= v %></dd>
-                <%
-                }
-                });
-                %>
-            </dl>
-        </td>
-        <td class="c nopre2">
-            <span class="gpbox">
-                <%
-                var recommClass = '';
-                switch(v.RECOMM_ACTION_TYP) {
-                case 1:
-                recommClass = 'up';
-                break;
-                case 2:
-                recommClass = 'hold';
-                break;
-                case 3:
-                recommClass = 'down';
-                break;
-                case 4:
-                recommClass = 'new';
-                break;
-                }
-
-                if(recommClass != '') {
-                %>
-                <img src="../../Contents/images/shbg.png" alt="<%= v.RECOMM_NM %>" class="gp_img <%= recommClass %>">
-                <%
-                }
-                %>
-                <%= v.RECOMM_NM %>
-            </span>
-        </td>
-        <td class="r nopre2">
-            <span class="gpbox">
-                <%
-                var actionClass = '';
-                switch(v.PRC_ACTION_TYP) {
-                case 1:
-                actionClass = 'up';
-                break;
-                case 2:
-                actionClass = 'hold';
-                break;
-                case 3:
-                actionClass = 'down';
-                break;
-                case 4:
-                actionClass = 'new';
-                break;
-                }
-
-                if(recommClass != '') {
-                %>
-                <img src="../../Contents/images/shbg.png" alt="<%= v.PRC_ACTION_NM %>" class="gp_img <%= actionClass %>">
-                <%
-                }
-                %>
-                <%= v.TARGET_PRC %>
-            </span>
-        </td>
-        <td class="r"><%= v.CLOSE_PRC %></td>
-        <td class="cle c nopre2">
-            <span class="gpbox">
-                <% if(v.BEST_ANALYST_YN == 1) { %>
-                <img src="../../Contents/images/shbg.png" alt="베스트 애널리스트" class="gp_img best">
-                <% } %>
-                <%= v.BRK_NM_KOR %><br />
-                <%= v.ANL_NM_KOR %>
-            </span>
-        </td>
-    </tr>
-    <% }) %>
-    <% } else { %>
-    <tr class="zig_bg">
-        <td colspan="6" class="c">검색된 리포트가 없습니다.</td>
-    </tr>
-    <% } %>
-</script>
-
-
-            </div>
-            <!-- End : CONTAINER-->
-            <!-- Str : FOOTER -->
-            
-
-<div class="bootomwrap">
-    <div class="ul_bottom">
-        <div class="ul_bottomwrap">
-            <a href="http://www.fnguide.com" class="link_txt" target="_blank"><span>fnguide.com</span></a>
-                <div class="txtbox">
-                    <p class="txt">FnGuide에서 제공하는 정보는 신뢰할 만한 자료 및 정보로부터 얻어진 것이나 그 정확성이나 완전성을 보장 할 수 없으며, 시간이 경과함에 따라 변경될 수 있습니다. 따라서 정보의 오류, 누락에 대하여 FnGuide 또는 FnGuide에 자료를 제공하는 회사에서는 그 결과에 대해 법적인 책임을 지지 않습니다. 모든 콘텐츠에 대한 저작권은 FnGuide에 있으며 사전 허가없이 이를 무단으로 사용하거나, 데이터 베이스화 할 경우 민형사상 책임을 물을 수 있습니다.</p>
-                </div>
-        </div>
-
-    </div>
-</div>
-<!-- 툴팁 -->
-<div class="ul_tip_a" style="display: none;">
-    <i class="arrow_top"></i>
-    <dl id="tip_a_cont"></dl>
-</div>
-<div class="ul_tip_b" style="display: none;width: 352px;top:1000px;left: 100px;">
-    <i class="arrow_top"></i>
-    <div class="um_table" id="ul_tip_b_table">
-        <table class="us_table_ty2 h_fix zigbg_no">
-            <caption class="cphidden">캡션</caption>
-            <colgroup>
-                <col>
-                <col>
-            </colgroup>
-            <thead>
-                <tr class="th_b">
-                    <th scope="row" class="clf">헤더</th>
-                    <th scope="row" class="cle">헤더</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr class="rwf">
-                    <td class="clf">내용</td>
-                    <td class="cle tcb">내용</td>
-                </tr>
-                <tr class="zigbg_in">
-                    <td class="clf">내용</td>
-                    <td class="cle">내용</td>
-                </tr>
-                <tr>
-                    <td class="clf">내용</td>
-                    <td class="cle">내용</td>
-                </tr>
-                <tr class="zigbg_in">
-                    <td class="clf">내용</td>
-                    <td class="cle">내용</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div>
-            <!-- End : FOOTER -->
-        </div>
-    </div>
-    <input type="hidden" id="menu_id" value="1" />
-    <input type="hidden" id="sub_menu_id" value="6" />
-    <input type="hidden" id="c_id" value="AA" />
-    <input type="hidden" id="cmp_cd" value="006400" />
-    <input type="hidden" id="defaultCompanyCode" value="005930" />
-    <input type="hidden" id="defaultEtfCode" value="102780" />
-    <input type="hidden" id="defaultEtnCode" value="580010" />
-    <input type="hidden" id="menu_type" value="01" />
-    <input type="hidden" id="lang" value="KR" />
-
-    <script src="/bundles/common?v=w7-92eOdWleYgkxvVHmS05tBF6LQNyc3GXbEi-pL1rw1"></script>
-
-    
-    <script src="/Scripts/companyInfo-consensus?v=kpLe2PAyvcSO9uwXu9NQ1U3XkQUvCa4V-Sjeqm_WZ-c1"></script>
-
-<script type="text/javascript">
-         $(document).ready(function () {
-             consensus.init({
-                 cmp_cd: '006400',
-                 consol_typ:'C',
-                 lang: 'KR',
-                 trendYYMM: [{"YYMM":"202612","YYMM_F":"2026/12"},{"YYMM":"202712","YYMM_F":"2027/12"},{"YYMM":"202812","YYMM_F":"2028/12"}],
-                 perforTrend: {"data":[{"NAME":"매출액","AC_CODE":"121000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"214367.88","VAL2":"165922.49","VAL3":"132667.31","VAL4":"155611.22","VAL5":"195276.39","VAL6":"239466.90"},{"NAME":"    전년동기대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"6.52","VAL2":"-22.60","VAL3":"-20.04","VAL4":"17.29","VAL5":"25.49","VAL6":"22.63"},{"NAME":"    컨센서스대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-7.26","VAL2":"-3.57","VAL3":"2.78","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"영업이익","AC_CODE":"121450","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"15454.89","VAL2":"3633.04","VAL3":"-17223.61","VAL4":"-506.43","VAL5":"14744.09","VAL6":"25141.40"},{"NAME":"    전년동기대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-14.52","VAL2":"-76.49","VAL3":"적자전환","VAL4":"적자지속","VAL5":"흑자전환","VAL6":"70.52"},{"NAME":"    컨센서스대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-12.82","VAL2":"-41.79","VAL3":"적자지속","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익","AC_CODE":"122700","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"20660.47","VAL2":"5755.12","VAL3":"-5848.75","VAL4":"4924.70","VAL5":"16262.39","VAL6":"22304.89"},{"NAME":"    전년동기대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"1.31","VAL2":"-72.14","VAL3":"적자전환","VAL4":"흑자전환","VAL5":"230.22","VAL6":"37.16"},{"NAME":"    컨센서스대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"1.78","VAL2":"-40.05","VAL3":"적자지속","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익(지배)","AC_CODE":"122710","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"20092.07","VAL2":"5992.90","VAL3":"-6494.69","VAL4":"4335.17","VAL5":"15744.57","VAL6":"21881.05"},{"NAME":"당기순이익(비지배)","AC_CODE":"122720","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"568.39","VAL2":"-237.77","VAL3":"645.93","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"자산총계","AC_CODE":"111000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"340388.60","VAL2":"405973.45","VAL3":"422553.39","VAL4":"450174.00","VAL5":"487105.00","VAL6":"530202.11"},{"NAME":"부채총계","AC_CODE":"113000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"141316.10","VAL2":"190301.07","VAL3":"186852.25","VAL4":"205237.91","VAL5":"224445.04","VAL6":"240019.11"},{"NAME":"자본총계","AC_CODE":"115000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"199072.50","VAL2":"215672.37","VAL3":"235701.13","VAL4":"244935.22","VAL5":"262659.52","VAL6":"286669.79"},{"NAME":"  자본총계(지배)","AC_CODE":"115020","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"185113.73","VAL2":"197663.95","VAL3":"214428.74","VAL4":"224110.90","VAL5":"241710.15","VAL6":"265344.65"},{"NAME":"  자본총계(비지배)","AC_CODE":"115850","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"13958.77","VAL2":"18008.42","VAL3":"21272.39","VAL4":"20824.32","VAL5":"20949.37","VAL6":"21325.14"},{"NAME":"자본금","AC_CODE":"115100","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"3567.12","VAL2":"3567.12","VAL3":"4158.17","VAL4":"4159.48","VAL5":"4159.48","VAL6":"4159.56"},{"NAME":"EPS","AC_CODE":"312000","P_AC_CODE":null,"FORMULA":"EPS||||당기순이익(지배) / 수정평균발행주식수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"27787.51","VAL2":"8288.23","VAL3":"-8325.45","VAL4":"5273.71","VAL5":"19153.17","VAL6":"26618.17"},{"NAME":"BPS","AC_CODE":"314000","P_AC_CODE":null,"FORMULA":"BPS||||자본총계(지배) / 수정기말발행주식수(자사주차감)","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"269075.04","VAL2":"287317.59","VAL3":"272485.49","VAL4":"284789.11","VAL5":"307153.37","VAL6":"337186.92"},{"NAME":"현금DPS","AC_CODE":"423400","P_AC_CODE":null,"FORMULA":"DPS||||DPS(보통주,현금) * 무상조정수정계수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"972.79","VAL2":"972.79","VAL3":null,"VAL4":"975.00","VAL5":"975.00","VAL6":"1400.00"},{"NAME":"PER","AC_CODE":"382100","P_AC_CODE":null,"FORMULA":"PER||||수정주가(보통주,기말) / 수정EPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"16.63","VAL2":"29.24","VAL3":"N/A","VAL4":"116.43","VAL5":"32.06","VAL6":"23.07"},{"NAME":"PBR","AC_CODE":"382500","P_AC_CODE":null,"FORMULA":"PBR||||수정주가(보통주,기말) / 수정BPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"1.72","VAL2":"0.84","VAL3":"0.99","VAL4":"2.16","VAL5":"2.00","VAL6":"1.82"}],"header":[{"YYMM":"2023/12","EP_CHK":" ","CD":"VAL1"},{"YYMM":"2024/12","EP_CHK":" ","CD":"VAL2"},{"YYMM":"2025/12","EP_CHK":" ","CD":"VAL3"},{"YYMM":"2026/12","EP_CHK":"E","CD":"VAL4"},{"YYMM":"2027/12","EP_CHK":"E","CD":"VAL5"},{"YYMM":"2028/12","EP_CHK":"E","CD":"VAL6"}]},
-                 perforTrendChart: {"data":[{"YYMM":"2023","FS_YEAR":"2023","ACT_VAL":15454.89,"CNS_VAL":17727.5},{"YYMM":"2024","FS_YEAR":"2024","ACT_VAL":2734.48,"CNS_VAL":6241.53},{"YYMM":"2025","FS_YEAR":"2025","ACT_VAL":-19975.14,"CNS_VAL":-17091.31},{"YYMM":"2026","FS_YEAR":"2026","ACT_VAL":null,"CNS_VAL":-506.43},{"YYMM":"2027","FS_YEAR":"2027","ACT_VAL":null,"CNS_VAL":14744.09},{"YYMM":"2028","FS_YEAR":"2028","ACT_VAL":null,"CNS_VAL":25141.4}],"header":[{"ID":"FS_YEAR","NM":"일자","DIGIT":-1},{"ID":"ACT_VAL","NM":"영업이익(실적)","DIGIT":2},{"ID":"CNS_VAL","NM":"영업이익(추정)","DIGIT":2}]},
-                 reports: [{"DT":"2026/05/12","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1096559,"RPT_TITLE":"상대적으로 양호한 포지션 대비 높은 가격","COMMENT":"▶ 1분기 영업손실 1,556억원, 시장 기대 상회\r\n▶ ESS Product Mix 및 AMPC 증가,\r\n▶ 삼성디스플레이 매각을 통한 투자재원 마련, 재무 안정성 기여","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"LS증권","ANL_NM_KOR":"정경희","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Hold","PRC_ACTION_TYP":3,"PRC_ACTION_NM":"하향","TARGET_PRC":"593,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/05/11","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1095917,"RPT_TITLE":"AIDC향 ESS의 중장기적인 성장성 확보","COMMENT":"▶ 2030년 전세계 ESS 수요의 30% 이상은 AIDC에서 발생할 전망\r\n▶ 매수 투자의견와 목표주가 유지","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"iM증권","ANL_NM_KOR":"정원석","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/05/08","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1096047,"RPT_TITLE":"xEV 와 ESS 향 매출 동반성장을 기대","COMMENT":"▶ 투자의견 매수 유지, 목표주가 1,000,000원으로 상향 조정\r\n▶ ESS 성장 가운데, xEV사업의 동반 이익성장을 기대할 수 있다\r\n▶ 차세대 EV프로젝트, ESS 관련 추가투자 연내 가시화 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"상상인증권","ANL_NM_KOR":"유민기","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"1,000,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/05/06","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1094432,"RPT_TITLE":"남아있는 모멘텀, 올해 셀 Top Pick 유지","COMMENT":"▶ EU 정책 모멘텀이 기다리고 있다\r\n▶ 유럽 EV 개선 시작 + 북미 BESS 실적 본격화\r\n▶ 동사에 대한 목표주가 913,000원으로 상향 조정","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"유안타증권","ANL_NM_KOR":"이안나","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"913,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/05/06","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1094220,"RPT_TITLE":"안정성에 성장성까지!","COMMENT":"▶ 2026년 북미 ESS Capa 확장 및 출하 본격화\r\n▶ 비중국 LFP 양극재 선제 확보함으로써 추가 수주 영업력 높아질 것\r\n▶ 전고체 양산도 경쟁사 대비 빠른 시점(27년) 타겟. 기술 우위 부각 예상","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"대신증권","ANL_NM_KOR":"김귀연","RECOMM_ACTION_TYP":4,"RECOMM_NM":"Buy","PRC_ACTION_TYP":4,"PRC_ACTION_NM":"신규","TARGET_PRC":"920,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092961,"RPT_TITLE":"AI데이터센터, 생각보다 더 많은 배터리 수요 창출(ESS, BBU, UPS)","COMMENT":"▶ 목표주가 600,000원에서 820,000원으로 상향\r\n▶ 1Q26 당초 예상 대비 적자폭 크게 축소\r\n▶ 분기별 실적 점진적 개선에 따라, 주가 역시 강세기조 이어갈 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"현대차증권","ANL_NM_KOR":"강동진","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"820,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092814,"RPT_TITLE":"올라가는 궤적 확인","COMMENT":"▶ 2027년 예상 EPS에 P/E 44배를 적용했으며, 기존에 적용해 왔던 P/E 30배 대비 40% 할증\r\n▶ 1Q26을 기점으로 가파른 손익개선이 확인됨에  따라 밸류에이션 재평가가 지속될 것으로 예상\r\n▶ 유럽시장을 중심으로 한  EV산업수요 회복에서 최대 수혜업체로 판단","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"다올투자증권","ANL_NM_KOR":"유지웅","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"900,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092708,"RPT_TITLE":"완만한 회복세 대비 가파른 밸류에이션","COMMENT":"▶ 1분기 영업손실 1,556억원으로 시장 예상 대비 선방\r\n▶ 1분기 실적 개선 요인, 미국 ESS 시장 및 2분기 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"LS증권","ANL_NM_KOR":"정경희","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Hold","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"618,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092609,"RPT_TITLE":"Upward trajectory","COMMENT":"▶ Favorable business environment\r\n▶ 1Q26 review: Results beat consensus on higher mid/large-sized battery utilization and strong cylindrical battery performance\r\n▶ Valuation & risk: Differentiated share price performance expected","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"이진명","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092582,"RPT_TITLE":"Early stages of an upturn","COMMENT":"▶ Raise TP to W1,000,000\r\n▶ 1Q26 results beat consensus; cost improvements accelerate\r\n▶ ","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김철중","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"1,000,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092494,"RPT_TITLE":"가동률회복: 1Q 45% > 하반기 65%","COMMENT":"▶ 1Q26 리뷰: 보상금, ESS, 소형효과\r\n▶ 2026년 전망: ESS·소형 성장, AMPC 확대, EV 반등","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"SK증권","ANL_NM_KOR":"박형우","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"810,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092429,"RPT_TITLE":"완만한 회복세 대비 가파른 밸류에이션","COMMENT":"▶ 1분기 영업손실 1,556억원으로 시장 예상 대비 선방\r\n▶ 1분기 실적 개선 요인, 미국 ESS 시장 및 2분기 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"LS증권","ANL_NM_KOR":"정경희","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Hold","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"618,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092407,"RPT_TITLE":"이제 막 좋아지기 시작","COMMENT":"▶ 목표주가 100만원으로 상향 조정\r\n▶ 1Q26 Review: 시장 예상치 상회. 원가 개선 가속","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김철중","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"1,000,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092386,"RPT_TITLE":"이제는 상승 궤도 진입","COMMENT":"▶ 1Q26 Review: 예상 대비 적자폭을 큰 폭으로 줄이며 시장 기대치 상회\r\n▶ 단기 실적보다는 중요한 점은 뚜렷한 개선 방향성. 투자 의견 매수 유지, 목표주가 83만원으로 63% 상향","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신영증권","ANL_NM_KOR":"박진수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"830,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092374,"RPT_TITLE":"1Q26 Review 컨센서스 큰 폭 상회","COMMENT":"▶ 1Q26 Review 컨센서스 큰 폭 상회\r\n▶ 투자의견 BUY, 목표주가 880,000원 상향","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"교보증권","ANL_NM_KOR":"최보영","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"880,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092354,"RPT_TITLE":"회복 가시성 확보","COMMENT":"▶ 1분기: 보상금과 소형전지 부문 선방으로 컨센서스 상회 \r\n▶ 2분기: 보상금 기저효과에도 전사업부 회복 지속 \r\n▶ 목표주가 82만 원으로 상향, 투자의견 BUY 유지","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"한화투자증권","ANL_NM_KOR":"이용욱","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"820,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092325,"RPT_TITLE":"더 이상 하락은 없다","COMMENT":"▶ 26년 1분기, 진짜 바닥인 분기\r\n▶ ESS는 전량 수주, EV는 회복세 진입\r\n▶ 투자의견 매수 유지, 목표주가 800,000원으로 상향","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"IBK투자증권","ANL_NM_KOR":"이현욱","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092319,"RPT_TITLE":"향후 회복 강도는 상상 그 이상","COMMENT":"▶ 1Q26 Review: EV 전지 수요 회복 기대감\r\n▶ 투자의견 Buy 유지, 목표주가 880,000원 상향","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"흥국증권","ANL_NM_KOR":"정진수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"880,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092302,"RPT_TITLE":"암흑기 빠르게 탈압박 중","COMMENT":"▶ 1분기 영업이익 컨센서스 큰 폭 상회\r\n▶ ESS는 좋고, EV는 바닥을 지나는 구간","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"한국투자증권","ANL_NM_KOR":"이성원","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"760,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092295,"RPT_TITLE":"드디어 하반기 흑자전환 기대","COMMENT":"▶ 1Q26 Review 꾸준한 적자 축소\r\n▶ 드디어 하반기 흑자전환 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"DB증권","ANL_NM_KOR":"안회수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"840,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092285,"RPT_TITLE":"보다 높아진 4분기 흑전 가시성","COMMENT":"▶ 1Q26P Re: 컨센서스 이익 상회\r\n▶ 사업 전방위적으로 적자 축소 지속하며 4Q26 흑전 기대\r\n▶ EV 세그먼트 확대와 Non-PFE LFP ESS 역량에 주목","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"DS투자증권","ANL_NM_KOR":"최태용","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"840,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092283,"RPT_TITLE":"주가 조정 발생시 트레이딩 관점에서 접근","COMMENT":"▶ 1Q26 배터리 부문 적자폭 축소로 시장 기대치 상회\r\n▶ 목표주가 800,000원으로 상향, 매수 투자의견 유지","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"iM증권","ANL_NM_KOR":"정원석","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092257,"RPT_TITLE":"방향성은 위","COMMENT":"▶ 우호적인 영업환경\r\n▶ 1Q26 Review: 중대형 가동률 회복 및 원형 배터리 호조로 컨센 상회\r\n▶ Valuation & Risk: 차별화된 주가 흐름 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"이진명","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092246,"RPT_TITLE":"높아지는 실적 개선 기대감","COMMENT":"▶ 1Q26 영업이익 -1,556억원, 시장 컨센서스 상회 \r\n▶ 2Q26 영업이익 -776억원(적자지속 YoY) 전망 \r\n▶ 2028년 유럽 점유율 회복 기대감 속, ESS 모멘텀 유효","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"키움증권","ANL_NM_KOR":"권준수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"820,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092240,"RPT_TITLE":"소형전지까지 좋네","COMMENT":"▶ 유럽EV와 소형전지가 견인\r\n▶ 1Q26 Review: EV빼고 다 좋았다","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"NH투자증권","ANL_NM_KOR":"주민우","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"930,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092212,"RPT_TITLE":"예상보다 빠른 실적 개선 속도","COMMENT":"▶ 목표주가 850,000원으로 +60% 상향 \r\n▶ 1Q 실적 컨센 크게 상회, EV향 적자 축소 \r\n▶ 4Q26E부터 전사 흑자전환 가능할 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"이창민","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"850,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092170,"RPT_TITLE":"실적에 기반한 상승, 2024년과 다르다","COMMENT":"▶ 1Q26 Review : 2개 분기 연속 적자폭 축소\r\n▶ 2분기 : 3개 분기 연속 적자폭 축소 전망\r\n▶ 실적 및 Valuation Factor 동반 개선, 이제는 시총 50조원이 하단","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"하나증권","ANL_NM_KOR":"김현수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"857,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092045,"RPT_TITLE":"2026.1Q Earnings","COMMENT":"▶ 2026년 1분기 경영실적 및 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"해당기업","ANL_NM_KOR":"IR팀","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092044,"RPT_TITLE":"2026년 1분기 실적설명회","COMMENT":"▶ 2026년 1분기 경영실적 및 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"해당기업","ANL_NM_KOR":"IR팀","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092067,"RPT_TITLE":"[AI 실적속보] 1Q26 컨퍼런스 콜 요약","COMMENT":"▶ 1Q26 잠정 매출액은 3조 5,764억원 (+12.6% YoY, -7.3% QoQ), 영업손실은 1,556억원 (적자지속 YoY, 적자지속 QoQ), 지배주주 순손실은 281억원 (적자지속 YoY, 적자전환 QoQ)을 기록\r\n▶ 매출액은 시장 컨센서스를 1,052억원 상회했고, 영업이익은 1,020억원 상회","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"이창민","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092545,"RPT_TITLE":"Battery unit rebounding; SDC stake sale planned","COMMENT":"▶ 1Q review?Exceeds market expectations\r\n▶ To turn profitable in 2H","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"삼성증권","ANL_NM_KOR":"장정훈","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"740,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092190,"RPT_TITLE":"ESS 성장 지속, xEV 연중 적자축소 기대","COMMENT":"▶ ESS 성장 가운데 xEV사업 연중 적자폭 축소 가시화\r\n▶ 차세대 EV 프로젝트, ESS 관련 추가투자 연내 가시화 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"상상인증권","ANL_NM_KOR":"유민기","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"850,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092123,"RPT_TITLE":"전지 회복세 확인과 SDC 지분 매각 연내 진행","COMMENT":"▶ 1분기 리뷰, 시장 예상치 상회\r\n▶ ESS LFP 본격 가동에, 유럽향 볼륨 EV 모델 판매로 하반기 흑자 전환 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"삼성증권","ANL_NM_KOR":"장정훈","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"740,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/22","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1089926,"RPT_TITLE":"EV 수주 가뭄 해소","COMMENT":"▶ ’28년 실적을 할인 적용하며 목표주가 상향\r\n▶ 유럽 EV 신규 수주가 살아난다","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"NH투자증권","ANL_NM_KOR":"주민우","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"880,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/20","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1089426,"RPT_TITLE":"Rising expectations for a turnaround","COMMENT":"▶ Weak 1H, strong 2H outlook for 2026\r\n▶ 1Q26 preview: EV shipment growth and solid ESS performance despite absence of one-offs\r\n▶ Valuation & risk: Continued share price re-rating","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"이진명","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"580,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/20","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1089212,"RPT_TITLE":"턴어라운드 기대감 부각","COMMENT":"▶ 뚜렷한 상저하고\r\n▶ 1Q26 Preview: 일회성 소멸에도 EV향 출하 증가 및 ESS 호조 기대\r\n▶ Valuation & Risk: 주가 재평가 지속","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"이진명","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"580,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0}],
-                 cnsTrendChart: {"data":[{"TRD_DT":"25/06/30","VAL_MAX":23620.00,"VAL_MIN":-470.00,"VAL_AVG":11991.84},{"TRD_DT":"25/07/31","VAL_MAX":23620.00,"VAL_MIN":-3800.00,"VAL_AVG":9407.20},{"TRD_DT":"25/08/29","VAL_MAX":14835.00,"VAL_MIN":-3800.00,"VAL_AVG":6465.25},{"TRD_DT":"25/09/30","VAL_MAX":11986.00,"VAL_MIN":-3800.00,"VAL_AVG":5621.00},{"TRD_DT":"25/10/31","VAL_MAX":11706.00,"VAL_MIN":-7080.00,"VAL_AVG":2359.50},{"TRD_DT":"25/11/28","VAL_MAX":8751.00,"VAL_MIN":-10770.00,"VAL_AVG":480.52},{"TRD_DT":"25/12/30","VAL_MAX":7329.00,"VAL_MIN":-10770.00,"VAL_AVG":-316.30},{"TRD_DT":"26/01/30","VAL_MAX":3530.00,"VAL_MIN":-9670.00,"VAL_AVG":-3404.31},{"TRD_DT":"26/02/27","VAL_MAX":3520.00,"VAL_MIN":-12140.00,"VAL_AVG":-5100.18},{"TRD_DT":"26/03/31","VAL_MAX":3520.00,"VAL_MIN":-12140.00,"VAL_AVG":-4684.55},{"TRD_DT":"26/04/30","VAL_MAX":3800.00,"VAL_MIN":-5220.00,"VAL_AVG":-990.36},{"TRD_DT":"26/05/15","VAL_MAX":3800.00,"VAL_MIN":-5220.00,"VAL_AVG":-506.43}],"header":[{"ID":"TRD_DT","NM":"일자","DIGIT":-1},{"ID":"VAL_MAX","NM":"컨센서스(최고)","DIGIT":0},{"ID":"VAL_MIN","NM":"컨센서스(최저)","DIGIT":0},{"ID":"VAL_AVG","NM":"컨센서스","DIGIT":2}]},
-                 cnsTrend: {"data":[{"ACC_NM":"매출액","UNIT":"","DIGIT":0,"VAL1":"155611.22","VAL2":"150790.73","VAL3":"150501.80","VAL4":"153625.52","VAL5":"193225.63"},{"ACC_NM":"영업이익","UNIT":"","DIGIT":0,"VAL1":"-506.43","VAL2":"-4208.95","VAL3":"-4724.80","VAL4":"1073.29","VAL5":"13299.63"},{"ACC_NM":"당기순이익","UNIT":"","DIGIT":0,"VAL1":"4335.17","VAL2":"933.05","VAL3":"-508.20","VAL4":"3287.00","VAL5":"12105.32"},{"ACC_NM":"EPS","UNIT":"(원)","DIGIT":0,"VAL1":"5273.71","VAL2":"1135.05","VAL3":"-618.22","VAL4":"3998.62","VAL5":"14726.05"},{"ACC_NM":"PER","UNIT":"","DIGIT":2,"VAL1":"116.43","VAL2":"414.96","VAL3":"N/A","VAL4":"78.78","VAL5":"11.52"},{"ACC_NM":"PER(Fwd. 12M)","UNIT":"","DIGIT":2,"VAL1":"55.53","VAL2":"77.48","VAL3":"180.50","VAL4":"101.19","VAL5":"21.11"},{"ACC_NM":"목표주가","UNIT":"(원)","DIGIT":0,"VAL1":"843608.70","VAL2":"521818.18","VAL3":"436052.63","VAL4":"366900.00","VAL5":"255031.38"},{"ACC_NM":"투자의견(점수)","UNIT":"","DIGIT":2,"VAL1":"3.96","VAL2":"3.95","VAL3":"3.95","VAL4":"3.86","VAL5":"3.84"}],"header":[{"ID":"ACC_NM","NM":"2026/05/15","DIGIT":0},{"ID":"VAL1","NM":"당기순이익","DIGIT":0},{"ID":"VAL2","NM":"1개월전","DIGIT":0},{"ID":"VAL3","NM":"3개월전","DIGIT":0},{"ID":"VAL4","NM":"6개월전","DIGIT":0},{"ID":"VAL5","NM":"1년전","DIGIT":0}]},
-            });
-        });
-</script>
-
-</body>
-</html>
+
+<!DOCTYPE html>
+<html lang="ko">
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="ko" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="NaverBot" content="All" />
+    <meta name="NaverBot" content="index,follow" />
+    <meta name="Yeti" content="All" />
+    <meta name="Yeti" content="index,follow" />
+    <title>삼성SDI(006400) | 컨센서스 | 기업정보 | Company Guide</title>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" type="image/x-icon" href="/favicon.ico?ver=1">
+    <meta name="description" content="에프앤가이드 상장기업분석" />
+    <meta name="image" content="" />
+    <meta name="keywords" content="에프앤가이드, 에프엔가이드, FnGuide, fn가이드" />
+    <meta name="author" content="에프앤가이드" />
+    <meta name="copyright" content="Copyright© FnGuide Inc. All rights reserved." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="에프앤가이드" />
+    <meta property="og:description" content="에프앤가이드 상장기업분석" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta name="dtyp" content="D" />
+    <meta name="sno" content="2" />
+    
+    <link href="https://wcompcdn.fnguide.com/bundles/jquery/css?v=202605160727" rel="stylesheet"/>
+
+    <link href="https://wcompcdn.fnguide.com/bundles/css?v=202605160727" rel="stylesheet"/>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery/core?v=202605160727"></script>
+<script>(window.jQuery)||document.write('<script src="/bundles/jquery/core"><\/script>');</script>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery?v=202605160727"></script>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jsfile?v=202605160727"></script>
+    
+</head>
+<body class="">
+    <div class="fng_body ">
+        <div class="fng_wrap">
+            <!-- Str : HEADER -->
+            
+
+    <div class="headwrap">
+        <div class="headertop">
+            <h1><a class="menu_link" href="/"><span> 상장기업분석 </span></a></h1>
+                <div class="hdt_center">
+                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-8384bf2c" target="_blank" class="hdt_bnr" style="background-image:url(../../Contents/images/fngc_topBnr_bg_default.png?v260506);">
+                        <strong>
+                            <span class="txt1">
+                                <img src="/Contents/images/fngc_topBnr_txt_default.png" alt="PC+모바일 리포트 무제한">
+                            </span>
+                            <span class="txt2">
+                                <img src="/Contents/images/fngc_topBnr_txt_default_hover.png" alt="월 2만원에 리타민 추가 구독">
+                            </span>
+                        </strong>
+                    </a>
+                </div>
+            <div class="hdt_rgt">
+                <form name="frmMain" method="get">
+                    <div class="input_ty1 lk_in">
+                        <input type="text" id="searchCompany" title="정확한 종목명 또는 종목코드 입력(잘모를 경우 다음 종목찾기 링크 이용)" placeholder="종목명 또는 종목코드 입력" autocomplete="off" />
+                        <button type="button" class="btn_lookup" title="종목검색팝업 새창열기"><span class="htxt">열기</span></button>
+                    </div>
+                    <button type="button" onClick="GoPrint();" class="btn_ty1"><span>인쇄</span></button>
+                </form>
+            </div>
+        </div>
+        <div class="headergnb" id="compGnb">
+            <ul class="gnb_dp1wrap">
+                <!-- [개발] 페이지 이동시 class : gnb_ac 적용 -->
+                <li class="gnb_dp1 gnb_ac">
+                    <a href="/CompanyInfo/Snapshot" class="menu_link">기업정보</a>
+                    <ul class="gnb_dp2wrap gnb_n1">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/CompanyInfo/Snapshot" class="menu_link ">Snapshot</a>
+                            <a href="/CompanyInfo/Information" class="menu_link ">기업개요</a>
+                            <a href="/CompanyInfo/Finance" class="menu_link ">재무제표</a>
+                            <a href="/CompanyInfo/FinanceRatio" class="menu_link ">재무비율</a>
+                            <a href="/CompanyInfo/Invest" class="menu_link ">투자지표</a>
+                            <a href="/CompanyInfo/Consensus" class="menu_link ac">컨센서스</a>
+                        </li>
+                        <li class="gnb_dp2">
+                            <a href="/CompanyInfo/ShareAnalysis" class="menu_link ">지분분석</a>
+                            <a href="/CompanyInfo/SectorAnalysis" class="menu_link ">업종분석</a>
+                            <a href="/CompanyInfo/Comparison" class="menu_link ">경쟁사비교</a>
+                            <a href="/CompanyInfo/Disclosure" class="menu_link ">거래소공시</a>
+                            <a href="/CompanyInfo/Dart" class="menu_link ">금감원공시</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1  ">
+                    <a href="/Etp/EtfSnapshot" class="menu_link ">ETF/ETN 정보</a>
+                    <ul class="gnb_dp2wrap gnb_n2">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Etp/EtfSnapshot" class="menu_link ">ETF Snapshot</a>
+                            <a href="/Etp/EtfAnalysis" class="menu_link ">성과 및 위험분석</a>
+                            <a href="/Etp/EtnSnapshot" class="menu_link ">ETN Snapshot</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1  ">
+                    <a href="/Report/ReportTrend" class="menu_link">리포트</a>
+                    <ul class="gnb_dp2wrap gnb_n3">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Report/ReportTrend" class="menu_link ">리포트동향</a>
+                            <a href="/Report/ReportSummary" class="menu_link ">요약리포트</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/CompPerformance/ProResultCorp" class="menu_link">실적속보</a>
+                    <ul class="gnb_dp2wrap gnb_n4">
+                        <li class="gnb_dp2 gnb_dp2_start"></li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Consensus/TargetPriceGap" class="menu_link">컨센서스 스크리닝</a>
+                    <ul class="gnb_dp2wrap gnb_n5">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Consensus/TargetPriceGap" class="menu_link ">목표주가 괴리율</a>
+                            <a href="/Consensus/UpDownRatio" class="menu_link ">컨센서스 상/하향 비율</a>
+                            <a href="/Consensus/EarningSurprise" class="menu_link ">어닝서프라이즈</a>
+                            <a href="/Consensus/TurnAround" class="menu_link ">턴어라운드</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Ranking/SectorRank" class="menu_link">랭킹 분석</a>
+                    <ul class="gnb_dp2wrap gnb_n6">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Ranking/SectorRank" class="menu_link ">업종별 순위</a>
+                            <a href="/Ranking/IdxRank" class="menu_link ">지표별 순위</a>
+                            <a href="/Ranking/EtfRank" class="menu_link ">ETF 순위</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Calendar/CompCalendar" class="menu_link">캘린더</a>
+                    <ul class="gnb_dp2wrap gnb_n7">
+                        <li class="gnb_dp2 gnb_dp2_start"></li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/SideInfo/CreditScore" class="menu_link">부가정보</a>
+                    <ul class="gnb_dp2wrap gnb_n8">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/SideInfo/CreditScore" class="menu_link ">신용등급</a>
+                            <a href="/SideInfo/CorporationList" class="menu_link ">기업주소록</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Help/Guide" class="menu_link">이용안내</a>
+                    <ul class="gnb_dp2wrap gnb_n9">
+                        <li class="gnb_dp2 gnb_dp2_start"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+            <div class="ad_vertical">
+                <div class="ad_left" style="position:fixed;top: 150px;width:300px;height:600px;margin-left:-320px;">
+                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-ddd55871" target="_blank" style="display:block;width:100%;height:100%;">
+                        <img src="/Contents/images/fngc_leftBnr_img_default.png" alt="이제 모바일에서도 리포트를 자유롭게! 지금 확인하기" style="width:100%;height:100%;">
+                    </a>
+                </div>
+                <div class="ad_right" style="position:fixed;top:150px;width:300px;height:600px;margin-left:1028px;">
+                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-ddd55871" target="_blank" style="display:block;width:100%;height:100%;">
+                        <img src="/Contents/images/fngc_rightBnr_img_default.png" alt="와이즈리포트 회원이라면 리타민을 월 22,000원에. 정가 대비 75% 할인!" style="width:100%;height:100%;">
+                    </a>
+                </div>
+            </div>
+        <!-- End : 사이드 배너 -->
+
+    </div>
+
+            <!-- End : HEADER -->
+            <!-- Str : CONTAINER -->
+            <div class="contwrap" id="compBody">
+                
+<!-- STR : 공통기업개요 -->
+
+<input id="cmp_nm" name="cmp_nm" type="hidden" value="삼성SDI" />
+<input id="stk_typ" name="stk_typ" type="hidden" value="1" />
+<input id="master_chk" name="master_chk" type="hidden" value="C" />
+
+
+
+    <div class="section ul_corpinfo">
+        <div class="corp_group1">
+            <h1 id="giName">삼성SDI</h1>
+            <h2>006400</h2><span class="etc1">&#124;</span><h2>12월 결산</h2> <span class="etc1">&#124;</span>
+            <button type="button" onClick="goHompage('www.samsungsdi.co.kr')" id="btn_shome" class="btn_shome">홈페이지</button>
+            <dl style="display:none;" id="dl_btn_shome">
+                <dt>홈페이지</dt>
+                <dd id="dd_btn_shome">www.samsungsdi.co.kr</dd>
+            </dl>
+            <button type="button" id="btn_sphone" class="btn_sphone">전화번호</button>
+            <dl style="display:none;" id="dl_btn_sphone">
+                <dt>전화번호</dt>
+                <dd>031-288-4114 | IR 담당자 031-288-4114</dd>
+            </dl>
+            <button type="button" id="btn_spmap" data-val="경기도 용인시 기흥구 공세로 150-20" data-nm="삼성SDI" class="btn_spmap">주소</button>
+            <dl style="display:none;" id="dl_btn_spmap">
+                <dt>주소</dt>
+                <dd id="dd_btn_spmap">경기도 용인시 기흥구 공세로 150-20</dd>
+            </dl>
+            <p class="stxt_group">
+                <span class="stxt">KOSPI</span>
+                    <span class="etc2">&#124;</span>
+                    <span class="stxt">코스피 전기&#183;전자</span>
+                    <span style="display:none" id="strMarketTxt"> KOSPI 코스피 전기&#183;전자</span>
+                                    <span class="etc2">&#124;</span>
+                    <span class="stxt stxt2">WI26 IT가전</span>
+                                    <span class="etc2">&#124;</span>
+                    <span class="stxt stxt3">K200</span>
+                                    <span class="etc2">&#124;</span>
+                    <span class="stxt">NXT</span>
+            </p>
+        </div>
+        <div class="corp_group2" id="corp_group2">
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>PER(Price Earning Ratio)</dt>
+                        <dd>전일자 보통주 수정주가 / 최근 결산 수정EPS(주당순이익) <br>*EPS = 당기순이익(지배) / 수정평균발행주식수<br>*최근결산은 2025/12 (연간) 기준임.</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_per">PER</button>
+                </li>
+                <li>- </li>
+            </ul>
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>PER(Fwd.12M)</dt>
+                        <dd>전일자 보통주 수정주가 / EPS(Fwd.12M, 지배)</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_12m">PER(Fwd.12M)</button>
+                </li>
+                <li> 55.53 </li>
+            </ul>
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>업종 PER</dt>
+                        <dd>WI26 IT가전∥SUM(구성종목 시가총액)/SUM(구성종목 당기순이익)<br>*전일자 보통주 시가총액 기준<br>*당기순이익은은 최근결산 2025/12 (연간) 기준임.</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_u_per"><span class="ko">업종</span> PER</button>
+                </li>
+                <li> - </li>
+            </ul>
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>PBR(Price Book-value Ratio)</dt>
+                        <dd>전일자 보통주 수정주가 / 최근 결산기 BPS(주당순자산)<br>*BPS=자본총계(지배) / 수정기말발행주식수(자사주차감)<br>*최근결산은 2025/12 (연간) 기준임.</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_pbr">PBR</button>
+                </li>
+                <li>2.25 </li>
+            </ul>
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>현금배당수익률</dt>
+                        <dd>{최근 결산 보통주 수정DPS(현금,연간) / 전일자 보통주 수정주가} *100<br>*최근결산은 2025/12 (연간) 기준임.</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_rate"><span class="ko">현금배당수익률</span></button>
+                </li>
+                <li>- </li>
+            </ul>
+        </div>
+    </div>
+
+<script src="/Scripts/companyInfo-common?v=uDdgptwFwz57KMh0oOC6JXlxmGs2bcIDl7tl_rTtHUI1"></script>
+
+<!-- END: 공통기업개요 -->
+
+<!-- STR : 공통기업개요 -->
+<!-- END: 공통기업개요 -->
+<div class="section ul_de">
+    <!-- 실적&컨센서스 추이 -->
+
+
+        <div class="ul_col2wrap pd_t25">
+            <div class="um_topbar bmshadow">
+                <div class="topbar_wrap">
+                    <div class="topbar_lft">
+                        <h2>실적&amp;컨센서스 추이</h2>
+                        <span class="stxt rsp_hidden" id="perfor_trend_title">[연결 | 연간 | 영업이익]</span>
+                    </div>
+                    <div class="topbar_rgt pd_r4">
+                        <span class="txt1">단위 : 억원, 배</span>
+                        <div class="um_gbtn grd_ty1 fl" id="perfor_trend_consol_typ">
+                            <button type="button" class="gbtn_f r3  ac " data-val="C">연결</button>
+                            <button type="button" class="gbtn_e r3 " data-val="P">별도</button>
+                        </div>
+                        <div class="um_gbtn grd_ty2 fl" id="perfor_trend_aq_typ">
+                            <button type="button" class="gbtn_f r3 ac" data-val="Y">연간</button>
+                            <button type="button" class="gbtn_e r3" data-val="Q">분기</button>
+                        </div>
+                        <div class="us_select_ty1" style="width:130px;">
+                            <span class="vbox">
+                                <span class="vtxt" id="perfor_trend_acct_title"></span>
+                            </span>
+                            <span class="iarrow"></span>
+                            <select id="perfor_trend_acct" title="계정 선택">
+                                <option value="1">매출액</option>
+                                <option value="2" selected>영업이익</option>
+                                <option value="3">당기순이익</option>
+                            </select>
+                        </div>
+                        <button type="button" id="perfor_trend_submit" class="us_btn_ty1 fl">조회</button>
+                    </div>
+                </div>
+            </div>
+            <div class="um_chart chart_ht1" style="height:255px;">
+                <div class="chart_wrap" id="CNS_01" style="width:733px;margin:0 auto;"></div>
+            </div>
+
+            <div class="ul_co1_c pd_t1">
+                <div class="um_table">
+                    <table class="us_table_ty1 h_fix zigbg_no" id="tbl_cns_perfor_trend_head">
+                        <caption class="cphidden">실적&amp;컨센서스 추이</caption>
+                        <colgroup>
+                            <col style="width: 28%;">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead id="">
+
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <!-- End : else -->
+    <!-- 컨센서스 시계열 추이 -->
+    <div class="ul_wrap rwd_in">
+        <div class="um_topbar bmshadow">
+            <div class="topbar_wrap">
+                <div class="topbar_lft">
+                    <h2>컨센서스 시계열 추이</h2>
+                    <span class="stxt rsp_hidden" id="trend_title">[연결 | 연간]</span>
+                </div>
+                <div class="topbar_rgt pd_r4">
+                    <span class="txt1">단위 : 억원, 배</span>
+                    <div class="um_gbtn grd_ty1 fl" id="trend_consol_typ">
+                        <button type="button" class="gbtn_f r3 ac" data-val="C">연결</button>
+                        <button type="button" class="gbtn_e r3 " data-val="P">별도</button>
+                    </div>
+                    <div class="um_gbtn grd_ty2 fl" id="trend_aq_typ">
+                        <button type="button" class="gbtn_f r3 ac" data-val="Y">연간</button>
+                        <button type="button" class="gbtn_e r3" data-val="Q">분기</button>
+                    </div>
+                    <div class="us_select_ty1" style="width:68px;">
+                        <span class="vbox">
+                            <span class="vtxt"></span>
+                        </span>
+                        <span class="iarrow"></span>
+                        <select id="trend_gsym" title="결산년월 선택"></select>
+                    </div>
+                    <button type="button" id="trend_submit" class="us_btn_ty1 fl">조회</button>
+                </div>
+            </div>
+        </div>
+        <div class="um_col2wrap">
+            <div class="um_col2_l">
+                <div class="um_wrap">
+                    <div class="um_table" id="grid2">
+                        <table class="us_table_ty1 h_fix zigbg_no th_topbdno" id="cns_trend_table">
+                            <caption class="cphidden">컨센서스 시계열 추이</caption>
+                            <colgroup>
+                                <col style="width: 28%;">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead id="theadcontent2">
+                                <tr>
+                                    <th class="clf tbold" scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">1개월전</th>
+                                    <th scope="col">3개월전</th>
+                                    <th scope="col">6개월전</th>
+                                    <th class="cle" scope="col">1년전</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bodycontent2"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="um_col2_r">
+                <div class="um_wrap">
+                    <div class="um_consentab" id="trend_acct_tab">
+                        <button type="button" data-val="0">매출액</button>
+                        <button type="button" data-val="1" class="ac">영업이익</button>
+                        <button type="button" data-val="2">당기순이익</button>
+                        <button type="button" data-val="3">EPS</button>
+                        <button type="button" data-val="4">PER</button>
+                        <button type="button" data-val="5" class="end">PER(Fwd.12M)</button>
+                    </div>
+                    <div class="um_chart chart_ht2" style="height:225px;">
+                        <div class="chart_wrap" id="CNS_02">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 증권사별 적정주가 & 투자의견 -->
+    <div class="ul_wrap">
+        <div class="um_topbar botbd_n bmshadow">
+            <div class="topbar_wrap">
+                <div class="topbar_lft">
+                    <h2>증권사별 적정주가 &amp; 투자의견</h2>
+                </div>
+                <div class="topbar_rgt">
+                    <span class="txt1">단위 : 원, %</span>
+                </div>
+            </div>
+        </div>
+        <div class="um_table">
+            <table class="us_table_ty1 h_fix">
+                <caption class="cphidden">증권사별 적정주가 &amp; 투자의견</caption>
+                <colgroup>
+                    <col>
+                    <col style="width: 12%;">
+                    <col style="width: 12%;">
+                    <col style="width: 12%;">
+                    <col style="width: 10%;">
+                    <col style="width: 10%;">
+                    <col style="width: 10%;">
+                </colgroup>
+                <thead>
+                    <tr class="th2row_f">
+                        <th rowspan="2" class="clf tbold" scope="col">추정기관</th>
+                        <th rowspan="2" class="tbold" scope="col">추정일자</th>
+                        <th colspan="3" scope="col">적정주가</th>
+                        <th class="cle" colspan="2" scope="col">투자의견</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">적정주가</th>
+                        <th scope="col">직전 적정주가</th>
+                        <th scope="col">증감율</th>
+                        <th scope="col">투자의견</th>
+                        <th scope="col" class="cle">직전 투자의견</th>
+                    </tr>
+                </thead>
+                <tbody>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="tbody_tit2 ">
+                                <td class="l">Consensus</td>
+                                <td class="c"></td>
+                                <td class="r">843,609</td>
+                                <td class="r">587,591</td>
+                                <td class="r  ">43.57</td>
+                                <td class="r">3.96</td>
+                                <td class="cle r">3.95</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">LS증권</td>
+                                <td class="c">2026/05/12</td>
+                                <td class="r">593,000</td>
+                                <td class="r">618,000</td>
+                                <td class="r  tcr">-4.05</td>
+                                <td class="r">3.00</td>
+                                <td class="cle r">3.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">iM증권</td>
+                                <td class="c">2026/05/11</td>
+                                <td class="r">800,000</td>
+                                <td class="r">800,000</td>
+                                <td class="r  ">0.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">상상인증권</td>
+                                <td class="c">2026/05/08</td>
+                                <td class="r">1,000,000</td>
+                                <td class="r">850,000</td>
+                                <td class="r  ">17.65</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">대신증권</td>
+                                <td class="c">2026/05/06</td>
+                                <td class="r">920,000</td>
+                                <td class="r"></td>
+                                <td class="r  "></td>
+                                <td class="r">4.00</td>
+                                <td class="cle r"></td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">유안타증권</td>
+                                <td class="c">2026/05/06</td>
+                                <td class="r">913,000</td>
+                                <td class="r">620,000</td>
+                                <td class="r  ">47.26</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">다올투자증권</td>
+                                <td class="c">2026/04/30</td>
+                                <td class="r">900,000</td>
+                                <td class="r">580,000</td>
+                                <td class="r  ">55.17</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">현대차증권</td>
+                                <td class="c">2026/04/30</td>
+                                <td class="r">820,000</td>
+                                <td class="r">600,000</td>
+                                <td class="r  ">36.67</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">신한투자증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">800,000</td>
+                                <td class="r">580,000</td>
+                                <td class="r  ">37.93</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">KB증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">850,000</td>
+                                <td class="r">530,000</td>
+                                <td class="r  ">60.38</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">미래에셋증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">1,000,000</td>
+                                <td class="r">600,000</td>
+                                <td class="r  ">66.67</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">DB증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">840,000</td>
+                                <td class="r">550,000</td>
+                                <td class="r  ">52.73</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">SK증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">810,000</td>
+                                <td class="r">450,000</td>
+                                <td class="r  ">80.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">교보증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">880,000</td>
+                                <td class="r">580,000</td>
+                                <td class="r  ">51.72</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">신영증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">830,000</td>
+                                <td class="r">510,000</td>
+                                <td class="r  ">62.75</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">한화투자증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">820,000</td>
+                                <td class="r">520,000</td>
+                                <td class="r  ">57.69</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">NH투자증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">930,000</td>
+                                <td class="r">880,000</td>
+                                <td class="r  ">5.68</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">키움증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">820,000</td>
+                                <td class="r">480,000</td>
+                                <td class="r  ">70.83</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">한국투자증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">760,000</td>
+                                <td class="r">600,000</td>
+                                <td class="r  ">26.67</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">흥국증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">880,000</td>
+                                <td class="r">630,000</td>
+                                <td class="r  ">39.68</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">하나증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">857,000</td>
+                                <td class="r">469,000</td>
+                                <td class="r  ">82.73</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">DS투자증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">840,000</td>
+                                <td class="r">450,000</td>
+                                <td class="r  ">86.67</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">IBK투자증권</td>
+                                <td class="c">2026/04/29</td>
+                                <td class="r">800,000</td>
+                                <td class="r">500,000</td>
+                                <td class="r  ">60.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">삼성증권</td>
+                                <td class="c">2026/04/28</td>
+                                <td class="r">740,000</td>
+                                <td class="r">530,000</td>
+                                <td class="r  ">39.62</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 최신리포트리포트 요약 -->
+    <div class="ul_wrap">
+        <div class="um_topbar bmshadow">
+            <div class="topbar_wrap">
+                <div class="topbar_lft">
+                    <h2>리포트 요약</h2>
+                    <span class="stxt"></span>
+                </div>
+                <div class="topbar_rgt">
+                    <span class="txt1">단위 : 원</span>
+                </div>
+            </div>
+        </div>
+        <div class="um_table">
+            <table class="us_table_ty1 h_pd" id="tbl_rpt_sum_summary">
+                <caption class="cphidden">리포트요약</caption>
+                <colgroup>
+                    <col style="width:8%">
+                    <col>
+                    <col style="width:11%">
+                    <col style="width:10%">
+                    <col style="width:10%">
+                    <col style="width:12%">
+                </colgroup>
+                <thead>
+                    <tr class="th_b">
+                        <th class="clf" scope="col">일자</th>
+                        <th scope="col">종목명 - 리포트 요약</th>
+                        <th scope="col">투자의견</th>
+                        <th scope="col">목표주가</th>
+                        <th scope="col">전일종가</th>
+                        <th scope="col">제공처/작성자</th>
+                    </tr>
+                </thead>
+                <tbody id="bodycontent4"></tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+<script type="text/template" id="tmpl_cns_perfor_trend_head">
+    <% if(data.length > 0) { %>
+    <tr>
+        <th scope="col" class="clf tbold"><%= console_nm %></th>
+        <% _.each(data, function(v, i) { %>
+        <% if (v.EP_CHK =='E' ||  v.EP_CHK =='P'  ) { %>
+        <th scope="col">
+            <div>
+                <dl style="display:none;">
+                    <dt>(<%= v.EP_CHK %>) : <%= v.EP_CHK == 'E'? 'Estimate':'Provisional' %></dt>
+                    <dd><%= v.EP_CHK == 'E'? '컨센서스, 추정치':'잠정실적' %> </dd>
+                </dl>
+                <button type="button" class="tip_in">
+                    <span class="txt_acd"><%= v.YYMM %>(<%= v.EP_CHK %>)</span>
+                </button>
+            </div>
+        </th>
+        <% } else { %>
+        <th scope="col"><%= v.YYMM %></th>
+        <% } %>
+        <% }) %>
+    </tr>
+    <% } %>
+</script>
+
+<script type="text/template" id="tmpl_cns_perfor_trend_body">
+    <% if(data.length > 0) { var parent_id = ''  ;  var  p_ac_code =''; %>
+
+    <% _.each(data, function(v, i) { %>
+    <% if(v.LVL == '1'  ) {
+    parent_id = v.AC_CODE+'_'+ i
+    if(i < data.length-1 ){
+    p_ac_code = data[i+1].P_AC_CODE;
+    }
+    %>
+    <!--부모 계정 -->
+    <tr id="p_perfor_<%=parent_id%>" class=" acd_dep_start_open">
+        <th scope="row" class="l <%= i == 0 ? 'clf' : (data.length - 1 == i ? 'cle' : '') %>">
+            <div>
+                <% if(v.FORMULA == null){ %>
+                <span class="txt_acd txt_ell"><%= v.NAME.replace(/ /gi, '\xa0') %></span>
+                <span class="csize"><%= v.UNIT %></span>
+                <%}else{%>
+                <% var formula = v.FORMULA.split('||||'); %>
+                <dl style="display:none;">
+                    <dt><%= formula[0] %></dt>
+                    <dd><%= formula[1] %></dd>
+                </dl>
+                <button class="tip_in txt_ell icons"><%= v.NAME.replace(/ /gi, '\xa0') %></button>
+                <span class="csize"><%= v.UNIT %></span>
+                <%}%>
+
+                <!--자식있다면-->
+                <% if( v.AC_CODE == p_ac_code ){ %>
+                <button type="button" class="btn_acdclose btn_showhide">
+                    <span class="blind" id="span_grid1_0">계산에 참여한 계정 펼치기</span>
+                </button>
+                <% }%>
+
+            </div>
+        </th>
+        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL1,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL2,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL3,v.DIGIT,'-') %></td>
+        <td class="r tdbg_b <%= v.VAL4 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL4,v.DIGIT,'-') %></td>
+        <td class="r tdbg_b <%= v.VAL5 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL5,v.DIGIT,'-') %></td>
+        <td class="r cle tdbg_b <%= v.VAL6 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL6,v.DIGIT,'-') %></td>
+    </tr>
+    <% } else { %>
+    <!--자식 계정 -->
+    <tr class="c_perfor_<%=parent_id %>  acd_dep2_sub">
+        <th scope="row" class="clf">
+            <div>
+                <% if(v.FORMULA == null){ %>
+                <div><%= v.NAME.replace(/ /gi, '\xa0') %><span class="csize"><%=v.UNIT %></span></div>
+                <%}else{%>
+                <% var formula = v.FORMULA.split('||||'); %>
+                <dl style="display:none;">
+                    <dt><%= formula[0] %></dt>
+                    <dd><%= formula[1] %></dd>
+                </dl>
+                <button class="tip_in txt_ell icons"><%= v.NAME.replace(/ /gi, '\xa0') %></button>
+                <span class="csize"><%= v.UNIT %></span>
+                <%}%>
+            </div>
+        </th>
+        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL1,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL2,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL3,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL4 < 0 ? 'tcr' : '' %> tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL4,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL5 < 0 ? 'tcr' : '' %> tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL5,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL6 < 0 ? 'tcr' : '' %> cle tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL6,v.DIGIT,'-') %></td>
+    </tr>
+    <% }%>
+    <% }) }%>
+
+</script>
+
+<script type="text/template" id="tmpl_cns_trend_yymm">
+    <% if(data.length > 0) { %>
+    <% _.each(data, function (v, i) {
+    if( i== 0 ){
+    %>
+    <option selected value="<%= v.YYMM %>"><%= v.YYMM_F %></option>
+    <%}else{%>
+    <option value="<%= v.YYMM %>"><%= v.YYMM_F %></option>
+    <%}%>
+    <%})%>
+    <%} %>
+</script>
+
+<script type="text/template" id="tmpl_cns_trend">
+    <% if(data.length > 0) { %>
+    <% _.each(data, function (v, i) { %>
+    <tr>
+        <th scope="row">
+            <div><%= v.ACC_NM %><span class="csize"><%= v.UNIT %></span></div>
+        </th>
+        <!--per,per,투자의견-->
+
+        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL1, v.DIGIT) %> </td>
+        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL2, v.DIGIT) %></td>
+        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL3, v.DIGIT) %></td>
+        <td class="r <%= v.VAL4 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL4, v.DIGIT) %></td>
+        <td class="cle r <%= v.VAL5 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL5, v.DIGIT) %></td>
+    </tr>
+    <%})%>
+
+    <%}else{%>
+    <tr>
+        <td colspan="6" class="c">데이터가 없습니다.</td>
+    </tr>
+    <%}%>
+</script>
+
+
+
+<script type="text/template" id="tmpl_rpt_smr_summary">
+    <% if(data.length > 0) {  %>
+    <% _.each(data, function (v, i) { %>
+    <tr class="<%= i % 2 == 0 ? 'zigbg_in' : '' %>" data-rpt_id="<%= v.RPT_ID %>" data-cmp_cd="<%= v.CMP_CD %>">
+        <td class="c clf"><%= v.DT %></td>
+        <td class="l nopre">
+            <dl class="um_tdinsm">
+                <dt>
+                    <a href="javascript:;" title="<%= v.CMP_NM_KOR + ' 스냅샷 페이지로 이동' %>" class="snapshotLink"><%= v.CMP_NM_KOR + ' ' + v.CMP_CD %></a>
+                    <span class="txt2"><%= v.RPT_TITLE != null && v.RPT_TITLE != '' ? ' - ' + v.RPT_TITLE : '' %></span>
+                </dt>
+                <%
+                var commentArray = FnGuideUtil.Report.commentToArray(2, v.COMMENT, '▶');
+
+                _.each(commentArray, function (v, i) {
+                if(i < 2) {
+                %>
+                <dd><%= v %></dd>
+                <%
+                }
+                });
+                %>
+            </dl>
+        </td>
+        <td class="c nopre2">
+            <span class="gpbox">
+                <%
+                var recommClass = '';
+                switch(v.RECOMM_ACTION_TYP) {
+                case 1:
+                recommClass = 'up';
+                break;
+                case 2:
+                recommClass = 'hold';
+                break;
+                case 3:
+                recommClass = 'down';
+                break;
+                case 4:
+                recommClass = 'new';
+                break;
+                }
+
+                if(recommClass != '') {
+                %>
+                <img src="../../Contents/images/shbg.png" alt="<%= v.RECOMM_NM %>" class="gp_img <%= recommClass %>">
+                <%
+                }
+                %>
+                <%= v.RECOMM_NM %>
+            </span>
+        </td>
+        <td class="r nopre2">
+            <span class="gpbox">
+                <%
+                var actionClass = '';
+                switch(v.PRC_ACTION_TYP) {
+                case 1:
+                actionClass = 'up';
+                break;
+                case 2:
+                actionClass = 'hold';
+                break;
+                case 3:
+                actionClass = 'down';
+                break;
+                case 4:
+                actionClass = 'new';
+                break;
+                }
+
+                if(recommClass != '') {
+                %>
+                <img src="../../Contents/images/shbg.png" alt="<%= v.PRC_ACTION_NM %>" class="gp_img <%= actionClass %>">
+                <%
+                }
+                %>
+                <%= v.TARGET_PRC %>
+            </span>
+        </td>
+        <td class="r"><%= v.CLOSE_PRC %></td>
+        <td class="cle c nopre2">
+            <span class="gpbox">
+                <% if(v.BEST_ANALYST_YN == 1) { %>
+                <img src="../../Contents/images/shbg.png" alt="베스트 애널리스트" class="gp_img best">
+                <% } %>
+                <%= v.BRK_NM_KOR %><br />
+                <%= v.ANL_NM_KOR %>
+            </span>
+        </td>
+    </tr>
+    <% }) %>
+    <% } else { %>
+    <tr class="zig_bg">
+        <td colspan="6" class="c">검색된 리포트가 없습니다.</td>
+    </tr>
+    <% } %>
+</script>
+
+
+            </div>
+            <!-- End : CONTAINER-->
+            <!-- Str : FOOTER -->
+            
+
+<div class="bootomwrap">
+    <div class="ul_bottom">
+        <div class="ul_bottomwrap">
+            <a href="http://www.fnguide.com" class="link_txt" target="_blank"><span>fnguide.com</span></a>
+                <div class="txtbox">
+                    <p class="txt">FnGuide에서 제공하는 정보는 신뢰할 만한 자료 및 정보로부터 얻어진 것이나 그 정확성이나 완전성을 보장 할 수 없으며, 시간이 경과함에 따라 변경될 수 있습니다. 따라서 정보의 오류, 누락에 대하여 FnGuide 또는 FnGuide에 자료를 제공하는 회사에서는 그 결과에 대해 법적인 책임을 지지 않습니다. 모든 콘텐츠에 대한 저작권은 FnGuide에 있으며 사전 허가없이 이를 무단으로 사용하거나, 데이터 베이스화 할 경우 민형사상 책임을 물을 수 있습니다.</p>
+                </div>
+        </div>
+
+    </div>
+</div>
+<!-- 툴팁 -->
+<div class="ul_tip_a" style="display: none;">
+    <i class="arrow_top"></i>
+    <dl id="tip_a_cont"></dl>
+</div>
+<div class="ul_tip_b" style="display: none;width: 352px;top:1000px;left: 100px;">
+    <i class="arrow_top"></i>
+    <div class="um_table" id="ul_tip_b_table">
+        <table class="us_table_ty2 h_fix zigbg_no">
+            <caption class="cphidden">캡션</caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr class="th_b">
+                    <th scope="row" class="clf">헤더</th>
+                    <th scope="row" class="cle">헤더</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="rwf">
+                    <td class="clf">내용</td>
+                    <td class="cle tcb">내용</td>
+                </tr>
+                <tr class="zigbg_in">
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+                <tr>
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+                <tr class="zigbg_in">
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+            <!-- End : FOOTER -->
+        </div>
+    </div>
+    <input type="hidden" id="menu_id" value="1" />
+    <input type="hidden" id="sub_menu_id" value="6" />
+    <input type="hidden" id="c_id" value="AA" />
+    <input type="hidden" id="cmp_cd" value="006400" />
+    <input type="hidden" id="defaultCompanyCode" value="005930" />
+    <input type="hidden" id="defaultEtfCode" value="102780" />
+    <input type="hidden" id="defaultEtnCode" value="580010" />
+    <input type="hidden" id="menu_type" value="01" />
+    <input type="hidden" id="lang" value="KR" />
+
+    <script src="/bundles/common?v=w7-92eOdWleYgkxvVHmS05tBF6LQNyc3GXbEi-pL1rw1"></script>
+
+    
+    <script src="/Scripts/companyInfo-consensus?v=kpLe2PAyvcSO9uwXu9NQ1U3XkQUvCa4V-Sjeqm_WZ-c1"></script>
+
+<script type="text/javascript">
+         $(document).ready(function () {
+             consensus.init({
+                 cmp_cd: '006400',
+                 consol_typ:'C',
+                 lang: 'KR',
+                 trendYYMM: [{"YYMM":"202612","YYMM_F":"2026/12"},{"YYMM":"202712","YYMM_F":"2027/12"},{"YYMM":"202812","YYMM_F":"2028/12"}],
+                 perforTrend: {"data":[{"NAME":"매출액","AC_CODE":"121000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"214367.88","VAL2":"165922.49","VAL3":"132667.31","VAL4":"155611.22","VAL5":"195276.39","VAL6":"239466.90"},{"NAME":"    전년동기대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"6.52","VAL2":"-22.60","VAL3":"-20.04","VAL4":"17.29","VAL5":"25.49","VAL6":"22.63"},{"NAME":"    컨센서스대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-7.26","VAL2":"-3.57","VAL3":"2.78","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"영업이익","AC_CODE":"121450","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"15454.89","VAL2":"3633.04","VAL3":"-17223.61","VAL4":"-506.43","VAL5":"14744.09","VAL6":"25141.40"},{"NAME":"    전년동기대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-14.52","VAL2":"-76.49","VAL3":"적자전환","VAL4":"적자지속","VAL5":"흑자전환","VAL6":"70.52"},{"NAME":"    컨센서스대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-12.82","VAL2":"-41.79","VAL3":"적자지속","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익","AC_CODE":"122700","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"20660.47","VAL2":"5755.12","VAL3":"-5848.75","VAL4":"4924.70","VAL5":"16262.39","VAL6":"22304.89"},{"NAME":"    전년동기대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"1.31","VAL2":"-72.14","VAL3":"적자전환","VAL4":"흑자전환","VAL5":"230.22","VAL6":"37.16"},{"NAME":"    컨센서스대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"1.78","VAL2":"-40.05","VAL3":"적자지속","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익(지배)","AC_CODE":"122710","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"20092.07","VAL2":"5992.90","VAL3":"-6494.69","VAL4":"4335.17","VAL5":"15744.57","VAL6":"21881.05"},{"NAME":"당기순이익(비지배)","AC_CODE":"122720","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"568.39","VAL2":"-237.77","VAL3":"645.93","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"자산총계","AC_CODE":"111000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"340388.60","VAL2":"405973.45","VAL3":"422553.39","VAL4":"450174.00","VAL5":"487105.00","VAL6":"530202.11"},{"NAME":"부채총계","AC_CODE":"113000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"141316.10","VAL2":"190301.07","VAL3":"186852.25","VAL4":"205237.91","VAL5":"224445.04","VAL6":"240019.11"},{"NAME":"자본총계","AC_CODE":"115000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"199072.50","VAL2":"215672.37","VAL3":"235701.13","VAL4":"244935.22","VAL5":"262659.52","VAL6":"286669.79"},{"NAME":"  자본총계(지배)","AC_CODE":"115020","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"185113.73","VAL2":"197663.95","VAL3":"214428.74","VAL4":"224110.90","VAL5":"241710.15","VAL6":"265344.65"},{"NAME":"  자본총계(비지배)","AC_CODE":"115850","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"13958.77","VAL2":"18008.42","VAL3":"21272.39","VAL4":"20824.32","VAL5":"20949.37","VAL6":"21325.14"},{"NAME":"자본금","AC_CODE":"115100","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"3567.12","VAL2":"3567.12","VAL3":"4158.17","VAL4":"4159.48","VAL5":"4159.48","VAL6":"4159.56"},{"NAME":"EPS","AC_CODE":"312000","P_AC_CODE":null,"FORMULA":"EPS||||당기순이익(지배) / 수정평균발행주식수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"27787.51","VAL2":"8288.23","VAL3":"-8325.45","VAL4":"5273.71","VAL5":"19153.17","VAL6":"26618.17"},{"NAME":"BPS","AC_CODE":"314000","P_AC_CODE":null,"FORMULA":"BPS||||자본총계(지배) / 수정기말발행주식수(자사주차감)","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"269075.04","VAL2":"287317.59","VAL3":"272485.49","VAL4":"284789.11","VAL5":"307153.37","VAL6":"337186.92"},{"NAME":"현금DPS","AC_CODE":"423400","P_AC_CODE":null,"FORMULA":"DPS||||DPS(보통주,현금) * 무상조정수정계수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"972.79","VAL2":"972.79","VAL3":null,"VAL4":"975.00","VAL5":"975.00","VAL6":"1400.00"},{"NAME":"PER","AC_CODE":"382100","P_AC_CODE":null,"FORMULA":"PER||||수정주가(보통주,기말) / 수정EPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"16.63","VAL2":"29.24","VAL3":"N/A","VAL4":"116.43","VAL5":"32.06","VAL6":"23.07"},{"NAME":"PBR","AC_CODE":"382500","P_AC_CODE":null,"FORMULA":"PBR||||수정주가(보통주,기말) / 수정BPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"1.72","VAL2":"0.84","VAL3":"0.99","VAL4":"2.16","VAL5":"2.00","VAL6":"1.82"}],"header":[{"YYMM":"2023/12","EP_CHK":" ","CD":"VAL1"},{"YYMM":"2024/12","EP_CHK":" ","CD":"VAL2"},{"YYMM":"2025/12","EP_CHK":" ","CD":"VAL3"},{"YYMM":"2026/12","EP_CHK":"E","CD":"VAL4"},{"YYMM":"2027/12","EP_CHK":"E","CD":"VAL5"},{"YYMM":"2028/12","EP_CHK":"E","CD":"VAL6"}]},
+                 perforTrendChart: {"data":[{"YYMM":"2023","FS_YEAR":"2023","ACT_VAL":15454.89,"CNS_VAL":17727.5},{"YYMM":"2024","FS_YEAR":"2024","ACT_VAL":2734.48,"CNS_VAL":6241.53},{"YYMM":"2025","FS_YEAR":"2025","ACT_VAL":-19975.14,"CNS_VAL":-17091.31},{"YYMM":"2026","FS_YEAR":"2026","ACT_VAL":null,"CNS_VAL":-506.43},{"YYMM":"2027","FS_YEAR":"2027","ACT_VAL":null,"CNS_VAL":14744.09},{"YYMM":"2028","FS_YEAR":"2028","ACT_VAL":null,"CNS_VAL":25141.4}],"header":[{"ID":"FS_YEAR","NM":"일자","DIGIT":-1},{"ID":"ACT_VAL","NM":"영업이익(실적)","DIGIT":2},{"ID":"CNS_VAL","NM":"영업이익(추정)","DIGIT":2}]},
+                 reports: [{"DT":"2026/05/12","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1096559,"RPT_TITLE":"상대적으로 양호한 포지션 대비 높은 가격","COMMENT":"▶ 1분기 영업손실 1,556억원, 시장 기대 상회\r\n▶ ESS Product Mix 및 AMPC 증가,\r\n▶ 삼성디스플레이 매각을 통한 투자재원 마련, 재무 안정성 기여","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"LS증권","ANL_NM_KOR":"정경희","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Hold","PRC_ACTION_TYP":3,"PRC_ACTION_NM":"하향","TARGET_PRC":"593,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/05/11","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1095917,"RPT_TITLE":"AIDC향 ESS의 중장기적인 성장성 확보","COMMENT":"▶ 2030년 전세계 ESS 수요의 30% 이상은 AIDC에서 발생할 전망\r\n▶ 매수 투자의견와 목표주가 유지","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"iM증권","ANL_NM_KOR":"정원석","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/05/08","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1096047,"RPT_TITLE":"xEV 와 ESS 향 매출 동반성장을 기대","COMMENT":"▶ 투자의견 매수 유지, 목표주가 1,000,000원으로 상향 조정\r\n▶ ESS 성장 가운데, xEV사업의 동반 이익성장을 기대할 수 있다\r\n▶ 차세대 EV프로젝트, ESS 관련 추가투자 연내 가시화 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"상상인증권","ANL_NM_KOR":"유민기","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"1,000,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/05/06","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1094432,"RPT_TITLE":"남아있는 모멘텀, 올해 셀 Top Pick 유지","COMMENT":"▶ EU 정책 모멘텀이 기다리고 있다\r\n▶ 유럽 EV 개선 시작 + 북미 BESS 실적 본격화\r\n▶ 동사에 대한 목표주가 913,000원으로 상향 조정","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"유안타증권","ANL_NM_KOR":"이안나","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"913,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/05/06","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1094220,"RPT_TITLE":"안정성에 성장성까지!","COMMENT":"▶ 2026년 북미 ESS Capa 확장 및 출하 본격화\r\n▶ 비중국 LFP 양극재 선제 확보함으로써 추가 수주 영업력 높아질 것\r\n▶ 전고체 양산도 경쟁사 대비 빠른 시점(27년) 타겟. 기술 우위 부각 예상","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"대신증권","ANL_NM_KOR":"김귀연","RECOMM_ACTION_TYP":4,"RECOMM_NM":"Buy","PRC_ACTION_TYP":4,"PRC_ACTION_NM":"신규","TARGET_PRC":"920,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092961,"RPT_TITLE":"AI데이터센터, 생각보다 더 많은 배터리 수요 창출(ESS, BBU, UPS)","COMMENT":"▶ 목표주가 600,000원에서 820,000원으로 상향\r\n▶ 1Q26 당초 예상 대비 적자폭 크게 축소\r\n▶ 분기별 실적 점진적 개선에 따라, 주가 역시 강세기조 이어갈 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"현대차증권","ANL_NM_KOR":"강동진","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"820,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092814,"RPT_TITLE":"올라가는 궤적 확인","COMMENT":"▶ 2027년 예상 EPS에 P/E 44배를 적용했으며, 기존에 적용해 왔던 P/E 30배 대비 40% 할증\r\n▶ 1Q26을 기점으로 가파른 손익개선이 확인됨에  따라 밸류에이션 재평가가 지속될 것으로 예상\r\n▶ 유럽시장을 중심으로 한  EV산업수요 회복에서 최대 수혜업체로 판단","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"다올투자증권","ANL_NM_KOR":"유지웅","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"900,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/30","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092708,"RPT_TITLE":"완만한 회복세 대비 가파른 밸류에이션","COMMENT":"▶ 1분기 영업손실 1,556억원으로 시장 예상 대비 선방\r\n▶ 1분기 실적 개선 요인, 미국 ESS 시장 및 2분기 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"LS증권","ANL_NM_KOR":"정경희","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Hold","PRC_ACTION_TYP":2,"PRC_ACTION_NM":"변동없음","TARGET_PRC":"618,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092609,"RPT_TITLE":"Upward trajectory","COMMENT":"▶ Favorable business environment\r\n▶ 1Q26 review: Results beat consensus on higher mid/large-sized battery utilization and strong cylindrical battery performance\r\n▶ Valuation & risk: Differentiated share price performance expected","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"이진명","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092582,"RPT_TITLE":"Early stages of an upturn","COMMENT":"▶ Raise TP to W1,000,000\r\n▶ 1Q26 results beat consensus; cost improvements accelerate\r\n▶ ","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김철중","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"1,000,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092494,"RPT_TITLE":"가동률회복: 1Q 45% > 하반기 65%","COMMENT":"▶ 1Q26 리뷰: 보상금, ESS, 소형효과\r\n▶ 2026년 전망: ESS·소형 성장, AMPC 확대, EV 반등","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"SK증권","ANL_NM_KOR":"박형우","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"810,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092429,"RPT_TITLE":"완만한 회복세 대비 가파른 밸류에이션","COMMENT":"▶ 1분기 영업손실 1,556억원으로 시장 예상 대비 선방\r\n▶ 1분기 실적 개선 요인, 미국 ESS 시장 및 2분기 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"LS증권","ANL_NM_KOR":"정경희","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Hold","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"618,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092407,"RPT_TITLE":"이제 막 좋아지기 시작","COMMENT":"▶ 목표주가 100만원으로 상향 조정\r\n▶ 1Q26 Review: 시장 예상치 상회. 원가 개선 가속","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"미래에셋증권","ANL_NM_KOR":"김철중","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"1,000,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092386,"RPT_TITLE":"이제는 상승 궤도 진입","COMMENT":"▶ 1Q26 Review: 예상 대비 적자폭을 큰 폭으로 줄이며 시장 기대치 상회\r\n▶ 단기 실적보다는 중요한 점은 뚜렷한 개선 방향성. 투자 의견 매수 유지, 목표주가 83만원으로 63% 상향","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신영증권","ANL_NM_KOR":"박진수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"830,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092374,"RPT_TITLE":"1Q26 Review 컨센서스 큰 폭 상회","COMMENT":"▶ 1Q26 Review 컨센서스 큰 폭 상회\r\n▶ 투자의견 BUY, 목표주가 880,000원 상향","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"교보증권","ANL_NM_KOR":"최보영","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"880,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092354,"RPT_TITLE":"회복 가시성 확보","COMMENT":"▶ 1분기: 보상금과 소형전지 부문 선방으로 컨센서스 상회 \r\n▶ 2분기: 보상금 기저효과에도 전사업부 회복 지속 \r\n▶ 목표주가 82만 원으로 상향, 투자의견 BUY 유지","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"한화투자증권","ANL_NM_KOR":"이용욱","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"820,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092325,"RPT_TITLE":"더 이상 하락은 없다","COMMENT":"▶ 26년 1분기, 진짜 바닥인 분기\r\n▶ ESS는 전량 수주, EV는 회복세 진입\r\n▶ 투자의견 매수 유지, 목표주가 800,000원으로 상향","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"IBK투자증권","ANL_NM_KOR":"이현욱","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092319,"RPT_TITLE":"향후 회복 강도는 상상 그 이상","COMMENT":"▶ 1Q26 Review: EV 전지 수요 회복 기대감\r\n▶ 투자의견 Buy 유지, 목표주가 880,000원 상향","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"흥국증권","ANL_NM_KOR":"정진수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"880,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092302,"RPT_TITLE":"암흑기 빠르게 탈압박 중","COMMENT":"▶ 1분기 영업이익 컨센서스 큰 폭 상회\r\n▶ ESS는 좋고, EV는 바닥을 지나는 구간","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"한국투자증권","ANL_NM_KOR":"이성원","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"760,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092295,"RPT_TITLE":"드디어 하반기 흑자전환 기대","COMMENT":"▶ 1Q26 Review 꾸준한 적자 축소\r\n▶ 드디어 하반기 흑자전환 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"DB증권","ANL_NM_KOR":"안회수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"840,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092285,"RPT_TITLE":"보다 높아진 4분기 흑전 가시성","COMMENT":"▶ 1Q26P Re: 컨센서스 이익 상회\r\n▶ 사업 전방위적으로 적자 축소 지속하며 4Q26 흑전 기대\r\n▶ EV 세그먼트 확대와 Non-PFE LFP ESS 역량에 주목","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"DS투자증권","ANL_NM_KOR":"최태용","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"840,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092283,"RPT_TITLE":"주가 조정 발생시 트레이딩 관점에서 접근","COMMENT":"▶ 1Q26 배터리 부문 적자폭 축소로 시장 기대치 상회\r\n▶ 목표주가 800,000원으로 상향, 매수 투자의견 유지","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"iM증권","ANL_NM_KOR":"정원석","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092257,"RPT_TITLE":"방향성은 위","COMMENT":"▶ 우호적인 영업환경\r\n▶ 1Q26 Review: 중대형 가동률 회복 및 원형 배터리 호조로 컨센 상회\r\n▶ Valuation & Risk: 차별화된 주가 흐름 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"이진명","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"800,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092246,"RPT_TITLE":"높아지는 실적 개선 기대감","COMMENT":"▶ 1Q26 영업이익 -1,556억원, 시장 컨센서스 상회 \r\n▶ 2Q26 영업이익 -776억원(적자지속 YoY) 전망 \r\n▶ 2028년 유럽 점유율 회복 기대감 속, ESS 모멘텀 유효","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"키움증권","ANL_NM_KOR":"권준수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"820,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092240,"RPT_TITLE":"소형전지까지 좋네","COMMENT":"▶ 유럽EV와 소형전지가 견인\r\n▶ 1Q26 Review: EV빼고 다 좋았다","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"NH투자증권","ANL_NM_KOR":"주민우","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"930,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092212,"RPT_TITLE":"예상보다 빠른 실적 개선 속도","COMMENT":"▶ 목표주가 850,000원으로 +60% 상향 \r\n▶ 1Q 실적 컨센 크게 상회, EV향 적자 축소 \r\n▶ 4Q26E부터 전사 흑자전환 가능할 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"이창민","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"850,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/29","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092170,"RPT_TITLE":"실적에 기반한 상승, 2024년과 다르다","COMMENT":"▶ 1Q26 Review : 2개 분기 연속 적자폭 축소\r\n▶ 2분기 : 3개 분기 연속 적자폭 축소 전망\r\n▶ 실적 및 Valuation Factor 동반 개선, 이제는 시총 50조원이 하단","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"하나증권","ANL_NM_KOR":"김현수","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"857,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092045,"RPT_TITLE":"2026.1Q Earnings","COMMENT":"▶ 2026년 1분기 경영실적 및 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"해당기업","ANL_NM_KOR":"IR팀","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092044,"RPT_TITLE":"2026년 1분기 실적설명회","COMMENT":"▶ 2026년 1분기 경영실적 및 전망","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"해당기업","ANL_NM_KOR":"IR팀","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092067,"RPT_TITLE":"[AI 실적속보] 1Q26 컨퍼런스 콜 요약","COMMENT":"▶ 1Q26 잠정 매출액은 3조 5,764억원 (+12.6% YoY, -7.3% QoQ), 영업손실은 1,556억원 (적자지속 YoY, 적자지속 QoQ), 지배주주 순손실은 281억원 (적자지속 YoY, 적자전환 QoQ)을 기록\r\n▶ 매출액은 시장 컨센서스를 1,052억원 상회했고, 영업이익은 1,020억원 상회","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"KB증권","ANL_NM_KOR":"이창민","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092545,"RPT_TITLE":"Battery unit rebounding; SDC stake sale planned","COMMENT":"▶ 1Q review?Exceeds market expectations\r\n▶ To turn profitable in 2H","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"삼성증권","ANL_NM_KOR":"장정훈","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"740,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092190,"RPT_TITLE":"ESS 성장 지속, xEV 연중 적자축소 기대","COMMENT":"▶ ESS 성장 가운데 xEV사업 연중 적자폭 축소 가시화\r\n▶ 차세대 EV 프로젝트, ESS 관련 추가투자 연내 가시화 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"상상인증권","ANL_NM_KOR":"유민기","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"850,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/28","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1092123,"RPT_TITLE":"전지 회복세 확인과 SDC 지분 매각 연내 진행","COMMENT":"▶ 1분기 리뷰, 시장 예상치 상회\r\n▶ ESS LFP 본격 가동에, 유럽향 볼륨 EV 모델 판매로 하반기 흑자 전환 기대","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"삼성증권","ANL_NM_KOR":"장정훈","RECOMM_ACTION_TYP":2,"RECOMM_NM":"BUY","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"740,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/22","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1089926,"RPT_TITLE":"EV 수주 가뭄 해소","COMMENT":"▶ ’28년 실적을 할인 적용하며 목표주가 상향\r\n▶ 유럽 EV 신규 수주가 살아난다","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"NH투자증권","ANL_NM_KOR":"주민우","RECOMM_ACTION_TYP":2,"RECOMM_NM":"Buy","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"880,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/20","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1089426,"RPT_TITLE":"Rising expectations for a turnaround","COMMENT":"▶ Weak 1H, strong 2H outlook for 2026\r\n▶ 1Q26 preview: EV shipment growth and solid ESS performance despite absence of one-offs\r\n▶ Valuation & risk: Continued share price re-rating","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"이진명","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"580,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0},{"DT":"2026/04/20","PRE_DT":null,"CMP_CD":"006400","RPT_ID":1089212,"RPT_TITLE":"턴어라운드 기대감 부각","COMMENT":"▶ 뚜렷한 상저하고\r\n▶ 1Q26 Preview: 일회성 소멸에도 EV향 출하 증가 및 ESS 호조 기대\r\n▶ Valuation & Risk: 주가 재평가 지속","CMP_NM_KOR":"삼성SDI","BRK_NM_KOR":"신한투자증권","ANL_NM_KOR":"이진명","RECOMM_ACTION_TYP":2,"RECOMM_NM":"매수","PRC_ACTION_TYP":1,"PRC_ACTION_NM":"상향","TARGET_PRC":"580,000","CLOSE_PRC":"614,000","BEST_ANALYST_YN":0}],
+                 cnsTrendChart: {"data":[{"TRD_DT":"25/06/30","VAL_MAX":23620.00,"VAL_MIN":-470.00,"VAL_AVG":11991.84},{"TRD_DT":"25/07/31","VAL_MAX":23620.00,"VAL_MIN":-3800.00,"VAL_AVG":9407.20},{"TRD_DT":"25/08/29","VAL_MAX":14835.00,"VAL_MIN":-3800.00,"VAL_AVG":6465.25},{"TRD_DT":"25/09/30","VAL_MAX":11986.00,"VAL_MIN":-3800.00,"VAL_AVG":5621.00},{"TRD_DT":"25/10/31","VAL_MAX":11706.00,"VAL_MIN":-7080.00,"VAL_AVG":2359.50},{"TRD_DT":"25/11/28","VAL_MAX":8751.00,"VAL_MIN":-10770.00,"VAL_AVG":480.52},{"TRD_DT":"25/12/30","VAL_MAX":7329.00,"VAL_MIN":-10770.00,"VAL_AVG":-316.30},{"TRD_DT":"26/01/30","VAL_MAX":3530.00,"VAL_MIN":-9670.00,"VAL_AVG":-3404.31},{"TRD_DT":"26/02/27","VAL_MAX":3520.00,"VAL_MIN":-12140.00,"VAL_AVG":-5100.18},{"TRD_DT":"26/03/31","VAL_MAX":3520.00,"VAL_MIN":-12140.00,"VAL_AVG":-4684.55},{"TRD_DT":"26/04/30","VAL_MAX":3800.00,"VAL_MIN":-5220.00,"VAL_AVG":-990.36},{"TRD_DT":"26/05/15","VAL_MAX":3800.00,"VAL_MIN":-5220.00,"VAL_AVG":-506.43}],"header":[{"ID":"TRD_DT","NM":"일자","DIGIT":-1},{"ID":"VAL_MAX","NM":"컨센서스(최고)","DIGIT":0},{"ID":"VAL_MIN","NM":"컨센서스(최저)","DIGIT":0},{"ID":"VAL_AVG","NM":"컨센서스","DIGIT":2}]},
+                 cnsTrend: {"data":[{"ACC_NM":"매출액","UNIT":"","DIGIT":0,"VAL1":"155611.22","VAL2":"150790.73","VAL3":"150501.80","VAL4":"153625.52","VAL5":"193225.63"},{"ACC_NM":"영업이익","UNIT":"","DIGIT":0,"VAL1":"-506.43","VAL2":"-4208.95","VAL3":"-4724.80","VAL4":"1073.29","VAL5":"13299.63"},{"ACC_NM":"당기순이익","UNIT":"","DIGIT":0,"VAL1":"4335.17","VAL2":"933.05","VAL3":"-508.20","VAL4":"3287.00","VAL5":"12105.32"},{"ACC_NM":"EPS","UNIT":"(원)","DIGIT":0,"VAL1":"5273.71","VAL2":"1135.05","VAL3":"-618.22","VAL4":"3998.62","VAL5":"14726.05"},{"ACC_NM":"PER","UNIT":"","DIGIT":2,"VAL1":"116.43","VAL2":"414.96","VAL3":"N/A","VAL4":"78.78","VAL5":"11.52"},{"ACC_NM":"PER(Fwd. 12M)","UNIT":"","DIGIT":2,"VAL1":"55.53","VAL2":"77.48","VAL3":"180.50","VAL4":"101.19","VAL5":"21.11"},{"ACC_NM":"목표주가","UNIT":"(원)","DIGIT":0,"VAL1":"843608.70","VAL2":"521818.18","VAL3":"436052.63","VAL4":"366900.00","VAL5":"255031.38"},{"ACC_NM":"투자의견(점수)","UNIT":"","DIGIT":2,"VAL1":"3.96","VAL2":"3.95","VAL3":"3.95","VAL4":"3.86","VAL5":"3.84"}],"header":[{"ID":"ACC_NM","NM":"2026/05/15","DIGIT":0},{"ID":"VAL1","NM":"당기순이익","DIGIT":0},{"ID":"VAL2","NM":"1개월전","DIGIT":0},{"ID":"VAL3","NM":"3개월전","DIGIT":0},{"ID":"VAL4","NM":"6개월전","DIGIT":0},{"ID":"VAL5","NM":"1년전","DIGIT":0}]},
+            });
+        });
+</script>
+
+</body>
+</html>
