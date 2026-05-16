@@ -529,16 +529,16 @@ def render_html(payload: dict[str, Any]) -> str:
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 @font-face{{font-family:'SOK500';src:local('SamsungOneKorean500'),local('SamsungOneKorean 500');font-weight:500;font-style:normal;font-display:swap}}
-:root{{--bg:#F5F7FA;--card:#FFFFFF;--card2:#F0FDF4;--hdr:#1A3A2A;--hdrText:#FFFFFF;--row2:#F2F6FC;--t1:#111827;--t2:#475569;--t3:#64748B;--bd:#BBF7D0;--grid:#DDE7F3;--ac:#16A34A;--acL:#DCFCE7;--acT:#15803D;--hoverBg:#DCFCE7;--hoverFg:#1A3A2A;--okB:#C6EFCE;--okT:#006100;--buyB:#E2F0D9;--buyT:#375623;--warnB:#FFE8A3;--warnT:#7C4A00;--negB:#F8D7DA;--negT:#842029;--link:#0563C1;--tbg:rgba(255,255,255,.92);--r:12px;--shadow:0 4px 18px rgba(15,23,42,.08);--scroll:#86EFAC;--scrollTrack:#ECFDF5}}
-[data-t=dark]{{--bg:#071510;--card:#0D1F15;--card2:#122B1C;--row2:#0F1824;--t1:#E2E8F0;--t2:#CBD5E1;--t3:#94A3B8;--bd:#1A3A2A;--grid:#243044;--hdr:#122B1C;--tbg:rgba(7,21,16,.92);--hoverBg:#1A3A2A;--hoverFg:#D4F5DC;--scroll:#4ADE80;--scrollTrack:#0B1C13;--shadow:0 8px 26px rgba(0,0,0,.35)}}
+:root{{--bg:#F5F7FA;--card:#FFFFFF;--card2:#F0FDF4;--hdr:#1A3A2A;--hdrText:#FFFFFF;--row2:#F2F6FC;--t1:#111827;--t2:#475569;--t3:#64748B;--bd:#BBF7D0;--grid:#DDE7F3;--ac:#16A34A;--acL:#DCFCE7;--acT:#15803D;--hoverBg:#BBF7D0;--hoverFg:#052E16;--okB:#C6EFCE;--okT:#006100;--buyB:#E2F0D9;--buyT:#375623;--warnB:#FFE8A3;--warnT:#7C4A00;--negB:#F8D7DA;--negT:#842029;--link:#0563C1;--tbg:rgba(255,255,255,.92);--r:12px;--shadow:0 4px 18px rgba(15,23,42,.08);--scroll:#86EFAC;--scrollTrack:#ECFDF5}}
+[data-t=dark]{{--bg:#071510;--card:#0D1F15;--card2:#122B1C;--row2:#0F1824;--t1:#E2E8F0;--t2:#CBD5E1;--t3:#94A3B8;--bd:#1A3A2A;--grid:#243044;--hdr:#122B1C;--tbg:rgba(7,21,16,.92);--hoverBg:#166534;--hoverFg:#ECFDF5;--scroll:#4ADE80;--scrollTrack:#0B1C13;--shadow:0 8px 26px rgba(0,0,0,.35)}}
 *,*::before,*::after{{box-sizing:border-box}}html{{scroll-behavior:smooth;font-size:14px}}body{{margin:0;font-family:'Noto Sans KR','SOK500','Malgun Gothic',system-ui,sans-serif;background:var(--bg);color:var(--t1);line-height:1.55;font-size:1rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}}button,input{{font:inherit}}a{{color:var(--link);font-weight:800;text-decoration:none}}a:hover{{text-decoration:underline}}
 .topbar{{position:sticky;top:0;z-index:50;background:var(--tbg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:.35rem .9rem;display:flex;align-items:center;gap:.55rem;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--scroll) transparent}}
 .tabs{{display:flex;gap:.2rem;overflow-x:auto;flex:1;min-width:0;scrollbar-width:thin;scrollbar-color:var(--scroll) transparent}}.tab-btn{{border:1px solid var(--bd);background:var(--card);color:var(--t2);border-radius:999px;padding:.28rem .65rem;font-size:.68rem;font-weight:900;white-space:nowrap;cursor:pointer;transition:background .18s,border-color .18s,color .18s,box-shadow .18s}}.tab-btn:hover{{background:var(--acL);border-color:var(--ac);color:var(--acT)}}.tab-btn.on{{background:var(--ac);border-color:var(--ac);color:#fff;box-shadow:0 2px 10px rgba(22,163,74,.20)}}
 .tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
 main{{width:min(1760px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.62rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.9rem;margin:0;font-weight:900}}.panel-head p{{margin:.05rem 0 0;font-size:.7rem;color:var(--t3);font-weight:800}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.68rem;border:1px solid var(--bd);border-radius:6px;padding:.18rem .48rem;background:var(--card);color:var(--acT)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 132px);scrollbar-gutter:stable both-edges;scrollbar-width:thin;scrollbar-color:var(--scroll) var(--scrollTrack)}}.table-wrap::-webkit-scrollbar,.tabs::-webkit-scrollbar,.topbar::-webkit-scrollbar{{width:8px;height:8px}}.table-wrap::-webkit-scrollbar-track,.tabs::-webkit-scrollbar-track,.topbar::-webkit-scrollbar-track{{background:var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb,.tabs::-webkit-scrollbar-thumb,.topbar::-webkit-scrollbar-thumb{{background:var(--scroll);border-radius:999px;border:2px solid var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb:hover,.tabs::-webkit-scrollbar-thumb:hover,.topbar::-webkit-scrollbar-thumb:hover{{background:var(--ac)}}
-table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.74rem;line-height:1.42}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.42rem .48rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}td{{padding:.38rem .48rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:700}}.pos-strong{{background:var(--okB)!important;color:var(--okT)!important;font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT)!important;font-weight:900;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT)!important;font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT)!important;font-weight:900;border-radius:4px}}.basis{{min-width:340px;max-width:680px}}.bullets{{display:grid;gap:.12rem;line-height:1.42}}.bullets span{{display:block;padding-left:.8rem;position:relative}}.bullets span::before{{content:'-';position:absolute;left:0;color:var(--ac);font-weight:900}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.06rem .38rem;margin:.05rem;font-size:.66rem;font-weight:900;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
-.key-cell{{background:#EAF2FF!important;color:#0D47A1!important;font-weight:900}}.company-cell{{color:var(--t1)!important;font-weight:900;font-size:.78rem}}.country-us{{background:#E0F2FE!important;color:#075985!important;font-weight:900}}.country-kr{{background:#ECFDF5!important;color:#166534!important;font-weight:900}}.signal-cell{{background:#F8FAFC!important;color:#334155!important}}.theme-cell{{background:#EDE9FE!important;color:#5B21B6!important;font-weight:900}}.basis-cell{{background:#F8FAFC!important;color:#334155!important;font-weight:800}}.report-cell{{background:#EFF6FF!important;color:#0563C1!important;font-weight:900}}.volume-hot{{background:#FDE68A!important;color:#92400E!important;font-weight:900}}.volume-watch{{background:#FEF3C7!important;color:#92400E!important;font-weight:900}}.flow-pos{{background:#DCFCE7!important;color:#166534!important;font-weight:900}}.metric-blue{{background:#DBEAFE!important;color:#1E40AF!important;font-weight:900}}.metric-cyan{{background:#CCFBF1!important;color:#0F766E!important;font-weight:900}}.metric-purple{{background:#F3E8FF!important;color:#6B21A8!important;font-weight:900}}.metric-soft{{background:#F1F5F9!important;color:#334155!important;font-weight:800}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:900}}
+table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem;line-height:1.34}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.34rem .42rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}td{{padding:.24rem .42rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important;box-shadow:inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--ac),inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:700}}.pos-strong{{background:var(--okB)!important;color:var(--okT)!important;font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT)!important;font-weight:900;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT)!important;font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT)!important;font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:430px}}.bullets{{display:grid;gap:.04rem;line-height:1.3;font-size:.71rem}}.basis-cell .bullets{{max-height:3.8rem;overflow:hidden}}.bullets span{{display:block;padding-left:.72rem;position:relative}}.bullets span::before{{content:'-';position:absolute;left:0;color:var(--ac);font-weight:900}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:900;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
+.key-cell{{background:#EAF2FF!important;color:#0D47A1!important;font-weight:900}}.company-cell{{color:var(--t1)!important;font-weight:900;font-size:.73rem;max-width:150px;min-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#E0F2FE!important;color:#075985!important;font-weight:900}}.country-kr{{background:#ECFDF5!important;color:#166534!important;font-weight:900}}.signal-cell{{background:#F8FAFC!important;color:#334155!important;max-width:170px}}.theme-cell{{background:#EDE9FE!important;color:#5B21B6!important;font-weight:900;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#F8FAFC!important;color:#334155!important;font-weight:800}}.report-cell{{background:#EFF6FF!important;color:#0563C1!important;font-weight:900;max-width:280px;min-width:150px}}.report-cell a{{display:block;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.volume-hot{{background:#FDE68A!important;color:#92400E!important;font-weight:900}}.volume-watch{{background:#FEF3C7!important;color:#92400E!important;font-weight:900}}.flow-pos{{background:#DCFCE7!important;color:#166534!important;font-weight:900}}.metric-blue{{background:#DBEAFE!important;color:#1E40AF!important;font-weight:900}}.metric-cyan{{background:#CCFBF1!important;color:#0F766E!important;font-weight:900}}.metric-purple{{background:#F3E8FF!important;color:#6B21A8!important;font-weight:900}}.metric-soft{{background:#F1F5F9!important;color:#334155!important;font-weight:800}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:900}}
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
 </head>
@@ -648,24 +648,23 @@ def _render_row(row: dict[str, Any], columns: list[tuple[str, str]]) -> str:
     for field, _ in columns:
         value = row.get(field)
         classes = _classes(field, value)
-        cells.append(f"<td class='{classes}'>{_format_cell(field, value, row)}</td>")
+        title = _cell_title(field, value, row)
+        title_attr = f" title='{html.escape(title, quote=True)}'" if title else ""
+        cells.append(f"<td class='{classes}'{title_attr}>{_format_cell(field, value, row)}</td>")
     return "<tr>" + "".join(cells) + "</tr>"
 
 
 def _format_cell(field: str, value: Any, row: dict[str, Any]) -> str:
+    if field == "recent_report_broker":
+        return html.escape(_display_report_broker(row) or "")
+    if field == "recent_report_title":
+        link = _fallback_report_link(row)
+        title = _display_report_title(row)
+        return _link(link, title) if link and title else html.escape(title or "")
     if value in (None, "", []):
-        if field == "recent_report_broker":
-            return html.escape(_fallback_report_broker(row) or "")
-        if field == "recent_report_title":
-            link = _fallback_report_link(row)
-            title = _fallback_report_title(row)
-            return _link(link, title) if link and title else ""
         return ""
     if field == "company_name":
         return html.escape(_display_company_name(value, row))
-    if field == "recent_report_title":
-        link = _fallback_report_link(row)
-        return _link(link, str(value)) if link else html.escape(str(value))
     if field in {"core_basis", "top_position_weight_changes"}:
         return _format_bullets(str(value))
     if field in {"source_url", "report_link"}:
@@ -685,6 +684,22 @@ def _format_cell(field: str, value: Any, row: dict[str, Any]) -> str:
     if field in NUMERIC_FIELDS or isinstance(value, (int, float)):
         return html.escape(_compact_number(value))
     return html.escape(_clean_display_text(str(value)))
+
+
+def _cell_title(field: str, value: Any, row: dict[str, Any]) -> str:
+    if field == "recent_report_title":
+        return _display_report_title(row) or ""
+    if field == "recent_report_broker":
+        return _display_report_broker(row) or ""
+    if field == "company_name" and value not in (None, "", []):
+        return _display_company_name(value, row)
+    if field in {"core_basis", "top_position_weight_changes"} and value not in (None, "", []):
+        return " / ".join(_basis_parts(str(value)))
+    if isinstance(value, list):
+        return ", ".join(str(item) for item in value if item not in (None, ""))
+    if field in {"future_industry_theme", "signals"} and value not in (None, "", []):
+        return _clean_display_text(str(value))
+    return ""
 
 
 def _display_company_name(value: Any, row: dict[str, Any]) -> str:
@@ -750,36 +765,67 @@ def _short_datetime(value: Any) -> str:
     return f"{int(match.group(2))}/{int(match.group(3))}{match.group(4)}"
 
 
+def _display_report_broker(row: dict[str, Any]) -> str | None:
+    broker = row.get("recent_report_broker")
+    if broker not in (None, "", []) and not _has_generic_report(row):
+        return _clean_display_text(str(broker))
+    return _fallback_report_broker(row)
+
+
+def _display_report_title(row: dict[str, Any]) -> str | None:
+    title = row.get("recent_report_title")
+    if title not in (None, "", []) and not _is_generic_report_title(title):
+        return _clean_display_text(str(title))
+    return _fallback_report_title(row)
+
+
+def _has_generic_report(row: dict[str, Any]) -> bool:
+    return _is_generic_report_title(row.get("recent_report_title")) or _is_generic_report_link(row.get("report_link"))
+
+
+def _is_generic_report_title(value: Any) -> bool:
+    text = re.sub(r"\s+", " ", str(value or "")).strip().lower()
+    return text in {"컨센서스 검색", "analyst estimates / analysis", "analyst estimates/analysis"}
+
+
+def _is_generic_report_link(value: Any) -> bool:
+    text = str(value or "")
+    return "markets.hankyung.com/consensus?searchWord=" in text or re.search(r"finance\.yahoo\.com/quote/[^/]+/analysis/?", text) is not None
+
+
 def _fallback_report_broker(row: dict[str, Any]) -> str | None:
     if row.get("country_code") == "US" or row.get("country") == "미국":
-        return "Yahoo Finance"
+        return "Yahoo Finance News"
     if row.get("country_code") == "KR" or row.get("country") == "한국":
-        return "한국경제"
+        return "네이버증권 뉴스"
     return None
 
 
 def _fallback_report_title(row: dict[str, Any]) -> str | None:
     if row.get("country_code") == "US" or row.get("country") == "미국":
-        return "Analyst Estimates / Analysis"
+        return "Yahoo News"
     if row.get("country_code") == "KR" or row.get("country") == "한국":
-        return "컨센서스 검색"
+        return "종목 뉴스"
     return None
 
 
 def _fallback_report_link(row: dict[str, Any]) -> str | None:
-    if row.get("report_link"):
+    if row.get("report_link") and not _is_generic_report_link(row.get("report_link")):
         return str(row["report_link"])
     ticker = row.get("ticker")
     if not ticker:
         return None
     if row.get("country_code") == "US" or row.get("country") == "미국":
-        return f"https://finance.yahoo.com/quote/{ticker}/analysis/"
+        return f"https://finance.yahoo.com/quote/{ticker}/news/"
     if row.get("country_code") == "KR" or row.get("country") == "한국":
-        company = _report_company_query(row) or ticker
-        from urllib.parse import quote
-
-        return f"https://markets.hankyung.com/consensus?searchWord={quote(str(company))}"
+        code = _report_ticker_code(ticker)
+        return f"https://finance.naver.com/item/news.naver?code={code}" if code else None
     return None
+
+
+def _report_ticker_code(value: Any) -> str | None:
+    match = re.search(r"\d{6}", str(value or ""))
+    return match.group(0) if match else None
 
 
 def _report_company_query(row: dict[str, Any]) -> str | None:
@@ -1135,9 +1181,9 @@ def _xlsx_width(field: str, label: str) -> int:
         "date": 12,
         "country": 10,
         "ticker": 13,
-        "company_name": 28,
+        "company_name": 18,
         "signals": 20,
-        "core_basis": 42,
+        "core_basis": 34,
         "future_industry_theme": 20,
         "top_tickers": 34,
         "stock_count": 12,
@@ -1165,7 +1211,7 @@ def _xlsx_width(field: str, label: str) -> int:
         "institutional_ownership_pct": 14,
         "insider_ownership_pct": 14,
         "short_percent_float": 14,
-        "recent_report_title": 34,
+        "recent_report_title": 28,
         "recent_report_broker": 18,
         "institutions": 28,
         "section": 22,
@@ -1240,11 +1286,11 @@ def _export_row(row: dict[str, Any], columns: list[tuple[str, str]]) -> dict[str
 
 
 def _format_export_cell(field: str, value: Any, row: dict[str, Any]) -> str:
+    if field == "recent_report_broker":
+        return _display_report_broker(row) or ""
+    if field == "recent_report_title":
+        return _display_report_title(row) or ""
     if value in (None, "", []):
-        if field == "recent_report_broker":
-            return _fallback_report_broker(row) or ""
-        if field == "recent_report_title":
-            return _fallback_report_title(row) or ""
         return ""
     if field == "date":
         return _short_date(value)

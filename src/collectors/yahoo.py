@@ -14,6 +14,7 @@ from src.utils.text import to_float
 QUOTE_URL = "https://query1.finance.yahoo.com/v7/finance/quote"
 SUMMARY_URL = "https://query1.finance.yahoo.com/v10/finance/quoteSummary/{ticker}"
 ANALYSIS_URL = "https://finance.yahoo.com/quote/{ticker}/analysis/"
+NEWS_URL = "https://finance.yahoo.com/quote/{ticker}/news/"
 
 
 QUOTE_FIELDS = {
@@ -204,10 +205,10 @@ def _fill_report_fallback(row: dict[str, Any]) -> None:
     ticker = row.get("ticker")
     if not ticker:
         return
-    row.setdefault("recent_report_broker", "Yahoo Finance")
-    row.setdefault("recent_report_title", "Analyst Estimates / Analysis")
-    row.setdefault("report_link", ANALYSIS_URL.format(ticker=ticker))
-    row.setdefault("report_source", "Yahoo Finance Analysis")
+    row.setdefault("recent_report_broker", "Yahoo Finance News")
+    row.setdefault("recent_report_title", "Yahoo News")
+    row.setdefault("report_link", NEWS_URL.format(ticker=ticker))
+    row.setdefault("report_source", "Yahoo Finance News")
 
 
 def _derive(row: dict[str, Any]) -> None:

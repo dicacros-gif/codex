@@ -19,8 +19,10 @@ FRGN_URL = "https://finance.naver.com/item/frgn.naver?code={code}&page=1&trader_
 MAIN_URL = "https://finance.naver.com/item/main.naver?code={code}"
 RESEARCH_URL = "https://finance.naver.com/research/company_list.naver?searchType=itemCode&itemCode={code}"
 HANKYUNG_URL = "https://markets.hankyung.com/consensus?searchWord={company}"
+NAVER_NEWS_URL = "https://finance.naver.com/item/news.naver?code={code}"
 NAVER_MAIN_ENCODING = "utf-8"
 NAVER_ENCODING = "euc-kr"
+NON_ANALYST_REPORT_SOURCES = ("NICE평가정보", "한국기업데이터", "KISVALUE", "에프앤가이드", "FnGuide")
 
 
 def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
@@ -55,7 +57,7 @@ def enrich_with_naver(row: dict[str, Any], raw_dir: Path) -> dict[str, Any]:
             row.update(report)
 
     if not row.get("report_link"):
-        _apply_hankyung_fallback(row, code)
+        _apply_report_or_news_fallback(row, code, raw_dir)
 
     time.sleep(0.25)
     return row
@@ -191,6 +193,8 @@ def _parse_research(html: str, code: str) -> dict[str, Any] | None:
         if cell and cell != title and not re.search(r"\d{2}\.\d{2}\.\d{2}", cell):
             broker = cell
             break
+    if _is_company_profile_report(broker, title):
+        return None
     output = {
         "recent_report_broker": broker,
         "recent_report_title": title,
@@ -201,6 +205,15 @@ def _parse_research(html: str, code: str) -> dict[str, Any] | None:
         if detail.get(key) is not None:
             output[key] = detail[key]
     return output
+
+
+def _is_company_profile_report(broker: Any, title: Any) -> bool:
+    broker_text = str(broker or "")
+    title_text = str(title or "")
+    if any(source in broker_text for source in NON_ANALYST_REPORT_SOURCES):
+        return True
+    profile_words = ("기업개요", "기업현황", "기업분석", "사업 현황")
+    return any(word in title_text for word in profile_words) and not re.search(r"목표|투자의견|실적|Review|프리뷰|전망", title_text, re.IGNORECASE)
 
 
 def _is_valid_naver_report_url(url: str, code: str) -> bool:
@@ -246,12 +259,136 @@ def _parse_report_detail(url: str) -> dict[str, Any] | None:
     return parsed if parsed.get("recent_report_title") or parsed.get("recent_report_broker") else None
 
 
-def _apply_hankyung_fallback(row: dict[str, Any], code: str) -> None:
+def _apply_report_or_news_fallback(row: dict[str, Any], code: str, raw_dir: Path) -> None:
     company = _fallback_company_name(row, code)
-    row["report_link"] = HANKYUNG_URL.format(company=quote(str(company)))
-    row["report_source"] = "한국경제 컨센서스 검색"
-    row["recent_report_broker"] = "한국경제"
-    row["recent_report_title"] = "컨센서스 검색"
+    hankyung_url = HANKYUNG_URL.format(company=quote(str(company)))
+    hankyung_html = _get_text(hankyung_url, encoding="utf-8")
+    if hankyung_html:
+        _write_raw(raw_dir / f"hankyung_consensus_{code}.html", hankyung_html)
+        report = _parse_hankyung_consensus(hankyung_html, code, str(company))
+        if report:
+            row.update(report)
+            return
+
+    row["report_link"] = NAVER_NEWS_URL.format(code=code)
+    row["report_source"] = "네이버증권 뉴스"
+    row["recent_report_broker"] = "네이버증권"
+    row["recent_report_title"] = "종목 뉴스"
+
+
+def _parse_hankyung_consensus(html_text: str, code: str, company: str) -> dict[str, Any] | None:
+    normalized = html_text.replace("\\u002F", "/").replace("\\/", "/")
+    scope = _nuxt_scope(normalized)
+    company_key = _match_key(company)
+    best: dict[str, Any] | None = None
+    for match in re.finditer(r"\{[^{}]*REPORT_TITLE:[^{}]*REPORT_FILEPATH:[^{}]*\}", normalized, re.DOTALL):
+        item = match.group(0)
+        title = _extract_js_field(item, "REPORT_TITLE", scope)
+        link = _extract_js_field(item, "REPORT_FILEPATH", scope)
+        business_code = _extract_js_field(item, "BUSINESS_CODE", scope)
+        business_name = _extract_js_field(item, "BUSINESS_NAME", scope)
+        if not title or not link:
+            continue
+        title_key = _match_key(title)
+        name_key = _match_key(business_name or "")
+        is_match = code == _kr_code(business_code) or f"({code})" in title or (company_key and (company_key in title_key or company_key in name_key))
+        if not is_match:
+            continue
+        broker = _extract_js_field(item, "OFFICE_NAME", scope) or "한국경제"
+        report = {
+            "recent_report_broker": broker,
+            "recent_report_title": _clean_js_text(title),
+            "report_link": link,
+            "report_source": "한국경제 컨센서스",
+        }
+        for source, target in (
+            ("TARGET_STOCK_PRICES", "target_price"),
+            ("GRADE_VALUE", "analyst_opinion"),
+            ("STOCK_PRE_PER", "forward_per"),
+            ("STOCK_PRE_PBR", "pbr"),
+            ("STOCK_PRE_ROE", "roe"),
+        ):
+            value = _extract_js_field(item, source, scope)
+            if value not in (None, "", "N/A"):
+                numeric = to_float(value)
+                report[target] = numeric if numeric is not None else value
+        best = report
+        if code == _kr_code(business_code) or f"({code})" in title:
+            break
+    return best
+
+
+def _nuxt_scope(text: str) -> dict[str, str]:
+    match = re.search(r"window\.__NUXT__=\(function\((?P<params>[^)]*)\)\{.*?\}\((?P<args>.*)\)\);</script>", text, re.DOTALL)
+    if not match:
+        return {}
+    params = [part.strip() for part in match.group("params").split(",") if part.strip()]
+    args = _split_js_args(match.group("args"))
+    return {
+        param: value
+        for param, raw in zip(params, args)
+        if (value := _decode_js_literal(raw)) not in (None, "")
+    }
+
+
+def _split_js_args(value: str) -> list[str]:
+    args: list[str] = []
+    current: list[str] = []
+    quote_char: str | None = None
+    escaped = False
+    for char in value:
+        current.append(char)
+        if escaped:
+            escaped = False
+            continue
+        if char == "\\":
+            escaped = True
+            continue
+        if quote_char:
+            if char == quote_char:
+                quote_char = None
+            continue
+        if char in {"'", '"'}:
+            quote_char = char
+            continue
+        if char == ",":
+            current.pop()
+            args.append("".join(current).strip())
+            current = []
+    if current:
+        args.append("".join(current).strip())
+    return args
+
+
+def _extract_js_field(item: str, key: str, scope: dict[str, str]) -> str | None:
+    match = re.search(rf"{re.escape(key)}\s*:\s*(?P<value>\"(?:\\.|[^\"])*\"|'(?:\\.|[^'])*'|[A-Za-z_$][\w$]*|-?\d+(?:\.\d+)?)", item)
+    if not match:
+        return None
+    return _decode_js_literal(match.group("value"), scope)
+
+
+def _decode_js_literal(value: str, scope: dict[str, str] | None = None) -> str | None:
+    token = value.strip()
+    if token in {"null", "undefined", "false"}:
+        return None
+    if token == "true":
+        return "true"
+    if len(token) >= 2 and token[0] in {"'", '"'} and token[-1] == token[0]:
+        return _clean_js_text(token[1:-1])
+    if re.fullmatch(r"-?\d+(?:\.\d+)?", token):
+        return token
+    return (scope or {}).get(token)
+
+
+def _clean_js_text(value: str) -> str:
+    text = value.replace("\\u002F", "/").replace("\\/", "/")
+    text = re.sub(r"\\u([0-9A-Fa-f]{4})", lambda match: chr(int(match.group(1), 16)), text)
+    text = text.replace('\\"', '"').replace("\\'", "'").replace("\\r", " ").replace("\\n", " ").replace("\\t", " ")
+    return re.sub(r"\s+", " ", text).strip()
+
+
+def _match_key(value: str) -> str:
+    return re.sub(r"[^0-9A-Za-z가-힣]", "", str(value or "")).lower()
 
 
 def _fallback_company_name(row: dict[str, Any], code: str) -> str:

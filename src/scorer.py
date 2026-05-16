@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from src.utils.text import compact_join, to_float
@@ -390,9 +391,14 @@ def _core_basis(row: dict[str, Any]) -> str | None:
     debt = to_float(row.get("debt_to_equity"))
     if debt is not None:
         parts.append(f"부채비율 {int(round(debt))}%")
-    if row.get("recent_report_title"):
+    if row.get("recent_report_title") and not _is_generic_report_title(row.get("recent_report_title")):
         parts.append(str(row["recent_report_title"]))
     return compact_join(parts)
+
+
+def _is_generic_report_title(value: Any) -> bool:
+    text = re.sub(r"\s+", " ", str(value or "")).strip().lower()
+    return text in {"종목 뉴스", "yahoo news", "컨센서스 검색", "analyst estimates / analysis", "analyst estimates/analysis"}
 
 
 def _has_signal(row: dict[str, Any], prefix: str) -> bool:
