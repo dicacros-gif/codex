@@ -12,7 +12,7 @@ from src.collectors.sec13f import collect_13f
 from src.collectors.tradingview import collect_tradingview
 from src.enricher import enrich_records, merge_signal_rows
 from src.report_builder import write_outputs
-from src.scorer import build_sections, score_records
+from src.scorer import build_sections, normalize_score_scales, score_records
 from src.utils.io import ensure_dir, read_json, strip_empty, write_json
 
 
@@ -41,10 +41,10 @@ def main() -> None:
     scored = score_records(enriched)
     daily_scored = strip_empty(scored)
     write_json(dated_processed_dir / "scored_records.json", daily_scored)
-    scored_history = _merge_record_history(
+    scored_history = normalize_score_scales(_merge_record_history(
         _as_list(read_json(processed_dir / "scored_records_history.json", [])),
         _as_list(daily_scored),
-    )
+    ))
     write_json(processed_dir / "scored_records_history.json", strip_empty(scored_history))
     write_json(processed_dir / "scored_records.json", strip_empty(scored_history))
 
@@ -56,10 +56,10 @@ def main() -> None:
     )
     daily_sec13f = strip_empty(sec13f)
     write_json(dated_processed_dir / "sec13f_aggregate.json", daily_sec13f)
-    sec13f_history = _merge_record_history(
+    sec13f_history = normalize_score_scales(_merge_record_history(
         _as_list(read_json(processed_dir / "sec13f_history.json", [])),
         _as_list(daily_sec13f),
-    )
+    ))
     write_json(processed_dir / "sec13f_history.json", strip_empty(sec13f_history))
 
     sections = build_sections(scored_history, sec13f_history)

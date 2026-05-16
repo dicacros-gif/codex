@@ -248,6 +248,7 @@ def _aggregate_changes(
         score += guru_position_score
         if len(weight_increased_items) >= 2:
             score += len(weight_increased_items) * 5
+        score_100 = _score_100(score)
         base = items[0]
         issuer = base.get("nameOfIssuer")
         ticker = _lookup_ticker(ticker_map, issuer, base.get("cusip"))
@@ -274,8 +275,8 @@ def _aggregate_changes(
                 "total_share_change": total_change,
                 "average_change_pct": round(sum(pct_values) / len(pct_values), 2) if pct_values else None,
                 "total_current_shares": total_current,
-                "famous_13f_score": round(score, 2),
-                "investment_priority_score": round(score, 2),
+                "famous_13f_score": score_100,
+                "investment_priority_score": score_100,
                 "institutions": sorted({str(item.get("institution")) for item in items if item.get("institution")}),
                 "core_basis": _basis(
                     new_count,
@@ -303,6 +304,13 @@ def _guru_position_score(items: list[dict[str, Any]]) -> float:
         if str(item.get("manager") or "").lower() == "bill ackman":
             score += 25
     return score
+
+
+def _score_100(value: Any) -> float:
+    number = to_float(value)
+    if number is None:
+        return 0.0
+    return round(max(0.0, min(100.0, number)), 2)
 
 
 def _max_positive_weight_change(items: list[dict[str, Any]]) -> float | None:

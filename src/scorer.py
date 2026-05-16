@@ -6,6 +6,23 @@ from typing import Any
 from src.utils.text import compact_join, to_float
 
 
+INVESTMENT_WEIGHTS = {
+    "valuation_score": 0.10,
+    "growth_consensus_score": 0.14,
+    "quality_score": 0.10,
+    "cashflow_score": 0.08,
+    "foreign_flow_score": 0.08,
+    "institution_flow_score": 0.08,
+    "leading_flow_score": 0.10,
+    "future_industry_score": 0.06,
+    "strategic_bonus_score": 0.05,
+    "long_term_stability_score": 0.08,
+    "momentum_score": 0.08,
+    "analyst_opinion_score": 0.07,
+    "volume_score": 0.08,
+}
+
+
 def score_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     scored = []
     for record in records:
@@ -24,23 +41,7 @@ def score_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
         item["analyst_opinion_score"] = _analyst(item)
         item["volume_score"] = _volume(item)
         item["risk_penalty"] = _risk_penalty(item)
-        item["investment_priority_score"] = round(
-            item["valuation_score"] * 0.10
-            + item["growth_consensus_score"] * 0.14
-            + item["quality_score"] * 0.10
-            + item["cashflow_score"] * 0.08
-            + item["foreign_flow_score"] * 0.08
-            + item["institution_flow_score"] * 0.08
-            + item["leading_flow_score"] * 0.10
-            + item["future_industry_score"] * 0.06
-            + item["strategic_bonus_score"] * 0.05
-            + item["long_term_stability_score"] * 0.08
-            + item["momentum_score"] * 0.08
-            + item["analyst_opinion_score"] * 0.07
-            + item["volume_score"] * 0.08
-            - item["risk_penalty"],
-            2,
-        )
+        item["investment_priority_score"] = _score_100_from_ten(_raw_investment_score(item))
         item["long_future_score"] = round(
             item["growth_consensus_score"] * 0.28
             + item["quality_score"] * 0.20
@@ -65,7 +66,29 @@ def score_records(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
     return scored
 
 
+def normalize_score_scales(records: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    normalized: list[dict[str, Any]] = []
+    for row in records:
+        item = dict(row)
+        if _is_13f_record(item):
+            score = to_float(item.get("famous_13f_score") or item.get("investment_priority_score"))
+            if score is not None:
+                score_100 = _clamp_100(score)
+                item["famous_13f_score"] = score_100
+                item["investment_priority_score"] = score_100
+        elif _has_stock_score_components(item):
+            item["investment_priority_score"] = _score_100_from_ten(_raw_investment_score(item))
+        else:
+            score = to_float(item.get("investment_priority_score"))
+            if score is not None:
+                item["investment_priority_score"] = _clamp_100(score * 10 if score <= 10 else score)
+        normalized.append(item)
+    return normalized
+
+
 def build_sections(records: list[dict[str, Any]], sec13f: list[dict[str, Any]]) -> dict[str, list[dict[str, Any]]]:
+    records = normalize_score_scales(records)
+    sec13f = normalize_score_scales(sec13f)
     used: set[str] = set()
     non_high_records = [row for row in records if not _has_signal(row, "52주 신고가")]
     foreign = _take_unique(_sort_foreign_flow(non_high_records, dominant_only=True), used, 50)
@@ -225,6 +248,33 @@ def _sort_institution_flow(records: list[dict[str, Any]], dominant_only: bool) -
         ),
         reverse=True,
     )
+
+
+def _raw_investment_score(row: dict[str, Any]) -> float:
+    total = sum((to_float(row.get(field)) or 0) * weight for field, weight in INVESTMENT_WEIGHTS.items())
+    return total - (to_float(row.get("risk_penalty")) or 0)
+
+
+def _score_100_from_ten(value: Any) -> float:
+    number = to_float(value)
+    if number is None:
+        return 0.0
+    return _clamp_100(number * 10)
+
+
+def _clamp_100(value: Any) -> float:
+    number = to_float(value)
+    if number is None:
+        return 0.0
+    return round(max(0.0, min(100.0, number)), 2)
+
+
+def _is_13f_record(row: dict[str, Any]) -> bool:
+    return row.get("source") == "SEC 13F" or row.get("famous_13f_score") is not None
+
+
+def _has_stock_score_components(row: dict[str, Any]) -> bool:
+    return any(row.get(field) is not None for field in INVESTMENT_WEIGHTS)
 
 
 def _valuation(row: dict[str, Any]) -> float:
