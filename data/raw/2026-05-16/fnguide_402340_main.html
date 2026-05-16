@@ -1,0 +1,2075 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+
+<!--<link rel="stylesheet" href="/SVO2/css/compeach.css?v=1.0.8">-->
+<link rel="stylesheet" href="/SVO2/css/compeach.css">
+<!--[if lte IE 9]><link rel="stylesheet" href="https://cdn.fnguide.com/SVO2/css/ie9.css?ver3"><![endif]-->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta charset="utf-8">
+<meta content="width=device-width" name="viewport">
+<!-- <meta content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0" name="viewport"> -->
+<script type="text/javascript" src="https://cdn.fnguide.com/SVO2/js/lib/jquery-1.11.1.min.js?v=1.0.6"></script>
+<script type="text/javascript" src="/SVO2/js/comp_load.js?v=20240102"></script>
+<script type="text/javascript" src="https://cdn.fnguide.com/SVO2/js/lib/jquery.autocomplete.js?v=1.0.6"></script>
+<link rel="stylesheet" type="text/css" href="https://cdn.fnguide.com/SVO2/css/jquery.autocomplete.css?v=1.0.8" />
+<LINK REL="SHORTCUT ICON" HREF="https://cdn.fnguide.com/SVO2/img/CompanyGuide.ico">
+<script type="text/javascript" src="https://cdn.fnguide.com/SVO2/js/autocomplete.js?v=1.0.6"></script>
+
+<meta name="author" content="">
+<meta name="description" content="">
+
+<title>SK스퀘어(A402340) | Snapshot | 기업정보 | Company Guide</title>
+<script >
+///SVO2/xml/Snapshot_all/402340.xml
+//제조
+$( window ).resize(function()
+{
+$('.ac',$('#divTopChart')).click()
+});
+
+$(function () {
+var gv_cID = '';
+if(gv_cID != '' && gv_cID != 'AA' && gv_cID != 'BD' && ($('#strMarket').val() == 'KSE' || $('#strMarket').val() == 'KOSDAQ')) {
+	$('#globalCp').show();
+}
+
+if ($('#upjongRptGb').val() =='B'|| $('#highRptGb').val()=="A"){
+$('#bandTab a').eq(1).addClass('ac');
+$('#divHighFis a').eq(1).addClass('ac');
+$('#upjongTab a').eq(1).addClass('ac');
+$('#div9Comment').text("[별도]");
+$('#div10Comment').text("[별도]");
+$('#div15Comment').text("[별도|전체]");
+}else{
+$('#bandTab a').eq(0).addClass('ac');
+$('#divHighFis a').eq(0).addClass('ac');
+$('#upjongTab a').eq(0).addClass('ac');
+$('#div9Comment').text("[연결]");
+$('#div10Comment').text("[연결]");
+$('#div15Comment').text("[연결|전체]");
+}
+
+if ($('#highRptGb').val() == "A"){
+$('#divHighBtn').hide();
+$('#highRptGb').val("B");
+$('#upjongRptGb').val("B");
+$('#bandRptGb').val("B");
+}else if($('#highRptGb').val() == "C"){
+$('#upjongRptGb').val("D");
+$('#highRptGb').val("D");
+$('#bandRptGb').val("D");
+$('#divHighBtn').hide();
+}
+
+//차트 경로 재설정
+//투자의견
+$("#mainChart01").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_02/ReComm_A402340.png');
+$("#mainChart02").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_03/ReCom2_A402340.png');
+//업종 비교
+//$("#upjongChartD").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_06/PER_A402340_' + $('#bandRptGb').val() + '_01_06.png');
+//$("#upjongChartB").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_06/PBR_A402340_' + $('#bandRptGb').val() + '_01_06.png');
+$("#upjongChartD").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_04/PER_A402340_D.png');
+$("#upjongChartB").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_04/PER_A402340_B.png');
+//BandChart
+$("#perBandCht").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_06/PER_A402340_' + $('#bandRptGb').val() + '_01_06.png');
+$("#pbrBandCht").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_06/PBR_A402340_' + $('#bandRptGb').val() + '_01_06.png');
+//주가 및 수급현황
+$("#balanceCht").attr('src','https://cdn.fnguide.com/SVO2/chartImg/11_01/A402340_BALANCE_01.png');
+$("#sellCht").attr('src','https://cdn.fnguide.com/SVO2/chartImg/11_01/A402340_SELL_01.png');
+//글로벌
+$('#global_rt').attr('src', 'https://cdn.fnguide.com/SVO2/chartImg/01_07/A402340_3M_01.png');
+
+$('#highYQgb').val($.cookie('snapshot_cook_highYQ'));
+if ($('#highYQgb').val() =="Q" ){
+	$('#highYQgb').val("Q");
+	$('#divHighTerm a').eq(2).addClass('ac');
+}else if($('#highYQgb').val() =="Y" ){
+	$('#highYQgb').val("Y");
+	$('#divHighTerm a').eq(1).addClass('ac');
+}else{
+	$('#highYQgb').val("A");
+	$('#divHighTerm a').eq(0).addClass('ac');
+}
+
+$("[id^='highlight_']").hide();
+$('#highlight_'+$('#highRptGb').val()+'_'+$('#highYQgb').val()).show();
+
+$('#upTabDiv'+$('#upjongRptGb').val()).show();
+
+var bandTab_Vals = ["D","B"];
+
+//밴드차트 연결/별도
+$('#bandTab a').click(function(){
+	var rowNum = $('a',$('#bandTab')).index(this);
+	$(this).parent().find('a').removeClass('ac');
+	$(this).addClass('ac');
+	$('#bandRptGb').val(bandTab_Vals[rowNum]);
+
+	if ($('#bandRptGb').val()=="D")
+	{
+		$('#div10Comment').text("[연결]");
+	}else{
+		$('#div10Comment').text("[별도]");
+	}
+
+	$("#perBandCht").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_06/PER_A402340_' + $('#bandRptGb').val() + '_01_06.png');
+	$("#pbrBandCht").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_06/PBR_A402340_' + $('#bandRptGb').val() + '_01_06.png');
+
+	return false;
+
+});
+
+var divHighFis_Vals = ["D","B"];
+//하이라이트 비용구성 연결/별도
+$('#divHighFis a').click(function(){
+	var rowNum = $('a',$('#divHighFis')).index(this);
+	$(this).parent().find('a').removeClass('ac');
+	$(this).addClass('ac');
+	$('#highRptGb').val(divHighFis_Vals[rowNum] );
+	$("[id^='highlight_']").show();
+	$("[id^='highlight_']").not('#highlight_'+$('#highRptGb').val()+'_'+$('#highYQgb').val()).hide();
+
+	$('#div15Comment').text("[" + $(this).text() + $('#div15Comment').text().replace("[연결","").replace("[별도",""));
+	//$('#highlight_'+$('#highRptGb').val()+'_'+$('#highYQgb').val()).show();
+	return false;
+});
+
+var divHighTerm_Vals = ["A","Y","Q"];
+//하이라이트 전체/연간/분기
+$('#divHighTerm a').click(function(){
+	var rowNum = $('a',$('#divHighTerm')).index(this);
+	$(this).parent().find('a').removeClass('ac');
+	$(this).addClass('ac');
+	$('#highYQgb').val(divHighTerm_Vals[rowNum]);
+	$.cookie('snapshot_cook_highYQ', $('#highYQgb').val());
+	$("[id^='highlight_']").show();
+	$("[id^='highlight_']").not('#highlight_'+$('#highRptGb').val()+'_'+$('#highYQgb').val()).hide();
+
+	$('#div15Comment').text($('#div15Comment').text().replace("전체]","").replace("연간]","").replace("분기]","")+$(this).text()+"]");
+	return false;
+});
+
+
+var upjongTab_Vals = ["D","B"];
+
+//업종비교 연결/별도
+$('#upjongTab a').click(function(){
+	var rowNum = $('a',$('#upjongTab')).index(this);
+
+	$(this).parent().find('a').removeClass('ac');
+	$(this).addClass('ac');
+	$('#upjongRptGb').val(upjongTab_Vals[rowNum]);
+
+	if ($('#upjongRptGb').val() == "D"){
+	$('#upTabDivD').show();
+	$('#upTabDivB').hide();
+	$('#div9Comment').text("[연결]");
+	}else{
+	$('#upTabDivB').show();
+	$('#upTabDivD').hide();
+	$('#div9Comment').text("[별도]");
+	}
+return false;
+});
+
+
+var upTabDiv2_Vals = ["EPS","PER","EV","ROE","DIV"];
+
+//업종비교 차트 탭
+$('#upTabDiv2_D a').click(function(){
+
+	var arrParam;
+	$(this).parent().find('a').removeClass('ac');
+	$(this).addClass('ac');
+
+	var rowNum = $('a',$('#upTabDiv2_D')).index(this);
+
+//	arrParam = $(this).attr('rel');
+//	arrParam = arrParam.split(';');
+
+	$('#svdMainGrid10D>table>tbody tr').removeClass('ac_row');
+	$('#svdMainGrid10D>table>tbody tr:nth-child('+(rowNum+4)+')').addClass('ac_row');
+	//alert(
+	$("#upjongChartD").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_04/'+upTabDiv2_Vals[rowNum]+'_A402340_D.png');
+	$("#upjongChartD").attr('alt',$(this).text()+' 차트 : 자세한 내용은 클릭후 팝업창 참고');
+	return false;
+});
+
+//업종비교 차트 탭
+$('#upTabDiv2_B a').click(function(){
+	var arrParam;
+	$(this).parent().find('a').removeClass('ac');
+	$(this).addClass('ac');
+
+	var rowNum = $('a',$('#upTabDiv2_B')).index(this);
+
+//	arrParam = $(this).attr('rel');
+//	arrParam = arrParam.split(';');
+
+	$('#svdMainGrid10B>table>tbody tr').removeClass('ac_row');
+	$('#svdMainGrid10B>table>tbody tr:nth-child('+(rowNum+4)+')').addClass('ac_row');
+
+	$("#upjongChartB").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_04/'+upTabDiv2_Vals[rowNum]+'_A402340_B.png');
+	$("#upjongChartB").attr('alt',$(this).text()+' 차트 : 자세한 내용은 클릭후 팝업창 참고');
+	return false;
+});
+
+var divTopChartVals = ["3M","1Y","3Y"];
+
+//상단차트 차트 탭
+$('#divTopChart a').click(function(){
+var isIE7 = "";
+var fixIE7 = "";
+var rowNum = $('a',$('#divTopChart')).index(this);
+if($(window).width()<"844"){
+isIE7 = "S_";
+}
+
+if(isIe7()){
+isIE7 = "S_";
+}
+
+if(gv_cID == "12"){
+isIE7 = "S_";
+}
+
+if( fixIE7 == "S_"){
+isIE7 = "S_";
+}
+
+var arrParam;
+$(this).parent().find('a').removeClass('ac');
+$(this).addClass('ac');
+
+$("#topChart01").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_01/'+ isIE7 +'A402340_'+divTopChartVals[rowNum]+'_01.png');
+$("#topChart02").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_01/'+ isIE7 +'A402340_'+divTopChartVals[rowNum]+'_02.png');
+$("#topChart03").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_01/'+ isIE7 +'A402340_'+divTopChartVals[rowNum]+'_03.png');
+
+$("#svdMainChartTxt13").html($("#c"+divTopChartVals[rowNum]).val());
+$("#svdMainTopChart1").html($(this).text());
+$("#svdMainTopChart2").html($(this).text());
+$("#svdMainTopChart3").html($(this).text());
+return false;
+
+});
+$('.ac',$('#divTopChart')).click()
+
+
+});
+
+function divTopChartEvent(rel){
+var isIE7 = "";
+var fixIE7 = "";
+if($(window).width()<"844"){
+	isIE7 = "S_";
+}
+if(isIe7()){
+	isIE7 = "S_";
+}
+if(gv_cID == "12"){
+	isIE7 = "S_";
+}
+if( fixIE7 == "S_"){
+	isIE7 = "S_";
+}
+
+var arrParam;
+$(this).parent().find('a').removeClass('ac');
+$(this).addClass('ac');
+
+$("#topChart01").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_01/'+ isIE7 +'A402340_'+rel+'_01.png');
+$("#topChart02").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_01/'+ isIE7 +'A402340_'+rel+'_02.png');
+$("#topChart03").attr('src','https://cdn.fnguide.com/SVO2/chartImg/01_01/'+ isIE7 +'A402340_'+rel+'_03.png');
+
+$("#svdMainChartTxt13").html($("#c"+$(this).attr('rel')).val());
+}
+
+//주요지표 탭
+function changeCus(gb) {
+	$('#cusTab > a:eq(' + gb + ')').addClass('ac').siblings('a').removeClass('ac');
+	$('.cuschart > dl.col' + gb + '').show();
+	$('.cuschart > dl:not(.col' + gb + ')').hide();
+}
+//수익률 탭
+function changeYield(gb) {
+	$('#yieldTab > a:eq(' + gb + ')').addClass('ac').siblings('a').removeClass('ac');
+
+	var selTerm = $('#yieldTab > a:eq(' + gb + ')').data('term');
+
+	var gv_cID = '';
+	if(gv_cID != '' && gv_cID != 'AA' && gv_cID != 'BD' && ($('#strMarket').val() == 'KSE' || $('#strMarket').val() == 'KOSDAQ')) {
+		$('#global_rt').attr('src', 'https://cdn.fnguide.com/SVO2/chartImg/01_07/A402340_' + selTerm + '_01.png');
+	} else {
+		$('#global_rt').attr('src', 'https://cdn.fnguide.com/SVO/Handbook_New/images/nodata.p.png');
+	}
+}
+
+//글로벌경쟁사분석 링크
+function linkGlobal() {
+	location.href = "/SVO2/ASP/SVD_Comparison.asp?pGB=" + getURLParam("PGB") + "&gicode=A" + '402340' + "&cID=" + getURLParam("CID") + "&MenuYn=" + getURLParam("MENUYN") + "&ReportGB=" + getURLParam("REPORTGB") + "&NewMenuID=" + '101' + "&stkGb=" + getURLParam("STKGB") + "&cpGb=G";
+}
+//지분분석 링크
+function linkShareAnalysis() {
+	location.href = "/SVO2/ASP/SVD_shareanalysis.asp?pGB=" + getURLParam("PGB") + "&gicode=A" + '402340' + "&cID=" + getURLParam("CID") + "&MenuYn=" + getURLParam("MENUYN") + "&ReportGB=" + getURLParam("REPORTGB") + "&NewMenuID=" + '101' + "&stkGb=" + getURLParam("STKGB");
+}
+var mkt_cap_v="22";
+</script>
+</head>
+<body class="">
+<div id="skip_navi">
+ <a href="#compBody" onclick="document.getElementById('compBody').tabIndex=-1;document.getElementById('compBody').focus();return false;">본문 바로가기</a>
+ <a href="#compGnb" onclick="document.getElementById('compGnb').tabIndex=-1;document.getElementById('compGnb').focus();return false;">메뉴 바로가기</a>
+</div>
+
+<div class="fng_body asp_body">
+<div class="fng_wrap">
+
+            <script language="javascript">
+                $(function() {
+
+                });
+            </script>
+     <!-- GNB -->
+<div class="contwrap" id="compBody"><!-- 컨텐츠 페이지 구성은 섹션으로 구성됨  -->
+<!-- 공통기업개요 -->
+
+            <!-- 공통기업개요 -->
+			<input type="hidden" id="strMarket" value="KSE" />
+			<div class="section ul_corpinfo">
+				<div class="corp_group1">
+					<h1 id="giName">SK스퀘어</h1>
+
+					<h2>402340</h2>
+					<span class="etc1">&#124;</span>
+					<h2>12월 결산</h2>
+					<span class="etc1">&#124;</span>
+					<!--
+					<h3>SKSQUARE</h3>
+					<span class="etc1">&#124;</span>
+					-->
+					<a href="javascript:goHompage('http://www.sksquare.com')" id="btn_shome" class="btn_shome"><span>홈페이지</span></a>
+					<dl style="display:none;" id="dl_btn_shome"><dt>홈페이지</dt><dd id="dd_btn_shome">http://www.sksquare.com</dd></dl>
+					<a href="javascript:void(0)" id="btn_sphone" class="btn_sphone"><span>전화번호</span></a>
+					<dl style="display:none;" id="dl_btn_sphone"><dt>전화번호</dt><dd id="dd_btn_sphone">02-6100-3114 | IR 담당자 </dd></dl>
+					<a href="javascript:void(0)"  id="btn_spmap" class="btn_spmap"><span>주소</span></a>
+					
+					<dl style="display:none;" id="dl_btn_spmap"><dt>주소</dt><dd id="dd_btn_spmap">서울특별시 중구 을지로 65 SK텔레콤빌딩</dd></dl>
+					<p class="stxt_group">
+						<span class="stxt stxt1">KSE&nbsp;&nbsp;코스피 금융</span>
+						<span style="display:none" id="strMarketTxt">코스피 금융</span>
+						<span class="etc2">&#124;</span>
+						<span class="stxt stxt2">FICS  복합&nbsp;산업</span>
+<!--						<span class="etc2">&#124;</span>-->
+<!--						<span class="stxt stxt3">12월 결산</span>-->
+						
+							<span class="etc2">&#124;</span>
+							<span class="stxt stxt3">K200</span>
+						
+							<span class="etc2">&#124;</span>
+							<span class="stxt stxt3">NXT</span>
+						 
+
+
+					</p>
+				</div>
+				<div class="corp_group2" id="corp_group2">
+					<dl>
+						<dt>
+							<dl style="display:none;"><dt>PER(Price Earning Ratio)</dt><dd>전일자 보통주 수정주가 / 최근 결산 EPS(주당순이익) <br>* EPS = 당기순이익 / 수정평균발행주식수<br>* 최근결산은 2025/12 (연간) 기준임.</dd></dl>
+							<a href="javascript:void(0)" class="tip_in" id="h_per">PER</a>
+						</dt>
+						<dd>16.52</dd>
+					</dl>
+					<dl>
+						<dt>
+							<dl style="display:none;"><dt>12M PER</dt><dd>전일자 보통주 수정주가 / 12개월 Forward EPS</dd></dl>
+							<a href="javascript:void(0)" class="tip_in" id="h_12m">12M PER</a>
+						</dt>
+						<dd>4.57</dd>
+					</dl>
+					<dl>
+						<dt>
+							<dl style="display:none;"><dt>업종 PER</dt><dd>시장대표업종||SUM(구성종목 시가총액)/SUM(구성종목 당기순이익)<br>* 전일자 보통주 시가총액 기준<br>* 당기순이익은  최근결산 2025/12 (연간) 기준임.</dd></dl>
+							<a href="javascript:void(0)" class="tip_in" id="h_u_per"><span class="ko">업종</span> PER</a>
+						</dt>
+						<dd>13.09</dd>
+					</dl>
+					<dl>
+						<dt>
+							<dl style="display:none;"><dt>PBR(Price Book-value Ratio)</dt><dd>전일자 보통주 수정주가 / 최근 결산기 BPS(주당순자산) <br>* BPS=(지배주주지분-자기주식) / 무상조정기말주식수(우선주 및 자사주 포함) <br>* 최근결산은 2025/12 (연간) 기준임.</dd></dl>
+							<a href="javascript:void(0)" class="tip_in" id="h_pbr">PBR</a>
+						</dt>
+						<dd>5.24</dd>
+					</dl>
+					<dl>
+						<dt>
+							<dl style="display:none;"><dt>배당수익률</dt><dd>{최근 결산기 보통주 DPS(현금, 무상조정) / 전일자 보통주 수정주가} *100<br>* 최근결산은 2025/12 (연간) 기준임.</dd></dl>
+							<a href="javascript:void(0)" class="tip_in" id="h_rate"><span class="ko">배당수익률</span></a>
+						</dt>
+						
+							<dd>-</dd>
+						
+					</dl>
+				</div>
+			</div>
+
+<!-- 그래프세개 -->
+
+<div class="section ul_3colgf">
+<div class="ul_wrap">
+<div class="inforow">
+<p class="tabgp_year" id="divTopChart">
+<a id="divTopChart3M" href="javascript:divTopChartEvent('3M')" ><span>3개월</span></a>
+<a id="divTopChart1Y" href="javascript:divTopChartEvent('1Y')" class="ac"><span>1년</span></a>
+<a id="divTopChart3Y" href="javascript:divTopChartEvent('3Y')" ><span>3년</span></a>
+</p>
+<p class="sec1">
+<span class="txt_awdn">SELL</span>
+<span class="txt_awup">BUY</span>
+</p>
+<p class="inforrow_rgt sec2">
+<span class="txt_g" id="topChartName4">외국인 지분율</span>
+<span class="txt_b" id="topChartName5">시가총액</span>
+</p>
+<p class="inforrow_rgt sec3">
+<span class="txt_n" id="topChartName1">SK스퀘어</span>
+<span class="txt_s" id="topChartName2">코스피&nbsp;금융</span>
+<span class="txt_c" id="topChartName3">KOSPI</span>
+</p>
+</div>
+<ul class="gf3row clear">
+<li>
+<div class="hd">
+<h2><strong>주가추이,</strong> 내부자거래<span class="blind" id="svdMainTopChart1"></span></h2>
+<span id="svdMainChartTxt11">1,098,000</span>
+</div>
+<div class="bd">
+<div class="ct" id="svdMainChart11">
+<a class="chartdatapop" href="javascript:openGridPopup('topChart01');" title="클릭:차트데이터 새창열림"><img id="topChart01" src="https://cdn.fnguide.com/SVO2/chartImg/01_01/A402340_3M_01.png" alt="주가추이,내부자거래 차트: 자세한 내용은 클릭후 팝업창 참고" onerror="this.src='https://cdn.fnguide.com/SVO/Handbook_New/images/nodata_s.png'" /></a>
+</div>
+</div>
+</li>
+<li>
+<div class="hd">
+<h2><strong>외국인 지분율,</strong> 시가총액<span class="blind" id="svdMainTopChart2"></span></h2>
+<span id="svdMainChartTxt12">48.95</span>
+</div>
+<div class="bd">
+<div class="ct" id="svdMainChart12">
+<a class="chartdatapop" href="javascript:openGridPopup('topChart02');" title="클릭:차트데이터 새창열림"><img id="topChart02" src="https://cdn.fnguide.com/SVO2/chartImg/01_01/A402340_3M_02.png" alt="외국인 지분율,시가총액 차트 : 자세한 내용은 클릭후 팝업창 참고" onerror="this.src='https://cdn.fnguide.com/SVO/Handbook_New/images/nodata_s.png'"/></a>
+</div>
+</div>
+</li>
+<li class="end">
+<div class="hd">
+<div>
+<dl style="display:none;"><dt>상대수익률</dt><dd>* 상대수익률은 조회시작일의 값을 100포인트로 변환하여 산출된<br>&nbsp;&nbsp;&nbsp;값입니다. <br>* 특정일의 상대수익률 포인트는 (특정일의 지수 및 주가/조회 기준 <br>&nbsp;&nbsp;&nbsp;시작점의 지수 및 주가) * 100 입니다. </dd></dl>
+<a href="javascript:void(0)" class="tip_in" id="h_tip"><h2><strong>상대수익률</strong><span class="blind" id="svdMainTopChart3"></span></h2></a>
+</div>
+<span id="svdMainChartTxt13">989.29</span>
+</div>
+<div class="bd">
+<div class="ct" id="svdMainChart13">
+<a class="chartdatapop" href="javascript:openGridPopup('topChart03');" title="클릭:차트데이터 새창열림"><img id="topChart03" src="https://cdn.fnguide.com/SVO2/chartImg/01_01/A402340_3M_03.png" alt="상대수익률 차트 : 자세한 내용은 클릭후 팝업창 참고" onerror="this.src='https://cdn.fnguide.com/SVO/Handbook_New/images/nodata_s.png'" /></a>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+
+<div class="section ul_de">
+<!-- 시세현황 -->
+<div class="ul_wrap" id="div1">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>시세현황</h2>
+<span class="date">[2026/05/15]</span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1">단위 : 원, 주,%</span>
+</div>
+</div>
+</div>
+<div class="um_table" id="svdMainGrid1">
+<table class="us_table_ty1 table-hb thbg_g h_fix zigbg_no" >
+<caption class="cphidden">시세현황</caption>
+<colgroup>
+<col style="width: 23%;">
+<col >
+<col style="width: 23%;">
+<col >
+</colgroup>
+<tbody>
+<tr class="rwf">
+<th scope="row" class="clf"><div>종가/ 전일대비/ 수익률</div></th>
+<td class="r">1,098,000/ <span class='tcb'>-73,000</span>/ <span class='tcb'>-6.23</span></td>
+<th scope="row"><div>거래량</div></th>
+<td class="cle r"> 1,042,701</td>
+</tr>
+<tr class="zigbg_in">
+<th scope="row" class="clf"><div>52주.최고가/ 최저가 </div></th>
+<td class="r">1,190,000/ 98,500</td>
+<th scope="row"><div>거래대금<span class="csize">(억원)</span></div></th>
+<td class="cle r"> 11,904</td>
+</tr>
+<tr>
+<th scope="row" class="clf"><div>수익률<span class="csize">(1M/ 3M/ 6M/ 1Y)</span></div></th>
+<td class="r"><span class='tcr'>+65.11</span>/ <span class='tcr'>+96.77</span>/ <span class='tcr'>+277.32</span>/ <span class='tcr'>+989.29</span>
+<input type="hidden" id="c3M" value="96.77"><input type="hidden" id="c1Y" value="989.29"><input type="hidden" id="c3Y" value="2,483.53"></td>
+<th scope="row"><div>외국인 지분율</div></th>
+<td class="cle r">48.95</td>
+</tr>
+<tr>
+<th scope="row" class="clf"><div><dl style="display:none;"><dt>시가총액(상장예정포함)</dt><dd>시가총액(상장예정포함): 종가*(상장주식수+상장예정주식수), (보통주+우선주)<br>시가총액(보통주)+시가총액(우선주)<br>* 상장예정주식수: 유무상증자, 주식배당의 권리락일(배당락일)이 지났으나, 상장되지 않은 주식수</dd></dl><a href="javascript:void(0)" class="tip_in">시가총액</a><span class="csize">(상장예정포함,억원)</span></div></th>
+<td class="r">1,448,903</td>
+<th scope="row"><div>베타<span class="csize">(1년)</span></div></th>
+<td class="cle r">1.64097</td>
+</tr>
+<tr>
+<th scope="row" class="clf"><div><dl style="display:none;"><dt>시가총액(보통주)</dt><dd>종가(보통주)*상장주식수(보통주)</dd></dl><a href="javascript:void(0)" class="tip_in">시가총액</a><span class="csize">(보통주,억원)</span></div></th>
+<td class="r">1,448,903</td>
+<th scope="row"><div>액면가</div></th>
+<td class="cle r">100</td>
+</tr>
+<tr class="rwe zigbg_in">
+<tr>
+<th scope="row" class="clf"><div>발행주식수<span class="csize">(보통주/ 우선주)</span></div></th>
+<td class="r">131,958,386/ 0</td>
+<th scope="row" class="clf"><div>종가(NXT)</div></th>
+<td class="cle r">1,096,000</td>
+</tr>
+<tr>
+<th scope="row"><div><dl style="display:none;"><dt>유동주식수/비율</dt><dd>유동주식비율 = 유동주식수 / 지수산정주식수 * 100.<br>유동주식수 = 지수산정주식수-(최대주주등(본인+특별관계자)+우리사주+자사주+보호예수+정부기관(5%이상)+해외DR).</dd></dl><a href="javascript:void(0)" class="tip_in">유동주식수/비율</a><span class="csize">(보통주)</span></div></th>
+<td class="r">89,279,499 / 67.66</td>
+<th scope="row" class="clf"><div>거래량/거래대금(NXT)<span class="csize">(억원)</span></div></th>
+<td class="cle r">272,967 / 3,080</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="ul_wrap" id="div2">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>실적이슈</h2>
+<span class="date">[2026/03 기준,&nbsp;분기]</span>
+</div>
+</div>
+</div>
+<div class="um_table" id="svdMainGrid2">
+<table class="us_table_ty1 h_fix zigbg_no">
+<caption class="cphidden">실적이슈</caption>
+<colgroup>
+<col >
+<col >
+<col >
+<col >
+</colgroup>
+<thead>
+<tr class="th_b">
+<th class=" clf" scope="col">잠정실적발표예정일</th>
+<th class="" scope="col">예상실적<span class='stxt'>(영업이익,&nbsp;억원)</span></th>
+<th class="" scope="col">&nbsp;&nbsp;3개월전예상실적대비<span class='stxt'>(%)</span></th>
+<th class=" cle" scope="col">&nbsp;&nbsp;전년동기대비<span class='stxt'>(%)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="rwc_g">
+<td  class="c clf"  >미정</td>
+<td  class="c"  >51,865</td>
+<td  class="c"  >&nbsp;-</td>
+<td  class="c cle"  >+213.90</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="ul_wrap" id="div3">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>운용사별 보유 현황</h2>
+<span class="date">[2025/12]</span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1">단위 : 천주, 억원, %</span>
+</div>
+</div>
+</div>
+<div class="um_table" id="svdMainGrid3">
+<table class="us_table_ty1 h_fix zigbg_no">
+<caption class="cphidden">운용사별 보유 현황</caption>
+<colgroup>
+<col style="width: 25%;">
+<col >
+<col >
+<col >
+<col >
+</colgroup>
+<thead>
+<tr class="th_b">
+<th class="clf" scope="col">운용사명</th>
+<th scope="col">보유수량</th>
+<th scope="col">시가평가액</th>
+<th scope="col">상장주식수내비중</th>
+<th class="cle" scope="col">운용사내비중</th>
+</tr>
+</thead>
+<tbody>
+<tr><th class="clf l" scope="row"><div>삼성자산운용</div></th><td class="r">1,142.10</td><td class="r">4,202.92</td><td class="r">0.86</td><td class="cle r">0.29</td></tr>   
+<tr><th class="clf l" scope="row"><div>미래에셋자산운용</div></th><td class="r">875.48</td><td class="r">3,221.77</td><td class="r">0.66</td><td class="cle r">0.24</td></tr>   
+<tr><th class="clf l" scope="row"><div>케이비자산운용</div></th><td class="r">331.90</td><td class="r">1,221.39</td><td class="r">0.25</td><td class="cle r">0.27</td></tr>   
+<tr><th class="clf l" scope="row"><div>엔에이치아문디자산운용</div></th><td class="r">195.59</td><td class="r">719.78</td><td class="r">0.15</td><td class="cle r">0.39</td></tr>   
+<tr><th class="clf l" scope="row"><div>하나자산운용</div></th><td class="r">127.69</td><td class="r">469.88</td><td class="r">0.10</td><td class="cle r">0.28</td></tr>   
+<tr><th class="clf l" scope="row"><div>한국투자신탁운용</div></th><td class="r">125.85</td><td class="r">463.13</td><td class="r">0.10</td><td class="cle r">0.10</td></tr>   
+<tr><th class="clf l" scope="row"><div>에셋플러스자산운용</div></th><td class="r">103.21</td><td class="r">379.80</td><td class="r">0.08</td><td class="cle r">1.37</td></tr>   
+<tr><th class="clf l" scope="row"><div>키움투자자산운용</div></th><td class="r">102.18</td><td class="r">376.02</td><td class="r">0.08</td><td class="cle r">0.21</td></tr>   
+<tr><th class="clf l" scope="row"><div>교보악사자산운용</div></th><td class="r">83.01</td><td class="r">305.46</td><td class="r">0.06</td><td class="cle r">0.26</td></tr>   
+<tr><th class="clf l" scope="row"><div>한화자산운용</div></th><td class="r">63.09</td><td class="r">232.19</td><td class="r">0.05</td><td class="cle r">0.15</td></tr>   
+</tbody>
+</table>
+</div>
+<div class="um_comment">
+<a href="javascript:void(0)" onclick="cmView(this)" class="comment_wrap btn_cm cmhidden">
+<ul>
+<li>* 컨텐츠의 보유 수량, 상장주식 내 비중, 운용사 내 비중 값은 최근 분기말에 공시한 공모펀드 보고서 기준이며, 보유수량 기준 상위 10위 까지 운용사를 보여줍니다.</li>
+</ul>
+<span class="cmtext"></span>
+</a>
+</div>
+</div>
+<div class="ul_col2wrap" id="div4">
+<div class="ul_col2_l">
+<!-- 주주현황 -->
+<div class="ul_wrap">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>주주현황</h2>
+<span class="date"></span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1">단위 : 주, %</span>
+</div>
+</div>
+</div>
+<div class="um_table" id="svdMainGrid4">
+<table class="us_table_ty1 h_fix zigbg_no notres">
+<caption class="cphidden">주주현황</caption>
+<colgroup>
+<col style="width: 36%;">
+<col >
+<col >
+<col >
+</colgroup>
+<thead>
+<tr class="th_b">
+<th class="clf" scope="col">항목</th>
+<th scope="col">보통주</th>
+<th scope="col">지분율</th>
+<th class="cle" scope="col">최종변동일</th>
+</tr>
+</thead>
+<tbody>
+<tr><th class="clf l" scope="row"><div><a class='btn_play_on' href='javascirpt:void(0)'>SK(외&nbsp;10인)</a><span style='display:none;'>주주명^지분율(%)||||SK^32.17||||박성하^0.01||||윤풍영^0.01||||박승구^0.01||||기은선^0.00</span></div></th><td class="r">42,494,600</td><td class="r">32.20</td><td class="cle c">2026/05/11</td></tr>   
+<tr><th class="clf l" scope="row"><div>국민연금공단</div></th><td class="r">11,662,940</td><td class="r">8.84</td><td class="cle c">2025/10/10</td></tr>   
+<tr><th class="clf l" scope="row"><div><a class='btn_play_on' href='javascirpt:void(0)'>Nomura&nbsp;Investment&nbsp;Management&nbsp;Business&nbsp;Trust(외&nbsp;1인)</a><span style='display:none;'>주주명^지분율(%)||||Nomura&nbsp;Investment&nbsp;Management&nbsp;Business&nbsp;Trust^6.40||||Nomura&nbsp;Asset&nbsp;ManagementCo.,&nbsp;Ltd^0.01</span></div></th><td class="r">8,459,359</td><td class="r">6.41</td><td class="cle c">2025/12/01</td></tr>   
+<tr><th class="clf l" scope="row"><div>자사주</div></th><td class="r">184,287</td><td class="r">0.14</td><td class="cle c">2026/05/11</td></tr>   
+<tr><th class="clf l" scope="row"><div>&nbsp;</div></th><td class="r">&nbsp;</td><td class="r">&nbsp;</td><td class="cle c">&nbsp;</td></tr>   
+<tr><th class="clf l" scope="row"><div>&nbsp;</div></th><td class="r">&nbsp;</td><td class="r">&nbsp;</td><td class="cle c">&nbsp;</td></tr>   
+</tbody>
+</table>
+</div>
+<div class="um_comment">
+<a href="javascript:void(0)" onclick="cmView(this)" class="comment_wrap btn_cm cmhidden">
+<ul>
+<li>* DART 지분공시를 기준으로 하며, 보통주 지분율 상위 6개까지 표시됩니다.(자기주식 및 우리사주는 자기주식 공시와 정기공시를 포함하여 반영됩니다.)</li>
+<li>* 5%미만 개별보고 제출자는 지분분석 메뉴에서 조회 가능합니다.</li>
+<li>* 지분공시 제외 대상자(5%미만이고 임원이 아닌 주주)는 표시되지 않습니다.</li>
+</ul>
+<span class="cmtext"></span>
+</a>
+</div>
+</div>
+</div>
+<div class="ul_col2_r">
+<!-- 주주구분 현황 -->
+<div class="ul_wrap">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>주주구분 현황</h2>
+<span class="date"><a href="javascript:linkShareAnalysis();">자세히보기</a></span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1">단위 : 주, %</span>
+</div>
+</div>
+</div>
+<div class="um_table" id="svdMainGrid5">
+<table class="us_table_ty1 h_fix zigbg_no notres" >
+<caption class="cphidden">주주현황</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 20%;">
+<col style="width: 21%;">
+<col style="width: 14%;">
+<col style="width: 20%;">
+</colgroup>
+<thead>
+<tr class="th_b">
+<th scope="col">주주구분</th>
+<th scope="col">대표주주수</th>
+<th scope="col">보통주</th>
+<th scope="col">지분율</th>
+<th scope="col">최종변동일</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" class="clf l" title="최대주주등&nbsp;(본인+특별관계자)"><div>최대주주등&nbsp;(본인+특별관계자)</div></th><td class="r">1</td><td class="r">42,494,600</td><td class="r">32.20</td><td class="cle c">2026/05/11</td></tr>   
+<tr><th scope="row" class="clf l" title="10%이상주주&nbsp;(본인+특별관계자)"><div>10%이상주주&nbsp;(본인+특별관계자)</div></th><td class="r">&nbsp;</td><td class="r">&nbsp;</td><td class="r">&nbsp;</td><td class="cle c">&nbsp;</td></tr>   
+<tr><th scope="row" class="clf l" title="5%이상주주&nbsp;(본인+특별관계자)"><div>5%이상주주&nbsp;(본인+특별관계자)</div></th><td class="r">2</td><td class="r">20,122,299</td><td class="r">15.25</td><td class="cle c">2025/12/01</td></tr>   
+<tr><th scope="row" class="clf l" title="임원&nbsp;(5%미만&nbsp;중,&nbsp;임원인자)"><div>임원&nbsp;(5%미만&nbsp;중,&nbsp;임원인자)</div></th><td class="r">15</td><td class="r">51,226</td><td class="r">0.04</td><td class="cle c">2026/05/11</td></tr>   
+<tr><th scope="row" class="clf l" title="자기주식&nbsp;(자사주+자사주신탁)"><div>자기주식&nbsp;(자사주+자사주신탁)</div></th><td class="r">1</td><td class="r">184,287</td><td class="r">0.14</td><td class="cle c">2026/05/11</td></tr>   
+<tr><th scope="row" class="clf l" title="우리사주조합"><div>우리사주조합</div></th><td class="r">&nbsp;</td><td class="r">&nbsp;</td><td class="r">&nbsp;</td><td class="cle c">&nbsp;</td></tr>   
+</tbody>
+</table>
+</div>
+<div class="um_comment">
+<a href="javascript:void(0)" onclick="cmView(this)" class="comment_wrap btn_cm cmhidden">
+<ul>
+<li>* 주주 구분자별 지분율은 서로 중복되지 않습니다. </li>
+</ul>
+<span class="cmtext"></span>
+</a>
+</div>
+</div>
+</div>
+</div> 
+<!--신용등급현황CP,신용등급현황Bond-->  
+<div class="ul_col2wrap" id="div5">
+<div class="ul_col2_l">
+<!-- 신용등급현황 기업어음 (CP) -->
+<div class="ul_wrap ul_col_l">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>신용등급현황 기업어음 (CP)</h2>
+</div>
+</div>
+</div>
+<div class="um_table" id="svdMainGrid6">
+<table class="us_table_ty1 h_fix zigbg_no">
+<caption class="cphidden">신용등급현황 기업어읍(CP)</caption>
+<colgroup>
+<col >
+<col >
+<col >
+</colgroup>
+<thead>
+<tr class="th_b">
+<th class="clf" scope="col">KIS</th>
+<th scope="col">KR</th>
+<th class="cle" scope="col">NICE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="rwc_g">
+<td class="clf c">A1 <span class='stxt'>[2026/03/31]</span></td>
+<td class="c">A1 <span class='stxt'>[2025/12/10]</span></td>
+<td class="cle c">A1 <span class='stxt'>[2025/12/30]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="ul_col2_r">
+<!-- 신용등급현황 회사채(Bond) -->
+<div class="ul_wrap ul_col_r">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>신용등급현황 회사채(Bond)</h2>
+</div>
+</div>
+</div>
+<div class="um_table" id="svdMainGrid7">
+<table class="us_table_ty1 h_fix zigbg_no" >
+<caption class="cphidden">주주현황</caption>
+<colgroup>
+<col >
+<col >
+<col >
+</colgroup>
+<thead>
+<tr class="th_b">
+<th class="clf" scope="col">KIS</th>
+<th scope="col">KR</th>
+<th class="cle" scope="col">NICE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="rwc_g">
+<td class="clf c">AA+ <span class='stxt'>[2026/03/11]</span></td>
+<td class="c"> <span class='stxt'>[2025/12/10]</span></td>
+<td class="cle c"> <span class='stxt'>[2025/12/30]</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="ul_wrap" id="div6">
+<div class="um_topbar bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>투자의견 컨센서스</h2>
+<span class="date">[2026/05/15]</span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1">단위 : 배, 원, %</span>
+</div>
+</div>
+</div>
+<div class="um_col2wrap">
+<div class="um_col2_l">
+<div class="um_wrap">
+<div class="um_bargf">
+<div class="bargf_wrap">
+<div class="gf_comt">
+<h3>Buy </h3>
+</div>
+<div class="pd">
+<div class="bgfbox">
+<div class="bg"></div>
+<div id="svdMainGraph8" class="gf" style="width:80%">
+<p><span>4.0</span></p>
+</div><!-- 퍼센트로 그래프값을 줌 -->
+</div>
+<ul class="txtbox">
+<li class="t1">강력매도</li>
+<li class="t2">매도</li>
+<li class="t3">중립</li>
+<li class="t4">매수</li>
+<li class="t5">강력매수</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="um_col2_r">
+<div class="um_wrap">
+<div class="um_table" id="svdMainGrid9">
+<table class="us_table_ty1 h_fix zigbg_no th_topbdno" >
+<caption class="cphidden">주주현황</caption>
+<colgroup>
+<col >
+<col >
+<col >
+<col >
+<col >
+</colgroup>
+<thead>
+<tr class="th_b">
+<th class="clf" scope="col">투자의견</th>
+<th scope="col">목표주가</th>
+<th scope="col">EPS</th>
+<th scope="col">PER</th>
+<th class="cle" scope="col">추정기관수</th>
+</tr>
+</thead>
+<tbody>
+<tr class="rwc_g tr_h68">
+<td class="clf c">4.0</td>
+<td class="c">861,667</td>
+<td class="c">228,685</td>
+<td class="c">4.8</td>
+<td class="cle c">6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div class="um_comment">
+<a href="javascript:void(0)" onclick="cmView(this)" class="comment_wrap btn_cm cmhidden">
+<ul>
+<li>* 1=Sell, 2=U/Weight, 3=Neutral, 4=Buy, 5=S/Buy</li>
+<li>* EPS, PER 은 FY1에 대한 증권사 평균 추정실적임.</li>
+</ul>
+<span class="cmtext"></span>
+</a>
+</div>
+</div>
+<!--투자의견및 목표주가,분포 차트-->
+<div class="ul_col2wrap" id="div7">
+<div class="ul_col2_l">
+<!-- 투자의견 및 목표주가 -->
+<div class="ul_wrap ul_col_l">
+<div class="um_topbar botbd_n">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>투자의견 및 목표주가</h2>
+</div>
+</div>
+</div>
+<div class="um_chart chart_ht1">
+<div class="chart_etc"></div>
+<div class="chart_wrap" id="svdMainChart2">
+<a class="chartdatapop" href="javascript:openGridPopup('mainChart01');" title="클릭:차트데이터 새창열림"><img id="mainChart01" onError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.png'" alt="투자의견,적정주가,수정주가 차트 : 자세한 내용은 클릭후 팝업창 참고" /></a>
+</div>
+</div>
+</div>
+</div>
+<div class="ul_col2_r">
+<!-- 투자의견 분포 -->
+<div class="ul_wrap ul_col_r">
+<div class="um_topbar botbd_n">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>투자의견 분포</h2>
+</div>
+</div>
+</div>
+<div class="um_chart chart_ht1">
+<div class="chart_etc"></div>
+<div class="chart_wrap" id="svdMainChart3">
+<a class="chartdatapop" href="javascript:openGridPopup('mainChart02');" title="클릭:차트데이터 새창열림">
+<img id="mainChart02" onnError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.p.png'" alt="관련 데이터가 없습니다." />
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ul_wrap" id="div8">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>Business Summary</h2>
+<span class="date" id="bizSummaryDate">[2026/04/16]</span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1"></span>
+</div>
+</div>
+</div>
+
+
+<div class="um_bssummary">
+<h3 id="bizSummaryHeader">데이터·AI&nbsp;중심&nbsp;전환으로&nbsp;실적&nbsp;개선</h3>
+<ul id="bizSummaryContent">
+<li>동사는&nbsp;2021년&nbsp;SK텔레콤으로부터&nbsp;인적분할되어&nbsp;설립되었고,&nbsp;지주회사&nbsp;전환&nbsp;승인을&nbsp;받았음.&nbsp;11번가,&nbsp;티맵모빌리티&nbsp;등&nbsp;주요종속회사와&nbsp;SK하이닉스를&nbsp;포함한&nbsp;반도체&nbsp;중심의&nbsp;포트폴리오와&nbsp;지배구조를&nbsp;형성하고&nbsp;있으며,&nbsp;커머스·플랫폼·모빌리티&nbsp;사업을&nbsp;영위함.&nbsp;신속하고&nbsp;전문적인&nbsp;의사결정&nbsp;체제&nbsp;확립&nbsp;및&nbsp;전문화된&nbsp;사업&nbsp;역량&nbsp;집중을&nbsp;통해&nbsp;기업&nbsp;경쟁력&nbsp;강화와&nbsp;주주가치&nbsp;증대를&nbsp;도모하고&nbsp;있음.</li><li>2025년&nbsp;결산&nbsp;전년동기&nbsp;대비&nbsp;연결기준&nbsp;매출액은&nbsp;77.8%&nbsp;증가,&nbsp;영업이익은&nbsp;124.4%&nbsp;증가,&nbsp;당기순이익은&nbsp;137.6%&nbsp;증가.&nbsp;주요&nbsp;자회사&nbsp;SK하이닉스의&nbsp;지분법이익&nbsp;증가와&nbsp;티맵모빌리티의&nbsp;데이터&nbsp;사업&nbsp;성장,&nbsp;11번가&nbsp;수익성&nbsp;개선이&nbsp;실적&nbsp;개선을&nbsp;이끌었음.&nbsp;티맵모빌리티는&nbsp;전년&nbsp;대비&nbsp;매출이&nbsp;약&nbsp;35%&nbsp;상승하고,&nbsp;11번가는&nbsp;350억원&nbsp;이상&nbsp;영업이익이&nbsp;개선되며&nbsp;수익&nbsp;구조를&nbsp;안정화함.</li>
+</ul>
+</div>
+</div>
+<div class="ul_wrap" id="globalCp" style="display:none;">
+<div class="um_topbar botbd_n bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>글로벌 경쟁사 비교</h2>
+<span class="date"><a href="javascript:linkGlobal();">자세히보기</a></span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1"></span>
+</div>
+</div>
+</div>
+<div class="ul_col2wrap ul_pd_none" id="div20">
+<div class="ul_col2_l">
+<div class="ul_wrap">
+<div class="um_topbar botbd_n">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>주요지표</h2>
+</div>
+<div class="um_gbtn grd_ty1 fl topbar_rgt" id="cusTab">
+<a href="javascript:changeCus(0);" class="gbtn_f r3 ac">시가총액</a>
+<a href="javascript:changeCus(1);" class="gbtn_c r3">&nbsp;매출액&nbsp;</a>
+<a href="javascript:changeCus(2);" class="gbtn_c r3">&nbsp;&nbsp;&nbsp;PER&nbsp;&nbsp;&nbsp;</a>
+<a href="javascript:changeCus(3);" class="gbtn_e r3">&nbsp;&nbsp;&nbsp;ROE&nbsp;&nbsp;&nbsp;</a>
+</div>
+</div>
+</div>
+<div class="um_chart chart_ht1">
+<div class="chart_wrap">
+<div class="cuschart">
+<dl class='win col0'>
+<dt>
+<span class='stname txt_ell max_w180' title='SK스퀘어'>SK스퀘어</span>
+<span class='stval'>1,545,233<span class='unit'> 억원</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_b' style='width:258.1872px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col1'>
+<dt>
+<span class='stname txt_ell max_w180' title='SK스퀘어'>SK스퀘어</span>
+<span class='stval'>104,556<span class='unit'> 억원</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_b' style='width:22.5586px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col2'>
+<dt>
+<span class='stname txt_ell max_w180' title='SK스퀘어'>SK스퀘어</span>
+<span class='stval'>17.62<span class='unit'> 배</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_b' style='width:71.52px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col3'>
+<dt>
+<span class='stname txt_ell max_w180' title='SK스퀘어'>SK스퀘어</span>
+<span class='stval'>37.82<span class='unit'> %</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_b' style='width:225.4072px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col0'>
+<dt>
+<span class='stname txt_ell max_w180' title='S&P Global'>S&P Global</span>
+<span class='stval'>1,783,601<span class='unit'> 억원</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_r' style='width:298px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col1'>
+<dt>
+<span class='stname txt_ell max_w180' title='S&P Global'>S&P Global</span>
+<span class='stval'>228,782<span class='unit'> 억원</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_r' style='width:49.3786px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col2'>
+<dt>
+<span class='stname txt_ell max_w180' title='S&P Global'>S&P Global</span>
+<span class='stval'>27.56<span class='unit'> 배</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_r' style='width:111.8394px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col3'>
+<dt>
+<span class='stname txt_ell max_w180' title='S&P Global'>S&P Global</span>
+<span class='stval'>13.91<span class='unit'> %</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_r' style='width:82.9036px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col0'>
+<dt>
+<span class='stname txt_ell max_w180' title='Mitsui'>Mitsui</span>
+<span class='stval'>1,647,294<span class='unit'> 억원</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_y' style='width:275.2328px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col1'>
+<dt>
+<span class='stname txt_ell max_w180' title='Mitsui'>Mitsui</span>
+<span class='stval'>1,380,867<span class='unit'> 억원</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_y' style='width:298px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col2'>
+<dt>
+<span class='stname txt_ell max_w180' title='Mitsui'>Mitsui</span>
+<span class='stval'>19.91<span class='unit'> 배</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_y' style='width:80.7878px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col3'>
+<dt>
+<span class='stname txt_ell max_w180' title='Mitsui'>Mitsui</span>
+<span class='stval'>11.93<span class='unit'> %</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_y' style='width:71.1028px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col0'>
+<dt>
+<span class='stname txt_ell max_w180' title='Howmet Aerospace'>Howmet Aerospace</span>
+<span class='stval'>1,625,723<span class='unit'> 억원</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_g' style='width:271.627px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col1'>
+<dt>
+<span class='stname txt_ell max_w180' title='Howmet Aerospace'>Howmet Aerospace</span>
+<span class='stval'>123,103<span class='unit'> 억원</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_g' style='width:26.5518px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col2'>
+<dt>
+<span class='stname txt_ell max_w180' title='Howmet Aerospace'>Howmet Aerospace</span>
+<span class='stval'>73.43<span class='unit'> 배</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_g' style='width:298px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+<dl class='win col3'>
+<dt>
+<span class='stname txt_ell max_w180' title='Howmet Aerospace'>Howmet Aerospace</span>
+<span class='stval'>30.44<span class='unit'> %</span>
+<span class='blind'>(100점만점기준)</span>
+</span>
+</dt>
+<dd class='stgf global'>
+<span class='stgfbar c_g' style='width:181.4224px;'></span><!-- 100% width:298px -->
+</dd>
+</dl>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="ul_col2_r">
+<!-- 글로별경쟁사비교 -->
+<div class="ul_wrap ul_col_l">
+<div class="um_topbar botbd_n">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>수익률 비교</h2>
+</div>
+<div class="um_gbtn grd_ty1 fl topbar_rgt" id="yieldTab">
+<a href="javascript:changeYield(0);" data-term="3M" class="gbtn_f r3 ac">3개월</a>
+<a href="javascript:changeYield(1);" data-term="1Y" class="gbtn_c r3">&nbsp;1년&nbsp;</a>
+<a href="javascript:changeYield(2);" data-term="3Y" class="gbtn_e r3">&nbsp;3년&nbsp;</a>
+</div>
+<div class="topbar_rgt">
+<span class="txt1">단위 : %</span>
+</div>
+</div>
+</div>
+<div class="um_chart chart_ht1">
+<div class="chart_etc"></div>
+<div class="chart_wrap">
+<a class="chartdatapop" href="javascript:openGridPopup('global_rt');" title="클릭:차트데이터 새창열림"><img id="global_rt" onnError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.p.png'" alt="투자의견,적정주가,수정주가 차트 : 자세한 내용은 클릭후 팝업창 참고"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 업종 비교 -->
+<div class="ul_wrap" id="div9">
+<div class="um_topbar bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>업종 비교</h2>
+<span class="stxt" id="div9Comment"></span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1">단위 : 억원, 배, %</span>
+<div class="um_gbtn grd_ty1 fl" id="upjongTab">
+<a href="javascript:void(0);"  class="gbtn_f r3" >연결</a>
+<a href="javascript:void(0);"  class="gbtn_e r3" >별도</a>
+</div>
+</div>
+</div>
+</div>
+<div class="um_col2wrap upTabDiv" id="upTabDivD" style="display:none;">
+<div class="um_col2_l">
+<div class="um_wrap">
+<div class="um_table" id="svdMainGrid10D">
+<table class="us_table_ty1 h_fix zigbg_no th_topbdno" >
+<caption class="cphidden">업종 비교</caption>
+<colgroup>
+<col style="width: 36%;">
+<col >
+<col >
+<col >
+</colgroup>
+<thead>
+<tr class="th_b">
+<th class="clf" scope="col">구분</th>
+<th scope="col" title="SK스퀘어">SK스퀘어</th>
+<th scope="col" title="코스피&nbsp;금융">코스피&nbsp;금융</th>
+<th class="cle"  title="KOSPI" scope="col">KOSPI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th scope="row"><div>시가총액</div></th>
+<td class="r"  >1,448,903</td>
+<td class="r" >8,083,344</td>
+<td class="cle r"  >61,349,793</td>
+</tr>
+<tr>
+<th scope="row"><div>매출액</div></th>
+<td class="r" title="104,555.53">104,556</td>
+<td class="r" title="7,440,014.85">7,440,015</td>
+<td class="cle r" title="35,498,699.07">35,498,699</td>
+</tr>
+<tr>
+<th scope="row"><div>영업이익</div></th>
+<td class="r" title="87,974.21">87,974</td>
+<td class="r" title="922,552.65">922,553</td>
+<td class="cle r" title="3,065,446.62">3,065,447</td>
+</tr>
+<tr>
+<th scope="row"><div>EPS<span class="csize">(원)</span></div></th>
+<td class="r">66,468</td>
+<td class="r">6,800.90</td>
+<td class="cle r">9,055.68</td>
+</tr>
+<tr class="ac_row">
+<th scope="row"><div><dl style="display: none;"><dt>PER</dt><dd>최근결산 보통주 수정가 / 최근결산 EPS</dd></dl><a class="tip_in" href="javascript:void(0)"><span class="txt_acd">PER</span></a></div></th>
+<td class="r">5.54</td>
+<td class="r">8.99</td>
+<td class="cle r">15.45</td>
+<tr>
+<th scope="row"><div><dl style="display: none;"><dt>EV/EBITDA</dt><dd>(시가총액+순차입금)/EBITDA</dd></dl><a class="tip_in" href="javascript:void(0)"><span class="txt_acd">EV/EBITDA</span></a></div></th>
+<td class="r">5.51</td>
+<td class="r">4.03</td>
+<td class="cle r">8.20</td>
+</tr>
+<tr>
+<th scope="row"><div>ROE</div></th>
+<td class="r">37.82</td>
+<td class="r">9.37</td>
+<td class="cle r">8.83</td>
+</tr>
+<tr>
+<th scope="row"><div>배당수익률</div></th>
+<td class="r">&nbsp;</td>
+<td class="r">2.71</td>
+<td class="cle r">1.50</td>
+</tr>
+<tr>
+<th scope="row"><div>베타<span class="csize">(1년)</span></div></th>
+<td class="r">2.15</td>
+<td class="r">0.87</td>
+<td class="cle r">1.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="um_col2_r">
+<div class="um_wrap">
+<div class="um_snpsttab" id="upTabDiv2_D">
+<a href="javascript:void(0);" ><span>EPS</span></a>
+<a href="javascript:void(0);"  class="ac"><span>PER</span></a>
+<a href="javascript:void(0);" ><span>EV/EBITDA</span></a>
+<a href="javascript:void(0);" ><span>ROE</span></a>
+<a href="javascript:void(0);"  class="end"><span>배당수익률</span></a>
+</div>
+<div class="um_chart chart_ht2">
+<div class="chart_etc"></div>
+<div class="chart_wrap" id="svdMainChart4" style="height:270px">
+<a title="클릭:차트데이터 새창열림" href="javascript:openGridPopup('upjongChartD');" class="chartdatapop"><img id="upjongChartD" onnError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.p.png'" alt="PER 차트 : 자세한 내용은 클릭후 팝업창 참고"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="um_col2wrap upTabDiv" id="upTabDivB" style="display:none;">
+<div class="um_col2_l">
+<div class="um_wrap">
+<div class="um_table" id="svdMainGrid10B">
+<table class="us_table_ty1 h_fix zigbg_no th_topbdno" >
+<caption class="cphidden">업종 비교</caption>
+<colgroup>
+<col style="width: 36%;">
+<col >
+<col >
+<col >
+</colgroup>
+<thead>
+<tr class="th_b">
+<th class="clf" scope="col">구분</th>
+<th scope="col">SK스퀘어</th>
+<th scope="col">코스피&nbsp;금융</th>
+<th class="cle" scope="col">KOSPI</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th><div>시가총액</div></th>
+<td class="r">1,448,903</td>
+<td class="r">8,083,344</td>
+<td class="cle r">61,349,793</td>
+</tr>
+<tr>
+<th><div>매출액</div></th>
+<td class="r" title="3,575.72">3,576</td>
+<td class="r" title="1,374,244.85">1,374,245</td>
+<td class="cle r" title="18,035,709.73">18,035,710</td>
+</tr>
+<tr>
+<th><div>영업이익</div></th>
+<td class="r" title="3,006.52">3,007</td>
+<td class="r" title="393,766.65">393,767</td>
+<td class="cle r" title="1,803,007.53">1,803,008</td>
+</tr>
+<tr>
+<th><div>EPS<span class="csize">(원)</span></div></th>
+<td class="r"><span class='tcr'>-795</span></td>
+<td class="r">3,805.11</td>
+<td class="cle r">7,220.45</td>
+</tr>
+<tr class="ac_row">
+<th><div>PER</div></th>
+<td class="r">N/A</td>
+<td class="r">16.08</td>
+<td class="cle r">19.38</td>
+</tr>
+<tr>
+<th><div>EV/EBITDA</div></th>
+<td class="r">159.42</td>
+<td class="r">5.91</td>
+<td class="cle r">12.19</td>
+</tr>
+<tr>
+<th><div>ROE</div></th>
+<td class="r"><span class='tcr'>-1.65</span></td>
+<td class="r">7.88</td>
+<td class="cle r">9.56</td>
+</tr>
+<tr>
+<th><div>배당수익률</div></th>
+<td class="r">&nbsp;</td>
+<td class="r">2.71</td>
+<td class="cle r">1.50</td>
+</tr>
+<tr>
+<th><div>베타<span class="csize">(1년)</span></div></th>
+<td class="r">2.15</td>
+<td class="r">0.87</td>
+<td class="cle r">1.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div class="um_col2_r">
+<div class="um_wrap">
+<div class="um_snpsttab" id="upTabDiv2_B">
+<a href="javascript:void(0);" ><span>EPS</span></a>
+<a href="javascript:void(0);"  class="ac"><span>PER</span></a>
+<a href="javascript:void(0);" ><span>EV/EBITDA</span></a>
+<a href="javascript:void(0);" ><span>ROE</span></a>
+<a href="javascript:void(0);"  class="end"><span>배당수익률</span></a>
+</div>
+<div class="um_chart chart_ht2">
+<div class="chart_etc"></div>
+<div class="chart_wrap"  style="height:270px">
+<a title="클릭:차트데이터 새창열림" href="javascript:openGridPopup('upjongChartB');" class="chartdatapop"><img id="upjongChartB" onnError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.p.png'" alt="PER 차트 : 자세한 내용은 클릭후 팝업창 참고"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="um_comment">
+<a href="javascript:void(0)" onclick="cmView(this)" class="comment_wrap btn_cm cmhidden">
+<ul>
+<li>* 직전 회계년도 결산 Data입니다.(단 시가총액은 전일기준임)</li>
+<li>* 영업이익은 제조업인 경우 영업이익, 금융업인 경우 영업손익입니다.</li>
+</ul>
+<span class="cmtext"></span>
+</a>
+</div>
+</div>
+<!-- Band Chart -->
+<div class="ul_wrap" id="div10">
+<div class="um_topbar bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>Band Chart</h2>
+<span class="stxt" id="div10Comment"></span>
+</div>
+<div class="topbar_rgt">
+<span class="txt1">단위 : 억원, 배, %</span>
+<div class="um_gbtn grd_ty1 fl" id="bandTab">
+<a href="javascript:void(0);" class="gbtn_f r3" >연결</a>
+<a href="javascript:void(0);" class="gbtn_e r3"  >별도</a>
+</div>
+</div>
+</div>
+</div>
+<div class="um_col2wrap">
+<div class="um_col2_l">
+<div class="um_wrap">
+<div class="um_stit_ty">
+<div class="um_stopbar">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>PER Band</h2>
+</div>
+</div>
+</div>
+<div class="um_chart chart_ht1">
+<div class="chart_etc"></div>
+<div class="chart_wrap">
+<a class="chartdatapop" href="javascript:openGridPopup('perBandCht');" title="클릭:PER데이터 새창열림"><img id="perBandCht" alt="PER 밴드 차트 : 자세한 내용은 클릭후 팝업창 참고" onError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.png'"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="um_col2_r">
+<div class="um_wrap">
+<div class="um_stit_ty">
+<div class="um_stopbar">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>PBR Band</h2>
+</div>
+</div>
+</div>
+<div class="um_chart chart_ht1">
+<div class="chart_etc"></div>
+<div class="chart_wrap">
+<a class="chartdatapop" href="javascript:openGridPopup('pbrBandCht');" title="클릭:차트데이터 새창열림"><img id="pbrBandCht" alt="PBR 밴드 차트 : 자세한 내용은 클릭후 팝업창 참고" onError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.png'"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- 주가 및 수급현황 -->
+<div class="ul_wrap" id="div10">
+<div class="um_topbar bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>주가 및 수급현황</h2>
+<span class="stxt" id="div10Comment"></span>
+</div>
+</div>
+</div>
+<div class="um_col2wrap">
+<div class="um_col2_l">
+<div class="um_wrap">
+<div class="um_stit_ty">
+<div class="um_stopbar">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>대차잔고비중</h2>
+</div>
+</div>
+</div>
+<div class="um_chart chart_ht1">
+<div class="chart_etc"></div>
+<div class="chart_wrap">
+<a class="chartdatapop" href="javascript:openGridPopup('balanceCht');" title="클릭:차트데이터 새창열림"> <img id="balanceCht" alt="대차잔고비중 차트 : 자세한 내용은 클릭후 팝업창 참고" onnError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.p.png'"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="um_col2_r">
+<div class="um_wrap">
+<div class="um_stit_ty">
+<div class="um_stopbar">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>차입공매도비중</h2>
+</div>
+</div>
+</div>
+<div class="um_chart chart_ht1">
+<div class="chart_etc"></div>
+<div class="chart_wrap">
+<a class="chartdatapop" href="javascript:openGridPopup('sellCht');" title="클릭:차트데이터 새창열림"> <img id="sellCht" alt="차입공매도비중 차트 : 자세한 내용은 클릭후 팝업창 참고" onnError="this.src='http://cdn.fnguide.com/SVO/Handbook_New/images/nodata.p.png'"></a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Financial Highlight -->
+<div class="ul_wrap" id="div15">
+<div class="um_topbar bmshadow">
+<div class="topbar_wrap">
+<div class="topbar_lft">
+<h2>Financial Highlight</h2>
+<span class="stxt" id="div15Comment"></span>
+</div>
+<div class="topbar_rgt" id ="divHighBtn">
+<span class="txt1">단위 : 억원, %, 배, 천주</span>
+<div class="um_gbtn grd_ty1 fl" id="divHighFis">
+<a href="javascript:void(0);" class="gbtn_f r3" >연결</a>
+<a href="javascript:void(0);" class="gbtn_e r3"  >별도</a>
+</div>
+<div class="um_gbtn grd_ty2 fl pl6" id="divHighTerm">
+<a href="javascript:void(0);" class="gbtn_f r3" >전체</a>
+<a href="javascript:void(0);" class="gbtn_c r3" >연간</a>
+<a href="javascript:void(0);" class="gbtn_e r3" >분기</a>
+</div>
+</div>
+</div>
+</div>
+<div class="um_table" id="highlight_D_A" style="display:none;">
+<table class="us_table_ty1 h_fix zigbg_no" >
+<caption class="cphidden">Financial Highlight</caption>
+<colgroup>
+<col style="width: 120px;">
+<col span="8" >
+</colgroup>
+<thead>
+<tr class="th2row_f"><th scope="col" class="clf tbold" rowspan="2"><div>IFRS(연결)</div></th>        <th scope="col" colspan="4"><div>Annual</div></th>        <th scope="col" colspan="4"><div>Net Quarter</div></th>        </tr><tr class="td_gapcolor2">
+<th scope="col"><div>2023/12</div></th>        
+<th scope="col"><div>2024/12</div></th>        
+<th scope="col"><div>2025/12</div></th>        
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/12(E)</span></a>
+</div>
+</th>
+<th scope="col"><div>2025/06</div></th>        
+<th scope="col"><div>2025/09</div></th>        
+<th scope="col"><div>2025/12</div></th>        
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/03(E)</span></a>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" class="clf"><div>매출액</div></th><td class="r  "  title="22,784.55">22,785</td>  <td class="r  "  title="58,817.70">58,818</td>  <td class="r  "  title="104,555.53">104,556</td>  <td class="r  tdbg_b"  title="55,113.33">55,113</td>  <td class="r  "  title="18,883.33">18,883</td>  <td class="r  "  title="30,746.54">30,747</td>  <td class="r  "  title="33,747.46">33,747</td>  <td class="r  tdbg_b cle"  title="3,155.00">3,155</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익</div></th><td class="r  "  title="-23,396.98"><span class='tcr'>-23,397</span></td>  <td class="r  "  title="39,206.47">39,206</td>  <td class="r  "  title="87,974.21">87,974</td>  <td class="r  tdbg_b"  title="320,573.33">320,573</td>  <td class="r  "  title="14,011.04">14,011</td>  <td class="r  "  title="26,455.08">26,455</td>  <td class="r  "  title="30,984.86">30,985</td>  <td class="r  tdbg_b cle"  title="51,865.00">51,865</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익(발표기준)</div></th><td class="r  "  title="-23,396.98"><span class='tcr'>-23,397</span></td>  <td class="r  "  title="39,206.47">39,206</td>  <td class="r  "  title="87,974.21">87,974</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="14,011.04">14,011</td>  <td class="r  "  title="26,455.08">26,455</td>  <td class="r  "  title="30,984.86">30,985</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>당기순이익</div></th><td class="r  "  title="-13,148.34"><span class='tcr'>-13,148</span></td>  <td class="r  "  title="36,505.15">36,505</td>  <td class="r  "  title="88,186.95">88,187</td>  <td class="r  tdbg_b"  title="294,650.00">294,650</td>  <td class="r  "  title="14,471.14">14,471</td>  <td class="r  "  title="24,824.05">24,824</td>  <td class="r  "  title="32,769.17">32,769</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;지배주주순이익</div></th><td class="r  "  title="-12,870.48"><span class='tcr'>-12,870</span></td>  <td class="r  "  title="37,139.71">37,140</td>  <td class="r  "  title="88,241.31">88,241</td>  <td class="r  tdbg_b"  title="301,841.67">301,842</td>  <td class="r  "  title="14,401.94">14,402</td>  <td class="r  "  title="24,853.18">24,853</td>  <td class="r  "  title="32,825.81">32,826</td>  <td class="r  tdbg_b cle"  title="50,125.00">50,125</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;비지배주주순이익</div></th><td class="r  "  title="-277.86"><span class='tcr'>-278</span></td>  <td class="r  "  title="-634.56"><span class='tcr'>-635</span></td>  <td class="r  "  title="-54.36"><span class='tcr'>-54</span></td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="69.20">69</td>  <td class="r  "  title="-29.13"><span class='tcr'>-29</span></td>  <td class="r  "  title="-56.64"><span class='tcr'>-57</span></td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자산총계</div></th><td class="r  "  title="179,700.08">179,700</td>  <td class="r  "  title="219,210.51">219,211</td>  <td class="r  "  title="305,045.46">305,045</td>  <td class="r  tdbg_b"  title="477,445.00">477,445</td>  <td class="r  "  title="245,421.11">245,421</td>  <td class="r  "  title="272,542.04">272,542</td>  <td class="r  "  title="305,045.46">305,045</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>부채총계</div></th><td class="r  "  title="21,534.91">21,535</td>  <td class="r  "  title="23,356.36">23,356</td>  <td class="r  "  title="25,213.83">25,214</td>  <td class="r  tdbg_b"  title="26,900.00">26,900</td>  <td class="r  "  title="21,983.24">21,983</td>  <td class="r  "  title="23,881.93">23,882</td>  <td class="r  "  title="25,213.83">25,214</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본총계</div></th><td class="r  "  title="158,165.17">158,165</td>  <td class="r  "  title="195,854.15">195,854</td>  <td class="r  "  title="279,831.63">279,832</td>  <td class="r  tdbg_b"  title="450,546.67">450,547</td>  <td class="r  "  title="223,437.87">223,438</td>  <td class="r  "  title="248,660.11">248,660</td>  <td class="r  "  title="279,831.63">279,832</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;지배주주지분</div></th><td class="r  "  title="152,018.29">152,018</td>  <td class="r  "  title="190,325.33">190,325</td>  <td class="r  "  title="276,365.31">276,365</td>  <td class="r  tdbg_b"  title="474,762.40">474,762</td>  <td class="r  "  title="218,394.92">218,395</td>  <td class="r  "  title="243,639.77">243,640</td>  <td class="r  "  title="276,365.31">276,365</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;비지배주주지분</div></th><td class="r  "  title="6,146.88">6,147</td>  <td class="r  "  title="5,528.82">5,529</td>  <td class="r  "  title="3,466.32">3,466</td>  <td class="r  tdbg_b"  title="-24,215.73"><span class='tcr'>-24,216</span></td>  <td class="r  "  title="5,042.95">5,043</td>  <td class="r  "  title="5,020.34">5,020</td>  <td class="r  "  title="3,466.32">3,466</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본금</div></th><td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  tdbg_b"  title="140.00">140</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>부채비율(%)</dt><dd>(총부채 / 총자본) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">부채비율</span></a></div></th><td class="r  " >13.62</td>  <td class="r  " >11.93</td>  <td class="r  " >9.01</td>  <td class="r  tdbg_b" >5.97</td>  <td class="r  " >9.84</td>  <td class="r  " >9.60</td>  <td class="r  " >9.01</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>유보율(%)</dt><dd>(유보액 / 자본금) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">유보율</span></a></div></th><td class="r  " >108,495.42</td>  <td class="r  " >135,264.68</td>  <td class="r  " >195,508.51</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >154,393.00</td>  <td class="r  " >172,926.89</td>  <td class="r  " >195,508.51</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>영업이익률(%)</dt><dd>(영업이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">영업이익률</span></a></div></th><td class="r  " ><span class='tcr'>-102.69</span></td>  <td class="r  " >66.66</td>  <td class="r  " >84.14</td>  <td class="r  tdbg_b" >581.66</td>  <td class="r  " >74.20</td>  <td class="r  " >86.04</td>  <td class="r  " >91.81</td>  <td class="r  tdbg_b cle" >1,643.90</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>지배주주 귀속순이익률(%)</dt><dd>(지배주주순이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">지배주주순이익률</span></a></div></th><td class="r  " ><span class='tcr'>-56.49</span></td>  <td class="r  " >63.14</td>  <td class="r  " >84.40</td>  <td class="r  tdbg_b" >547.67</td>  <td class="r  " >76.27</td>  <td class="r  " >80.83</td>  <td class="r  " >97.27</td>  <td class="r  tdbg_b cle" >1,588.75</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROA(%)</dt><dd>(당기순이익(연율화) / 총자산(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROA</span></a></div></th><td class="r  " ><span class='tcr'>-6.55</span></td>  <td class="r  " >18.30</td>  <td class="r  " >33.64</td>  <td class="r  tdbg_b" >75.31</td>  <td class="r  " >24.15</td>  <td class="r  " >38.34</td>  <td class="r  " >45.39</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROE(%)</dt><dd>(지배주주순이익(연율화) / 지배주주지분(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROE</span></a></div></th><td class="r  " ><span class='tcr'>-8.04</span></td>  <td class="r  " >21.70</td>  <td class="r  " >37.82</td>  <td class="r  tdbg_b" >80.37</td>  <td class="r  " >27.17</td>  <td class="r  " >43.03</td>  <td class="r  " >50.50</td>  <td class="r  tdbg_b cle" >72.55</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>EPS(원)</dt><dd>지배주주순이익 / 수정평균주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">EPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " ><span class='tcr'>-9,137</span></td>  <td class="r  " >27,346</td>  <td class="r  " >66,468</td>  <td class="r  tdbg_b" >228,685</td>  <td class="r  " >10,866</td>  <td class="r  " >18,751</td>  <td class="r  " >24,802</td>  <td class="r  tdbg_b cle" >37,976</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>BPS(원)</dt><dd>지배주주순자산(자사주차감전) / 수정기말주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">BPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >110,540</td>  <td class="r  " >142,115</td>  <td class="r  " >209,504</td>  <td class="r  tdbg_b" >360,056</td>  <td class="r  " >164,901</td>  <td class="r  " >184,684</td>  <td class="r  " >209,504</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>DPS(원)</dt><dd>DPS(보통주,현금) * 무상조정수정계수(보통주)</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">DPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >1,518</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PER(배)</dt><dd>수정주가(보통주) / 수정EPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PER</span></a></div></th><td class="r  " >N/A</td>  <td class="r  " >2.90</td>  <td class="r  " >5.54</td>  <td class="r  tdbg_b" >4.80</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PBR(배)</dt><dd>수정주가(보통주) / 수정BPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PBR</span></a></div></th><td class="r  " >0.48</td>  <td class="r  " >0.56</td>  <td class="r  " >1.76</td>  <td class="r  tdbg_b" >3.05</td>  <td class="r  " >1.11</td>  <td class="r  " >1.09</td>  <td class="r  " >1.76</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>발행주식수</div></th><td class="r  " >138,981</td>  <td class="r  " >134,750</td>  <td class="r  " >132,087</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >132,541</td>  <td class="r  " >132,541</td>  <td class="r  " >132,087</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>배당수익률(%)</dt><dd>(배당금(보통주,현금) / 시가총액(보통)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">배당수익률</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+</tbody>
+</table>
+</div>
+<!--IFRS 연결/연간 -->
+<div class="um_table" id="highlight_D_Y" style="display:none;">
+<table class="us_table_ty1 h_fix zigbg_no" >
+<caption class="cphidden">Financial Highlight</caption>
+<colgroup>
+<col style="width: 120px;">
+<col span="8" >
+</colgroup>
+<thead>
+<tr class="th2row_f"><th scope="col" class="clf tbold" rowspan="2"><div>IFRS(연결)</div></th>        <th scope="col" colspan="8"><div>Annual</div></th>        </tr><tr class="td_gapcolor2">
+<th scope="col"><div>2021/12</div></th>        
+<th scope="col"><div>2022/12</div></th>        
+<th scope="col"><div>2023/12</div></th>        
+<th scope="col"><div>2024/12</div></th>        
+<th scope="col"><div>2025/12</div></th>        
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/12(E)</span></a>
+</div>
+</th>
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2027/12(E)</span></a>
+</div>
+</th>
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2028/12(E)</span></a>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" class="clf"><div>매출액</div></th><td class="r  "  title="11,464.14">11,464</td>  <td class="r  "  title="28,442.39">28,442</td>  <td class="r  "  title="22,784.55">22,785</td>  <td class="r  "  title="58,817.70">58,818</td>  <td class="r  "  title="104,555.53">104,556</td>  <td class="r  tdbg_b"  title="55,113.33">55,113</td>  <td class="r  tdbg_b"  title="64,358.33">64,358</td>  <td class="r  tdbg_b cle"  title="88,216.00">88,216</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익</div></th><td class="r  "  title="4,197.91">4,198</td>  <td class="r  "  title="160.52">161</td>  <td class="r  "  title="-23,396.98"><span class='tcr'>-23,397</span></td>  <td class="r  "  title="39,206.47">39,206</td>  <td class="r  "  title="87,974.21">87,974</td>  <td class="r  tdbg_b"  title="320,573.33">320,573</td>  <td class="r  tdbg_b"  title="360,385.00">360,385</td>  <td class="r  tdbg_b cle"  title="393,380.00">393,380</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익(발표기준)</div></th><td class="r  "  title="4,197.91">4,198</td>  <td class="r  "  title="160.52">161</td>  <td class="r  "  title="-23,396.98"><span class='tcr'>-23,397</span></td>  <td class="r  "  title="39,206.47">39,206</td>  <td class="r  "  title="87,974.21">87,974</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>당기순이익</div></th><td class="r  "  title="3,631.56">3,632</td>  <td class="r  "  title="2,561.07">2,561</td>  <td class="r  "  title="-13,148.34"><span class='tcr'>-13,148</span></td>  <td class="r  "  title="36,505.15">36,505</td>  <td class="r  "  title="88,186.95">88,187</td>  <td class="r  tdbg_b"  title="294,650.00">294,650</td>  <td class="r  tdbg_b"  title="330,618.33">330,618</td>  <td class="r  tdbg_b cle"  title="364,748.00">364,748</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;지배주주순이익</div></th><td class="r  "  title="3,752.04">3,752</td>  <td class="r  "  title="2,597.68">2,598</td>  <td class="r  "  title="-12,870.48"><span class='tcr'>-12,870</span></td>  <td class="r  "  title="37,139.71">37,140</td>  <td class="r  "  title="88,241.31">88,241</td>  <td class="r  tdbg_b"  title="301,841.67">301,842</td>  <td class="r  tdbg_b"  title="338,445.00">338,445</td>  <td class="r  tdbg_b cle"  title="367,228.00">367,228</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;비지배주주순이익</div></th><td class="r  "  title="-120.48"><span class='tcr'>-120</span></td>  <td class="r  "  title="-36.61"><span class='tcr'>-37</span></td>  <td class="r  "  title="-277.86"><span class='tcr'>-278</span></td>  <td class="r  "  title="-634.56"><span class='tcr'>-635</span></td>  <td class="r  "  title="-54.36"><span class='tcr'>-54</span></td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자산총계</div></th><td class="r  "  title="226,391.40">226,391</td>  <td class="r  "  title="221,605.83">221,606</td>  <td class="r  "  title="179,700.08">179,700</td>  <td class="r  "  title="219,210.51">219,211</td>  <td class="r  "  title="305,045.46">305,045</td>  <td class="r  tdbg_b"  title="477,445.00">477,445</td>  <td class="r  tdbg_b"  title="677,130.00">677,130</td>  <td class="r  tdbg_b cle"  title="1,005,628.00">1,005,628</td>  </tr>
+<tr><th scope="row" class="clf"><div>부채총계</div></th><td class="r  "  title="57,838.46">57,838</td>  <td class="r  "  title="49,973.83">49,974</td>  <td class="r  "  title="21,534.91">21,535</td>  <td class="r  "  title="23,356.36">23,356</td>  <td class="r  "  title="25,213.83">25,214</td>  <td class="r  tdbg_b"  title="26,900.00">26,900</td>  <td class="r  tdbg_b"  title="27,771.67">27,772</td>  <td class="r  tdbg_b cle"  title="29,220.00">29,220</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본총계</div></th><td class="r  "  title="168,552.94">168,553</td>  <td class="r  "  title="171,632.00">171,632</td>  <td class="r  "  title="158,165.17">158,165</td>  <td class="r  "  title="195,854.15">195,854</td>  <td class="r  "  title="279,831.63">279,832</td>  <td class="r  tdbg_b"  title="450,546.67">450,547</td>  <td class="r  tdbg_b"  title="649,358.33">649,358</td>  <td class="r  tdbg_b cle"  title="976,408.00">976,408</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;지배주주지분</div></th><td class="r  "  title="166,603.55">166,604</td>  <td class="r  "  title="168,195.52">168,196</td>  <td class="r  "  title="152,018.29">152,018</td>  <td class="r  "  title="190,325.33">190,325</td>  <td class="r  "  title="276,365.31">276,365</td>  <td class="r  tdbg_b"  title="474,762.40">474,762</td>  <td class="r  tdbg_b"  title="712,790.00">712,790</td>  <td class="r  tdbg_b cle"  title="973,741.20">973,741</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;비지배주주지분</div></th><td class="r  "  title="1,949.39">1,949</td>  <td class="r  "  title="3,436.48">3,436</td>  <td class="r  "  title="6,146.88">6,147</td>  <td class="r  "  title="5,528.82">5,529</td>  <td class="r  "  title="3,466.32">3,466</td>  <td class="r  tdbg_b"  title="-24,215.73"><span class='tcr'>-24,216</span></td>  <td class="r  tdbg_b"  title="-63,431.67"><span class='tcr'>-63,432</span></td>  <td class="r  tdbg_b cle"  title="2,666.80">2,667</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본금</div></th><td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  tdbg_b"  title="140.00">140</td>  <td class="r  tdbg_b"  title="140.00">140</td>  <td class="r  tdbg_b cle"  title="140.00">140</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>부채비율(%)</dt><dd>(총부채 / 총자본) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">부채비율</span></a></div></th><td class="r  " >34.31</td>  <td class="r  " >29.12</td>  <td class="r  " >13.62</td>  <td class="r  " >11.93</td>  <td class="r  " >9.01</td>  <td class="r  tdbg_b" >5.97</td>  <td class="r  tdbg_b" >4.28</td>  <td class="r  tdbg_b cle" >2.99</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>유보율(%)</dt><dd>(유보액 / 자본금) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">유보율</span></a></div></th><td class="r  " >117,730.37</td>  <td class="r  " >118,841.27</td>  <td class="r  " >108,495.42</td>  <td class="r  " >135,264.68</td>  <td class="r  " >195,508.51</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>영업이익률(%)</dt><dd>(영업이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">영업이익률</span></a></div></th><td class="r  " >36.62</td>  <td class="r  " >0.56</td>  <td class="r  " ><span class='tcr'>-102.69</span></td>  <td class="r  " >66.66</td>  <td class="r  " >84.14</td>  <td class="r  tdbg_b" >581.66</td>  <td class="r  tdbg_b" >559.97</td>  <td class="r  tdbg_b cle" >445.93</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>지배주주 귀속순이익률(%)</dt><dd>(지배주주순이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">지배주주순이익률</span></a></div></th><td class="r  " >32.73</td>  <td class="r  " >9.13</td>  <td class="r  " ><span class='tcr'>-56.49</span></td>  <td class="r  " >63.14</td>  <td class="r  " >84.40</td>  <td class="r  tdbg_b" >547.67</td>  <td class="r  tdbg_b" >525.88</td>  <td class="r  tdbg_b cle" >416.28</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROA(%)</dt><dd>(당기순이익(연율화) / 총자산(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROA</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >1.14</td>  <td class="r  " ><span class='tcr'>-6.55</span></td>  <td class="r  " >18.30</td>  <td class="r  " >33.64</td>  <td class="r  tdbg_b" >75.31</td>  <td class="r  tdbg_b" >57.27</td>  <td class="r  tdbg_b cle" >43.35</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROE(%)</dt><dd>(지배주주순이익(연율화) / 지배주주지분(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROE</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >1.55</td>  <td class="r  " ><span class='tcr'>-8.04</span></td>  <td class="r  " >21.70</td>  <td class="r  " >37.82</td>  <td class="r  tdbg_b" >80.37</td>  <td class="r  tdbg_b" >57.00</td>  <td class="r  tdbg_b cle" >43.55</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>EPS(원)</dt><dd>지배주주순이익 / 수정평균주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">EPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >2,652</td>  <td class="r  " >1,836</td>  <td class="r  " ><span class='tcr'>-9,137</span></td>  <td class="r  " >27,346</td>  <td class="r  " >66,468</td>  <td class="r  tdbg_b" >228,685</td>  <td class="r  tdbg_b" >256,479</td>  <td class="r  tdbg_b cle" >278,291</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>BPS(원)</dt><dd>지배주주순자산(자사주차감전) / 수정기말주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">BPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >117,832</td>  <td class="r  " >118,943</td>  <td class="r  " >110,540</td>  <td class="r  " >142,115</td>  <td class="r  " >209,504</td>  <td class="r  tdbg_b" >360,056</td>  <td class="r  tdbg_b" >540,437</td>  <td class="r  tdbg_b cle" >738,190</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>DPS(원)</dt><dd>DPS(보통주,현금) * 무상조정수정계수(보통주)</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">DPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >1,518</td>  <td class="r  tdbg_b" >1,515</td>  <td class="r  tdbg_b cle" >1,515</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PER(배)</dt><dd>수정주가(보통주) / 수정EPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PER</span></a></div></th><td class="r  " >25.04</td>  <td class="r  " >18.27</td>  <td class="r  " >N/A</td>  <td class="r  " >2.90</td>  <td class="r  " >5.54</td>  <td class="r  tdbg_b" >4.80</td>  <td class="r  tdbg_b" >4.28</td>  <td class="r  tdbg_b cle" >3.95</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PBR(배)</dt><dd>수정주가(보통주) / 수정BPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PBR</span></a></div></th><td class="r  " >0.56</td>  <td class="r  " >0.28</td>  <td class="r  " >0.48</td>  <td class="r  " >0.56</td>  <td class="r  " >1.76</td>  <td class="r  tdbg_b" >3.05</td>  <td class="r  tdbg_b" >2.03</td>  <td class="r  tdbg_b cle" >1.49</td>  </tr>
+<tr><th scope="row" class="clf"><div>발행주식수</div></th><td class="r  " >141,468</td>  <td class="r  " >141,468</td>  <td class="r  " >138,981</td>  <td class="r  " >134,750</td>  <td class="r  " >132,087</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>배당수익률(%)</dt><dd>(배당금(보통주,현금) / 시가총액(보통)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">배당수익률</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+</tbody>
+</table>
+</div>
+<!--IFRS 연결/븐기 -->
+<div class="um_table" id="highlight_D_Q" style="display:none;">
+<table class="us_table_ty1 h_fix zigbg_no" >
+<caption class="cphidden">Financial Highlight</caption>
+<colgroup>
+<col style="width: 120px;">
+<col span="8" >
+</colgroup>
+<thead>
+<tr class="th2row_f"><th scope="col" class="clf tbold" rowspan="2"><div>IFRS(연결)</div></th>        <th scope="col" colspan="8"><div>Net Quarter</div></th>        </tr><tr class="td_gapcolor2"><th scope="col"><div>2024/12</div></th>        
+<th scope="col"><div>2025/03</div></th>        
+<th scope="col"><div>2025/06</div></th>        
+<th scope="col"><div>2025/09</div></th>        
+<th scope="col"><div>2025/12</div></th>        
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/03(E)</span></a>
+</div>
+</th>
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/06(E)</span></a>
+</div>
+</th>
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/09(E)</span></a>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" class="clf"><div>매출액</div></th><td class="r  "  title="19,542.12">19,542</td>  <td class="r  "  title="21,178.20">21,178</td>  <td class="r  "  title="18,883.33">18,883</td>  <td class="r  "  title="30,746.54">30,747</td>  <td class="r  "  title="33,747.46">33,747</td>  <td class="r  tdbg_b"  title="3,155.00">3,155</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익</div></th><td class="r  "  title="16,600.65">16,601</td>  <td class="r  "  title="16,523.23">16,523</td>  <td class="r  "  title="14,011.04">14,011</td>  <td class="r  "  title="26,455.08">26,455</td>  <td class="r  "  title="30,984.86">30,985</td>  <td class="r  tdbg_b"  title="51,865.00">51,865</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익(발표기준)</div></th><td class="r  "  title="16,600.65">16,601</td>  <td class="r  "  title="16,523.23">16,523</td>  <td class="r  "  title="14,011.04">14,011</td>  <td class="r  "  title="26,455.08">26,455</td>  <td class="r  "  title="30,984.86">30,985</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>당기순이익</div></th><td class="r  "  title="14,592.42">14,592</td>  <td class="r  "  title="16,122.59">16,123</td>  <td class="r  "  title="14,471.14">14,471</td>  <td class="r  "  title="24,824.05">24,824</td>  <td class="r  "  title="32,769.17">32,769</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;지배주주순이익</div></th><td class="r  "  title="14,919.24">14,919</td>  <td class="r  "  title="16,160.38">16,160</td>  <td class="r  "  title="14,401.94">14,402</td>  <td class="r  "  title="24,853.18">24,853</td>  <td class="r  "  title="32,825.81">32,826</td>  <td class="r  tdbg_b"  title="50,125.00">50,125</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;비지배주주순이익</div></th><td class="r  "  title="-326.82"><span class='tcr'>-327</span></td>  <td class="r  "  title="-37.79"><span class='tcr'>-38</span></td>  <td class="r  "  title="69.20">69</td>  <td class="r  "  title="-29.13"><span class='tcr'>-29</span></td>  <td class="r  "  title="-56.64"><span class='tcr'>-57</span></td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자산총계</div></th><td class="r  "  title="219,210.51">219,211</td>  <td class="r  "  title="233,991.00">233,991</td>  <td class="r  "  title="245,421.11">245,421</td>  <td class="r  "  title="272,542.04">272,542</td>  <td class="r  "  title="305,045.46">305,045</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>부채총계</div></th><td class="r  "  title="23,356.36">23,356</td>  <td class="r  "  title="22,909.01">22,909</td>  <td class="r  "  title="21,983.24">21,983</td>  <td class="r  "  title="23,881.93">23,882</td>  <td class="r  "  title="25,213.83">25,214</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본총계</div></th><td class="r  "  title="195,854.15">195,854</td>  <td class="r  "  title="211,081.99">211,082</td>  <td class="r  "  title="223,437.87">223,438</td>  <td class="r  "  title="248,660.11">248,660</td>  <td class="r  "  title="279,831.63">279,832</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;지배주주지분</div></th><td class="r  "  title="190,325.33">190,325</td>  <td class="r  "  title="205,613.56">205,614</td>  <td class="r  "  title="218,394.92">218,395</td>  <td class="r  "  title="243,639.77">243,640</td>  <td class="r  "  title="276,365.31">276,365</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>&nbsp;&nbsp;비지배주주지분</div></th><td class="r  "  title="5,528.82">5,529</td>  <td class="r  "  title="5,468.43">5,468</td>  <td class="r  "  title="5,042.95">5,043</td>  <td class="r  "  title="5,020.34">5,020</td>  <td class="r  "  title="3,466.32">3,466</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본금</div></th><td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>부채비율(%)</dt><dd>(총부채 / 총자본) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">부채비율</span></a></div></th><td class="r  " >11.93</td>  <td class="r  " >10.85</td>  <td class="r  " >9.84</td>  <td class="r  " >9.60</td>  <td class="r  " >9.01</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>유보율(%)</dt><dd>(유보액 / 자본금) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">유보율</span></a></div></th><td class="r  " >135,264.68</td>  <td class="r  " >146,067.90</td>  <td class="r  " >154,393.00</td>  <td class="r  " >172,926.89</td>  <td class="r  " >195,508.51</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>영업이익률(%)</dt><dd>(영업이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">영업이익률</span></a></div></th><td class="r  " >84.95</td>  <td class="r  " >78.02</td>  <td class="r  " >74.20</td>  <td class="r  " >86.04</td>  <td class="r  " >91.81</td>  <td class="r  tdbg_b" >1,643.90</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>지배주주 귀속순이익률(%)</dt><dd>(지배주주순이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">지배주주순이익률</span></a></div></th><td class="r  " >76.34</td>  <td class="r  " >76.31</td>  <td class="r  " >76.27</td>  <td class="r  " >80.83</td>  <td class="r  " >97.27</td>  <td class="r  tdbg_b" >1,588.75</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROA(%)</dt><dd>(당기순이익(연율화) / 총자산(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROA</span></a></div></th><td class="r  " >27.76</td>  <td class="r  " >28.46</td>  <td class="r  " >24.15</td>  <td class="r  " >38.34</td>  <td class="r  " >45.39</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROE(%)</dt><dd>(지배주주순이익(연율화) / 지배주주지분(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROE</span></a></div></th><td class="r  " >32.75</td>  <td class="r  " >32.65</td>  <td class="r  " >27.17</td>  <td class="r  " >43.03</td>  <td class="r  " >50.50</td>  <td class="r  tdbg_b" >72.55</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>EPS(원)</dt><dd>지배주주순이익 / 수정평균주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">EPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >11,072</td>  <td class="r  " >12,095</td>  <td class="r  " >10,866</td>  <td class="r  " >18,751</td>  <td class="r  " >24,802</td>  <td class="r  tdbg_b" >37,976</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>BPS(원)</dt><dd>지배주주순자산(자사주차감전) / 수정기말주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">BPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >142,115</td>  <td class="r  " >154,838</td>  <td class="r  " >164,901</td>  <td class="r  " >184,684</td>  <td class="r  " >209,504</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>DPS(원)</dt><dd>DPS(보통주,현금) * 무상조정수정계수(보통주)</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">DPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PER(배)</dt><dd>수정주가(보통주) / 수정EPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PER</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PBR(배)</dt><dd>수정주가(보통주) / 수정BPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PBR</span></a></div></th><td class="r  " >0.56</td>  <td class="r  " >0.60</td>  <td class="r  " >1.11</td>  <td class="r  " >1.09</td>  <td class="r  " >1.76</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>발행주식수</div></th><td class="r  " >134,750</td>  <td class="r  " >133,548</td>  <td class="r  " >132,541</td>  <td class="r  " >132,541</td>  <td class="r  " >132,087</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>배당수익률(%)</dt><dd>(배당금(보통주,현금) / 시가총액(보통)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">배당수익률</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+</tbody>
+</table>
+</div>
+<!--IFRS 별도/전체 -->
+<div class="um_table" id="highlight_B_A" style="display:none;">
+<table class="us_table_ty1 h_fix zigbg_no" >
+<caption class="cphidden">Financial Highlight</caption>
+<colgroup>
+<col style="width: 120px;">
+<col span="8" >
+</colgroup>
+<thead>
+<tr class="th2row_f"><th scope="col" class="clf tbold" rowspan="2"><div>IFRS(별도)</div></th>        <th scope="col" colspan="4"><div>Annual</div></th>        <th scope="col" colspan="4"><div>Net Quarter</div></th>        </tr><tr class="td_gapcolor2"><th scope="col"><div>2023/12</div></th>        
+<th scope="col"><div>2024/12</div></th>        
+<th scope="col"><div>2025/12</div></th>        
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/12(E)</span></a>
+</div>
+</th>
+<th scope="col"><div>2025/06</div></th>        
+<th scope="col"><div>2025/09</div></th>        
+<th scope="col"><div>2025/12</div></th>        
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/03(E)</span></a>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" class="clf"><div>매출액</div></th><td class="r  "  title="1,775.97">1,776</td>  <td class="r  "  title="1,774.65">1,775</td>  <td class="r  "  title="3,575.72">3,576</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="551.80">552</td>  <td class="r  "  title="551.80">552</td>  <td class="r  "  title="551.85">552</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익</div></th><td class="r  "  title="940.05">940</td>  <td class="r  "  title="1,125.33">1,125</td>  <td class="r  "  title="3,006.52">3,007</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="413.55">414</td>  <td class="r  "  title="404.32">404</td>  <td class="r  "  title="397.29">397</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익(발표기준)</div></th><td class="r  "  title="940.05">940</td>  <td class="r  "  title="1,125.33">1,125</td>  <td class="r  "  title="3,006.52">3,007</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="413.55">414</td>  <td class="r  "  title="404.32">404</td>  <td class="r  "  title="397.29">397</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>당기순이익</div></th><td class="r  "  title="-3,141.71"><span class='tcr'>-3,142</span></td>  <td class="r  "  title="-1,795.95"><span class='tcr'>-1,796</span></td>  <td class="r  "  title="-1,055.72"><span class='tcr'>-1,056</span></td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="400.24">400</td>  <td class="r  "  title="-3,303.57"><span class='tcr'>-3,304</span></td>  <td class="r  "  title="-215.32"><span class='tcr'>-215</span></td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자산총계</div></th><td class="r  "  title="73,616.87">73,617</td>  <td class="r  "  title="71,175.05">71,175</td>  <td class="r  "  title="65,984.14">65,984</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="73,193.88">73,194</td>  <td class="r  "  title="69,786.06">69,786</td>  <td class="r  "  title="65,984.14">65,984</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>부채총계</div></th><td class="r  "  title="5,660.04">5,660</td>  <td class="r  "  title="6,090.01">6,090</td>  <td class="r  "  title="3,143.93">3,144</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="6,029.85">6,030</td>  <td class="r  "  title="6,385.74">6,386</td>  <td class="r  "  title="3,143.93">3,144</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본총계</div></th><td class="r  "  title="67,956.83">67,957</td>  <td class="r  "  title="65,085.04">65,085</td>  <td class="r  "  title="62,840.21">62,840</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="67,164.03">67,164</td>  <td class="r  "  title="63,400.32">63,400</td>  <td class="r  "  title="62,840.21">62,840</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본금</div></th><td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>부채비율(%)</dt><dd>(총부채 / 총자본) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">부채비율</span></a></div></th><td class="r  " >8.33</td>  <td class="r  " >9.36</td>  <td class="r  " >5.00</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >8.98</td>  <td class="r  " >10.07</td>  <td class="r  " >5.00</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>유보율(%)</dt><dd>(유보액 / 자본금) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">유보율</span></a></div></th><td class="r  " >49,075.43</td>  <td class="r  " >46,736.87</td>  <td class="r  " >44,575.38</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >47,493.38</td>  <td class="r  " >45,522.17</td>  <td class="r  " >44,575.38</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>영업이익률(%)</dt><dd>(영업이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">영업이익률</span></a></div></th><td class="r  " >52.93</td>  <td class="r  " >63.41</td>  <td class="r  " >84.08</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >74.95</td>  <td class="r  " >73.27</td>  <td class="r  " >71.99</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>순이익률(%)</dt><dd>(지배주주순이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">순이익률</span></a></div></th><td class="r  " ><span class='tcr'>-176.90</span></td>  <td class="r  " ><span class='tcr'>-101.20</span></td>  <td class="r  " ><span class='tcr'>-29.52</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >72.53</td>  <td class="r  " ><span class='tcr'>-598.69</span></td>  <td class="r  " ><span class='tcr'>-39.02</span></td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROA(%)</dt><dd>(당기순이익(연율화) / 총자산(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROA</span></a></div></th><td class="r  " ><span class='tcr'>-4.23</span></td>  <td class="r  " ><span class='tcr'>-2.48</span></td>  <td class="r  " ><span class='tcr'>-1.54</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >2.20</td>  <td class="r  " ><span class='tcr'>-18.48</span></td>  <td class="r  " ><span class='tcr'>-1.27</span></td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROE(%)</dt><dd>(지배주주순이익(연율화) / 지배주주지분(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROE</span></a></div></th><td class="r  " ><span class='tcr'>-4.44</span></td>  <td class="r  " ><span class='tcr'>-2.70</span></td>  <td class="r  " ><span class='tcr'>-1.65</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >2.40</td>  <td class="r  " ><span class='tcr'>-20.24</span></td>  <td class="r  " ><span class='tcr'>-1.36</span></td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>EPS(원)</dt><dd>지배주주순이익 / 수정평균주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">EPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " ><span class='tcr'>-2,230</span></td>  <td class="r  " ><span class='tcr'>-1,322</span></td>  <td class="r  " ><span class='tcr'>-795</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >302</td>  <td class="r  " ><span class='tcr'>-2,492</span></td>  <td class="r  " ><span class='tcr'>-163</span></td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>BPS(원)</dt><dd>지배주주순자산(자사주차감전) / 수정기말주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">BPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >50,056</td>  <td class="r  " >49,173</td>  <td class="r  " >47,849</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >50,800</td>  <td class="r  " >48,696</td>  <td class="r  " >47,849</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>DPS(원)</dt><dd>DPS(보통주,현금) * 무상조정수정계수(보통주)</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">DPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PER(배)</dt><dd>수정주가(보통주) / 수정EPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PER</span></a></div></th><td class="r  " >N/A</td>  <td class="r  " >N/A</td>  <td class="r  " >N/A</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PBR(배)</dt><dd>수정주가(보통주) / 수정BPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PBR</span></a></div></th><td class="r  " >1.05</td>  <td class="r  " >1.61</td>  <td class="r  " >7.69</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >3.60</td>  <td class="r  " >4.14</td>  <td class="r  " >7.69</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>발행주식수</div></th><td class="r  " >138,981</td>  <td class="r  " >134,750</td>  <td class="r  " >132,087</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >132,541</td>  <td class="r  " >132,541</td>  <td class="r  " >132,087</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>배당수익률(%)</dt><dd>(배당금(보통주,현금) / 시가총액(보통)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">배당수익률</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+</tbody>
+</table>
+</div>
+<!--IFRS 별도/연간 -->
+<div class="um_table" id="highlight_B_Y" style="display:none;">
+<table class="us_table_ty1 h_fix zigbg_no" >
+<caption class="cphidden">Financial Highlight</caption>
+<colgroup>
+<col style="width: 120px;">
+<col span="8" >
+</colgroup>
+<thead>
+<tr class="th2row_f"><th scope="col" class="clf tbold" rowspan="2"><div>IFRS(별도)</div></th>        <th scope="col" colspan="8"><div>Annual</div></th>        </tr><tr class="td_gapcolor2"><th scope="col"><div>2021/12</div></th>        
+<th scope="col"><div>2022/12</div></th>        
+<th scope="col"><div>2023/12</div></th>        
+<th scope="col"><div>2024/12</div></th>        
+<th scope="col"><div>2025/12</div></th>        
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/12(E)</span></a>
+</div>
+</th>
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2027/12(E)</span></a>
+</div>
+</th>
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2028/12(E)</span></a>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" class="clf"><div>매출액</div></th><td class="r  "  title="">&nbsp;</td>  <td class="r  "  title="5,911.85">5,912</td>  <td class="r  "  title="1,775.97">1,776</td>  <td class="r  "  title="1,774.65">1,775</td>  <td class="r  "  title="3,575.72">3,576</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익</div></th><td class="r  "  title="-86.39"><span class='tcr'>-86</span></td>  <td class="r  "  title="5,163.32">5,163</td>  <td class="r  "  title="940.05">940</td>  <td class="r  "  title="1,125.33">1,125</td>  <td class="r  "  title="3,006.52">3,007</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익(발표기준)</div></th><td class="r  "  title="-86.39"><span class='tcr'>-86</span></td>  <td class="r  "  title="5,163.32">5,163</td>  <td class="r  "  title="940.05">940</td>  <td class="r  "  title="1,125.33">1,125</td>  <td class="r  "  title="3,006.52">3,007</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>당기순이익</div></th><td class="r  "  title="-125.29"><span class='tcr'>-125</span></td>  <td class="r  "  title="4,331.38">4,331</td>  <td class="r  "  title="-3,141.71"><span class='tcr'>-3,142</span></td>  <td class="r  "  title="-1,795.95"><span class='tcr'>-1,796</span></td>  <td class="r  "  title="-1,055.72"><span class='tcr'>-1,056</span></td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자산총계</div></th><td class="r  "  title="70,962.62">70,963</td>  <td class="r  "  title="74,940.79">74,941</td>  <td class="r  "  title="73,616.87">73,617</td>  <td class="r  "  title="71,175.05">71,175</td>  <td class="r  "  title="65,984.14">65,984</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>부채총계</div></th><td class="r  "  title="1,807.44">1,807</td>  <td class="r  "  title="1,390.76">1,391</td>  <td class="r  "  title="5,660.04">5,660</td>  <td class="r  "  title="6,090.01">6,090</td>  <td class="r  "  title="3,143.93">3,144</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본총계</div></th><td class="r  "  title="69,155.18">69,155</td>  <td class="r  "  title="73,550.03">73,550</td>  <td class="r  "  title="67,956.83">67,957</td>  <td class="r  "  title="65,085.04">65,085</td>  <td class="r  "  title="62,840.21">62,840</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본금</div></th><td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>부채비율(%)</dt><dd>(총부채 / 총자본) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">부채비율</span></a></div></th><td class="r  " >2.61</td>  <td class="r  " >1.89</td>  <td class="r  " >8.33</td>  <td class="r  " >9.36</td>  <td class="r  " >5.00</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>유보율(%)</dt><dd>(유보액 / 자본금) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">유보율</span></a></div></th><td class="r  " >48,847.66</td>  <td class="r  " >51,939.82</td>  <td class="r  " >49,075.43</td>  <td class="r  " >46,736.87</td>  <td class="r  " >44,575.38</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>영업이익률(%)</dt><dd>(영업이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">영업이익률</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >87.34</td>  <td class="r  " >52.93</td>  <td class="r  " >63.41</td>  <td class="r  " >84.08</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>순이익률(%)</dt><dd>(지배주주순이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">순이익률</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >73.27</td>  <td class="r  " ><span class='tcr'>-176.90</span></td>  <td class="r  " ><span class='tcr'>-101.20</span></td>  <td class="r  " ><span class='tcr'>-29.52</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROA(%)</dt><dd>(당기순이익(연율화) / 총자산(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROA</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >5.94</td>  <td class="r  " ><span class='tcr'>-4.23</span></td>  <td class="r  " ><span class='tcr'>-2.48</span></td>  <td class="r  " ><span class='tcr'>-1.54</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROE(%)</dt><dd>(지배주주순이익(연율화) / 지배주주지분(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROE</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >6.07</td>  <td class="r  " ><span class='tcr'>-4.44</span></td>  <td class="r  " ><span class='tcr'>-2.70</span></td>  <td class="r  " ><span class='tcr'>-1.65</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>EPS(원)</dt><dd>지배주주순이익 / 수정평균주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">EPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " ><span class='tcr'>-89</span></td>  <td class="r  " >3,062</td>  <td class="r  " ><span class='tcr'>-2,230</span></td>  <td class="r  " ><span class='tcr'>-1,322</span></td>  <td class="r  " ><span class='tcr'>-795</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>BPS(원)</dt><dd>지배주주순자산(자사주차감전) / 수정기말주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">BPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >48,949</td>  <td class="r  " >52,041</td>  <td class="r  " >50,056</td>  <td class="r  " >49,173</td>  <td class="r  " >47,849</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>DPS(원)</dt><dd>DPS(보통주,현금) * 무상조정수정계수(보통주)</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">DPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PER(배)</dt><dd>수정주가(보통주) / 수정EPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PER</span></a></div></th><td class="r  " >N/A</td>  <td class="r  " >10.96</td>  <td class="r  " >N/A</td>  <td class="r  " >N/A</td>  <td class="r  " >N/A</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PBR(배)</dt><dd>수정주가(보통주) / 수정BPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PBR</span></a></div></th><td class="r  " >1.36</td>  <td class="r  " >0.64</td>  <td class="r  " >1.05</td>  <td class="r  " >1.61</td>  <td class="r  " >7.69</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>발행주식수</div></th><td class="r  " >141,468</td>  <td class="r  " >141,468</td>  <td class="r  " >138,981</td>  <td class="r  " >134,750</td>  <td class="r  " >132,087</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>배당수익률(%)</dt><dd>(배당금(보통주,현금) / 시가총액(보통)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">배당수익률</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+</tbody>
+</table>
+</div>
+<!--IFRS 별도/븐기 -->
+<div class="um_table" id="highlight_B_Q" style="display:none;">
+<table class="us_table_ty1 h_fix zigbg_no" >
+<caption class="cphidden">Financial Highlight</caption>
+<colgroup>
+<col style="width: 120px;">
+<col span="8">
+</colgroup>
+<thead>
+<tr class="th2row_f"><th scope="col" class="clf tbold" rowspan="2"><div>IFRS(별도)</div></th>        <th scope="col" colspan="8"><div>Net Quarter</div></th>        </tr><tr class="td_gapcolor2"><th scope="col"><div>2024/12</div></th>        
+<th scope="col"><div>2025/03</div></th>        
+<th scope="col"><div>2025/06</div></th>        
+<th scope="col"><div>2025/09</div></th>        
+<th scope="col"><div>2025/12</div></th>        
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/03(E)</span></a>
+</div>
+</th>
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/06(E)</span></a>
+</div>
+</th>
+<th scope="col">
+<div>
+<dl style='display:none;'>
+<dt>(E) : Estimate</dt>
+<dd>컨센서스, 추정치</dd>
+</dl>
+<a href='javascript:void(0)' class='tip_in'><span class='txt_acd'>2026/09(E)</span></a>
+</div>
+</th>
+</tr>
+</thead>
+<tbody>
+<tr><th scope="row" class="clf"><div>매출액</div></th><td class="r  "  title="441.32">441</td>  <td class="r  "  title="1,920.27">1,920</td>  <td class="r  "  title="551.80">552</td>  <td class="r  "  title="551.80">552</td>  <td class="r  "  title="551.85">552</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익</div></th><td class="r  "  title="289.40">289</td>  <td class="r  "  title="1,791.36">1,791</td>  <td class="r  "  title="413.55">414</td>  <td class="r  "  title="404.32">404</td>  <td class="r  "  title="397.29">397</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>영업이익(발표기준)</div></th><td class="r  "  title="289.40">289</td>  <td class="r  "  title="1,791.36">1,791</td>  <td class="r  "  title="413.55">414</td>  <td class="r  "  title="404.32">404</td>  <td class="r  "  title="397.29">397</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>당기순이익</div></th><td class="r  "  title="-2,706.99"><span class='tcr'>-2,707</span></td>  <td class="r  "  title="2,062.93">2,063</td>  <td class="r  "  title="400.24">400</td>  <td class="r  "  title="-3,303.57"><span class='tcr'>-3,304</span></td>  <td class="r  "  title="-215.32"><span class='tcr'>-215</span></td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자산총계</div></th><td class="r  "  title="71,175.05">71,175</td>  <td class="r  "  title="72,302.00">72,302</td>  <td class="r  "  title="73,193.88">73,194</td>  <td class="r  "  title="69,786.06">69,786</td>  <td class="r  "  title="65,984.14">65,984</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>부채총계</div></th><td class="r  "  title="6,090.01">6,090</td>  <td class="r  "  title="6,049.96">6,050</td>  <td class="r  "  title="6,029.85">6,030</td>  <td class="r  "  title="6,385.74">6,386</td>  <td class="r  "  title="3,143.93">3,144</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본총계</div></th><td class="r  "  title="65,085.04">65,085</td>  <td class="r  "  title="66,252.04">66,252</td>  <td class="r  "  title="67,164.03">67,164</td>  <td class="r  "  title="63,400.32">63,400</td>  <td class="r  "  title="62,840.21">62,840</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>자본금</div></th><td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  "  title="141.47">141</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b"  title="">&nbsp;</td>  <td class="r  tdbg_b cle"  title="">&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>부채비율(%)</dt><dd>(총부채 / 총자본) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">부채비율</span></a></div></th><td class="r  " >9.36</td>  <td class="r  " >9.13</td>  <td class="r  " >8.98</td>  <td class="r  " >10.07</td>  <td class="r  " >5.00</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>유보율(%)</dt><dd>(유보액 / 자본금) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">유보율</span></a></div></th><td class="r  " >46,736.87</td>  <td class="r  " >47,558.31</td>  <td class="r  " >47,493.38</td>  <td class="r  " >45,522.17</td>  <td class="r  " >44,575.38</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>영업이익률(%)</dt><dd>(영업이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">영업이익률</span></a></div></th><td class="r  " >65.58</td>  <td class="r  " >93.29</td>  <td class="r  " >74.95</td>  <td class="r  " >73.27</td>  <td class="r  " >71.99</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>순이익률(%)</dt><dd>(지배주주순이익 / 영업수익) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">순이익률</span></a></div></th><td class="r  " ><span class='tcr'>-613.38</span></td>  <td class="r  " >107.43</td>  <td class="r  " >72.53</td>  <td class="r  " ><span class='tcr'>-598.69</span></td>  <td class="r  " ><span class='tcr'>-39.02</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROA(%)</dt><dd>(당기순이익(연율화) / 총자산(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROA</span></a></div></th><td class="r  " ><span class='tcr'>-14.99</span></td>  <td class="r  " >11.50</td>  <td class="r  " >2.20</td>  <td class="r  " ><span class='tcr'>-18.48</span></td>  <td class="r  " ><span class='tcr'>-1.27</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>ROE(%)</dt><dd>(지배주주순이익(연율화) / 지배주주지분(평균)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">ROE</span></a></div></th><td class="r  " ><span class='tcr'>-16.27</span></td>  <td class="r  " >12.57</td>  <td class="r  " >2.40</td>  <td class="r  " ><span class='tcr'>-20.24</span></td>  <td class="r  " ><span class='tcr'>-1.36</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>EPS(원)</dt><dd>지배주주순이익 / 수정평균주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">EPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " ><span class='tcr'>-2,009</span></td>  <td class="r  " >1,544</td>  <td class="r  " >302</td>  <td class="r  " ><span class='tcr'>-2,492</span></td>  <td class="r  " ><span class='tcr'>-163</span></td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>BPS(원)</dt><dd>지배주주순자산(자사주차감전) / 수정기말주식수</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">BPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >49,173</td>  <td class="r  " >50,485</td>  <td class="r  " >50,800</td>  <td class="r  " >48,696</td>  <td class="r  " >47,849</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>DPS(원)</dt><dd>DPS(보통주,현금) * 무상조정수정계수(보통주)</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">DPS</span></a><span class='csize'>(원)</span></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PER(배)</dt><dd>수정주가(보통주) / 수정EPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PER</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>PBR(배)</dt><dd>수정주가(보통주) / 수정BPS</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">PBR</span></a></div></th><td class="r  " >1.61</td>  <td class="r  " >1.85</td>  <td class="r  " >3.60</td>  <td class="r  " >4.14</td>  <td class="r  " >7.69</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div>발행주식수</div></th><td class="r  " >134,750</td>  <td class="r  " >133,548</td>  <td class="r  " >132,541</td>  <td class="r  " >132,541</td>  <td class="r  " >132,087</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+<tr><th scope="row" class="clf"><div><dl style='display:none;'><dt>배당수익률(%)</dt><dd>(배당금(보통주,현금) / 시가총액(보통)) * 100</dd></dl><a href="javascript:void(0)" class="tip_in"><span class="txt_acd">배당수익률</span></a></div></th><td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  " >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b" >&nbsp;</td>  <td class="r  tdbg_b cle" >&nbsp;</td>  </tr>
+</tbody>
+</table>
+</div>
+<div class="um_comment">
+<a href="javascript:void(0)" onclick="cmView(this)" class="comment_wrap btn_cm cmhidden">
+<ul>
+<li>* 주가는 해당 결산기일 수정주가 기준이며, EPS, BPS, DPS는 무상증자와 액면변경, 주식배당 등을 감안하여 현재기준으로 과거 Data를 수정 하였습니다.</li>
+<li>* 연결기업의 순이익, EPS, 순이익률, ROE, BPS, 자본총계는 지배주주귀속순이익과 지배주주지분 기준입니다.</li>
+<li>* 영업이익률, EBITDA, EBIT, NOPLAT는 조정영업이익 기준입니다.</li>
+<li>* 자산총액 2조원 미만의 기업은 2012년까지 분기 및 반기 연결재무제표 의무 공시가 유예되므로, 해당 기업의 연결 기준 Net Quarter의 항목은 비어있는 것이 정상입니다.</li>
+<li>(단, 재무상태표의 경우 4분기 Net Quarter는 공시되는 Annual과 동일함)</li>
+<li>* 기업이 발표한 잠정실적에 지배주주순이익이 포함되지 않은 경우, EPS는 순이익/ 평균발행주식수로 계산됩니다.</li>
+<li>* 기업이 Net Quarter기준으로 잠정실적을 공시하지 않은경우, 해당값은 누적기준 잠정실적에서 전분기까지의 실적을 차감하여 산출합니다.</li>
+</ul>
+<span class="cmtext"></span>
+</a>
+</div>
+
+
+
+	<!--고정 코멘트-->
+	
+        <div class="ul_wrap" id="div16" style="display:none">
+          <div class="um_notdata">
+            투자회사 종목은 금융감독원 전자공시시스템에 사업보고서를 공시하지 않기에, 기업개요 정보를 제공하지 않습니다.
+          </div>
+        </div>
+      </div>
+    </div>
+	</div>
+    <div class="bootomwrap">
+      <div class="ul_bottom">
+        <div class="ul_bottomwrap">
+          <a class="link_txt" href="http://www.fnguide.com" target="_blank"><span>fnguide.com</span></a>
+          <div class="txtbox">
+            <p class="txt">FnGuide에서 제공하는 정보는 신뢰할 만한 자료 및 정보로부터 얻어진 것이나 그 정확성이나 완전성을 보장 할 수 없으며, 시간이 경과함에 따라 변경될 수 있습니다. 따라서 정보의 오류, 누락에 대하여 FnGuide 또는FnGuide에 자료를 제공하는 회사에서는 그 결과에 대해 법적인 책임을 지지 않습니다. 모든 콘텐츠에 대한 저작권은 FnGuide에 있으며 사전 허가없이 이를 무단으로 사용하거나, 데이터 베이스화 할 경우 민형사상 책임을 물을 수 있습니다.</p>
+          </div>
+          <p class="waimg"><span>웹 접근성 우수사이트 인증마크(WA인증마크)</span></p>
+        </div>
+      </div>
+    </div>
+    <div class="ul_tip_a" style="display: none;">
+      <i class="arrow_top"></i>
+      <dl id="tip_a_cont">
+      </dl>
+    </div>
+    <!-- 툴팁 -->
+    <div class="ul_tip_b" style="display: none;width: 352px;top:1000px;left: 100px;">
+      <i class="arrow_top"></i>
+      <div class="um_table" id="ul_tip_b_table">
+        <table class="us_table_ty2 h_fix zigbg_no">
+          <caption class="cphidden">캡션</caption>
+          <colgroup>
+            <col >
+            <col >
+          </colgroup>
+          <thead>
+            <tr class="th_b">
+              <th scope="row" class="clf">헤더</th>
+              <th scope="row" class="cle">헤더</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="rwf">
+              <td class="clf">내용</td>
+              <td class="cle tcb">내용</td>
+            </tr>
+            <tr class="zigbg_in">
+              <td class="clf">내용</td>
+              <td class="cle">내용</td>
+            </tr>
+            <tr>
+              <td class="clf">내용</td>
+              <td class="cle">내용</td>
+            </tr>
+            <tr class="zigbg_in">
+              <td class="clf">내용</td>
+              <td class="cle">내용</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<input id="reportGb" type="hidden"  value="D"/>
+<input type="hidden"  value="701"/>
+<input id="highYQgb" type="hidden"   value="A"/>
+<input id="highRptGb" type="hidden"  value="D"/>
+<input id="upjongRptGb" type="hidden"  value="D"/>
+<input id="bandRptGb" type="hidden" value="D"/>
+<input id="strUgb" type="hidden"  value="제조"/>
+<script>
+    var monitors = ['https://monitor.fnguide.com'];
+    if (location.ancestorOrigins && monitors.indexOf(location.ancestorOrigins[0]) >= 0) {
+        window.parent.postMessage(
+            { id: 'ServiceMonitor', action: 'pageLoading' },
+            location.ancestorOrigins[0]
+        );
+    }
+</script>
+</body>
+</html>
