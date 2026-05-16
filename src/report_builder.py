@@ -529,7 +529,7 @@ def render_html(payload: dict[str, Any]) -> str:
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
 @font-face{{font-family:'SOK500';src:local('SamsungOneKorean500'),local('SamsungOneKorean 500');font-weight:500;font-style:normal;font-display:swap}}
-:root{{--bg:#F5F7FA;--card:#FFFFFF;--card2:#F0FDF4;--hdr:#1A3A2A;--hdrText:#FFFFFF;--row2:#F2F6FC;--t1:#111827;--t2:#475569;--t3:#64748B;--bd:#BBF7D0;--grid:#DDE7F3;--ac:#16A34A;--acL:#DCFCE7;--acT:#15803D;--hoverBg:#BBF7D0;--hoverFg:#052E16;--okB:#C6EFCE;--okT:#006100;--buyB:#E2F0D9;--buyT:#375623;--warnB:#FFE8A3;--warnT:#7C4A00;--negB:#F8D7DA;--negT:#842029;--link:#0563C1;--tbg:rgba(255,255,255,.92);--r:12px;--shadow:0 4px 18px rgba(15,23,42,.08);--scroll:#86EFAC;--scrollTrack:#ECFDF5}}
+:root{{--bg:#F5F7FA;--card:#FFFFFF;--card2:#F0FDF4;--hdr:#1A3A2A;--hdrText:#FFFFFF;--row2:#F2F6FC;--t1:#111827;--t2:#475569;--t3:#64748B;--bd:#BBF7D0;--grid:#DDE7F3;--ac:#16A34A;--acL:#DCFCE7;--acT:#15803D;--hoverBg:#BBF7D0;--hoverFg:#052E16;--okB:#15803D;--okT:#FFFFFF;--buyB:#DCFCE7;--buyT:#166534;--warnB:#FEE2E2;--warnT:#991B1B;--negB:#FCA5A5;--negT:#7F1D1D;--link:#0563C1;--tbg:rgba(255,255,255,.92);--r:12px;--shadow:0 4px 18px rgba(15,23,42,.08);--scroll:#86EFAC;--scrollTrack:#ECFDF5}}
 [data-t=dark]{{--bg:#071510;--card:#0D1F15;--card2:#122B1C;--row2:#0F1824;--t1:#E2E8F0;--t2:#CBD5E1;--t3:#94A3B8;--bd:#1A3A2A;--grid:#243044;--hdr:#122B1C;--tbg:rgba(7,21,16,.92);--hoverBg:#166534;--hoverFg:#ECFDF5;--scroll:#4ADE80;--scrollTrack:#0B1C13;--shadow:0 8px 26px rgba(0,0,0,.35)}}
 *,*::before,*::after{{box-sizing:border-box}}html{{scroll-behavior:smooth;font-size:14px}}body{{margin:0;font-family:'Noto Sans KR','SOK500','Malgun Gothic',system-ui,sans-serif;background:var(--bg);color:var(--t1);line-height:1.55;font-size:1rem;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}}button,input{{font:inherit}}a{{color:var(--link);font-weight:800;text-decoration:none}}a:hover{{text-decoration:underline}}
 .topbar{{position:sticky;top:0;z-index:50;background:var(--tbg);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid var(--bd);padding:.35rem .9rem;display:flex;align-items:center;gap:.55rem;overflow-x:auto;scrollbar-width:thin;scrollbar-color:var(--scroll) transparent}}
@@ -537,8 +537,8 @@ def render_html(payload: dict[str, Any]) -> str:
 .tools{{display:flex;align-items:center;gap:.35rem;flex-shrink:0}}.mode{{border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.18rem .52rem;font-size:.66rem;font-weight:800;color:var(--t2);cursor:pointer}}
 main{{width:min(1760px,calc(100% - 1.5rem));margin:0 auto;padding:.75rem 0 2rem}}.panel{{display:none;background:var(--card);border:1px solid var(--bd);border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}}.panel.on{{display:block}}.panel-head{{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;padding:.62rem 1rem;border-bottom:1px solid var(--bd);background:var(--card2)}}.panel-head h2{{font-size:.9rem;margin:0;font-weight:900}}.panel-head p{{margin:.05rem 0 0;font-size:.7rem;color:var(--t3);font-weight:800}}.downloads{{display:flex;flex-wrap:wrap;gap:.35rem}}.downloads a{{font-size:.68rem;border:1px solid var(--bd);border-radius:6px;padding:.18rem .48rem;background:var(--card);color:var(--acT)}}
 .table-wrap{{overflow:auto;max-height:calc(100vh - 132px);scrollbar-gutter:stable both-edges;scrollbar-width:thin;scrollbar-color:var(--scroll) var(--scrollTrack)}}.table-wrap::-webkit-scrollbar,.tabs::-webkit-scrollbar,.topbar::-webkit-scrollbar{{width:8px;height:8px}}.table-wrap::-webkit-scrollbar-track,.tabs::-webkit-scrollbar-track,.topbar::-webkit-scrollbar-track{{background:var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb,.tabs::-webkit-scrollbar-thumb,.topbar::-webkit-scrollbar-thumb{{background:var(--scroll);border-radius:999px;border:2px solid var(--scrollTrack)}}.table-wrap::-webkit-scrollbar-thumb:hover,.tabs::-webkit-scrollbar-thumb:hover,.topbar::-webkit-scrollbar-thumb:hover{{background:var(--ac)}}
-table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem;line-height:1.34}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.34rem .42rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}td{{padding:.24rem .42rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important;box-shadow:inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--ac),inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:650}}.score-cell{{background:#DCFCE7!important;color:#14532D!important;font-weight:800}}.valuation-cell{{background:#FFF7ED!important;color:#9A3412!important;font-weight:750}}.growth-cell{{background:#ECFCCB!important;color:#3F6212!important;font-weight:800}}.quality-cell{{background:#CCFBF1!important;color:#0F766E!important;font-weight:800}}.momentum-cell{{background:#FEF3C7!important;color:#92400E!important;font-weight:800}}.risk-cell{{background:#FFE4E6!important;color:#9F1239!important;font-weight:800}}.liquidity-cell{{background:#FFEDD5!important;color:#C2410C!important;font-weight:800}}.size-cell{{background:#F5F3FF!important;color:#6D28D9!important;font-weight:800}}.ownership-cell{{background:#E0F2FE!important;color:#075985!important;font-weight:800}}.pos-strong{{background:var(--okB)!important;color:var(--okT)!important;font-weight:900;border-radius:4px}}.pos-buy{{background:var(--buyB)!important;color:var(--buyT)!important;font-weight:850;border-radius:4px}}.warn{{background:var(--warnB)!important;color:var(--warnT)!important;font-weight:900;border-radius:4px}}.neg{{background:var(--negB)!important;color:var(--negT)!important;font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:430px}}.bullets{{display:grid;gap:.08rem;line-height:1.32;font-size:.71rem}}.basis-cell .bullets{{max-height:3.9rem;overflow:hidden}}.bullets span{{display:block;padding:.05rem .2rem .05rem .72rem;position:relative;border-left:2px solid transparent;border-radius:4px;font-weight:500}}.bullets span::before{{content:'-';position:absolute;left:.2rem;color:var(--ac);font-weight:800}}.bullets .b-hot{{background:#FFF7ED;border-left-color:#F97316}}.bullets .b-flow{{background:#F0FDFA;border-left-color:#14B8A6}}.bullets .b-good{{background:#F0FDF4;border-left-color:#22C55E}}.bullets .b-tech{{background:#EEF2FF;border-left-color:#6366F1}}.bullets .b-risk{{background:#FFF1F2;border-left-color:#E11D48}}.kw{{font-weight:900}}.kw-hot{{color:#C2410C}}.kw-flow{{color:#0F766E}}.kw-good{{color:#15803D}}.kw-tech{{color:#4338CA}}.kw-risk{{color:#BE123C}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
-.key-cell{{background:#EEF2FF!important;color:#3730A3!important;font-weight:900}}.company-cell{{background:#FFFBEB!important;color:#713F12!important;font-weight:700;font-size:.73rem;max-width:150px;min-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#E0F2FE!important;color:#075985!important;font-weight:850}}.country-kr{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.signal-cell{{background:#FDF4FF!important;color:#86198F!important;max-width:170px;font-weight:700}}.theme-cell{{background:#FEF3C7!important;color:#92400E!important;font-weight:800;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#FAFAFA!important;color:#334155!important;font-weight:500}}.report-cell{{background:#DBEAFE!important;color:#1D4ED8!important;font-weight:750;max-width:280px;min-width:150px}}.report-cell a{{display:block;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.volume-hot{{background:#FED7AA!important;color:#C2410C!important;font-weight:900}}.volume-watch{{background:#FEF3C7!important;color:#A16207!important;font-weight:850}}.flow-pos{{background:#BBF7D0!important;color:#166534!important;font-weight:900}}.metric-blue{{background:#E0E7FF!important;color:#3730A3!important;font-weight:800}}.metric-cyan{{background:#CCFBF1!important;color:#0F766E!important;font-weight:800}}.metric-purple{{background:#F3E8FF!important;color:#7E22CE!important;font-weight:800}}.metric-soft{{background:#F8FAFC!important;color:#475569!important;font-weight:650}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:850}}
+table{{width:max-content;min-width:100%;border-collapse:separate;border-spacing:0;font-size:.72rem;line-height:1.34}}th{{position:sticky;top:0;z-index:3;background:var(--hdr);color:var(--hdrText);padding:.34rem .42rem;text-align:left;font-weight:900;white-space:nowrap;border-bottom:2px solid rgba(255,255,255,.22);border-right:1px solid rgba(255,255,255,.14)}}td{{padding:.24rem .42rem;border-bottom:1px solid var(--grid);border-right:1px solid var(--grid);vertical-align:top;background:var(--card);color:var(--t1)}}tbody tr:nth-child(even) td{{background:var(--row2)}}tbody tr:hover td{{background:var(--hoverBg)!important;color:var(--hoverFg)!important;box-shadow:inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover td:first-child{{box-shadow:inset 4px 0 0 var(--ac),inset 0 1px 0 var(--ac),inset 0 -1px 0 var(--ac)}}tbody tr:hover a{{color:#034EA2!important;text-decoration:underline}}[data-t=dark] tbody tr:hover a{{color:#BFDBFE!important}}.empty{{padding:1.2rem;color:var(--t3);font-size:.82rem;font-weight:800}}.num{{font-family:'JetBrains Mono',monospace;white-space:nowrap;font-weight:650}}.score-cell,.valuation-cell,.growth-cell,.quality-cell,.momentum-cell,.liquidity-cell,.size-cell,.ownership-cell{{background:#F8FAFC!important;color:#334155!important;font-weight:700}}.risk-cell{{background:#FEF2F2!important;color:#991B1B!important;font-weight:750}}.pos-strong{{background:#15803D!important;color:#FFFFFF!important;font-weight:900;border-radius:4px}}.pos-buy{{background:#DCFCE7!important;color:#166534!important;font-weight:850;border-radius:4px}}.warn{{background:#FEE2E2!important;color:#991B1B!important;font-weight:900;border-radius:4px}}.neg{{background:#FCA5A5!important;color:#7F1D1D!important;font-weight:900;border-radius:4px}}.basis{{min-width:260px;max-width:430px}}.bullets{{display:grid;gap:.08rem;line-height:1.32;font-size:.71rem}}.basis-cell .bullets{{max-height:3.9rem;overflow:hidden}}.bullets span{{display:block;padding:.05rem .2rem .05rem .72rem;position:relative;border-left:2px solid transparent;border-radius:4px;font-weight:500}}.bullets span::before{{content:'-';position:absolute;left:.2rem;color:var(--ac);font-weight:800}}.bullets .b-hot{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-flow{{background:#ECFDF5;border-left-color:#16A34A}}.bullets .b-good{{background:#DCFCE7;border-left-color:#15803D}}.bullets .b-tech{{background:#F0FDF4;border-left-color:#22C55E}}.bullets .b-risk{{background:#FEE2E2;border-left-color:#DC2626}}.kw{{font-weight:900}}.kw-hot{{color:#15803D}}.kw-flow{{color:#047857}}.kw-good{{color:#166534}}.kw-tech{{color:#16A34A}}.kw-risk{{color:#DC2626}}.tag{{display:inline-block;border:1px solid var(--bd);background:var(--card2);border-radius:999px;padding:.04rem .34rem;margin:.04rem;font-size:.64rem;font-weight:800;color:var(--t2)}}footer{{font-size:.66rem;color:var(--t3);text-align:center;padding:.8rem 0}}
+.key-cell{{background:#F0FDF4!important;color:#14532D!important;font-weight:900}}.company-cell{{background:#FFFFFF!important;color:#111827!important;font-weight:700;font-size:.73rem;max-width:150px;min-width:92px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.country-us{{background:#F8FAFC!important;color:#334155!important;font-weight:850}}.country-kr{{background:#ECFDF5!important;color:#166534!important;font-weight:850}}.signal-cell{{background:#F8FAFC!important;color:#334155!important;max-width:170px;font-weight:700}}.theme-cell{{background:#F0FDF4!important;color:#166534!important;font-weight:800;max-width:150px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.basis-cell{{background:#FAFAFA!important;color:#334155!important;font-weight:500}}.report-cell{{background:#EFF6FF!important;color:#0563C1!important;font-weight:750;max-width:280px;min-width:150px}}.report-cell a{{display:block;max-width:260px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}}.volume-hot{{background:#15803D!important;color:#FFFFFF!important;font-weight:900}}.volume-watch{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.flow-pos{{background:#16A34A!important;color:#FFFFFF!important;font-weight:900}}.metric-blue,.metric-cyan,.metric-purple{{background:#DCFCE7!important;color:#166534!important;font-weight:850}}.metric-soft{{background:#F0FDF4!important;color:#166534!important;font-weight:700}}.section-cell{{background:#ECFDF5!important;color:#047857!important;font-weight:850}}
 @media(max-width:768px){{main{{width:calc(100% - .5rem)}}.topbar{{padding:.28rem .45rem;align-items:flex-start;flex-direction:column}}.tools{{align-self:flex-end}}.table-wrap{{max-height:none}}}}
 </style>
 </head>
@@ -1022,9 +1022,9 @@ def _style_tokens(field: str, value: Any) -> list[str]:
             tokens.append("neg")
     if field == "volatility_d" and number is not None:
         if number >= 12:
-            tokens.append("warn")
+            tokens.append("neg")
         elif number >= 5:
-            tokens.append("metric-soft")
+            tokens.append("warn")
     if field == "rsi_14" and number is not None:
         if number >= 75:
             tokens.append("warn")
@@ -1087,13 +1087,28 @@ def _style_tokens(field: str, value: Any) -> list[str]:
             tokens.append("metric-blue")
         elif 0 < number <= 25:
             tokens.append("metric-soft")
+        elif number >= 60:
+            tokens.append("neg")
+        elif number >= 40:
+            tokens.append("warn")
     if field == "forward_peg" and number is not None:
         if 0 < number <= 1:
             tokens.append("metric-purple")
         elif 0 < number <= 2:
             tokens.append("pos-buy")
-    if field == "pbr" and number is not None and 0 < number <= 2:
-        tokens.append("metric-blue")
+        elif number >= 4:
+            tokens.append("neg")
+        elif number > 2:
+            tokens.append("warn")
+    if field == "pbr" and number is not None:
+        if 0 < number <= 1:
+            tokens.append("metric-blue")
+        elif 0 < number <= 2:
+            tokens.append("metric-soft")
+        elif number >= 8:
+            tokens.append("neg")
+        elif number >= 4:
+            tokens.append("warn")
     if field == "beta" and number is not None:
         if number >= 2:
             tokens.append("warn")
@@ -1139,6 +1154,13 @@ def _style_tokens(field: str, value: Any) -> list[str]:
             tokens.append("pos-buy")
         elif number < 1:
             tokens.append("warn")
+    if field == "risk_penalty" and number is not None:
+        if number >= 2:
+            tokens.append("neg")
+        elif number >= 1:
+            tokens.append("warn")
+        elif number <= 0.5:
+            tokens.append("pos-buy")
     if field in {"dividend_yield", "foreign_ownership_rate", "institutional_ownership_pct", "insider_ownership_pct"} and number is not None and number > 0:
         tokens.append("metric-soft")
     if field == "short_percent_float" and number is not None:
@@ -1303,27 +1325,27 @@ def _apply_xlsx_cell_style(cell: Any, tokens: list[str], field: str) -> None:
 
 def _xlsx_style(tokens: list[str]) -> tuple[str, str, bool] | None:
     palette = {
-        "pos-strong": ("C6EFCE", "006100", True),
-        "pos-buy": ("E2F0D9", "375623", True),
-        "warn": ("FFC000", "111827", True),
-        "neg": ("FFC7CE", "9C0006", True),
-        "volume-hot": ("FDE68A", "92400E", True),
-        "volume-watch": ("FEF3C7", "92400E", True),
-        "flow-pos": ("DCFCE7", "166534", True),
-        "score-cell": ("DCFCE7", "14532D", True),
-        "valuation-cell": ("FFF7ED", "9A3412", True),
-        "growth-cell": ("ECFCCB", "3F6212", True),
-        "quality-cell": ("CCFBF1", "0F766E", True),
-        "momentum-cell": ("FEF3C7", "92400E", True),
-        "risk-cell": ("FFE4E6", "9F1239", True),
-        "liquidity-cell": ("FFEDD5", "C2410C", True),
-        "size-cell": ("F5F3FF", "6D28D9", True),
-        "ownership-cell": ("E0F2FE", "075985", True),
-        "metric-blue": ("DBEAFE", "1E40AF", True),
-        "metric-cyan": ("CCFBF1", "0F766E", True),
-        "metric-purple": ("F3E8FF", "6B21A8", True),
-        "metric-soft": ("F1F5F9", "334155", True),
-        "key-cell": ("EAF2FF", "1D4ED8", True),
+        "pos-strong": ("15803D", "FFFFFF", True),
+        "pos-buy": ("DCFCE7", "166534", True),
+        "warn": ("FEE2E2", "991B1B", True),
+        "neg": ("FCA5A5", "7F1D1D", True),
+        "volume-hot": ("15803D", "FFFFFF", True),
+        "volume-watch": ("DCFCE7", "166534", True),
+        "flow-pos": ("16A34A", "FFFFFF", True),
+        "score-cell": ("F8FAFC", "334155", True),
+        "valuation-cell": ("F8FAFC", "334155", True),
+        "growth-cell": ("F8FAFC", "334155", True),
+        "quality-cell": ("F8FAFC", "334155", True),
+        "momentum-cell": ("F8FAFC", "334155", True),
+        "risk-cell": ("FEF2F2", "991B1B", True),
+        "liquidity-cell": ("F8FAFC", "334155", True),
+        "size-cell": ("F8FAFC", "334155", True),
+        "ownership-cell": ("F8FAFC", "334155", True),
+        "metric-blue": ("DCFCE7", "166534", True),
+        "metric-cyan": ("DCFCE7", "166534", True),
+        "metric-purple": ("DCFCE7", "166534", True),
+        "metric-soft": ("F0FDF4", "166534", True),
+        "key-cell": ("F0FDF4", "14532D", True),
         "company-cell": ("FFFFFF", "111827", True),
         "country-us": ("E0F2FE", "075985", True),
         "country-kr": ("F0FDF4", "166534", True),
