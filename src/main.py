@@ -17,6 +17,7 @@ from src.utils.io import ensure_dir, read_json, strip_empty, write_json
 
 
 KST = ZoneInfo("Asia/Seoul")
+HISTORY_META_FIELDS = {"first_seen_date", "last_seen_date", "seen_count", "seen_dates"}
 
 
 def main() -> None:
@@ -90,17 +91,16 @@ def _as_list(value: object) -> list[dict[str, Any]]:
 
 
 def _merge_record_history(existing: list[dict[str, Any]], current: list[dict[str, Any]]) -> list[dict[str, Any]]:
-    seen: set[str] = set()
-    merged: list[dict[str, Any]] = []
-    for row in current + existing:
+    by_security: dict[str, dict[str, Any]] = {}
+    for row in existing + current:
         key = _history_key(row)
-        if not key or key in seen:
+        if not key:
             continue
-        seen.add(key)
-        merged.append(dict(row))
+        by_security[key] = _merge_security_row(by_security.get(key), row)
+    merged = list(by_security.values())
     merged.sort(
         key=lambda row: (
-            str(row.get("date") or ""),
+            str(row.get("last_seen_date") or row.get("date") or ""),
             _sort_number(row.get("investment_priority_score") or row.get("famous_13f_score")),
             str(row.get("ticker") or row.get("cusip") or row.get("company_name") or ""),
         ),
@@ -110,18 +110,63 @@ def _merge_record_history(existing: list[dict[str, Any]], current: list[dict[str
 
 
 def _history_key(row: dict[str, Any]) -> str | None:
-    row_date = str(row.get("date") or "").strip()
     country = str(row.get("country_code") or row.get("country") or "").strip().upper()
     ticker = str(row.get("ticker") or "").strip().upper()
     cusip = str(row.get("cusip") or "").strip().upper()
     company = str(row.get("company_name") or "").strip().upper()
     if ticker:
-        return f"{row_date}|{country}|{ticker}"
+        return f"{country}|{ticker}"
     if cusip:
-        return f"{row_date}|CUSIP|{cusip}"
+        return f"CUSIP|{cusip}"
     if company:
-        return f"{row_date}|COMPANY|{company}"
+        return f"COMPANY|{company}"
     return None
+
+
+def _merge_security_row(existing: dict[str, Any] | None, incoming: dict[str, Any]) -> dict[str, Any]:
+    if existing is None:
+        merged = _non_empty_row(incoming)
+    else:
+        merged = dict(existing)
+        prefer_incoming = _latest_seen_date(incoming) >= _latest_seen_date(existing)
+        for key, value in _non_empty_row(incoming).items():
+            if key in HISTORY_META_FIELDS:
+                continue
+            if prefer_incoming or merged.get(key) in (None, "", []):
+                merged[key] = value
+
+    seen_dates = _collect_seen_dates(existing, incoming)
+    if seen_dates:
+        merged["first_seen_date"] = seen_dates[0]
+        merged["last_seen_date"] = seen_dates[-1]
+        merged["seen_dates"] = seen_dates
+        merged["seen_count"] = len(seen_dates)
+        merged["date"] = seen_dates[-1]
+    return merged
+
+
+def _non_empty_row(row: dict[str, Any]) -> dict[str, Any]:
+    return {key: value for key, value in row.items() if value not in (None, "", [])}
+
+
+def _collect_seen_dates(*rows: dict[str, Any] | None) -> list[str]:
+    dates: set[str] = set()
+    for row in rows:
+        if not row:
+            continue
+        for key in ("first_seen_date", "last_seen_date", "date"):
+            value = row.get(key)
+            if value not in (None, ""):
+                dates.add(str(value)[:10])
+        for value in row.get("seen_dates") or []:
+            if value not in (None, ""):
+                dates.add(str(value)[:10])
+    return sorted(dates)
+
+
+def _latest_seen_date(row: dict[str, Any]) -> str:
+    dates = _collect_seen_dates(row)
+    return dates[-1] if dates else ""
 
 
 def _sort_number(value: object) -> float:
