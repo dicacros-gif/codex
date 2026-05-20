@@ -609,22 +609,22 @@ var gnb_naverme_layer_close_callback = function(){
     <dl class="blind">
         <dt>종목 시세 정보</dt>
         <dd>2026년 05월
-        19일 16시
+        20일 16시
         10분 기준 장마감</dd>
         <dd>종목명 삼성전자</dd>
         <dd>종목코드 005930 코스피</dd>
-        <dd>현재가 275,500 전일대비 하락 5,500
-            마이너스
-            1.96 퍼센트
+        <dd>현재가 276,000 전일대비 상승 500
+            플러스
+            0.18 퍼센트
         </dd>
-        <dd>전일가 281,000</dd>
-        <dd>시가 274,000</dd>
-        <dd>고가 281,500</dd>
-        <dd>상한가 365,000</dd>
-        <dd>저가 266,000</dd>
-        <dd>하한가 197,000</dd>
-        <dd>거래량 30,186,229</dd>
-        <dd>거래대금 8,264,832백만</dd>
+        <dd>전일가 275,500</dd>
+        <dd>시가 278,000</dd>
+        <dd>고가 282,500</dd>
+        <dd>상한가 358,000</dd>
+        <dd>저가 263,500</dd>
+        <dd>하한가 193,000</dd>
+        <dd>거래량 34,108,795</dd>
+        <dd>거래대금 9,313,317백만</dd>
     </dl>
     
 
@@ -648,7 +648,7 @@ var gnb_naverme_layer_close_callback = function(){
                         
                         
                         
-                            <em class="date">2026.05.19 <span>기준(KRX 장마감)</span></em>
+                            <em class="date">2026.05.20 <span>기준(KRX 장마감)</span></em>
                         
                     
 					</span>
@@ -772,8 +772,8 @@ var gnb_naverme_layer_close_callback = function(){
             <div id="chart_area" class="spot" >
                 
                 
-                
                     
+                
                 
                 
                 
@@ -782,11 +782,11 @@ var gnb_naverme_layer_close_callback = function(){
                 <div class="area_tab_type">
                     <ul class="top_tab_list">
                         <!-- [D] 선택된 탭 'is_active' -->
-                        <li class="top_tab_item top_tab_krx is_active">
+                        <li class="top_tab_item top_tab_krx ">
                             <a href="javascript:showStockExchangeArea('top_tab_krx', 'top_tab_nxt', 'rate_info_krx', 'rate_info_nxt')"
                                onClick="clickcr(this, 'inf.krx', '', '', event);" class="top_tab_link">KRX</a>
                         </li>
-                        <li class="top_tab_item top_tab_nxt ">
+                        <li class="top_tab_item top_tab_nxt is_active">
                             <a href="javascript:showStockExchangeArea('top_tab_nxt', 'top_tab_krx', 'rate_info_nxt', 'rate_info_krx')"
                                onClick="clickcr(this, 'inf.nxt', '', '', event);" class="top_tab_link">NXT</a>
                         </li>
@@ -812,13 +812,13 @@ var gnb_naverme_layer_close_callback = function(){
             
             
             
-                    <div class="rate_info" id="rate_info_krx"  style="display: block;">
+                    <div class="rate_info" id="rate_info_krx" style="display: none;">
                         
                         <dl class="blind">
                             <dt><strong>삼성전자</strong></dt>
-                            <dd>오늘의시세 275,500 포인트</dd>
-                            <dd>5,500 포인트 하락</dd>
-                            <dd>1.96% 마이너스</dd>
+                            <dd>오늘의시세 276,000 포인트</dd>
+                            <dd>500 포인트 상승</dd>
+                            <dd>0.18% 플러스</dd>
                         </dl>
                         
 
@@ -826,13 +826,13 @@ var gnb_naverme_layer_close_callback = function(){
                             <p class="no_today">
                                 
                                 
+                                <em class="no_up">
                                     
-                                    <em class="no_down">
-                                        
+                                    
                                         
                                             
-                                            <span class="blind">275,500</span>
-                                            <span class="no2">2</span><span class="no7">7</span><span class="no5">5</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+                                            <span class="blind">276,000</span>
+                                            <span class="no2">2</span><span class="no7">7</span><span class="no6">6</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
                                         </em>
                             </p>
                             <p class="no_exday">
@@ -840,196 +840,27 @@ var gnb_naverme_layer_close_callback = function(){
                                 
                                 
                                     
+                                    <em class="no_up">
+                                        <span class="ico up">상승</span>
+                                        
                                         
                                             
-                                            <em class="no_down">
-                                                <span class="ico down">하락</span>
-                                                
                                                 
                                                     
-                                                    <span class="blind">5,500</span>
-                                                    <span class="no5">5</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+                                                    <span class="blind">500</span>
+                                                    <span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
                                                 </em>
                                                 <span class="bar">l</span>
                                                 
                                                 
+                                                <em class="no_up">
+                                                    <span class="ico plus">+</span>
                                                     
-                                                    <em class="no_down">
-                                                        <span class="ico minus">-</span>
-                                                        
+                                                    
                                                         
                                                             
-                                                            <span class="blind">1.96</span>
-                                                            <span class="no1">1</span><span class="jum">.</span><span class="no9">9</span><span class="no6">6</span>
-                                                            <span class="per">%</span>
-                                                        </em>
-                            </p>
-                        </div>
-                        <table summary="주요 시세(전일종가, 시고저가, 거래량, 거래대금)을 제공합니다." class="no_info">
-                            <caption>주요 시세</caption>
-                            <colgroup>
-                                <col>
-                                <col width="214">
-                                <col width="157">
-                            </colgroup>
-                            <tr>
-                                <td class="first">
-                                    <span class="sptxt sp_txt2">전일</span>
-                                    <em>
-                                        <span class="blind">281,000</span>
-                                        <span class="no2">2</span><span class="no8">8</span><span class="no1">1</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
-                                    </em>
-                                </td>
-                                <td>
-                                    <span class="sptxt sp_txt4">고가</span>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        <em class="no_up">
-                                            
-                                                
-                                                    
-                                                    
-                                                    
-                                                    
-                                                        
-                                                        <span class="blind">281,500</span><span class="no2">2</span><span class="no8">8</span><span class="no1">1</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                                <span class="sptxt sp_txt6">(상한가</span>
-                                                <em class="no_cha">
-                                                    
-                                                        
-                                                        <span class="blind">365,000</span><span class="no3">3</span><span class="no6">6</span><span class="no5">5</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                                <span class="sptxt sp_txt8">)</span>
-                                </td>
-                                <td>
-                                    <span class="sptxt sp_txt9">거래량</span>
-                                    <em>
-                                        <span class="blind">30,186,229</span>
-                                        <span class="no3">3</span><span class="no0">0</span><span class="shim">,</span><span class="no1">1</span><span class="no8">8</span><span class="no6">6</span><span class="shim">,</span><span class="no2">2</span><span class="no2">2</span><span class="no8">8</span>
-                                    </em>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="first">
-                                    <span class="sptxt sp_txt3">시가</span>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        
-                                            <em
-                                                    class="no_down">
-                                                
-                                                    
-                                                    
-                                                    
-                                                    
-                                                        
-                                                        <span class="blind">274,000</span><span class="no2">2</span><span class="no7">7</span><span class="no4">4</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                </td>
-                                <td>
-                                    <span class="sptxt sp_txt5">저가</span>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        
-                                            <em
-                                                    class="no_down">
-                                                
-                                                    
-                                                    
-                                                    
-                                                    
-                                                        
-                                                        <span class="blind">266,000</span><span class="no2">2</span><span class="no6">6</span><span class="no6">6</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                                <span class="sptxt sp_txt7">(하한가</span>
-                                                <em class="no_cha">
-                                                    
-                                                        
-                                                        <span class="no1">1</span><span class="no9">9</span><span class="no7">7</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                                <span class="sptxt sp_txt8">)</span>
-                                </td>
-                                <td>
-                                    <span class="sptxt sp_txt10">거래대금</span>
-                                    <em>
-                                        
-                                            
-                                                <span class="blind">8,264,832</span>
-                                                <span class="no8">8</span><span class="shim">,</span><span class="no2">2</span><span class="no6">6</span><span class="no4">4</span><span class="shim">,</span><span class="no8">8</span><span class="no3">3</span><span class="no2">2</span>
-                                            
-                                            
-                                        
-                                    </em>
-                                    <span class="sptxt sp_txt11">백만</span>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-
-                
-                    <div class="rate_info" id="rate_info_nxt" style="display: none;">
-                        
-                        <dl class="blind">
-                            <dt><strong>삼성전자</strong></dt>
-                            <dd>오늘의시세 275,500 포인트</dd>
-                            <dd>0 포인트 보합</dd>
-                            <dd>0.00% </dd>
-                        </dl>
-                        
-
-                        <div class="today">
-                            <p class="no_today">
-                                
-                                
-                                    
-                                        
-                                        <em class="X">
-                                            
-                                            
-                                            <span class="blind">275,500</span>
-                                            <span class="no2">2</span><span class="no7">7</span><span class="no5">5</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
-                                        </em>
-                            </p>
-                            <p class="no_exday">
-                                <span class="sptxt sp_txt1">전일대비</span>
-                                
-                                
-                                    
-                                        
-                                            
-                                                
-                                                <em class="X">
-                                                    <span class="ico sam">보합</span>
-                                                    
-                                                    
-                                                    <span class="blind">0</span>
-                                                    <span class="no0">0</span>
-                                                </em>
-                                                <span class="bar">l</span>
-                                                
-                                                
-                                                    
-                                                        
-                                                        <em class="X">
-                                                            
-                                                            
-                                                            <span class="blind">0.00</span>
-                                                            <span class="no0">0</span><span class="jum">.</span><span class="no0">0</span><span class="no0">0</span>
+                                                            <span class="blind">0.18</span>
+                                                            <span class="no0">0</span><span class="jum">.</span><span class="no1">1</span><span class="no8">8</span>
                                                             <span class="per">%</span>
                                                         </em>
                             </p>
@@ -1056,22 +887,22 @@ var gnb_naverme_layer_close_callback = function(){
                                     
                                     
                                     
-                                        
+                                        <em class="no_up">
                                             
-                                                <em>
+                                                
                                                     
                                                     
                                                     
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="blind">282,500</span><span class="no2">2</span><span class="no8">8</span><span class="no2">2</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                                 <span class="sptxt sp_txt6">(상한가</span>
                                                 <em class="no_cha">
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="blind">358,000</span><span class="no3">3</span><span class="no5">5</span><span class="no8">8</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                                 <span class="sptxt sp_txt8">)</span>
@@ -1079,8 +910,8 @@ var gnb_naverme_layer_close_callback = function(){
                                 <td>
                                     <span class="sptxt sp_txt9">거래량</span>
                                     <em>
-                                        <span class="blind">0</span>
-                                        <span class="no0">0</span>
+                                        <span class="blind">34,108,795</span>
+                                        <span class="no3">3</span><span class="no4">4</span><span class="shim">,</span><span class="no1">1</span><span class="no0">0</span><span class="no8">8</span><span class="shim">,</span><span class="no7">7</span><span class="no9">9</span><span class="no6">6</span>
                                     </em>
                                 </td>
                             </tr>
@@ -1092,15 +923,15 @@ var gnb_naverme_layer_close_callback = function(){
                                     
                                     
                                     
-                                        
+                                        <em class="no_up">
                                             
-                                                <em>
+                                                
                                                     
                                                     
                                                     
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="blind">278,000</span><span class="no2">2</span><span class="no7">7</span><span class="no8">8</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                 </td>
@@ -1112,21 +943,22 @@ var gnb_naverme_layer_close_callback = function(){
                                     
                                     
                                         
-                                            
-                                                <em>
+                                            <em
+                                                    class="no_down">
+                                                
                                                     
                                                     
                                                     
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="blind">263,500</span><span class="no2">2</span><span class="no6">6</span><span class="no3">3</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                                 <span class="sptxt sp_txt7">(하한가</span>
                                                 <em class="no_cha">
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="no1">1</span><span class="no9">9</span><span class="no3">3</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                                 <span class="sptxt sp_txt8">)</span>
@@ -1136,8 +968,179 @@ var gnb_naverme_layer_close_callback = function(){
                                     <em>
                                         
                                             
-                                                <span class="blind">0</span>
-                                                <span class="no0">0</span>
+                                                <span class="blind">9,313,317</span>
+                                                <span class="no9">9</span><span class="shim">,</span><span class="no3">3</span><span class="no1">1</span><span class="no3">3</span><span class="shim">,</span><span class="no3">3</span><span class="no1">1</span><span class="no7">7</span>
+                                            
+                                            
+                                        
+                                    </em>
+                                    <span class="sptxt sp_txt11">백만</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                
+                    <div class="rate_info" id="rate_info_nxt"  style="display: block;">
+                        
+                        <dl class="blind">
+                            <dt><strong>삼성전자</strong></dt>
+                            <dd>오늘의시세 280,500 포인트</dd>
+                            <dd>5,000 포인트 상승</dd>
+                            <dd>1.81% 플러스</dd>
+                        </dl>
+                        
+
+                        <div class="today">
+                            <p class="no_today">
+                                
+                                
+                                <em class="no_up">
+                                    
+                                    
+                                        
+                                            
+                                            <span class="blind">280,500</span>
+                                            <span class="no2">2</span><span class="no8">8</span><span class="no0">0</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+                                        </em>
+                            </p>
+                            <p class="no_exday">
+                                <span class="sptxt sp_txt1">전일대비</span>
+                                
+                                
+                                    
+                                    <em class="no_up">
+                                        <span class="ico up">상승</span>
+                                        
+                                        
+                                            
+                                                
+                                                    
+                                                    <span class="blind">5,000</span>
+                                                    <span class="no5">5</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
+                                                </em>
+                                                <span class="bar">l</span>
+                                                
+                                                
+                                                <em class="no_up">
+                                                    <span class="ico plus">+</span>
+                                                    
+                                                    
+                                                        
+                                                            
+                                                            <span class="blind">1.81</span>
+                                                            <span class="no1">1</span><span class="jum">.</span><span class="no8">8</span><span class="no1">1</span>
+                                                            <span class="per">%</span>
+                                                        </em>
+                            </p>
+                        </div>
+                        <table summary="주요 시세(전일종가, 시고저가, 거래량, 거래대금)을 제공합니다." class="no_info">
+                            <caption>주요 시세</caption>
+                            <colgroup>
+                                <col>
+                                <col width="214">
+                                <col width="157">
+                            </colgroup>
+                            <tr>
+                                <td class="first">
+                                    <span class="sptxt sp_txt2">전일</span>
+                                    <em>
+                                        <span class="blind">275,500</span>
+                                        <span class="no2">2</span><span class="no7">7</span><span class="no5">5</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+                                    </em>
+                                </td>
+                                <td>
+                                    <span class="sptxt sp_txt4">고가</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <em
+                                                class="no_up">
+                                            
+                                                
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        
+                                                        <span class="blind">282,500</span><span class="no2">2</span><span class="no8">8</span><span class="no2">2</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                                <span class="sptxt sp_txt6">(상한가</span>
+                                                <em class="no_cha">
+                                                    
+                                                        
+                                                        <span class="blind">358,000</span><span class="no3">3</span><span class="no5">5</span><span class="no8">8</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                                <span class="sptxt sp_txt8">)</span>
+                                </td>
+                                <td>
+                                    <span class="sptxt sp_txt9">거래량</span>
+                                    <em>
+                                        <span class="blind">34,282,180</span>
+                                        <span class="no3">3</span><span class="no4">4</span><span class="shim">,</span><span class="no2">2</span><span class="no8">8</span><span class="no2">2</span><span class="shim">,</span><span class="no1">1</span><span class="no8">8</span><span class="no0">0</span>
+                                    </em>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first">
+                                    <span class="sptxt sp_txt3">시가</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <em
+                                                class="no_up">
+                                            
+                                                
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        
+                                                        <span class="blind">276,000</span><span class="no2">2</span><span class="no7">7</span><span class="no6">6</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                </td>
+                                <td>
+                                    <span class="sptxt sp_txt5">저가</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        
+                                            <em
+                                                    class="no_down">
+                                                
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        
+                                                        <span class="blind">263,500</span><span class="no2">2</span><span class="no6">6</span><span class="no3">3</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                                <span class="sptxt sp_txt7">(하한가</span>
+                                                <em class="no_cha">
+                                                    
+                                                        
+                                                        <span class="no1">1</span><span class="no9">9</span><span class="no3">3</span><span class="shim">,</span><span class="no0">0</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                                <span class="sptxt sp_txt8">)</span>
+                                </td>
+                                <td>
+                                    <span class="sptxt sp_txt10">거래대금</span>
+                                    <em>
+                                        
+                                            
+                                                <span class="blind">9,428,601</span>
+                                                <span class="no9">9</span><span class="shim">,</span><span class="no4">4</span><span class="no2">2</span><span class="no8">8</span><span class="shim">,</span><span class="no6">6</span><span class="no0">0</span><span class="no1">1</span>
                                             
                                             
                                         
@@ -1180,7 +1183,7 @@ var gnb_naverme_layer_close_callback = function(){
                         <p class="source">한국거래소(KRX)</p>
                         <h5 class="blind">이미지 차트</h5>
                         <img id="img_chart_area"
-                             src="https://ssl.pstatic.net/imgfinance/chart/item/area/day/005930.png?sidcode=1779231516596"
+                             src="https://ssl.pstatic.net/imgfinance/chart/item/area/day/005930.png?sidcode=1779280457185"
                              width="700" height="289" alt="이미지 차트"
                              onerror="this.src='https://ssl.pstatic.net/imgstock/chart3/world2008/error_700x289.png'">
                     </div>
@@ -1767,7 +1770,7 @@ var gnb_naverme_layer_close_callback = function(){
                     oUpdateAjax.request();
                   }
 
-                  var dateTime = "20260519161025";
+                  var dateTime = "20260520161024";
                   var closeDate = dateTime.substring(0, 4) + "." + dateTime.substring(4, 6) + "." + dateTime.substring(6, 8);
 
                   /**
@@ -1780,7 +1783,7 @@ var gnb_naverme_layer_close_callback = function(){
                     jindo.$A(jindo.$$("dl.line dd ul li")).forEach(function (v) {
                       if (jindo.$Element(v).className() == target) {
                         jindo.$Element(v).child()[0].addClass("on");
-                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/area/" + target + "/005930.png?sidcode=1779231516596");
+                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/area/" + target + "/005930.png?sidcode=1779280457185");
                       } else {
                         jindo.$Element(v).child()[0].removeClass("on");
                       }
@@ -1802,7 +1805,7 @@ var gnb_naverme_layer_close_callback = function(){
                     jindo.$A(jindo.$$("dl.bar dd ul li")).forEach(function (v) {
                       if (jindo.$Element(v).className() == target) {
                         jindo.$Element(v).child()[0].addClass("on");
-                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/candle/" + target + "/005930.png?sidcode=1779231516596");
+                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/candle/" + target + "/005930.png?sidcode=1779280457185");
                       } else {
                         jindo.$Element(v).child()[0].removeClass("on");
                       }
@@ -2016,17 +2019,17 @@ var gnb_naverme_layer_close_callback = function(){
 					<tr>
 						<td class="left"><strong>외국계추정합</strong></td>
 						<td>
-							<em class="f_down">6,420,421</em>
+							<em class="f_down">4,514,094</em>
 						</td>
 						<td class="left">
 							
 				<em class="f_down">
-				-5,750,827
+				-4,044,113
 				</em>
 			
 						</td>
 						<td>
-							<em class="f_up">669,594</em>
+							<em class="f_up">469,981</em>
 						</td>
 					</tr>
 					</tfoot>
@@ -2036,60 +2039,60 @@ var gnb_naverme_layer_close_callback = function(){
 						<tr>
 							
 							
-						<td class="left"><span class="f_down">제이피모간</span></td>
-						<td><em class="f_down">4,028,020</em></td>
+						<td class="left">미래에셋증권</td>
+						<td><em>3,023,890</em></td>
 			
 							
 						<td class="left">미래에셋증권</td>
-						<td><em>4,098,910</em></td>
+						<td><em>3,853,553</em></td>
 			
 						</tr>
 					
 						<tr>
 							
 							
-						<td class="left">미래에셋증권</td>
-						<td><em>2,270,021</em></td>
+						<td class="left">키움증권</td>
+						<td><em>2,803,968</em></td>
 			
 							
 						<td class="left">키움증권</td>
-						<td><em>3,549,092</em></td>
+						<td><em>3,386,225</em></td>
 			
 						</tr>
 					
 						<tr>
 							
-							
-						<td class="left"><span class="f_down">UBS</span></td>
-						<td><em class="f_down">2,150,762</em></td>
-			
 							
 						<td class="left">NH투자증권</td>
-						<td><em>2,832,978</em></td>
-			
-						</tr>
-					
-						<tr>
-							
-							
-						<td class="left">KB증권</td>
-						<td><em>1,871,534</em></td>
-			
-							
-						<td class="left">KB증권</td>
-						<td><em>2,066,926</em></td>
-			
-						</tr>
-					
-						<tr>
-							
-							
-						<td class="left">키움증권</td>
-						<td><em>783,063</em></td>
+						<td><em>2,322,102</em></td>
 			
 							
 						<td class="left">삼성증권</td>
-						<td><em>1,255,374</em></td>
+						<td><em>2,674,143</em></td>
+			
+						</tr>
+					
+						<tr>
+							
+							
+						<td class="left">삼성증권</td>
+						<td><em>2,219,312</em></td>
+			
+							
+						<td class="left">NH투자증권</td>
+						<td><em>2,673,256</em></td>
+			
+						</tr>
+					
+						<tr>
+							
+							
+						<td class="left">KB증권</td>
+						<td><em>1,670,328</em></td>
+			
+							
+						<td class="left">KB증권</td>
+						<td><em>2,497,941</em></td>
 			
 						</tr>
 					
@@ -2113,6 +2116,32 @@ var gnb_naverme_layer_close_callback = function(){
 					</thead>
 					<tbody>
 					<tr><td class="space"></td></tr>
+					
+						<tr>
+							<th scope="row">05/20</th>
+							<td><em>276,000</em></td>
+							<td>
+								
+				<em class="f_up up"><span>상향</span>
+				500
+				</em>
+			
+							</td>
+							<td>
+								
+				<em class="f_down">
+				-5,733,354
+				</em>
+			
+							</td>
+							<td>
+								
+				<em class="f_up">
+				+2,756,787
+				</em>
+			
+							</td>
+						</tr>
 					
 						<tr>
 							<th scope="row">05/19</th>
@@ -2244,32 +2273,6 @@ var gnb_naverme_layer_close_callback = function(){
 							</td>
 						</tr>
 					
-						<tr>
-							<th scope="row">05/12</th>
-							<td><em>279,000</em></td>
-							<td>
-								
-				<em class="f_down down"><span>하향</span>
-				6,500
-				</em>
-			
-							</td>
-							<td>
-								
-				<em class="f_down">
-				-7,824,233
-				</em>
-			
-							</td>
-							<td>
-								
-				<em class="f_down">
-				-78,144
-				</em>
-			
-							</td>
-						</tr>
-					
 
 					<tr><td class="space2"></td></tr>
 					</tbody>
@@ -2297,7 +2300,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 								
 							
-							<a href="/item/news_read.naver?article_id=0003977416&office_id=023&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '1', event);">&ldquo;삼성전자 일타강사, 손재주왕&rdquo; 최승호, 3년 뒤 ...</a>
+							<a href="/item/news_read.naver?article_id=0001357883&office_id=055&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '1', event);">안경테 눌러 커피 주문&hellip;구글&middot;삼성&middot;젠몬 손 잡았...</a>
 							
 							</span>
 									<em> 05/20</em>
@@ -2314,7 +2317,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 								
 							
-							<a href="/item/news_read.naver?article_id=0005288978&office_id=015&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '2', event);">&quot;삼성전자, 파업 우려에도 실적 개선 강화&hellip;2분기 9...</a>
+							<a href="/item/news_read.naver?article_id=0013958055&office_id=003&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '2', event);">與, 삼성전자 노사 협상 결렬에 &quot;유감과 우려&hellip;협의...</a>
 							
 							</span>
 									<em> 05/20</em>
@@ -2331,7 +2334,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 								
 							
-							<a href="/item/news_read.naver?article_id=0000511213&office_id=374&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '3', event);">[애프터마켓 리뷰] 휴온스, 휴온스랩 흡수 합병&hellip;&ldquo;...</a>
+							<a href="/item/news_read.naver?article_id=0000105688&office_id=024&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '3', event);">사장급도 번갯불 교체…인사가 독해진다</a>
 							
 							</span>
 									<em> 05/20</em>
@@ -2344,12 +2347,12 @@ var gnb_naverme_layer_close_callback = function(){
 							<span class="txt">
 							
 								
+								
 									
 								
-								
 							
-							<a href="/item/news_read.naver?article_id=0000866547&office_id=422&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '4', event);">삼성전자 노사, 결론 못내&hellip;오전 1...</a>
-							<a href="/item/news.naver?code=005930&clusterId=4220000866547" class="link_relation" onClick="clickcr(this, 'dle.11', '', '', event);"><span class="bar"></span>관련 <em>2</em>건</a>
+							<a href="/item/news_read.naver?article_id=0000613186&office_id=448&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '4', event);">하루 멈추면 1조 손실&hellip;협력사 납기&middot;소부장까지 비...</a>
+							
 							</span>
 									<em> 05/20</em>
 								</li>
@@ -2361,12 +2364,12 @@ var gnb_naverme_layer_close_callback = function(){
 							<span class="txt">
 							
 								
+								
 									
 								
-								
 							
-							<a href="/item/news_read.naver?article_id=0016087390&office_id=001&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '5', event);">삼성, 첫 AI 스마트글래스 공개</a>
-							<a href="/item/news.naver?code=005930&clusterId=0010016087390" class="link_relation" onClick="clickcr(this, 'dle.11', '', '', event);"><span class="bar"></span>관련 <em>6</em>건</a>
+							<a href="/item/news_read.naver?article_id=0012184975&office_id=056&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '5', event);">협상 상황 따라 온종일 흔들린 삼전 주가</a>
+							
 							</span>
 									<em> 05/20</em>
 								</li>
@@ -2378,28 +2381,11 @@ var gnb_naverme_layer_close_callback = function(){
 							<span class="txt">
 							
 								
-									
-								
-								
-							
-							<a href="/item/news_read.naver?article_id=0005765271&office_id=277&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '6', event);">베일 벗은 삼성&middot;구글 'AI 글라스'...</a>
-							<a href="/item/news.naver?code=005930&clusterId=2770005765271" class="link_relation" onClick="clickcr(this, 'dle.11', '', '', event);"><span class="bar"></span>관련 <em>4</em>건</a>
-							</span>
-									<em> 05/20</em>
-								</li>
-							
-							
-						
-							
-								<li>
-							<span class="txt">
-							
-								
 								
 									
 								
 							
-							<a href="/item/news_read.naver?article_id=0001252702&office_id=215&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '7', event);">폭주하는 채권 금리에도&hellip; 기술주 대형 호재 속 메...</a>
+							<a href="/item/news_read.naver?article_id=0000613182&office_id=448&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '6', event);">[뉴스더] 삼성은 왜 거부하나&hellip;성과급보다 큰 '원칙...</a>
 							
 							</span>
 									<em> 05/20</em>
@@ -2416,7 +2402,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 								
 							
-							<a href="/item/news_read.naver?article_id=0002355368&office_id=052&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '8', event);">영업이익 15%를 '성과급'...&quot;경제학 원칙에서 상당...</a>
+							<a href="/item/news_read.naver?article_id=0012184974&office_id=056&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '7', event);">파업 결의부터 두 차례 파국까지&hellip;협상과정 &lsquo;산 넘...</a>
 							
 							</span>
 									<em> 05/20</em>
@@ -2433,7 +2419,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 								
 							
-							<a href="/item/news_read.naver?article_id=0005288974&office_id=015&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '9', event);">삼전닉스 흔들리는데&hellip;방산주 '나홀로 질주' 비결은...</a>
+							<a href="/item/news_read.naver?article_id=0012184973&office_id=056&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '8', event);">결렬 되면 멈춘다…삼성전자 평택 사업장 상황은?</a>
 							
 							</span>
 									<em> 05/20</em>
@@ -2450,7 +2436,24 @@ var gnb_naverme_layer_close_callback = function(){
 									
 								
 							
-							<a href="/item/news_read.naver?article_id=0006285553&office_id=018&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '10', event);">&quot;45만전자 간다&quot; 파업 우려는 선반영</a>
+							<a href="/item/news_read.naver?article_id=0006286288&office_id=018&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '9', event);">삼성, '협상 결렬' 사내 공지 삭제&hellip;장관 주재 교섭...</a>
+							
+							</span>
+									<em> 05/20</em>
+								</li>
+							
+							
+						
+							
+								<li>
+							<span class="txt">
+							
+								
+								
+									
+								
+							
+							<a href="/item/news_read.naver?article_id=0012184971&office_id=056&code=005930&sm=entity_id.basic" onClick="clickcr(this, 'dle.1', '', '10', event);">“함께 나누자”…“성과 낸 곳에 보상”</a>
 							
 							</span>
 									<em> 05/20</em>
@@ -2474,50 +2477,50 @@ var gnb_naverme_layer_close_callback = function(){
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428054" onClick="clickcr(this, 'dle.3', '', '1', event);"
-										>로봇 해외공장 증설 가즈아</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548037" onClick="clickcr(this, 'dle.3', '', '1', event);"
+										>내일 노조들 안약 챙겨가겠군.</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:34</em>
 							</li>
 							
 						
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428041" onClick="clickcr(this, 'dle.3', '', '2', event);"
-										>다음번에는</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548032" onClick="clickcr(this, 'dle.3', '', '2', event);"
+										>속보)파업타결</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:34</em>
 							</li>
 							
 						
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428040" onClick="clickcr(this, 'dle.3', '', '3', event);"
-										>어제 + 오늘도 버겁겠지요?</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548027" onClick="clickcr(this, 'dle.3', '', '3', event);"
+										>노조들 일 열심히 안할듯</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:34</em>
 							</li>
 							
 						
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428036" onClick="clickcr(this, 'dle.3', '', '4', event);"
-										>아직까지 삼전 파업은 유치원 생같어 </a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548019" onClick="clickcr(this, 'dle.3', '', '4', event);"
+										>성과금 많이 줘라 5프로 이상 성과금 받으...</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:33</em>
 							</li>
 							
 						
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428035" onClick="clickcr(this, 'dle.3', '', '5', event);"
-										>파업 이미 저번주에 선반영 다 됐고</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548016" onClick="clickcr(this, 'dle.3', '', '5', event);"
+										>몇몇 천재덕에 막대한 이익이 생기는거지</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:33</em>
 							</li>
 							
 								</ul>
@@ -2527,50 +2530,50 @@ var gnb_naverme_layer_close_callback = function(){
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428034" onClick="clickcr(this, 'dle.3', '', '6', event);"
-										>협상시폭등</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548011" onClick="clickcr(this, 'dle.3', '', '6', event);"
+										>노란봉투법은 노동자 권익을 위한 법입니다...</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:33</em>
 							</li>
 							
 						
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428030" onClick="clickcr(this, 'dle.3', '', '7', event);"
-										>●●●●&quot;45만전자 간다&quot; 파업 우려는 선반...</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548007" onClick="clickcr(this, 'dle.3', '', '7', event);"
+										>결렬 ㅡ</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:33</em>
 							</li>
 							
 						
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428029" onClick="clickcr(this, 'dle.3', '', '8', event);"
-										>삼성노조 는  표준 급여!</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548006" onClick="clickcr(this, 'dle.3', '', '8', event);"
+										>앞으로 노봉법폐지공약 무조건 찍어줄게</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:33</em>
 							</li>
 							
 						
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428028" onClick="clickcr(this, 'dle.3', '', '9', event);"
-										>삼전 파업은 막아야 한다</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548001" onClick="clickcr(this, 'dle.3', '', '9', event);"
+										>삼전노조 파업 쟁위시</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:33</em>
 							</li>
 							
 						
 							
 							<li>
 								<span class="txt txt_link">
-									<a href="/item/board_read.naver?code=005930&nid=420428027" onClick="clickcr(this, 'dle.3', '', '10', event);"
-										>마이크론 상승이유</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
+									<a href="/item/board_read.naver?code=005930&nid=420548000" onClick="clickcr(this, 'dle.3', '', '10', event);"
+										>성과금 복권처럼 33프로</a><img src="https://ssl.pstatic.net/imgstock/item_renewal/ico_new.gif" alt="new" width="8" height="8">
 								</span>
-								<em>05/20 07:58</em>
+								<em>05/20 21:33</em>
 							</li>
 							
 						
@@ -3140,7 +3143,7 @@ var gnb_naverme_layer_close_callback = function(){
 											
 											
 												
-				3,480,466
+				3,480,693
 			
 											
 										</td>
@@ -3462,7 +3465,7 @@ var gnb_naverme_layer_close_callback = function(){
 											
 											
 												
-				51.26
+				51.27
 			
 											
 										</td>
@@ -4555,7 +4558,7 @@ var gnb_naverme_layer_close_callback = function(){
 											
 											
 												
-				6.60
+				6.47
 			
 											
 										</td>
@@ -4871,7 +4874,7 @@ var gnb_naverme_layer_close_callback = function(){
 											
 											
 												
-				2.68
+				2.63
 			
 											
 										</td>
@@ -5463,7 +5466,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>275,500</td>
+										<td>276,000</td>
 									
 								
 							
@@ -5479,7 +5482,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>288,000</td>
+										<td>287,500</td>
 									
 								
 							
@@ -5487,7 +5490,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>176,900</td>
+										<td>178,500</td>
 									
 								
 							
@@ -5495,7 +5498,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>96,100</td>
+										<td>96,700</td>
 									
 								
 							
@@ -5509,8 +5512,8 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 										<td>
-				<em class="f_down down"><span>하향</span>
-				5,500
+				<em class="f_up up"><span>상향</span>
+				500
 				</em>
 			</td>
 									
@@ -5521,9 +5524,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 										<td>
-				<em class="f_down down"><span>하향</span>
-				95,000
-				</em>
+				<em class="sam"><span>보합</span></em>0</td>
 			</td>
 									
 								
@@ -5534,7 +5535,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 										<td>
 				<em class="f_down down"><span>하향</span>
-				29,000
+				500
 				</em>
 			</td>
 									
@@ -5545,8 +5546,8 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 										<td>
-				<em class="f_down down"><span>하향</span>
-				5,300
+				<em class="f_up up"><span>상향</span>
+				1,600
 				</em>
 			</td>
 									
@@ -5557,8 +5558,8 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 										<td>
-				<em class="f_down down"><span>하향</span>
-				4,900
+				<em class="f_up up"><span>상향</span>
+				600
 				</em>
 			</td>
 									
@@ -5572,8 +5573,19 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 										<td>
-				<em class="f_down"><span>하향</span>
-				-1.96%
+				<em class="f_up"><span>상향</span>
+				+0.18%
+				</em>
+			</td>
+									
+								
+							
+								
+									
+									
+										<td>
+				<em>
+				0.00%
 				</em>
 			</td>
 									
@@ -5584,7 +5596,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 										<td>
 				<em class="f_down"><span>하향</span>
-				-5.16%
+				-0.17%
 				</em>
 			</td>
 									
@@ -5594,8 +5606,8 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 										<td>
-				<em class="f_down"><span>하향</span>
-				-9.15%
+				<em class="f_up"><span>상향</span>
+				+0.90%
 				</em>
 			</td>
 									
@@ -5605,19 +5617,8 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 										<td>
-				<em class="f_down"><span>하향</span>
-				-2.91%
-				</em>
-			</td>
-									
-								
-							
-								
-									
-									
-										<td>
-				<em class="f_down"><span>하향</span>
-				-4.85%
+				<em class="f_up"><span>상향</span>
+				+0.62%
 				</em>
 			</td>
 									
@@ -5631,7 +5632,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>16,106,497</td>
+										<td>16,135,728</td>
 									
 								
 							
@@ -5647,7 +5648,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>274,499</td>
+										<td>274,022</td>
 									
 								
 							
@@ -5655,7 +5656,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>82,225</td>
+										<td>82,968</td>
 									
 								
 							
@@ -5663,7 +5664,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>73,239</td>
+										<td>73,696</td>
 									
 								
 							
@@ -5675,7 +5676,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>48.61</td>
+										<td>48.42</td>
 									
 								
 							
@@ -5683,7 +5684,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>52.06</td>
+										<td>51.87</td>
 									
 								
 							
@@ -5691,7 +5692,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>6.73</td>
+										<td>6.62</td>
 									
 								
 							
@@ -5699,7 +5700,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>10.61</td>
+										<td>9.95</td>
 									
 								
 							
@@ -5707,7 +5708,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>21.61</td>
+										<td>21.74</td>
 									
 								
 							
@@ -6027,7 +6028,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>41.97</td>
+										<td>42.05</td>
 									
 								
 							
@@ -6035,7 +6036,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>29.60</td>
+										<td>16.86</td>
 									
 								
 							
@@ -6043,7 +6044,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>128.97</td>
+										<td>128.75</td>
 									
 								
 							
@@ -6051,7 +6052,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>234.30</td>
+										<td>1,239.58</td>
 									
 								
 							
@@ -6059,7 +6060,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>44.93</td>
+										<td>45.21</td>
 									
 								
 							
@@ -6071,7 +6072,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>4.30</td>
+										<td>4.31</td>
 									
 								
 							
@@ -6087,7 +6088,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>39.57</td>
+										<td>39.50</td>
 									
 								
 							
@@ -6095,7 +6096,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>13.69</td>
+										<td>13.81</td>
 									
 								
 							
@@ -6103,7 +6104,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 									
-										<td>9.97</td>
+										<td>10.32</td>
 									
 								
 							
@@ -6166,9 +6167,9 @@ var gnb_naverme_layer_close_callback = function(){
 									
 										
 										
-										1,610조
+										1,613조
 										
-											6,498
+											5,729
 										
 									
 								</em>억원</td>
@@ -6208,7 +6209,7 @@ var gnb_naverme_layer_close_callback = function(){
 							</tr>
 							<tr>
 								<th scope="row">외국인보유주식수(B)</th>
-								<td><em>2,841,763,953</em></td>
+								<td><em>2,830,968,525</em></td>
 							</tr>
 							<tr class="strong">
 								<th scope="row"><strong>외국인소진율(B/A)</strong><a href="javascript:togglePannel('helpPannel0');" onMouseOver="showPannel('helpPannel0');" onMouseOut="hidePannel('helpPannel0');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="외국인소진율(B/A) 상세설명"></a>
@@ -6220,7 +6221,7 @@ var gnb_naverme_layer_close_callback = function(){
 		                                 </div>
 		                            </div>
 								</th>
-								<td><em>48.61%</em></td>
+								<td><em>48.42%</em></td>
 							</tr>
 							</table>
 							</div>
@@ -6244,7 +6245,7 @@ var gnb_naverme_layer_close_callback = function(){
 							<span class="bar">l</span>
 							
 								
-								<em>355,833</em>
+								<em>358,333</em>
 							
 							</td></tr>
 						
@@ -6290,7 +6291,7 @@ var gnb_naverme_layer_close_callback = function(){
 									
 									
 										
-										<em id="_per">41.97</em>배
+										<em id="_per">42.05</em>배
 									
 									<span class="bar">l</span>
 									
@@ -6340,7 +6341,7 @@ var gnb_naverme_layer_close_callback = function(){
 								<td>
 									
 										
-										<em id="_pbr">4.30</em>배
+										<em id="_pbr">4.31</em>배
 									
 									<span class="bar">l</span>
 									
@@ -6366,7 +6367,7 @@ var gnb_naverme_layer_close_callback = function(){
 								<td>
 									
 										
-										<em id="_dvr">0.61</em>%
+										<em id="_dvr">0.60</em>%
 									
 								</td>
 							</tr>
@@ -6380,7 +6381,7 @@ var gnb_naverme_layer_close_callback = function(){
 								<td>
 									
 										
-										<em>35.15</em>배
+										<em>33.94</em>배
 									
 								</td>
 							</tr>
@@ -6389,8 +6390,8 @@ var gnb_naverme_layer_close_callback = function(){
 								
 									
 									
-				<td class="f_down"><em>
-				-3.34%
+				<td class="f_up"><em>
+				+0.03%
 				</em></td>
 			
 								
@@ -6420,7 +6421,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					66,961
+					17,640
 				
 				</td>
 				<td>
@@ -6436,7 +6437,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					63,407
+					130,299
 				
 				</td>
 				<td>
@@ -6452,7 +6453,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					27,642
+					93,730
 				
 				</td>
 				<td>
@@ -6468,7 +6469,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					12,371
+					50,136
 				
 				</td>
 				<td>
@@ -6484,7 +6485,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					7,022
+					31,303
 				
 				</td>
 				<td>
@@ -6500,7 +6501,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					13,985
+					46,216
 				
 				</td>
 				<td>
@@ -6516,7 +6517,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					35,666
+					25,369
 				
 				</td>
 				<td>
@@ -6532,7 +6533,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					4,876
+					138,694
 				
 				</td>
 				<td>
@@ -6548,7 +6549,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					44,513
+					51,403
 				
 				</td>
 				<td>
@@ -6564,7 +6565,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td>
 				
 					
-					7,232
+					44,905
 				
 				</td>
 				<td>
@@ -6591,7 +6592,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					62,913
+					66,249
 				
 				</td>
 			</tr>
@@ -6607,7 +6608,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					259,367
+					139,105
 				
 				</td>
 				</tr>
@@ -6623,7 +6624,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					40,359
+					84,716
 				
 				</td>
 				</tr>
@@ -6639,7 +6640,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					108,840
+					138,492
 				
 				</td>
 				</tr>
@@ -6655,7 +6656,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					89,437
+					51,118
 				
 				</td>
 				</tr>
@@ -6671,7 +6672,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					104,820
+					46,934
 				
 				</td>
 				</tr>
@@ -6687,7 +6688,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					30,893
+					60,869
 				
 				</td>
 				</tr>
@@ -6703,7 +6704,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					61,534
+					47,409
 				
 				</td>
 				</tr>
@@ -6719,7 +6720,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					36,710
+					26,459
 				
 				</td>
 				</tr>
@@ -6735,7 +6736,7 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="td_r">
 				
 					
-					46,149
+					36,968
 				
 				</td>
 				</tr>
@@ -6745,14 +6746,14 @@ var gnb_naverme_layer_close_callback = function(){
 				<td class="f_down">
 					
 						
-						283,675
+						629,695
 					
 				</td>
 				<td>잔량합계</td>
 				<td class="f_up">
 					
 						
-						841,022
+						698,319
 					
 				</td>
 			</tr>
@@ -6944,11 +6945,11 @@ var comment_page = "1";
 		
 		<tr>
 			<th scope="row" class="no1"><a href="/item/main.naver?code=005930" target=_top onClick="clickcr(this, 'pss.2', '', '1', event);">삼성전자</a></th>
-			<td>275,500</td>
+			<td>276,000</td>
 			<td>
 				
-				<em class="f_down down"><span>하향</span>
-				5,500
+				<em class="f_up up"><span>상향</span>
+				500
 				</em>
 			
 			</td>
@@ -6960,9 +6961,7 @@ var comment_page = "1";
 			<td>1,745,000</td>
 			<td>
 				
-				<em class="f_down down"><span>하향</span>
-				95,000
-				</em>
+				<em class="sam"><span>보합</span></em>
 			
 			</td>
 		</tr>
@@ -6970,11 +6969,11 @@ var comment_page = "1";
 		
 		<tr>
 			<th scope="row" class="no3"><a href="/item/main.naver?code=005380" target=_top onClick="clickcr(this, 'pss.2', '', '3', event);">현대차</a></th>
-			<td>604,000</td>
+			<td>592,000</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				59,000
+				12,000
 				</em>
 			
 			</td>
@@ -6982,12 +6981,12 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no4"><a href="/item/main.naver?code=066570" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">LG전자</a></th>
-			<td>191,700</td>
+			<th scope="row" class="no4"><a href="/item/main.naver?code=009150" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">삼성전기</a></th>
+			<td>1,061,000</td>
 			<td>
 				
-				<em class="f_down down"><span>하향</span>
-				25,300
+				<em class="f_up up"><span>상향</span>
+				74,000
 				</em>
 			
 			</td>
@@ -6995,12 +6994,12 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no5"><a href="/item/main.naver?code=042700" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">한미반도체</a></th>
-			<td>288,000</td>
+			<th scope="row" class="no5"><a href="/item/main.naver?code=066570" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">LG전자</a></th>
+			<td>181,000</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				29,000
+				10,700
 				</em>
 			
 			</td>
@@ -7011,11 +7010,11 @@ var comment_page = "1";
 		
 		<tr>
 			<th scope="row" class="no6"><a href="/item/main.naver?code=034020" target=_top onClick="clickcr(this, 'pss.2', '', '6', event);">두산에너빌리..</a></th>
-			<td>106,000</td>
+			<td>101,300</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				6,100
+				4,700
 				</em>
 			
 			</td>
@@ -7023,13 +7022,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no7"><a href="/item/main.naver?code=454910" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">두산로보틱스</a></th>
-			<td>100,100</td>
+			<th scope="row" class="no7"><a href="/item/main.naver?code=001570" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">금양</a></th>
+			<td>9,900</td>
 			<td>
 				
-				<em class="f_down down"><span>하향</span>
-				17,800
-				</em>
+				<em class="sam"><span>보합</span></em>
 			
 			</td>
 		</tr>
@@ -7037,11 +7034,11 @@ var comment_page = "1";
 		
 		<tr>
 			<th scope="row" class="no8"><a href="/item/main.naver?code=006400" target=_top onClick="clickcr(this, 'pss.2', '', '8', event);">삼성SDI</a></th>
-			<td>587,000</td>
+			<td>570,000</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				26,000
+				17,000
 				</em>
 			
 			</td>
@@ -7049,12 +7046,12 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no9"><a href="/item/main.naver?code=035420" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">NAVER</a></th>
-			<td>198,100</td>
+			<th scope="row" class="no9"><a href="/item/main.naver?code=042700" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">한미반도체</a></th>
+			<td>287,500</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				1,900
+				500
 				</em>
 			
 			</td>
@@ -7062,12 +7059,12 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no10"><a href="/item/main.naver?code=005490" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">POSCO홀딩스</a></th>
-			<td>440,500</td>
+			<th scope="row" class="no10"><a href="/item/main.naver?code=010120" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">LS ELECTRIC</a></th>
+			<td>238,500</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				22,500
+				5,000
 				</em>
 			
 			</td>
@@ -7089,55 +7086,55 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no1"><a href="/item/main.naver?code=086520" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">에코프로</a></th>
-			<td>121,600</td>
-			<td>
-				<em class="f_down down"><span>하향</span>
-				5,200
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no2"><a href="/item/main.naver?code=010170" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">대한광통신</a></th>
-			<td>21,550</td>
-			<td>
-				<em class="f_down down"><span>하향</span>
-				1,550
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no3"><a href="/item/main.naver?code=347700" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">스피어</a></th>
-			<td>46,900</td>
-			<td>
-				<em class="f_down down"><span>하향</span>
-				1,250
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no4"><a href="/item/main.naver?code=439960" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">코스모로보틱..</a></th>
-			<td>48,600</td>
-			<td>
-				<em class="f_up up_arrow"><span>상한가</span>
-				11,200
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no5"><a href="/item/main.naver?code=196170" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">알테오젠</a></th>
-			<td>366,500</td>
+			<th scope="row" class="no1"><a href="/item/main.naver?code=010170" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">대한광통신</a></th>
+			<td>22,900</td>
 			<td>
 				<em class="f_up up"><span>상향</span>
-				9,000
+				1,350
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no2"><a href="/item/main.naver?code=086520" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">에코프로</a></th>
+			<td>118,700</td>
+			<td>
+				<em class="f_down down"><span>하향</span>
+				2,900
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no3"><a href="/item/main.naver?code=036930" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">주성엔지니어..</a></th>
+			<td>178,500</td>
+			<td>
+				<em class="f_up up"><span>상향</span>
+				1,600
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no4"><a href="/item/main.naver?code=319400" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">현대무벡스</a></th>
+			<td>32,350</td>
+			<td>
+				<em class="f_down down"><span>하향</span>
+				600
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no5"><a href="/item/main.naver?code=277810" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">레인보우로보..</a></th>
+			<td>638,000</td>
+			<td>
+				<em class="f_down down"><span>하향</span>
+				28,000
 				</em>
 			</td>
 		</tr>
@@ -7146,55 +7143,55 @@ var comment_page = "1";
 			<tr><td colspan="3" class="line"></td></tr>
 		
 		<tr>
-			<th scope="row" class="no6"><a href="/item/main.naver?code=080220" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">제주반도체</a></th>
-			<td>95,900</td>
+			<th scope="row" class="no6"><a href="/item/main.naver?code=439960" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">코스모로보틱..</a></th>
+			<td>56,200</td>
 			<td>
 				<em class="f_up up"><span>상향</span>
-				3,300
+				7,600
 				</em>
 			</td>
 		</tr>
 	
 		
 		<tr>
-			<th scope="row" class="no7"><a href="/item/main.naver?code=036930" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">주성엔지니어..</a></th>
-			<td>176,900</td>
+			<th scope="row" class="no7"><a href="/item/main.naver?code=247540" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">에코프로비엠</a></th>
+			<td>176,700</td>
 			<td>
 				<em class="f_down down"><span>하향</span>
-				5,300
+				5,700
 				</em>
 			</td>
 		</tr>
 	
 		
 		<tr>
-			<th scope="row" class="no8"><a href="/item/main.naver?code=247540" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">에코프로비엠</a></th>
-			<td>182,400</td>
+			<th scope="row" class="no8"><a href="/item/main.naver?code=000250" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">삼천당제약</a></th>
+			<td>347,000</td>
 			<td>
 				<em class="f_down down"><span>하향</span>
-				8,000
+				18,500
 				</em>
 			</td>
 		</tr>
 	
 		
 		<tr>
-			<th scope="row" class="no9"><a href="/item/main.naver?code=048410" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">현대바이오</a></th>
-			<td>10,990</td>
-			<td>
-				<em class="f_up up"><span>상향</span>
-				10
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no10"><a href="/item/main.naver?code=319400" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">현대무벡스</a></th>
-			<td>32,950</td>
+			<th scope="row" class="no9"><a href="/item/main.naver?code=196170" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">알테오젠</a></th>
+			<td>359,500</td>
 			<td>
 				<em class="f_down down"><span>하향</span>
-				4,600
+				7,000
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no10"><a href="/item/main.naver?code=033100" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">제룡전기</a></th>
+			<td>62,200</td>
+			<td>
+				<em class="f_down down"><span>하향</span>
+				1,000
 				</em>
 			</td>
 		</tr>

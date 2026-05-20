@@ -615,22 +615,22 @@ function select_gigan(type, pst) {
     <dl class="blind">
         <dt>종목 시세 정보</dt>
         <dd>2026년 05월
-        19일 16시
+        20일 16시
         10분 기준 장마감</dd>
         <dd>종목명 심텍</dd>
         <dd>종목코드 222800 코스닥</dd>
-        <dd>현재가 98,700 전일대비 하락 1,700
-            마이너스
-            1.69 퍼센트
+        <dd>현재가 103,600 전일대비 상승 4,900
+            플러스
+            4.96 퍼센트
         </dd>
-        <dd>전일가 100,400</dd>
-        <dd>시가 99,700</dd>
-        <dd>고가 101,600</dd>
-        <dd>상한가 130,500</dd>
-        <dd>저가 96,700</dd>
-        <dd>하한가 70,300</dd>
-        <dd>거래량 578,107</dd>
-        <dd>거래대금 57,290백만</dd>
+        <dd>전일가 98,700</dd>
+        <dd>시가 101,100</dd>
+        <dd>고가 107,400</dd>
+        <dd>상한가 128,300</dd>
+        <dd>저가 97,200</dd>
+        <dd>하한가 69,100</dd>
+        <dd>거래량 910,745</dd>
+        <dd>거래대금 93,540백만</dd>
     </dl>
     
 
@@ -654,7 +654,7 @@ function select_gigan(type, pst) {
                         
                         
                         
-                            <em class="date">2026.05.19 <span>기준(KRX 장마감)</span></em>
+                            <em class="date">2026.05.20 <span>기준(KRX 장마감)</span></em>
                         
                     
 					</span>
@@ -778,8 +778,8 @@ function select_gigan(type, pst) {
             <div id="chart_area" class="spot spot_short">
                 
                 
-                
                     
+                
                 
                 
                 
@@ -788,11 +788,11 @@ function select_gigan(type, pst) {
                 <div class="area_tab_type">
                     <ul class="top_tab_list">
                         <!-- [D] 선택된 탭 'is_active' -->
-                        <li class="top_tab_item top_tab_krx is_active">
+                        <li class="top_tab_item top_tab_krx ">
                             <a href="javascript:showStockExchangeArea('top_tab_krx', 'top_tab_nxt', 'rate_info_krx', 'rate_info_nxt')"
                                onClick="clickcr(this, 'inf.krx', '', '', event);" class="top_tab_link">KRX</a>
                         </li>
-                        <li class="top_tab_item top_tab_nxt ">
+                        <li class="top_tab_item top_tab_nxt is_active">
                             <a href="javascript:showStockExchangeArea('top_tab_nxt', 'top_tab_krx', 'rate_info_nxt', 'rate_info_krx')"
                                onClick="clickcr(this, 'inf.nxt', '', '', event);" class="top_tab_link">NXT</a>
                         </li>
@@ -818,13 +818,13 @@ function select_gigan(type, pst) {
             
             
             
-                    <div class="rate_info" id="rate_info_krx"  style="display: block;">
+                    <div class="rate_info" id="rate_info_krx" style="display: none;">
                         
                         <dl class="blind">
                             <dt><strong>심텍</strong></dt>
-                            <dd>오늘의시세 98,700 포인트</dd>
-                            <dd>1,700 포인트 하락</dd>
-                            <dd>1.69% 마이너스</dd>
+                            <dd>오늘의시세 103,600 포인트</dd>
+                            <dd>4,900 포인트 상승</dd>
+                            <dd>4.96% 플러스</dd>
                         </dl>
                         
 
@@ -832,13 +832,13 @@ function select_gigan(type, pst) {
                             <p class="no_today">
                                 
                                 
+                                <em class="no_up">
                                     
-                                    <em class="no_down">
-                                        
+                                    
                                         
                                             
-                                            <span class="blind">98,700</span>
-                                            <span class="no9">9</span><span class="no8">8</span><span class="shim">,</span><span class="no7">7</span><span class="no0">0</span><span class="no0">0</span>
+                                            <span class="blind">103,600</span>
+                                            <span class="no1">1</span><span class="no0">0</span><span class="no3">3</span><span class="shim">,</span><span class="no6">6</span><span class="no0">0</span><span class="no0">0</span>
                                         </em>
                             </p>
                             <p class="no_exday">
@@ -846,196 +846,27 @@ function select_gigan(type, pst) {
                                 
                                 
                                     
+                                    <em class="no_up">
+                                        <span class="ico up">상승</span>
+                                        
                                         
                                             
-                                            <em class="no_down">
-                                                <span class="ico down">하락</span>
-                                                
                                                 
                                                     
-                                                    <span class="blind">1,700</span>
-                                                    <span class="no1">1</span><span class="shim">,</span><span class="no7">7</span><span class="no0">0</span><span class="no0">0</span>
+                                                    <span class="blind">4,900</span>
+                                                    <span class="no4">4</span><span class="shim">,</span><span class="no9">9</span><span class="no0">0</span><span class="no0">0</span>
                                                 </em>
                                                 <span class="bar">l</span>
                                                 
                                                 
+                                                <em class="no_up">
+                                                    <span class="ico plus">+</span>
                                                     
-                                                    <em class="no_down">
-                                                        <span class="ico minus">-</span>
-                                                        
+                                                    
                                                         
                                                             
-                                                            <span class="blind">1.69</span>
-                                                            <span class="no1">1</span><span class="jum">.</span><span class="no6">6</span><span class="no9">9</span>
-                                                            <span class="per">%</span>
-                                                        </em>
-                            </p>
-                        </div>
-                        <table summary="주요 시세(전일종가, 시고저가, 거래량, 거래대금)을 제공합니다." class="no_info">
-                            <caption>주요 시세</caption>
-                            <colgroup>
-                                <col>
-                                <col width="214">
-                                <col width="157">
-                            </colgroup>
-                            <tr>
-                                <td class="first">
-                                    <span class="sptxt sp_txt2">전일</span>
-                                    <em>
-                                        <span class="blind">100,400</span>
-                                        <span class="no1">1</span><span class="no0">0</span><span class="no0">0</span><span class="shim">,</span><span class="no4">4</span><span class="no0">0</span><span class="no0">0</span>
-                                    </em>
-                                </td>
-                                <td>
-                                    <span class="sptxt sp_txt4">고가</span>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        <em class="no_up">
-                                            
-                                                
-                                                    
-                                                    
-                                                    
-                                                    
-                                                        
-                                                        <span class="blind">101,600</span><span class="no1">1</span><span class="no0">0</span><span class="no1">1</span><span class="shim">,</span><span class="no6">6</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                                <span class="sptxt sp_txt6">(상한가</span>
-                                                <em class="no_cha">
-                                                    
-                                                        
-                                                        <span class="blind">130,500</span><span class="no1">1</span><span class="no3">3</span><span class="no0">0</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                                <span class="sptxt sp_txt8">)</span>
-                                </td>
-                                <td>
-                                    <span class="sptxt sp_txt9">거래량</span>
-                                    <em>
-                                        <span class="blind">578,107</span>
-                                        <span class="no5">5</span><span class="no7">7</span><span class="no8">8</span><span class="shim">,</span><span class="no1">1</span><span class="no0">0</span><span class="no7">7</span>
-                                    </em>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="first">
-                                    <span class="sptxt sp_txt3">시가</span>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        
-                                            <em
-                                                    class="no_down">
-                                                
-                                                    
-                                                    
-                                                    
-                                                    
-                                                        
-                                                        <span class="blind">99,700</span><span class="no9">9</span><span class="no9">9</span><span class="shim">,</span><span class="no7">7</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                </td>
-                                <td>
-                                    <span class="sptxt sp_txt5">저가</span>
-                                    
-                                    
-                                    
-                                    
-                                    
-                                        
-                                            <em
-                                                    class="no_down">
-                                                
-                                                    
-                                                    
-                                                    
-                                                    
-                                                        
-                                                        <span class="blind">96,700</span><span class="no9">9</span><span class="no6">6</span><span class="shim">,</span><span class="no7">7</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                                <span class="sptxt sp_txt7">(하한가</span>
-                                                <em class="no_cha">
-                                                    
-                                                        
-                                                        <span class="no7">7</span><span class="no0">0</span><span class="shim">,</span><span class="no3">3</span><span class="no0">0</span><span class="no0">0</span>
-                                                    
-                                                </em>
-                                                <span class="sptxt sp_txt8">)</span>
-                                </td>
-                                <td>
-                                    <span class="sptxt sp_txt10">거래대금</span>
-                                    <em>
-                                        
-                                            
-                                            
-                                                <span class="blind">57,290</span>
-                                                <span class="no5">5</span><span class="no7">7</span><span class="shim">,</span><span class="no2">2</span><span class="no9">9</span><span class="no0">0</span>
-                                            
-                                        
-                                    </em>
-                                    <span class="sptxt sp_txt11">백만</span>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>
-
-                
-                    <div class="rate_info" id="rate_info_nxt" style="display: none;">
-                        
-                        <dl class="blind">
-                            <dt><strong>심텍</strong></dt>
-                            <dd>오늘의시세 98,700 포인트</dd>
-                            <dd>0 포인트 보합</dd>
-                            <dd>0.00% </dd>
-                        </dl>
-                        
-
-                        <div class="today">
-                            <p class="no_today">
-                                
-                                
-                                    
-                                        
-                                        <em class="X">
-                                            
-                                            
-                                            <span class="blind">98,700</span>
-                                            <span class="no9">9</span><span class="no8">8</span><span class="shim">,</span><span class="no7">7</span><span class="no0">0</span><span class="no0">0</span>
-                                        </em>
-                            </p>
-                            <p class="no_exday">
-                                <span class="sptxt sp_txt1">전일대비</span>
-                                
-                                
-                                    
-                                        
-                                            
-                                                
-                                                <em class="X">
-                                                    <span class="ico sam">보합</span>
-                                                    
-                                                    
-                                                    <span class="blind">0</span>
-                                                    <span class="no0">0</span>
-                                                </em>
-                                                <span class="bar">l</span>
-                                                
-                                                
-                                                    
-                                                        
-                                                        <em class="X">
-                                                            
-                                                            
-                                                            <span class="blind">0.00</span>
-                                                            <span class="no0">0</span><span class="jum">.</span><span class="no0">0</span><span class="no0">0</span>
+                                                            <span class="blind">4.96</span>
+                                                            <span class="no4">4</span><span class="jum">.</span><span class="no9">9</span><span class="no6">6</span>
                                                             <span class="per">%</span>
                                                         </em>
                             </p>
@@ -1062,22 +893,22 @@ function select_gigan(type, pst) {
                                     
                                     
                                     
-                                        
+                                        <em class="no_up">
                                             
-                                                <em>
+                                                
                                                     
                                                     
                                                     
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="blind">107,400</span><span class="no1">1</span><span class="no0">0</span><span class="no7">7</span><span class="shim">,</span><span class="no4">4</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                                 <span class="sptxt sp_txt6">(상한가</span>
                                                 <em class="no_cha">
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="blind">128,300</span><span class="no1">1</span><span class="no2">2</span><span class="no8">8</span><span class="shim">,</span><span class="no3">3</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                                 <span class="sptxt sp_txt8">)</span>
@@ -1085,8 +916,178 @@ function select_gigan(type, pst) {
                                 <td>
                                     <span class="sptxt sp_txt9">거래량</span>
                                     <em>
-                                        <span class="blind">0</span>
-                                        <span class="no0">0</span>
+                                        <span class="blind">910,745</span>
+                                        <span class="no9">9</span><span class="no1">1</span><span class="no0">0</span><span class="shim">,</span><span class="no7">7</span><span class="no4">4</span><span class="no5">5</span>
+                                    </em>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="first">
+                                    <span class="sptxt sp_txt3">시가</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <em class="no_up">
+                                            
+                                                
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        
+                                                        <span class="blind">101,100</span><span class="no1">1</span><span class="no0">0</span><span class="no1">1</span><span class="shim">,</span><span class="no1">1</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                </td>
+                                <td>
+                                    <span class="sptxt sp_txt5">저가</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        
+                                            <em
+                                                    class="no_down">
+                                                
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        
+                                                        <span class="blind">97,200</span><span class="no9">9</span><span class="no7">7</span><span class="shim">,</span><span class="no2">2</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                                <span class="sptxt sp_txt7">(하한가</span>
+                                                <em class="no_cha">
+                                                    
+                                                        
+                                                        <span class="no6">6</span><span class="no9">9</span><span class="shim">,</span><span class="no1">1</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                                <span class="sptxt sp_txt8">)</span>
+                                </td>
+                                <td>
+                                    <span class="sptxt sp_txt10">거래대금</span>
+                                    <em>
+                                        
+                                            
+                                            
+                                                <span class="blind">93,540</span>
+                                                <span class="no9">9</span><span class="no3">3</span><span class="shim">,</span><span class="no5">5</span><span class="no4">4</span><span class="no0">0</span>
+                                            
+                                        
+                                    </em>
+                                    <span class="sptxt sp_txt11">백만</span>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+
+                
+                    <div class="rate_info" id="rate_info_nxt"  style="display: block;">
+                        
+                        <dl class="blind">
+                            <dt><strong>심텍</strong></dt>
+                            <dd>오늘의시세 105,500 포인트</dd>
+                            <dd>6,800 포인트 상승</dd>
+                            <dd>6.89% 플러스</dd>
+                        </dl>
+                        
+
+                        <div class="today">
+                            <p class="no_today">
+                                
+                                
+                                <em class="no_up">
+                                    
+                                    
+                                        
+                                            
+                                            <span class="blind">105,500</span>
+                                            <span class="no1">1</span><span class="no0">0</span><span class="no5">5</span><span class="shim">,</span><span class="no5">5</span><span class="no0">0</span><span class="no0">0</span>
+                                        </em>
+                            </p>
+                            <p class="no_exday">
+                                <span class="sptxt sp_txt1">전일대비</span>
+                                
+                                
+                                    
+                                    <em class="no_up">
+                                        <span class="ico up">상승</span>
+                                        
+                                        
+                                            
+                                                
+                                                    
+                                                    <span class="blind">6,800</span>
+                                                    <span class="no6">6</span><span class="shim">,</span><span class="no8">8</span><span class="no0">0</span><span class="no0">0</span>
+                                                </em>
+                                                <span class="bar">l</span>
+                                                
+                                                
+                                                <em class="no_up">
+                                                    <span class="ico plus">+</span>
+                                                    
+                                                    
+                                                        
+                                                            
+                                                            <span class="blind">6.89</span>
+                                                            <span class="no6">6</span><span class="jum">.</span><span class="no8">8</span><span class="no9">9</span>
+                                                            <span class="per">%</span>
+                                                        </em>
+                            </p>
+                        </div>
+                        <table summary="주요 시세(전일종가, 시고저가, 거래량, 거래대금)을 제공합니다." class="no_info">
+                            <caption>주요 시세</caption>
+                            <colgroup>
+                                <col>
+                                <col width="214">
+                                <col width="157">
+                            </colgroup>
+                            <tr>
+                                <td class="first">
+                                    <span class="sptxt sp_txt2">전일</span>
+                                    <em>
+                                        <span class="blind">98,700</span>
+                                        <span class="no9">9</span><span class="no8">8</span><span class="shim">,</span><span class="no7">7</span><span class="no0">0</span><span class="no0">0</span>
+                                    </em>
+                                </td>
+                                <td>
+                                    <span class="sptxt sp_txt4">고가</span>
+                                    
+                                    
+                                    
+                                    
+                                    
+                                        <em
+                                                class="no_up">
+                                            
+                                                
+                                                    
+                                                    
+                                                    
+                                                    
+                                                        
+                                                        <span class="blind">107,400</span><span class="no1">1</span><span class="no0">0</span><span class="no7">7</span><span class="shim">,</span><span class="no4">4</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                                <span class="sptxt sp_txt6">(상한가</span>
+                                                <em class="no_cha">
+                                                    
+                                                        
+                                                        <span class="blind">128,300</span><span class="no1">1</span><span class="no2">2</span><span class="no8">8</span><span class="shim">,</span><span class="no3">3</span><span class="no0">0</span><span class="no0">0</span>
+                                                    
+                                                </em>
+                                                <span class="sptxt sp_txt8">)</span>
+                                </td>
+                                <td>
+                                    <span class="sptxt sp_txt9">거래량</span>
+                                    <em>
+                                        <span class="blind">642,697</span>
+                                        <span class="no6">6</span><span class="no4">4</span><span class="no2">2</span><span class="shim">,</span><span class="no6">6</span><span class="no9">9</span><span class="no7">7</span>
                                     </em>
                                 </td>
                             </tr>
@@ -1105,8 +1106,8 @@ function select_gigan(type, pst) {
                                                     
                                                     
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="blind">98,700</span><span class="no9">9</span><span class="no8">8</span><span class="shim">,</span><span class="no7">7</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                 </td>
@@ -1118,21 +1119,22 @@ function select_gigan(type, pst) {
                                     
                                     
                                         
-                                            
-                                                <em>
+                                            <em
+                                                    class="no_down">
+                                                
                                                     
                                                     
                                                     
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="blind">96,200</span><span class="no9">9</span><span class="no6">6</span><span class="shim">,</span><span class="no2">2</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                                 <span class="sptxt sp_txt7">(하한가</span>
                                                 <em class="no_cha">
                                                     
-                                                        <span class="no0">0</span>
                                                         
+                                                        <span class="no6">6</span><span class="no9">9</span><span class="shim">,</span><span class="no1">1</span><span class="no0">0</span><span class="no0">0</span>
                                                     
                                                 </em>
                                                 <span class="sptxt sp_txt8">)</span>
@@ -1143,8 +1145,8 @@ function select_gigan(type, pst) {
                                         
                                             
                                             
-                                                <span class="blind">0</span>
-                                                <span class="no0">0</span>
+                                                <span class="blind">66,183</span>
+                                                <span class="no6">6</span><span class="no6">6</span><span class="shim">,</span><span class="no1">1</span><span class="no8">8</span><span class="no3">3</span>
                                             
                                         
                                     </em>
@@ -1186,7 +1188,7 @@ function select_gigan(type, pst) {
                         <p class="source">한국거래소(KRX)</p>
                         <h5 class="blind">이미지 차트</h5>
                         <img id="img_chart_area"
-                             src="https://ssl.pstatic.net/imgfinance/chart/item/area/day/222800.png?sidcode=1779231586879"
+                             src="https://ssl.pstatic.net/imgfinance/chart/item/area/day/222800.png?sidcode=1779280522029"
                              width="700" height="289" alt="이미지 차트"
                              onerror="this.src='https://ssl.pstatic.net/imgstock/chart3/world2008/error_700x289.png'">
                     </div>
@@ -1772,7 +1774,7 @@ function select_gigan(type, pst) {
                     oUpdateAjax.request();
                   }
 
-                  var dateTime = "20260519161025";
+                  var dateTime = "20260520161024";
                   var closeDate = dateTime.substring(0, 4) + "." + dateTime.substring(4, 6) + "." + dateTime.substring(6, 8);
 
                   /**
@@ -1785,7 +1787,7 @@ function select_gigan(type, pst) {
                     jindo.$A(jindo.$$("dl.line dd ul li")).forEach(function (v) {
                       if (jindo.$Element(v).className() == target) {
                         jindo.$Element(v).child()[0].addClass("on");
-                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/area/" + target + "/222800.png?sidcode=1779231586879");
+                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/area/" + target + "/222800.png?sidcode=1779280522029");
                       } else {
                         jindo.$Element(v).child()[0].removeClass("on");
                       }
@@ -1807,7 +1809,7 @@ function select_gigan(type, pst) {
                     jindo.$A(jindo.$$("dl.bar dd ul li")).forEach(function (v) {
                       if (jindo.$Element(v).className() == target) {
                         jindo.$Element(v).child()[0].addClass("on");
-                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/candle/" + target + "/222800.png?sidcode=1779231586879");
+                        jindo.$Element(jindo.$$.getSingle("#img_chart_area")).attr("src", "https://ssl.pstatic.net/imgfinance/chart/item/candle/" + target + "/222800.png?sidcode=1779280522029");
                       } else {
                         jindo.$Element(v).child()[0].removeClass("on");
                       }
@@ -2032,24 +2034,11 @@ function select_gigan(type, pst) {
 				
 				
 				<td class="title bg01"><span class="">신한투자증권</span></td>
-				<td class="num bg01"><span class="tah p11">2,202,447</span></td>
+				<td class="num bg01"><span class="tah p11">2,207,774</span></td>
 			
 				
 				<td class="title bg02"><span class="">신한투자증권</span></td>
-				<td class="num bg02"><span class="tah p11">2,157,646</span></td>
-			
-				</tr>	
-			
-				<tr>
-					
-				
-				
-				<td class="title bg01"><span class="">키움증권</span></td>
-				<td class="num bg01"><span class="tah p11">1,790,729</span></td>
-			
-				
-				<td class="title bg02"><span class="">한국투자증권</span></td>
-				<td class="num bg02"><span class="tah p11">1,804,041</span></td>
+				<td class="num bg02"><span class="tah p11">2,166,566</span></td>
 			
 				</tr>	
 			
@@ -2058,11 +2047,24 @@ function select_gigan(type, pst) {
 				
 				
 				<td class="title bg01"><span class="">한국투자증권</span></td>
-				<td class="num bg01"><span class="tah p11">1,770,771</span></td>
+				<td class="num bg01"><span class="tah p11">1,779,293</span></td>
+			
+				
+				<td class="title bg02"><span class="">한국투자증권</span></td>
+				<td class="num bg02"><span class="tah p11">1,836,590</span></td>
+			
+				</tr>	
+			
+				<tr>
+					
+				
+				
+				<td class="title bg01"><span class="">키움증권</span></td>
+				<td class="num bg01"><span class="tah p11">1,770,210</span></td>
 			
 				
 				<td class="title bg02"><span class="">키움증권</span></td>
-				<td class="num bg02"><span class="tah p11">1,478,461</span></td>
+				<td class="num bg02"><span class="tah p11">1,469,488</span></td>
 			
 				</tr>	
 			
@@ -2071,11 +2073,11 @@ function select_gigan(type, pst) {
 				
 				
 				<td class="title bg01"><span class="">NH투자증권</span></td>
-				<td class="num bg01"><span class="tah p11">1,179,394</span></td>
+				<td class="num bg01"><span class="tah p11">1,170,652</span></td>
 			
 				
 				<td class="title bg02"><span class="">NH투자증권</span></td>
-				<td class="num bg02"><span class="tah p11">1,170,621</span></td>
+				<td class="num bg02"><span class="tah p11">1,193,840</span></td>
 			
 				</tr>	
 			
@@ -2084,11 +2086,11 @@ function select_gigan(type, pst) {
 				
 				
 				<td class="title bg01"><span class="">KB증권</span></td>
-				<td class="num bg01"><span class="tah p11">780,554</span></td>
+				<td class="num bg01"><span class="tah p11">775,006</span></td>
 			
 				
 				<td class="title bg02"><span class="red01">제이피모간</span></td>
-				<td class="num bg02"><span class="tah p11 red01">498,427</span></td>
+				<td class="num bg02"><span class="tah p11 red01">524,817</span></td>
 			
 				</tr>	
 			
@@ -2104,7 +2106,7 @@ function select_gigan(type, pst) {
 					<td class="title bg03" height="40"><span class="c">외국인 순매매량</span></td>
 					<td class="bg03 num"></td>
 					<td class="title bg04">
-					<strong class="tah p11 red01">(329,330)</strong>
+					<strong class="tah p11 red01">(243,235)</strong>
 					</td>
 					<td class="bg04 num"></td>
 					</tr>
@@ -2220,6 +2222,61 @@ function select_gigan(type, pst) {
 				
 					
 							<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
+							<td width="62" class="tc"><span class="tah p10 gray03">2026.05.20</span></td>
+							<td width="67" class="num"><span class="tah p11">103,600</span></td>
+							<td width="67" class="num">
+				<em class="bu_p bu_pup"><span class="blind">상승</span></em><span class="tah p11 red02">
+				4,900
+				</span>
+			</td>
+							<td width="67" class="num">
+				<span class="tah p11 red01">
+				+4.96%
+				</span>
+			</td>
+							<td width="67" class="num"><span class="tah p11">910,745</span></td>
+			
+					
+						
+							<td width="66" class="num"><span class="tah p11 red01">+106,685</span></td>
+						
+						
+						
+					
+			
+					
+						
+						
+							<td width="80" class="num"><span class="tah p11 nv01">-149,662</span></td>
+						
+						
+					
+			
+					
+					
+					
+					<td width="76" class="num"><span class="tah p11">5,829,364</span></td>
+					
+					
+					
+					
+					
+					<td width="60" class="num"><span class="tah p11">15.56%</span></td>
+					
+					
+					
+					</tr>
+					
+					
+				
+				
+				
+					
+				
+			
+				
+					
+							<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
 							<td width="62" class="tc"><span class="tah p10 gray03">2026.05.19</span></td>
 							<td width="67" class="num"><span class="tah p11">98,700</span></td>
 							<td width="67" class="num">
@@ -2253,13 +2310,13 @@ function select_gigan(type, pst) {
 					
 					
 					
-					<td width="76" class="num"><span class="tah p11">5,996,664</span></td>
+					<td width="76" class="num"><span class="tah p11">5,979,026</span></td>
 					
 					
 					
 					
 					
-					<td width="60" class="num"><span class="tah p11">16.01%</span></td>
+					<td width="60" class="num"><span class="tah p11">15.96%</span></td>
 					
 					
 					
@@ -2435,6 +2492,10 @@ function select_gigan(type, pst) {
 				
 				
 					
+							<tr><td colspan="9" height="8"></td></tr>
+							<tr><td colspan="9" height="1" bgcolor="#e1e1e1"></td></tr>
+							<tr><td colspan="9" height="8"></td></tr>
+					
 				
 			
 				
@@ -2489,10 +2550,6 @@ function select_gigan(type, pst) {
 				
 				
 				
-					
-							<tr><td colspan="9" height="8"></td></tr>
-							<tr><td colspan="9" height="1" bgcolor="#e1e1e1"></td></tr>
-							<tr><td colspan="9" height="8"></td></tr>
 					
 				
 			
@@ -2714,6 +2771,10 @@ function select_gigan(type, pst) {
 				
 				
 					
+							<tr><td colspan="9" height="8"></td></tr>
+							<tr><td colspan="9" height="1" bgcolor="#e1e1e1"></td></tr>
+							<tr><td colspan="9" height="8"></td></tr>
+					
 				
 			
 				
@@ -2768,10 +2829,6 @@ function select_gigan(type, pst) {
 				
 				
 				
-					
-							<tr><td colspan="9" height="8"></td></tr>
-							<tr><td colspan="9" height="1" bgcolor="#e1e1e1"></td></tr>
-							<tr><td colspan="9" height="8"></td></tr>
 					
 				
 			
@@ -2993,6 +3050,10 @@ function select_gigan(type, pst) {
 				
 				
 					
+							<tr><td colspan="9" height="8"></td></tr>
+							<tr><td colspan="9" height="1" bgcolor="#e1e1e1"></td></tr>
+							<tr><td colspan="9" height="8"></td></tr>
+					
 				
 			
 				
@@ -3047,10 +3108,6 @@ function select_gigan(type, pst) {
 				
 				
 				
-					
-							<tr><td colspan="9" height="8"></td></tr>
-							<tr><td colspan="9" height="1" bgcolor="#e1e1e1"></td></tr>
-							<tr><td colspan="9" height="8"></td></tr>
 					
 				
 			
@@ -3274,61 +3331,6 @@ function select_gigan(type, pst) {
 					
 				
 			
-				
-					
-							<tr onMouseOver="mouseOver(this)" onMouseOut="mouseOut(this)">
-							<td width="62" class="tc"><span class="tah p10 gray03">2026.04.20</span></td>
-							<td width="67" class="num"><span class="tah p11">78,300</span></td>
-							<td width="67" class="num">
-				<em class="bu_p bu_pup"><span class="blind">상승</span></em><span class="tah p11 red02">
-				2,100
-				</span>
-			</td>
-							<td width="67" class="num">
-				<span class="tah p11 red01">
-				+2.76%
-				</span>
-			</td>
-							<td width="67" class="num"><span class="tah p11">886,420</span></td>
-			
-					
-						
-							<td width="66" class="num"><span class="tah p11 red01">+51,156</span></td>
-						
-						
-						
-					
-			
-					
-						
-							<td width="80" class="num"><span class="tah p11 red01">+68,525</span></td>
-						
-						
-						
-					
-			
-					
-					
-					
-					<td width="76" class="num"><span class="tah p11">5,853,978</span></td>
-					
-					
-					
-					
-					
-					<td width="60" class="num"><span class="tah p11">15.68%</span></td>
-					
-					
-					
-					</tr>
-					
-					
-				
-				
-				
-					
-				
-			
 
 			<tr><td colspan="9" height="8"></td></tr>
 			</table>
@@ -3428,7 +3430,7 @@ function select_gigan(type, pst) {
 										
 										3조
 										
-											6,977
+											8,813
 										
 									
 								</em>억원</td>
@@ -3439,7 +3441,7 @@ function select_gigan(type, pst) {
 									
 									<a href="/sise/sise_market_sum.naver?sosok=1" class="link_site" onClick="clickcr(this, 'sop.19', '', '1', event)">시가총액순위</a>
 								
-							</th><td>코스닥 <em>22</em>위</td></tr>
+							</th><td>코스닥 <em>21</em>위</td></tr>
 						
 						<tr>
 							<th scope="row">상장주식수</th>
@@ -3468,7 +3470,7 @@ function select_gigan(type, pst) {
 							</tr>
 							<tr>
 								<th scope="row">외국인보유주식수(B)</th>
-								<td><em>6,060,989</em></td>
+								<td><em>5,979,026</em></td>
 							</tr>
 							<tr class="strong">
 								<th scope="row"><strong>외국인소진율(B/A)</strong><a href="javascript:togglePannel('helpPannel0');" onMouseOver="showPannel('helpPannel0');" onMouseOut="hidePannel('helpPannel0');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="외국인소진율(B/A) 상세설명"></a>
@@ -3480,7 +3482,7 @@ function select_gigan(type, pst) {
 		                                 </div>
 		                            </div>
 								</th>
-								<td><em>16.18%</em></td>
+								<td><em>15.96%</em></td>
 							</tr>
 							</table>
 							</div>
@@ -3518,7 +3520,7 @@ function select_gigan(type, pst) {
 									<td>
 										<em>119,800</em>
 										<span class="bar">l</span>
-										<em>16,650</em>
+										<em>16,940</em>
 									</td>
 								
 							
@@ -3533,7 +3535,7 @@ function select_gigan(type, pst) {
 		                    <tbody>
 		                    <tr>
 	 							<th scope="row">
-	 								PER<span class="bar">l</span>EPS<span class="date">(2025.12)</span><a href="javascript:togglePannel('helpPannel1');" onMouseOver="showPannel('helpPannel1');" onMouseOut="hidePannel('helpPannel1');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="추정PER EPS 상세설명"></a>
+	 								PER<span class="bar">l</span>EPS<span class="date">(2026.03)</span><a href="javascript:togglePannel('helpPannel1');" onMouseOver="showPannel('helpPannel1');" onMouseOut="hidePannel('helpPannel1');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="추정PER EPS 상세설명"></a>
 	 								<div class="lyr_section">
 	 									<div id="helpPannel1" class="tooltip_lyr" style="display:none">
 	 										<p>
@@ -3555,7 +3557,7 @@ function select_gigan(type, pst) {
 									<span class="bar">l</span>
 									
 										
-										<em id="_eps">-4,955</em>원
+										<em id="_eps">-3,289</em>원
 									
 	 							</td>
  						    </tr>
@@ -3575,7 +3577,7 @@ function select_gigan(type, pst) {
 								<td>
 									
 										
-										<em id="_cns_per">30.00</em>배
+										<em id="_cns_per">32.00</em>배
 									
 									<span class="bar">l</span>
 									
@@ -3585,7 +3587,7 @@ function select_gigan(type, pst) {
 								</td>
 							</tr>
 							<tr>
-								<th scope="row">PBR<span class="bar">l</span>BPS <span class="date">(2025.12)</span><a href="javascript:togglePannel('helpPannel4');" onMouseOver="showPannel('helpPannel4');" onMouseOut="hidePannel('helpPannel4');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="PBR | BPS 상세설명"></a>
+								<th scope="row">PBR<span class="bar">l</span>BPS <span class="date">(2026.03)</span><a href="javascript:togglePannel('helpPannel4');" onMouseOver="showPannel('helpPannel4');" onMouseOut="hidePannel('helpPannel4');"><img src="https://ssl.pstatic.net/static/nfinance/2018/10/26/btn_help.png" width="11" height="11" alt="PBR | BPS 상세설명"></a>
 									<div class="lyr_section">
 										<div id="helpPannel4" class="tooltip_lyr tooltip_lyr3" style="display:none">
 											<p>
@@ -3639,7 +3641,7 @@ function select_gigan(type, pst) {
 								<td>
 									
 										
-										<em>205.95</em>배
+										<em>194.37</em>배
 									
 								</td>
 							</tr>
@@ -3648,8 +3650,8 @@ function select_gigan(type, pst) {
 								
 									
 									
-				<td class="f_down"><em>
-				-3.22%
+				<td class="f_up"><em>
+				+3.18%
 				</em></td>
 			
 								
@@ -3679,29 +3681,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					103
+					952
 				
 				</td>
 				<td>
 				
 					
-					99,900
-				
-				</td>
-				<td class="td_r"></td>
-				</tr>
-			
-				<tr class="f_down">
-				<td>
-				
-					
-					254
-				
-				</td>
-				<td>
-				
-					
-					99,800
+					104,500
 				
 				</td>
 				<td class="td_r"></td>
@@ -3711,29 +3697,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					164
+					121
 				
 				</td>
 				<td>
 				
 					
-					99,700
-				
-				</td>
-				<td class="td_r"></td>
-				</tr>
-			
-				<tr class="f_down">
-				<td>
-				
-					
-					1
-				
-				</td>
-				<td>
-				
-					
-					99,600
+					104,400
 				
 				</td>
 				<td class="td_r"></td>
@@ -3743,29 +3713,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					271
+					221
 				
 				</td>
 				<td>
 				
 					
-					99,500
-				
-				</td>
-				<td class="td_r"></td>
-				</tr>
-			
-				<tr class="f_down">
-				<td>
-				
-					
-					22
-				
-				</td>
-				<td>
-				
-					
-					99,400
+					104,300
 				
 				</td>
 				<td class="td_r"></td>
@@ -3775,29 +3729,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					1
+					1,705
 				
 				</td>
 				<td>
 				
 					
-					99,300
-				
-				</td>
-				<td class="td_r"></td>
-				</tr>
-			
-				<tr class="f_down">
-				<td>
-				
-					
-					479
-				
-				</td>
-				<td>
-				
-					
-					99,200
+					104,200
 				
 				</td>
 				<td class="td_r"></td>
@@ -3807,13 +3745,77 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					987
+					6,648
 				
 				</td>
 				<td>
 				
 					
-					99,100
+					104,100
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					1,136
+				
+				</td>
+				<td>
+				
+					
+					104,000
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					487
+				
+				</td>
+				<td>
+				
+					
+					103,900
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					646
+				
+				</td>
+				<td>
+				
+					
+					103,800
+				
+				</td>
+				<td class="td_r"></td>
+				</tr>
+			
+				<tr class="f_down">
+				<td>
+				
+					
+					686
+				
+				</td>
+				<td>
+				
+					
+					103,700
 				
 				</td>
 				<td class="td_r"></td>
@@ -3823,13 +3825,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					838
+					694
 				
 				</td>
 				<td>
 				
 					
-					99,000
+					103,600
 				
 				</td>
 				<td class="td_r"></td>
@@ -3844,13 +3846,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					98,700
+					103,500
 				
 				</td>
 				<td class="td_r">
 				
 					
-					188
+					474
 				
 				</td>
 			</tr>
@@ -3860,13 +3862,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					98,600
+					103,400
 				
 				</td>
 				<td class="td_r">
 				
 					
-					429
+					245
 				
 				</td>
 				</tr>
@@ -3876,13 +3878,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					98,500
+					103,300
 				
 				</td>
 				<td class="td_r">
 				
 					
-					483
+					281
 				
 				</td>
 				</tr>
@@ -3892,13 +3894,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					98,400
+					103,200
 				
 				</td>
 				<td class="td_r">
 				
 					
-					713
+					461
 				
 				</td>
 				</tr>
@@ -3908,13 +3910,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					98,300
+					103,100
 				
 				</td>
 				<td class="td_r">
 				
 					
-					401
+					282
 				
 				</td>
 				</tr>
@@ -3924,13 +3926,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					98,200
+					103,000
 				
 				</td>
 				<td class="td_r">
 				
 					
-					852
+					428
 				
 				</td>
 				</tr>
@@ -3940,13 +3942,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					98,100
+					102,900
 				
 				</td>
 				<td class="td_r">
 				
 					
-					392
+					2,191
 				
 				</td>
 				</tr>
@@ -3956,13 +3958,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					98,000
+					102,800
 				
 				</td>
 				<td class="td_r">
 				
 					
-					2,830
+					77
 				
 				</td>
 				</tr>
@@ -3972,13 +3974,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					97,900
+					102,700
 				
 				</td>
 				<td class="td_r">
 				
 					
-					546
+					331
 				
 				</td>
 				</tr>
@@ -3988,13 +3990,13 @@ function select_gigan(type, pst) {
 				<td>
 				
 					
-					97,800
+					102,600
 				
 				</td>
 				<td class="td_r">
 				
 					
-					453
+					3,039
 				
 				</td>
 				</tr>
@@ -4004,14 +4006,14 @@ function select_gigan(type, pst) {
 				<td class="f_down">
 					
 						
-						3,120
+						13,296
 					
 				</td>
 				<td>잔량합계</td>
 				<td class="f_up">
 					
 						
-						7,287
+						7,809
 					
 				</td>
 			</tr>
@@ -4203,11 +4205,11 @@ var comment_page = "1";
 		
 		<tr>
 			<th scope="row" class="no1"><a href="/item/main.naver?code=005930" target=_top onClick="clickcr(this, 'pss.2', '', '1', event);">삼성전자</a></th>
-			<td>275,500</td>
+			<td>276,000</td>
 			<td>
 				
-				<em class="f_down down"><span>하향</span>
-				5,500
+				<em class="f_up up"><span>상향</span>
+				500
 				</em>
 			
 			</td>
@@ -4219,9 +4221,7 @@ var comment_page = "1";
 			<td>1,745,000</td>
 			<td>
 				
-				<em class="f_down down"><span>하향</span>
-				95,000
-				</em>
+				<em class="sam"><span>보합</span></em>
 			
 			</td>
 		</tr>
@@ -4229,11 +4229,11 @@ var comment_page = "1";
 		
 		<tr>
 			<th scope="row" class="no3"><a href="/item/main.naver?code=005380" target=_top onClick="clickcr(this, 'pss.2', '', '3', event);">현대차</a></th>
-			<td>604,000</td>
+			<td>592,000</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				59,000
+				12,000
 				</em>
 			
 			</td>
@@ -4241,12 +4241,12 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no4"><a href="/item/main.naver?code=066570" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">LG전자</a></th>
-			<td>191,700</td>
+			<th scope="row" class="no4"><a href="/item/main.naver?code=009150" target=_top onClick="clickcr(this, 'pss.2', '', '4', event);">삼성전기</a></th>
+			<td>1,061,000</td>
 			<td>
 				
-				<em class="f_down down"><span>하향</span>
-				25,300
+				<em class="f_up up"><span>상향</span>
+				74,000
 				</em>
 			
 			</td>
@@ -4254,12 +4254,12 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no5"><a href="/item/main.naver?code=042700" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">한미반도체</a></th>
-			<td>288,000</td>
+			<th scope="row" class="no5"><a href="/item/main.naver?code=066570" target=_top onClick="clickcr(this, 'pss.2', '', '5', event);">LG전자</a></th>
+			<td>181,000</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				29,000
+				10,700
 				</em>
 			
 			</td>
@@ -4270,11 +4270,11 @@ var comment_page = "1";
 		
 		<tr>
 			<th scope="row" class="no6"><a href="/item/main.naver?code=034020" target=_top onClick="clickcr(this, 'pss.2', '', '6', event);">두산에너빌리..</a></th>
-			<td>106,000</td>
+			<td>101,300</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				6,100
+				4,700
 				</em>
 			
 			</td>
@@ -4282,13 +4282,11 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no7"><a href="/item/main.naver?code=454910" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">두산로보틱스</a></th>
-			<td>100,100</td>
+			<th scope="row" class="no7"><a href="/item/main.naver?code=001570" target=_top onClick="clickcr(this, 'pss.2', '', '7', event);">금양</a></th>
+			<td>9,900</td>
 			<td>
 				
-				<em class="f_down down"><span>하향</span>
-				17,800
-				</em>
+				<em class="sam"><span>보합</span></em>
 			
 			</td>
 		</tr>
@@ -4296,11 +4294,11 @@ var comment_page = "1";
 		
 		<tr>
 			<th scope="row" class="no8"><a href="/item/main.naver?code=006400" target=_top onClick="clickcr(this, 'pss.2', '', '8', event);">삼성SDI</a></th>
-			<td>587,000</td>
+			<td>570,000</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				26,000
+				17,000
 				</em>
 			
 			</td>
@@ -4308,12 +4306,12 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no9"><a href="/item/main.naver?code=035420" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">NAVER</a></th>
-			<td>198,100</td>
+			<th scope="row" class="no9"><a href="/item/main.naver?code=042700" target=_top onClick="clickcr(this, 'pss.2', '', '9', event);">한미반도체</a></th>
+			<td>287,500</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				1,900
+				500
 				</em>
 			
 			</td>
@@ -4321,12 +4319,12 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no10"><a href="/item/main.naver?code=005490" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">POSCO홀딩스</a></th>
-			<td>440,500</td>
+			<th scope="row" class="no10"><a href="/item/main.naver?code=010120" target=_top onClick="clickcr(this, 'pss.2', '', '10', event);">LS ELECTRIC</a></th>
+			<td>238,500</td>
 			<td>
 				
 				<em class="f_down down"><span>하향</span>
-				22,500
+				5,000
 				</em>
 			
 			</td>
@@ -4348,55 +4346,55 @@ var comment_page = "1";
 	
 		
 		<tr>
-			<th scope="row" class="no1"><a href="/item/main.naver?code=086520" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">에코프로</a></th>
-			<td>121,600</td>
-			<td>
-				<em class="f_down down"><span>하향</span>
-				5,200
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no2"><a href="/item/main.naver?code=010170" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">대한광통신</a></th>
-			<td>21,550</td>
-			<td>
-				<em class="f_down down"><span>하향</span>
-				1,550
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no3"><a href="/item/main.naver?code=347700" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">스피어</a></th>
-			<td>46,900</td>
-			<td>
-				<em class="f_down down"><span>하향</span>
-				1,250
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no4"><a href="/item/main.naver?code=439960" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">코스모로보틱..</a></th>
-			<td>48,600</td>
-			<td>
-				<em class="f_up up_arrow"><span>상한가</span>
-				11,200
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no5"><a href="/item/main.naver?code=196170" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">알테오젠</a></th>
-			<td>366,500</td>
+			<th scope="row" class="no1"><a href="/item/main.naver?code=010170" target=_top onClick="clickcr(this, 'pss.4', '', '1', event);">대한광통신</a></th>
+			<td>22,900</td>
 			<td>
 				<em class="f_up up"><span>상향</span>
-				9,000
+				1,350
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no2"><a href="/item/main.naver?code=086520" target=_top onClick="clickcr(this, 'pss.4', '', '2', event);">에코프로</a></th>
+			<td>118,700</td>
+			<td>
+				<em class="f_down down"><span>하향</span>
+				2,900
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no3"><a href="/item/main.naver?code=036930" target=_top onClick="clickcr(this, 'pss.4', '', '3', event);">주성엔지니어..</a></th>
+			<td>178,500</td>
+			<td>
+				<em class="f_up up"><span>상향</span>
+				1,600
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no4"><a href="/item/main.naver?code=319400" target=_top onClick="clickcr(this, 'pss.4', '', '4', event);">현대무벡스</a></th>
+			<td>32,350</td>
+			<td>
+				<em class="f_down down"><span>하향</span>
+				600
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no5"><a href="/item/main.naver?code=277810" target=_top onClick="clickcr(this, 'pss.4', '', '5', event);">레인보우로보..</a></th>
+			<td>638,000</td>
+			<td>
+				<em class="f_down down"><span>하향</span>
+				28,000
 				</em>
 			</td>
 		</tr>
@@ -4405,55 +4403,55 @@ var comment_page = "1";
 			<tr><td colspan="3" class="line"></td></tr>
 		
 		<tr>
-			<th scope="row" class="no6"><a href="/item/main.naver?code=080220" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">제주반도체</a></th>
-			<td>95,900</td>
+			<th scope="row" class="no6"><a href="/item/main.naver?code=439960" target=_top onClick="clickcr(this, 'pss.4', '', '6', event);">코스모로보틱..</a></th>
+			<td>56,200</td>
 			<td>
 				<em class="f_up up"><span>상향</span>
-				3,300
+				7,600
 				</em>
 			</td>
 		</tr>
 	
 		
 		<tr>
-			<th scope="row" class="no7"><a href="/item/main.naver?code=036930" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">주성엔지니어..</a></th>
-			<td>176,900</td>
+			<th scope="row" class="no7"><a href="/item/main.naver?code=247540" target=_top onClick="clickcr(this, 'pss.4', '', '7', event);">에코프로비엠</a></th>
+			<td>176,700</td>
 			<td>
 				<em class="f_down down"><span>하향</span>
-				5,300
+				5,700
 				</em>
 			</td>
 		</tr>
 	
 		
 		<tr>
-			<th scope="row" class="no8"><a href="/item/main.naver?code=247540" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">에코프로비엠</a></th>
-			<td>182,400</td>
+			<th scope="row" class="no8"><a href="/item/main.naver?code=000250" target=_top onClick="clickcr(this, 'pss.4', '', '8', event);">삼천당제약</a></th>
+			<td>347,000</td>
 			<td>
 				<em class="f_down down"><span>하향</span>
-				8,000
+				18,500
 				</em>
 			</td>
 		</tr>
 	
 		
 		<tr>
-			<th scope="row" class="no9"><a href="/item/main.naver?code=048410" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">현대바이오</a></th>
-			<td>10,990</td>
-			<td>
-				<em class="f_up up"><span>상향</span>
-				10
-				</em>
-			</td>
-		</tr>
-	
-		
-		<tr>
-			<th scope="row" class="no10"><a href="/item/main.naver?code=319400" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">현대무벡스</a></th>
-			<td>32,950</td>
+			<th scope="row" class="no9"><a href="/item/main.naver?code=196170" target=_top onClick="clickcr(this, 'pss.4', '', '9', event);">알테오젠</a></th>
+			<td>359,500</td>
 			<td>
 				<em class="f_down down"><span>하향</span>
-				4,600
+				7,000
+				</em>
+			</td>
+		</tr>
+	
+		
+		<tr>
+			<th scope="row" class="no10"><a href="/item/main.naver?code=033100" target=_top onClick="clickcr(this, 'pss.4', '', '10', event);">제룡전기</a></th>
+			<td>62,200</td>
+			<td>
+				<em class="f_down down"><span>하향</span>
+				1,000
 				</em>
 			</td>
 		</tr>
