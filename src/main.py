@@ -62,6 +62,16 @@ def main() -> None:
         _as_list(daily_sec13f),
     ))
     write_json(processed_dir / "sec13f_history.json", strip_empty(sec13f_history))
+    write_json(processed_dir / "run_status.json", strip_empty({
+        "run_date": run_date.isoformat(),
+        "generated_at_kst": generated_at_kst,
+        "run_context": "github_actions" if os.getenv("GITHUB_ACTIONS") == "true" else "local",
+        "history_merge_mode": "update_existing_security_and_append_new_security",
+        "daily_stock_rows": len(daily_scored),
+        "cumulative_stock_rows": len(scored_history),
+        "daily_13f_rows": len(daily_sec13f),
+        "cumulative_13f_rows": len(sec13f_history),
+    }))
 
     sections = build_sections(scored_history, sec13f_history)
     write_outputs(
