@@ -1,0 +1,983 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="ko" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="NaverBot" content="All" />
+    <meta name="NaverBot" content="index,follow" />
+    <meta name="Yeti" content="All" />
+    <meta name="Yeti" content="index,follow" />
+    <title>포스코인터내셔널(047050) | 컨센서스 | 기업정보 | Company Guide</title>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" type="image/x-icon" href="/favicon.ico?ver=1">
+    <meta name="description" content="에프앤가이드 상장기업분석" />
+    <meta name="image" content="" />
+    <meta name="keywords" content="에프앤가이드, 에프엔가이드, FnGuide, fn가이드" />
+    <meta name="author" content="에프앤가이드" />
+    <meta name="copyright" content="Copyright© FnGuide Inc. All rights reserved." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="에프앤가이드" />
+    <meta property="og:description" content="에프앤가이드 상장기업분석" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta name="dtyp" content="D" />
+    <meta name="sno" content="3" />
+    
+    <link href="https://wcompcdn.fnguide.com/bundles/jquery/css?ver=20260903162248" rel="stylesheet"/>
+
+    <link href="https://wcompcdn.fnguide.com/bundles/css?ver=20260903162248" rel="stylesheet"/>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery/core?ver=20260903162248"></script>
+<script>(window.jQuery)||document.write('<script src="/bundles/jquery/core"><\/script>');</script>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery?ver=20260903162248"></script>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jsfile?ver=20260903162248"></script>
+    
+</head>
+<body class="">
+    <div class="fng_body ">
+        <div class="fng_wrap">
+            <!-- Str : HEADER -->
+            
+
+    <div class="headwrap">
+        <div class="headertop">
+            <h1><a class="menu_link" href="/"><span> 상장기업분석 </span></a></h1>
+                <div class="hdt_center">
+                    <a href="https://help-retamin.fnguide.com/ko/articles/%EC%BB%B4%EA%B0%80%EB%AF%B8%EB%8B%88-77ea5fab" target="_blank" class="hdt_bnr" style="background-image:url(../../Contents/images/fngc_topBnr_bg.png?v260827);width:300px;height:40px;background-size:100%;">
+                        <strong>
+                            <span class="txt1" style="background-image:url(../../Contents/images/fngc_topBnr_txt.png?v260827);width:300px;height:40px;background-size:100%;">
+                                <i class="hide">추석특가, 리타민 증권사 리포트 3+1</i>
+                            </span>
+                            <span class="txt2" style="background-image:url(../../Contents/images/fngc_topBnr_txt_hover.png?v260827);width:300px;height:40px;background-size:100%;">
+                                <i class="hide">9월 한정, 3개월 결제 시 1개월 무료</i>
+                            </span>
+                        </strong>
+                    </a>
+                </div>
+            <div class="hdt_rgt">
+                <form name="frmMain" method="get">
+                    <div class="input_ty1 lk_in">
+                        <input type="text" id="searchCompany" title="정확한 종목명 또는 종목코드 입력(잘모를 경우 다음 종목찾기 링크 이용)" placeholder="종목명 또는 종목코드 입력" autocomplete="off" />
+                        <button type="button" class="btn_lookup" title="종목검색팝업 새창열기"><span class="htxt">열기</span></button>
+                    </div>
+                    <button type="button" onClick="GoPrint();" class="btn_ty1"><span>인쇄</span></button>
+                </form>
+            </div>
+        </div>
+        <div class="headergnb" id="compGnb">
+            <ul class="gnb_dp1wrap">
+                <!-- [개발] 페이지 이동시 class : gnb_ac 적용 -->
+                <li class="gnb_dp1 gnb_ac">
+                    <a href="/CompanyInfo/Snapshot" class="menu_link">기업정보</a>
+                    <ul class="gnb_dp2wrap gnb_n1">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/CompanyInfo/Snapshot" class="menu_link ">Snapshot</a>
+                            <a href="/CompanyInfo/Information" class="menu_link ">기업개요</a>
+                            <a href="/CompanyInfo/Finance" class="menu_link ">재무제표</a>
+                            <a href="/CompanyInfo/FinanceRatio" class="menu_link ">재무비율</a>
+                            <a href="/CompanyInfo/Invest" class="menu_link ">투자지표</a>
+                            <a href="/CompanyInfo/Consensus" class="menu_link ac">컨센서스</a>
+                        </li>
+                        <li class="gnb_dp2">
+                            <a href="/CompanyInfo/ShareAnalysis" class="menu_link ">지분분석</a>
+                            <a href="/CompanyInfo/SectorAnalysis" class="menu_link ">업종분석</a>
+                            <a href="/CompanyInfo/Comparison" class="menu_link ">경쟁사비교</a>
+                            <a href="/CompanyInfo/Disclosure" class="menu_link ">거래소공시</a>
+                            <a href="/CompanyInfo/Dart" class="menu_link ">금감원공시</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1  ">
+                    <a href="/Etp/EtfSnapshot" class="menu_link ">ETF/ETN 정보</a>
+                    <ul class="gnb_dp2wrap gnb_n2">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Etp/EtfSnapshot" class="menu_link ">ETF Snapshot</a>
+                            <a href="/Etp/EtfAnalysis" class="menu_link ">성과 및 위험분석</a>
+                            <a href="/Etp/EtnSnapshot" class="menu_link ">ETN Snapshot</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1  ">
+                    <a href="/Report/ReportTrend" class="menu_link">리포트</a>
+                    <ul class="gnb_dp2wrap gnb_n3">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Report/ReportTrend" class="menu_link ">리포트동향</a>
+                            <a href="/Report/ReportSummary" class="menu_link ">요약리포트</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/CompPerformance/ProResultCorp" class="menu_link">실적속보</a>
+                    <ul class="gnb_dp2wrap gnb_n4">
+                        <li class="gnb_dp2 gnb_dp2_start"></li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Consensus/TargetPriceGap" class="menu_link">컨센서스 스크리닝</a>
+                    <ul class="gnb_dp2wrap gnb_n5">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Consensus/TargetPriceGap" class="menu_link ">목표주가 괴리율</a>
+                            <a href="/Consensus/UpDownRatio" class="menu_link ">컨센서스 상/하향 비율</a>
+                            <a href="/Consensus/EarningSurprise" class="menu_link ">어닝서프라이즈</a>
+                            <a href="/Consensus/TurnAround" class="menu_link ">턴어라운드</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Ranking/SectorRank" class="menu_link">랭킹 분석</a>
+                    <ul class="gnb_dp2wrap gnb_n6">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Ranking/SectorRank" class="menu_link ">업종별 순위</a>
+                            <a href="/Ranking/IdxRank" class="menu_link ">지표별 순위</a>
+                            <a href="/Ranking/EtfRank" class="menu_link ">ETF 순위</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Calendar/CompCalendar" class="menu_link">캘린더</a>
+                    <ul class="gnb_dp2wrap gnb_n7">
+                        <li class="gnb_dp2 gnb_dp2_start"></li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/SideInfo/CorporationList" class="menu_link">부가정보</a>
+                    <ul class="gnb_dp2wrap gnb_n8">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            
+                            <a href="/SideInfo/CorporationList" class="menu_link ">기업주소록</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Help/Guide" class="menu_link">이용안내</a>
+                    <ul class="gnb_dp2wrap gnb_n9">
+                        <li class="gnb_dp2 gnb_dp2_start"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+            <div class="ad_vertical">                
+                <div class="ad_left" style="position:fixed;top: 150px;width:300px;height:600px;margin-left:-320px;">
+                    <a href="https://help-retamin.fnguide.com/ko/articles/%EC%BB%B4%EA%B0%80%EC%A2%8C%EC%9A%B0-9557a1e2" target="_blank" style="display:block;width:300px;height:600px;background-image:url(../../Contents/images/fngc_leftBnr_img.png?v260827);background-size:100%;">
+                        <span class="hide">추석맞이 특가! 3개월 가격으로 4개월 무제한. 25% 할인 효과! 전 증권사 리포트를 자유롭게 보세요. 리타민 특가로 시작하기</span>
+                    </a>
+                </div>
+                <div class="ad_right" style="position:fixed;top:150px;width:300px;height:600px;margin-left:1028px;background-image:url(../../Contents/images/fngc_rightBnr_img.png?v260827);background-size:100%;">
+                    <a href="https://help-retamin.fnguide.com/ko/articles/%EC%BB%B4%EA%B0%80%EC%A2%8C%EC%9A%B0-9557a1e2" target="_blank" style="display:block;width:100%;height:100%;">
+                        <span class="hide">9월 한정 혜택, 증권사 리포트 1개월 무료 혜택 받아보세요. 모바일로 언제 어디서나 3개월 결제하면 1개월 더! 리타민 1개월 무료 혜택 받기</span>
+                    </a>
+                </div>
+            </div>
+        <!-- End : 사이드 배너 -->
+
+    </div>
+
+            <!-- End : HEADER -->
+            <!-- Str : CONTAINER -->
+            <div class="contwrap" id="compBody">
+                
+<!-- STR : 공통기업개요 -->
+
+<input id="cmp_nm" name="cmp_nm" type="hidden" value="포스코인터내셔널" />
+<input id="stk_typ" name="stk_typ" type="hidden" value="1" />
+<input id="master_chk" name="master_chk" type="hidden" value="C" />
+
+
+
+    <div class="section ul_corpinfo">
+        <div class="corp_group1">
+            <h1 id="giName">포스코인터내셔널</h1>
+            <h2>047050</h2><span class="etc1">&#124;</span><h2>12월 결산</h2> <span class="etc1">&#124;</span>
+            <button type="button" onClick="goHompage('www.poscointl.com')" id="btn_shome" class="btn_shome">홈페이지</button>
+            <dl style="display:none;" id="dl_btn_shome">
+                <dt>홈페이지</dt>
+                <dd id="dd_btn_shome">www.poscointl.com</dd>
+            </dl>
+            <button type="button" id="btn_sphone" class="btn_sphone">전화번호</button>
+            <dl style="display:none;" id="dl_btn_sphone">
+                <dt>전화번호</dt>
+                <dd>02-759-2114 | IR 담당자 02-3457-2288</dd>
+            </dl>
+            <button type="button" id="btn_spmap" data-val="서울시 중구 통일로 10" data-nm="포스코인터내셔널" class="btn_spmap">주소</button>
+            <dl style="display:none;" id="dl_btn_spmap">
+                <dt>주소</dt>
+                <dd id="dd_btn_spmap">서울시 중구 통일로 10</dd>
+            </dl>
+            <p class="stxt_group">
+                <span class="stxt">KOSPI</span>
+                    <span class="etc2">&#124;</span>
+                    <span class="stxt">코스피 유통</span>
+                    <span style="display:none" id="strMarketTxt"> KOSPI 코스피 유통</span>
+                                    <span class="etc2">&#124;</span>
+                    <span class="stxt stxt2">WI26 상사,자본재</span>
+                                    <span class="etc2">&#124;</span>
+                    <span class="stxt stxt3">K200</span>
+                                    <span class="etc2">&#124;</span>
+                    <span class="stxt">NXT</span>
+            </p>
+        </div>
+        <div class="corp_group2" id="corp_group2">
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>PER(Price Earning Ratio)</dt>
+                        <dd>전일자 보통주 수정주가 / 최근 결산 수정EPS(주당순이익) <br>*EPS = 당기순이익(지배) / 수정평균발행주식수<br>*최근결산은 2025/12 (연간) 기준임.</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_per">PER</button>
+                </li>
+                <li>15.90 </li>
+            </ul>
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>PER(Fwd.12M)</dt>
+                        <dd>전일자 보통주 수정주가 / EPS(Fwd.12M, 지배)</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_12m">PER(Fwd.12M)</button>
+                </li>
+                <li> 10.08 </li>
+            </ul>
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>업종 PER</dt>
+                        <dd>WI26 상사,자본재∥SUM(구성종목 시가총액)/SUM(구성종목 당기순이익)<br>*전일자 보통주 시가총액 기준<br>*당기순이익은은 최근결산 2025/12 (연간) 기준임.</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_u_per"><span class="ko">업종</span> PER</button>
+                </li>
+                <li> 31.58 </li>
+            </ul>
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>PBR(Price Book-value Ratio)</dt>
+                        <dd>전일자 보통주 수정주가 / 최근 결산기 BPS(주당순자산)<br>*BPS=자본총계(지배) / 수정기말발행주식수(자사주차감)<br>*최근결산은 2025/12 (연간) 기준임.</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_pbr">PBR</button>
+                </li>
+                <li>1.41 </li>
+            </ul>
+            <ul>
+                <li>
+                    <dl style="display:none;">
+                        <dt>현금배당수익률</dt>
+                        <dd>{최근 결산 보통주 수정DPS(현금,연간) / 전일자 보통주 수정주가} *100<br>*최근결산은 2025/12 (연간) 기준임.</dd>
+                    </dl>
+                    <button type="button" class="tip_in" id="h_rate"><span class="ko">현금배당수익률</span></button>
+                </li>
+                <li>3.33 % </li>
+            </ul>
+        </div>
+    </div>
+
+<script src="/Scripts/companyInfo-common?v=uDdgptwFwz57KMh0oOC6JXlxmGs2bcIDl7tl_rTtHUI1"></script>
+
+<!-- END: 공통기업개요 -->
+
+<!-- STR : 공통기업개요 -->
+<!-- END: 공통기업개요 -->
+<div class="section ul_de">
+    <!-- 실적&컨센서스 추이 -->
+
+
+        <div class="ul_col2wrap pd_t25">
+            <div class="um_topbar bmshadow">
+                <div class="topbar_wrap">
+                    <div class="topbar_lft">
+                        <h2>실적&amp;컨센서스 추이</h2>
+                        <span class="stxt rsp_hidden" id="perfor_trend_title">[연결 | 연간 | 영업이익]</span>
+                    </div>
+                    <div class="topbar_rgt pd_r4">
+                        <span class="txt1">단위 : 억원, 배</span>
+                        <div class="um_gbtn grd_ty1 fl" id="perfor_trend_consol_typ">
+                            <button type="button" class="gbtn_f r3  ac " data-val="C">연결</button>
+                            <button type="button" class="gbtn_e r3 " data-val="P">별도</button>
+                        </div>
+                        <div class="um_gbtn grd_ty2 fl" id="perfor_trend_aq_typ">
+                            <button type="button" class="gbtn_f r3 ac" data-val="Y">연간</button>
+                            <button type="button" class="gbtn_e r3" data-val="Q">분기</button>
+                        </div>
+                        <div class="us_select_ty1" style="width:130px;">
+                            <span class="vbox">
+                                <span class="vtxt" id="perfor_trend_acct_title"></span>
+                            </span>
+                            <span class="iarrow"></span>
+                            <select id="perfor_trend_acct" title="계정 선택">
+                                <option value="1">매출액</option>
+                                <option value="2" selected>영업이익</option>
+                                <option value="3">당기순이익</option>
+                            </select>
+                        </div>
+                        <button type="button" id="perfor_trend_submit" class="us_btn_ty1 fl">조회</button>
+                    </div>
+                </div>
+            </div>
+            <div class="um_chart chart_ht1" style="height:255px;">
+                <div class="chart_wrap" id="CNS_01" style="width:733px;margin:0 auto;"></div>
+            </div>
+
+            <div class="ul_co1_c pd_t1">
+                <div class="um_table">
+                    <table class="us_table_ty1 h_fix zigbg_no" id="tbl_cns_perfor_trend_head">
+                        <caption class="cphidden">실적&amp;컨센서스 추이</caption>
+                        <colgroup>
+                            <col style="width: 28%;">
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead id="">
+
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    <!-- End : else -->
+    <!-- 컨센서스 시계열 추이 -->
+    <div class="ul_wrap rwd_in">
+        <div class="um_topbar bmshadow">
+            <div class="topbar_wrap">
+                <div class="topbar_lft">
+                    <h2>컨센서스 시계열 추이</h2>
+                    <span class="stxt rsp_hidden" id="trend_title">[연결 | 연간]</span>
+                </div>
+                <div class="topbar_rgt pd_r4">
+                    <span class="txt1">단위 : 억원, 배</span>
+                    <div class="um_gbtn grd_ty1 fl" id="trend_consol_typ">
+                        <button type="button" class="gbtn_f r3 ac" data-val="C">연결</button>
+                        <button type="button" class="gbtn_e r3 " data-val="P">별도</button>
+                    </div>
+                    <div class="um_gbtn grd_ty2 fl" id="trend_aq_typ">
+                        <button type="button" class="gbtn_f r3 ac" data-val="Y">연간</button>
+                        <button type="button" class="gbtn_e r3" data-val="Q">분기</button>
+                    </div>
+                    <div class="us_select_ty1" style="width:68px;">
+                        <span class="vbox">
+                            <span class="vtxt"></span>
+                        </span>
+                        <span class="iarrow"></span>
+                        <select id="trend_gsym" title="결산년월 선택"></select>
+                    </div>
+                    <button type="button" id="trend_submit" class="us_btn_ty1 fl">조회</button>
+                </div>
+            </div>
+        </div>
+        <div class="um_col2wrap">
+            <div class="um_col2_l">
+                <div class="um_wrap">
+                    <div class="um_table" id="grid2">
+                        <table class="us_table_ty1 h_fix zigbg_no th_topbdno" id="cns_trend_table">
+                            <caption class="cphidden">컨센서스 시계열 추이</caption>
+                            <colgroup>
+                                <col style="width: 28%;">
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead id="theadcontent2">
+                                <tr>
+                                    <th class="clf tbold" scope="col"></th>
+                                    <th scope="col"></th>
+                                    <th scope="col">1개월전</th>
+                                    <th scope="col">3개월전</th>
+                                    <th scope="col">6개월전</th>
+                                    <th class="cle" scope="col">1년전</th>
+                                </tr>
+                            </thead>
+                            <tbody id="bodycontent2"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <div class="um_col2_r">
+                <div class="um_wrap">
+                    <div class="um_consentab" id="trend_acct_tab">
+                        <button type="button" data-val="0">매출액</button>
+                        <button type="button" data-val="1" class="ac">영업이익</button>
+                        <button type="button" data-val="2">당기순이익</button>
+                        <button type="button" data-val="3">EPS</button>
+                        <button type="button" data-val="4">PER</button>
+                        <button type="button" data-val="5" class="end">PER(Fwd.12M)</button>
+                    </div>
+                    <div class="um_chart chart_ht2" style="height:225px;">
+                        <div class="chart_wrap" id="CNS_02">
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 증권사별 적정주가 & 투자의견 -->
+    <div class="ul_wrap">
+        <div class="um_topbar botbd_n bmshadow">
+            <div class="topbar_wrap">
+                <div class="topbar_lft">
+                    <h2>증권사별 적정주가 &amp; 투자의견</h2>
+                </div>
+                <div class="topbar_rgt">
+                    <span class="txt1">단위 : 원, %</span>
+                </div>
+            </div>
+        </div>
+        <div class="um_table">
+            <table class="us_table_ty1 h_fix">
+                <caption class="cphidden">증권사별 적정주가 &amp; 투자의견</caption>
+                <colgroup>
+                    <col>
+                    <col style="width: 12%;">
+                    <col style="width: 12%;">
+                    <col style="width: 12%;">
+                    <col style="width: 10%;">
+                    <col style="width: 10%;">
+                    <col style="width: 10%;">
+                </colgroup>
+                <thead>
+                    <tr class="th2row_f">
+                        <th rowspan="2" class="clf tbold" scope="col">추정기관</th>
+                        <th rowspan="2" class="tbold" scope="col">추정일자</th>
+                        <th colspan="3" scope="col">적정주가</th>
+                        <th class="cle" colspan="2" scope="col">투자의견</th>
+                    </tr>
+                    <tr>
+                        <th scope="col">적정주가</th>
+                        <th scope="col">직전 적정주가</th>
+                        <th scope="col">증감율</th>
+                        <th scope="col">투자의견</th>
+                        <th scope="col" class="cle">직전 투자의견</th>
+                    </tr>
+                </thead>
+                <tbody>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="tbody_tit2 ">
+                                <td class="l">Consensus</td>
+                                <td class="c"></td>
+                                <td class="r">89,692</td>
+                                <td class="r">99,462</td>
+                                <td class="r  tcr">-9.82</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">삼성증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">80,000</td>
+                                <td class="r">84,000</td>
+                                <td class="r  tcr">-4.76</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">신한투자증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">82,000</td>
+                                <td class="r">82,000</td>
+                                <td class="r  ">0.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">신영증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">110,000</td>
+                                <td class="r">110,000</td>
+                                <td class="r  ">0.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">유안타증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">112,000</td>
+                                <td class="r">112,000</td>
+                                <td class="r  ">0.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">유진투자증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">80,000</td>
+                                <td class="r">110,000</td>
+                                <td class="r  tcr">-27.27</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">키움증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">80,000</td>
+                                <td class="r">80,000</td>
+                                <td class="r  ">0.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">흥국증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">78,000</td>
+                                <td class="r">108,000</td>
+                                <td class="r  tcr">-27.78</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">하나증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">105,000</td>
+                                <td class="r">105,000</td>
+                                <td class="r  ">0.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">다올투자증권</td>
+                                <td class="c">2026/07/31</td>
+                                <td class="r">82,000</td>
+                                <td class="r">82,000</td>
+                                <td class="r  ">0.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">KB증권</td>
+                                <td class="c">2026/07/30</td>
+                                <td class="r">83,000</td>
+                                <td class="r">100,000</td>
+                                <td class="r  tcr">-17.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">미래에셋증권</td>
+                                <td class="c">2026/07/30</td>
+                                <td class="r">110,000</td>
+                                <td class="r">110,000</td>
+                                <td class="r  ">0.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class="zigbg_in ">
+                                <td class="l">DB증권</td>
+                                <td class="c">2026/07/15</td>
+                                <td class="r">80,000</td>
+                                <td class="r">110,000</td>
+                                <td class="r  tcr">-27.27</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+<!--0이면 첫줄 클래스 0이아니고 짝수로우일때-->
+                            <tr class=" ">
+                                <td class="l">상상인증권</td>
+                                <td class="c">2026/07/13</td>
+                                <td class="r">84,000</td>
+                                <td class="r">100,000</td>
+                                <td class="r  tcr">-16.00</td>
+                                <td class="r">4.00</td>
+                                <td class="cle r">4.00</td>
+                            </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 최신리포트리포트 요약 -->
+    <div class="ul_wrap">
+        <div class="um_topbar bmshadow">
+            <div class="topbar_wrap">
+                <div class="topbar_lft">
+                    <h2>리포트 요약</h2>
+                    <span class="stxt"></span>
+                </div>
+                <div class="topbar_rgt">
+                    <span class="txt1">단위 : 원</span>
+                </div>
+            </div>
+        </div>
+        <div class="um_table">
+            <table class="us_table_ty1 h_pd" id="tbl_rpt_sum_summary">
+                <caption class="cphidden">리포트요약</caption>
+                <colgroup>
+                    <col style="width:8%">
+                    <col>
+                    <col style="width:11%">
+                    <col style="width:10%">
+                    <col style="width:10%">
+                    <col style="width:12%">
+                </colgroup>
+                <thead>
+                    <tr class="th_b">
+                        <th class="clf" scope="col">일자</th>
+                        <th scope="col">종목명 - 리포트 요약</th>
+                        <th scope="col">투자의견</th>
+                        <th scope="col">목표주가</th>
+                        <th scope="col">전일종가</th>
+                        <th scope="col">제공처/작성자</th>
+                    </tr>
+                </thead>
+                <tbody id="bodycontent4"></tbody>
+            </table>
+        </div>
+    </div>
+
+
+</div>
+
+<script type="text/template" id="tmpl_cns_perfor_trend_head">
+    <% if(data.length > 0) { %>
+    <tr>
+        <th scope="col" class="clf tbold"><%= console_nm %></th>
+        <% _.each(data, function(v, i) { %>
+        <% if (v.EP_CHK =='E' ||  v.EP_CHK =='P'  ) { %>
+        <th scope="col">
+            <div>
+                <dl style="display:none;">
+                    <dt>(<%= v.EP_CHK %>) : <%= v.EP_CHK == 'E'? 'Estimate':'Provisional' %></dt>
+                    <dd><%= v.EP_CHK == 'E'? '컨센서스, 추정치':'잠정실적' %> </dd>
+                </dl>
+                <button type="button" class="tip_in">
+                    <span class="txt_acd"><%= v.YYMM %>(<%= v.EP_CHK %>)</span>
+                </button>
+            </div>
+        </th>
+        <% } else { %>
+        <th scope="col"><%= v.YYMM %></th>
+        <% } %>
+        <% }) %>
+    </tr>
+    <% } %>
+</script>
+
+<script type="text/template" id="tmpl_cns_perfor_trend_body">
+    <% if(data.length > 0) { var parent_id = ''  ;  var  p_ac_code =''; %>
+
+    <% _.each(data, function(v, i) { %>
+    <% if(v.LVL == '1'  ) {
+    parent_id = v.AC_CODE+'_'+ i
+    if(i < data.length-1 ){
+    p_ac_code = data[i+1].P_AC_CODE;
+    }
+    %>
+    <!--부모 계정 -->
+    <tr id="p_perfor_<%=parent_id%>" class=" acd_dep_start_open">
+        <th scope="row" class="l <%= i == 0 ? 'clf' : (data.length - 1 == i ? 'cle' : '') %>">
+            <div>
+                <% if(v.FORMULA == null){ %>
+                <span class="txt_acd txt_ell"><%= v.NAME.replace(/ /gi, '\xa0') %></span>
+                <span class="csize"><%= v.UNIT %></span>
+                <%}else{%>
+                <% var formula = v.FORMULA.split('||||'); %>
+                <dl style="display:none;">
+                    <dt><%= formula[0] %></dt>
+                    <dd><%= formula[1] %></dd>
+                </dl>
+                <button class="tip_in txt_ell icons"><%= v.NAME.replace(/ /gi, '\xa0') %></button>
+                <span class="csize"><%= v.UNIT %></span>
+                <%}%>
+
+                <!--자식있다면-->
+                <% if( v.AC_CODE == p_ac_code ){ %>
+                <button type="button" class="btn_acdclose btn_showhide">
+                    <span class="blind" id="span_grid1_0">계산에 참여한 계정 펼치기</span>
+                </button>
+                <% }%>
+
+            </div>
+        </th>
+        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL1,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL2,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL3,v.DIGIT,'-') %></td>
+        <td class="r tdbg_b <%= v.VAL4 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL4,v.DIGIT,'-') %></td>
+        <td class="r tdbg_b <%= v.VAL5 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL5,v.DIGIT,'-') %></td>
+        <td class="r cle tdbg_b <%= v.VAL6 < 0 ? 'tcr' : '' %>"> <%= FnGuideUtil.Format.currencyFixed( v.VAL6,v.DIGIT,'-') %></td>
+    </tr>
+    <% } else { %>
+    <!--자식 계정 -->
+    <tr class="c_perfor_<%=parent_id %>  acd_dep2_sub">
+        <th scope="row" class="clf">
+            <div>
+                <% if(v.FORMULA == null){ %>
+                <div><%= v.NAME.replace(/ /gi, '\xa0') %><span class="csize"><%=v.UNIT %></span></div>
+                <%}else{%>
+                <% var formula = v.FORMULA.split('||||'); %>
+                <dl style="display:none;">
+                    <dt><%= formula[0] %></dt>
+                    <dd><%= formula[1] %></dd>
+                </dl>
+                <button class="tip_in txt_ell icons"><%= v.NAME.replace(/ /gi, '\xa0') %></button>
+                <span class="csize"><%= v.UNIT %></span>
+                <%}%>
+            </div>
+        </th>
+        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL1,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL2,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %>" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL3,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL4 < 0 ? 'tcr' : '' %> tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL4,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL5 < 0 ? 'tcr' : '' %> tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL5,v.DIGIT,'-') %></td>
+        <td class="r <%= v.VAL6 < 0 ? 'tcr' : '' %> cle tdbg_b" title=""><%= FnGuideUtil.Format.currencyFixed( v.VAL6,v.DIGIT,'-') %></td>
+    </tr>
+    <% }%>
+    <% }) }%>
+
+</script>
+
+<script type="text/template" id="tmpl_cns_trend_yymm">
+    <% if(data.length > 0) { %>
+    <% _.each(data, function (v, i) {
+    if( i== 0 ){
+    %>
+    <option selected value="<%= v.YYMM %>"><%= v.YYMM_F %></option>
+    <%}else{%>
+    <option value="<%= v.YYMM %>"><%= v.YYMM_F %></option>
+    <%}%>
+    <%})%>
+    <%} %>
+</script>
+
+<script type="text/template" id="tmpl_cns_trend">
+    <% if(data.length > 0) { %>
+    <% _.each(data, function (v, i) { %>
+    <tr>
+        <th scope="row">
+            <div><%= v.ACC_NM %><span class="csize"><%= v.UNIT %></span></div>
+        </th>
+        <!--per,per,투자의견-->
+
+        <td class="r <%= v.VAL1 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL1, v.DIGIT) %> </td>
+        <td class="r <%= v.VAL2 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL2, v.DIGIT) %></td>
+        <td class="r <%= v.VAL3 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL3, v.DIGIT) %></td>
+        <td class="r <%= v.VAL4 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL4, v.DIGIT) %></td>
+        <td class="cle r <%= v.VAL5 < 0 ? 'tcr' : '' %> "><%= FnGuideUtil.Format.currencyEmpZero(v.VAL5, v.DIGIT) %></td>
+    </tr>
+    <%})%>
+
+    <%}else{%>
+    <tr>
+        <td colspan="6" class="c">데이터가 없습니다.</td>
+    </tr>
+    <%}%>
+</script>
+
+
+
+<script type="text/template" id="tmpl_rpt_smr_summary">
+    <% if(data.length > 0) {  %>
+    <% _.each(data, function (v, i) { %>
+    <tr class="<%= i % 2 == 0 ? 'zigbg_in' : '' %>" data-rpt_id="<%= v.RPT_ID %>" data-cmp_cd="<%= v.CMP_CD %>">
+        <td class="c clf"><%= v.DT %></td>
+        <td class="l nopre">
+            <dl class="um_tdinsm">
+                <dt>
+                    <a href="javascript:;" title="<%= v.CMP_NM_KOR + ' 스냅샷 페이지로 이동' %>" class="snapshotLink"><%= v.CMP_NM_KOR + ' ' + v.CMP_CD %></a>
+                    <span class="txt2"><%= v.RPT_TITLE != null && v.RPT_TITLE != '' ? ' - ' + v.RPT_TITLE : '' %></span>
+                </dt>
+                <%
+                var commentArray = FnGuideUtil.Report.commentToArray(2, v.COMMENT, '▶');
+
+                _.each(commentArray, function (v, i) {
+                if(i < 2) {
+                %>
+                <dd><%= v %></dd>
+                <%
+                }
+                });
+                %>
+            </dl>
+        </td>
+        <td class="c nopre2">
+            <span class="gpbox">
+                <%
+                var recommClass = '';
+                switch(v.RECOMM_ACTION_TYP) {
+                case 1:
+                recommClass = 'up';
+                break;
+                case 2:
+                recommClass = 'hold';
+                break;
+                case 3:
+                recommClass = 'down';
+                break;
+                case 4:
+                recommClass = 'new';
+                break;
+                }
+
+                if(recommClass != '') {
+                %>
+                <img src="../../Contents/images/shbg.png" alt="<%= v.RECOMM_NM %>" class="gp_img <%= recommClass %>">
+                <%
+                }
+                %>
+                <%= v.RECOMM_NM %>
+            </span>
+        </td>
+        <td class="r nopre2">
+            <span class="gpbox">
+                <%
+                var actionClass = '';
+                switch(v.PRC_ACTION_TYP) {
+                case 1:
+                actionClass = 'up';
+                break;
+                case 2:
+                actionClass = 'hold';
+                break;
+                case 3:
+                actionClass = 'down';
+                break;
+                case 4:
+                actionClass = 'new';
+                break;
+                }
+
+                if(recommClass != '') {
+                %>
+                <img src="../../Contents/images/shbg.png" alt="<%= v.PRC_ACTION_NM %>" class="gp_img <%= actionClass %>">
+                <%
+                }
+                %>
+                <%= v.TARGET_PRC %>
+            </span>
+        </td>
+        <td class="r"><%= v.CLOSE_PRC %></td>
+        <td class="cle c nopre2">
+            <span class="gpbox">
+                <% if(v.BEST_ANALYST_YN == 1) { %>
+                <img src="../../Contents/images/shbg.png" alt="베스트 애널리스트" class="gp_img best">
+                <% } %>
+                <%= v.BRK_NM_KOR %><br />
+                <%= v.ANL_NM_KOR %>
+            </span>
+        </td>
+    </tr>
+    <% }) %>
+    <% } else { %>
+    <tr class="zig_bg">
+        <td colspan="6" class="c">검색된 리포트가 없습니다.</td>
+    </tr>
+    <% } %>
+</script>
+
+
+            </div>
+            <!-- End : CONTAINER-->
+            <!-- Str : FOOTER -->
+            
+
+<div class="bootomwrap">
+    <div class="ul_bottom">
+        <div class="ul_bottomwrap">
+            <a href="http://www.fnguide.com" class="link_txt" target="_blank"><span>fnguide.com</span></a>
+                <div class="txtbox">
+                    <p class="txt">FnGuide에서 제공하는 정보는 신뢰할 만한 자료 및 정보로부터 얻어진 것이나 그 정확성이나 완전성을 보장 할 수 없으며, 시간이 경과함에 따라 변경될 수 있습니다. 따라서 정보의 오류, 누락에 대하여 FnGuide 또는 FnGuide에 자료를 제공하는 회사에서는 그 결과에 대해 법적인 책임을 지지 않습니다. 모든 콘텐츠에 대한 저작권은 FnGuide에 있으며 사전 허가없이 이를 무단으로 사용하거나, 데이터 베이스화 할 경우 민형사상 책임을 물을 수 있습니다.</p>
+                </div>
+        </div>
+
+    </div>
+</div>
+<!-- 툴팁 -->
+<div class="ul_tip_a" style="display: none;">
+    <i class="arrow_top"></i>
+    <dl id="tip_a_cont"></dl>
+</div>
+<div class="ul_tip_b" style="display: none;width: 352px;top:1000px;left: 100px;">
+    <i class="arrow_top"></i>
+    <div class="um_table" id="ul_tip_b_table">
+        <table class="us_table_ty2 h_fix zigbg_no">
+            <caption class="cphidden">캡션</caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr class="th_b">
+                    <th scope="row" class="clf">헤더</th>
+                    <th scope="row" class="cle">헤더</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="rwf">
+                    <td class="clf">내용</td>
+                    <td class="cle tcb">내용</td>
+                </tr>
+                <tr class="zigbg_in">
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+                <tr>
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+                <tr class="zigbg_in">
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+            <!-- End : FOOTER -->
+        </div>
+    </div>
+    <input type="hidden" id="menu_id" value="1" />
+    <input type="hidden" id="sub_menu_id" value="6" />
+    <input type="hidden" id="c_id" value="AA" />
+    <input type="hidden" id="cmp_cd" value="047050" />
+    <input type="hidden" id="defaultCompanyCode" value="005930" />
+    <input type="hidden" id="defaultEtfCode" value="102780" />
+    <input type="hidden" id="defaultEtnCode" value="580010" />
+    <input type="hidden" id="menu_type" value="01" />
+    <input type="hidden" id="lang" value="KR" />
+
+    <script src="/bundles/common?v=xKrR0Vl0O5F5mLVtenk-riI8sDop9XVFpvpQFamcFao1"></script>
+
+    
+    <script src="/Scripts/companyInfo-consensus?v=kpLe2PAyvcSO9uwXu9NQ1U3XkQUvCa4V-Sjeqm_WZ-c1"></script>
+
+<script type="text/javascript">
+         $(document).ready(function () {
+             consensus.init({
+                 cmp_cd: '047050',
+                 consol_typ:'C',
+                 lang: 'KR',
+                 trendYYMM: [{"YYMM":"202612","YYMM_F":"2026/12"},{"YYMM":"202712","YYMM_F":"2027/12"},{"YYMM":"202812","YYMM_F":"2028/12"}],
+                 perforTrend: {"data":[{"NAME":"매출액","AC_CODE":"121000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"331328.21","VAL2":"322609.90","VAL3":"323736.04","VAL4":"351532.46","VAL5":"361221.77","VAL6":"371022.77"},{"NAME":"    전년동기대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-12.78","VAL2":"-2.63","VAL3":"0.35","VAL4":"8.59","VAL5":"2.76","VAL6":"2.71"},{"NAME":"    컨센서스대비","AC_CODE":"121000","P_AC_CODE":"121000","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-1.51","VAL2":"0.84","VAL3":"-1.04","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"영업이익","AC_CODE":"121450","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"11631.12","VAL2":"11578.35","VAL3":"11653.16","VAL4":"14688.23","VAL5":"15554.77","VAL6":"16386.54"},{"NAME":"    전년동기대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"28.88","VAL2":"-0.45","VAL3":"0.65","VAL4":"26.05","VAL5":"5.90","VAL6":"5.35"},{"NAME":"    컨센서스대비","AC_CODE":"121450","P_AC_CODE":"121500","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-3.85","VAL2":"0.03","VAL3":"2.01","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익","AC_CODE":"122700","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"6804.19","VAL2":"5034.10","VAL3":"6368.02","VAL4":"9607.23","VAL5":"10262.08","VAL6":"10991.85"},{"NAME":"    전년동기대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"12.48","VAL2":"-26.01","VAL3":"26.50","VAL4":"50.87","VAL5":"6.82","VAL6":"7.11"},{"NAME":"    컨센서스대비","AC_CODE":"122700","P_AC_CODE":"122700","FORMULA":null,"LVL":2,"UNIT":"(%)","DIGIT":2,"VAL1":"-10.47","VAL2":"-27.93","VAL3":"-0.05","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"당기순이익(지배)","AC_CODE":"122710","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"6738.86","VAL2":"5145.55","VAL3":"6140.85","VAL4":"9196.00","VAL5":"9845.54","VAL6":"10528.62"},{"NAME":"당기순이익(비지배)","AC_CODE":"122720","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"65.34","VAL2":"-111.45","VAL3":"227.17","VAL4":null,"VAL5":null,"VAL6":null},{"NAME":"자산총계","AC_CODE":"111000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"166177.48","VAL2":"173363.26","VAL3":"187530.11","VAL4":"200535.62","VAL5":"207991.08","VAL6":"215931.46"},{"NAME":"부채총계","AC_CODE":"113000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"99929.86","VAL2":"99868.63","VAL3":"109403.55","VAL4":"117912.23","VAL5":"119382.46","VAL6":"120987.69"},{"NAME":"자본총계","AC_CODE":"115000","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"66247.62","VAL2":"73494.63","VAL3":"78126.55","VAL4":"82622.62","VAL5":"88609.38","VAL6":"94943.77"},{"NAME":"  자본총계(지배)","AC_CODE":"115020","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"61032.58","VAL2":"65445.51","VAL3":"67084.34","VAL4":"72094.09","VAL5":"77487.45","VAL6":"83324.55"},{"NAME":"  자본총계(비지배)","AC_CODE":"115850","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"5215.04","VAL2":"8049.12","VAL3":"11042.21","VAL4":"10528.52","VAL5":"11121.93","VAL6":"11619.22"},{"NAME":"자본금","AC_CODE":"115100","P_AC_CODE":null,"FORMULA":null,"LVL":1,"UNIT":null,"DIGIT":0,"VAL1":"8796.14","VAL2":"8796.14","VAL3":"8796.14","VAL4":"8798.46","VAL5":"8798.46","VAL6":"8798.46"},{"NAME":"EPS","AC_CODE":"312000","P_AC_CODE":null,"FORMULA":"EPS||||당기순이익(지배) / 수정평균발행주식수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"3833.71","VAL2":"2924.89","VAL3":"3490.65","VAL4":"5227.29","VAL5":"5596.51","VAL6":"5984.79"},{"NAME":"BPS","AC_CODE":"314000","P_AC_CODE":null,"FORMULA":"BPS||||자본총계(지배) / 수정기말발행주식수(자사주차감)","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"35869.08","VAL2":"38396.96","VAL3":"39358.47","VAL4":"42297.70","VAL5":"45461.99","VAL6":"48886.62"},{"NAME":"현금DPS","AC_CODE":"423400","P_AC_CODE":null,"FORMULA":"DPS||||DPS(보통주,현금) * 무상조정수정계수","LVL":1,"UNIT":"(원)","DIGIT":0,"VAL1":"1000.00","VAL2":"1550.00","VAL3":"1850.00","VAL4":"2395.38","VAL5":"2573.85","VAL6":"2711.54"},{"NAME":"PER","AC_CODE":"382100","P_AC_CODE":null,"FORMULA":"PER||||수정주가(보통주,기말) / 수정EPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"16.28","VAL2":"13.56","VAL3":"14.21","VAL4":"10.62","VAL5":"9.92","VAL6":"9.27"},{"NAME":"PBR","AC_CODE":"382500","P_AC_CODE":null,"FORMULA":"PBR||||수정주가(보통주,기말) / 수정BPS(지배,직전4분기)","LVL":1,"UNIT":null,"DIGIT":2,"VAL1":"1.74","VAL2":"1.03","VAL3":"1.26","VAL4":"1.31","VAL5":"1.22","VAL6":"1.14"}],"header":[{"YYMM":"2023/12","EP_CHK":" ","CD":"VAL1"},{"YYMM":"2024/12","EP_CHK":" ","CD":"VAL2"},{"YYMM":"2025/12","EP_CHK":" ","CD":"VAL3"},{"YYMM":"2026/12","EP_CHK":"E","CD":"VAL4"},{"YYMM":"2027/12","EP_CHK":"E","CD":"VAL5"},{"YYMM":"2028/12","EP_CHK":"E","CD":"VAL6"}]},
+                 perforTrendChart: {"data":[{"YYMM":"2023","FS_YEAR":"2023","ACT_VAL":11631.12,"CNS_VAL":12096.33},{"YYMM":"2024","FS_YEAR":"2024","ACT_VAL":11578.35,"CNS_VAL":11575.14},{"YYMM":"2025","FS_YEAR":"2025","ACT_VAL":11653.16,"CNS_VAL":11423.0},{"YYMM":"2026","FS_YEAR":"2026","ACT_VAL":null,"CNS_VAL":14688.23},{"YYMM":"2027","FS_YEAR":"2027","ACT_VAL":null,"CNS_VAL":15554.77},{"YYMM":"2028","FS_YEAR":"2028","ACT_VAL":null,"CNS_VAL":16386.54}],"header":[{"ID":"FS_YEAR","NM":"일자","DIGIT":-1},{"ID":"ACT_VAL","NM":"영업이익(실적)","DIGIT":2},{"ID":"CNS_VAL","NM":"영업이익(추정)","DIGIT":2}]},
+                 reports: [{"DT":"2026/08/14","PRE_DT":null,"CMP_CD":"047050","RPT_ID":1123817,"RPT_TITLE":"Earnings shine brighter in troubled times","COMMENT":"▶ 2Q26 review: record-high OP  \r\n▶ Earnings to be decent in 2H26, clear growth pillar for 2027  \r\n▶ Record-high earnings, yet trading at just 8x 2027E P/E","CMP_NM_KOR":"포스코인터내셔널","BRK_NM_KOR":"유안타증권","ANL_NM_KOR":"손현정","RECOMM_ACTION_TYP":null,"RECOMM_NM":"Not Rated","PRC_ACTION_TYP":null,"PRC_ACTION_NM":null,"TARGET_PRC":null,"CLOSE_PRC":"55,500","BEST_ANALYST_YN":0}],
+                 cnsTrendChart: {"data":[{"TRD_DT":"25/10/31","VAL_MAX":13670.00,"VAL_MIN":11940.00,"VAL_AVG":12885.15},{"TRD_DT":"25/11/28","VAL_MAX":13670.00,"VAL_MIN":11940.00,"VAL_AVG":12906.67},{"TRD_DT":"25/12/30","VAL_MAX":13670.00,"VAL_MIN":11940.00,"VAL_AVG":12943.33},{"TRD_DT":"26/01/30","VAL_MAX":14370.00,"VAL_MIN":12190.00,"VAL_AVG":13279.93},{"TRD_DT":"26/02/27","VAL_MAX":14370.00,"VAL_MIN":12190.00,"VAL_AVG":13312.92},{"TRD_DT":"26/03/31","VAL_MAX":14370.00,"VAL_MIN":12870.00,"VAL_AVG":13546.38},{"TRD_DT":"26/04/30","VAL_MAX":14553.00,"VAL_MIN":12870.00,"VAL_AVG":13623.54},{"TRD_DT":"26/05/29","VAL_MAX":14553.00,"VAL_MIN":12870.00,"VAL_AVG":13840.81},{"TRD_DT":"26/06/30","VAL_MAX":14553.00,"VAL_MIN":13349.00,"VAL_AVG":13927.62},{"TRD_DT":"26/07/31","VAL_MAX":16040.00,"VAL_MIN":13720.00,"VAL_AVG":14688.23},{"TRD_DT":"26/08/31","VAL_MAX":16040.00,"VAL_MIN":13720.00,"VAL_AVG":14688.23},{"TRD_DT":"26/09/03","VAL_MAX":16040.00,"VAL_MIN":13720.00,"VAL_AVG":14688.23}],"header":[{"ID":"TRD_DT","NM":"일자","DIGIT":-1},{"ID":"VAL_MAX","NM":"컨센서스(최고)","DIGIT":0},{"ID":"VAL_MIN","NM":"컨센서스(최저)","DIGIT":0},{"ID":"VAL_AVG","NM":"컨센서스","DIGIT":2}]},
+                 cnsTrend: {"data":[{"ACC_NM":"매출액","UNIT":"","DIGIT":0,"VAL1":"351532.46","VAL2":"351532.46","VAL3":"336126.44","VAL4":"331730.25","VAL5":"338857.82"},{"ACC_NM":"영업이익","UNIT":"","DIGIT":0,"VAL1":"14688.23","VAL2":"14688.23","VAL3":"13840.81","VAL4":"13312.92","VAL5":"12892.27"},{"ACC_NM":"당기순이익","UNIT":"","DIGIT":0,"VAL1":"9196.00","VAL2":"9196.00","VAL3":"8685.44","VAL4":"7881.00","VAL5":"7786.36"},{"ACC_NM":"EPS","UNIT":"(원)","DIGIT":0,"VAL1":"5227.29","VAL2":"5227.29","VAL3":"4937.07","VAL4":"4479.81","VAL5":"4426.01"},{"ACC_NM":"PER","UNIT":"","DIGIT":2,"VAL1":"10.62","VAL2":"9.81","VAL3":"12.13","VAL4":"15.71","VAL5":"10.96"},{"ACC_NM":"PER(Fwd. 12M)","UNIT":"","DIGIT":2,"VAL1":"10.08","VAL2":"9.37","VAL3":"11.70","VAL4":"15.30","VAL5":"11.40"},{"ACC_NM":"목표주가","UNIT":"(원)","DIGIT":0,"VAL1":"89692.31","VAL2":"89692.31","VAL3":"103733.33","VAL4":"76833.33","VAL5":"64583.33"},{"ACC_NM":"투자의견(점수)","UNIT":"","DIGIT":2,"VAL1":"4.00","VAL2":"4.00","VAL3":"4.00","VAL4":"4.00","VAL5":"4.00"}],"header":[{"ID":"ACC_NM","NM":"2026/09/03","DIGIT":0},{"ID":"VAL1","NM":"당기순이익","DIGIT":0},{"ID":"VAL2","NM":"1개월전","DIGIT":0},{"ID":"VAL3","NM":"3개월전","DIGIT":0},{"ID":"VAL4","NM":"6개월전","DIGIT":0},{"ID":"VAL5","NM":"1년전","DIGIT":0}]},
+            });
+        });
+</script>
+
+</body>
+</html>
