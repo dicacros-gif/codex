@@ -1,0 +1,635 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head prefix="og: http://ogp.me/ns#">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta http-equiv="content-language" content="ko" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <meta name="viewport" content="width=device-width" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="robots" content="index,follow" />
+    <meta name="googlebot" content="index,follow" />
+    <meta name="NaverBot" content="All" />
+    <meta name="NaverBot" content="index,follow" />
+    <meta name="Yeti" content="All" />
+    <meta name="Yeti" content="index,follow" />
+    <title>삼성 레버리지 항셍테크 TR ETN(H) B | ETN Snapshot | ETF/ETN 정보 | Company Guide</title>
+    <link rel="shortcut icon" sizes="16x16 24x24 32x32 64x64" type="image/x-icon" href="/favicon.ico?ver=1">
+    <meta name="description" content="에프앤가이드 상장기업분석" />
+    <meta name="image" content="" />
+    <meta name="keywords" content="에프앤가이드, 에프엔가이드, FnGuide, fn가이드" />
+    <meta name="author" content="에프앤가이드" />
+    <meta name="copyright" content="Copyright© FnGuide Inc. All rights reserved." />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="에프앤가이드" />
+    <meta property="og:description" content="에프앤가이드 상장기업분석" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta name="dtyp" content="R" />
+    <meta name="sno" content="2" />
+    
+    <link href="https://wcompcdn.fnguide.com/bundles/jquery/css?ver=20261117125055" rel="stylesheet"/>
+
+    <link href="https://wcompcdn.fnguide.com/bundles/css?ver=20261117125055" rel="stylesheet"/>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery/core?ver=20261117125055"></script>
+<script>(window.jQuery)||document.write('<script src="/bundles/jquery/core"><\/script>');</script>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jquery?ver=20261117125055"></script>
+
+    <script src="https://wcompcdn.fnguide.com/bundles/jsfile?ver=20261117125055"></script>
+    
+</head>
+<body class="">
+    <div class="fng_body ">
+        <div class="fng_wrap">
+            <!-- Str : HEADER -->
+            
+
+    <div class="headwrap">
+        <div class="headertop">
+            <h1><a class="menu_link" href="/CompanyInfo/Snapshot"><span> 상장기업분석 </span></a></h1>
+                <div class="hdt_center">
+                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-8384bf2c" target="_blank" class="hdt_bnr" style="background-image:url(../../Contents/images/fngc_topBnr_bg_default.png);">
+                        <strong>
+                            <span class="txt1" style="background-image:url(../../Contents/images/fngc_topBnr_txt_default.png?v260930);width:300px;height:40px;background-size:100%;">
+                                <i class="hide">PC+모바일 리포트 무제한</i>
+                            </span>
+                            <span class="txt2" style="background-image:url(../../Contents/images/fngc_topBnr_txt_default_hover.png?v260930);width:300px;height:40px;background-size:100%;">
+                                <i class="hide">월 2만원에 리타민 추가 구독</i>
+                            </span>
+                        </strong>
+                    </a>
+                </div>
+            <div class="hdt_rgt">
+                <form name="frmMain" method="get">
+                    <div class="input_ty1 lk_in">
+                        <input type="text" id="searchCompany" title="정확한 종목명 또는 종목코드 입력(잘모를 경우 다음 종목찾기 링크 이용)" placeholder="종목명 또는 종목코드 입력" autocomplete="off" />
+                        <button type="button" class="btn_lookup" title="종목검색팝업 새창열기"><span class="htxt">열기</span></button>
+                    </div>
+                    <button type="button" onClick="GoPrint();" class="btn_ty1"><span>인쇄</span></button>
+                </form>
+            </div>
+        </div>
+        <div class="headergnb" id="compGnb">
+            <ul class="gnb_dp1wrap">
+                <!-- [개발] 페이지 이동시 class : gnb_ac 적용 -->
+                <li class="gnb_dp1 ">
+                    <a href="/CompanyInfo/Snapshot" class="menu_link">기업정보</a>
+                    <ul class="gnb_dp2wrap gnb_n1">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/CompanyInfo/Snapshot" class="menu_link ">Snapshot</a>
+                            <a href="/CompanyInfo/Information" class="menu_link ">기업개요</a>
+                            <a href="/CompanyInfo/Finance" class="menu_link ">재무제표</a>
+                            <a href="/CompanyInfo/FinanceRatio" class="menu_link ">재무비율</a>
+                            <a href="/CompanyInfo/Invest" class="menu_link ">투자지표</a>
+                            <a href="/CompanyInfo/Consensus" class="menu_link ">컨센서스</a>
+                        </li>
+                        <li class="gnb_dp2">
+                            <a href="/CompanyInfo/ShareAnalysis" class="menu_link ">지분분석</a>
+                            <a href="/CompanyInfo/SectorAnalysis" class="menu_link ">업종분석</a>
+                            <a href="/CompanyInfo/Comparison" class="menu_link ">경쟁사비교</a>
+                            <a href="/CompanyInfo/Disclosure" class="menu_link ">거래소공시</a>
+                            <a href="/CompanyInfo/Dart" class="menu_link ">금감원공시</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1  gnb_ac">
+                    <a href="/Etp/EtfSnapshot" class="menu_link ac">ETF/ETN 정보</a>
+                    <ul class="gnb_dp2wrap gnb_n2">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Etp/EtfSnapshot" class="menu_link ">ETF Snapshot</a>
+                            <a href="/Etp/EtfAnalysis" class="menu_link ">성과 및 위험분석</a>
+                            <a href="/Etp/EtnSnapshot" class="menu_link ac">ETN Snapshot</a>
+                        </li>
+                    </ul>
+                </li>
+                
+                
+                <li class="gnb_dp1 ">
+                    <a href="/Consensus/TargetPriceGap" class="menu_link">컨센서스 스크리닝</a>
+                    <ul class="gnb_dp2wrap gnb_n5">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Consensus/TargetPriceGap" class="menu_link ">목표주가 괴리율</a>
+                            <a href="/Consensus/UpDownRatio" class="menu_link ">컨센서스 상/하향 비율</a>
+                            <a href="/Consensus/EarningSurprise" class="menu_link ">어닝서프라이즈</a>
+                            <a href="/Consensus/TurnAround" class="menu_link ">턴어라운드</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Ranking/SectorRank" class="menu_link">랭킹 분석</a>
+                    <ul class="gnb_dp2wrap gnb_n6">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            <a href="/Ranking/SectorRank" class="menu_link ">업종별 순위</a>
+                            <a href="/Ranking/IdxRank" class="menu_link ">지표별 순위</a>
+                            <a href="/Ranking/EtfRank" class="menu_link ">ETF 순위</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Calendar/CompCalendar" class="menu_link">캘린더</a>
+                    <ul class="gnb_dp2wrap gnb_n7">
+                        <li class="gnb_dp2 gnb_dp2_start"></li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/SideInfo/CorporationList" class="menu_link">부가정보</a>
+                    <ul class="gnb_dp2wrap gnb_n8">
+                        <li class="gnb_dp2 gnb_dp2_start">
+                            
+                            <a href="/SideInfo/CorporationList" class="menu_link ">기업주소록</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="gnb_dp1 ">
+                    <a href="/Help/Guide" class="menu_link">이용안내</a>
+                    <ul class="gnb_dp2wrap gnb_n9">
+                        <li class="gnb_dp2 gnb_dp2_start"></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+            <div class="ad_vertical">
+                <div class="ad_left" style="position:fixed;top: 150px;width:300px;height:600px;margin-left:-320px;">
+                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-ddd55871" target="_blank" style="display:block;width:100%;height:100%;">
+                        <img src="../../Contents/images/fngc_leftBnr_img_default.png" alt="이제 모바일에서도 리포트를 자유롭게! 지금 확인하기" style="width:100%;height:100%;">
+                    </a>
+                </div>
+                <div class="ad_right" style="position:fixed;top:150px;width:300px;height:600px;margin-left:1028px;">
+                    <a href="https://help-center.fnguide.com/ko/articles/%EC%99%80%EC%9D%B4%EC%A6%88%EB%A6%AC%ED%8F%AC%ED%8A%B8--%EB%A6%AC%ED%83%80%EB%AF%BC-%EA%B2%B0%ED%95%A9%EC%9A%94%EA%B8%88%EC%A0%9C-%EC%B6%9C%EC%8B%9C-ddd55871" target="_blank" style="display:block;width:100%;height:100%;">
+                        <img src="../../Contents/images/fngc_rightBnr_img_default.png" alt="와이즈리포트 회원이라면 리타민을 월 22,000원에. 정가 대비 75% 할인!" style="width:100%;height:100%;">
+                    </a>
+                </div>
+            </div>
+        <!-- End : 사이드 배너 -->
+
+    </div>
+
+            <!-- End : HEADER -->
+            <!-- Str : CONTAINER -->
+            <div class="contwrap" id="compBody">
+                
+<!-- STR : 공통기업개요 -->
+
+<input id="cmp_nm" name="cmp_nm" type="hidden" value="삼성 레버리지 항셍테크 TR ETN(H) B" />
+
+<div class="section ul_corpinfo">
+    <div class="corp_group1">
+        <h1>삼성 레버리지 항셍테크 TR ETN(H) B </h1>
+        <h2>530119</h2>
+        <span class="etc1">|</span>
+        <h3>Samsung 2X Hang Seng TECH TR ETN(H) B</h3>
+        <span class="etc1">|</span>
+        <span id="urlinfo"><a href="" class="btn_shome" target="_blank" title=""><span>home</span></a></span>
+        <p class="stxt_group">
+            <span class="stxt stxt1" id="inst_nm">삼성증권</span>
+        </p>
+    </div>
+    <div class="corp_group4">
+        <dl>
+            <dt class="fl">벤치마크</dt>
+            <dd class="fl">HSTECH TR 2X Leveraged Index</dd>
+        </dl>
+    </div>
+</div>
+<!-- END: 공통기업개요 -->
+
+<div class="section ul_de">
+    <!-- 시세현황, 주가, 상대수익률 -->
+    <div class="ul_col2wrap">
+        
+        <div class="ul_col2_l">
+            <div class="ul_wrap">
+                <div class="um_topbar botbd_n bmshadow">
+                    <div class="topbar_wrap">
+                        <div class="topbar_lft">
+                            <h2>시세현황</h2>
+                            <span class="date" id="date">[2026.11.27]</span>
+                        </div>
+                        <div class="topbar_rgt">
+                            <span class="txt1">단위 : 백만원, 주, %</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="um_table" id="body_sise">
+                    <table class="us_table_ty1 table-hb thbg_g h_fix zigbg_no">
+                        <caption class="cphidden">시세현황</caption>
+                        <colgroup>
+                            <col />
+                            <col />
+                        </colgroup>
+                        <tbody>
+                            <tr class="rwf">
+                                <th class="l clf" scope="row">
+                                    <div>전일종가/전일대비<span class="csize">(원)</span></div>
+                                </th>
+                                <td class="r cle">14,320 /<span class="tcr">+1,505</span> (10.51%)</td>
+                            </tr>
+                            <tr class="">
+                                <th class="l clf" scope="row">
+                                    <div>52주 최고가<span class="csize">(원)</span></div>
+                                </th>
+                                <td class="r cle">41,965</td>
+                            </tr>
+                            <tr class="">
+                                <th class="l clf" scope="row">
+                                    <div>52주 최저가<span class="csize">(원)</span></div>
+                                </th>
+                                <td class="r cle">12,655</td>
+                            </tr>
+                            <tr class="">
+                                <th class="l clf" scope="row">
+                                    <div>수익률<span class="csize">(1M/3M/6M/1Y,%)</span></div>
+                                </th>
+
+                                <td class="r cle">
+                                    <span class="tcb">-10.61</span>
+                                    /<span class="tcb">-40.33</span>
+                                    /<span class="tcb">-48.28</span>
+                                    /<span class="tcb">-62.4</span>
+                                </td>
+                            </tr>
+                            <tr id="" class="">
+                                <th class="l clf" scope="row">
+                                    <div>시가총액</div>
+                                </th>
+                                <td class="r cle">
+                                    14,320
+                                </td>
+                            </tr>
+                            <tr id="" class="">
+                                <th class="l clf" scope="row">
+                                    <div>총 주식수</div>
+                                </th>
+                                <td class="r cle">
+                                    1,000,000
+                                </td>
+                            </tr>
+                            <tr id="" class="">
+                                <th class="l clf" scope="row">
+                                    <div>외국인비중</div>
+                                </th>
+                                <td class="r cle">
+                                    0
+                                </td>
+                            </tr>
+                            <tr id="" class="">
+                                <th class="l clf" scope="row">
+                                    <div>거래량<span class="csize">(20일 평균, 주)</span></div>
+                                </th>
+                                <td class="r cle">
+                                    40,177
+                                </td>
+                            </tr>
+                            <tr id="" class="rwe">
+                                <th class="l clf" scope="row">
+                                    <div>거래대금<span class="csize">(20일 평균, 원)</span></div>
+                                </th>
+                                <td class="r cle">
+                                    711,296,628
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ul_col2_r">
+            <div class="ul_wrap">
+                <div class="um_topbar bmshadow">
+                    <div class="topbar_wrap">
+                        <div class="topbar_lft">
+                            <h2>주가, 상대수익률</h2>
+                        </div>
+                        <div class="topbar_rgt">
+                        </div>
+                    </div>
+                </div>
+                <div class="um_chart chart_ht1">
+                    <div class="chart_wrap" id="ETN_01"> </div>
+                </div>
+                <div class="um_comment">
+                    <button type="button" onclick="cmView(this)" class="comment_wrap btn_cm cmhidden">
+                        <ul>
+                            <li>* 상대수익률은 조회시작일의 값을 100포인트로 변환하여 산출된 값입니다.</li>
+                            <li>* 특정일의 상대수익률 포인트는 (특정일의 지수 및 주가/조회 기준 시작점의 지수 및 주가)*100 입니다. </li>
+                        </ul>
+                        <span class="cmtext"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 상품현황 -->
+    <div class="ul_wrap">
+        <div class="um_topbar botbd_n bmshadow">
+            <div class="topbar_wrap">
+                <div class="topbar_lft">
+                    <h2>상품 현황</h2>
+                </div>
+                <div class="topbar_rgt">
+                    <span class="txt1">단위 : 원, %</span>
+                </div>
+            </div>
+        </div>
+        <div class="um_table">
+            <table class="us_table_ty1 thbg_g table-hb h_fix zigbg_no">
+                <caption class="cphidden">상품 현황</caption>
+                <colgroup>
+                    <col style="width: 20%;" />
+                    <col />
+                    <col style="width: 20%;" />
+                    <col />
+                </colgroup>
+                <tbody id="body_sangpoom1">
+                            <tr id="" class="rwf  ">
+                                <th class="l clf" scope="row">
+                                    <div>발행증권사</div>
+                                </th>
+                                <td class="r">삼성증권 </td>
+                                <th class="l" scope="row">
+                                    <div>제비용(%)</div>
+                                </th>
+                                <td class="r cle">1.5</td>
+                            </tr>
+                            <tr id="" class="  ">
+                                <th class="l clf" scope="row">
+                                    <div>유동성공급자(LP)</div>
+                                </th>
+                                <td class="r">삼성증권 </td>
+                                <th class="l" scope="row">
+                                    <div>중도상환단위</div>
+                                </th>
+                                <td class="r cle">100,000</td>
+                            </tr>
+                            <tr id="" class="  ">
+                                <th class="l clf" scope="row">
+                                    <div>최초발행일</div>
+                                </th>
+                                <td class="r">2024/03/19 </td>
+                                <th class="l" scope="row">
+                                    <div>중도상환수수료율 (%)</div>
+                                </th>
+                                <td class="r cle">2</td>
+                            </tr>
+                            <tr id="" class="  ">
+                                <th class="l clf" scope="row">
+                                    <div>존속기간</div>
+                                </th>
+                                <td class="r">32개월 </td>
+                                <th class="l" scope="row">
+                                    <div>분배금 기준일</div>
+                                </th>
+                                <td class="r cle">해당사항 없음</td>
+                            </tr>
+                            <tr id="" class=" rwe ">
+                                <th class="l clf" scope="row">
+                                    <div>상장일</div>
+                                </th>
+                                <td class="r">2024/03/26 </td>
+                                <th class="l" scope="row">
+                                    <div>만기일</div>
+                                </th>
+                                <td class="r cle">2027/01/22</td>
+                            </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!-- 발행사 신용 - 2026.07 신용등급 서비스 제외 -->
+    
+    <!-- 상품설명 -->
+    <div class="ul_wrap">
+        <div class="um_topbar bmshadow">
+            <div class="topbar_wrap">
+                <div class="topbar_lft">
+                    <h2>상품설명</h2>
+                    <!-- <span class="date">[2014/10 분기]</span> -->
+                </div>
+            </div>
+        </div>
+        <div class="um_bssummary">
+            <!--<div style="white-space:pre-line">-->
+            <div style="">
+HSIL이 산출하는 HSTECH TR 2x Leveraged Index 수익률을 오차 없이 추적하는 상품입니다. (단, 제비용 연 1.5% 차감)  본 상품의 기초지수는 HSTECH TR 2x Leveraged Index로 홍콩증권시장(이하 HKEX)에 상장된 중국 테크 기업 30종목으로 구성된 지수인 Hang Seng TECH Index (Gross Total Return Index)의 일간 수익률을 양의 2배수로 추종하는 전략을 사용하고 있습니다. Hang Seng TECH 지수는 유동시가총액 가중방식으로 상위 30개 기업을 선정하며, 매 분기마다 정기 변경이 이루어집니다. 본 상품의 기초지수는 기초지수 구성종목에서 발생하는 배당금은 모두 재투자되는 토털리턴 지수입니다.  또한, 환헤지형 상품으로 출시되어 환율의 영향을 받지 않고 기초지수의 성과를 그대로 추종할 수 있도록 설계되어 해외 투자를 희망하는 한국 투자자들에게 높은 편리성을 제공하고자 합니다.   지수 및 상품에 대한 자세한 내용은 삼성증권 홈페이지 (www.samsungpop.com) 삼성 ETN 메뉴 및 금융감독원 전자공시시스템(dart.fss.or.kr)의 투자설명서를 통해 확인하실 수 있습니다.            </div>
+        </div>
+    </div>
+    <!-- 기초지수 구성종목, 지수 구성비율 -->
+    <div class="ul_col2wrap">
+        
+        <div class="ul_col2_l">
+            <div class="ul_wrap">
+                <div class="um_topbar bmshadow">
+                    <div class="topbar_wrap">
+                        <div class="topbar_lft">
+                            <h2>기초지수 구성종목</h2>
+                            <span class="date">[상위 8개]</span>
+                        </div>
+                        <div class="topbar_rgt">
+                            <span class="txt1 mg_r5">단위 : %</span>
+                            <!--[개발] 아래 a태그 전체보기 버튼이 운영에서 display:none 처리되고 있습니다. 미사용 버튼인 경우 주석처리 필요할듯-->
+                            <!--
+                            <button type="button" class="us_btn_txty1 fl mg_r5 cor_b">
+                                <div id="divViewAll">전체보기</div>
+                            </button>
+                            -->
+                        </div>
+                    </div>
+                </div>
+                <div class="um_table" id="tbl_idx">
+                    <table class="us_table_ty1 h_fix notres">
+                        <caption class="cphidden">기초지수 구성종목</caption>
+                        <colgroup>
+                            <col />
+                            <col />
+                        </colgroup>
+                        <thead>
+                            <tr class="th_b">
+                                <th class="clf" scope="col">종목명</th>
+                                <th class="cle" scope="col">구성비</th>
+                            </tr>
+                        </thead>
+                        <tbody></tbody>
+                    </table>
+                    <script type="text/template" id="tmpl_tbl_idx">
+                        <% if(res.length > 0) {
+                        var maxLength = 0;
+                        if (res.length > 8){ maxLength = 8 }else{ maxLength = res.length  }
+                        %>
+                        <% for (var i = 0 ; i < maxLength ; i++) { %>
+                        <tr id="" class="ref">
+                            <th class="l clf" scope="row">
+                                <div><%= res[i].NM %></div>
+                            </th>
+                            <td class="r cle"><%= FnGuideUtil.Format.currencyFixed(  res[i].VAL1, res[i].DIGIT,'-') %></td>
+                        </tr>
+                        <% } %>
+                        <% } else {  %>
+                        <tr class="ref">
+                            <th class="cle c" colspan="2"> 데이터가 없습니다.</th>
+                        </tr>
+                        <% }%>
+                    </script>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ul_col2_r">
+            <div class="ul_wrap">
+                <div class="um_topbar bmshadow">
+                    <div class="topbar_wrap">
+                        <div class="topbar_lft">
+                            <h2>지수 구성비율</h2>
+                        </div>
+                        <div class="topbar_rgt">
+                            <span class="txt1">단위 : %</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="um_chart chart_ht1">
+                    <div class="chart_wrap" id="ETN_02">  </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 주가/지표가치/괴리율, 거래량 추이 -->
+    <div class="ul_col2wrap" style="display:block;">
+        
+        <div class="ul_col2_l">
+            <div class="ul_wrap">
+                <div class="um_topbar bmshadow">
+                    <div class="topbar_wrap">
+                        <div class="topbar_lft">
+                            <h2>주가/지표가치/괴리율</h2>
+                        </div>
+                        <div class="topbar_rgt">
+                        </div>
+                    </div>
+                </div>
+                <div class="um_chart chart_ht1">
+                    <div class="chart_wrap" id="ETN_03"> </div>
+                </div>
+                <div class="um_comment">
+                    <button type="button" onclick="cmView(this)" class="comment_wrap btn_cm cmhidden">
+                        <ul>
+                            <li>* 기초자산 종가 확정시간의 차이로 실제 시장 괴리율과 차이가 발생할 수 있음.</li>
+                        </ul>
+                        <span class="cmtext"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="ul_col2_r">
+            <div class="ul_wrap">
+                <div class="um_topbar bmshadow">
+                    <div class="topbar_wrap">
+                        <div class="topbar_lft">
+                            <h2>거래량 추이</h2>
+                        </div>
+                        <div class="topbar_rgt">
+                        </div>
+                    </div>
+                </div>
+                <div class="um_chart chart_ht1">
+                    <div class="chart_wrap" id="ETN_04"> </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+            </div>
+            <!-- End : CONTAINER-->
+            <!-- Str : FOOTER -->
+            
+
+<div class="bootomwrap">
+    <div class="ul_bottom">
+        <div class="ul_bottomwrap">
+            <a href="http://www.fnguide.com" class="link_txt" target="_blank"><span>fnguide.com</span></a>
+                <div class="txtbox">
+                    <p class="txt">FnGuide에서 제공하는 정보는 신뢰할 만한 자료 및 정보로부터 얻어진 것이나 그 정확성이나 완전성을 보장 할 수 없으며, 시간이 경과함에 따라 변경될 수 있습니다. 따라서 정보의 오류, 누락에 대하여 FnGuide 또는 FnGuide에 자료를 제공하는 회사에서는 그 결과에 대해 법적인 책임을 지지 않습니다. 모든 콘텐츠에 대한 저작권은 FnGuide에 있으며 사전 허가없이 이를 무단으로 사용하거나, 데이터 베이스화 할 경우 민형사상 책임을 물을 수 있습니다.</p>
+                </div>
+        </div>
+
+    </div>
+</div>
+<!-- 툴팁 -->
+<div class="ul_tip_a" style="display: none;">
+    <i class="arrow_top"></i>
+    <dl id="tip_a_cont"></dl>
+</div>
+<div class="ul_tip_b" style="display: none;width: 352px;top:1000px;left: 100px;">
+    <i class="arrow_top"></i>
+    <div class="um_table" id="ul_tip_b_table">
+        <table class="us_table_ty2 h_fix zigbg_no">
+            <caption class="cphidden">캡션</caption>
+            <colgroup>
+                <col>
+                <col>
+            </colgroup>
+            <thead>
+                <tr class="th_b">
+                    <th scope="row" class="clf">헤더</th>
+                    <th scope="row" class="cle">헤더</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="rwf">
+                    <td class="clf">내용</td>
+                    <td class="cle tcb">내용</td>
+                </tr>
+                <tr class="zigbg_in">
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+                <tr>
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+                <tr class="zigbg_in">
+                    <td class="clf">내용</td>
+                    <td class="cle">내용</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+            <!-- End : FOOTER -->
+        </div>
+    </div>
+    <input type="hidden" id="menu_id" value="2" />
+    <input type="hidden" id="sub_menu_id" value="3" />
+    <input type="hidden" id="c_id" value="AA" />
+    <input type="hidden" id="cmp_cd" value="530119" />
+    <input type="hidden" id="defaultCompanyCode" value="005930" />
+    <input type="hidden" id="defaultEtfCode" value="102780" />
+    <input type="hidden" id="defaultEtnCode" value="580010" />
+    <input type="hidden" id="menu_type" value="01" />
+    <input type="hidden" id="lang" value="KR" />
+
+    <script src="/bundles/common?v=2mVfiEqYAW8DPNbJfb-qA7UgOOqKALvN84vrD3Va0yo1"></script>
+
+    
+    <script src="/Scripts/etp-etnSnapshot?v=HDfQ2ghqzLDf06G_0e_qgPamE2rYNxurd-PuVDkIvK01"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            etnsnapshot.init({
+                cmp_cd: '530119',
+                ratioChart: {"data":[{"DT":"2025/11/28","VAL1":100.0,"VAL2":100.0,"VAL3":37965.0},{"DT":"2025/12/01","VAL1":99.84,"VAL2":101.054,"VAL3":38365.0},{"DT":"2025/12/02","VAL1":101.74,"VAL2":99.605,"VAL3":37815.0},{"DT":"2025/12/03","VAL1":102.79,"VAL2":96.839,"VAL3":36765.0},{"DT":"2025/12/04","VAL1":102.6,"VAL2":98.802,"VAL3":37510.0},{"DT":"2025/12/05","VAL1":104.42,"VAL2":101.541,"VAL3":38550.0},{"DT":"2025/12/08","VAL1":105.81,"VAL2":102.463,"VAL3":38900.0},{"DT":"2025/12/09","VAL1":105.53,"VAL2":98.222,"VAL3":37290.0},{"DT":"2025/12/10","VAL1":105.31,"VAL2":98.222,"VAL3":37290.0},{"DT":"2025/12/11","VAL1":104.69,"VAL2":98.472,"VAL3":37385.0},{"DT":"2025/12/12","VAL1":106.13,"VAL2":101.001,"VAL3":38345.0},{"DT":"2025/12/15","VAL1":104.18,"VAL2":96.51,"VAL3":36640.0},{"DT":"2025/12/16","VAL1":101.85,"VAL2":91.044,"VAL3":34565.0},{"DT":"2025/12/17","VAL1":103.31,"VAL2":93.942,"VAL3":35665.0},{"DT":"2025/12/18","VAL1":101.73,"VAL2":92.809,"VAL3":35235.0},{"DT":"2025/12/19","VAL1":102.39,"VAL2":94.877,"VAL3":36020.0},{"DT":"2025/12/22","VAL1":104.57,"VAL2":96.365,"VAL3":36585.0},{"DT":"2025/12/23","VAL1":104.86,"VAL2":96.365,"VAL3":36585.0},{"DT":"2025/12/24","VAL1":104.64,"VAL2":95.311,"VAL3":36185.0},{"DT":"2025/12/26","VAL1":105.17,"VAL2":96.089,"VAL3":36480.0},{"DT":"2025/12/29","VAL1":107.49,"VAL2":97.353,"VAL3":36960.0},{"DT":"2025/12/30","VAL1":107.32,"VAL2":98.657,"VAL3":37455.0},{"DT":"2026/01/02","VAL1":109.76,"VAL2":103.727,"VAL3":39380.0},{"DT":"2026/01/05","VAL1":113.52,"VAL2":103.003,"VAL3":39105.0},{"DT":"2026/01/06","VAL1":115.25,"VAL2":107.691,"VAL3":40885.0},{"DT":"2026/01/07","VAL1":115.9,"VAL2":102.832,"VAL3":39040.0},{"DT":"2026/01/08","VAL1":115.94,"VAL2":99.697,"VAL3":37850.0},{"DT":"2026/01/09","VAL1":116.8,"VAL2":101.541,"VAL3":38550.0},{"DT":"2026/01/12","VAL1":117.78,"VAL2":105.742,"VAL3":40145.0},{"DT":"2026/01/13","VAL1":119.51,"VAL2":107.204,"VAL3":40700.0},{"DT":"2026/01/14","VAL1":120.29,"VAL2":110.536,"VAL3":41965.0},{"DT":"2026/01/15","VAL1":122.18,"VAL2":105.426,"VAL3":40025.0},{"DT":"2026/01/16","VAL1":123.28,"VAL2":105.755,"VAL3":40150.0},{"DT":"2026/01/19","VAL1":124.91,"VAL2":103.78,"VAL3":39400.0},{"DT":"2026/01/20","VAL1":124.43,"VAL2":102.041,"VAL3":38740.0},{"DT":"2026/01/21","VAL1":125.04,"VAL2":102.397,"VAL3":38875.0},{"DT":"2026/01/22","VAL1":126.13,"VAL2":103.016,"VAL3":39110.0},{"DT":"2026/01/23","VAL1":127.08,"VAL2":105.466,"VAL3":40040.0},{"DT":"2026/01/26","VAL1":126.05,"VAL2":102.028,"VAL3":38735.0},{"DT":"2026/01/27","VAL1":129.5,"VAL2":103.569,"VAL3":39320.0},{"DT":"2026/01/28","VAL1":131.69,"VAL2":108.284,"VAL3":41110.0},{"DT":"2026/01/29","VAL1":132.97,"VAL2":106.295,"VAL3":40355.0},{"DT":"2026/01/30","VAL1":133.05,"VAL2":103.2,"VAL3":39180.0},{"DT":"2026/02/02","VAL1":126.06,"VAL2":94.824,"VAL3":36000.0},{"DT":"2026/02/03","VAL1":134.67,"VAL2":93.771,"VAL3":35600.0},{"DT":"2026/02/04","VAL1":136.79,"VAL2":90.439,"VAL3":34335.0},{"DT":"2026/02/05","VAL1":131.5,"VAL2":89.003,"VAL3":33790.0},{"DT":"2026/02/06","VAL1":129.61,"VAL2":90.412,"VAL3":34325.0},{"DT":"2026/02/09","VAL1":134.93,"VAL2":92.282,"VAL3":35035.0},{"DT":"2026/02/10","VAL1":135.02,"VAL2":92.743,"VAL3":35210.0},{"DT":"2026/02/11","VAL1":136.36,"VAL2":94.745,"VAL3":35970.0},{"DT":"2026/02/12","VAL1":140.64,"VAL2":91.15,"VAL3":34605.0},{"DT":"2026/02/13","VAL1":140.25,"VAL2":88.213,"VAL3":33490.0},{"DT":"2026/02/19","VAL1":144.58,"VAL2":89.964,"VAL3":34155.0},{"DT":"2026/02/20","VAL1":147.93,"VAL2":85.763,"VAL3":32560.0},{"DT":"2026/02/23","VAL1":148.88,"VAL2":90.202,"VAL3":34245.0},{"DT":"2026/02/24","VAL1":152.03,"VAL2":86.171,"VAL3":32715.0},{"DT":"2026/02/25","VAL1":154.94,"VAL2":85.921,"VAL3":32620.0},{"DT":"2026/02/26","VAL1":160.63,"VAL2":82.523,"VAL3":31330.0},{"DT":"2026/02/27","VAL1":159.02,"VAL2":82.326,"VAL3":31255.0},{"DT":"2026/03/03","VAL1":147.5,"VAL2":73.357,"VAL3":27850.0},{"DT":"2026/03/04","VAL1":129.72,"VAL2":70.433,"VAL3":26740.0},{"DT":"2026/03/05","VAL1":142.21,"VAL2":71.987,"VAL3":27330.0},{"DT":"2026/03/06","VAL1":142.23,"VAL2":75.728,"VAL3":28750.0},{"DT":"2026/03/09","VAL1":133.75,"VAL2":75.069,"VAL3":28500.0},{"DT":"2026/03/10","VAL1":140.9,"VAL2":78.612,"VAL3":29845.0},{"DT":"2026/03/11","VAL1":142.87,"VAL2":79.02,"VAL3":30000.0},{"DT":"2026/03/12","VAL1":142.19,"VAL2":79.586,"VAL3":30215.0},{"DT":"2026/03/13","VAL1":139.75,"VAL2":77.835,"VAL3":29550.0},{"DT":"2026/03/16","VAL1":141.34,"VAL2":80.179,"VAL3":30440.0},{"DT":"2026/03/17","VAL1":143.65,"VAL2":80.113,"VAL3":30415.0},{"DT":"2026/03/18","VAL1":150.9,"VAL2":79.415,"VAL3":30150.0},{"DT":"2026/03/19","VAL1":146.77,"VAL2":77.756,"VAL3":29520.0},{"DT":"2026/03/20","VAL1":147.23,"VAL2":73.541,"VAL3":27920.0},{"DT":"2026/03/23","VAL1":137.67,"VAL2":67.694,"VAL3":25700.0},{"DT":"2026/03/24","VAL1":141.44,"VAL2":70.183,"VAL3":26645.0},{"DT":"2026/03/25","VAL1":143.69,"VAL2":73.159,"VAL3":27775.0},{"DT":"2026/03/26","VAL1":139.06,"VAL2":69.696,"VAL3":26460.0},{"DT":"2026/03/27","VAL1":138.51,"VAL2":70.67,"VAL3":26830.0},{"DT":"2026/03/30","VAL1":134.4,"VAL2":67.325,"VAL3":25560.0},{"DT":"2026/03/31","VAL1":128.67,"VAL2":65.916,"VAL3":25025.0},{"DT":"2026/04/01","VAL1":139.53,"VAL2":69.735,"VAL3":26475.0},{"DT":"2026/04/02","VAL1":133.3,"VAL2":66.64,"VAL3":25300.0},{"DT":"2026/04/03","VAL1":136.95,"VAL2":67.602,"VAL3":25665.0},{"DT":"2026/04/06","VAL1":138.81,"VAL2":67.602,"VAL3":25665.0},{"DT":"2026/04/07","VAL1":139.94,"VAL2":67.589,"VAL3":25660.0},{"DT":"2026/04/08","VAL1":149.55,"VAL2":74.213,"VAL3":28175.0},{"DT":"2026/04/09","VAL1":147.15,"VAL2":71.948,"VAL3":27315.0},{"DT":"2026/04/10","VAL1":149.21,"VAL2":72.699,"VAL3":27600.0},{"DT":"2026/04/13","VAL1":147.93,"VAL2":71.158,"VAL3":27015.0},{"DT":"2026/04/14","VAL1":151.98,"VAL2":71.434,"VAL3":27120.0},{"DT":"2026/04/15","VAL1":155.13,"VAL2":74.055,"VAL3":28115.0},{"DT":"2026/04/16","VAL1":158.56,"VAL2":78.757,"VAL3":29900.0},{"DT":"2026/04/17","VAL1":157.69,"VAL2":76.847,"VAL3":29175.0},{"DT":"2026/04/20","VAL1":158.38,"VAL2":78.638,"VAL3":29855.0},{"DT":"2026/04/21","VAL1":162.7,"VAL2":77.953,"VAL3":29595.0},{"DT":"2026/04/22","VAL1":163.45,"VAL2":74.621,"VAL3":28330.0},{"DT":"2026/04/23","VAL1":164.92,"VAL2":72.567,"VAL3":27550.0},{"DT":"2026/04/24","VAL1":164.92,"VAL2":73.647,"VAL3":27960.0},{"DT":"2026/04/27","VAL1":168.47,"VAL2":74.029,"VAL3":28105.0},{"DT":"2026/04/28","VAL1":169.13,"VAL2":70.921,"VAL3":26925.0},{"DT":"2026/04/29","VAL1":170.4,"VAL2":72.514,"VAL3":27530.0},{"DT":"2026/04/30","VAL1":168.06,"VAL2":72.435,"VAL3":27500.0},{"DT":"2026/05/04","VAL1":176.67,"VAL2":76.017,"VAL3":28860.0},{"DT":"2026/05/06","VAL1":188.07,"VAL2":74.858,"VAL3":28420.0},{"DT":"2026/05/07","VAL1":190.75,"VAL2":79.244,"VAL3":30085.0},{"DT":"2026/05/08","VAL1":190.95,"VAL2":78.098,"VAL3":29650.0},{"DT":"2026/05/11","VAL1":199.21,"VAL2":78.875,"VAL3":29945.0},{"DT":"2026/05/12","VAL1":194.65,"VAL2":77.848,"VAL3":29555.0},{"DT":"2026/05/13","VAL1":199.77,"VAL2":78.111,"VAL3":29655.0},{"DT":"2026/05/14","VAL1":203.27,"VAL2":79.573,"VAL3":30210.0},{"DT":"2026/05/15","VAL1":190.83,"VAL2":73.528,"VAL3":27915.0},{"DT":"2026/05/18","VAL1":191.41,"VAL2":71.303,"VAL3":27070.0},{"DT":"2026/05/19","VAL1":185.19,"VAL2":71.447,"VAL3":27125.0},{"DT":"2026/05/20","VAL1":183.59,"VAL2":72.198,"VAL3":27410.0},{"DT":"2026/05/21","VAL1":199.04,"VAL2":69.986,"VAL3":26570.0},{"DT":"2026/05/22","VAL1":199.86,"VAL2":72.211,"VAL3":27415.0},{"DT":"2026/05/26","VAL1":204.95,"VAL2":74.898,"VAL3":28435.0},{"DT":"2026/05/27","VAL1":209.56,"VAL2":72.922,"VAL3":27685.0},{"DT":"2026/05/28","VAL1":208.46,"VAL2":72.409,"VAL3":27490.0},{"DT":"2026/05/29","VAL1":215.87,"VAL2":73.107,"VAL3":27755.0},{"DT":"2026/06/01","VAL1":223.82,"VAL2":74.635,"VAL3":28335.0},{"DT":"2026/06/02","VAL1":224.15,"VAL2":80.377,"VAL3":30515.0},{"DT":"2026/06/04","VAL1":220.02,"VAL2":75.201,"VAL3":28550.0},{"DT":"2026/06/05","VAL1":207.83,"VAL2":71.987,"VAL3":27330.0},{"DT":"2026/06/08","VAL1":190.61,"VAL2":67.918,"VAL3":25785.0},{"DT":"2026/06/09","VAL1":206.21,"VAL2":69.999,"VAL3":26575.0},{"DT":"2026/06/10","VAL1":196.88,"VAL2":67.154,"VAL3":25495.0},{"DT":"2026/06/11","VAL1":197.73,"VAL2":64.586,"VAL3":24520.0},{"DT":"2026/06/12","VAL1":206.89,"VAL2":66.864,"VAL3":25385.0},{"DT":"2026/06/15","VAL1":217.64,"VAL2":68.366,"VAL3":25955.0},{"DT":"2026/06/16","VAL1":222.24,"VAL2":65.574,"VAL3":24895.0},{"DT":"2026/06/17","VAL1":225.75,"VAL2":65.56,"VAL3":24890.0},{"DT":"2026/06/18","VAL1":230.83,"VAL2":64.388,"VAL3":24445.0},{"DT":"2026/06/19","VAL1":230.54,"VAL2":63.519,"VAL3":24115.0},{"DT":"2026/06/22","VAL1":232.12,"VAL2":63.229,"VAL3":24005.0},{"DT":"2026/06/23","VAL1":208.93,"VAL2":58.053,"VAL3":22040.0},{"DT":"2026/06/24","VAL1":215.73,"VAL2":60.753,"VAL3":23065.0},{"DT":"2026/06/25","VAL1":227.43,"VAL2":58.119,"VAL3":22065.0},{"DT":"2026/06/26","VAL1":214.21,"VAL2":54.181,"VAL3":20570.0},{"DT":"2026/06/29","VAL1":213.79,"VAL2":58.212,"VAL3":22100.0},{"DT":"2026/06/30","VAL1":215.87,"VAL2":60.648,"VAL3":23025.0},{"DT":"2026/07/01","VAL1":211.47,"VAL2":60.885,"VAL3":23115.0},{"DT":"2026/07/02","VAL1":194.78,"VAL2":59.449,"VAL3":22570.0},{"DT":"2026/07/03","VAL1":205.99,"VAL2":61.491,"VAL3":23345.0},{"DT":"2026/07/06","VAL1":205.05,"VAL2":62.097,"VAL3":23575.0},{"DT":"2026/07/07","VAL1":194.99,"VAL2":61.03,"VAL3":23170.0},{"DT":"2026/07/08","VAL1":184.56,"VAL2":67.905,"VAL3":25780.0},{"DT":"2026/07/09","VAL1":185.71,"VAL2":67.101,"VAL3":25475.0},{"DT":"2026/07/10","VAL1":190.39,"VAL2":68.761,"VAL3":26105.0},{"DT":"2026/07/13","VAL1":173.35,"VAL2":65.784,"VAL3":24975.0},{"DT":"2026/07/14","VAL1":174.63,"VAL2":65.732,"VAL3":24955.0},{"DT":"2026/07/15","VAL1":185.51,"VAL2":67.444,"VAL3":25605.0},{"DT":"2026/07/16","VAL1":173.7,"VAL2":70.684,"VAL3":26835.0},{"DT":"2026/07/20","VAL1":165.95,"VAL2":66.601,"VAL3":25285.0},{"DT":"2026/07/21","VAL1":171.85,"VAL2":68.945,"VAL3":26175.0},{"DT":"2026/07/22","VAL1":173.12,"VAL2":64.362,"VAL3":24435.0},{"DT":"2026/07/23","VAL1":180.74,"VAL2":65.099,"VAL3":24715.0},{"DT":"2026/07/24","VAL1":170.39,"VAL2":63.756,"VAL3":24205.0},{"DT":"2026/07/27","VAL1":172.05,"VAL2":65.613,"VAL3":24910.0},{"DT":"2026/07/28","VAL1":153.41,"VAL2":65.192,"VAL3":24750.0},{"DT":"2026/07/29","VAL1":144.23,"VAL2":69.393,"VAL3":26345.0},{"DT":"2026/07/30","VAL1":142.45,"VAL2":70.486,"VAL3":26760.0},{"DT":"2026/07/31","VAL1":167.97,"VAL2":68.827,"VAL3":26130.0},{"DT":"2026/08/03","VAL1":159.36,"VAL2":70.328,"VAL3":26700.0},{"DT":"2026/08/04","VAL1":161.95,"VAL2":70.512,"VAL3":26770.0},{"DT":"2026/08/05","VAL1":168.04,"VAL2":72.093,"VAL3":27370.0},{"DT":"2026/08/06","VAL1":160.35,"VAL2":70.328,"VAL3":26700.0},{"DT":"2026/08/07","VAL1":159.39,"VAL2":69.301,"VAL3":26310.0},{"DT":"2026/08/10","VAL1":160.44,"VAL2":70.394,"VAL3":26725.0},{"DT":"2026/08/11","VAL1":161.6,"VAL2":71.75,"VAL3":27240.0},{"DT":"2026/08/12","VAL1":167.55,"VAL2":67.852,"VAL3":25760.0},{"DT":"2026/08/13","VAL1":173.52,"VAL2":68.761,"VAL3":26105.0},{"DT":"2026/08/14","VAL1":177.71,"VAL2":65.771,"VAL3":24970.0},{"DT":"2026/08/18","VAL1":174.96,"VAL2":65.047,"VAL3":24695.0},{"DT":"2026/08/19","VAL1":164.8,"VAL2":64.665,"VAL3":24550.0},{"DT":"2026/08/20","VAL1":174.52,"VAL2":66.601,"VAL3":25285.0},{"DT":"2026/08/21","VAL1":176.05,"VAL2":66.64,"VAL3":25300.0},{"DT":"2026/08/24","VAL1":170.55,"VAL2":62.452,"VAL3":23710.0},{"DT":"2026/08/25","VAL1":171.72,"VAL2":62.558,"VAL3":23750.0},{"DT":"2026/08/26","VAL1":173.39,"VAL2":63.703,"VAL3":24185.0},{"DT":"2026/08/27","VAL1":176.04,"VAL2":63.216,"VAL3":24000.0},{"DT":"2026/08/28","VAL1":172.9,"VAL2":63.269,"VAL3":24020.0},{"DT":"2026/08/31","VAL1":173.69,"VAL2":62.926,"VAL3":23890.0},{"DT":"2026/09/01","VAL1":174.09,"VAL2":61.82,"VAL3":23470.0},{"DT":"2026/09/02","VAL1":167.14,"VAL2":59.871,"VAL3":22730.0},{"DT":"2026/09/03","VAL1":167.56,"VAL2":59.12,"VAL3":22445.0},{"DT":"2026/09/04","VAL1":170.31,"VAL2":62.083,"VAL3":23570.0},{"DT":"2026/09/07","VAL1":178.15,"VAL2":60.464,"VAL3":22955.0},{"DT":"2026/09/08","VAL1":177.11,"VAL2":58.514,"VAL3":22215.0},{"DT":"2026/09/09","VAL1":179.59,"VAL2":57.395,"VAL3":21790.0},{"DT":"2026/09/10","VAL1":179.14,"VAL2":54.932,"VAL3":20855.0},{"DT":"2026/09/11","VAL1":175.98,"VAL2":55.235,"VAL3":20970.0},{"DT":"2026/09/14","VAL1":170.23,"VAL2":55.011,"VAL3":20885.0},{"DT":"2026/09/15","VAL1":168.78,"VAL2":54.669,"VAL3":20755.0},{"DT":"2026/09/16","VAL1":171.09,"VAL2":55.103,"VAL3":20920.0},{"DT":"2026/09/17","VAL1":171.02,"VAL2":54.34,"VAL3":20630.0},{"DT":"2026/09/18","VAL1":175.58,"VAL2":57.132,"VAL3":21690.0},{"DT":"2026/09/21","VAL1":178.47,"VAL2":56.592,"VAL3":21485.0},{"DT":"2026/09/22","VAL1":178.73,"VAL2":57.764,"VAL3":21930.0},{"DT":"2026/09/23","VAL1":180.33,"VAL2":56.315,"VAL3":21380.0},{"DT":"2026/09/28","VAL1":175.46,"VAL2":54.524,"VAL3":20700.0},{"DT":"2026/09/29","VAL1":174.98,"VAL2":53.299,"VAL3":20235.0},{"DT":"2026/09/30","VAL1":174.15,"VAL2":53.023,"VAL3":20130.0},{"DT":"2026/10/01","VAL1":177.54,"VAL2":52.364,"VAL3":19880.0},{"DT":"2026/10/02","VAL1":178.37,"VAL2":50.639,"VAL3":19225.0},{"DT":"2026/10/06","VAL1":176.78,"VAL2":52.035,"VAL3":19755.0},{"DT":"2026/10/07","VAL1":173.28,"VAL2":51.429,"VAL3":19525.0},{"DT":"2026/10/08","VAL1":168.75,"VAL2":49.111,"VAL3":18645.0},{"DT":"2026/10/12","VAL1":162.59,"VAL2":50.691,"VAL3":19245.0},{"DT":"2026/10/13","VAL1":153.7,"VAL2":49.625,"VAL3":18840.0},{"DT":"2026/10/14","VAL1":153.03,"VAL2":52.245,"VAL3":19835.0},{"DT":"2026/10/15","VAL1":141.45,"VAL2":47.834,"VAL3":18160.0},{"DT":"2026/10/16","VAL1":144.35,"VAL2":49.295,"VAL3":18715.0},{"DT":"2026/10/19","VAL1":146.9,"VAL2":48.834,"VAL3":18540.0},{"DT":"2026/10/20","VAL1":141.41,"VAL2":47.728,"VAL3":18120.0},{"DT":"2026/10/21","VAL1":146.07,"VAL2":47.136,"VAL3":17895.0},{"DT":"2026/10/22","VAL1":140.93,"VAL2":41.881,"VAL3":15900.0},{"DT":"2026/10/23","VAL1":141.35,"VAL2":43.975,"VAL3":16695.0},{"DT":"2026/10/26","VAL1":139.29,"VAL2":43.277,"VAL3":16430.0},{"DT":"2026/10/27","VAL1":143.59,"VAL2":42.197,"VAL3":16020.0},{"DT":"2026/10/28","VAL1":153.12,"VAL2":42.71,"VAL3":16215.0},{"DT":"2026/10/29","VAL1":151.22,"VAL2":41.169,"VAL3":15630.0},{"DT":"2026/10/30","VAL1":145.95,"VAL2":41.249,"VAL3":15660.0},{"DT":"2026/11/02","VAL1":149.22,"VAL2":43.079,"VAL3":16355.0},{"DT":"2026/11/03","VAL1":143.86,"VAL2":42.71,"VAL3":16215.0},{"DT":"2026/11/04","VAL1":144.75,"VAL2":44.343,"VAL3":16835.0},{"DT":"2026/11/05","VAL1":137.11,"VAL2":49.519,"VAL3":18800.0},{"DT":"2026/11/06","VAL1":128.86,"VAL2":47.675,"VAL3":18100.0},{"DT":"2026/11/09","VAL1":127.82,"VAL2":47.834,"VAL3":18160.0},{"DT":"2026/11/10","VAL1":133.43,"VAL2":48.426,"VAL3":18385.0},{"DT":"2026/11/11","VAL1":136.9,"VAL2":47.109,"VAL3":17885.0},{"DT":"2026/11/12","VAL1":136.07,"VAL2":44.989,"VAL3":17080.0},{"DT":"2026/11/13","VAL1":134.74,"VAL2":42.579,"VAL3":16165.0},{"DT":"2026/11/16","VAL1":129.9,"VAL2":41.881,"VAL3":15900.0},{"DT":"2026/11/17","VAL1":126.53,"VAL2":41.38,"VAL3":15710.0},{"DT":"2026/11/18","VAL1":129.05,"VAL2":40.037,"VAL3":15200.0},{"DT":"2026/11/19","VAL1":130.85,"VAL2":38.325,"VAL3":14550.0},{"DT":"2026/11/20","VAL1":124.03,"VAL2":35.335,"VAL3":13415.0},{"DT":"2026/11/23","VAL1":119.91,"VAL2":35.335,"VAL3":13415.0},{"DT":"2026/11/24","VAL1":127.49,"VAL2":34.018,"VAL3":12915.0},{"DT":"2026/11/25","VAL1":119.63,"VAL2":33.333,"VAL3":12655.0},{"DT":"2026/11/26","VAL1":119.98,"VAL2":33.755,"VAL3":12815.0},{"DT":"2026/11/27","VAL1":125.19,"VAL2":37.719,"VAL3":14320.0}],"header":[{"ID":"DT","NM":"기준일","DIGIT":-1},{"ID":"VAL1","NM":"KOSPI(좌)","DIGIT":2},{"ID":"VAL2","NM":"삼성 레버리지 항셍테크 TR ETN(H) B(좌)","DIGIT":2},{"ID":"VAL3","NM":"주가(우)","DIGIT":0}]},
+                idxChart: {"data":[{"NM":"넷이즈","VAL1":null},{"NM":"레노버 그룹","VAL1":null},{"NM":"바이두","VAL1":null},{"NM":"샤오미 집단","VAL1":null},{"NM":"알리바바 그룹 홀딩","VAL1":null},{"NM":"텐센트 홀딩스","VAL1":null},{"NM":"JD닷컴","VAL1":null},{"NM":"Kuaishou Technology","VAL1":null},{"NM":"Li Auto Inc","VAL1":null},{"NM":"Meituan","VAL1":null}],"header":[{"ID":"NM","NM":"종목명","DIGIT":-1},{"ID":"VAL1","NM":"구성비","DIGIT":2}]},
+                prcChart : {"data":[{"DT":"2025/11/27","VAL1":0.77,"VAL2":37797.65,"VAL3":38090.0},{"DT":"2025/11/28","VAL1":0.43,"VAL2":37803.57,"VAL3":37965.0},{"DT":"2025/12/01","VAL1":-0.11,"VAL2":38408.43,"VAL3":38365.0},{"DT":"2025/12/02","VAL1":-0.81,"VAL2":38123.31,"VAL3":37815.0},{"DT":"2025/12/03","VAL1":-0.40,"VAL2":36911.09,"VAL3":36765.0},{"DT":"2025/12/04","VAL1":-1.30,"VAL2":38005.15,"VAL3":37510.0},{"DT":"2025/12/29","VAL1":2.51,"VAL2":36054.40,"VAL3":36960.0},{"DT":"2025/12/30","VAL1":0.42,"VAL2":37298.70,"VAL3":37455.0},{"DT":"2026/01/02","VAL1":0.06,"VAL2":39357.43,"VAL3":39380.0},{"DT":"2026/01/05","VAL1":-0.79,"VAL2":39417.85,"VAL3":39105.0},{"DT":"2026/01/06","VAL1":0.80,"VAL2":40560.42,"VAL3":40885.0},{"DT":"2026/01/07","VAL1":-0.78,"VAL2":39345.99,"VAL3":39040.0},{"DT":"2026/01/08","VAL1":-1.73,"VAL2":38514.40,"VAL3":37850.0},{"DT":"2026/01/09","VAL1":-0.19,"VAL2":38624.64,"VAL3":38550.0},{"DT":"2026/01/12","VAL1":-2.09,"VAL2":41002.93,"VAL3":40145.0},{"DT":"2026/01/13","VAL1":-0.95,"VAL2":41090.70,"VAL3":40700.0},{"DT":"2026/01/14","VAL1":0.82,"VAL2":41625.18,"VAL3":41965.0},{"DT":"2026/01/15","VAL1":-1.16,"VAL2":40495.07,"VAL3":40025.0},{"DT":"2026/01/16","VAL1":-0.62,"VAL2":40401.87,"VAL3":40150.0},{"DT":"2026/01/19","VAL1":0.02,"VAL2":39390.92,"VAL3":39400.0},{"DT":"2026/01/20","VAL1":0.69,"VAL2":38473.87,"VAL3":38740.0},{"DT":"2026/01/21","VAL1":-1.13,"VAL2":39320.47,"VAL3":38875.0},{"DT":"2026/01/22","VAL1":-1.08,"VAL2":39537.75,"VAL3":39110.0},{"DT":"2026/01/23","VAL1":0.05,"VAL2":40018.06,"VAL3":40040.0},{"DT":"2026/01/26","VAL1":-0.72,"VAL2":39014.27,"VAL3":38735.0},{"DT":"2026/01/27","VAL1":-0.21,"VAL2":39401.41,"VAL3":39320.0},{"DT":"2026/01/28","VAL1":-0.67,"VAL2":41387.04,"VAL3":41110.0},{"DT":"2026/01/29","VAL1":-0.49,"VAL2":40553.89,"VAL3":40355.0},{"DT":"2026/01/30","VAL1":0.88,"VAL2":38838.62,"VAL3":39180.0},{"DT":"2026/02/02","VAL1":-0.61,"VAL2":36221.07,"VAL3":36000.0},{"DT":"2026/02/03","VAL1":0.44,"VAL2":35443.00,"VAL3":35600.0},{"DT":"2026/02/04","VAL1":0.60,"VAL2":34131.21,"VAL3":34335.0},{"DT":"2026/02/05","VAL1":-2.43,"VAL2":34632.59,"VAL3":33790.0},{"DT":"2026/02/06","VAL1":1.38,"VAL2":33858.06,"VAL3":34325.0},{"DT":"2026/02/09","VAL1":0.81,"VAL2":34754.90,"VAL3":35035.0},{"DT":"2026/02/10","VAL1":0.09,"VAL2":35180.09,"VAL3":35210.0},{"DT":"2026/02/11","VAL1":0.45,"VAL2":35808.20,"VAL3":35970.0},{"DT":"2026/02/12","VAL1":-0.04,"VAL2":34618.78,"VAL3":34605.0},{"DT":"2026/02/13","VAL1":-1.46,"VAL2":33986.48,"VAL3":33490.0},{"DT":"2026/02/19","VAL1":0.25,"VAL2":34070.29,"VAL3":34155.0},{"DT":"2026/02/20","VAL1":1.52,"VAL2":32072.93,"VAL3":32560.0},{"DT":"2026/02/23","VAL1":0.13,"VAL2":34202.20,"VAL3":34245.0},{"DT":"2026/02/24","VAL1":-0.08,"VAL2":32741.29,"VAL3":32715.0},{"DT":"2026/02/25","VAL1":0.03,"VAL2":32611.61,"VAL3":32620.0},{"DT":"2026/02/26","VAL1":1.95,"VAL2":30732.21,"VAL3":31330.0},{"DT":"2026/02/27","VAL1":0.60,"VAL2":31067.57,"VAL3":31255.0},{"DT":"2026/03/03","VAL1":-0.31,"VAL2":27936.02,"VAL3":27850.0},{"DT":"2026/03/04","VAL1":-2.39,"VAL2":27393.76,"VAL3":26740.0},{"DT":"2026/03/05","VAL1":1.17,"VAL2":27014.34,"VAL3":27330.0},{"DT":"2026/03/06","VAL1":0.14,"VAL2":28710.74,"VAL3":28750.0},{"DT":"2026/03/09","VAL1":-0.48,"VAL2":28638.79,"VAL3":28500.0},{"DT":"2026/03/10","VAL1":-0.56,"VAL2":30012.10,"VAL3":29845.0},{"DT":"2026/03/11","VAL1":0.19,"VAL2":29942.29,"VAL3":30000.0},{"DT":"2026/03/12","VAL1":2.02,"VAL2":29617.07,"VAL3":30215.0},{"DT":"2026/03/13","VAL1":1.65,"VAL2":29070.77,"VAL3":29550.0},{"DT":"2026/03/16","VAL1":-0.61,"VAL2":30625.74,"VAL3":30440.0},{"DT":"2026/03/17","VAL1":-0.52,"VAL2":30573.44,"VAL3":30415.0},{"DT":"2026/03/18","VAL1":-1.40,"VAL2":30578.89,"VAL3":30150.0},{"DT":"2026/03/19","VAL1":0.98,"VAL2":29233.90,"VAL3":29520.0},{"DT":"2026/03/20","VAL1":0.51,"VAL2":27778.09,"VAL3":27920.0},{"DT":"2026/03/23","VAL1":-0.96,"VAL2":25948.98,"VAL3":25700.0},{"DT":"2026/03/24","VAL1":-2.22,"VAL2":27249.65,"VAL3":26645.0},{"DT":"2026/03/25","VAL1":-1.80,"VAL2":28284.68,"VAL3":27775.0},{"DT":"2026/03/26","VAL1":0.13,"VAL2":26425.67,"VAL3":26460.0},{"DT":"2026/03/27","VAL1":0.85,"VAL2":26603.24,"VAL3":26830.0},{"DT":"2026/03/30","VAL1":-0.22,"VAL2":25616.41,"VAL3":25560.0},{"DT":"2026/03/31","VAL1":-0.59,"VAL2":25173.59,"VAL3":25025.0},{"DT":"2026/04/01","VAL1":0.57,"VAL2":26324.79,"VAL3":26475.0},{"DT":"2026/04/02","VAL1":-0.65,"VAL2":25465.69,"VAL3":25300.0},{"DT":"2026/04/03","VAL1":0.80,"VAL2":25462.55,"VAL3":25665.0},{"DT":"2026/04/06","VAL1":0.80,"VAL2":25461.50,"VAL3":25665.0},{"DT":"2026/04/07","VAL1":0.78,"VAL2":25460.45,"VAL3":25660.0},{"DT":"2026/04/08","VAL1":-0.11,"VAL2":28206.74,"VAL3":28175.0},{"DT":"2026/04/09","VAL1":1.02,"VAL2":27038.96,"VAL3":27315.0},{"DT":"2026/04/10","VAL1":0.49,"VAL2":27465.96,"VAL3":27600.0},{"DT":"2026/04/13","VAL1":-0.04,"VAL2":27026.31,"VAL3":27015.0},{"DT":"2026/04/14","VAL1":-0.87,"VAL2":27358.72,"VAL3":27120.0},{"DT":"2026/04/15","VAL1":0.30,"VAL2":28029.81,"VAL3":28115.0},{"DT":"2026/04/16","VAL1":-0.61,"VAL2":30082.40,"VAL3":29900.0},{"DT":"2026/04/17","VAL1":-1.08,"VAL2":29492.27,"VAL3":29175.0},{"DT":"2026/04/20","VAL1":0.35,"VAL2":29751.12,"VAL3":29855.0},{"DT":"2026/04/21","VAL1":-0.35,"VAL2":29699.20,"VAL3":29595.0},{"DT":"2026/04/22","VAL1":-0.77,"VAL2":28549.88,"VAL3":28330.0},{"DT":"2026/04/23","VAL1":0.50,"VAL2":27413.64,"VAL3":27550.0},{"DT":"2026/04/24","VAL1":0.50,"VAL2":27821.36,"VAL3":27960.0},{"DT":"2026/04/27","VAL1":-0.48,"VAL2":28241.54,"VAL3":28105.0},{"DT":"2026/04/28","VAL1":-0.09,"VAL2":26949.40,"VAL3":26925.0},{"DT":"2026/04/29","VAL1":-1.22,"VAL2":27870.52,"VAL3":27530.0},{"DT":"2026/04/30","VAL1":0.28,"VAL2":27424.36,"VAL3":27500.0},{"DT":"2026/05/04","VAL1":0.91,"VAL2":28598.68,"VAL3":28860.0},{"DT":"2026/05/06","VAL1":-0.29,"VAL2":28502.04,"VAL3":28420.0},{"DT":"2026/05/07","VAL1":-0.51,"VAL2":30239.70,"VAL3":30085.0},{"DT":"2026/05/08","VAL1":-1.22,"VAL2":30017.36,"VAL3":29650.0},{"DT":"2026/05/11","VAL1":-0.36,"VAL2":30051.76,"VAL3":29945.0},{"DT":"2026/05/12","VAL1":-0.24,"VAL2":29626.59,"VAL3":29555.0},{"DT":"2026/05/14","VAL1":1.77,"VAL2":29683.68,"VAL3":30210.0},{"DT":"2026/05/15","VAL1":-0.81,"VAL2":28142.97,"VAL3":27915.0},{"DT":"2026/05/18","VAL1":0.11,"VAL2":27039.31,"VAL3":27070.0},{"DT":"2026/05/19","VAL1":-0.19,"VAL2":27176.06,"VAL3":27125.0},{"DT":"2026/05/20","VAL1":0.20,"VAL2":27356.20,"VAL3":27410.0},{"DT":"2026/05/21","VAL1":1.51,"VAL2":26174.50,"VAL3":26570.0},{"DT":"2026/05/22","VAL1":0.52,"VAL2":27272.25,"VAL3":27415.0},{"DT":"2026/05/26","VAL1":1.09,"VAL2":28129.43,"VAL3":28435.0},{"DT":"2026/05/27","VAL1":0.02,"VAL2":27679.22,"VAL3":27685.0},{"DT":"2026/05/28","VAL1":0.10,"VAL2":27461.82,"VAL3":27490.0},{"DT":"2026/05/29","VAL1":1.27,"VAL2":27407.55,"VAL3":27755.0},{"DT":"2026/06/01","VAL1":0.10,"VAL2":28306.39,"VAL3":28335.0},{"DT":"2026/06/02","VAL1":-1.47,"VAL2":30971.83,"VAL3":30515.0},{"DT":"2026/06/04","VAL1":0.70,"VAL2":28350.37,"VAL3":28550.0},{"DT":"2026/06/05","VAL1":-0.13,"VAL2":27366.93,"VAL3":27330.0},{"DT":"2026/06/08","VAL1":-0.35,"VAL2":25876.11,"VAL3":25785.0},{"DT":"2026/06/09","VAL1":2.12,"VAL2":26022.47,"VAL3":26575.0},{"DT":"2026/06/10","VAL1":-0.28,"VAL2":25565.65,"VAL3":25495.0},{"DT":"2026/06/11","VAL1":-1.27,"VAL2":24836.14,"VAL3":24520.0},{"DT":"2026/06/12","VAL1":0.10,"VAL2":25358.84,"VAL3":25385.0},{"DT":"2026/06/15","VAL1":-0.19,"VAL2":26003.52,"VAL3":25955.0},{"DT":"2026/06/16","VAL1":0.25,"VAL2":24832.82,"VAL3":24895.0},{"DT":"2026/06/17","VAL1":-0.20,"VAL2":24941.00,"VAL3":24890.0},{"DT":"2026/06/18","VAL1":0.66,"VAL2":24284.25,"VAL3":24445.0},{"DT":"2026/06/19","VAL1":-0.68,"VAL2":24281.26,"VAL3":24115.0},{"DT":"2026/06/22","VAL1":1.32,"VAL2":23692.93,"VAL3":24005.0},{"DT":"2026/06/23","VAL1":-0.38,"VAL2":22124.40,"VAL3":22040.0},{"DT":"2026/06/24","VAL1":0.62,"VAL2":22923.80,"VAL3":23065.0},{"DT":"2026/06/25","VAL1":-0.48,"VAL2":22172.46,"VAL3":22065.0},{"DT":"2026/06/26","VAL1":-0.41,"VAL2":20653.73,"VAL3":20570.0},{"DT":"2026/06/29","VAL1":0.41,"VAL2":22009.25,"VAL3":22100.0},{"DT":"2026/06/30","VAL1":0.97,"VAL2":22804.64,"VAL3":23025.0},{"DT":"2026/07/01","VAL1":1.37,"VAL2":22803.70,"VAL3":23115.0},{"DT":"2026/07/02","VAL1":-0.20,"VAL2":22614.61,"VAL3":22570.0},{"DT":"2026/07/03","VAL1":1.22,"VAL2":23063.83,"VAL3":23345.0},{"DT":"2026/07/06","VAL1":0.36,"VAL2":23490.63,"VAL3":23575.0},{"DT":"2026/07/07","VAL1":0.16,"VAL2":23134.00,"VAL3":23170.0},{"DT":"2026/07/08","VAL1":1.38,"VAL2":25428.39,"VAL3":25780.0},{"DT":"2026/07/09","VAL1":0.17,"VAL2":25431.16,"VAL3":25475.0},{"DT":"2026/07/10","VAL1":3.10,"VAL2":25319.75,"VAL3":26105.0},{"DT":"2026/07/13","VAL1":0.59,"VAL2":24827.49,"VAL3":24975.0},{"DT":"2026/07/14","VAL1":0.39,"VAL2":24856.84,"VAL3":24955.0},{"DT":"2026/07/15","VAL1":0.41,"VAL2":25501.56,"VAL3":25605.0},{"DT":"2026/07/16","VAL1":1.24,"VAL2":26505.03,"VAL3":26835.0},{"DT":"2026/07/20","VAL1":-0.95,"VAL2":25526.27,"VAL3":25285.0},{"DT":"2026/07/21","VAL1":-0.08,"VAL2":26196.12,"VAL3":26175.0},{"DT":"2026/07/22","VAL1":-0.66,"VAL2":24596.68,"VAL3":24435.0},{"DT":"2026/07/23","VAL1":-0.79,"VAL2":24912.58,"VAL3":24715.0},{"DT":"2026/07/24","VAL1":0.12,"VAL2":24175.72,"VAL3":24205.0},{"DT":"2026/07/27","VAL1":-0.07,"VAL2":24926.72,"VAL3":24910.0},{"DT":"2026/07/28","VAL1":-1.89,"VAL2":25226.62,"VAL3":24750.0},{"DT":"2026/07/29","VAL1":-1.15,"VAL2":26652.83,"VAL3":26345.0},{"DT":"2026/07/30","VAL1":3.00,"VAL2":25981.35,"VAL3":26760.0},{"DT":"2026/07/31","VAL1":-0.46,"VAL2":26251.52,"VAL3":26130.0},{"DT":"2026/08/03","VAL1":-0.32,"VAL2":26785.19,"VAL3":26700.0},{"DT":"2026/08/04","VAL1":-0.45,"VAL2":26892.12,"VAL3":26770.0},{"DT":"2026/08/05","VAL1":-0.27,"VAL2":27445.45,"VAL3":27370.0},{"DT":"2026/08/06","VAL1":1.94,"VAL2":26191.83,"VAL3":26700.0},{"DT":"2026/08/07","VAL1":-1.07,"VAL2":26594.12,"VAL3":26310.0},{"DT":"2026/08/10","VAL1":-1.95,"VAL2":27256.99,"VAL3":26725.0},{"DT":"2026/08/11","VAL1":3.97,"VAL2":26200.05,"VAL3":27240.0},{"DT":"2026/08/12","VAL1":0.25,"VAL2":25696.66,"VAL3":25760.0},{"DT":"2026/08/13","VAL1":0.93,"VAL2":25865.62,"VAL3":26105.0},{"DT":"2026/08/14","VAL1":0.10,"VAL2":24944.12,"VAL3":24970.0},{"DT":"2026/08/18","VAL1":-2.25,"VAL2":25263.34,"VAL3":24695.0},{"DT":"2026/08/19","VAL1":-0.41,"VAL2":24650.94,"VAL3":24550.0},{"DT":"2026/08/20","VAL1":1.78,"VAL2":24842.74,"VAL3":25285.0},{"DT":"2026/08/21","VAL1":-0.90,"VAL2":25530.61,"VAL3":25300.0},{"DT":"2026/08/24","VAL1":0.13,"VAL2":23678.18,"VAL3":23710.0},{"DT":"2026/08/25","VAL1":0.56,"VAL2":23618.61,"VAL3":23750.0},{"DT":"2026/08/26","VAL1":0.76,"VAL2":24002.48,"VAL3":24185.0},{"DT":"2026/08/27","VAL1":0.26,"VAL2":23938.56,"VAL3":24000.0},{"DT":"2026/08/28","VAL1":1.02,"VAL2":23776.45,"VAL3":24020.0},{"DT":"2026/08/31","VAL1":-0.13,"VAL2":23920.63,"VAL3":23890.0},{"DT":"2026/09/01","VAL1":1.16,"VAL2":23201.93,"VAL3":23470.0},{"DT":"2026/09/02","VAL1":-0.61,"VAL2":22870.60,"VAL3":22730.0},{"DT":"2026/09/03","VAL1":0.32,"VAL2":22374.32,"VAL3":22445.0},{"DT":"2026/09/04","VAL1":0.80,"VAL2":23383.58,"VAL3":23570.0},{"DT":"2026/09/07","VAL1":0.03,"VAL2":22947.28,"VAL3":22955.0},{"DT":"2026/09/08","VAL1":0.04,"VAL2":22205.05,"VAL3":22215.0},{"DT":"2026/09/09","VAL1":-0.33,"VAL2":21862.58,"VAL3":21790.0},{"DT":"2026/09/10","VAL1":-0.53,"VAL2":20966.25,"VAL3":20855.0},{"DT":"2026/09/11","VAL1":0.50,"VAL2":20866.13,"VAL3":20970.0},{"DT":"2026/09/14","VAL1":0.24,"VAL2":20835.93,"VAL3":20885.0},{"DT":"2026/09/15","VAL1":0.87,"VAL2":20576.86,"VAL3":20755.0},{"DT":"2026/09/16","VAL1":0.09,"VAL2":20901.58,"VAL3":20920.0},{"DT":"2026/09/17","VAL1":-0.61,"VAL2":20757.03,"VAL3":20630.0},{"DT":"2026/09/18","VAL1":0.12,"VAL2":21664.88,"VAL3":21690.0},{"DT":"2026/09/21","VAL1":-1.60,"VAL2":21834.96,"VAL3":21485.0},{"DT":"2026/09/22","VAL1":-0.23,"VAL2":21979.90,"VAL3":21930.0},{"DT":"2026/09/23","VAL1":-0.04,"VAL2":21387.81,"VAL3":21380.0},{"DT":"2026/09/28","VAL1":0.62,"VAL2":20571.58,"VAL3":20700.0},{"DT":"2026/09/29","VAL1":0.55,"VAL2":20124.66,"VAL3":20235.0},{"DT":"2026/09/30","VAL1":-0.16,"VAL2":20162.66,"VAL3":20130.0},{"DT":"2026/10/01","VAL1":-1.40,"VAL2":20161.83,"VAL3":19880.0},{"DT":"2026/10/02","VAL1":-0.10,"VAL2":19243.65,"VAL3":19225.0},{"DT":"2026/10/06","VAL1":-0.44,"VAL2":19841.48,"VAL3":19755.0},{"DT":"2026/10/07","VAL1":-0.23,"VAL2":19570.48,"VAL3":19525.0},{"DT":"2026/10/08","VAL1":1.14,"VAL2":18435.12,"VAL3":18645.0},{"DT":"2026/10/12","VAL1":-0.24,"VAL2":19291.30,"VAL3":19245.0},{"DT":"2026/10/13","VAL1":-0.76,"VAL2":18983.75,"VAL3":18840.0},{"DT":"2026/10/14","VAL1":2.62,"VAL2":19328.78,"VAL3":19835.0},{"DT":"2026/10/15","VAL1":-0.63,"VAL2":18274.72,"VAL3":18160.0},{"DT":"2026/10/16","VAL1":0.10,"VAL2":18696.08,"VAL3":18715.0},{"DT":"2026/10/19","VAL1":-0.83,"VAL2":18695.31,"VAL3":18540.0},{"DT":"2026/10/20","VAL1":-0.01,"VAL2":18122.17,"VAL3":18120.0},{"DT":"2026/10/21","VAL1":1.32,"VAL2":17661.65,"VAL3":17895.0},{"DT":"2026/10/22","VAL1":0.11,"VAL2":15882.25,"VAL3":15900.0},{"DT":"2026/10/23","VAL1":1.00,"VAL2":16529.16,"VAL3":16695.0},{"DT":"2026/10/26","VAL1":0.16,"VAL2":16404.00,"VAL3":16430.0},{"DT":"2026/10/27","VAL1":0.65,"VAL2":15916.00,"VAL3":16020.0},{"DT":"2026/10/28","VAL1":-0.89,"VAL2":16360.21,"VAL3":16215.0},{"DT":"2026/10/29","VAL1":1.31,"VAL2":15427.14,"VAL3":15630.0},{"DT":"2026/10/30","VAL1":0.95,"VAL2":15512.68,"VAL3":15660.0},{"DT":"2026/11/02","VAL1":0.92,"VAL2":16206.11,"VAL3":16355.0},{"DT":"2026/11/03","VAL1":-1.39,"VAL2":16443.21,"VAL3":16215.0},{"DT":"2026/11/04","VAL1":-1.10,"VAL2":17021.47,"VAL3":16835.0},{"DT":"2026/11/05","VAL1":-0.56,"VAL2":18905.64,"VAL3":18800.0},{"DT":"2026/11/06","VAL1":-0.60,"VAL2":18209.28,"VAL3":18100.0},{"DT":"2026/11/09","VAL1":1.62,"VAL2":17870.00,"VAL3":18160.0},{"DT":"2026/11/10","VAL1":0.69,"VAL2":18258.60,"VAL3":18385.0},{"DT":"2026/11/11","VAL1":0.80,"VAL2":17743.05,"VAL3":17885.0},{"DT":"2026/11/12","VAL1":1.06,"VAL2":16901.65,"VAL3":17080.0},{"DT":"2026/11/13","VAL1":1.82,"VAL2":15876.77,"VAL3":16165.0},{"DT":"2026/11/16","VAL1":0.78,"VAL2":15776.54,"VAL3":15900.0},{"DT":"2026/11/17","VAL1":1.92,"VAL2":15413.76,"VAL3":15710.0},{"DT":"2026/11/18","VAL1":-0.22,"VAL2":15232.81,"VAL3":15200.0},{"DT":"2026/11/19","VAL1":0.21,"VAL2":14519.63,"VAL3":14550.0},{"DT":"2026/11/20","VAL1":-0.02,"VAL2":13417.72,"VAL3":13415.0},{"DT":"2026/11/23","VAL1":0.18,"VAL2":13390.49,"VAL3":13415.0},{"DT":"2026/11/24","VAL1":-1.22,"VAL2":13074.64,"VAL3":12915.0},{"DT":"2026/11/25","VAL1":2.02,"VAL2":12403.98,"VAL3":12655.0},{"DT":"2026/11/26","VAL1":0.99,"VAL2":12689.63,"VAL3":12815.0},{"DT":"2026/11/27","VAL1":-0.02,"VAL2":14322.47,"VAL3":14320.0}],"header":[{"ID":"DT","NM":"일자","DIGIT":-1},{"ID":"VAL1","NM":"괴리율(우,%)","DIGIT":2},{"ID":"VAL2","NM":"지표가치(좌,원)","DIGIT":2},{"ID":"VAL3","NM":"전일종가 (좌,원)","DIGIT":0}]},
+                trendChart: {"data":[{"DT":"2025/11/27","VAL1":3352.0,"VAL2":38090.0},{"DT":"2025/11/28","VAL1":1.0,"VAL2":37965.0},{"DT":"2025/12/01","VAL1":1567.0,"VAL2":38365.0},{"DT":"2025/12/02","VAL1":415.0,"VAL2":37815.0},{"DT":"2025/12/03","VAL1":557.0,"VAL2":36765.0},{"DT":"2025/12/04","VAL1":317.0,"VAL2":37510.0},{"DT":"2025/12/05","VAL1":197.0,"VAL2":38550.0},{"DT":"2025/12/08","VAL1":1642.0,"VAL2":38900.0},{"DT":"2025/12/09","VAL1":286.0,"VAL2":37290.0},{"DT":"2025/12/10","VAL1":0.0,"VAL2":37290.0},{"DT":"2025/12/11","VAL1":143.0,"VAL2":37385.0},{"DT":"2025/12/12","VAL1":114.0,"VAL2":38345.0},{"DT":"2025/12/15","VAL1":2177.0,"VAL2":36640.0},{"DT":"2025/12/16","VAL1":2350.0,"VAL2":34565.0},{"DT":"2025/12/17","VAL1":430.0,"VAL2":35665.0},{"DT":"2025/12/18","VAL1":100.0,"VAL2":35235.0},{"DT":"2025/12/19","VAL1":1766.0,"VAL2":36020.0},{"DT":"2025/12/22","VAL1":615.0,"VAL2":36585.0},{"DT":"2025/12/23","VAL1":13.0,"VAL2":36585.0},{"DT":"2025/12/24","VAL1":33.0,"VAL2":36185.0},{"DT":"2025/12/26","VAL1":2.0,"VAL2":36480.0},{"DT":"2025/12/29","VAL1":2355.0,"VAL2":36960.0},{"DT":"2025/12/30","VAL1":461.0,"VAL2":37455.0},{"DT":"2026/01/02","VAL1":1340.0,"VAL2":39380.0},{"DT":"2026/01/05","VAL1":1700.0,"VAL2":39105.0},{"DT":"2026/01/06","VAL1":1289.0,"VAL2":40885.0},{"DT":"2026/01/07","VAL1":1376.0,"VAL2":39040.0},{"DT":"2026/01/08","VAL1":1263.0,"VAL2":37850.0},{"DT":"2026/01/09","VAL1":473.0,"VAL2":38550.0},{"DT":"2026/01/12","VAL1":88.0,"VAL2":40145.0},{"DT":"2026/01/13","VAL1":3431.0,"VAL2":40700.0},{"DT":"2026/01/14","VAL1":804.0,"VAL2":41965.0},{"DT":"2026/01/15","VAL1":2667.0,"VAL2":40025.0},{"DT":"2026/01/16","VAL1":1436.0,"VAL2":40150.0},{"DT":"2026/01/19","VAL1":62.0,"VAL2":39400.0},{"DT":"2026/01/20","VAL1":6788.0,"VAL2":38740.0},{"DT":"2026/01/21","VAL1":606.0,"VAL2":38875.0},{"DT":"2026/01/22","VAL1":101.0,"VAL2":39110.0},{"DT":"2026/01/23","VAL1":7357.0,"VAL2":40040.0},{"DT":"2026/01/26","VAL1":191.0,"VAL2":38735.0},{"DT":"2026/01/27","VAL1":12.0,"VAL2":39320.0},{"DT":"2026/01/28","VAL1":692.0,"VAL2":41110.0},{"DT":"2026/01/29","VAL1":864.0,"VAL2":40355.0},{"DT":"2026/01/30","VAL1":3044.0,"VAL2":39180.0},{"DT":"2026/02/02","VAL1":173.0,"VAL2":36000.0},{"DT":"2026/02/03","VAL1":1511.0,"VAL2":35600.0},{"DT":"2026/02/04","VAL1":905.0,"VAL2":34335.0},{"DT":"2026/02/05","VAL1":8262.0,"VAL2":33790.0},{"DT":"2026/02/06","VAL1":11271.0,"VAL2":34325.0},{"DT":"2026/02/09","VAL1":6080.0,"VAL2":35035.0},{"DT":"2026/02/10","VAL1":1998.0,"VAL2":35210.0},{"DT":"2026/02/11","VAL1":70.0,"VAL2":35970.0},{"DT":"2026/02/12","VAL1":173.0,"VAL2":34605.0},{"DT":"2026/02/13","VAL1":21.0,"VAL2":33490.0},{"DT":"2026/02/19","VAL1":19.0,"VAL2":34155.0},{"DT":"2026/02/20","VAL1":312.0,"VAL2":32560.0},{"DT":"2026/02/23","VAL1":215.0,"VAL2":34245.0},{"DT":"2026/02/24","VAL1":840.0,"VAL2":32715.0},{"DT":"2026/02/25","VAL1":318.0,"VAL2":32620.0},{"DT":"2026/02/26","VAL1":376.0,"VAL2":31330.0},{"DT":"2026/02/27","VAL1":132.0,"VAL2":31255.0},{"DT":"2026/03/03","VAL1":2930.0,"VAL2":27850.0},{"DT":"2026/03/04","VAL1":1259.0,"VAL2":26740.0},{"DT":"2026/03/05","VAL1":7509.0,"VAL2":27330.0},{"DT":"2026/03/06","VAL1":693.0,"VAL2":28750.0},{"DT":"2026/03/09","VAL1":2571.0,"VAL2":28500.0},{"DT":"2026/03/10","VAL1":11824.0,"VAL2":29845.0},{"DT":"2026/03/11","VAL1":2076.0,"VAL2":30000.0},{"DT":"2026/03/12","VAL1":455.0,"VAL2":30215.0},{"DT":"2026/03/13","VAL1":175.0,"VAL2":29550.0},{"DT":"2026/03/16","VAL1":2795.0,"VAL2":30440.0},{"DT":"2026/03/17","VAL1":245.0,"VAL2":30415.0},{"DT":"2026/03/18","VAL1":427.0,"VAL2":30150.0},{"DT":"2026/03/19","VAL1":3865.0,"VAL2":29520.0},{"DT":"2026/03/20","VAL1":1150.0,"VAL2":27920.0},{"DT":"2026/03/23","VAL1":1318.0,"VAL2":25700.0},{"DT":"2026/03/24","VAL1":5306.0,"VAL2":26645.0},{"DT":"2026/03/25","VAL1":6068.0,"VAL2":27775.0},{"DT":"2026/03/26","VAL1":2373.0,"VAL2":26460.0},{"DT":"2026/03/27","VAL1":6671.0,"VAL2":26830.0},{"DT":"2026/03/30","VAL1":3319.0,"VAL2":25560.0},{"DT":"2026/03/31","VAL1":464.0,"VAL2":25025.0},{"DT":"2026/04/01","VAL1":741.0,"VAL2":26475.0},{"DT":"2026/04/02","VAL1":227.0,"VAL2":25300.0},{"DT":"2026/04/03","VAL1":15.0,"VAL2":25665.0},{"DT":"2026/04/06","VAL1":2.0,"VAL2":25665.0},{"DT":"2026/04/07","VAL1":255.0,"VAL2":25660.0},{"DT":"2026/04/08","VAL1":28142.0,"VAL2":28175.0},{"DT":"2026/04/09","VAL1":417.0,"VAL2":27315.0},{"DT":"2026/04/10","VAL1":334.0,"VAL2":27600.0},{"DT":"2026/04/13","VAL1":1564.0,"VAL2":27015.0},{"DT":"2026/04/14","VAL1":839.0,"VAL2":27120.0},{"DT":"2026/04/15","VAL1":103.0,"VAL2":28115.0},{"DT":"2026/04/16","VAL1":4608.0,"VAL2":29900.0},{"DT":"2026/04/17","VAL1":807.0,"VAL2":29175.0},{"DT":"2026/04/20","VAL1":3129.0,"VAL2":29855.0},{"DT":"2026/04/21","VAL1":1494.0,"VAL2":29595.0},{"DT":"2026/04/22","VAL1":129.0,"VAL2":28330.0},{"DT":"2026/04/23","VAL1":864.0,"VAL2":27550.0},{"DT":"2026/04/24","VAL1":406.0,"VAL2":27960.0},{"DT":"2026/04/27","VAL1":13.0,"VAL2":28105.0},{"DT":"2026/04/28","VAL1":722.0,"VAL2":26925.0},{"DT":"2026/04/29","VAL1":153.0,"VAL2":27530.0},{"DT":"2026/04/30","VAL1":656.0,"VAL2":27500.0},{"DT":"2026/05/04","VAL1":390.0,"VAL2":28860.0},{"DT":"2026/05/06","VAL1":633.0,"VAL2":28420.0},{"DT":"2026/05/07","VAL1":1819.0,"VAL2":30085.0},{"DT":"2026/05/08","VAL1":646.0,"VAL2":29650.0},{"DT":"2026/05/11","VAL1":625.0,"VAL2":29945.0},{"DT":"2026/05/12","VAL1":14.0,"VAL2":29555.0},{"DT":"2026/05/13","VAL1":2643.0,"VAL2":29655.0},{"DT":"2026/05/14","VAL1":3707.0,"VAL2":30210.0},{"DT":"2026/05/15","VAL1":2389.0,"VAL2":27915.0},{"DT":"2026/05/18","VAL1":275.0,"VAL2":27070.0},{"DT":"2026/05/19","VAL1":224.0,"VAL2":27125.0},{"DT":"2026/05/20","VAL1":22.0,"VAL2":27410.0},{"DT":"2026/05/21","VAL1":11189.0,"VAL2":26570.0},{"DT":"2026/05/22","VAL1":124.0,"VAL2":27415.0},{"DT":"2026/05/26","VAL1":3123.0,"VAL2":28435.0},{"DT":"2026/05/27","VAL1":809.0,"VAL2":27685.0},{"DT":"2026/05/28","VAL1":2260.0,"VAL2":27490.0},{"DT":"2026/05/29","VAL1":620.0,"VAL2":27755.0},{"DT":"2026/06/01","VAL1":1465.0,"VAL2":28335.0},{"DT":"2026/06/02","VAL1":9653.0,"VAL2":30515.0},{"DT":"2026/06/04","VAL1":382.0,"VAL2":28550.0},{"DT":"2026/06/05","VAL1":744.0,"VAL2":27330.0},{"DT":"2026/06/08","VAL1":2508.0,"VAL2":25785.0},{"DT":"2026/06/09","VAL1":301.0,"VAL2":26575.0},{"DT":"2026/06/10","VAL1":11282.0,"VAL2":25495.0},{"DT":"2026/06/11","VAL1":12151.0,"VAL2":24520.0},{"DT":"2026/06/12","VAL1":7217.0,"VAL2":25385.0},{"DT":"2026/06/15","VAL1":2330.0,"VAL2":25955.0},{"DT":"2026/06/16","VAL1":973.0,"VAL2":24895.0},{"DT":"2026/06/17","VAL1":247.0,"VAL2":24890.0},{"DT":"2026/06/18","VAL1":2113.0,"VAL2":24445.0},{"DT":"2026/06/19","VAL1":48.0,"VAL2":24115.0},{"DT":"2026/06/22","VAL1":2058.0,"VAL2":24005.0},{"DT":"2026/06/23","VAL1":1461.0,"VAL2":22040.0},{"DT":"2026/06/24","VAL1":1388.0,"VAL2":23065.0},{"DT":"2026/06/25","VAL1":16826.0,"VAL2":22065.0},{"DT":"2026/06/26","VAL1":531.0,"VAL2":20570.0},{"DT":"2026/06/29","VAL1":1329.0,"VAL2":22100.0},{"DT":"2026/06/30","VAL1":1790.0,"VAL2":23025.0},{"DT":"2026/07/01","VAL1":23.0,"VAL2":23115.0},{"DT":"2026/07/02","VAL1":5221.0,"VAL2":22570.0},{"DT":"2026/07/03","VAL1":3045.0,"VAL2":23345.0},{"DT":"2026/07/06","VAL1":2711.0,"VAL2":23575.0},{"DT":"2026/07/07","VAL1":115.0,"VAL2":23170.0},{"DT":"2026/07/08","VAL1":1051.0,"VAL2":25780.0},{"DT":"2026/07/09","VAL1":3866.0,"VAL2":25475.0},{"DT":"2026/07/10","VAL1":923.0,"VAL2":26105.0},{"DT":"2026/07/13","VAL1":1642.0,"VAL2":24975.0},{"DT":"2026/07/14","VAL1":19996.0,"VAL2":24955.0},{"DT":"2026/07/15","VAL1":4.0,"VAL2":25605.0},{"DT":"2026/07/16","VAL1":1332.0,"VAL2":26835.0},{"DT":"2026/07/20","VAL1":31988.0,"VAL2":25285.0},{"DT":"2026/07/21","VAL1":8202.0,"VAL2":26175.0},{"DT":"2026/07/22","VAL1":2086.0,"VAL2":24435.0},{"DT":"2026/07/23","VAL1":1470.0,"VAL2":24715.0},{"DT":"2026/07/24","VAL1":10.0,"VAL2":24205.0},{"DT":"2026/07/27","VAL1":21.0,"VAL2":24910.0},{"DT":"2026/07/28","VAL1":1412.0,"VAL2":24750.0},{"DT":"2026/07/29","VAL1":25.0,"VAL2":26345.0},{"DT":"2026/07/30","VAL1":2000.0,"VAL2":26760.0},{"DT":"2026/07/31","VAL1":2177.0,"VAL2":26130.0},{"DT":"2026/08/03","VAL1":353.0,"VAL2":26700.0},{"DT":"2026/08/04","VAL1":37.0,"VAL2":26770.0},{"DT":"2026/08/05","VAL1":58.0,"VAL2":27370.0},{"DT":"2026/08/06","VAL1":313.0,"VAL2":26700.0},{"DT":"2026/08/07","VAL1":48.0,"VAL2":26310.0},{"DT":"2026/08/10","VAL1":7.0,"VAL2":26725.0},{"DT":"2026/08/11","VAL1":400.0,"VAL2":27240.0},{"DT":"2026/08/12","VAL1":190.0,"VAL2":25760.0},{"DT":"2026/08/13","VAL1":22158.0,"VAL2":26105.0},{"DT":"2026/08/14","VAL1":266.0,"VAL2":24970.0},{"DT":"2026/08/18","VAL1":232.0,"VAL2":24695.0},{"DT":"2026/08/19","VAL1":983.0,"VAL2":24550.0},{"DT":"2026/08/20","VAL1":966.0,"VAL2":25285.0},{"DT":"2026/08/21","VAL1":304.0,"VAL2":25300.0},{"DT":"2026/08/24","VAL1":1745.0,"VAL2":23710.0},{"DT":"2026/08/25","VAL1":2670.0,"VAL2":23750.0},{"DT":"2026/08/26","VAL1":1401.0,"VAL2":24185.0},{"DT":"2026/08/27","VAL1":1250.0,"VAL2":24000.0},{"DT":"2026/08/28","VAL1":701.0,"VAL2":24020.0},{"DT":"2026/08/31","VAL1":459.0,"VAL2":23890.0},{"DT":"2026/09/01","VAL1":8.0,"VAL2":23470.0},{"DT":"2026/09/02","VAL1":509.0,"VAL2":22730.0},{"DT":"2026/09/03","VAL1":290.0,"VAL2":22445.0},{"DT":"2026/09/04","VAL1":291.0,"VAL2":23570.0},{"DT":"2026/09/07","VAL1":48.0,"VAL2":22955.0},{"DT":"2026/09/08","VAL1":1010.0,"VAL2":22215.0},{"DT":"2026/09/09","VAL1":1579.0,"VAL2":21790.0},{"DT":"2026/09/10","VAL1":665.0,"VAL2":20855.0},{"DT":"2026/09/11","VAL1":8332.0,"VAL2":20970.0},{"DT":"2026/09/14","VAL1":20207.0,"VAL2":20885.0},{"DT":"2026/09/15","VAL1":668.0,"VAL2":20755.0},{"DT":"2026/09/16","VAL1":8617.0,"VAL2":20920.0},{"DT":"2026/09/17","VAL1":3334.0,"VAL2":20630.0},{"DT":"2026/09/18","VAL1":548.0,"VAL2":21690.0},{"DT":"2026/09/21","VAL1":3365.0,"VAL2":21485.0},{"DT":"2026/09/22","VAL1":424.0,"VAL2":21930.0},{"DT":"2026/09/23","VAL1":4437.0,"VAL2":21380.0},{"DT":"2026/09/28","VAL1":1084.0,"VAL2":20700.0},{"DT":"2026/09/29","VAL1":807.0,"VAL2":20235.0},{"DT":"2026/09/30","VAL1":220.0,"VAL2":20130.0},{"DT":"2026/10/01","VAL1":2880.0,"VAL2":19880.0},{"DT":"2026/10/02","VAL1":1076.0,"VAL2":19225.0},{"DT":"2026/10/06","VAL1":1750.0,"VAL2":19755.0},{"DT":"2026/10/07","VAL1":263.0,"VAL2":19525.0},{"DT":"2026/10/08","VAL1":66.0,"VAL2":18645.0},{"DT":"2026/10/12","VAL1":565.0,"VAL2":19245.0},{"DT":"2026/10/13","VAL1":415.0,"VAL2":18840.0},{"DT":"2026/10/14","VAL1":670.0,"VAL2":19835.0},{"DT":"2026/10/15","VAL1":24187.0,"VAL2":18160.0},{"DT":"2026/10/16","VAL1":439.0,"VAL2":18715.0},{"DT":"2026/10/19","VAL1":4.0,"VAL2":18540.0},{"DT":"2026/10/20","VAL1":2685.0,"VAL2":18120.0},{"DT":"2026/10/21","VAL1":158.0,"VAL2":17895.0},{"DT":"2026/10/22","VAL1":4194.0,"VAL2":15900.0},{"DT":"2026/10/23","VAL1":1866.0,"VAL2":16695.0},{"DT":"2026/10/26","VAL1":3860.0,"VAL2":16430.0},{"DT":"2026/10/27","VAL1":2768.0,"VAL2":16020.0},{"DT":"2026/10/28","VAL1":565.0,"VAL2":16215.0},{"DT":"2026/10/29","VAL1":40462.0,"VAL2":15630.0},{"DT":"2026/10/30","VAL1":16771.0,"VAL2":15660.0},{"DT":"2026/11/02","VAL1":1857.0,"VAL2":16355.0},{"DT":"2026/11/03","VAL1":2736.0,"VAL2":16215.0},{"DT":"2026/11/04","VAL1":45008.0,"VAL2":16835.0},{"DT":"2026/11/05","VAL1":213865.0,"VAL2":18800.0},{"DT":"2026/11/06","VAL1":240485.0,"VAL2":18100.0},{"DT":"2026/11/09","VAL1":200376.0,"VAL2":18160.0},{"DT":"2026/11/10","VAL1":360.0,"VAL2":18385.0},{"DT":"2026/11/11","VAL1":1867.0,"VAL2":17885.0},{"DT":"2026/11/12","VAL1":6121.0,"VAL2":17080.0},{"DT":"2026/11/13","VAL1":404.0,"VAL2":16165.0},{"DT":"2026/11/16","VAL1":0.0,"VAL2":15900.0},{"DT":"2026/11/17","VAL1":329.0,"VAL2":15710.0},{"DT":"2026/11/18","VAL1":1776.0,"VAL2":15200.0},{"DT":"2026/11/19","VAL1":754.0,"VAL2":14550.0},{"DT":"2026/11/20","VAL1":264.0,"VAL2":13415.0},{"DT":"2026/11/23","VAL1":8057.0,"VAL2":13415.0},{"DT":"2026/11/24","VAL1":2807.0,"VAL2":12915.0},{"DT":"2026/11/25","VAL1":10499.0,"VAL2":12655.0},{"DT":"2026/11/26","VAL1":2264.0,"VAL2":12815.0},{"DT":"2026/11/27","VAL1":63716.0,"VAL2":14320.0}],"header":[{"ID":"DT","NM":"일자","DIGIT":-1},{"ID":"VAL1","NM":"거래량(우,주)","DIGIT":0},{"ID":"VAL2","NM":"종가(좌,원)","DIGIT":0}]},
+            });
+        });
+    </script>
+
+</body>
+</html>
